@@ -1,1 +1,1 @@
-"# the-guild-docs" 
+# the-guild-docs

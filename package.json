@@ -1,0 +1,25 @@
+{
+  "name": "the-guild-docs",
+  "version": "1.0.0",
+  "private": true,
+  "homepage": "https://github.com/the-guild-org/the-guild-docs#readme",
+  "bugs": {
+    "url": "https://github.com/the-guild-org/the-guild-docs/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/the-guild-org/the-guild-docs.git"
+  },
+  "license": "MIT",
+  "author": "PabloSzx <pablosaez1995@gmail.com>",
+  "scripts": {
+    "prepare": "husky install"
+  },
+  "dependencies": {
+    "@types/node": "^15.0.2",
+    "husky": "^6.0.0",
+    "prettier": "^2.3.0",
+    "pretty-quick": "^3.1.0",
+    "typescript": "^4.2.4"
+  }
+}

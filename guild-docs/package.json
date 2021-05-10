@@ -1,0 +1,46 @@
+{
+  "name": "guild-docs",
+  "version": "1.0.0",
+  "license": "MIT",
+  "author": "PabloSzx <pablosaez1995@gmail.com>",
+  "exports": {
+    "import": "./dist/index.mjs",
+    "require": "./dist/index.js"
+  },
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "bin": {
+    "guild-docs": "./dist/cli.js"
+  },
+  "scripts": {
+    "build": "concurrently pnpm:build:*",
+    "build:cli": "tsup-node src/cli.ts",
+    "build:main": "tsup-node src/index.ts --dts --format cjs,esm",
+    "prepare": "concurrently -r pnpm:build"
+  },
+  "dependencies": {
+    "commander": "^7.2.0",
+    "concurrently": "^6.1.0",
+    "cross-env": "^7.0.3"
+  },
+  "devDependencies": {
+    "@types/concurrently": "^6.0.1",
+    "@types/node": "^15.0.2",
+    "@types/react": "^17.0.5",
+    "@types/react-dom": "^17.0.3",
+    "next": "^10.2.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "tsup": "^4.10.1",
+    "typescript": "^4.2.4"
+  },
+  "peerDependencies": {
+    "next": "^10.2.0"
+  },
+  "peerDependenciesMeta": {
+    "next": {
+      "optional": true
+    }
+  }
+}
