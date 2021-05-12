@@ -14,10 +14,10 @@
     "guild-docs": "./dist/cli.js"
   },
   "scripts": {
-    "build": "concurrently pnpm:build:*",
+    "build": "concurrently npm:build:*",
     "build:cli": "tsup-node src/cli.ts",
     "build:main": "tsup-node src/index.ts --dts --format cjs,esm",
-    "prepare": "concurrently -r pnpm:build"
+    "prepare": "concurrently -r npm:build"
   },
   "dependencies": {
     "commander": "^7.2.0",
