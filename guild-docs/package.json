@@ -7,12 +7,12 @@
   "module": "lib/index.mjs",
   "types": "lib/index.d.ts",
   "bin": {
-    "guild-docs": "./lib/cli.js"
+    "guild-docs": "./bin/cli.js"
   },
   "scripts": {
-    "build": "tsup-node --silent src/index.tsx src/server.ts -d lib --format cjs,esm --clean && tsc && tsup-node -d lib --no-splitting --silent src/cli.ts",
-    "dev:cli": "tsup-node src/cli.ts -d lib --watch --onSuccess \"pnpm dev:cli:start\"",
-    "dev:cli:start": "node lib/cli.js init ../examples/basic",
+    "build": "tsup-node --silent src/index.tsx src/server.ts -d lib --format cjs,esm --clean && tsc && tsup-node -d bin --no-splitting --silent src/cli.ts",
+    "dev:cli": "tsup-node src/cli.ts -d bin --watch --onSuccess \"pnpm dev:cli:start\"",
+    "dev:cli:start": "node bin/cli.js init ../examples/basic",
     "prepare": "concurrently -r npm:build"
   },
   "dependencies": {
