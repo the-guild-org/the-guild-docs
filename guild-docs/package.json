@@ -1,6 +1,6 @@
 {
   "name": "guild-docs",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "license": "MIT",
   "author": "PabloSzx <pablosaez1995@gmail.com>",
   "main": "lib/index.js",

@@ -5,13 +5,13 @@
 To initialize a guild-docs package, you can use **npx**:
 
 ```bash
-npx guild-docs init
+npx -y guild-docs init
 ```
 
 or if you use [`pnpm`](https://pnpm.io/)
 
 ```bash
-pnpx guild-docs init
+pnpx -y guild-docs init
 ```
 
 ```

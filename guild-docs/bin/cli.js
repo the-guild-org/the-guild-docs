@@ -40,7 +40,7 @@ var require_package = __commonJS({
   "package.json"(exports2, module2) {
     module2.exports = {
       name: "guild-docs",
-      version: "0.0.3",
+      version: "0.0.4",
       license: "MIT",
       author: "PabloSzx <pablosaez1995@gmail.com>",
       main: "lib/index.js",
@@ -143,15 +143,15 @@ var import_edit_json_file = __toModule(require("edit-json-file"));
 var import_npm_api = __toModule(require("npm-api"));
 var api = new import_npm_api.default();
 var jsonConfigs = {};
-async function addPackageScripts(scripts) {
+function addPackageScripts(scripts) {
   var _a;
   const json = jsonConfigs[_a = config.packageJsonPath] || (jsonConfigs[_a] = (0, import_edit_json_file.default)(config.packageJsonPath));
-  await Promise.all(Object.entries(scripts).map(async ([name, content]) => {
+  Object.entries(scripts).forEach(([name, content]) => {
     if (json.get(`scripts.${name}`)) {
       return;
     }
     json.set(`scripts.${name}`, content);
-  }));
+  });
   json.save();
 }
 async function addDependency(dependency, {isDev} = {}) {
@@ -483,4 +483,9 @@ async function InitAction(dir = process.cwd()) {
 Now you can install dependencies: "pnpm i", "yarn" or "npm i"; and then run the "dev" script, either "pnpm dev", "yarn dev" or "npm run dev"`);
 }
 import_commander.program.command("init [dir]").description("Initialize a docs package, adding it's dependencies & minimum configuration files").action(InitAction);
-import_commander.program.parse(process.argv);
+import_commander.program.parseAsync(process.argv).then(() => {
+  process.exit(0);
+}).catch((err) => {
+  console.error(err);
+  process.exit(1);
+});

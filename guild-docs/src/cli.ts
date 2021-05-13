@@ -100,4 +100,12 @@ program
   .description("Initialize a docs package, adding it's dependencies & minimum configuration files")
   .action(InitAction);
 
-program.parse(process.argv);
+program
+  .parseAsync(process.argv)
+  .then(() => {
+    process.exit(0);
+  })
+  .catch(err => {
+    console.error(err);
+    process.exit(1);
+  });

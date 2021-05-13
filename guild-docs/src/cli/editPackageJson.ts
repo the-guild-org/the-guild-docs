@@ -7,18 +7,16 @@ const api = new NpmApi();
 
 const jsonConfigs: Record<string, editJsonFile.JsonEditor> = {};
 
-export async function addPackageScripts(scripts: Record<string, string>) {
+export function addPackageScripts(scripts: Record<string, string>) {
   const json = (jsonConfigs[config.packageJsonPath] ||= editJsonFile(config.packageJsonPath));
 
-  await Promise.all(
-    Object.entries(scripts).map(async ([name, content]) => {
-      if (json.get(`scripts.${name}`)) {
-        return;
-      }
+  Object.entries(scripts).forEach(([name, content]) => {
+    if (json.get(`scripts.${name}`)) {
+      return;
+    }
 
-      json.set(`scripts.${name}`, content);
-    })
-  );
+    json.set(`scripts.${name}`, content);
+  });
 
   json.save();
 }
