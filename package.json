@@ -13,7 +13,8 @@
   "license": "MIT",
   "author": "PabloSzx <pablosaez1995@gmail.com>",
   "scripts": {
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "pretty": "pretty-quick"
   },
   "dependencies": {
     "@types/node": "^15.0.3",

@@ -51,9 +51,9 @@ var require_package = __commonJS({
       },
       scripts: {
         build: "tsup-node --silent src/index.tsx src/server.ts -d lib --format cjs,esm --clean && tsc && tsup-node -d bin --no-splitting --silent src/cli.ts",
-        "dev:cli": 'tsup-node src/cli.ts -d bin --watch --onSuccess "pnpm dev:cli:start"',
-        "dev:cli:start": "node bin/cli.js init ../examples/basic",
-        prepare: "concurrently -r npm:build"
+        "dev:cli": 'tsup-node src/cli.ts -d bin --watch --onSuccess "pnpm dev:cli-start"',
+        "dev:cli-start": "node bin/cli.js init ../examples/basic",
+        prepare: "pnpm build"
       },
       dependencies: {
         "@chakra-ui/react": "^1.6.1",
