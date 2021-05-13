@@ -32,6 +32,8 @@ async function DepsAction(dir: string = process.cwd()) {
       'remark-admonitions',
       'prism-themes',
       'next-i18next',
+      'react',
+      'react-dom',
     ]),
     addDependency(
       [
