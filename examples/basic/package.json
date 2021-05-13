@@ -7,9 +7,9 @@
   "main": "pages/index.tsx",
   "scripts": {
     "build": "next build",
-    "dev": "concurrently -r next \"wait-on -s 1 http://localhost:3000 && open-cli http://localhost:3000\"",
-    "start": "next start",
-    "next": "next"
+    "dev": "next",
+    "next": "next",
+    "start": "next start"
   },
   "dependencies": {
     "@chakra-ui/icons": "^1.0.13",

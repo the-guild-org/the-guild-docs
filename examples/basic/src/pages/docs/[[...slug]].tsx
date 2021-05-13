@@ -1,10 +1,11 @@
 import { Stack } from '@chakra-ui/react';
 
 import { MDXPage } from 'guild-docs';
-import { MDXPaths, MDXProps } from 'guild-docs/dist/server';
+import { MDXPaths, MDXProps } from 'guild-docs/lib/server';
+
+import { getRoutes } from '../../../routes';
 
 import type { GetStaticPaths, GetStaticProps } from 'next';
-import { getRoutes } from '../../../routes';
 
 export default MDXPage(function PostPage({ content }) {
   return (

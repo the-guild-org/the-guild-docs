@@ -23,7 +23,7 @@ export interface AddRoutesConfig {
   labels?: Record<string, string | undefined>;
 }
 
-export function AddRoutes(config: AddRoutesConfig) {
+export function GenerateRoutes(config: AddRoutesConfig) {
   const { basePath, basePathLabel, folderPattern, Routes = {}, replaceBasePath = config.folderPattern, labels = {} } = config;
 
   const baseRoutes: IRoutes = basePathLabel ? ({ $name: basePathLabel } as IRoutes) : {};
@@ -40,13 +40,27 @@ export function AddRoutes(config: AddRoutesConfig) {
       replaceBasePath,
     });
 
-    let currentRoute = basePath && basePathLabel ? ((Routes._ ||= {})[basePath] ||= baseRoutes) : Routes;
+    let currentRoute = basePath ? ((Routes._ ||= {})[basePath] ||= baseRoutes) : Routes;
 
     let acumSlug = '';
     for (const [index, slug] of slugList.entries()) {
       acumSlug += slug;
       if (index === slugList.length - 1) {
-        (currentRoute.$routes ||= []).push([slug, data.title || labels[acumSlug] || slug]);
+        const currentRouteRoutes = (currentRoute.$routes ||= []);
+        const existingRouteIndex = currentRouteRoutes.findIndex(v => (Array.isArray(v) ? v[0] : v) === slug);
+        const existingRoute = currentRouteRoutes[existingRouteIndex];
+
+        // Only overwrite the titles and prevent duplication of routes
+        if (existingRoute) {
+          if (data.title || labels[acumSlug]) {
+            currentRouteRoutes[existingRouteIndex] = [
+              Array.isArray(existingRoute) ? existingRoute[0] : existingRoute,
+              data.title || labels[acumSlug],
+            ];
+          }
+        } else {
+          currentRouteRoutes.push([slug, data.title || labels[acumSlug] || slug]);
+        }
       } else {
         currentRoute = (currentRoute._ ||= {})[slug] ||= {};
 

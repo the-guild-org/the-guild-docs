@@ -1,204 +1,251 @@
-import { existsSync, promises } from 'fs';
-import { resolve, dirname } from 'path';
-
 import { config } from './cliConfig';
-import { formatPrettier } from './prettier';
-import mkdirp from 'mkdirp';
-
-export const { writeFile } = promises;
+import { writeFileFormatIfNotExists } from './writeFormat';
 
 export async function writeNextConfig() {
-  const configPath = resolve(config.cwd, 'next.config.js');
-  const configExists = existsSync(configPath);
+  await writeFileFormatIfNotExists(
+    [config.cwd, 'next.config.js'],
+    `
+  const { register } = require('esbuild-register/dist/node');
 
-  if (configExists) {
-    console.log(`"${configPath}" already exists!`);
-    return;
-  }
-
-  await writeFile(
-    configPath,
-    await formatPrettier(
-      `
-    const { register } = require("esbuild-register/dist/node");
-
-    register({
-        extensions: [".ts", ".tsx"],
-    });
-
-    const { i18n } = require("./next-i18next.config");
-
-    const { withGuildDocs } = require("guild-docs/dist/server");
-
-    const { getRoutes } = require("./routes.ts");
-
-    module.exports = withGuildDocs({
-        i18n,
-        env: {
-        SERIALIZED_MDX_ROUTES: JSON.stringify(getRoutes()),
-        },
-    })
-  `,
-      'typescript'
-    )
+  register({
+    extensions: ['.ts', '.tsx'],
+  });
+  
+  const { i18n } = require('./next-i18next.config');
+  
+  const { withGuildDocs } = require('guild-docs/lib/server');
+  
+  const { getRoutes } = require('./routes.ts');
+  
+  module.exports = withGuildDocs({
+    i18n,
+    getRoutes,
+  });      
+`,
+    'typescript'
   );
 }
 
 export async function writei18Config() {
-  const configPath = resolve(config.cwd, 'next-i18next.config.js');
-  const configExists = existsSync(configPath);
-
-  if (configExists) {
-    console.log(`"${configPath}" already exists!`);
-    return;
-  }
-
-  await writeFile(
-    configPath,
-    await formatPrettier(
-      `
-    module.exports = {
-        i18n: {
-          defaultLocale: "en",
-          locales: ["en"],
-        },
-      };
-    `,
-      'typescript'
-    )
+  await writeFileFormatIfNotExists(
+    [config.cwd, 'next-i18next.config.js'],
+    `
+  module.exports = {
+      i18n: {
+        defaultLocale: "en",
+        locales: ["en"],
+      },
+    };
+  `,
+    'typescript'
   );
 }
 
 export async function writeRoutes() {
-  const configPath = resolve(config.cwd, 'routes.ts');
-  const configExists = existsSync(configPath);
-
-  if (configExists) {
-    console.log(`"${configPath}" already exists!`);
-    return;
-  }
-
-  await writeFile(
-    configPath,
-    await formatPrettier(
-      `
-    import { IRoutes, AddRoutes } from "guild-docs/dist/server";
+  await writeFileFormatIfNotExists(
+    [config.cwd, 'routes.ts'],
+    `
+    import { IRoutes, GenerateRoutes } from 'guild-docs/lib/server';
 
     export function getRoutes(): IRoutes {
-        const Routes = AddRoutes({
-            // ...
-        });
+      const Routes: IRoutes = {
+        _: {
+          index: {
+            $name: 'Home',
+            $routes: [['index', 'Home Page']],
+          },
+        },
+      };
+      GenerateRoutes({
+        Routes,
+        folderPattern: 'docs',
+        basePath: 'docs',
+        basePathLabel: 'Documentation',
+        labels: {
+          index: 'Docs',
+        },
+      });
 
-        AddRoutes({
-            Routes,
-            // ...
-        })
-
-        return Routes;
+      return Routes;
     }
+
     `,
-      'typescript'
-    )
+
+    'typescript'
   );
 }
 
 export async function writeTranslations() {
-  const commonJSONPath = resolve(config.cwd, 'public/locales/en/common.json');
-
-  await mkdirp(dirname(commonJSONPath));
-
-  if (existsSync(commonJSONPath)) {
-    console.log(`"${commonJSONPath}" already exists!`);
-    return;
-  }
-
-  await writeFile(
-    commonJSONPath,
-    await formatPrettier(
-      `
+  await writeFileFormatIfNotExists(
+    [config.cwd, 'public/locales/en/common.json'],
+    `
   {
     "greeting": "Hello!"
   }
   
   `,
-      'json'
-    )
+    'json'
   );
 }
 
 export async function writeApp() {
-  const pagesAppPath = resolve(config.cwd, 'src/pages/_app.tsx');
-
-  await mkdirp(dirname(pagesAppPath));
-
-  if (existsSync(pagesAppPath)) {
-    console.log(`"${pagesAppPath}" already exists!`);
-    return;
-  }
-
-  await writeFile(
-    pagesAppPath,
-    await formatPrettier(
-      `
-import "remark-admonitions/styles/classic.css";
-import "remark-admonitions/styles/infima.css";
-import "prism-themes/themes/prism-dracula.css";
-
-import { appWithTranslation } from "next-i18next";
-import { ReactNode, useMemo } from "react";
-import { MDXProvider } from "@mdx-js/react"
-
-import { Box, ChakraProvider, extendTheme, Stack } from "@chakra-ui/react";
-
-import { NextNProgress, MdxInternalProps, MDXNavigation, iterateRoutes, components } from "guild-docs";
-
-import type { AppProps } from "next/app";
-
-const theme = extendTheme({
-  colors: {},
-});
-
-export function AppThemeProvider({ children }: { children: ReactNode }) {
-  return <ChakraProvider theme={theme}>{children}</ChakraProvider>;
-}
-
-const serializedMdx = process.env.SERIALIZED_MDX_ROUTES;
-const mdxRoutesData = serializedMdx && JSON.parse(serializedMdx);
-
-function App({ Component, pageProps }: AppProps) {
-  const mdxRoutes: MdxInternalProps["mdxRoutes"] | undefined = pageProps.mdxRoutes;
-  const Navigation = useMemo(() => {
-    if (!mdxRoutes) return null;
-
-    if (mdxRoutes === 1) {
-      if (!mdxRoutesData) return null;
-
-      return <MDXNavigation paths={iterateRoutes(mdxRoutesData)} />;
+  await writeFileFormatIfNotExists(
+    [config.cwd, 'src/pages/_app.tsx'],
+    `
+    import 'remark-admonitions/styles/classic.css';
+    import 'remark-admonitions/styles/infima.css';
+    import 'prism-themes/themes/prism-dracula.css';
+    
+    import { appWithTranslation } from 'next-i18next';
+    import { ReactNode, useMemo } from 'react';
+    import { MDXProvider } from '@mdx-js/react';
+    
+    import { Box, ChakraProvider, extendTheme, Stack } from '@chakra-ui/react';
+    
+    import { NextNProgress, MdxInternalProps, MDXNavigation, iterateRoutes, components, ExtendComponents } from 'guild-docs';
+    
+    import type { AppProps } from 'next/app';
+    
+    const theme = extendTheme({
+      colors: {},
+    });
+    
+    ExtendComponents({
+      HelloWorld() {
+        return <p>Hello World!</p>;
+      },
+    });
+    
+    export function AppThemeProvider({ children }: { children: ReactNode }) {
+      return <ChakraProvider theme={theme}>{children}</ChakraProvider>;
     }
-
-    return <MDXNavigation paths={iterateRoutes(mdxRoutes)} />;
-  }, [mdxRoutes]);
-  return (
-    <>
-      <NextNProgress />
-      <MDXProvider components={components}>
-        <AppThemeProvider>
-          <Stack isInline>
-           <Box maxW="280px" width="100%">
-             {Navigation}
-           </Box>
-           <Component {...pageProps} />
-          </Stack>
-        </AppThemeProvider>
-      </MDXProvider>
-    </>
+    
+    const serializedMdx = process.env.SERIALIZED_MDX_ROUTES;
+    let mdxRoutesData = serializedMdx && JSON.parse(serializedMdx);
+    
+    function App({ Component, pageProps }: AppProps) {
+      const mdxRoutes: MdxInternalProps['mdxRoutes'] | undefined = pageProps.mdxRoutes;
+      const Navigation = useMemo(() => {
+        const paths = mdxRoutes === 1 ? mdxRoutesData : (mdxRoutesData = mdxRoutes || mdxRoutesData);
+    
+        return <MDXNavigation paths={iterateRoutes(paths)} />;
+      }, [mdxRoutes]);
+      return (
+        <>
+          <NextNProgress />
+          <MDXProvider components={components}>
+            <AppThemeProvider>
+              <Stack isInline>
+                <Box maxW="280px" width="100%">
+                  {Navigation}
+                </Box>
+                <Component {...pageProps} />
+              </Stack>
+            </AppThemeProvider>
+          </MDXProvider>
+        </>
+      );
+    }
+    
+    export default appWithTranslation(App);
+        `,
+    'typescript'
   );
 }
 
-export default appWithTranslation(App);
+export async function writeDocPages() {
+  const w1 = writeFileFormatIfNotExists(
+    [config.cwd, 'src/pages/docs/[[...slug]].tsx'],
+    `
+  import { Stack } from '@chakra-ui/react';
+
+  import { MDXPage } from 'guild-docs';
+  import { MDXPaths, MDXProps } from 'guild-docs/lib/server';
+
+  import { getRoutes } from '../../../routes';
+
+  import type { GetStaticPaths, GetStaticProps } from 'next';
+
+  export default MDXPage(function PostPage({ content }) {
+    return (
+      <Stack>
+        <main>{content}</main>
+      </Stack>
+    );
+  });
+
+  export const getStaticProps: GetStaticProps = ctx => {
+    return MDXProps(
+      ({ readMarkdownFile, getArrayParam }) => {
+        return readMarkdownFile('docs/', getArrayParam('slug'));
+      },
+      ctx,
+      {
+        getRoutes,
+      }
+    );
+  };
+
+  export const getStaticPaths: GetStaticPaths = ctx => {
+    return MDXPaths('docs', { ctx });
+  };
+  `,
+    'typescript'
+  );
+
+  const w2 = writeFileFormatIfNotExists(
+    [config.cwd, 'src/pages/index.tsx'],
+    `
+  export default function Index() {
+    return <p>Welcome!</p>;
+  }
+  
+  `,
+    'typescript'
+  );
+
+  await Promise.all([w1, w2]);
+}
+
+export async function writeDocsDirectory() {
+  await writeFileFormatIfNotExists(
+    [config.cwd, 'docs/index.mdx'],
+    `
+# Index Docs Page
+
+<Translated>greeting</Translated> This is the Index of the Documentation Page!
+
+<HelloWorld />
 
   `,
-      'typescript'
-    )
+    'mdx'
+  );
+}
+
+export async function writeTSConfig() {
+  await writeFileFormatIfNotExists(
+    [config.cwd, 'tsconfig.json'],
+    `
+{
+  "compilerOptions": {
+    "target": "es2019" /* Specify ECMAScript target version: 'ES3' (default), 'ES5', 'ES2015', 'ES2016', 'ES2017', 'ES2018', 'ES2019', 'ES2020', or 'ESNEXT'. */,
+    "module": "commonjs" /* Specify module code generation: 'none', 'commonjs', 'amd', 'system', 'umd', 'es2015', 'es2020', or 'ESNext'. */,
+    "strict": true /* Enable all strict type-checking options. */,
+    "esModuleInterop": true /* Enables emit interoperability between CommonJS and ES Modules via creation of namespace objects for all imports. Implies 'allowSyntheticDefaultImports'. */,
+    "skipLibCheck": true /* Skip type checking of declaration files. */,
+    "forceConsistentCasingInFileNames": true /* Disallow inconsistently-cased references to the same file. */,
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "noEmit": true,
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve"
+  },
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "exclude": ["node_modules"]
+}
+      `,
+    'json5'
   );
 }

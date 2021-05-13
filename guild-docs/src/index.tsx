@@ -7,26 +7,25 @@ import { useRouter } from 'next/router';
 import React, { createElement, ReactElement } from 'react';
 
 import { ChevronDownIcon } from '@chakra-ui/icons';
-
 import {
-  // @ts-ignore
-  BoxProps, // @ts-ignore
-  ButtonProps, // @ts-ignore
-  Box, // @ts-ignore
-  Button, // @ts-ignore
-  Code, // @ts-ignore
-  CodeProps, // @ts-ignore
-  Collapse, // @ts-ignore
-  Divider, // @ts-ignore
-  Heading, // @ts-ignore
-  HeadingProps, // @ts-ignore
-  Kbd, // @ts-ignore
-  Link as ChakraLink, // @ts-ignore
-  LinkProps, // @ts-ignore
-  Stack, // @ts-ignore
-  Text, // @ts-ignore
-  TextProps, // @ts-ignore
-  useColorModeValue, // @ts-ignore
+  Box,
+  BoxProps,
+  Button,
+  ButtonProps,
+  Code,
+  CodeProps,
+  Collapse,
+  Divider,
+  Heading,
+  HeadingProps,
+  Kbd,
+  Link as ChakraLink,
+  LinkProps,
+  Stack,
+  StackProps,
+  Text,
+  TextProps,
+  useColorModeValue,
   useDisclosure,
 } from '@chakra-ui/react';
 
@@ -208,6 +207,12 @@ export const components = {
   inlineCode: (props: CodeProps) => <Code colorScheme="yellow" fontSize="0.84em" {...props} />,
 };
 
+export function ExtendComponents<TComponents extends Record<string, (props: Record<string, unknown>) => ReactNode>>(
+  extension: Partial<typeof components> & TComponents
+) {
+  Object.assign(components, extension);
+}
+
 export function arePathnamesEqual(a: string, b: string) {
   if (a.endsWith('/') && b.endsWith('/')) return a === b;
   else if (a.endsWith('/')) return a.slice(0, a.length - 1) === b;
@@ -219,10 +224,14 @@ function NavigationItem({
   item: { href, name, paths, isPage },
   acumHref,
   depth,
+  buttonProps = {},
+  stackProps = {},
 }: {
   item: Paths;
   acumHref: string;
   depth: number;
+  buttonProps?: ButtonProps;
+  stackProps?: StackProps;
 }) {
   const finalHref = (acumHref !== '/' ? acumHref + '/' : acumHref) + (href === 'index' ? '' : href);
 
@@ -270,6 +279,7 @@ function NavigationItem({
         alignItems="center"
         marginY="2px"
         paddingX={`${depth + 1}em`}
+        {...buttonProps}
       >
         <span>{name || href}</span>
         {paths?.length ? (
@@ -279,21 +289,39 @@ function NavigationItem({
 
       {paths?.length ? (
         <Collapse in={isOpen} unmountOnExit>
-          <MDXNavigation paths={paths} acumHref={finalHref} depth={depth + 1} />
+          <MDXNavigation
+            paths={paths}
+            acumHref={finalHref}
+            depth={depth + 1}
+            stackProps={stackProps}
+            navigationButtonProps={buttonProps}
+          />
         </Collapse>
       ) : null}
     </>
   );
 }
 
-export function MDXNavigation({ paths, acumHref = '', depth = 0 }: { paths: Paths[]; acumHref?: string; depth?: number }) {
+export function MDXNavigation({
+  paths,
+  acumHref = '',
+  depth = 0,
+  stackProps = {},
+  navigationButtonProps = {},
+}: {
+  paths: Paths[];
+  acumHref?: string;
+  depth?: number;
+  stackProps?: StackProps;
+  navigationButtonProps?: ButtonProps;
+}) {
   const Component = paths.map((item, index) => {
-    return <NavigationItem key={index} item={item} acumHref={acumHref} depth={depth} />;
+    return <NavigationItem key={index} item={item} acumHref={acumHref} depth={depth} buttonProps={navigationButtonProps} />;
   });
 
   if (depth === 0) {
     return (
-      <Stack width="280px" spacing="0">
+      <Stack width="280px" spacing="0" {...stackProps}>
         {Component}
       </Stack>
     );

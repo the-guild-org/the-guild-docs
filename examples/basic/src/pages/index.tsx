@@ -1,3 +1,3 @@
 export default function Index() {
-  return <p>hello world</p>;
+  return <p>Welcome!</p>;
 }

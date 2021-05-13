@@ -1,19 +1,22 @@
-import { IRoutes, AddRoutes } from 'guild-docs/dist/server';
+import { IRoutes, GenerateRoutes } from 'guild-docs/lib/server';
 
 export function getRoutes(): IRoutes {
   const Routes: IRoutes = {
     _: {
       index: {
         $name: 'Home',
-        $routes: ['index'],
+        $routes: [['index', 'Home Page']],
       },
     },
-    $routes: ['XDXD'],
   };
-  AddRoutes({
+  GenerateRoutes({
     Routes,
     folderPattern: 'docs',
     basePath: 'docs',
+    basePathLabel: 'Documentation',
+    labels: {
+      index: 'Docs',
+    },
   });
 
   return Routes;
