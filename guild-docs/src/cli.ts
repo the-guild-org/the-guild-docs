@@ -34,14 +34,25 @@ async function DepsAction(dir: string = process.cwd()) {
       'next-i18next',
     ]),
     addDependency(
-      ['esbuild', '@types/node', '@types/react', '@types/react-dom', 'typescript', 'concurrently', '@types/concurrently', 'tsup'],
+      [
+        'esbuild',
+        '@types/node',
+        '@types/react',
+        '@types/react-dom',
+        'typescript',
+        'concurrently',
+        '@types/concurrently',
+        'tsup',
+        'open-cli',
+        'wait-on',
+      ],
       {
         isDev: true,
       }
     ),
     addPackageScripts({
       build: 'next build',
-      dev: 'next',
+      dev: 'concurrently -r next "wait-on -s 1 http://localhost:3000 && open-cli http://localhost:3000"',
       next: 'next',
       start: 'next start',
     }),
