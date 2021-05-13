@@ -31,7 +31,7 @@ importers:
       concurrently: ^6.1.0
       esbuild: ^0.11.20
       framer-motion: ^4.1.16
-      guild-docs: workspace:^0.0.1
+      guild-docs: workspace:^
       next: ^10.2.0
       next-i18next: ^8.2.0
       open-cli: ^6.0.1

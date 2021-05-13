@@ -16,7 +16,7 @@
     "@emotion/react": "^11.4.0",
     "@emotion/styled": "^11.3.0",
     "framer-motion": "^4.1.16",
-    "guild-docs": "workspace:^0.0.1",
+    "guild-docs": "workspace:^",
     "next": "^10.2.0",
     "next-i18next": "^8.2.0",
     "prism-themes": "^1.7.0",

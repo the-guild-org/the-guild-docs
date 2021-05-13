@@ -40,7 +40,7 @@ var require_package = __commonJS({
   "package.json"(exports2, module2) {
     module2.exports = {
       name: "guild-docs",
-      version: "0.0.1",
+      version: "0.0.2",
       license: "MIT",
       author: "PabloSzx <pablosaez1995@gmail.com>",
       main: "lib/index.js",
