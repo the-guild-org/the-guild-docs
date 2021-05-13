@@ -18,7 +18,8 @@
     "jsxFragmentFactory": "React.Fragment",
     "importsNotUsedAsValues": "error",
     "rootDir": "src",
-    "outDir": "lib"
+    "outDir": "lib",
+    "alwaysStrict": true
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules", "lib"]
