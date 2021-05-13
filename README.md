@@ -36,7 +36,9 @@ By default the **_"init"_** command creates a "docs" folder, where you can use [
 
 The MDX implementation we use has a single inconvenience/tradeoff, which is that it's **NOT** possible to use imports inside the MDX files. [Here you can read](https://github.com/hashicorp/next-mdx-remote#import--export) a short description of the reason why this happens.
 
-But you can define _Custom Components_ to be used inside the MDX in the **app.tsx** file, using the helper "ExtendComponents" function:
+But you can define _Custom Components_ to be used inside the MDX in the **app.tsx** file, using the included helper "ExtendComponents" function:
+
+> Already added in the default `_app.tsx` file
 
 ```ts
 import { ExtendComponents } from 'guild-docs';
@@ -63,7 +65,7 @@ And then use them in your files:
 
 By default in initialization a `routes.ts` file is created as it follows:
 
-`IRoutes` is a recursive object designed to make and customize the routes, with a special `GenerateRoutes` functions that read from a folder pattern(s) ([using minimatch patterns](https://globster.xyz/)) with [globby](https://github.com/sindresorhus/globby).
+> `IRoutes` is a recursive object type designed to make and customize the routes, with a special `GenerateRoutes` helper function that reads from a folder pattern(s) ([using minimatch patterns](https://globster.xyz/)) with [globby](https://github.com/sindresorhus/globby).
 
 ```ts
 import { IRoutes, GenerateRoutes } from 'guild-docs/lib/server';
