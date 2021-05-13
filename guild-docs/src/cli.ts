@@ -38,6 +38,7 @@ async function DepsAction(dir: string = process.cwd()) {
     addDependency(
       [
         'esbuild',
+        'esbuild-register',
         '@types/node',
         '@types/react',
         '@types/react-dom',

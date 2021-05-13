@@ -40,7 +40,7 @@ var require_package = __commonJS({
   "package.json"(exports2, module2) {
     module2.exports = {
       name: "guild-docs",
-      version: "0.0.2",
+      version: "0.0.3",
       license: "MIT",
       author: "PabloSzx <pablosaez1995@gmail.com>",
       main: "lib/index.js",
@@ -437,6 +437,7 @@ async function DepsAction(dir = process.cwd()) {
     ]),
     addDependency([
       "esbuild",
+      "esbuild-register",
       "@types/node",
       "@types/react",
       "@types/react-dom",
