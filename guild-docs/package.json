@@ -3,10 +3,6 @@
   "version": "0.0.1",
   "license": "MIT",
   "author": "PabloSzx <pablosaez1995@gmail.com>",
-  "exports": {
-    "import": "./dist/index.mjs",
-    "require": "./dist/index.js"
-  },
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
@@ -14,29 +10,68 @@
     "guild-docs": "./dist/cli.js"
   },
   "scripts": {
-    "build": "concurrently npm:build:*",
-    "build:cli": "tsup-node src/cli.ts",
-    "build:main": "tsup-node src/index.ts --dts --format cjs,esm",
+    "build": "tsup-node --silent src/index.tsx src/server.ts --dts --format cjs,esm --clean && tsup-node --silent src/cli.ts",
+    "dev": "tsup-node src/cli.ts --watch --onSuccess \"pnpm dev:start\"",
+    "dev:start": "node dist/cli.js deps ../examples/basic",
     "prepare": "concurrently -r npm:build"
   },
   "dependencies": {
+    "@chakra-ui/react": "1.6.1",
+    "@emotion/react": "11.4.0",
+    "@mdx-js/loader": "^1.6.22",
+    "@mdx-js/react": "^1.6.22",
+    "@next/mdx": "^10.2.0",
     "commander": "^7.2.0",
     "concurrently": "^6.1.0",
-    "cross-env": "^7.0.3"
+    "cross-env": "^7.0.3",
+    "edit-json-file": "^1.6.0",
+    "globby": "^11.0.3",
+    "gray-matter": "^4.0.3",
+    "lodash": "^4.17.21",
+    "mkdirp": "^1.0.4",
+    "next-mdx-remote": "^3.0.1",
+    "npm-api": "^1.0.1",
+    "nprogress": "^0.2.0",
+    "prettier": "^2.3.0",
+    "prism-themes": "^1.7.0",
+    "prismjs": "^1.23.0",
+    "remark-admonitions": "^1.2.1",
+    "remark-prism": "^1.3.6"
   },
   "devDependencies": {
+    "@chakra-ui/icons": "^1.0.13",
+    "@emotion/styled": "^11.3.0",
     "@types/concurrently": "^6.0.1",
+    "@types/edit-json-file": "^1.4.0",
+    "@types/lodash": "^4.14.169",
+    "@types/mdx-js__react": "^1.5.3",
+    "@types/mkdirp": "^1.0.1",
     "@types/node": "^15.0.2",
+    "@types/nprogress": "^0.2.0",
+    "@types/prettier": "^2.2.3",
+    "@types/prismjs": "^1.16.5",
     "@types/react": "^17.0.5",
     "@types/react-dom": "^17.0.3",
+    "esbuild": "^0.11.20",
+    "esbuild-register": "^2.5.0",
+    "framer-motion": "^4.1.16",
     "next": "^10.2.0",
+    "next-i18next": "^8.2.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "tsup": "^4.10.1",
     "typescript": "^4.2.4"
   },
   "peerDependencies": {
-    "next": "^10.2.0"
+    "@chakra-ui/icons": "^1.0.13",
+    "@chakra-ui/react": "^1.6.1",
+    "@emotion/react": "^11.4.0",
+    "@emotion/styled": "^11.3.0",
+    "esbuild": "^0.11.20",
+    "esbuild-register": "^2.5.0",
+    "framer-motion": "^4.1.11",
+    "next": "^10.2.0",
+    "next-i18next": "^8.2.0"
   },
   "peerDependenciesMeta": {
     "next": {
