@@ -30,7 +30,7 @@ import {
 } from '@chakra-ui/react';
 
 import type { ReactNode } from 'react';
-import type { MdxPageProps, Paths, MdxInternalProps, IRoutes } from './types';
+import type { MdxPageProps, Paths, MdxInternalProps, IRoutes } from '@guild-docs/types';
 
 export function Translated({ children, name }: { children?: ReactNode; name?: string }): ReactNode {
   const { t } = useTranslation('common');
@@ -383,4 +383,4 @@ export function iterateRoutes(routes: IRoutes, paths: Paths[] = []): Paths[] {
   return paths;
 }
 
-export * from './types';
+export * from '@guild-docs/types';

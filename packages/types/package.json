@@ -1,0 +1,22 @@
+{
+  "name": "@guild-docs/types",
+  "version": "0.0.1",
+  "license": "MIT",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "scripts": {
+    "prepare": "tsc"
+  },
+  "devDependencies": {
+    "@types/node": "^15.0.3",
+    "@types/react": "^17.0.5",
+    "next-i18next": "^8.2.0",
+    "next-mdx-remote": "^3.0.1",
+    "typescript": "^4.2.4"
+  },
+  "peerDependencies": {
+    "@types/react": "^17.0.5",
+    "next-i18next": "^8.2.0",
+    "next-mdx-remote": "^3.0.1"
+  }
+}

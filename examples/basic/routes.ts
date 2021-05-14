@@ -1,4 +1,4 @@
-import { IRoutes, GenerateRoutes } from 'guild-docs/lib/server';
+import { IRoutes, GenerateRoutes } from '@guild-docs/server';
 
 export function getRoutes(): IRoutes {
   const Routes: IRoutes = {

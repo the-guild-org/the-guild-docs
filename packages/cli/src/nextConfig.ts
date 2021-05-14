@@ -13,7 +13,7 @@ export async function writeNextConfig() {
   
   const { i18n } = require('./next-i18next.config');
   
-  const { withGuildDocs } = require('guild-docs/lib/server');
+  const { withGuildDocs } = require('@guild-docs/server');
   
   const { getRoutes } = require('./routes.ts');
   
@@ -45,7 +45,7 @@ export async function writeRoutes() {
   await writeFileFormatIfNotExists(
     [config.cwd, 'routes.ts'],
     `
-    import { IRoutes, GenerateRoutes } from 'guild-docs/lib/server';
+    import { IRoutes, GenerateRoutes } from '@guild-docs/server';
 
     export function getRoutes(): IRoutes {
       const Routes: IRoutes = {
@@ -102,7 +102,7 @@ export async function writeApp() {
     
     import { Box, ChakraProvider, extendTheme, Stack } from '@chakra-ui/react';
     
-    import { NextNProgress, MdxInternalProps, MDXNavigation, iterateRoutes, components, ExtendComponents } from 'guild-docs';
+    import { NextNProgress, MdxInternalProps, MDXNavigation, iterateRoutes, components, ExtendComponents } from '@guild-docs/client';
     
     import type { AppProps } from 'next/app';
     
@@ -159,8 +159,8 @@ export async function writeDocPages() {
     `
   import { Stack } from '@chakra-ui/react';
 
-  import { MDXPage } from 'guild-docs';
-  import { MDXPaths, MDXProps } from 'guild-docs/lib/server';
+  import { MDXPage } from '@guild-docs/client';
+  import { MDXPaths, MDXProps } from '@guild-docs/server';
 
   import { getRoutes } from '../../../routes';
 

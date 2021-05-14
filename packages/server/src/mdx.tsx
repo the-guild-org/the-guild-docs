@@ -7,11 +7,11 @@ import { serialize } from 'next-mdx-remote/serialize';
 import { join, resolve } from 'path';
 import * as React from 'react';
 
-import { IS_PRODUCTION } from '../constants';
+import { IS_PRODUCTION } from './constants';
 import { getSlug } from './routes';
 
 import type { GetStaticPathsContext, GetStaticPropsContext, GetStaticPropsResult } from 'next';
-import type { IRoutes, MdxInternalProps } from '../types';
+import type { IRoutes, MdxInternalProps } from '@guild-docs/types';
 
 const Provideri18n = appWithTranslation(({ children }) => <React.Fragment children={children} />);
 

@@ -1,7 +1,7 @@
 import { Stack } from '@chakra-ui/react';
 
-import { MDXPage } from 'guild-docs';
-import { MDXPaths, MDXProps } from 'guild-docs/lib/server';
+import { MDXPage } from '@guild-docs/client';
+import { MDXPaths, MDXProps } from '@guild-docs/server';
 
 import { getRoutes } from '../../../routes';
 

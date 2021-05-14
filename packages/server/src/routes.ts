@@ -2,7 +2,7 @@ import { readFileSync } from 'fs';
 import globby from 'globby';
 import matter from 'gray-matter';
 
-import type { IRoutes } from '../types';
+import type { IRoutes } from '@guild-docs/types';
 
 export function getSlug({ path, replaceBasePath }: { path: string; replaceBasePath?: string }) {
   let slugPath = path.replace(/\.mdx?$/, '');

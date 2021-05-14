@@ -35,7 +35,7 @@ But you can define _Custom Components_ to be used inside the MDX in the **app.ts
 > Already added in the default `_app.tsx` file
 
 ```ts
-import { ExtendComponents } from 'guild-docs';
+import { ExtendComponents } from '@guild-docs/client';
 
 // ...
 ExtendComponents({
@@ -62,7 +62,7 @@ By default in initialization a `routes.ts` file is created as it follows:
 > `IRoutes` is a recursive object type designed to make and customize the routes, with a special `GenerateRoutes` helper function that reads from a folder pattern(s) ([using minimatch patterns](https://globster.xyz/)) with [globby](https://github.com/sindresorhus/globby).
 
 ```ts
-import { IRoutes, GenerateRoutes } from 'guild-docs/lib/server';
+import { IRoutes, GenerateRoutes } from '@guild-docs/server';
 
 export function getRoutes(): IRoutes {
   const Routes: IRoutes = {

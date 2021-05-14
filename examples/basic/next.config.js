@@ -6,7 +6,7 @@ register({
 
 const { i18n } = require('./next-i18next.config');
 
-const { withGuildDocs } = require('guild-docs/lib/server');
+const { withGuildDocs } = require('@guild-docs/server');
 
 const { getRoutes } = require('./routes.ts');
 

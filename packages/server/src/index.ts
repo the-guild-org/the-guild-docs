@@ -1,4 +1,4 @@
-import type { IRoutes } from './types';
+import type { IRoutes } from '@guild-docs/types';
 
 export interface WithGuildDocsOptions extends Record<string, unknown> {
   env?: Record<string, string>;
@@ -9,7 +9,7 @@ export interface WithGuildDocsOptions extends Record<string, unknown> {
   };
 }
 
-export * from './types';
+export * from '@guild-docs/types';
 
 export function withGuildDocs({ env = {}, getRoutes, ...rest }: WithGuildDocsOptions) {
   return {
@@ -24,5 +24,5 @@ export function withGuildDocs({ env = {}, getRoutes, ...rest }: WithGuildDocsOpt
   };
 }
 
-export * from './server/routes';
-export * from './server/mdx';
+export * from './routes';
+export * from './mdx';

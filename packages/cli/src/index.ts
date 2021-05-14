@@ -1,9 +1,10 @@
 #!/usr/bin/env node
 
 import { program } from 'commander';
+import { resolve } from 'path';
 
-import { getPaths, setConfig } from './cli/cliConfig';
-import { addDependency, addPackageScripts } from './cli/editPackageJson';
+import { getPaths, setConfig } from './cliConfig';
+import { addDependency, addPackageScripts } from './editPackageJson';
 import {
   writeApp,
   writeDocPages,
@@ -13,16 +14,18 @@ import {
   writeRoutes,
   writeTranslations,
   writeTSConfig,
-} from './cli/nextConfig';
+} from './nextConfig';
 
-program.version(require('../package.json').version).description('Guild Docs CLI');
+program.version(require(resolve(__dirname, '../package.json')).version).description('Guild Docs CLI');
 
 async function DepsAction(dir: string = process.cwd()) {
   setConfig(getPaths(dir));
 
   await Promise.all([
     addDependency([
-      'guild-docs',
+      '@guild-docs/client',
+      '@guild-docs/server',
+      '@mdx-js/react',
       '@chakra-ui/react',
       '@chakra-ui/icons',
       '@emotion/react',
@@ -30,6 +33,7 @@ async function DepsAction(dir: string = process.cwd()) {
       'framer-motion',
       'next',
       'remark-admonitions',
+      'remark-prism',
       'prism-themes',
       'next-i18next',
       'react',

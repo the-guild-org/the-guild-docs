@@ -1,0 +1,64 @@
+{
+  "name": "@guild-docs/client",
+  "version": "0.0.1",
+  "license": "MIT",
+  "author": "PabloSzx <pablosaez1995@gmail.com>",
+  "exports": {
+    ".": {
+      "require": "./dist/cjs/index.js",
+      "import": "./dist/esm/index.js"
+    },
+    "./*": {
+      "import": "./dist/esm/*.js",
+      "require": "./dist/cjs/*.js"
+    }
+  },
+  "main": "dist/cjs/index.js",
+  "types": "dist/types/index.d.ts",
+  "scripts": {
+    "prepare": "tsc-node-build"
+  },
+  "dependencies": {
+    "@guild-docs/types": "workspace:^0.0.1",
+    "next-i18next": "^8.2.0",
+    "next-mdx-remote": "^3.0.1",
+    "nprogress": "^0.2.0"
+  },
+  "devDependencies": {
+    "@chakra-ui/icons": "^1.0.13",
+    "@chakra-ui/react": "^1.6.1",
+    "@emotion/react": "^11.4.0",
+    "@mdx-js/react": "^1.6.22",
+    "@types/mdx-js__react": "^1.5.3",
+    "@types/nprogress": "^0.2.0",
+    "@types/react": "^17.0.5",
+    "@types/react-dom": "^17.0.5",
+    "esbuild": "^0.11.20",
+    "framer-motion": "^4.1.16",
+    "next": "^10.2.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "tsc-node-build": "^3.1.3",
+    "tsup": "^4.10.1",
+    "typescript": "^4.2.4"
+  },
+  "peerDependencies": {
+    "@chakra-ui/icons": "^1.0.13",
+    "@chakra-ui/react": "^1.6.1",
+    "@emotion/react": "^11.4.0",
+    "@mdx-js/react": "^1.6.22",
+    "@types/mdx-js__react": "^1.5.3",
+    "framer-motion": "^4.1.16",
+    "next": "^10.2.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "peerDependenciesMeta": {
+    "react": {
+      "optional": true
+    },
+    "react-dom": {
+      "optional": true
+    }
+  }
+}

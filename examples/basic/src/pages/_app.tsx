@@ -8,7 +8,7 @@ import { MDXProvider } from '@mdx-js/react';
 
 import { Box, ChakraProvider, extendTheme, Stack } from '@chakra-ui/react';
 
-import { NextNProgress, MdxInternalProps, MDXNavigation, iterateRoutes, components, ExtendComponents } from 'guild-docs';
+import { NextNProgress, MdxInternalProps, MDXNavigation, iterateRoutes, components, ExtendComponents } from '@guild-docs/client';
 
 import type { AppProps } from 'next/app';
 
