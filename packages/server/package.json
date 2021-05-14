@@ -1,11 +1,14 @@
 {
   "name": "@guild-docs/server",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "license": "MIT",
   "author": "PabloSzx <pablosaez1995@gmail.com>",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "dev": "tsup-node src/index.ts --watch",
     "prepare": "tsup-node src/index.ts --silent --dts --format esm,cjs"

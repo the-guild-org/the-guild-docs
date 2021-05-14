@@ -1,6 +1,6 @@
 {
   "name": "@guild-docs/client",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "license": "MIT",
   "author": "PabloSzx <pablosaez1995@gmail.com>",
   "exports": {
@@ -15,6 +15,9 @@
   },
   "main": "dist/cjs/index.js",
   "types": "dist/types/index.d.ts",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "prepare": "tsc-node-build"
   },

@@ -2,6 +2,7 @@ import React, { useEffect, memo } from 'react';
 import NProgress from 'nprogress';
 import { useRouter } from 'next/router';
 import { Global, css } from '@emotion/react';
+
 let startTimer: ReturnType<typeof setTimeout> | null = null;
 let stopTimer: ReturnType<typeof setTimeout> | null = null;
 

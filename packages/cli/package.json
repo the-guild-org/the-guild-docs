@@ -1,11 +1,14 @@
 {
   "name": "guild-docs",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "license": "MIT",
   "author": "PabloSzx <pablosaez1995@gmail.com>",
   "bin": {
     "guild-docs": "bin/index.js"
   },
+  "files": [
+    "bin"
+  ],
   "scripts": {
     "build": "tsup --no-splitting -d bin --silent src/index.ts",
     "dev": "tsup src/index.ts -d bin --watch --onSuccess \"pnpm dev-start\"",

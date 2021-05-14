@@ -1,9 +1,12 @@
 {
   "name": "@guild-docs/types",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "license": "MIT",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
+  "files": [
+    "lib"
+  ],
   "scripts": {
     "prepare": "tsc"
   },
