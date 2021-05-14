@@ -173,6 +173,8 @@ const td = (props: BoxProps) => (
   <Box as="td" p={2} borderTopWidth="1px" borderColor="inherit" fontSize="sm" whiteSpace="normal" {...props} />
 );
 
+const a = (props: LinkProps) => <ChakraLink fontWeight="bold" color="blue.600" {...props} />;
+
 export const components = {
   Image,
   h1,
@@ -188,7 +190,7 @@ export const components = {
   th,
   td,
   kbd: Kbd,
-  a: ChakraLink,
+  a,
   Link,
   ButtonLink,
   Button,
