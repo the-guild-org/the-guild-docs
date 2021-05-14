@@ -40,7 +40,7 @@ var require_package = __commonJS({
   "package.json"(exports2, module2) {
     module2.exports = {
       name: "guild-docs",
-      version: "0.0.4",
+      version: "0.0.5",
       license: "MIT",
       author: "PabloSzx <pablosaez1995@gmail.com>",
       main: "lib/index.js",
@@ -441,6 +441,7 @@ async function DepsAction(dir = process.cwd()) {
       "@types/node",
       "@types/react",
       "@types/react-dom",
+      "@types/mdx-js__react",
       "typescript",
       "concurrently",
       "@types/concurrently",
