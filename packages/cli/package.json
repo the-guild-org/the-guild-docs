@@ -18,11 +18,11 @@
   "devDependencies": {
     "@types/edit-json-file": "^1.4.0",
     "@types/mkdirp": "^1.0.1",
-    "@types/node": "^15.0.3",
+    "@types/node": "^15.3.0",
     "@types/prettier": "^2.2.3",
     "commander": "^7.2.0",
     "edit-json-file": "^1.6.0",
-    "esbuild": "^0.11.20",
+    "esbuild": "^0.11.22",
     "mkdirp": "^1.0.4",
     "npm-api": "^1.0.1",
     "prettier": "^2.3.0",

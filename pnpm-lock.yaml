@@ -4,14 +4,14 @@ importers:
 
   .:
     specifiers:
-      '@types/node': ^15.0.3
+      '@types/node': ^15.3.0
       husky: ^6.0.0
       next: ^10.2.0
       prettier: ^2.3.0
       pretty-quick: ^3.1.0
       typescript: ^4.2.4
     dependencies:
-      '@types/node': 15.0.3
+      '@types/node': 15.3.0
       husky: 6.0.0
       next: 10.2.0_typescript@4.2.4
       prettier: 2.3.0
@@ -24,19 +24,19 @@ importers:
       '@chakra-ui/react': ^1.6.1
       '@emotion/react': ^11.4.0
       '@emotion/styled': ^11.3.0
-      '@guild-docs/client': workspace:^0.0.1
-      '@guild-docs/server': workspace:^0.0.1
+      '@guild-docs/client': workspace:^0.0.6
+      '@guild-docs/server': workspace:^0.0.2
       '@mdx-js/react': ^1.6.22
       '@types/concurrently': ^6.0.1
-      '@types/mdx-js__react': latest
-      '@types/node': ^15.0.3
+      '@types/mdx-js__react': ^1.5.3
+      '@types/node': ^15.3.0
       '@types/react': ^17.0.5
       '@types/react-dom': ^17.0.5
       concurrently: ^6.1.0
-      esbuild: ^0.11.20
+      esbuild: ^0.11.22
       esbuild-register: ^2.5.0
       framer-motion: ^4.1.16
-      guild-docs: workspace:^
+      guild-docs: workspace:^0.0.9
       next: ^10.2.0
       next-i18next: ^8.2.0
       open-cli: ^6.0.1
@@ -68,11 +68,11 @@ importers:
     devDependencies:
       '@types/concurrently': 6.0.1
       '@types/mdx-js__react': 1.5.3
-      '@types/node': 15.0.3
+      '@types/node': 15.3.0
       '@types/react': 17.0.5
       '@types/react-dom': 17.0.5
       concurrently: 6.1.0
-      esbuild: 0.11.20
+      esbuild: 0.11.22
       esbuild-register: 2.5.0
       open-cli: 6.0.1
       tsup: 4.10.1_typescript@4.2.4
@@ -83,11 +83,11 @@ importers:
     specifiers:
       '@types/edit-json-file': ^1.4.0
       '@types/mkdirp': ^1.0.1
-      '@types/node': ^15.0.3
+      '@types/node': ^15.3.0
       '@types/prettier': ^2.2.3
       commander: ^7.2.0
       edit-json-file: ^1.6.0
-      esbuild: ^0.11.20
+      esbuild: ^0.11.22
       mkdirp: ^1.0.4
       npm-api: ^1.0.1
       prettier: ^2.3.0
@@ -95,11 +95,11 @@ importers:
     devDependencies:
       '@types/edit-json-file': 1.4.0
       '@types/mkdirp': 1.0.1
-      '@types/node': 15.0.3
+      '@types/node': 15.3.0
       '@types/prettier': 2.2.3
       commander: 7.2.0
       edit-json-file: 1.6.0
-      esbuild: 0.11.20
+      esbuild: 0.11.22
       mkdirp: 1.0.4
       npm-api: 1.0.1
       prettier: 2.3.0
@@ -110,13 +110,13 @@ importers:
       '@chakra-ui/icons': ^1.0.13
       '@chakra-ui/react': ^1.6.1
       '@emotion/react': ^11.4.0
-      '@guild-docs/types': workspace:^0.0.1
+      '@guild-docs/types': workspace:^0.0.2
       '@mdx-js/react': ^1.6.22
       '@types/mdx-js__react': ^1.5.3
       '@types/nprogress': ^0.2.0
       '@types/react': ^17.0.5
       '@types/react-dom': ^17.0.5
-      esbuild: ^0.11.20
+      esbuild: ^0.11.22
       framer-motion: ^4.1.16
       next: ^10.2.0
       next-i18next: ^8.2.0
@@ -141,7 +141,7 @@ importers:
       '@types/nprogress': 0.2.0
       '@types/react': 17.0.5
       '@types/react-dom': 17.0.5
-      esbuild: 0.11.20
+      esbuild: 0.11.22
       framer-motion: 4.1.16_react-dom@17.0.2+react@17.0.2
       next: 10.2.0_507781d099a67956587e23f5ac79078b
       react: 17.0.2
@@ -152,8 +152,8 @@ importers:
 
   packages/server:
     specifiers:
-      '@guild-docs/types': workspace:^0.0.1
-      esbuild: ^0.11.20
+      '@guild-docs/types': workspace:^0.0.2
+      esbuild: ^0.11.22
       globby: ^11.0.3
       gray-matter: ^4.0.3
       next: ^10.2.0
@@ -169,7 +169,7 @@ importers:
       gray-matter: 4.0.3
       next-mdx-remote: 3.0.1_react-dom@17.0.2+react@17.0.2
     devDependencies:
-      esbuild: 0.11.20
+      esbuild: 0.11.22
       next: 10.2.0_react-dom@17.0.2+react@17.0.2
       next-i18next: 8.2.0_next@10.2.0+react@17.0.2
       react: 17.0.2
@@ -179,13 +179,13 @@ importers:
 
   packages/types:
     specifiers:
-      '@types/node': ^15.0.3
+      '@types/node': ^15.3.0
       '@types/react': ^17.0.5
       next-i18next: ^8.2.0
       next-mdx-remote: ^3.0.1
       typescript: ^4.2.4
     devDependencies:
-      '@types/node': 15.0.3
+      '@types/node': 15.3.0
       '@types/react': 17.0.5
       next-i18next: 8.2.0
       next-mdx-remote: 3.0.1
@@ -1543,7 +1543,7 @@ packages:
   /@types/concurrently/6.0.1:
     resolution: {integrity: sha512-44I9tMSrgX7g39Ie7V/8N0OWG6696UtzPlv2ROsnQWyfyRVUp2Ue8ewxZkHopmX4Zyj6hiPgY1r14FqHsgfO4Q==}
     dependencies:
-      '@types/node': 15.0.3
+      '@types/node': 15.3.0
     dev: true
 
   /@types/debug/4.1.5:
@@ -1553,7 +1553,7 @@ packages:
   /@types/edit-json-file/1.4.0:
     resolution: {integrity: sha512-7wNUSBgizVbb86WLcs8q3neK9ba/sb2IYSkg0VeICE7hETBRTGUPTcgBelmCdMi0Vhp6rbQRhFiwuJXRkEm4Ug==}
     dependencies:
-      '@types/node': 15.0.3
+      '@types/node': 15.3.0
     dev: true
 
   /@types/hast/2.3.1:
@@ -1602,11 +1602,11 @@ packages:
   /@types/mkdirp/1.0.1:
     resolution: {integrity: sha512-HkGSK7CGAXncr8Qn/0VqNtExEE+PHMWb+qlR1faHMao7ng6P3tAaoWWBMdva0gL5h4zprjIO89GJOLXsMcDm1Q==}
     dependencies:
-      '@types/node': 15.0.3
+      '@types/node': 15.3.0
     dev: true
 
-  /@types/node/15.0.3:
-    resolution: {integrity: sha512-/WbxFeBU+0F79z9RdEOXH4CsDga+ibi5M8uEYr91u3CkT/pdWcV8MCook+4wDPnZBexRdwWS+PiVZ2xJviAzcQ==}
+  /@types/node/15.3.0:
+    resolution: {integrity: sha512-8/bnjSZD86ZfpBsDlCIkNXIvm+h6wi9g7IqL+kmFkQ+Wvu3JrasgLElfiPgoo8V8vVfnEi0QVS12gbl94h9YsQ==}
 
   /@types/normalize-package-data/2.4.0:
     resolution: {integrity: sha512-f5j5b/Gf71L+dbqxIpQ4Z2WlmI/mPJ0fOkGGmFgtb6sAu97EPczzbS3/tJKxmcYDj55OX6ssqwDAWOHIYDRDGA==}
@@ -1941,9 +1941,9 @@ packages:
     dependencies:
       caniuse-lite: 1.0.30001228
       colorette: 1.2.2
-      electron-to-chromium: 1.3.727
+      electron-to-chromium: 1.3.728
       escalade: 3.1.1
-      node-releases: 1.1.71
+      node-releases: 1.1.72
 
   /buffer-xor/1.0.3:
     resolution: {integrity: sha1-JuYe0UIvtw3ULm42cp7VHYVf6Nk=}
@@ -2449,8 +2449,8 @@ packages:
       w-json: 1.3.10
     dev: true
 
-  /electron-to-chromium/1.3.727:
-    resolution: {integrity: sha512-Mfz4FIB4FSvEwBpDfdipRIrwd6uo8gUDoRDF4QEYb4h4tSuI3ov594OrjU6on042UlFHouIJpClDODGkPcBSbg==}
+  /electron-to-chromium/1.3.728:
+    resolution: {integrity: sha512-SHv4ziXruBpb1Nz4aTuqEHBYi/9GNCJMYIJgDEXrp/2V01nFXMNFUTli5Z85f5ivSkioLilQatqBYFB44wNJrA==}
 
   /elliptic/6.5.4:
     resolution: {integrity: sha512-iLhC6ULemrljPZb+QutR5TQGB+pdW6KGD5RSegS+8sorOZT+rdQFbsQFJgvN3eRqNALqJer4oQ16YvJHlU8hzQ==}
@@ -2522,12 +2522,12 @@ packages:
   /esbuild-register/2.5.0:
     resolution: {integrity: sha512-5a8W3rH7IQbIPR9pPXJFkC3+CRMtm/OSpBz3hkWUUU63oPZ3NU6dVDGfaIjKnRizCTIRoGjNE6KEDt5p1sLwEw==}
     dependencies:
-      esbuild: 0.11.20
+      esbuild: 0.11.22
       jsonc-parser: 3.0.0
     dev: true
 
-  /esbuild/0.11.20:
-    resolution: {integrity: sha512-QOZrVpN/Yz74xfat0H6euSgn3RnwLevY1mJTEXneukz1ln9qB+ieaerRMzSeETpz/UJWsBMzRVR/andBht5WKw==}
+  /esbuild/0.11.22:
+    resolution: {integrity: sha512-1e6BDytHzTxRlUOCe7M0+ZV5JqKARByHwz1iP5UNmxt2TEOyI8E/1gLLNCyaPjpXfCr1TThxTyFO9MjF5mFLvA==}
     hasBin: true
     requiresBuild: true
 
@@ -3101,8 +3101,8 @@ packages:
     dependencies:
       '@babel/runtime': 7.14.0
 
-  /i18next/20.2.2:
-    resolution: {integrity: sha512-uWCv9LzKpe+OwvnKKrb8CbJwgAhasQofD58cB0PQ6bTPXEl5PlItl5C4esmY8HtriLu9nrjc2Hi0IfYv3Fy8BQ==}
+  /i18next/20.2.4:
+    resolution: {integrity: sha512-goE1LCA/IZOGG26PkkqoOl2KWR7YP606SvokVQZ29J6QwE02KycrzNetoMUJeqYrTxs4rmiiZgZp+q8qofQL6Q==}
     dependencies:
       '@babel/runtime': 7.14.0
 
@@ -3377,7 +3377,7 @@ packages:
     resolution: {integrity: sha512-mk0umAQ5lT+CaOJ+Qp01N6kz48sJG2kr2n1rX0koqKf6FIygQV0qLOdN9SCYID4IVeSigDOcPeGLozdMLYfb5g==}
     engines: {node: ^10.13.0 || ^12.13.0 || ^14.15.0 || >=15.0.0}
     dependencies:
-      '@types/node': 15.0.3
+      '@types/node': 15.3.0
       merge-stream: 2.0.0
       supports-color: 8.1.1
 
@@ -3759,9 +3759,9 @@ packages:
       '@types/i18next-fs-backend': 1.0.0
       core-js: 3.12.1
       hoist-non-react-statics: 3.3.2
-      i18next: 20.2.2
+      i18next: 20.2.4
       i18next-fs-backend: 1.1.1
-      react-i18next: 11.8.15_i18next@20.2.2
+      react-i18next: 11.8.15_i18next@20.2.4
     dev: true
 
   /next-i18next/8.2.0_next@10.2.0+react@17.0.2:
@@ -3775,11 +3775,11 @@ packages:
       '@types/i18next-fs-backend': 1.0.0
       core-js: 3.12.1
       hoist-non-react-statics: 3.3.2
-      i18next: 20.2.2
+      i18next: 20.2.4
       i18next-fs-backend: 1.1.1
-      next: 10.2.0_507781d099a67956587e23f5ac79078b
+      next: 10.2.0_react-dom@17.0.2+react@17.0.2
       react: 17.0.2
-      react-i18next: 11.8.15_i18next@20.2.2+react@17.0.2
+      react-i18next: 11.8.15_i18next@20.2.4+react@17.0.2
 
   /next-mdx-remote/3.0.1:
     resolution: {integrity: sha512-sV1sM6CkdYP5aPND1+vrF3wr8TU8NJwVlcFe2rPjVHR5J/9M2bl9zlhF6AF+GOKHA7d5kUdwHoLbApEGofD8hA==}
@@ -3789,7 +3789,7 @@ packages:
     dependencies:
       '@mdx-js/mdx': 1.6.22
       '@mdx-js/react': 1.6.22
-      esbuild: 0.11.20
+      esbuild: 0.11.22
       pkg-dir: 5.0.0
     transitivePeerDependencies:
       - supports-color
@@ -3803,7 +3803,7 @@ packages:
     dependencies:
       '@mdx-js/mdx': 1.6.22
       '@mdx-js/react': 1.6.22_react@17.0.2
-      esbuild: 0.11.20
+      esbuild: 0.11.22
       pkg-dir: 5.0.0
       react: 17.0.2
       react-dom: 17.0.2_react@17.0.2
@@ -4078,8 +4078,8 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: true
 
-  /node-releases/1.1.71:
-    resolution: {integrity: sha512-zR6HoT6LrLCRBwukmrVbHv0EpEQjksO6GmFcZQQuCAy139BEsoVKPYnf3jongYW83fAa1torLGYwxxky/p28sg==}
+  /node-releases/1.1.72:
+    resolution: {integrity: sha512-LLUo+PpH3dU6XizX3iVoubUNheF/owjXCZZ5yACDxNnPtgFuludV1ZL3ayK1kVep42Rmm0+R9/Y60NQbZ2bifw==}
 
   /normalize-package-data/2.5.0:
     resolution: {integrity: sha512-/5CMN3T0R4XTj4DcGaexo+roZSdSFW/0AOOTROrjxzCG1wrWXEsGbRKevjlIL+ZDE4sZlJr5ED4YW0yqmkK+eA==}
@@ -4577,7 +4577,7 @@ packages:
     transitivePeerDependencies:
       - '@types/react'
 
-  /react-i18next/11.8.15_i18next@20.2.2:
+  /react-i18next/11.8.15_i18next@20.2.4:
     resolution: {integrity: sha512-ZbKcbYYKukgDL0MiUWKJTEsEftjSTNVZv67/V+SjPqTRwuF/aL4NbUtuEcb4WjHk0HyZ1M+2wGd07Fp0RUNHKA==}
     peerDependencies:
       i18next: '>= 19.0.0'
@@ -4585,10 +4585,10 @@ packages:
     dependencies:
       '@babel/runtime': 7.14.0
       html-parse-stringify: 3.0.1
-      i18next: 20.2.2
+      i18next: 20.2.4
     dev: true
 
-  /react-i18next/11.8.15_i18next@20.2.2+react@17.0.2:
+  /react-i18next/11.8.15_i18next@20.2.4+react@17.0.2:
     resolution: {integrity: sha512-ZbKcbYYKukgDL0MiUWKJTEsEftjSTNVZv67/V+SjPqTRwuF/aL4NbUtuEcb4WjHk0HyZ1M+2wGd07Fp0RUNHKA==}
     peerDependencies:
       i18next: '>= 19.0.0'
@@ -4596,7 +4596,7 @@ packages:
     dependencies:
       '@babel/runtime': 7.14.0
       html-parse-stringify: 3.0.1
-      i18next: 20.2.2
+      i18next: 20.2.4
       react: 17.0.2
 
   /react-is/16.13.1:
@@ -4891,8 +4891,8 @@ packages:
       hash-base: 3.1.0
       inherits: 2.0.4
 
-  /rollup/2.47.0:
-    resolution: {integrity: sha512-rqBjgq9hQfW0vRmz+0S062ORRNJXvwRpzxhFXORvar/maZqY6za3rgQ/p1Glg+j1hnc1GtYyQCPiAei95uTElg==}
+  /rollup/2.48.0:
+    resolution: {integrity: sha512-wl9ZSSSsi5579oscSDYSzGn092tCS076YB+TQrzsGuSfYyJeep8eEWj0eaRjuC5McuMNmcnR8icBqiE/FWNB1A==}
     engines: {node: '>=10.0.0'}
     hasBin: true
     optionalDependencies:
@@ -5500,13 +5500,13 @@ packages:
       chalk: 4.1.1
       chokidar: 3.5.1
       debug: 4.3.1
-      esbuild: 0.11.20
+      esbuild: 0.11.22
       execa: 5.0.0
       globby: 11.0.3
       joycon: 3.0.1
       postcss-load-config: 3.0.1
       resolve-from: 5.0.0
-      rollup: 2.47.0
+      rollup: 2.48.0
       sucrase: 3.18.1
       tree-kill: 1.2.2
     transitivePeerDependencies:
@@ -5526,13 +5526,13 @@ packages:
       chalk: 4.1.1
       chokidar: 3.5.1
       debug: 4.3.1
-      esbuild: 0.11.20
+      esbuild: 0.11.22
       execa: 5.0.0
       globby: 11.0.3
       joycon: 3.0.1
       postcss-load-config: 3.0.1
       resolve-from: 5.0.0
-      rollup: 2.47.0
+      rollup: 2.48.0
       sucrase: 3.18.1
       tree-kill: 1.2.2
       typescript: 4.2.4

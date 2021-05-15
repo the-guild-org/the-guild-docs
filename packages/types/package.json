@@ -11,7 +11,7 @@
     "prepare": "tsc"
   },
   "devDependencies": {
-    "@types/node": "^15.0.3",
+    "@types/node": "^15.3.0",
     "@types/react": "^17.0.5",
     "next-i18next": "^8.2.0",
     "next-mdx-remote": "^3.0.1",
