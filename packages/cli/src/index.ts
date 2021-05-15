@@ -12,6 +12,7 @@ import {
   writei18Config,
   writeNextConfig,
   writeRoutes,
+  writeTailwindConfig,
   writeTranslations,
   writeTSConfig,
 } from './nextConfig';
@@ -53,6 +54,10 @@ async function DepsAction(dir: string = process.cwd()) {
         'tsup',
         'open-cli',
         'wait-on',
+        'next-remote-watch',
+        'autoprefixer',
+        'postcss',
+        'tailwindcss',
       ],
       {
         isDev: true,
@@ -60,7 +65,7 @@ async function DepsAction(dir: string = process.cwd()) {
     ),
     addPackageScripts({
       build: 'next build',
-      dev: 'concurrently -r next "wait-on -s 1 http://localhost:3000 && open-cli http://localhost:3000"',
+      dev: 'concurrently -r "next-remote-watch ./docs" "wait-on -s 1 http://localhost:3000 && open-cli http://localhost:3000"',
       next: 'next',
       start: 'next start',
     }),
@@ -83,6 +88,7 @@ async function ConfigAction(dir: string = process.cwd()) {
     writeDocPages(),
     writeDocsDirectory(),
     writeTSConfig(),
+    writeTailwindConfig(),
   ]);
 
   console.log('Configuration files added!');
