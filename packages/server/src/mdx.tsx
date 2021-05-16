@@ -124,6 +124,7 @@ export async function MDXProps(
           },
         ],
         require('remark-prism'),
+        require('remark-slug'),
       ],
       rehypePlugins: [],
     },
