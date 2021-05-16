@@ -1,6 +1,6 @@
 {
   "name": "@guild-docs/server",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "license": "MIT",
   "author": "PabloSzx <pablosaez1995@gmail.com>",
   "main": "dist/index.js",
@@ -14,7 +14,7 @@
     "prepare": "tsup-node src/index.ts --silent --dts --format esm,cjs"
   },
   "dependencies": {
-    "@guild-docs/types": "workspace:^0.0.2",
+    "@guild-docs/types": "workspace:^0.0.3",
     "github-slugger": "^1.3.0",
     "globby": "^11.0.3",
     "gray-matter": "^4.0.3",

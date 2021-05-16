@@ -1,6 +1,6 @@
 {
   "name": "@guild-docs/client",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "license": "MIT",
   "author": "PabloSzx <pablosaez1995@gmail.com>",
   "exports": {
@@ -24,7 +24,7 @@
     "postpublish": "gh-release --repo the-guild-org/the-guild-docs"
   },
   "dependencies": {
-    "@guild-docs/types": "workspace:^0.0.2",
+    "@guild-docs/types": "workspace:^0.0.3",
     "next-i18next": "^8.2.0",
     "next-mdx-remote": "^3.0.1",
     "nprogress": "^0.2.0"
