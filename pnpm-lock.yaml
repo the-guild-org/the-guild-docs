@@ -132,20 +132,26 @@ importers:
       changesets-github-release: ^0.0.1
       esbuild: ^0.11.23
       framer-motion: ^4.1.16
+      immer: ^9.0.2
       next: ^10.2.0
       next-i18next: ^8.2.0
       next-mdx-remote: ^3.0.1
       nprogress: ^0.2.0
       react: ^17.0.2
       react-dom: ^17.0.2
+      react-intersection-observer: ^8.32.0
       tsc-node-build: ^3.1.3
       tsup: ^4.11.0
       typescript: ^4.2.4
+      use-immer: ^0.5.2
     dependencies:
       '@guild-docs/types': link:../types
+      immer: 9.0.2
       next-i18next: 8.2.0_next@10.2.0+react@17.0.2
       next-mdx-remote: 3.0.1_react-dom@17.0.2+react@17.0.2
       nprogress: 0.2.0
+      react-intersection-observer: 8.32.0_react@17.0.2
+      use-immer: 0.5.2_immer@9.0.2+react@17.0.2
     devDependencies:
       '@chakra-ui/icons': 1.0.13_065eada68eb92b4d47ff5134391347ec
       '@chakra-ui/layout': 1.4.5_065eada68eb92b4d47ff5134391347ec
@@ -1773,7 +1779,7 @@ packages:
     peerDependencies:
       '@chakra-ui/system': '>=1.0.0'
     dependencies:
-      '@chakra-ui/system': 1.6.5
+      '@chakra-ui/system': 1.6.5_c94ce1a602d602ceca4c9cb32dbce62d
       '@chakra-ui/utils': 1.8.0
       '@types/tinycolor2': 1.4.2
       tinycolor2: 1.4.2
@@ -1783,7 +1789,7 @@ packages:
     peerDependencies:
       '@chakra-ui/system': '>=1.0.0'
     dependencies:
-      '@chakra-ui/system': 1.6.5
+      '@chakra-ui/system': 1.6.5_c94ce1a602d602ceca4c9cb32dbce62d
       '@chakra-ui/theme-tools': 1.1.7_@chakra-ui+system@1.6.5
       '@chakra-ui/utils': 1.8.0
 
@@ -4686,6 +4692,10 @@ packages:
     resolution: {integrity: sha512-BMpfD7PpiETpBl/A6S498BaIJ6Y/ABT93ETbby2fP00v4EbvPBXWEoaR1UBPKs3iR53pJY7EtZk5KACI57i1Uw==}
     engines: {node: '>= 4'}
 
+  /immer/9.0.2:
+    resolution: {integrity: sha512-mkcmzLtIfSp40vAqteRr1MbWNSoI7JE+/PB36FNPoSfJ9RQRmNKuTYCjKkyXyuq3Dgn07HuJBrwJd4ZSk2yUbw==}
+    dev: false
+
   /import-cwd/3.0.0:
     resolution: {integrity: sha512-4pnzH16plW+hgvRECbDWpQl3cqtvSofHWh44met7ESfZ8UZOWWddm8hEyDTqREJ9RbYHY8gi8DqmaelApoOGMg==}
     engines: {node: '>=8'}
@@ -6589,6 +6599,14 @@ packages:
       i18next: 20.2.4
       react: 17.0.2
 
+  /react-intersection-observer/8.32.0_react@17.0.2:
+    resolution: {integrity: sha512-RlC6FvS3MFShxTn4FHAy904bVjX5Nn4/eTjUkurW0fHK+M/fyQdXuyCy9+L7yjA+YMGogzzSJNc7M4UtfSKvtw==}
+    peerDependencies:
+      react: ^15.0.0 || ^16.0.0 || ^17.0.0|| ^18.0.0
+    dependencies:
+      react: 17.0.2
+    dev: false
+
   /react-is/16.13.1:
     resolution: {integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==}
 
@@ -7990,6 +8008,16 @@ packages:
     dependencies:
       '@types/react': 17.0.5
       react: 17.0.2
+
+  /use-immer/0.5.2_immer@9.0.2+react@17.0.2:
+    resolution: {integrity: sha512-aHnLa85kftWo05lqJVOy3GLXrydqu6kl0MXvo5k5OW8IoLJixa9NY/48Xdy0LlcqdakBTFLbSDZaYVPMVhYy8Q==}
+    peerDependencies:
+      immer: '>=2.0.0'
+      react: ^16.8.0 || ^17.0.1
+    dependencies:
+      immer: 9.0.2
+      react: 17.0.2
+    dev: false
 
   /use-sidecar/1.0.5:
     resolution: {integrity: sha512-k9jnrjYNwN6xYLj1iaGhonDghfvmeTmYjAiGvOr7clwKfPjMXJf4/HOr7oT5tJwYafgp2tG2l3eZEOfoELiMcA==}

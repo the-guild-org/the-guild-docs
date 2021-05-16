@@ -8,16 +8,16 @@ export function SerializeTOC(content: string) {
   const lines = content.split('\n');
 
   const slugs = lines.reduce((acum, value) => {
-    const result = value.match(/(\#+)( )(.+)/);
+    const result = value.match(/(\#\#+ )(.+)/);
     if (!result) return acum;
 
     const depth = result[1]?.length;
 
-    const heading = result[3]?.trim();
+    const heading = result[2]?.trim();
 
     if (!heading || !depth) return acum;
 
-    acum.push([depth, slugger.slug(heading)]);
+    acum.push([slugger.slug(heading), depth - 3, heading]);
 
     return acum;
   }, [] as TOC);

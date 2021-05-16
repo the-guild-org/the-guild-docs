@@ -25,9 +25,12 @@
   },
   "dependencies": {
     "@guild-docs/types": "workspace:^0.0.3",
+    "immer": "^9.0.2",
     "next-i18next": "^8.2.0",
     "next-mdx-remote": "^3.0.1",
-    "nprogress": "^0.2.0"
+    "nprogress": "^0.2.0",
+    "react-intersection-observer": "^8.32.0",
+    "use-immer": "^0.5.2"
   },
   "devDependencies": {
     "@chakra-ui/icons": "^1.0.13",

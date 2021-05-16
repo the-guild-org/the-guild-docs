@@ -10,7 +10,7 @@ export type IRoutes = {
   _?: Record<string, IRoutes>;
 };
 
-export type TOC = [depth: number, slug: string][];
+export type TOC = [id: string, depth: number, label: string][];
 
 export interface Paths {
   href: string;
@@ -20,8 +20,10 @@ export interface Paths {
 }
 
 export interface TOCHeading {
-  name: string;
+  id: string;
+  label: string;
   depth: number;
+  isActive: boolean;
 }
 
 export interface MDXTOCProps {

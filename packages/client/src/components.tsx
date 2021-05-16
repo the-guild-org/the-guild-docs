@@ -103,7 +103,7 @@ const h1 = ({ children, ...delegated }: HeadingProps) => {
 
 const h2 = ({ children, ...delegated }: HeadingProps) => {
   return (
-    <Heading as="h2" fontWeight="bold" size="lg" {...delegated}>
+    <Heading as="h2" marginTop="1em" fontWeight="bold" size="lg" {...delegated}>
       {children}
     </Heading>
   );
@@ -111,7 +111,23 @@ const h2 = ({ children, ...delegated }: HeadingProps) => {
 
 const h3 = ({ children, ...delegated }: HeadingProps) => {
   return (
-    <Heading as="h3" size="md" fontWeight="bold" {...delegated}>
+    <Heading as="h3" marginTop="1em" size="md" fontWeight="bold" {...delegated}>
+      {children}
+    </Heading>
+  );
+};
+
+const h4 = ({ children, ...delegated }: HeadingProps) => {
+  return (
+    <Heading as="h4" marginTop="1em" size="md" fontWeight="bold" {...delegated}>
+      {children}
+    </Heading>
+  );
+};
+
+const h5 = ({ children, ...delegated }: HeadingProps) => {
+  return (
+    <Heading as="h5" marginTop="1em" size="md" fontWeight="bold" {...delegated}>
       {children}
     </Heading>
   );
@@ -178,6 +194,8 @@ export const components = {
   h1,
   h2,
   h3,
+  h4,
+  h5,
   p,
   ul,
   ol,
