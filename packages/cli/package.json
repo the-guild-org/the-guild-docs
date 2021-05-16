@@ -9,9 +9,16 @@
   "files": [
     "bin"
   ],
+  "tsup": {
+    "splitting": false,
+    "outDir": "bin",
+    "entryPoints": [
+      "src/index.ts"
+    ]
+  },
   "scripts": {
-    "build": "tsup --no-splitting -d bin --silent src/index.ts",
-    "dev": "tsup src/index.ts -d bin --watch --onSuccess \"pnpm dev-start\"",
+    "build": "tsup --silent",
+    "dev": "tsup --watch --onSuccess \"pnpm dev-start\"",
     "dev-start": "node bin/index.js init ../../examples/basic",
     "prepare": "npm run build"
   },
@@ -22,10 +29,10 @@
     "@types/prettier": "^2.2.3",
     "commander": "^7.2.0",
     "edit-json-file": "^1.6.0",
-    "esbuild": "^0.11.22",
+    "esbuild": "^0.11.23",
     "mkdirp": "^1.0.4",
     "npm-api": "^1.0.1",
     "prettier": "^2.3.0",
-    "tsup": "^4.10.1"
+    "tsup": "^4.11.0"
   }
 }

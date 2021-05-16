@@ -6,6 +6,9 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { serialize } from 'next-mdx-remote/serialize';
 import { join, resolve } from 'path';
 import * as React from 'react';
+import remarkAdmonitions from 'remark-admonitions';
+import remarkPrism from 'remark-prism';
+import remarkSlug from 'remark-slug';
 
 import { IS_PRODUCTION } from './constants';
 import { getSlug } from './routes';
@@ -113,7 +116,7 @@ export async function MDXProps(
     mdxOptions: {
       remarkPlugins: [
         [
-          require('remark-admonitions'),
+          remarkAdmonitions,
           {
             customTypes: {
               shell: {
@@ -123,8 +126,8 @@ export async function MDXProps(
             },
           },
         ],
-        require('remark-prism'),
-        require('remark-slug'),
+        remarkPrism,
+        remarkSlug,
       ],
       rehypePlugins: [],
     },
