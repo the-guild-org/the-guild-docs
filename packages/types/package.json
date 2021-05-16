@@ -9,7 +9,8 @@
   ],
   "scripts": {
     "dev": "tsc --watch --preserveWatchOutput",
-    "prepare": "tsc"
+    "prepare": "tsc",
+    "postpublish": "gh-release --repo the-guild-org/the-guild-docs"
   },
   "devDependencies": {
     "@chakra-ui/react": "^1.6.1",

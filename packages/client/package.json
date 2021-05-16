@@ -20,7 +20,8 @@
   ],
   "scripts": {
     "dev": "tsc-node-watch",
-    "prepare": "tsc-node-build"
+    "prepare": "tsc-node-build",
+    "postpublish": "gh-release --repo the-guild-org/the-guild-docs"
   },
   "dependencies": {
     "@guild-docs/types": "workspace:^0.0.2",
@@ -39,6 +40,7 @@
     "@types/nprogress": "^0.2.0",
     "@types/react": "^17.0.5",
     "@types/react-dom": "^17.0.5",
+    "changesets-github-release": "^0.0.1",
     "esbuild": "^0.11.23",
     "framer-motion": "^4.1.16",
     "next": "^10.2.0",
