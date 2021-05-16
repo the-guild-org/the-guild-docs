@@ -11,7 +11,8 @@
   ],
   "scripts": {
     "dev": "tsup-node src/index.ts --watch",
-    "prepare": "tsup-node src/index.ts --silent --dts --format esm,cjs"
+    "prepare": "tsup-node src/index.ts --silent --dts --format esm,cjs",
+    "postpublish": "gh-release --repo the-guild-org/the-guild-docs"
   },
   "dependencies": {
     "@guild-docs/types": "workspace:^0.0.3",
