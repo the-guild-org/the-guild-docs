@@ -1,5 +1,13 @@
 # @guild-docs/server
 
+## 0.0.5
+
+### Patch Changes
+
+- 2029057: improve TOC
+- Updated dependencies [2029057]
+  - @guild-docs/types@0.0.4
+
 ## 0.0.4
 
 ### Patch Changes

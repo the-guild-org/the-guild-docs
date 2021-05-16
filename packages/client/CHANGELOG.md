@@ -1,6 +1,15 @@
 # @guild-docs/client
 
+## 0.0.8
+
+### Patch Changes
+
+- 2029057: improve TOC
+- Updated dependencies [2029057]
+  - @guild-docs/types@0.0.4
+
 ## 0.0.7
+
 ### Patch Changes
 
 - 3663a0a: add TOC
