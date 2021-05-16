@@ -4,11 +4,9 @@ import 'prism-themes/themes/prism-dracula.css';
 
 import { appWithTranslation } from 'next-i18next';
 import { ReactNode, useMemo } from 'react';
-import { MDXProvider } from '@mdx-js/react';
 
 import { Box, ChakraProvider, extendTheme, Stack } from '@chakra-ui/react';
-
-import { NextNProgress, MdxInternalProps, MDXNavigation, iterateRoutes, components, ExtendComponents } from '@guild-docs/client';
+import { ExtendComponents, iterateRoutes, MdxInternalProps, MDXNavigation, NextNProgress } from '@guild-docs/client';
 
 import type { AppProps } from 'next/app';
 
@@ -39,16 +37,15 @@ function App({ Component, pageProps }: AppProps) {
   return (
     <>
       <NextNProgress />
-      <MDXProvider components={components}>
-        <AppThemeProvider>
-          <Stack isInline>
-            <Box maxW="280px" width="100%">
-              {Navigation}
-            </Box>
-            <Component {...pageProps} />
-          </Stack>
-        </AppThemeProvider>
-      </MDXProvider>
+
+      <AppThemeProvider>
+        <Stack isInline>
+          <Box maxW="280px" width="100%">
+            {Navigation}
+          </Box>
+          <Component {...pageProps} />
+        </Stack>
+      </AppThemeProvider>
     </>
   );
 }

@@ -1,5 +1,4 @@
-import { Stack } from '@chakra-ui/react';
-
+import { Box, Stack } from '@chakra-ui/react';
 import { MDXPage } from '@guild-docs/client';
 import { MDXPaths, MDXProps } from '@guild-docs/server';
 
@@ -7,10 +6,21 @@ import { getRoutes } from '../../../routes';
 
 import type { GetStaticPaths, GetStaticProps } from 'next';
 
-export default MDXPage(function PostPage({ content }) {
+export default MDXPage(function PostPage({ content, TOC }) {
   return (
     <Stack>
-      <main>{content}</main>
+      <Box as="main" maxWidth="80ch" textAlign="justify">
+        {content}
+      </Box>
+      <TOC
+        boxProps={{
+          paddingRight: '2em',
+          position: 'fixed',
+          top: 0,
+          right: 0,
+          fontSize: '2xl',
+        }}
+      />
     </Stack>
   );
 });

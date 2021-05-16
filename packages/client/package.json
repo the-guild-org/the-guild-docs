@@ -30,7 +30,9 @@
   },
   "devDependencies": {
     "@chakra-ui/icons": "^1.0.13",
+    "@chakra-ui/layout": "^1.4.5",
     "@chakra-ui/react": "^1.6.1",
+    "@chakra-ui/system": "^1.6.5",
     "@emotion/react": "^11.4.0",
     "@mdx-js/react": "^1.6.22",
     "@types/mdx-js__react": "^1.5.3",

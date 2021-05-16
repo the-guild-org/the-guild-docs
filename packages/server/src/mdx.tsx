@@ -12,6 +12,7 @@ import remarkSlug from 'remark-slug';
 
 import { IS_PRODUCTION } from './constants';
 import { getSlug } from './routes';
+import { SerializeTOC } from './toc';
 
 import type { GetStaticPathsContext, GetStaticPropsContext, GetStaticPropsResult } from 'next';
 import type { IRoutes, MdxInternalProps } from '@guild-docs/types';
@@ -134,12 +135,15 @@ export async function MDXProps(
     scope: data,
   });
 
+  const toc = SerializeTOC(content);
+
   return {
     props: {
       source: mdxSource,
       frontMatter: data,
       _nextI18Next,
       mdxRoutes,
+      toc,
     },
   };
 }

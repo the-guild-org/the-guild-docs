@@ -196,6 +196,10 @@ export const components = {
   inlineCode: (props: CodeProps) => <Code colorScheme="yellow" fontSize="0.84em" {...props} />,
 };
 
+// Workaround to this issue with TypeScript: https://github.com/microsoft/TypeScript/issues/42873
+export type {} from '@chakra-ui/system';
+export type {} from '@chakra-ui/layout';
+
 export function ExtendComponents<TComponents extends Record<string, (props: Record<string, unknown>) => ReactNode>>(
   extension: Partial<typeof components> & TComponents
 ) {
