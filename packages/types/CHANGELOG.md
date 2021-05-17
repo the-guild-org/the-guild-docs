@@ -1,5 +1,13 @@
 # @guild-docs/types
 
+## 0.0.5
+
+### Patch Changes
+
+- 88a38cd: add bottom navigation
+- 610cf39: improve/fix next/head implementation
+- 610cf39: update deps
+
 ## 0.0.4
 
 ### Patch Changes
