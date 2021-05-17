@@ -1,6 +1,10 @@
 {
   "name": "@guild-docs/types",
   "version": "0.0.4",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/the-guild-org/the-guild-docs.git"
+  },
   "license": "MIT",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
