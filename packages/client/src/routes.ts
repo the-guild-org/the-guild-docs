@@ -1,5 +1,8 @@
 import type { IRoutes, Paths } from '@guild-docs/types';
 
+/**
+ * Function is designed to ignore trailling slashes when comparing paths
+ */
 export function arePathnamesEqual(a: string, b: string) {
   if (a.endsWith('/') && b.endsWith('/')) return a === b;
   else if (a.endsWith('/')) return a.slice(0, a.length - 1) === b;

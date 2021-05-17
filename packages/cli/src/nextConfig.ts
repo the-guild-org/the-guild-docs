@@ -54,6 +54,10 @@ export async function writeRoutes() {
             $name: 'Home',
             $routes: [['index', 'Home Page']],
           },
+          docs: {
+            $name: 'Docs',
+            $routes: [['index', 'Getting Started']],
+          },
         },
       };
       GenerateRoutes({
@@ -61,15 +65,11 @@ export async function writeRoutes() {
         folderPattern: 'docs',
         basePath: 'docs',
         basePathLabel: 'Documentation',
-        labels: {
-          index: 'Docs',
-        },
       });
-
+    
       return Routes;
     }
-
-    `,
+        `,
 
     'typescript'
   );

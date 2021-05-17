@@ -7,6 +7,10 @@ export function getRoutes(): IRoutes {
         $name: 'Home',
         $routes: [['index', 'Home Page']],
       },
+      docs: {
+        $name: 'Docs',
+        $routes: [['index', 'Getting Started']],
+      },
     },
   };
   GenerateRoutes({
@@ -14,9 +18,6 @@ export function getRoutes(): IRoutes {
     folderPattern: 'docs',
     basePath: 'docs',
     basePathLabel: 'Documentation',
-    labels: {
-      index: 'Docs',
-    },
   });
 
   return Routes;

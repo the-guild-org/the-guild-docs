@@ -1,8 +1,8 @@
 import { useRouter } from 'next/router';
-import React from 'react';
+import React, { useState } from 'react';
 
 import { ChevronDownIcon } from '@chakra-ui/icons';
-import { Button, ButtonProps, Collapse, Stack, StackProps, useDisclosure } from '@chakra-ui/react';
+import { Button, ButtonProps, Collapse, Stack, StackProps, useDisclosure, useSafeLayoutEffect } from '@chakra-ui/react';
 
 import { arePathnamesEqual } from './routes.js';
 
@@ -23,13 +23,24 @@ function NavigationItem({
 }) {
   const finalHref = (acumHref !== '/' ? acumHref + '/' : acumHref) + (href === 'index' ? '' : href);
 
-  const isAnchor = isPage && !paths?.length;
+  const pathsData = paths?.length ? paths : null;
+
+  const isAnchor = isPage && !pathsData;
 
   const { isOpen, onToggle } = useDisclosure({
     defaultIsOpen: depth < 1,
   });
 
   const Router = useRouter();
+
+  const [isActive, setIsActive] = useState(false);
+
+  const asPath = Router?.asPath || '_';
+
+  // This logic has to be client-side only
+  useSafeLayoutEffect(() => {
+    setIsActive(arePathnamesEqual(asPath, finalHref));
+  }, [asPath, finalHref]);
 
   return (
     <>
@@ -45,7 +56,7 @@ function NavigationItem({
             ? (ev: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
                 ev.preventDefault();
 
-                if (!arePathnamesEqual(Router.asPath, finalHref)) {
+                if (!isActive) {
                   Router.push(finalHref, undefined, {
                     scroll: true,
                   });
@@ -56,29 +67,29 @@ function NavigationItem({
               }
         }
         onMouseOver={
-          isAnchor
+          isAnchor && !isActive
             ? () => {
-                if (!arePathnamesEqual(Router.asPath, finalHref)) {
-                  Router.prefetch(finalHref);
-                }
+                Router.prefetch(finalHref);
               }
             : undefined
         }
         alignItems="center"
         marginY="2px"
         paddingX={`${depth + 1}em`}
+        color={isActive && !pathsData ? 'blue.500' : undefined}
+        transition="color 0.5s"
         {...buttonProps}
       >
         <span>{name || href}</span>
-        {paths?.length ? (
+        {pathsData && (
           <ChevronDownIcon className="chevdown" transition="transform 0.3s" transform={isOpen ? 'rotate(180deg)' : undefined} />
-        ) : null}
+        )}
       </Button>
 
-      {paths?.length ? (
+      {pathsData ? (
         <Collapse in={isOpen} unmountOnExit>
           <MDXNavigation
-            paths={paths}
+            paths={pathsData}
             acumHref={finalHref}
             depth={depth + 1}
             stackProps={stackProps}
