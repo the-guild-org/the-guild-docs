@@ -1,46 +1,46 @@
 import { useTranslation } from 'next-i18next';
 import { MDXRemote } from 'next-mdx-remote';
-import Head from 'next/head';
-import React, { createElement, ReactElement, useCallback, useMemo } from 'react';
+import { createElement, Fragment, PropsWithChildren, ReactElement, useCallback, useMemo } from 'react';
 
 import { components } from './components.js';
 import { MDXTOC } from './toc.js';
 
 import type { MdxPageProps, MdxInternalProps } from '@guild-docs/types';
 
-export function MDXPage(cmp: (props: MdxPageProps) => ReactElement) {
+export function MDXPage(Component: (props: PropsWithChildren<MdxPageProps>) => ReactElement) {
   return function MDXPage({ children, source, frontMatter, toc }: MdxInternalProps) {
     const title = frontMatter.title;
 
-    const content = useMemo(() => {
-      return (
-        <>
-          {title ? (
-            <Head>
-              <title>{title}</title>
-            </Head>
-          ) : null}
+    const MetaHead = useMemo(() => {
+      return createElement(Fragment, null, createElement('title', null, title));
+    }, [title]);
 
-          <MDXRemote {...source} components={components} />
-        </>
-      );
+    const content = useMemo(() => {
+      return createElement(MDXRemote, { ...source, components });
     }, [title, source]);
 
     const TOC = useCallback<MdxPageProps['TOC']>(
       function TOC(props) {
         if (toc.length < 2) return null;
 
-        return <MDXTOC toc={toc} {...props} />;
+        return createElement(MDXTOC, {
+          toc,
+          ...props,
+        });
       },
       [toc]
     );
 
-    return createElement(cmp, {
-      content,
-      frontMatter,
-      useTranslation,
-      children,
-      TOC,
-    });
+    return createElement(
+      Component,
+      {
+        content,
+        frontMatter,
+        useTranslation,
+        TOC,
+        MetaHead,
+      },
+      children
+    );
   };
 }

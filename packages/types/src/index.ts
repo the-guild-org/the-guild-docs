@@ -38,6 +38,7 @@ export interface MdxPageProps {
   frontMatter: Record<string, any>;
   useTranslation: typeof useTranslation;
   TOC: VoidFunctionComponent<Omit<MDXTOCProps, 'toc'>>;
+  MetaHead: ReactNode;
 }
 
 export interface MdxInternalProps {
