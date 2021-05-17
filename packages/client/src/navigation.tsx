@@ -1,12 +1,15 @@
-import { useRouter } from 'next/router';
-import React, { useState } from 'react';
+import RouterDefault from 'next/router';
+import React, { useRef, useState } from 'react';
 
 import { ChevronDownIcon } from '@chakra-ui/icons';
 import { Button, ButtonProps, Collapse, Stack, StackProps, useDisclosure, useSafeLayoutEffect } from '@chakra-ui/react';
 
 import { arePathnamesEqual, concatHrefs } from './routes.js';
+import { getDefault } from './utils.js';
 
 import type { Paths } from '@guild-docs/types';
+
+const Router = getDefault(RouterDefault);
 
 function NavigationItem({
   item: { href, name, paths, isPage },
@@ -31,16 +34,29 @@ function NavigationItem({
     defaultIsOpen: depth < 1,
   });
 
-  const Router = useRouter();
-
   const [isActive, setIsActive] = useState(false);
 
-  const asPath = Router?.asPath || '_';
+  const currentIsActive = useRef(isActive);
+  currentIsActive.current = isActive;
 
   // This logic has to be client-side only
   useSafeLayoutEffect(() => {
-    setIsActive(arePathnamesEqual(asPath, finalHref));
-  }, [asPath, finalHref]);
+    const initialIsActive = arePathnamesEqual(Router.asPath || '_', finalHref);
+
+    if (initialIsActive !== currentIsActive.current) setIsActive(initialIsActive);
+
+    function routeChangeHandler() {
+      const newIsActive = arePathnamesEqual(Router.asPath || '_', finalHref);
+
+      if (newIsActive !== currentIsActive.current) setIsActive(newIsActive);
+    }
+
+    Router.events.on('routeChangeComplete', routeChangeHandler);
+
+    return () => {
+      Router.events.off('routeChangeComplete', routeChangeHandler);
+    };
+  }, [finalHref, currentIsActive]);
 
   return (
     <>

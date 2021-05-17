@@ -1,12 +1,13 @@
-import 'remark-admonitions/styles/classic.css';
 import 'remark-admonitions/styles/infima.css';
-import 'prism-themes/themes/prism-dracula.css';
+import 'prism-themes/themes/prism-atom-dark.css';
+import 'tailwindcss/tailwind.css';
 
 import { appWithTranslation } from 'next-i18next';
 import { ReactNode, useMemo } from 'react';
 
-import { Box, ChakraProvider, extendTheme, Stack } from '@chakra-ui/react';
-import { ExtendComponents, iterateRoutes, MdxInternalProps, MDXNavigation, NextNProgress } from '@guild-docs/client';
+import { Box, ChakraProvider, extendTheme, Stack, chakra } from '@chakra-ui/react';
+
+import { NextNProgress, MdxInternalProps, MDXNavigation, iterateRoutes, ExtendComponents } from '@guild-docs/client';
 
 import type { AppProps } from 'next/app';
 
@@ -14,10 +15,18 @@ const theme = extendTheme({
   colors: {},
 });
 
+const a = chakra('a', {
+  baseStyle: {
+    fontWeight: 'bold',
+    color: 'blue.600',
+  },
+});
+
 ExtendComponents({
   HelloWorld() {
     return <p>Hello World!</p>;
   },
+  a,
 });
 
 export function AppThemeProvider({ children }: { children: ReactNode }) {
@@ -37,7 +46,6 @@ function App({ Component, pageProps }: AppProps) {
   return (
     <>
       <NextNProgress />
-
       <AppThemeProvider>
         <Stack isInline>
           <Box maxW="280px" width="100%">

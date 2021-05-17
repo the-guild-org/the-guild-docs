@@ -21,9 +21,13 @@ import {
   useColorModeValue,
 } from '@chakra-ui/react';
 
-import { NextLink } from './nextModules';
+import NextLinkImport from 'next/link';
+
+import { getDefault } from './utils';
 
 import type { LinkProps as NextLinkProps } from 'next/link';
+
+const NextLink = getDefault(NextLinkImport);
 
 export function Translated({ children, name }: { children?: ReactNode; name?: string }): ReactNode {
   const { t } = useTranslation('common');

@@ -1,13 +1,16 @@
+import NextLinkImport from 'next/link';
 import { useRouter } from 'next/router';
 import React, { FC, useMemo, useState } from 'react';
 
 import { ChevronLeftIcon, ChevronRightIcon } from '@chakra-ui/icons';
 import { LinkBox, LinkOverlay, Stack, useSafeLayoutEffect } from '@chakra-ui/react';
 
-import { NextLink } from './nextModules.js';
 import { arePathnamesEqual, concatHrefs, iterateRoutes, withoutTrailingSlash } from './routes.js';
+import { getDefault } from './utils.js';
 
 import type { BottomNavigationProps, Paths } from '@guild-docs/types';
+
+const NextLink = getDefault(NextLinkImport);
 
 export interface ReducedHref {
   href: string;
@@ -111,7 +114,7 @@ export function BottomNavigationComponent({ routes, stackProps, linkBoxProps, li
           padding="10px"
           {...linkBoxProps}
         >
-          <NextLink href={previous.href} passHref prefetch>
+          <NextLink href={previous.href} passHref>
             <LinkOverlay
               children={
                 <>
