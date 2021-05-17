@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React, { useEffect, useState } from 'react';
 import { observe } from 'react-intersection-observer';
 import { useImmer } from 'use-immer';
 
@@ -25,38 +25,51 @@ export function MDXTOC({ toc, boxProps = {}, textProps, anchorProps }: MDXTOCPro
     );
   }, [toc]);
 
-  const firstVisible = useMemo(() => {
-    for (const [id] of toc) {
-      if (visibilityState[id]) return id;
+  const [activeId, setActiveId] = useState<string | null>(null);
+
+  useEffect(() => {
+    // If any heading is visible, then use the first one
+    for (const [id] of toc) if (visibilityState[id]) return setActiveId(id);
+
+    // If no heading is visible, we fallback to use heading boundings
+    for (const [index, [id]] of toc.entries()) {
+      const tocHeadingTopOffset = document.getElementById(id)?.getBoundingClientRect().top;
+
+      if (tocHeadingTopOffset == null) continue;
+
+      const nextToc = toc[index + 1];
+
+      const nextTocHeadingTopOffset =
+        (nextToc ? document.getElementById(nextToc[0])?.getBoundingClientRect().top : null) ?? Infinity;
+
+      if (tocHeadingTopOffset <= 0 && nextTocHeadingTopOffset >= 0) return setActiveId(id);
     }
-    return null;
+
+    setActiveId(null);
   }, [toc, visibilityState]);
 
   useSafeLayoutEffect(() => {
-    const cleanup: (() => void)[] = [];
-
-    for (const [id] of toc) {
+    const cleanupObserve = toc.map(([id]) => {
       const element = document.getElementById(id);
-      if (!element) continue;
+      if (!element) return;
 
-      cleanup.push(
-        observe(element, isVisible => {
-          produceVisibilityState(draft => {
-            draft[id] = isVisible;
-          });
-        })
-      );
-    }
+      return observe(element, isVisible => {
+        produceVisibilityState(draft => {
+          draft[id] = isVisible;
+        });
+      });
+    });
 
     return () => {
-      for (const cb of cleanup) cb();
+      for (const cb of cleanupObserve) cb && cb();
     };
-  }, []);
+  }, [toc]);
 
   return (
     <Box width="fit-content" {...boxProps}>
       {toc.map(([id, depth, label]) => {
-        const isActive = visibilityState[id] && firstVisible === id;
+        const isActive = activeId === id;
+
         return (
           <TocLink
             key={id}
