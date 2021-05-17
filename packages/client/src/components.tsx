@@ -1,6 +1,5 @@
 import { useTranslation } from 'next-i18next';
 import Image from 'next/image';
-import NextLink, { LinkProps as NextLinkProps } from 'next/link';
 import React, { ReactNode } from 'react';
 
 import {
@@ -21,6 +20,10 @@ import {
   TextProps,
   useColorModeValue,
 } from '@chakra-ui/react';
+
+import { NextLink } from './nextModules';
+
+import type { LinkProps as NextLinkProps } from 'next/link';
 
 export function Translated({ children, name }: { children?: ReactNode; name?: string }): ReactNode {
   const { t } = useTranslation('common');

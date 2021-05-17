@@ -2,7 +2,7 @@ import type { ComponentProps, ReactNode, VoidFunctionComponent } from 'react';
 import type { SSRConfig, useTranslation } from 'next-i18next';
 
 import type { MDXRemoteSerializeResult } from 'next-mdx-remote';
-import type { BoxProps, TextProps, ChakraComponent } from '@chakra-ui/react';
+import type { BoxProps, TextProps, ChakraComponent, LinkBoxProps, LinkOverlayProps, StackProps } from '@chakra-ui/react';
 
 export type IRoutes = {
   $routes?: ([href: string, name: string] | string)[];
@@ -33,12 +33,20 @@ export interface MDXTOCProps {
   anchorProps?: (args: TOCHeading) => ComponentProps<ChakraComponent<'a', {}>>;
 }
 
+export interface BottomNavigationProps {
+  routes: IRoutes;
+  stackProps?: StackProps;
+  linkBoxProps?: LinkBoxProps;
+  linkOverlayProps?: (args: { href: string; name?: string }) => LinkOverlayProps;
+}
+
 export interface MdxPageProps {
   content: ReactNode;
   frontMatter: Record<string, any>;
   useTranslation: typeof useTranslation;
   TOC: VoidFunctionComponent<Omit<MDXTOCProps, 'toc'>>;
   MetaHead: ReactNode;
+  BottomNavigation: VoidFunctionComponent<Omit<BottomNavigationProps, 'routes'>>;
 }
 
 export interface MdxInternalProps {

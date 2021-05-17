@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import { ChevronDownIcon } from '@chakra-ui/icons';
 import { Button, ButtonProps, Collapse, Stack, StackProps, useDisclosure, useSafeLayoutEffect } from '@chakra-ui/react';
 
-import { arePathnamesEqual } from './routes.js';
+import { arePathnamesEqual, concatHrefs } from './routes.js';
 
 import type { Paths } from '@guild-docs/types';
 
@@ -21,7 +21,7 @@ function NavigationItem({
   buttonProps?: ButtonProps;
   stackProps?: StackProps;
 }) {
-  const finalHref = (acumHref !== '/' ? acumHref + '/' : acumHref) + (href === 'index' ? '' : href);
+  const finalHref = concatHrefs(acumHref, href);
 
   const pathsData = paths?.length ? paths : null;
 
@@ -59,6 +59,7 @@ function NavigationItem({
                 if (!isActive) {
                   Router.push(finalHref, undefined, {
                     scroll: true,
+                    locale: Router.locale,
                   });
                 }
               }
@@ -69,7 +70,9 @@ function NavigationItem({
         onMouseOver={
           isAnchor && !isActive
             ? () => {
-                Router.prefetch(finalHref);
+                Router.prefetch(finalHref, undefined, {
+                  locale: Router.locale,
+                });
               }
             : undefined
         }

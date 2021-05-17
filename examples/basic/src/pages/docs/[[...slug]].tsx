@@ -8,7 +8,7 @@ import { getRoutes } from '../../../routes';
 
 import type { GetStaticPaths, GetStaticProps } from 'next';
 
-export default MDXPage(function PostPage({ content, TOC, MetaHead }) {
+export default MDXPage(function PostPage({ content, TOC, MetaHead, BottomNavigation }) {
   return (
     <>
       <Head>{MetaHead}</Head>
@@ -16,6 +16,7 @@ export default MDXPage(function PostPage({ content, TOC, MetaHead }) {
         <Box as="main" maxWidth="80ch" textAlign="justify">
           {content}
         </Box>
+        <BottomNavigation />
         <TOC
           boxProps={{
             paddingRight: '2em',

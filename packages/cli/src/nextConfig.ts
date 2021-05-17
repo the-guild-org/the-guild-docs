@@ -172,7 +172,7 @@ export async function writeDocPages() {
     
     import type { GetStaticPaths, GetStaticProps } from 'next';
     
-    export default MDXPage(function PostPage({ content, TOC, MetaHead }) {
+    export default MDXPage(function PostPage({ content, TOC, MetaHead, BottomNavigation }) {
       return (
         <>
           <Head>{MetaHead}</Head>
@@ -180,6 +180,7 @@ export async function writeDocPages() {
             <Box as="main" maxWidth="80ch" textAlign="justify">
               {content}
             </Box>
+            <BottomNavigation />
             <TOC
               boxProps={{
                 paddingRight: '2em',
@@ -209,7 +210,7 @@ export async function writeDocPages() {
     export const getStaticPaths: GetStaticPaths = ctx => {
       return MDXPaths('docs', { ctx });
     };
-    `,
+        `,
     'typescript'
   );
 
