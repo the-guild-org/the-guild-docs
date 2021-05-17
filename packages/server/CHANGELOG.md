@@ -1,5 +1,16 @@
 # @guild-docs/server
 
+## 0.0.6
+
+### Patch Changes
+
+- 610cf39: improve/fix next/head implementation
+- 610cf39: update deps
+- Updated dependencies [88a38cd]
+- Updated dependencies [610cf39]
+- Updated dependencies [610cf39]
+  - @guild-docs/types@0.0.5
+
 ## 0.0.5
 
 ### Patch Changes
