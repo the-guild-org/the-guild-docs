@@ -1,5 +1,11 @@
 # @guild-docs/client
 
+## 0.0.9
+
+### Patch Changes
+
+- cb5d020: improve TOC logic
+
 ## 0.0.8
 
 ### Patch Changes
