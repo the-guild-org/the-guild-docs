@@ -24,6 +24,7 @@ export function MDXPage(Component: (props: PropsWithChildren<MdxPageProps>) => R
       function TOC(props) {
         if (toc.length < 2) return null;
 
+        return '';
         return createElement(MDXTOC, {
           toc,
           ...props,
@@ -42,6 +43,7 @@ export function MDXPage(Component: (props: PropsWithChildren<MdxPageProps>) => R
 
         if (!mdxRoutesData) return null;
 
+        return '';
         return createElement(BottomNavigationComponent, {
           ...props,
           routes: mdxRoutesData,
