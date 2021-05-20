@@ -54,7 +54,7 @@ importers:
       remark-prism: ^1.3.6
       styled-components: 5.1.0
       tailwindcss: ^2.1.2
-      the-guild-components: file:./the-guild-components-1.0.15.tgz
+      the-guild-components: file:./the-guild-components-1.1.0.tgz
       tsup: ^4.11.0
       typescript: ^4.2.4
       wait-on: ^5.3.0
@@ -89,7 +89,7 @@ importers:
       postcss: 8.2.15
       styled-components: 5.1.0_react-dom@17.0.2+react@17.0.2
       tailwindcss: 2.1.2_797cfc3ceddb49f111b184f6879a433f
-      the-guild-components: file:examples/basic/the-guild-components-1.0.15.tgz_4c5a6fb66797c3c6e58f4a2f4940901a
+      the-guild-components: file:examples/basic/the-guild-components-1.1.0.tgz_4c5a6fb66797c3c6e58f4a2f4940901a
       tsup: 4.11.0_typescript@4.2.4
       typescript: 4.2.4
       wait-on: 5.3.0
@@ -6440,6 +6440,13 @@ packages:
     transitivePeerDependencies:
       - typescript
 
+  /polished/4.1.2:
+    resolution: {integrity: sha512-jq4t3PJUpVRcveC53nnbEX35VyQI05x3tniwp26WFdm1dwaNUBHAi5awa/roBlwQxx1uRhwNSYeAi/aMbfiJCQ==}
+    engines: {node: '>=10'}
+    dependencies:
+      '@babel/runtime': 7.14.0
+    dev: true
+
   /popmotion/9.3.6:
     resolution: {integrity: sha512-ZTbXiu6zIggXzIliMi8LGxXBF5ST+wkpXGEjeTUDUOCdSQ356hij/xjeUdv0F8zCQNeqB1+PR5/BB+gC+QLAPw==}
     dependencies:
@@ -8683,11 +8690,11 @@ packages:
   /zwitch/1.0.5:
     resolution: {integrity: sha512-V50KMwwzqJV0NpZIZFwfOD5/lyny3WlSzRiXgA0G7VUnRlqttta1L6UQIHzd6EuBY/cHGfwTIck7w1yH6Q5zUw==}
 
-  file:examples/basic/the-guild-components-1.0.15.tgz_4c5a6fb66797c3c6e58f4a2f4940901a:
-    resolution: {integrity: sha512-wMS6H/1XRF2oFDjO0jWrCTYLH6hVw2Weh5W8XPfExECmVbibSfAbP/RDmqnWFR70JsvU5jsoNepH1uvmcYPeWw==, tarball: file:examples/basic/the-guild-components-1.0.15.tgz}
-    id: file:examples/basic/the-guild-components-1.0.15.tgz
+  file:examples/basic/the-guild-components-1.1.0.tgz_4c5a6fb66797c3c6e58f4a2f4940901a:
+    resolution: {integrity: sha512-HYsY2NJpeOFM8wNfpkIhkbCpv/LmcnVRmfbqywystKjFv3yd13kmIN4+KS+txN3BB/QVP/Q8jf+KVSQiqfhiLg==, tarball: file:examples/basic/the-guild-components-1.1.0.tgz}
+    id: file:examples/basic/the-guild-components-1.1.0.tgz
     name: the-guild-components
-    version: 1.0.15
+    version: 1.1.0
     peerDependencies:
       react: ^17.0.1
       react-dom: ^17.0.2
@@ -8695,6 +8702,7 @@ packages:
     dependencies:
       algoliasearch: 4.9.1
       core-js: 3.12.1
+      polished: 4.1.2
       react: 17.0.2
       react-dom: 17.0.2_react@17.0.2
       react-instantsearch-dom: 6.11.0_09da17d9b6c24f40dd0e29e052076c80

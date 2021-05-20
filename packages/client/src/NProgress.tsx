@@ -8,7 +8,7 @@ let stopTimer: ReturnType<typeof setTimeout> | null = null;
 
 export const NextNProgress = memo(
   ({
-    color = '#1D487F',
+    color = '#000000',
     startPosition = 0.3,
     startDelayMs = 50,
     stopDelayMs = 0,
