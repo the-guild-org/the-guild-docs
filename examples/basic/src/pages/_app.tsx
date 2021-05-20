@@ -41,12 +41,11 @@ const serializedMdx = process.env.SERIALIZED_MDX_ROUTES;
 let mdxRoutesData = serializedMdx && JSON.parse(serializedMdx);
 
 function App({ Component, pageProps }: AppProps) {
-  const router = useRouter();
-  if (!router) {
-    return '';
-  }
+  const router = useRouter() || {};
 
-  const isDocs = router.asPath.includes('docs');
+  const asPath = router.asPath || '_';
+
+  const isDocs = asPath.includes('docs');
   const mdxRoutes: MdxInternalProps['mdxRoutes'] | undefined = pageProps.mdxRoutes;
 
   const Navigation = useMemo(() => {
