@@ -2,6 +2,7 @@ import editJsonFile from 'edit-json-file';
 import NpmApi from 'npm-api';
 
 import { config } from './cliConfig';
+import { formatPrettier } from './prettier';
 
 const api = new NpmApi();
 
@@ -45,16 +46,20 @@ export async function addDependency(dependency: string | string[], { isDev }: { 
 
       json.set(`${isDev ? 'devDependencies' : 'dependencies'}.${depName}`, depPackageVersion);
     })
-  ).finally(() => {
-    Object.values(jsonConfigs).map(v => {
-      const deps = v.get('dependencies');
-      deps && v.set('dependencies', sortObject(deps));
+  ).finally(async () => {
+    await Promise.all(
+      Object.values(jsonConfigs).map(async v => {
+        const deps = v.get('dependencies');
+        deps && v.set('dependencies', sortObject(deps));
 
-      const devDeps = v.get('devDependencies');
-      devDeps && v.set('devDependencies', sortObject(devDeps));
+        const devDeps = v.get('devDependencies');
+        devDeps && v.set('devDependencies', sortObject(devDeps));
 
-      v.save();
-    });
+        v.save();
+
+        v.write(await formatPrettier(JSON.stringify(v.read()), 'json'));
+      })
+    );
   });
 }
 

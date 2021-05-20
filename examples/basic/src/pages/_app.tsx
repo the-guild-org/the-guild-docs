@@ -61,7 +61,7 @@ function App({ Component, pageProps }: AppProps) {
       <Header accentColor="#1CC8EE" activeLink="/open-source" />
       <Subheader
         router={router}
-        activeLink={router.asPath}
+        activeLink={asPath}
         product={{
           title: 'Docs',
           description: 'Lorem ipsum dolor sit amet',
