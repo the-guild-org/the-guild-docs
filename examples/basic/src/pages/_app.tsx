@@ -1,6 +1,7 @@
 import 'remark-admonitions/styles/infima.css';
 import 'prism-themes/themes/prism-atom-dark.css';
 import 'tailwindcss/tailwind.css';
+import '../../public/style.css';
 
 import { appWithTranslation } from 'next-i18next';
 import { ReactNode, useMemo } from 'react';
