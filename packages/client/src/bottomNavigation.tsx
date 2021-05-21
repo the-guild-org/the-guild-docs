@@ -140,7 +140,7 @@ export function BottomNavigationComponent({ routes }: BottomNavigationProps) {
     const activeRouting = routesData.find(v => arePathnamesEqual(v.current.href, asPath));
 
     setCurrentRoute(activeRouting);
-    setCurrentTitle(activeRouting?.current?.name || '');
+    setCurrentTitle(activeRouting?.current.name || '');
   }, [asPath, routesData]);
 
   if (!currentRoute) return null;
@@ -153,8 +153,8 @@ export function BottomNavigationComponent({ routes }: BottomNavigationProps) {
       {previous && (
         <NextLink href={previous.href} passHref>
           <Link
-            onMouseOver={() => setCurrentTitle(previous?.name || 'Previous')}
-            onMouseOut={() => setCurrentTitle(current?.name || '')}
+            onMouseOver={() => setCurrentTitle(previous.name || 'Previous')}
+            onMouseOut={() => setCurrentTitle(current.name || '')}
           >
             <ArrowBackIcon />
           </Link>
@@ -164,7 +164,7 @@ export function BottomNavigationComponent({ routes }: BottomNavigationProps) {
       <Title>{currentTitle}</Title>
       {next && (
         <NextLink href={next.href} passHref>
-          <Link onMouseOver={() => setCurrentTitle(next?.name || 'Next')} onMouseOut={() => setCurrentTitle(current?.name || '')}>
+          <Link onMouseOver={() => setCurrentTitle(next.name || 'Next')} onMouseOut={() => setCurrentTitle(current.name || '')}>
             <ArrowForwardIcon />
           </Link>
         </NextLink>
