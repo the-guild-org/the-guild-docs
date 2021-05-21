@@ -1,7 +1,7 @@
 import RouterDefault from 'next/router';
 import React, { useRef, useState } from 'react';
 
-import { useSafeLayoutEffect, chakra } from '@chakra-ui/react';
+import { useSafeLayoutEffect, chakra, useDisclosure } from '@chakra-ui/react';
 
 import { arePathnamesEqual, concatHrefs } from './routes.js';
 import { getDefault } from './utils.js';
@@ -55,6 +55,10 @@ const Link = chakra('a', {
 function Item({ item: { href, name, paths, isPage }, acumHref, depth }: { item: Paths; acumHref: string; depth: number }) {
   const finalHref = concatHrefs(acumHref, href);
 
+  const { isOpen } = useDisclosure({
+    defaultIsOpen: depth < 1,
+  });
+
   const pathsData = paths?.length ? paths : null;
 
   const isAnchor = isPage && !pathsData;
@@ -88,12 +92,29 @@ function Item({ item: { href, name, paths, isPage }, acumHref, depth }: { item: 
   return (
     <>
       {!pathsData ? (
-        <Link href={isAnchor ? finalHref : undefined} color={isActive ? '#000' : '#7F818C'} {...(depth !== 0 && innerItemStyles)}>
+        <Link
+          onClick={ev => {
+            ev.preventDefault();
+
+            if (!isActive) Router.push(finalHref);
+          }}
+          onMouseOver={
+            isActive
+              ? undefined
+              : () => {
+                  Router.prefetch(finalHref);
+                }
+          }
+          href={isAnchor ? finalHref : undefined}
+          color={isActive ? '#000' : '#7F818C'}
+          {...(depth !== 0 && innerItemStyles)}
+        >
           {label}
         </Link>
       ) : (
-        <Details {...(depth !== 0 && innerItemStyles)}>
+        <Details open={isOpen} {...(depth !== 0 && innerItemStyles)}>
           <Summary color={isActive ? '#000' : '#7F818C'}> {label} </Summary>
+
           <MDXNavigation paths={pathsData} acumHref={finalHref} depth={depth + 1} />
         </Details>
       )}
