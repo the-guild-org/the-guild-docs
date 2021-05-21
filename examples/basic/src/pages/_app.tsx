@@ -3,8 +3,7 @@ import 'prism-themes/themes/prism-atom-dark.css';
 import 'tailwindcss/tailwind.css';
 
 import { appWithTranslation } from 'next-i18next';
-import Head from 'next/head';
-import { memo, ReactNode, useMemo } from 'react';
+import { ReactNode, useMemo } from 'react';
 import { Footer, GlobalStyles, Header, SearchBar, Subheader } from 'the-guild-components';
 
 import { chakra, ChakraProvider, extendTheme } from '@chakra-ui/react';
@@ -74,15 +73,6 @@ const DocsSearch = chakra('div', {
 const serializedMdx = process.env.SERIALIZED_MDX_ROUTES;
 let mdxRoutesData = serializedMdx && JSON.parse(serializedMdx);
 
-const MetaHead = memo(() => {
-  return (
-    <Head>
-      <link rel="preconnect" href="https://fonts.gstatic.com" />
-      <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />{' '}
-    </Head>
-  );
-});
-
 function App({ Component, pageProps, router }: AppProps) {
   const isDocs = router.asPath.includes('docs');
   const mdxRoutes: MdxInternalProps['mdxRoutes'] | undefined = pageProps.mdxRoutes;
@@ -96,7 +86,6 @@ function App({ Component, pageProps, router }: AppProps) {
 
   return (
     <>
-      <MetaHead />
       <NextNProgress />
       <GlobalStyles />
       <Header accentColor={accentColor} activeLink="/open-source" />
