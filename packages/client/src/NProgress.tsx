@@ -91,9 +91,9 @@ export const NextNProgress = memo(
             transform: rotate(3deg) translate(0px, -4px);
           }
           #nprogress .spinner {
-            display: block;
+            display: none;
             position: fixed;
-            z-index: 1031;
+            z-index: 400;
             top: 15px;
             right: 15px;
           }

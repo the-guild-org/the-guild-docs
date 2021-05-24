@@ -24,7 +24,7 @@ const DocsTOC = chakra('aside', {
 const DocsContent = chakra('article', {
   baseStyle: {
     display: 'block',
-    fontFamily: 'Poppins',
+
     mt: {
       lg: '-1rem',
     },

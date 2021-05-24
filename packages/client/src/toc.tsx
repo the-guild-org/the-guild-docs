@@ -16,7 +16,6 @@ const Wrapper = chakra('div', {
     p: '1rem',
     backgroundColor: '#F3F4F6',
     borderRadius: '0.5rem',
-    fontFamily: 'Poppins',
   },
 });
 

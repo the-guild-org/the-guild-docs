@@ -11,9 +11,7 @@ import type { Paths } from '@guild-docs/types';
 const Router = getDefault(RouterDefault);
 
 const Wrapper = chakra('nav', {
-  baseStyle: {
-    fontFamily: 'Poppins',
-  },
+  baseStyle: {},
 });
 
 const Details = chakra('div', {
@@ -72,6 +70,10 @@ function Item({ item: { href, name, paths, isPage }, acumHref, depth }: { item: 
 
   // This logic has to be client-side only
   useSafeLayoutEffect(() => {
+    if (!['/', '/docs', '/docs/'].includes(finalHref) && Router.asPath.includes(finalHref)) {
+      onToggle();
+    }
+
     const initialIsActive = arePathnamesEqual(Router.asPath || '_', finalHref);
 
     if (initialIsActive !== currentIsActive.current) setIsActive(initialIsActive);
@@ -91,15 +93,12 @@ function Item({ item: { href, name, paths, isPage }, acumHref, depth }: { item: 
 
   const label = name || href.replace(/-/g, ' ');
 
-  if (pathsData) console.log('label', label, isOpen);
-
   return (
     <>
       {pathsData ? (
         <Details {...(depth !== 0 && innerItemStyles)}>
-          <Summary onClick={onToggle} color={isActive ? '#000' : '#7F818C'}>
+          <Summary onClick={onToggle} color={isOpen ? '#000' : '#7F818C'}>
             <ChevronDownIcon transition="transform 0.3s" transform={isOpen ? undefined : 'rotate(-90deg)'} />
-
             <Text as="span">{label}</Text>
           </Summary>
 
@@ -111,8 +110,9 @@ function Item({ item: { href, name, paths, isPage }, acumHref, depth }: { item: 
         <Link
           onClick={ev => {
             ev.preventDefault();
-
-            if (!isActive) Router.push(finalHref);
+            if (!isActive) {
+              Router.push(finalHref);
+            }
           }}
           onMouseOver={
             isActive
@@ -123,6 +123,7 @@ function Item({ item: { href, name, paths, isPage }, acumHref, depth }: { item: 
           }
           href={isAnchor ? finalHref : undefined}
           color={isActive ? '#000' : '#7F818C'}
+          fontWeight={isActive ? 'bold' : 'medium'}
           {...(depth !== 0 && innerItemStyles)}
         >
           {label}

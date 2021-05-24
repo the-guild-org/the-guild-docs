@@ -1,6 +1,5 @@
 import 'remark-admonitions/styles/infima.css';
 import 'prism-themes/themes/prism-atom-dark.css';
-import 'tailwindcss/tailwind.css';
 import '../../public/style.css';
 
 import { appWithTranslation } from 'next-i18next';
@@ -22,7 +21,12 @@ ExtendComponents({
   },
 });
 
-const theme = extendTheme({});
+const theme = extendTheme({
+  fonts: {
+    heading: '"Poppins", sans-serif',
+    body: '"Poppins", sans-serif',
+  },
+});
 
 const DocsContainer = chakra('section', {
   baseStyle: {
@@ -61,7 +65,6 @@ const DocsTitle = chakra('h2', {
     mb: '0.5rem',
     fontWeight: 'bold',
     fontSize: '1.125rem',
-    fontFamily: 'Poppins',
   },
 });
 

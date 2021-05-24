@@ -17,7 +17,6 @@ const Wrapper = chakra('div', {
     display: 'flex',
     alignItems: 'center',
     pt: '1rem',
-    fontFamily: 'Poppins',
   },
 });
 
