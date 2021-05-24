@@ -12,7 +12,6 @@ import {
   writei18Config,
   writeNextConfig,
   writeRoutes,
-  writeTailwindConfig,
   writeTranslations,
   writeTSConfig,
 } from './nextConfig';
@@ -55,9 +54,6 @@ async function DepsAction(dir: string = process.cwd()) {
         'open-cli',
         'wait-on',
         'next-remote-watch',
-        'autoprefixer',
-        'postcss',
-        'tailwindcss',
       ],
       {
         isDev: true,
@@ -88,7 +84,6 @@ async function ConfigAction(dir: string = process.cwd()) {
     writeDocPages(),
     writeDocsDirectory(),
     writeTSConfig(),
-    writeTailwindConfig(),
   ]);
 
   console.log('Configuration files added!');

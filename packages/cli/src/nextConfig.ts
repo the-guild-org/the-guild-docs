@@ -94,7 +94,6 @@ export async function writeApp() {
     `
     import 'remark-admonitions/styles/infima.css';
     import 'prism-themes/themes/prism-atom-dark.css';
-    import 'tailwindcss/tailwind.css';
     
     import { appWithTranslation } from 'next-i18next';
     import { ReactNode, useMemo } from 'react';
@@ -298,43 +297,4 @@ export async function writeTSConfig() {
       `,
     'json'
   );
-}
-
-export async function writeTailwindConfig() {
-  await Promise.all([
-    writeFileFormatIfNotExists(
-      [config.cwd, 'postcss.config.js'],
-      `
-    // If you want to use other PostCSS plugins, see the following:
-// https://tailwindcss.com/docs/using-with-preprocessors
-module.exports = {
-  plugins: {
-    tailwindcss: {},
-    autoprefixer: {},
-  },
-}
-
-    `,
-      'typescript'
-    ),
-    writeFileFormatIfNotExists(
-      [config.cwd, 'tailwind.config.js'],
-      `
-    module.exports = {
-      mode: 'jit',
-      purge: ['./src/**/*.{js,ts,jsx,tsx}'],
-      darkMode: false, // or 'media' or 'class'
-      theme: {
-        extend: {},
-      },
-      variants: {
-        extend: {},
-      },
-      plugins: [],
-    };
-    
-    `,
-      'typescript'
-    ),
-  ]);
 }
