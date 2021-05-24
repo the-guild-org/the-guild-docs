@@ -1,15 +1,14 @@
 import 'remark-admonitions/styles/infima.css';
 import 'prism-themes/themes/prism-atom-dark.css';
 import 'tailwindcss/tailwind.css';
+import '../../public/style.css';
 
 import { appWithTranslation } from 'next-i18next';
 import { ReactNode, useMemo } from 'react';
+import { Footer, GlobalStyles, Header, SearchBar, Subheader } from 'the-guild-components';
 
 import { chakra, ChakraProvider, extendTheme } from '@chakra-ui/react';
-
-import { NextNProgress, MdxInternalProps, MDXNavigation, iterateRoutes, ExtendComponents } from '@guild-docs/client';
-
-import { GlobalStyles, Header, Subheader, Footer, SearchBar } from 'the-guild-components';
+import { ExtendComponents, iterateRoutes, MdxInternalProps, MDXNavigation, NextNProgress } from '@guild-docs/client';
 
 import type { AppProps } from 'next/app';
 
