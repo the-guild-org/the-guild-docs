@@ -3,8 +3,12 @@ import type { IRoutes, Paths } from '@guild-docs/types';
 /**
  * Compare function designed to ignore trailing slashes when comparing paths
  */
-export function arePathnamesEqual(a: string, b: string) {
-  return withTrailingSlash(a) === withTrailingSlash(b);
+export function arePathnamesEqual(a: string, b: string): boolean {
+  return withTrailingSlash(withoutUrlQuery(a)) === withTrailingSlash(withoutUrlQuery(b));
+}
+
+export function withoutUrlQuery(v: string): string {
+  return v.split('#')[0]!;
 }
 
 export function withTrailingSlash(v: string) {
