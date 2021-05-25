@@ -102,7 +102,7 @@ const hr = () => {
 
 const h1 = ({ children, ...delegated }: HeadingProps) => {
   return (
-    <Heading as="h1" size="xl" my={4} {...delegated}>
+    <Heading as="h1" size="xl" my={4} mt="-24" pt="28" {...delegated}>
       {children}
     </Heading>
   );
@@ -110,7 +110,7 @@ const h1 = ({ children, ...delegated }: HeadingProps) => {
 
 const h2 = ({ children, ...delegated }: HeadingProps) => {
   return (
-    <Heading as="h2" marginY="1em" fontWeight="bold" size="lg" {...delegated}>
+    <Heading as="h2" marginY="1em" mt="-24" pt="28" fontWeight="bold" size="lg" {...delegated}>
       {children}
     </Heading>
   );
@@ -118,7 +118,7 @@ const h2 = ({ children, ...delegated }: HeadingProps) => {
 
 const h3 = ({ children, ...delegated }: HeadingProps) => {
   return (
-    <Heading as="h3" marginY="1em" size="md" fontWeight="bold" {...delegated}>
+    <Heading as="h3" marginY="1em" mt="-24" pt="28" size="md" fontWeight="bold" {...delegated}>
       {children}
     </Heading>
   );
@@ -126,7 +126,7 @@ const h3 = ({ children, ...delegated }: HeadingProps) => {
 
 const h4 = ({ children, ...delegated }: HeadingProps) => {
   return (
-    <Heading as="h4" marginY="1em" size="md" fontWeight="bold" {...delegated}>
+    <Heading as="h4" marginY="1em" mt="-24" pt="28" size="md" fontWeight="bold" {...delegated}>
       {children}
     </Heading>
   );
@@ -134,7 +134,7 @@ const h4 = ({ children, ...delegated }: HeadingProps) => {
 
 const h5 = ({ children, ...delegated }: HeadingProps) => {
   return (
-    <Heading as="h5" marginY="1em" size="md" fontWeight="bold" {...delegated}>
+    <Heading as="h5" marginY="1em" mt="-24" pt="28" size="md" fontWeight="bold" {...delegated}>
       {children}
     </Heading>
   );

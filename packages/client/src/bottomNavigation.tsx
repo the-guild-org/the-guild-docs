@@ -2,8 +2,8 @@ import NextLinkImport from 'next/link';
 import { useRouter } from 'next/router';
 import React, { FC, useMemo, useState } from 'react';
 
-import { ChevronLeftIcon, ChevronRightIcon } from '@chakra-ui/icons';
-import { LinkBox, LinkOverlay, Stack, useSafeLayoutEffect } from '@chakra-ui/react';
+import { ArrowBackIcon, ArrowForwardIcon } from '@chakra-ui/icons';
+import { useSafeLayoutEffect, chakra } from '@chakra-ui/react';
 
 import { arePathnamesEqual, concatHrefs, iterateRoutes, withoutTrailingSlash } from './routes.js';
 import { getDefault } from './utils.js';
@@ -11,6 +11,50 @@ import { getDefault } from './utils.js';
 import type { BottomNavigationProps, Paths } from '@guild-docs/types';
 
 const NextLink = getDefault(NextLinkImport);
+
+const Wrapper = chakra('div', {
+  baseStyle: {
+    display: 'flex',
+    alignItems: 'center',
+    pt: '1rem',
+  },
+});
+
+const Title = chakra('p', {
+  baseStyle: {
+    display: '-webkit-box',
+    WebkitLineClamp: 2,
+    WebkitBoxOrient: 'vertical',
+    overflow: 'hidden',
+
+    flex: '1 1 0%',
+    justifyContent: 'center',
+    alignItems: 'center',
+    px: '0.5rem',
+    fontWeight: 'medium',
+    fontSize: '0.75rem',
+    textAlign: 'center',
+    color: '#6b7280',
+  },
+});
+
+const Link = chakra('a', {
+  baseStyle: {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    height: '2rem',
+    width: '2rem',
+    borderRadius: '0.5rem',
+    backgroundColor: '#F3F4F6',
+    cursor: 'pointer',
+    transition: '0.15s',
+    _hover: {
+      backgroundColor: '#000',
+      color: '#FFF',
+    },
+  },
+});
 
 export interface ReducedHref {
   href: string;
@@ -66,7 +110,7 @@ export const ClientSideOnly: FC = ({ children }) => {
   return null;
 };
 
-export function BottomNavigationComponent({ routes, stackProps, linkBoxProps, linkOverlayProps }: BottomNavigationProps) {
+export function BottomNavigationComponent({ routes }: BottomNavigationProps) {
   const Router = useRouter() || {};
 
   const asPath = Router.asPath || '_';
@@ -88,81 +132,42 @@ export function BottomNavigationComponent({ routes, stackProps, linkBoxProps, li
   }, [routes]);
 
   const [currentRoute, setCurrentRoute] = useState<CombinedReducedHref | undefined>();
+  const [currentTitle, setCurrentTitle] = useState<string>('');
 
   // This logic is client-side only
   useSafeLayoutEffect(() => {
-    setCurrentRoute(routesData.find(v => arePathnamesEqual(v.current.href, asPath)));
+    const activeRouting = routesData.find(v => arePathnamesEqual(v.current.href, asPath));
+
+    setCurrentRoute(activeRouting);
+    setCurrentTitle(activeRouting?.current.name || '');
   }, [asPath, routesData]);
 
   if (!currentRoute) return null;
 
-  const previous = currentRoute.previous;
-  const next = currentRoute.next;
-
-  if (!previous && !next) return null;
+  const { previous, next, current } = currentRoute;
+  if ((!previous && !next) || !current) return null;
 
   return (
-    <Stack isInline {...stackProps}>
+    <Wrapper>
       {previous && (
-        <LinkBox
-          borderRadius="md"
-          shadow="md"
-          borderWidth="1px"
-          display="flex"
-          alignItems="center"
-          justifyContent="center"
-          padding="10px"
-          {...linkBoxProps}
-        >
-          <NextLink href={previous.href} passHref>
-            <LinkOverlay
-              children={
-                <>
-                  <ChevronLeftIcon />
-                  {previous.name || previous.href}
-                </>
-              }
-              {...linkOverlayProps?.({
-                href: previous.href,
-                name: previous.name,
-              })}
-            />
-          </NextLink>
-        </LinkBox>
+        <NextLink href={previous.href} passHref>
+          <Link
+            onMouseOver={() => setCurrentTitle(previous.name || 'Previous')}
+            onMouseOut={() => setCurrentTitle(current.name || '')}
+          >
+            <ArrowBackIcon />
+          </Link>
+        </NextLink>
       )}
+
+      <Title>{currentTitle}</Title>
       {next && (
-        <LinkBox
-          borderRadius="md"
-          shadow="md"
-          borderWidth="1px"
-          display="flex"
-          alignItems="center"
-          justifyContent="center"
-          padding="10px"
-          {...linkBoxProps}
-        >
-          <LinkOverlay
-            href={next.href}
-            onClick={ev => {
-              ev.preventDefault();
-              Router.push(next.href);
-            }}
-            onMouseOver={() => {
-              Router.prefetch(next.href);
-            }}
-            children={
-              <>
-                {next.name || next.href}
-                <ChevronRightIcon />
-              </>
-            }
-            {...linkOverlayProps?.({
-              href: next.href,
-              name: next.name,
-            })}
-          />
-        </LinkBox>
+        <NextLink href={next.href} passHref>
+          <Link onMouseOver={() => setCurrentTitle(next.name || 'Next')} onMouseOut={() => setCurrentTitle(current.name || '')}>
+            <ArrowForwardIcon />
+          </Link>
+        </NextLink>
       )}
-    </Stack>
+    </Wrapper>
   );
 }

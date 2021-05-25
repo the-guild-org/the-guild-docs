@@ -8,7 +8,7 @@ let stopTimer: ReturnType<typeof setTimeout> | null = null;
 
 export const NextNProgress = memo(
   ({
-    color = '#1D487F',
+    color = '#000000',
     startPosition = 0.3,
     startDelayMs = 50,
     stopDelayMs = 0,
@@ -91,9 +91,9 @@ export const NextNProgress = memo(
             transform: rotate(3deg) translate(0px, -4px);
           }
           #nprogress .spinner {
-            display: block;
+            display: none;
             position: fixed;
-            z-index: 1031;
+            z-index: 400;
             top: 15px;
             right: 15px;
           }

@@ -2,7 +2,7 @@ import RouterDefault from 'next/router';
 import React, { useRef, useState } from 'react';
 
 import { ChevronDownIcon } from '@chakra-ui/icons';
-import { Button, ButtonProps, Collapse, Stack, StackProps, useDisclosure, useSafeLayoutEffect } from '@chakra-ui/react';
+import { BorderProps, chakra, Collapse, CSSObject, Text, useDisclosure, useSafeLayoutEffect } from '@chakra-ui/react';
 
 import { arePathnamesEqual, concatHrefs } from './routes.js';
 import { getDefault } from './utils.js';
@@ -11,28 +11,68 @@ import type { Paths } from '@guild-docs/types';
 
 const Router = getDefault(RouterDefault);
 
-function NavigationItem({
+const Wrapper = chakra('nav', {
+  baseStyle: {},
+});
+
+const Details = chakra('div', {
+  baseStyle: {},
+});
+
+const itemStyles: CSSObject = {
+  py: '0.35rem',
+  pl: '0.75rem',
+  fontSize: '0.875rem',
+  fontWeight: 'medium',
+  textTransform: 'capitalize',
+  cursor: 'pointer',
+  userSelect: 'none',
+  transition: '0.1s',
+  _hover: {
+    color: '#000',
+    backgroundColor: '#F3F4F6',
+  },
+};
+
+const innerItemStyles: BorderProps = {
+  borderLeft: '0.15rem solid #9ca3af',
+};
+
+const Summary = chakra('div', {
+  baseStyle: {
+    ...itemStyles,
+    display: 'flex',
+    alignItems: 'center',
+  },
+});
+
+const Link = chakra('a', {
+  baseStyle: {
+    display: 'block',
+    ...itemStyles,
+  },
+});
+
+function Item({
   item: { href, name, paths, isPage },
   acumHref,
   depth,
-  buttonProps = {},
-  stackProps = {},
+  accentColor,
 }: {
   item: Paths;
   acumHref: string;
   depth: number;
-  buttonProps?: ButtonProps;
-  stackProps?: StackProps;
+  accentColor: string;
 }) {
   const finalHref = concatHrefs(acumHref, href);
-
-  const pathsData = paths?.length ? paths : null;
-
-  const isAnchor = isPage && !pathsData;
 
   const { isOpen, onToggle } = useDisclosure({
     defaultIsOpen: depth < 1,
   });
+
+  const pathsData = paths?.length ? paths : null;
+
+  const isAnchor = isPage && !pathsData;
 
   const [isActive, setIsActive] = useState(false);
 
@@ -41,14 +81,23 @@ function NavigationItem({
 
   // This logic has to be client-side only
   useSafeLayoutEffect(() => {
-    const initialIsActive = arePathnamesEqual(Router.asPath || '_', finalHref);
+    const handleToggle = () => {
+      const shouldToggle = !['/', '/docs', '/docs/'].includes(finalHref) && Router.asPath.includes(finalHref);
+      shouldToggle && onToggle();
+    };
 
+    const initialIsActive = arePathnamesEqual(Router.asPath || '_', finalHref);
     if (initialIsActive !== currentIsActive.current) setIsActive(initialIsActive);
+
+    handleToggle();
 
     function routeChangeHandler() {
       const newIsActive = arePathnamesEqual(Router.asPath || '_', finalHref);
+      if (newIsActive !== currentIsActive.current) {
+        setIsActive(newIsActive);
+      }
 
-      if (newIsActive !== currentIsActive.current) setIsActive(newIsActive);
+      handleToggle();
     }
 
     Router.events.on('routeChangeComplete', routeChangeHandler);
@@ -58,64 +107,43 @@ function NavigationItem({
     };
   }, [finalHref, currentIsActive]);
 
+  const label = name || href.replace(/-/g, ' ');
+
   return (
     <>
-      <Button
-        justifyContent="flex-start"
-        variant="ghost"
-        width="100%"
-        as={isAnchor ? 'a' : undefined}
-        href={isAnchor ? finalHref : undefined}
-        whiteSpace="normal"
-        onClick={
-          isAnchor
-            ? (ev: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
-                ev.preventDefault();
-
-                if (!isActive) {
-                  Router.push(finalHref, undefined, {
-                    scroll: true,
-                    locale: Router.locale,
-                  });
-                }
-              }
-            : () => {
-                onToggle();
-              }
-        }
-        onMouseOver={
-          isAnchor && !isActive
-            ? () => {
-                Router.prefetch(finalHref, undefined, {
-                  locale: Router.locale,
-                });
-              }
-            : undefined
-        }
-        alignItems="center"
-        marginY="2px"
-        paddingX={`${depth + 1}em`}
-        color={isActive && !pathsData ? 'blue.500' : undefined}
-        transition="color 0.5s"
-        {...buttonProps}
-      >
-        <span>{name || href}</span>
-        {pathsData && (
-          <ChevronDownIcon className="chevdown" transition="transform 0.3s" transform={isOpen ? 'rotate(180deg)' : undefined} />
-        )}
-      </Button>
-
       {pathsData ? (
-        <Collapse in={isOpen} unmountOnExit>
-          <MDXNavigation
-            paths={pathsData}
-            acumHref={finalHref}
-            depth={depth + 1}
-            stackProps={stackProps}
-            navigationButtonProps={buttonProps}
-          />
-        </Collapse>
-      ) : null}
+        <Details {...(depth !== 0 && innerItemStyles)}>
+          <Summary onClick={onToggle} color={isOpen ? '#000' : '#7F818C'}>
+            <ChevronDownIcon transition="transform 0.3s" transform={isOpen ? undefined : 'rotate(-90deg)'} />
+            <Text as="span">{label}</Text>
+          </Summary>
+
+          <Collapse in={isOpen} unmountOnExit>
+            <MDXNavigation paths={pathsData} acumHref={finalHref} depth={depth + 1} accentColor={accentColor} />
+          </Collapse>
+        </Details>
+      ) : (
+        <Link
+          onClick={ev => {
+            ev.preventDefault();
+            if (!isActive) {
+              Router.push(finalHref);
+            }
+          }}
+          onMouseOver={
+            isActive
+              ? undefined
+              : () => {
+                  Router.prefetch(finalHref);
+                }
+          }
+          href={isAnchor ? finalHref : undefined}
+          color={isActive ? accentColor : '#7F818C'}
+          {...(depth !== 0 && innerItemStyles)}
+        >
+          {label}
+        </Link>
+      )}
     </>
   );
 }
@@ -124,25 +152,18 @@ export function MDXNavigation({
   paths,
   acumHref = '',
   depth = 0,
-  stackProps = {},
-  navigationButtonProps = {},
+  accentColor = '#000',
 }: {
   paths: Paths[];
   acumHref?: string;
   depth?: number;
-  stackProps?: StackProps;
-  navigationButtonProps?: ButtonProps;
+  accentColor?: string;
 }) {
-  const Component = paths.map((item, index) => {
-    return <NavigationItem key={index} item={item} acumHref={acumHref} depth={depth} buttonProps={navigationButtonProps} />;
-  });
-
-  if (depth === 0) {
-    return (
-      <Stack width="280px" spacing="0" {...stackProps}>
-        {Component}
-      </Stack>
-    );
-  }
-  return <>{Component}</>;
+  return (
+    <Wrapper ml={depth !== 0 ? '1rem' : 0}>
+      {paths.map((item, index) => {
+        return <Item key={index} item={item} acumHref={acumHref} depth={depth} accentColor={accentColor} />;
+      })}
+    </Wrapper>
+  );
 }

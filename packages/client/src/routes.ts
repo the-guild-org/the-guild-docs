@@ -3,8 +3,12 @@ import type { IRoutes, Paths } from '@guild-docs/types';
 /**
  * Compare function designed to ignore trailing slashes when comparing paths
  */
-export function arePathnamesEqual(a: string, b: string) {
-  return withTrailingSlash(a) === withTrailingSlash(b);
+export function arePathnamesEqual(a: string, b: string): boolean {
+  return withTrailingSlash(withoutUrlQuery(a)) === withTrailingSlash(withoutUrlQuery(b));
+}
+
+export function withoutUrlQuery(v: string): string {
+  return v.split('#')[0]!;
 }
 
 export function withTrailingSlash(v: string) {
@@ -25,15 +29,6 @@ export function concatHrefs(acumHref: string, currentHref: string) {
 export function iterateRoutes(routes: IRoutes, paths: Paths[] = []): Paths[] {
   const { $routes, _: restRoutes = {} } = routes;
 
-  for (const [href, { $name, $routes, _: entryRoutes = {} }] of Object.entries(restRoutes)) {
-    paths.push({
-      href,
-      name: $name,
-      paths: iterateRoutes({ $routes, _: entryRoutes }),
-      isPage: !!$routes?.find(v => (Array.isArray(v) ? v[0] : v) === 'index') || Object.keys(entryRoutes).includes('index'),
-    });
-  }
-
   if ($routes) {
     for (const route of $routes) {
       const [href, name] = Array.isArray(route) ? route : [route, route];
@@ -44,6 +39,14 @@ export function iterateRoutes(routes: IRoutes, paths: Paths[] = []): Paths[] {
         isPage: true,
       });
     }
+  }
+  for (const [href, { $name, $routes, _: entryRoutes = {} }] of Object.entries(restRoutes)) {
+    paths.push({
+      href,
+      name: $name,
+      paths: iterateRoutes({ $routes, _: entryRoutes }),
+      isPage: !!$routes?.find(v => (Array.isArray(v) ? v[0] : v) === 'index') || Object.keys(entryRoutes).includes('index'),
+    });
   }
 
   return paths;

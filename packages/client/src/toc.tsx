@@ -2,13 +2,51 @@ import React, { useEffect, useState } from 'react';
 import { observe } from 'react-intersection-observer';
 import { useImmer } from 'use-immer';
 
-import { Box, chakra, Text, useSafeLayoutEffect, useUpdateEffect } from '@chakra-ui/react';
+import { chakra, useSafeLayoutEffect, useUpdateEffect } from '@chakra-ui/react';
 
 import type { MDXTOCProps } from '@guild-docs/types';
 
-const TocLink = chakra('a', {});
+const Wrapper = chakra('div', {
+  baseStyle: {
+    display: {
+      base: 'none',
+      lg: 'block',
+    },
+    width: '100%',
+    p: '1rem',
+    backgroundColor: '#F3F4F6',
+    borderRadius: '0.5rem',
+  },
+});
 
-export function MDXTOC({ toc, boxProps = {}, textProps, anchorProps }: MDXTOCProps) {
+const Title = chakra('h2', {
+  baseStyle: {
+    textTransform: 'uppercase',
+    fontSize: '0.75rem',
+    fontWeight: 'bold',
+  },
+});
+
+const Link = chakra('a', {
+  baseStyle: {
+    display: 'block',
+    width: 'fit-content',
+    my: '0.5rem',
+    fontSize: '0.875rem',
+    transition: '0.15s',
+    _hover: {
+      opacity: '100%',
+    },
+    _focus: {
+      opacity: '100%',
+    },
+    _last: {
+      mb: '0',
+    },
+  },
+});
+
+export function MDXTOC({ toc }: MDXTOCProps) {
   const [visibilityState, produceVisibilityState] = useImmer(() => {
     return toc.reduce((acum, [id]) => {
       acum[id] = false;
@@ -66,31 +104,22 @@ export function MDXTOC({ toc, boxProps = {}, textProps, anchorProps }: MDXTOCPro
   }, [toc]);
 
   return (
-    <Box width="fit-content" {...boxProps}>
+    <Wrapper>
+      <Title>Content</Title>
       {toc.map(([id, depth, label]) => {
         const isActive = activeId === id;
-
         return (
-          <TocLink
+          <Link
             key={id}
             href={'#' + id}
-            color={isActive ? 'pink.500' : 'teal.500'}
-            transition="color 0.4s"
-            _hover={{
-              color: isActive ? 'pink.300' : 'teal.300',
-            }}
-            children={
-              <Text
-                wordBreak="break-word"
-                marginLeft={`${depth * 0.5}em`}
-                children={label}
-                {...(textProps ? textProps({ id, depth, isActive, label }) : null)}
-              />
-            }
-            {...(anchorProps ? anchorProps({ id, depth, isActive, label }) : null)}
-          />
+            fontWeight={isActive ? 'semibold' : 'normal'}
+            opacity={isActive ? '100%' : '60%'}
+            marginLeft={`${depth}rem`}
+          >
+            {label}
+          </Link>
         );
       })}
-    </Box>
+    </Wrapper>
   );
 }

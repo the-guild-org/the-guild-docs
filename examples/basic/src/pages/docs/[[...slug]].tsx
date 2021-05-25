@@ -1,7 +1,6 @@
 import Head from 'next/head';
 
-import { Box, Stack } from '@chakra-ui/react';
-import { MDXPage } from '@guild-docs/client';
+import { DocsContent, DocsTOC, MDXPage } from '@guild-docs/client';
 import { MDXPaths, MDXProps } from '@guild-docs/server';
 
 import { getRoutes } from '../../../routes';
@@ -12,21 +11,11 @@ export default MDXPage(function PostPage({ content, TOC, MetaHead, BottomNavigat
   return (
     <>
       <Head>{MetaHead}</Head>
-      <Stack>
-        <Box as="main" maxWidth="80ch" textAlign="justify">
-          {content}
-        </Box>
+      <DocsContent>{content}</DocsContent>
+      <DocsTOC>
+        <TOC />
         <BottomNavigation />
-        <TOC
-          boxProps={{
-            paddingRight: '2em',
-            position: 'fixed',
-            top: 0,
-            right: 0,
-            fontSize: '2xl',
-          }}
-        />
-      </Stack>
+      </DocsTOC>
     </>
   );
 });
