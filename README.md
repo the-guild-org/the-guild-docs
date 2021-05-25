@@ -1,5 +1,7 @@
 # the-guild-docs
 
+Low level documentation websites using [Next.js](https://nextjs.org/)
+
 ## guild-docs package
 
 To initialize a guild-docs package, you can use **npx**:
