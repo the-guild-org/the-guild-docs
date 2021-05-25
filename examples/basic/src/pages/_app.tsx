@@ -72,6 +72,7 @@ function App({ Component, pageProps, router }: AppProps) {
             alt: 'Docs',
           },
         }}
+        // TODO: We need an "onClick" handler to do client-side navigation
         links={[
           {
             label: 'Home',
