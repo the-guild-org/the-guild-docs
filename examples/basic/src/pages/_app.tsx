@@ -6,8 +6,18 @@ import { appWithTranslation } from 'next-i18next';
 import { ReactNode, useMemo, useState } from 'react';
 import { Footer, GlobalStyles, Header, SearchBar, Subheader } from 'the-guild-components';
 
-import { chakra, ChakraProvider, extendTheme } from '@chakra-ui/react';
-import { ExtendComponents, iterateRoutes, MdxInternalProps, MDXNavigation, NextNProgress } from '@guild-docs/client';
+import { ChakraProvider, extendTheme, theme as chakraTheme } from '@chakra-ui/react';
+import {
+  DocsContainer,
+  DocsNavigation,
+  DocsSearch,
+  DocsTitle,
+  ExtendComponents,
+  iterateRoutes,
+  MdxInternalProps,
+  MDXNavigation,
+  NextNProgress,
+} from '@guild-docs/client';
 
 import type { AppProps } from 'next/app';
 
@@ -26,52 +36,11 @@ const theme = extendTheme({
     heading: '"Poppins", sans-serif',
     body: '"Poppins", sans-serif',
   },
-});
-
-const DocsContainer = chakra('section', {
-  baseStyle: {
-    display: 'flex',
-    flexWrap: {
-      base: 'wrap',
-      lg: 'nowrap',
-    },
-    maxW: '1200px',
-    width: '100%',
-    mx: 'auto',
-    px: '1.5rem',
-    py: {
-      base: '1.5rem',
-      lg: '3rem',
-    },
+  config: {
+    initialColorMode: 'light',
+    useSystemColorMode: false,
   },
-});
-
-const DocsNavigation = chakra('aside', {
-  baseStyle: {
-    position: 'sticky',
-    top: '7rem',
-    display: {
-      base: 'none',
-      lg: 'block',
-    },
-    height: 'fit-content',
-    width: '16rem',
-  },
-});
-
-const DocsTitle = chakra('h2', {
-  baseStyle: {
-    mb: '0.5rem',
-    fontWeight: 'bold',
-    fontSize: '1.125rem',
-  },
-});
-
-const DocsSearch = chakra('div', {
-  baseStyle: {
-    mb: '0.5rem',
-  },
-});
+} as typeof chakraTheme);
 
 const serializedMdx = process.env.SERIALIZED_MDX_ROUTES;
 let mdxRoutesData = serializedMdx && JSON.parse(serializedMdx);

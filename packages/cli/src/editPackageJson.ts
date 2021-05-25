@@ -22,7 +22,19 @@ export function addPackageScripts(scripts: Record<string, string>) {
   json.save();
 }
 
-export async function addDependency(dependency: string | string[], { isDev }: { isDev?: boolean } = {}) {
+export async function addDependency(
+  dependency: string | string[],
+  {
+    isDev,
+    version,
+  }: {
+    isDev?: boolean;
+    /**
+     * @default "latest"
+     */
+    version?: string;
+  } = {}
+) {
   const dependencies = Array.isArray(dependency) ? dependency : [dependency];
 
   await Promise.all(
@@ -35,14 +47,15 @@ export async function addDependency(dependency: string | string[], { isDev }: { 
       const depRepo = api.repo(depName);
 
       const depPackageVersion =
+        version ||
         '^' +
-        (
-          await depRepo.version('latest').catch(err => {
-            if (err.message === 'Not Found') throw Error(`Package "${depName}" could not be found!`);
+          (
+            await depRepo.version('latest').catch(err => {
+              if (err.message === 'Not Found') throw Error(`Package "${depName}" could not be found!`);
 
-            throw err;
-          })
-        ).version;
+              throw err;
+            })
+          ).version;
 
       json.set(`${isDev ? 'devDependencies' : 'dependencies'}.${depName}`, depPackageVersion);
     })

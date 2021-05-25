@@ -8,6 +8,7 @@ import { arePathnamesEqual, concatHrefs } from './routes.js';
 import { getDefault } from './utils.js';
 
 import type { Paths } from '@guild-docs/types';
+
 const Router = getDefault(RouterDefault);
 
 const Wrapper = chakra('nav', {

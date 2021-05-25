@@ -38,6 +38,7 @@ async function DepsAction(dir: string = process.cwd()) {
       'next-i18next',
       'react',
       'react-dom',
+      'styled-components',
     ]),
     addDependency(
       [
