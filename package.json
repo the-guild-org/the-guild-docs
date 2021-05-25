@@ -26,10 +26,10 @@
     "pretty": "pretty-quick"
   },
   "dependencies": {
-    "@types/node": "^15.3.0",
-    "concurrently": "^6.1.0",
+    "@types/node": "^15.6.1",
+    "concurrently": "^6.2.0",
     "husky": "^6.0.0",
-    "next": "^10.2.0",
+    "next": "^10.2.3",
     "prettier": "^2.3.0",
     "pretty-quick": "^3.1.0",
     "typescript": "^4.2.4"

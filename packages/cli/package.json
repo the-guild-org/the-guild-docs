@@ -23,16 +23,16 @@
   "devDependencies": {
     "@types/edit-json-file": "^1.4.0",
     "@types/mkdirp": "^1.0.1",
-    "@types/node": "^15.3.0",
+    "@types/node": "^15.6.1",
     "@types/prettier": "^2.2.3",
     "changesets-github-release": "^0.0.1",
     "commander": "^7.2.0",
     "edit-json-file": "^1.6.0",
-    "esbuild": "^0.11.23",
+    "esbuild": "^0.12.2",
     "mkdirp": "^1.0.4",
     "npm-api": "^1.0.1",
     "prettier": "^2.3.0",
-    "tsup": "^4.11.0"
+    "tsup": "^4.11.1"
   },
   "tsup": {
     "splitting": false,
