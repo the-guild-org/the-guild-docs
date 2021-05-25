@@ -1,6 +1,6 @@
 ---
 '@guild-docs/client': patch
-'@guild-docs/cli': patch
+'guild-docs': patch
 ---
 
 add docs components
