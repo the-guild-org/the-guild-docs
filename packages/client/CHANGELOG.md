@@ -1,5 +1,12 @@
 # @guild-docs/client
 
+## 0.0.11
+
+### Patch Changes
+
+- b8ba4d6: optimize main navigation component
+- 3803d70: add docs components
+
 ## 0.0.10
 
 ### Patch Changes

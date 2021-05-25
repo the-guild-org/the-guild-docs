@@ -1,5 +1,12 @@
 # guild-docs
 
+## 0.0.13
+
+### Patch Changes
+
+- f4a060c: prettier package.json
+- 3803d70: add docs components
+
 ## 0.0.12
 
 ### Patch Changes
