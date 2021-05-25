@@ -55,6 +55,7 @@ async function DepsAction(dir: string = process.cwd()) {
         'open-cli',
         'wait-on',
         'next-remote-watch',
+        '@types/styled-components',
       ],
       {
         isDev: true,
