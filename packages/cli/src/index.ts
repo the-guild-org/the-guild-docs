@@ -9,6 +9,7 @@ import {
   writeApp,
   writeDocPages,
   writeDocsDirectory,
+  writeDocument,
   writei18Config,
   writeNextConfig,
   writeRoutes,
@@ -85,6 +86,7 @@ async function ConfigAction(dir: string = process.cwd()) {
     writeDocPages(),
     writeDocsDirectory(),
     writeTSConfig(),
+    writeDocument(),
   ]);
 
   console.log('Configuration files added!');
