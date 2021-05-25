@@ -3,7 +3,7 @@ import 'prism-themes/themes/prism-atom-dark.css';
 import '../../public/style.css';
 
 import { appWithTranslation } from 'next-i18next';
-import { ReactNode, useMemo } from 'react';
+import { ReactNode, useMemo, useState } from 'react';
 import { Footer, GlobalStyles, Header, SearchBar, Subheader } from 'the-guild-components';
 
 import { chakra, ChakraProvider, extendTheme } from '@chakra-ui/react';
@@ -11,7 +11,7 @@ import { ExtendComponents, iterateRoutes, MdxInternalProps, MDXNavigation, NextN
 
 import type { AppProps } from 'next/app';
 
-export function AppThemeProvider({ children }: { children: ReactNode }) {
+export function ChakraThemeProvider({ children }: { children: ReactNode }) {
   return <ChakraProvider theme={theme}>{children}</ChakraProvider>;
 }
 
@@ -49,7 +49,6 @@ const DocsContainer = chakra('section', {
 const DocsNavigation = chakra('aside', {
   baseStyle: {
     position: 'sticky',
-    zIndex: '300', // TODO: Influenced by setup done for Docusaurus | Remove when no longer needed
     top: '7rem',
     display: {
       base: 'none',
@@ -78,15 +77,15 @@ const serializedMdx = process.env.SERIALIZED_MDX_ROUTES;
 let mdxRoutesData = serializedMdx && JSON.parse(serializedMdx);
 
 function App({ Component, pageProps, router }: AppProps) {
+  const accentColor = '#1CC8EE';
   const isDocs = router.asPath.includes('docs');
   const mdxRoutes: MdxInternalProps['mdxRoutes'] | undefined = pageProps.mdxRoutes;
+  const [isSearchModalOpen, setSearchModalOpen] = useState(false);
 
   const Navigation = useMemo(() => {
     const paths = mdxRoutes === 1 ? mdxRoutesData : (mdxRoutesData = mdxRoutes || mdxRoutesData);
-    return <MDXNavigation paths={iterateRoutes(paths)} />;
+    return <MDXNavigation paths={iterateRoutes(paths)} accentColor={accentColor} />;
   }, [mdxRoutes]);
-
-  const accentColor = '#1CC8EE';
 
   return (
     <>
@@ -126,18 +125,24 @@ function App({ Component, pageProps, router }: AppProps) {
       {!isDocs ? (
         <Component {...pageProps} />
       ) : (
-        <AppThemeProvider>
+        <ChakraThemeProvider>
           <DocsContainer>
-            <DocsNavigation>
+            <DocsNavigation zIndex={isSearchModalOpen ? '300' : '1'} transition={isSearchModalOpen ? '0s 0s' : '0s 0.3s'}>
               <DocsTitle>Documentation</DocsTitle>
               <DocsSearch>
-                <SearchBar placeholder="Search..." title="Documentation" accentColor={accentColor} isFull />
+                <SearchBar
+                  isFull
+                  placeholder="Search..."
+                  title="Documentation"
+                  accentColor={accentColor}
+                  onHandleModal={setSearchModalOpen}
+                />
               </DocsSearch>
               {Navigation}
             </DocsNavigation>
             <Component {...pageProps} />
           </DocsContainer>
-        </AppThemeProvider>
+        </ChakraThemeProvider>
       )}
       <Footer />
     </>

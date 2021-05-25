@@ -52,7 +52,17 @@ const Link = chakra('a', {
   },
 });
 
-function Item({ item: { href, name, paths, isPage }, acumHref, depth }: { item: Paths; acumHref: string; depth: number }) {
+function Item({
+  item: { href, name, paths, isPage },
+  acumHref,
+  depth,
+  accentColor,
+}: {
+  item: Paths;
+  acumHref: string;
+  depth: number;
+  accentColor: string;
+}) {
   const finalHref = concatHrefs(acumHref, href);
 
   const { isOpen, onToggle } = useDisclosure({
@@ -70,18 +80,23 @@ function Item({ item: { href, name, paths, isPage }, acumHref, depth }: { item: 
 
   // This logic has to be client-side only
   useSafeLayoutEffect(() => {
-    if (!['/', '/docs', '/docs/'].includes(finalHref) && Router.asPath.includes(finalHref)) {
-      onToggle();
-    }
+    const handleToggle = () => {
+      const shouldToggle = !['/', '/docs', '/docs/'].includes(finalHref) && Router.asPath.includes(finalHref);
+      shouldToggle && onToggle();
+    };
 
     const initialIsActive = arePathnamesEqual(Router.asPath || '_', finalHref);
-
     if (initialIsActive !== currentIsActive.current) setIsActive(initialIsActive);
+
+    handleToggle();
 
     function routeChangeHandler() {
       const newIsActive = arePathnamesEqual(Router.asPath || '_', finalHref);
+      if (newIsActive !== currentIsActive.current) {
+        setIsActive(newIsActive);
+      }
 
-      if (newIsActive !== currentIsActive.current) setIsActive(newIsActive);
+      handleToggle();
     }
 
     Router.events.on('routeChangeComplete', routeChangeHandler);
@@ -103,7 +118,7 @@ function Item({ item: { href, name, paths, isPage }, acumHref, depth }: { item: 
           </Summary>
 
           <Collapse in={isOpen} unmountOnExit>
-            <MDXNavigation paths={pathsData} acumHref={finalHref} depth={depth + 1} />
+            <MDXNavigation paths={pathsData} acumHref={finalHref} depth={depth + 1} accentColor={accentColor} />
           </Collapse>
         </Details>
       ) : (
@@ -122,8 +137,7 @@ function Item({ item: { href, name, paths, isPage }, acumHref, depth }: { item: 
                 }
           }
           href={isAnchor ? finalHref : undefined}
-          color={isActive ? '#000' : '#7F818C'}
-          fontWeight={isActive ? 'bold' : 'medium'}
+          color={isActive ? accentColor : '#7F818C'}
           {...(depth !== 0 && innerItemStyles)}
         >
           {label}
@@ -133,11 +147,21 @@ function Item({ item: { href, name, paths, isPage }, acumHref, depth }: { item: 
   );
 }
 
-export function MDXNavigation({ paths, acumHref = '', depth = 0 }: { paths: Paths[]; acumHref?: string; depth?: number }) {
+export function MDXNavigation({
+  paths,
+  acumHref = '',
+  depth = 0,
+  accentColor = '#000',
+}: {
+  paths: Paths[];
+  acumHref?: string;
+  depth?: number;
+  accentColor?: string;
+}) {
   return (
     <Wrapper ml={depth !== 0 ? '1rem' : 0}>
       {paths.map((item, index) => {
-        return <Item key={index} item={item} acumHref={acumHref} depth={depth} />;
+        return <Item key={index} item={item} acumHref={acumHref} depth={depth} accentColor={accentColor} />;
       })}
     </Wrapper>
   );
