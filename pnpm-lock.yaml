@@ -5750,7 +5750,7 @@ packages:
       hoist-non-react-statics: 3.3.2
       i18next: 20.2.4
       i18next-fs-backend: 1.1.1
-      next: 10.2.0_507781d099a67956587e23f5ac79078b
+      next: 10.2.0_react-dom@17.0.2+react@17.0.2
       react: 17.0.2
       react-i18next: 11.8.15_i18next@20.2.4+react@17.0.2
 
@@ -6129,8 +6129,8 @@ packages:
     resolution: {integrity: sha1-IQmtx5ZYh8/AXLvUQsrIv7s2CGM=}
     engines: {node: '>=0.10.0'}
 
-  /object-hash/2.1.1:
-    resolution: {integrity: sha512-VOJmgmS+7wvXf8CjbQmimtCnEx3IAoLxI3fp2fbWehxrWBcAQFbk+vcwb6vzR0VZv/eNCJ/27j151ZTwqW/JeQ==}
+  /object-hash/2.2.0:
+    resolution: {integrity: sha512-gScRMn0bS5fH+IuwyIFgnh9zBdo4DV+6GhygmWM9HyNJSgS0hScp1f5vjtm7oIIOiT9trXrShAkLFSc2IqKNgw==}
     engines: {node: '>= 6'}
     dev: false
 
@@ -7849,7 +7849,7 @@ packages:
       modern-normalize: 1.1.0
       node-emoji: 1.10.0
       normalize-path: 3.0.0
-      object-hash: 2.1.1
+      object-hash: 2.2.0
       parse-glob: 3.0.4
       postcss-functions: 3.0.0
       postcss-js: 3.0.3
@@ -7887,7 +7887,7 @@ packages:
       modern-normalize: 1.1.0
       node-emoji: 1.10.0
       normalize-path: 3.0.0
-      object-hash: 2.1.1
+      object-hash: 2.2.0
       parse-glob: 3.0.4
       postcss: 8.2.13
       postcss-functions: 3.0.0
@@ -8769,7 +8769,7 @@ packages:
     resolution: {integrity: sha512-V50KMwwzqJV0NpZIZFwfOD5/lyny3WlSzRiXgA0G7VUnRlqttta1L6UQIHzd6EuBY/cHGfwTIck7w1yH6Q5zUw==}
 
   file:examples/basic/theguild-components-v1.1.0.tgz_92007eea62d30140157552a74694b812:
-    resolution: {integrity: sha512-v31KF/xxkxYBYUaRrx/s4U9B+p7Wt3JVieenk4zu/uLimwGPZItI/+ArS3kT5SHpD+jt9Y6tkhgjWHB/7gVdbQ==, tarball: file:examples/basic/theguild-components-v1.1.0.tgz}
+    resolution: {integrity: sha512-C3aZRptQqAByV4np+FOI78XYyzLNKRPF0O+lp2gfyG2FjGWWnKCvcLut56VPfgEUJG3rxjtyOE6JFArolZEdhg==, tarball: file:examples/basic/theguild-components-v1.1.0.tgz}
     id: file:examples/basic/theguild-components-v1.1.0.tgz
     name: '@theguild/components'
     version: 1.1.0
