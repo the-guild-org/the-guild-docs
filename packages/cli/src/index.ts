@@ -9,6 +9,7 @@ import {
   writeApp,
   writeDocPages,
   writeDocsDirectory,
+  writeDocument,
   writei18Config,
   writeNextConfig,
   writeRoutes,
@@ -38,6 +39,7 @@ async function DepsAction(dir: string = process.cwd()) {
       'next-i18next',
       'react',
       'react-dom',
+      'styled-components',
     ]),
     addDependency(
       [
@@ -54,6 +56,7 @@ async function DepsAction(dir: string = process.cwd()) {
         'open-cli',
         'wait-on',
         'next-remote-watch',
+        '@types/styled-components',
       ],
       {
         isDev: true,
@@ -84,6 +87,7 @@ async function ConfigAction(dir: string = process.cwd()) {
     writeDocPages(),
     writeDocsDirectory(),
     writeTSConfig(),
+    writeDocument(),
   ]);
 
   console.log('Configuration files added!');

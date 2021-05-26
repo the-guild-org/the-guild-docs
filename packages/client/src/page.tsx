@@ -13,7 +13,7 @@ export function MDXPage(Component: (props: PropsWithChildren<MdxPageProps>) => R
     const title = frontMatter.title;
 
     const MetaHead = useMemo(() => {
-      return createElement(Fragment, null, createElement('title', null, title));
+      return createElement(Fragment, null, title ? createElement('title', null, title) : null);
     }, [title]);
 
     const content = useMemo(() => {

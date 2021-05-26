@@ -98,15 +98,22 @@ export async function writeApp() {
     import { appWithTranslation } from 'next-i18next';
     import { ReactNode, useMemo } from 'react';
     
-    import { Box, ChakraProvider, extendTheme, Stack, chakra } from '@chakra-ui/react';
+    import { Box, ChakraProvider, extendTheme, theme as chakraTheme, Stack, chakra } from '@chakra-ui/react';
     
     import { NextNProgress, MdxInternalProps, MDXNavigation, iterateRoutes, ExtendComponents } from '@guild-docs/client';
     
     import type { AppProps } from 'next/app';
     
     const theme = extendTheme({
-      colors: {},
-    });
+      fonts: {
+        heading: '"Poppins", sans-serif',
+        body: '"Poppins", sans-serif',
+      },
+      config: {
+        initialColorMode: 'light',
+        useSystemColorMode: false,
+      },
+    } as typeof chakraTheme);
 
     const a = chakra('a', {
       baseStyle: {
@@ -163,8 +170,7 @@ export async function writeDocPages() {
     `
     import Head from 'next/head';
 
-    import { Box, Stack } from '@chakra-ui/react';
-    import { MDXPage } from '@guild-docs/client';
+    import { DocsContent, DocsTOC, MDXPage } from '@guild-docs/client';
     import { MDXPaths, MDXProps } from '@guild-docs/server';
     
     import { getRoutes } from '../../../routes';
@@ -175,21 +181,11 @@ export async function writeDocPages() {
       return (
         <>
           <Head>{MetaHead}</Head>
-          <Stack>
-            <Box as="main" maxWidth="80ch" textAlign="justify">
-              {content}
-            </Box>
+          <DocsContent>{content}</DocsContent>
+          <DocsTOC>
+            <TOC />
             <BottomNavigation />
-            <TOC
-              boxProps={{
-                paddingRight: '2em',
-                position: 'fixed',
-                top: 0,
-                right: 0,
-                fontSize: '2xl',
-              }}
-            />
-          </Stack>
+          </DocsTOC>
         </>
       );
     });
@@ -209,7 +205,7 @@ export async function writeDocPages() {
     export const getStaticPaths: GetStaticPaths = ctx => {
       return MDXPaths('docs', { ctx });
     };
-        `,
+            `,
     'typescript'
   );
 
@@ -296,5 +292,61 @@ export async function writeTSConfig() {
 }
       `,
     'json'
+  );
+}
+
+export async function writeDocument() {
+  await writeFileFormatIfNotExists(
+    [config.cwd, 'src/pages/_document.tsx'],
+    `
+  import Document, { Head, Html, Main, NextScript } from 'next/document';
+import React from 'react';
+import { ServerStyleSheet } from 'styled-components';
+
+import { ColorModeScript } from '@chakra-ui/react';
+
+export default class MyDocument extends Document {
+  static async getInitialProps(ctx: any) {
+    const sheet = new ServerStyleSheet();
+    const originalRenderPage = ctx.renderPage;
+
+    try {
+      ctx.renderPage = () =>
+        originalRenderPage({
+          enhanceApp: (App: any) => (props: any) => sheet.collectStyles(<App {...props} />),
+        });
+
+      const initialProps = await Document.getInitialProps(ctx);
+      return {
+        ...initialProps,
+        styles: (
+          <>
+            {initialProps.styles}
+            {sheet.getStyleElement()}
+            <link rel="preconnect" href="https://fonts.gstatic.com" />
+            <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+          </>
+        ),
+      };
+    } finally {
+      sheet.seal();
+    }
+  }
+
+  render() {
+    return (
+      <Html>
+        <Head />
+        <body>
+          <ColorModeScript initialColorMode="light" />
+          <Main />
+          <NextScript />
+        </body>
+      </Html>
+    );
+  }
+}
+  `,
+    'typescript'
   );
 }
