@@ -8,12 +8,25 @@ import { MDXTOC } from './toc.js';
 
 import type { MdxPageProps, MdxInternalProps, IRoutes, BottomNavigationProps } from '@guild-docs/types';
 
-export function MDXPage(Component: (props: PropsWithChildren<MdxPageProps>) => ReactElement) {
+export interface MDXPageOptions {
+  renderTitle?: (title?: string) => string;
+}
+
+export function MDXPage(
+  Component: (props: PropsWithChildren<MdxPageProps>) => ReactElement,
+  { renderTitle }: MDXPageOptions = {}
+) {
   return function MDXPage({ children, source, frontMatter, toc, mdxRoutes }: MdxInternalProps) {
     const title = frontMatter.title;
 
     const MetaHead = useMemo(() => {
-      return createElement(Fragment, null, title ? createElement('title', null, title) : null);
+      let titleString = typeof title === 'string' ? title : undefined;
+
+      if (renderTitle) titleString = renderTitle(titleString);
+
+      if (!titleString) return null;
+
+      return createElement(Fragment, null, createElement('title', null, titleString));
     }, [title]);
 
     const content = useMemo(() => {
