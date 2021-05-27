@@ -21,6 +21,8 @@ import {
 
 import type { AppProps } from 'next/app';
 
+import { handleRoute } from '../../next-helpers';
+
 export function ChakraThemeProvider({ children }: { children: ReactNode }) {
   return <ChakraProvider theme={theme}>{children}</ChakraProvider>;
 }
@@ -62,7 +64,6 @@ function App({ Component, pageProps, router }: AppProps) {
       <GlobalStyles />
       <Header accentColor={accentColor} activeLink="/open-source" />
       <Subheader
-        router={router}
         activeLink={router.asPath}
         product={{
           title: 'Docs',
@@ -71,24 +72,28 @@ function App({ Component, pageProps, router }: AppProps) {
             src: '/assets/subheader-logo.svg',
             alt: 'Docs',
           },
+          onClick: e => handleRoute('/', e, router),
         }}
-        // TODO: We need an "onClick" handler to do client-side navigation
         links={[
           {
-            label: 'Home',
+            children: 'Home',
             title: 'Read about Guild Docs',
             href: '/',
+            onClick: e => handleRoute('/', e, router),
           },
           {
-            label: 'Docs',
+            children: 'Docs',
             title: 'View examples',
             href: '/docs',
+            onClick: e => handleRoute('/docs', e, router),
           },
         ]}
         cta={{
-          label: 'Get Started',
+          children: 'Get Started',
           title: 'Start using The Guild Docs',
           href: 'https://github.com/the-guild-org/the-guild-docs',
+          target: '_blank',
+          rel: 'noopener noreferrer',
         }}
       />
 

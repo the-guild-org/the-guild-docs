@@ -39,5 +39,10 @@
   },
   "engines": {
     "pnpm": ">=6.3.0"
+  },
+  "pnpm": {
+    "overrides": {
+      "esbuild": "latest"
+    }
   }
 }
