@@ -1,16 +1,21 @@
+import { useRouter } from 'next/router';
 import { HeroGradient, InfoList } from 'the-guild-components';
 
+import { handleRoute } from '../../next-helpers';
+
 export default function Index() {
+  const router = useRouter();
+
   return (
     <>
       <HeroGradient
         title="The Guild Docs"
         description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at gravida lacus"
-        // TODO: We need an "onClick" handler to do client-side navigation
         link={{
-          label: 'Get Started',
-          title: 'Get started with The Guild Docs',
           href: '/docs',
+          children: 'Get Started',
+          title: 'Get started with The Guild Docs',
+          onClick: e => handleRoute('/docs', e, router),
         }}
         version="0.0.12"
         colors={['#000000', '#1CC8EE']}
