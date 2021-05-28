@@ -20,7 +20,7 @@ const Details = chakra('div', {
 });
 
 const itemStyles: CSSObject = {
-  py: '0.35rem',
+  py: '0.45rem',
   pl: '0.75rem',
   fontSize: '0.875rem',
   fontWeight: 'medium',

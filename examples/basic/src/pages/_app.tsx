@@ -4,13 +4,26 @@ import '../../public/style.css';
 
 import { appWithTranslation } from 'next-i18next';
 import { ReactNode, useMemo, useState } from 'react';
-import { Footer, GlobalStyles, Header, SearchBar, Subheader } from 'the-guild-components';
+import { Footer, GlobalStyles, Header, Subheader } from 'the-guild-components';
 
-import { ChakraProvider, extendTheme, theme as chakraTheme } from '@chakra-ui/react';
+import { HamburgerIcon } from '@chakra-ui/icons';
+import {
+  ChakraProvider,
+  Drawer,
+  DrawerBody,
+  DrawerCloseButton,
+  DrawerContent,
+  DrawerOverlay,
+  extendTheme,
+  IconButton,
+  theme as chakraTheme,
+  useDisclosure,
+  useMediaQuery,
+} from '@chakra-ui/react';
 import {
   DocsContainer,
+  DocsDrawer,
   DocsNavigation,
-  DocsSearch,
   DocsTitle,
   ExtendComponents,
   iterateRoutes,
@@ -53,9 +66,18 @@ function App({ Component, pageProps, router }: AppProps) {
   const mdxRoutes: MdxInternalProps['mdxRoutes'] | undefined = pageProps.mdxRoutes;
   const [isSearchModalOpen, setSearchModalOpen] = useState(false);
 
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  const [isLg] = useMediaQuery('(min-width: 992px)');
+
   const Navigation = useMemo(() => {
     const paths = mdxRoutes === 1 ? mdxRoutesData : (mdxRoutesData = mdxRoutes || mdxRoutesData);
-    return <MDXNavigation paths={iterateRoutes(paths)} accentColor={accentColor} />;
+
+    return (
+      <DocsNavigation zIndex={isSearchModalOpen ? '300' : '1'} transition={isSearchModalOpen ? '0s 0s' : '0s 0.3s'}>
+        <DocsTitle>Documentation</DocsTitle>
+        <MDXNavigation paths={iterateRoutes(paths)} accentColor={accentColor} />
+      </DocsNavigation>
+    );
   }, [mdxRoutes]);
 
   return (
@@ -102,19 +124,40 @@ function App({ Component, pageProps, router }: AppProps) {
       ) : (
         <ChakraThemeProvider>
           <DocsContainer>
-            <DocsNavigation zIndex={isSearchModalOpen ? '300' : '1'} transition={isSearchModalOpen ? '0s 0s' : '0s 0.3s'}>
-              <DocsTitle>Documentation</DocsTitle>
-              <DocsSearch>
-                <SearchBar
-                  isFull
-                  placeholder="Search..."
-                  title="Documentation"
-                  accentColor={accentColor}
-                  onHandleModal={setSearchModalOpen}
+            {isLg ? (
+              Navigation
+            ) : (
+              <DocsDrawer>
+                <IconButton
+                  onClick={onOpen}
+                  icon={<HamburgerIcon />}
+                  aria-label="Open navigation"
+                  size="sm"
+                  position="fixed"
+                  right="1.5rem"
+                  bottom="1.5rem"
+                  zIndex="1"
+                  backgroundColor={accentColor}
+                  color="#fff"
                 />
-              </DocsSearch>
-              {Navigation}
-            </DocsNavigation>
+                <Drawer size="2xl" isOpen={isOpen} onClose={onClose} placement="left">
+                  <DrawerOverlay />
+                  <DrawerContent>
+                    <DrawerCloseButton
+                      backgroundColor="#E5E7EB"
+                      color="#7F818C"
+                      height="2.375rem"
+                      width="2.375rem"
+                      top="1.5rem"
+                      right="1.5rem"
+                      fontSize="0.85rem"
+                      borderRadius="0.5rem"
+                    />
+                    <DrawerBody>{Navigation}</DrawerBody>
+                  </DrawerContent>
+                </Drawer>
+              </DocsDrawer>
+            )}
             <Component {...pageProps} />
           </DocsContainer>
         </ChakraThemeProvider>

@@ -20,28 +20,42 @@ export const DocsContainer = chakra('section', {
 
 export const DocsNavigation = chakra('aside', {
   baseStyle: {
-    position: 'sticky',
-    top: '7rem',
-    display: {
-      base: 'none',
-      lg: 'block',
+    position: {
+      lg: 'sticky',
     },
+    top: {
+      lg: '7rem',
+    },
+    display: 'block',
     height: 'fit-content',
-    width: '16rem',
+    width: {
+      base: '100%',
+      lg: '16rem',
+    },
+    marginTop: {
+      base: '1.35rem',
+      lg: '0',
+    },
+  },
+});
+
+export const DocsDrawer = chakra('div', {
+  baseStyle: {
+    display: {
+      base: 'block',
+      lg: 'none',
+    },
   },
 });
 
 export const DocsTitle = chakra('h2', {
   baseStyle: {
-    mb: '0.5rem',
+    mb: {
+      base: '1.25rem',
+      lg: '0.5rem',
+    },
     fontWeight: 'bold',
     fontSize: '1.125rem',
-  },
-});
-
-export const DocsSearch = chakra('div', {
-  baseStyle: {
-    mb: '0.5rem',
   },
 });
 
