@@ -9,7 +9,7 @@ importers:
     specifiers:
       '@changesets/cli': ^2.16.0
       '@types/node': ^15.6.1
-      bob-esbuild: ^0.1.12
+      bob-esbuild: ^0.1.13
       bob-esbuild-cli: ^0.1.15
       concurrently: ^6.2.0
       esbuild: ^0.12.5
@@ -20,7 +20,7 @@ importers:
       typescript: ^4.3.2
     dependencies:
       '@types/node': 15.6.1
-      bob-esbuild: 0.1.12_b89ec6c4eb73802631cbe54606dd8cdb
+      bob-esbuild: 0.1.13_b89ec6c4eb73802631cbe54606dd8cdb
       concurrently: 6.2.0
       esbuild: 0.12.5
       husky: 6.0.0
@@ -3440,7 +3440,7 @@ packages:
       '@oclif/errors': 1.3.4
       '@oclif/parser': 3.8.5
       '@oclif/plugin-help': 3.2.2
-      bob-esbuild: 0.1.12
+      bob-esbuild: 0.1.13
     transitivePeerDependencies:
       - '@types/node'
       - supports-color
@@ -3457,7 +3457,7 @@ packages:
       '@oclif/errors': 1.3.4
       '@oclif/parser': 3.8.5
       '@oclif/plugin-help': 3.2.2
-      bob-esbuild: 0.1.12_b89ec6c4eb73802631cbe54606dd8cdb
+      bob-esbuild: 0.1.13_b89ec6c4eb73802631cbe54606dd8cdb
     transitivePeerDependencies:
       - '@types/node'
       - supports-color
@@ -3474,7 +3474,7 @@ packages:
       '@oclif/errors': 1.3.4
       '@oclif/parser': 3.8.5
       '@oclif/plugin-help': 3.2.2
-      bob-esbuild: 0.1.12_typescript@4.3.2
+      bob-esbuild: 0.1.13_typescript@4.3.2
     transitivePeerDependencies:
       - '@types/node'
       - supports-color
@@ -3507,8 +3507,8 @@ packages:
       rollup: 2.50.4
     dev: true
 
-  /bob-esbuild/0.1.12:
-    resolution: {integrity: sha512-LUeq32UgYCIZLGM68oLdx+Mui9l8GM57Lv3C0ho326axc+kZaRm/xg8Hhy9y0Nhdo2smGGIMwmsWSWwCuzYAfQ==}
+  /bob-esbuild/0.1.13:
+    resolution: {integrity: sha512-pV1YcRYrqE3S/KRVOYKA8QhrUvbzDvEP2q9RJpZisfVnMv1jSuTIL3eSTYBX7VH9Rxj7/HvTOyR4vTqCWPrFpA==}
     peerDependencies:
       typescript: ^4.3.2
     dependencies:
@@ -3535,8 +3535,8 @@ packages:
       - supports-color
     dev: true
 
-  /bob-esbuild/0.1.12_b89ec6c4eb73802631cbe54606dd8cdb:
-    resolution: {integrity: sha512-LUeq32UgYCIZLGM68oLdx+Mui9l8GM57Lv3C0ho326axc+kZaRm/xg8Hhy9y0Nhdo2smGGIMwmsWSWwCuzYAfQ==}
+  /bob-esbuild/0.1.13_b89ec6c4eb73802631cbe54606dd8cdb:
+    resolution: {integrity: sha512-pV1YcRYrqE3S/KRVOYKA8QhrUvbzDvEP2q9RJpZisfVnMv1jSuTIL3eSTYBX7VH9Rxj7/HvTOyR4vTqCWPrFpA==}
     peerDependencies:
       typescript: ^4.3.2
     dependencies:
@@ -3563,8 +3563,8 @@ packages:
       - '@types/node'
       - supports-color
 
-  /bob-esbuild/0.1.12_typescript@4.3.2:
-    resolution: {integrity: sha512-LUeq32UgYCIZLGM68oLdx+Mui9l8GM57Lv3C0ho326axc+kZaRm/xg8Hhy9y0Nhdo2smGGIMwmsWSWwCuzYAfQ==}
+  /bob-esbuild/0.1.13_typescript@4.3.2:
+    resolution: {integrity: sha512-pV1YcRYrqE3S/KRVOYKA8QhrUvbzDvEP2q9RJpZisfVnMv1jSuTIL3eSTYBX7VH9Rxj7/HvTOyR4vTqCWPrFpA==}
     peerDependencies:
       typescript: ^4.3.2
     dependencies:

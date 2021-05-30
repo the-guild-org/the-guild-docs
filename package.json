@@ -27,7 +27,7 @@
   },
   "dependencies": {
     "@types/node": "^15.6.1",
-    "bob-esbuild": "^0.1.12",
+    "bob-esbuild": "^0.1.13",
     "concurrently": "^6.2.0",
     "esbuild": "^0.12.5",
     "husky": "^6.0.0",
