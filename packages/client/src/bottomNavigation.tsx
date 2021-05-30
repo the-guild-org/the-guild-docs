@@ -5,8 +5,8 @@ import React, { FC, useMemo, useState } from 'react';
 import { ArrowBackIcon, ArrowForwardIcon } from '@chakra-ui/icons';
 import { useSafeLayoutEffect, chakra } from '@chakra-ui/react';
 
-import { arePathnamesEqual, concatHrefs, iterateRoutes, withoutTrailingSlash } from './routes.js';
-import { getDefault } from './utils.js';
+import { arePathnamesEqual, concatHrefs, iterateRoutes, withoutTrailingSlash } from './routes';
+import { getDefault } from './utils';
 
 import type { BottomNavigationProps, Paths } from '@guild-docs/types';
 
