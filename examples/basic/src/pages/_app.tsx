@@ -4,7 +4,7 @@ import '../../public/style.css';
 
 import { appWithTranslation } from 'next-i18next';
 import { ReactNode, useMemo } from 'react';
-import { Footer, GlobalStyles, Header, Subheader } from 'the-guild-components';
+import { Footer, GlobalStyles, Header, Subheader } from '@guild-docs/tgc';
 
 import { HamburgerIcon } from '@chakra-ui/icons';
 import {

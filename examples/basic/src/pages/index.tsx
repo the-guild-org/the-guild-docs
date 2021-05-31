@@ -1,5 +1,5 @@
 import { useRouter } from 'next/router';
-import { HeroGradient, InfoList } from 'the-guild-components';
+import { HeroGradient, InfoList } from '@guild-docs/tgc';
 
 import { handleRoute } from '../../next-helpers';
 
