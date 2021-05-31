@@ -1,5 +1,11 @@
 # @guild-docs/types
 
+## 0.0.6
+
+### Patch Changes
+
+- 072368d: new building process
+
 ## 0.0.5
 
 ### Patch Changes

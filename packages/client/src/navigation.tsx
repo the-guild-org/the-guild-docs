@@ -4,8 +4,8 @@ import React, { useRef, useState } from 'react';
 import { ChevronDownIcon } from '@chakra-ui/icons';
 import { BorderProps, chakra, Collapse, CSSObject, Text, useDisclosure, useSafeLayoutEffect } from '@chakra-ui/react';
 
-import { arePathnamesEqual, concatHrefs } from './routes.js';
-import { getDefault } from './utils.js';
+import { arePathnamesEqual, concatHrefs } from './routes';
+import { getDefault } from './utils';
 
 import type { Paths } from '@guild-docs/types';
 

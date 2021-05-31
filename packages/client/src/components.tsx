@@ -1,6 +1,7 @@
 import { useTranslation } from 'next-i18next';
 import Image from 'next/image';
-import React, { ReactNode } from 'react';
+import NextLinkImport from 'next/link';
+import React, { ComponentType, ReactNode } from 'react';
 
 import {
   Box,
@@ -15,13 +16,16 @@ import {
   Kbd,
   Link as ChakraLink,
   LinkProps,
+  ListItem,
+  ListItemProps,
+  ListProps,
+  OrderedList,
   Stack,
   Text,
   TextProps,
+  UnorderedList,
   useColorModeValue,
 } from '@chakra-ui/react';
-
-import NextLinkImport from 'next/link';
 
 import { getDefault } from './utils';
 
@@ -49,27 +53,27 @@ const p = ({ children, ...delegated }: TextProps) => {
   );
 };
 
-const ul = ({ children, ...delegated }: BoxProps) => {
+const ul = ({ children, ...delegated }: ListProps) => {
   return (
-    <Box as="ul" pt={2} pl={4} ml={2} {...delegated}>
+    <UnorderedList as="ul" pt={2} pl={4} ml={2} {...delegated}>
       {children}
-    </Box>
+    </UnorderedList>
   );
 };
 
-const ol = ({ children, ...delegated }: BoxProps) => {
+const ol = ({ children, ...delegated }: ListProps) => {
   return (
-    <Box as="ol" pt={2} pl={4} ml={2} {...delegated}>
+    <OrderedList as="ol" pt={2} pl={4} ml={2} {...delegated}>
       {children}
-    </Box>
+    </OrderedList>
   );
 };
 
-const li = ({ children, ...delegated }: BoxProps) => {
+const li = ({ children, ...delegated }: ListItemProps) => {
   return (
-    <Box as="li" pb={1} {...delegated}>
+    <ListItem as="li" pb={1} {...delegated}>
       {children}
-    </Box>
+    </ListItem>
   );
 };
 
@@ -225,8 +229,8 @@ export const components = {
 export type {} from '@chakra-ui/system';
 export type {} from '@chakra-ui/layout';
 
-export function ExtendComponents<TComponents extends Record<string, (props: Record<string, unknown>) => ReactNode>>(
-  extension: Partial<typeof components> & TComponents
+export function ExtendComponents<TComponents extends Record<string, ComponentType<any>>>(
+  extension: Partial<Record<keyof typeof components, ComponentType<any>>> & Partial<TComponents>
 ) {
   Object.assign(components, extension);
 }

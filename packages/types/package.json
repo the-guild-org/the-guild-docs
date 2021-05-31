@@ -1,6 +1,6 @@
 {
   "name": "@guild-docs/types",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/the-guild-org/the-guild-docs.git"
@@ -12,16 +12,17 @@
     "lib"
   ],
   "scripts": {
-    "dev": "tsc --watch --preserveWatchOutput",
-    "prepare": "tsc"
+    "dev": "bob-esbuild watch",
+    "prepare": "bob-esbuild build"
   },
   "devDependencies": {
     "@chakra-ui/react": "^1.6.3",
     "@types/node": "^15.6.1",
     "@types/react": "^17.0.8",
+    "bob-esbuild-cli": "^0.1.15",
     "next-i18next": "^8.3.0",
     "next-mdx-remote": "^3.0.2",
-    "typescript": "^4.2.4"
+    "typescript": "^4.3.2"
   },
   "peerDependencies": {
     "@chakra-ui/react": "^1.6.1",

@@ -1,5 +1,16 @@
 # @guild-docs/client
 
+## 0.0.12
+
+### Patch Changes
+
+- 1a49b89: fix default lists & extend component types
+- e317e09: add renderTitle option to MDXPage
+- 201a589: fix empty title
+- 072368d: new building process
+- Updated dependencies [072368d]
+  - @guild-docs/types@0.0.6
+
 ## 0.0.11
 
 ### Patch Changes

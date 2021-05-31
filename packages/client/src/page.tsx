@@ -2,9 +2,9 @@ import { useTranslation } from 'next-i18next';
 import { MDXRemote } from 'next-mdx-remote';
 import { createElement, Fragment, PropsWithChildren, ReactElement, useCallback, useMemo } from 'react';
 
-import { BottomNavigationComponent } from './bottomNavigation.js';
-import { components } from './components.js';
-import { MDXTOC } from './toc.js';
+import { BottomNavigationComponent } from './bottomNavigation';
+import { components } from './components';
+import { MDXTOC } from './toc';
 
 import type { MdxPageProps, MdxInternalProps, IRoutes, BottomNavigationProps } from '@guild-docs/types';
 
