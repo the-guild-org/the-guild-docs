@@ -1,5 +1,11 @@
 # @guild-docs/client
 
+## 0.1.0
+
+### Minor Changes
+
+- 0dd6580: Made the Docs navigation available on mobile
+
 ## 0.0.12
 
 ### Patch Changes
