@@ -139,7 +139,7 @@ export const dummySubheader = {
       src: subheaderImage,
       alt: 'Envelop',
     },
-    onClick: e => {
+    onClick: (e: { preventDefault: () => void }) => {
       e.preventDefault();
       alert('hey me');
     },
