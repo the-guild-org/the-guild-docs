@@ -1,6 +1,6 @@
 {
   "name": "@guild-docs/client",
-  "version": "0.0.11",
+  "version": "0.0.12",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/the-guild-org/the-guild-docs.git"
@@ -30,7 +30,7 @@
     "postpublish": "gh-release --repo the-guild-org/the-guild-docs"
   },
   "dependencies": {
-    "@guild-docs/types": "workspace:^0.0.5",
+    "@guild-docs/types": "workspace:^0.0.6",
     "immer": "^9.0.2",
     "next-i18next": "^8.3.0",
     "next-mdx-remote": "^3.0.2",

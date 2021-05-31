@@ -1,5 +1,13 @@
 # @guild-docs/server
 
+## 0.0.7
+
+### Patch Changes
+
+- 072368d: new building process
+- Updated dependencies [072368d]
+  - @guild-docs/types@0.0.6
+
 ## 0.0.6
 
 ### Patch Changes
