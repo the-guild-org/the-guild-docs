@@ -1,0 +1,20 @@
+{
+  "presets": [
+    "@babel/preset-react",
+    "@babel/preset-typescript",
+    [
+      "@babel/preset-env",
+      {
+        "useBuiltIns": "entry",
+        "corejs": "3"
+      }
+    ]
+  ],
+  "plugins": [
+    "babel-plugin-macros",
+    ["styled-components", { "ssr": true }],
+    ["@babel/plugin-proposal-private-property-in-object", { "loose": true }],
+    ["@babel/plugin-proposal-private-methods", { "loose": true }],
+    ["@babel/plugin-proposal-class-properties", { "loose": true }]
+  ]
+}
