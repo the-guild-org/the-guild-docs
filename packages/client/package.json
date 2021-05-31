@@ -49,7 +49,7 @@
     "@types/nprogress": "^0.2.0",
     "@types/react": "^17.0.8",
     "@types/react-dom": "^17.0.5",
-    "bob-esbuild-cli": "^0.1.15",
+    "bob-esbuild-cli": "0.1.15",
     "changesets-github-release": "^0.0.1",
     "esbuild": "^0.12.5",
     "framer-motion": "^4.1.17",
