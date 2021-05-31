@@ -19,7 +19,7 @@
     "@chakra-ui/react": "^1.6.3",
     "@types/node": "^15.6.1",
     "@types/react": "^17.0.8",
-    "bob-esbuild-cli": "^0.1.15",
+    "bob-esbuild-cli": "0.1.15",
     "next-i18next": "^8.3.0",
     "next-mdx-remote": "^3.0.2",
     "typescript": "^4.3.2"
