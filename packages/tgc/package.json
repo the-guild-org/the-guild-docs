@@ -1,6 +1,6 @@
 {
   "name": "@guild-docs/tgc",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "",
   "license": "MIT",
   "main": "lib/index.js",
