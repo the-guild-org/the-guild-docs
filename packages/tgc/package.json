@@ -7,7 +7,7 @@
   "module": "lib/index.esm.js",
   "types": "lib/index.d.ts",
   "scripts": {
-    "prepare": "rollup -c"
+    "prepack": "rollup -c"
   },
   "dependencies": {
     "algoliasearch": "^4.9.1",

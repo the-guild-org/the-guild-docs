@@ -13,7 +13,7 @@
   ],
   "scripts": {
     "dev": "bob-esbuild watch",
-    "prepare": "bob-esbuild build"
+    "prepack": "bob-esbuild build"
   },
   "devDependencies": {
     "@chakra-ui/react": "^1.6.3",

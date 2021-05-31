@@ -17,7 +17,7 @@
     "build": "tsup --silent",
     "dev": "tsup --watch --onSuccess \"pnpm dev-start\"",
     "dev-start": "node bin/index.js init ../../examples/basic",
-    "prepare": "npm run build",
+    "prepack": "pnpm build",
     "postpublish": "gh-release --repo the-guild-org/the-guild-docs"
   },
   "devDependencies": {

@@ -26,7 +26,7 @@
   ],
   "scripts": {
     "dev": "bob-esbuild watch",
-    "prepare": "bob-esbuild build",
+    "prepack": "bob-esbuild build",
     "postpublish": "gh-release --repo the-guild-org/the-guild-docs"
   },
   "dependencies": {

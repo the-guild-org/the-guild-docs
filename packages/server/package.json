@@ -7,6 +7,16 @@
   },
   "license": "MIT",
   "author": "PabloSzx <pablosaez1995@gmail.com>",
+  "exports": {
+    ".": {
+      "require": "./lib/index.js",
+      "import": "./lib/index.mjs"
+    },
+    "./*": {
+      "require": "./*.js",
+      "import": "./*.mjs"
+    }
+  },
   "main": "lib/index.js",
   "module": "lib/index.mjs",
   "types": "lib/index.d.ts",
@@ -15,7 +25,7 @@
   ],
   "scripts": {
     "dev": "bob-esbuild watch",
-    "prepare": "bob-esbuild build",
+    "prepack": "bob-esbuild build",
     "postpublish": "gh-release --repo the-guild-org/the-guild-docs"
   },
   "dependencies": {
