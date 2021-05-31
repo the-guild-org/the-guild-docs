@@ -3,7 +3,7 @@ import 'prism-themes/themes/prism-atom-dark.css';
 import '../../public/style.css';
 
 import { appWithTranslation } from 'next-i18next';
-import { ReactNode, useMemo, useState } from 'react';
+import { ReactNode, useMemo } from 'react';
 import { Footer, GlobalStyles, Header, Subheader } from 'the-guild-components';
 
 import { HamburgerIcon } from '@chakra-ui/icons';
@@ -63,19 +63,16 @@ let mdxRoutesData = serializedMdx && JSON.parse(serializedMdx);
 function App({ Component, pageProps, router }: AppProps) {
   const accentColor = '#1CC8EE';
   const isDocs = router.asPath.includes('docs');
-  const mdxRoutes: MdxInternalProps['mdxRoutes'] | undefined = pageProps.mdxRoutes;
-  const [isSearchModalOpen, setSearchModalOpen] = useState(false);
-
-  const { isOpen, onOpen, onClose } = useDisclosure();
   const [isLg] = useMediaQuery('(min-width: 992px)');
+  const { isOpen, onOpen, onClose } = useDisclosure();
 
+  const mdxRoutes: MdxInternalProps['mdxRoutes'] | undefined = pageProps.mdxRoutes;
   const Navigation = useMemo(() => {
     const paths = mdxRoutes === 1 ? mdxRoutesData : (mdxRoutesData = mdxRoutes || mdxRoutesData);
-
     return (
-      <DocsNavigation zIndex={isSearchModalOpen ? '300' : '1'} transition={isSearchModalOpen ? '0s 0s' : '0s 0.3s'}>
+      <DocsNavigation>
         <DocsTitle>Documentation</DocsTitle>
-        <MDXNavigation paths={iterateRoutes(paths)} accentColor={accentColor} />
+        <MDXNavigation paths={iterateRoutes(paths)} accentColor={accentColor} handleLinkClick={onClose} />
       </DocsNavigation>
     );
   }, [mdxRoutes]);

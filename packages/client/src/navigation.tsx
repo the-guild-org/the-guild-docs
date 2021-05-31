@@ -58,11 +58,13 @@ function Item({
   acumHref,
   depth,
   accentColor,
+  handleLinkClick,
 }: {
   item: Paths;
   acumHref: string;
   depth: number;
   accentColor: string;
+  handleLinkClick: () => void;
 }) {
   const finalHref = concatHrefs(acumHref, href);
 
@@ -119,7 +121,13 @@ function Item({
           </Summary>
 
           <Collapse in={isOpen} unmountOnExit>
-            <MDXNavigation paths={pathsData} acumHref={finalHref} depth={depth + 1} accentColor={accentColor} />
+            <MDXNavigation
+              paths={pathsData}
+              acumHref={finalHref}
+              depth={depth + 1}
+              accentColor={accentColor}
+              handleLinkClick={handleLinkClick}
+            />
           </Collapse>
         </Details>
       ) : (
@@ -128,6 +136,7 @@ function Item({
             ev.preventDefault();
             if (!isActive) {
               Router.push(finalHref);
+              handleLinkClick();
             }
           }}
           onMouseOver={
@@ -153,16 +162,27 @@ export function MDXNavigation({
   acumHref = '',
   depth = 0,
   accentColor = '#000',
+  handleLinkClick,
 }: {
   paths: Paths[];
   acumHref?: string;
   depth?: number;
   accentColor?: string;
+  handleLinkClick: () => void;
 }) {
   return (
     <Wrapper ml={depth !== 0 ? '1rem' : 0}>
       {paths.map((item, index) => {
-        return <Item key={index} item={item} acumHref={acumHref} depth={depth} accentColor={accentColor} />;
+        return (
+          <Item
+            key={index}
+            item={item}
+            acumHref={acumHref}
+            depth={depth}
+            accentColor={accentColor}
+            handleLinkClick={handleLinkClick}
+          />
+        );
       })}
     </Wrapper>
   );

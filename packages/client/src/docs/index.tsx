@@ -26,6 +26,7 @@ export const DocsNavigation = chakra('aside', {
     top: {
       lg: '7rem',
     },
+    zIndex: '0',
     display: 'block',
     height: 'fit-content',
     width: {
