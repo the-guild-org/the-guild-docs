@@ -1,5 +1,13 @@
 # @guild-docs/client
 
+## 0.1.1
+
+### Patch Changes
+
+- c673f70: allow customize client components & sync packages
+- Updated dependencies [c673f70]
+  - @guild-docs/types@0.1.1
+
 ## 0.1.0
 
 ### Minor Changes
