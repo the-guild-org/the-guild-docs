@@ -1,5 +1,11 @@
 # @guild-docs/types
 
+## 0.1.1
+
+### Patch Changes
+
+- c673f70: allow customize client components & sync packages
+
 ## 0.0.6
 
 ### Patch Changes
