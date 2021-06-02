@@ -7,7 +7,7 @@ import { BorderProps, chakra, Collapse, CSSObject, Text, useDisclosure, useSafeL
 import { arePathnamesEqual, concatHrefs } from './routes';
 import { getDefault } from './utils';
 
-import type { Paths } from '@guild-docs/types';
+import type { MDXNavigationProps, Paths } from '@guild-docs/types';
 
 const Router = getDefault(RouterDefault);
 
@@ -59,13 +59,14 @@ function Item({
   depth,
   accentColor,
   handleLinkClick,
+  ...styleProps
 }: {
   item: Paths;
   acumHref: string;
   depth: number;
   accentColor: string;
   handleLinkClick: () => void;
-}) {
+} & Partial<MDXNavigationProps>) {
   const finalHref = concatHrefs(acumHref, href);
 
   const { isOpen, onToggle } = useDisclosure({
@@ -111,22 +112,37 @@ function Item({
 
   const label = name || href.replace(/-/g, ' ');
 
+  const propsArgs = {
+    depth,
+    finalHref,
+    isActive,
+    isAnchor,
+    isOpen,
+  };
+
   return (
     <>
       {pathsData ? (
-        <Details {...(depth !== 0 && innerItemStyles)}>
-          <Summary onClick={onToggle} color={isOpen ? '#000' : '#7F818C'}>
-            <ChevronDownIcon transition="transform 0.3s" transform={isOpen ? undefined : 'rotate(-90deg)'} />
-            <Text as="span">{label}</Text>
+        <Details {...(depth !== 0 && innerItemStyles)} {...styleProps.detailsProps?.(propsArgs)}>
+          <Summary onClick={onToggle} color={isOpen ? '#000' : '#7F818C'} {...styleProps.summaryProps?.(propsArgs)}>
+            <ChevronDownIcon
+              transition="transform 0.3s"
+              transform={isOpen ? undefined : 'rotate(-90deg)'}
+              {...styleProps.summaryIconProps?.(propsArgs)}
+            />
+            <Text as="span" {...styleProps.summaryLabelProps?.(propsArgs)}>
+              {label}
+            </Text>
           </Summary>
 
-          <Collapse in={isOpen} unmountOnExit>
+          <Collapse in={isOpen} unmountOnExit {...styleProps.collapseProps?.(propsArgs)}>
             <MDXNavigation
               paths={pathsData}
               acumHref={finalHref}
               depth={depth + 1}
               accentColor={accentColor}
               handleLinkClick={handleLinkClick}
+              {...styleProps}
             />
           </Collapse>
         </Details>
@@ -149,6 +165,7 @@ function Item({
           href={isAnchor ? finalHref : undefined}
           color={isActive ? accentColor : '#7F818C'}
           {...(depth !== 0 && innerItemStyles)}
+          {...styleProps.linkProps?.(propsArgs)}
         >
           {label}
         </Link>
@@ -163,15 +180,10 @@ export function MDXNavigation({
   depth = 0,
   accentColor = '#000',
   handleLinkClick,
-}: {
-  paths: Paths[];
-  acumHref?: string;
-  depth?: number;
-  accentColor?: string;
-  handleLinkClick: () => void;
-}) {
+  ...styleProps
+}: MDXNavigationProps) {
   return (
-    <Wrapper ml={depth !== 0 ? '1rem' : 0}>
+    <Wrapper ml={depth !== 0 ? '1rem' : 0} {...styleProps.wrapperProps}>
       {paths.map((item, index) => {
         return (
           <Item
@@ -181,6 +193,7 @@ export function MDXNavigation({
             depth={depth}
             accentColor={accentColor}
             handleLinkClick={handleLinkClick}
+            {...styleProps}
           />
         );
       })}

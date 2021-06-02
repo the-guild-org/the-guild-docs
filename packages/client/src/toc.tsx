@@ -46,7 +46,7 @@ const Link = chakra('a', {
   },
 });
 
-export function MDXTOC({ toc }: MDXTOCProps) {
+export function MDXTOC({ toc, wrapperProps, linkProps, titleProps }: MDXTOCProps) {
   const [visibilityState, produceVisibilityState] = useImmer(() => {
     return toc.reduce((acum, [id]) => {
       acum[id] = false;
@@ -104,8 +104,8 @@ export function MDXTOC({ toc }: MDXTOCProps) {
   }, [toc]);
 
   return (
-    <Wrapper>
-      <Title>Content</Title>
+    <Wrapper {...wrapperProps}>
+      <Title {...titleProps}>Content</Title>
       {toc.map(([id, depth, label]) => {
         const isActive = activeId === id;
         return (
@@ -115,6 +115,12 @@ export function MDXTOC({ toc }: MDXTOCProps) {
             fontWeight={isActive ? 'semibold' : 'normal'}
             opacity={isActive ? '100%' : '60%'}
             marginLeft={`${depth}rem`}
+            {...linkProps?.({
+              id,
+              depth,
+              label,
+              isActive,
+            })}
           >
             {label}
           </Link>

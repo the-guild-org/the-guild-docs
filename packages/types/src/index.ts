@@ -2,7 +2,7 @@ import type { ComponentProps, ReactNode, VoidFunctionComponent } from 'react';
 import type { SSRConfig, useTranslation } from 'next-i18next';
 
 import type { MDXRemoteSerializeResult } from 'next-mdx-remote';
-import type { BoxProps, TextProps, ChakraComponent, LinkBoxProps, LinkOverlayProps, StackProps } from '@chakra-ui/react';
+import type { BoxProps, TextProps, ChakraComponent, LinkProps, HeadingProps, Collapse } from '@chakra-ui/react';
 
 export type IRoutes = {
   $routes?: ([href: string, name: string] | string)[];
@@ -28,16 +28,39 @@ export interface TOCHeading {
 
 export interface MDXTOCProps {
   toc: TOC;
-  boxProps?: Omit<BoxProps, 'children'>;
-  textProps?: (args: TOCHeading) => TextProps;
-  anchorProps?: (args: TOCHeading) => ComponentProps<ChakraComponent<'a', {}>>;
+  wrapperProps?: Omit<ComponentProps<ChakraComponent<'div', {}>>, 'children'>;
+  titleProps?: Omit<ComponentProps<ChakraComponent<'h2', {}>>, 'children'>;
+  linkProps?: (args: TOCHeading) => Omit<ComponentProps<ChakraComponent<'a', {}>>, 'children'>;
+}
+
+export interface MDXNavigationAccordionArgs {
+  finalHref: string;
+  isActive: boolean;
+  isOpen: boolean;
+  isAnchor: boolean;
+  depth: number;
+}
+
+export interface MDXNavigationProps {
+  paths: Paths[];
+  acumHref?: string;
+  depth?: number;
+  accentColor?: string;
+  handleLinkClick: () => void;
+  wrapperProps?: Omit<ComponentProps<ChakraComponent<'nav', {}>>, 'children'>;
+  detailsProps?: (args: MDXNavigationAccordionArgs) => Omit<ComponentProps<ChakraComponent<'div', {}>>, 'children'>;
+  summaryProps?: (args: MDXNavigationAccordionArgs) => Omit<ComponentProps<ChakraComponent<'div', {}>>, 'children'>;
+  summaryLabelProps?: (args: MDXNavigationAccordionArgs) => Omit<ComponentProps<ChakraComponent<'p', {}>>, 'children'>;
+  summaryIconProps?: (args: MDXNavigationAccordionArgs) => Omit<ComponentProps<ChakraComponent<'svg', {}>>, 'children'>;
+  collapseProps?: (args: MDXNavigationAccordionArgs) => Omit<ComponentProps<typeof Collapse>, 'children'>;
+  linkProps?: (args: MDXNavigationAccordionArgs) => Omit<ComponentProps<ChakraComponent<'a', {}>>, 'children'>;
 }
 
 export interface BottomNavigationProps {
   routes: IRoutes;
-  stackProps?: StackProps;
-  linkBoxProps?: LinkBoxProps;
-  linkOverlayProps?: (args: { href: string; name?: string }) => LinkOverlayProps;
+  wrapperProps?: BoxProps;
+  linkProps?: LinkProps;
+  titleProps?: TextProps;
 }
 
 export interface MdxPageProps {

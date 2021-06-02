@@ -110,7 +110,7 @@ export const ClientSideOnly: FC = ({ children }) => {
   return null;
 };
 
-export function BottomNavigationComponent({ routes }: BottomNavigationProps) {
+export function BottomNavigationComponent({ routes, wrapperProps, linkProps, titleProps }: BottomNavigationProps) {
   const Router = useRouter() || {};
 
   const asPath = Router.asPath || '_';
@@ -148,22 +148,27 @@ export function BottomNavigationComponent({ routes }: BottomNavigationProps) {
   if ((!previous && !next) || !current) return null;
 
   return (
-    <Wrapper>
+    <Wrapper {...wrapperProps}>
       {previous && (
         <NextLink href={previous.href} passHref>
           <Link
             onMouseOver={() => setCurrentTitle(previous.name || 'Previous')}
             onMouseOut={() => setCurrentTitle(current.name || '')}
+            {...linkProps}
           >
             <ArrowBackIcon />
           </Link>
         </NextLink>
       )}
 
-      <Title>{currentTitle}</Title>
+      <Title {...titleProps}>{currentTitle}</Title>
       {next && (
         <NextLink href={next.href} passHref>
-          <Link onMouseOver={() => setCurrentTitle(next.name || 'Next')} onMouseOut={() => setCurrentTitle(current.name || '')}>
+          <Link
+            onMouseOver={() => setCurrentTitle(next.name || 'Next')}
+            onMouseOut={() => setCurrentTitle(current.name || '')}
+            {...linkProps}
+          >
             <ArrowForwardIcon />
           </Link>
         </NextLink>
