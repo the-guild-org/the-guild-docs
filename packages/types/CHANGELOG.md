@@ -1,5 +1,13 @@
 # @guild-docs/types
 
+## 0.2.1
+
+### Patch Changes
+
+- a5abb84: allow customize sidebar label
+- 9522198: allow customize navigation default open depth
+- d2105c5: update build
+
 ## 0.1.1
 
 ### Patch Changes

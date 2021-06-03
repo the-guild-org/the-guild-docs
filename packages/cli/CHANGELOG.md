@@ -1,5 +1,11 @@
 # guild-docs
 
+## 0.2.1
+
+### Patch Changes
+
+- a191976: allow README as index
+
 ## 0.1.1
 
 ### Patch Changes

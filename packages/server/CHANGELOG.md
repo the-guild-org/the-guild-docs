@@ -1,5 +1,17 @@
 # @guild-docs/server
 
+## 0.2.1
+
+### Patch Changes
+
+- a5abb84: allow customize sidebar label
+- a191976: allow README as index
+- d2105c5: update build
+- Updated dependencies [a5abb84]
+- Updated dependencies [9522198]
+- Updated dependencies [d2105c5]
+  - @guild-docs/types@0.2.1
+
 ## 0.1.1
 
 ### Patch Changes
