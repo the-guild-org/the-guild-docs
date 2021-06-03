@@ -95,7 +95,7 @@ function ChakraWrapper({ color, appProps }: { color: string; appProps: AppProps 
 
   const isDocs = router.asPath.includes('docs');
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const { toggleColorMode, colorMode, setColorMode } = useColorMode();
+  const { colorMode, setColorMode } = useColorMode();
 
   const mdxRoutes: MdxInternalProps['mdxRoutes'] | undefined = pageProps.mdxRoutes;
   const Navigation = useMemo(() => {
@@ -110,15 +110,15 @@ function ChakraWrapper({ color, appProps }: { color: string; appProps: AppProps 
 
   const darkThemeProps = useMemo<{
     isDarkTheme: boolean;
-    setDarkTheme?: Dispatch<SetStateAction<boolean>>;
+    setDarkTheme: Dispatch<SetStateAction<boolean>>;
   }>(() => {
     return {
       isDarkTheme: colorMode === 'dark',
-      setIsDarkTheme: (arg: boolean | ((prevState: boolean) => boolean)) => {
+      setDarkTheme: (arg: boolean | ((prevState: boolean) => boolean)) => {
         if (typeof arg === 'function') {
-          setColorMode(arg(colorMode === 'dark'));
+          setColorMode(arg(colorMode === 'dark') ? 'dark' : 'light');
         } else {
-          setColorMode(arg);
+          setColorMode(arg ? 'dark' : 'light');
         }
       },
     };
