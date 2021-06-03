@@ -33,7 +33,7 @@
     "@rollup/plugin-image": "^2.0.6",
     "@rollup/plugin-node-resolve": "^13.0.0",
     "babel-plugin-styled-components": "^1.12.0",
-    "bob-esbuild-cli": "0.1.16",
+    "bob-esbuild-cli": "^0.1.21",
     "changesets-github-release": "^0.0.1",
     "postcss": "^8.3.0",
     "react": "^17.0.2",

@@ -14,8 +14,8 @@
       "import": "./lib/index.mjs"
     },
     "./*": {
-      "require": "./*.js",
-      "import": "./*.mjs"
+      "require": "./lib/*.js",
+      "import": "./lib/*.mjs"
     }
   },
   "main": "lib/index.js",
@@ -49,7 +49,7 @@
     "@types/nprogress": "^0.2.0",
     "@types/react": "^17.0.9",
     "@types/react-dom": "^17.0.6",
-    "bob-esbuild-cli": "0.1.16",
+    "bob-esbuild-cli": "^0.1.21",
     "changesets-github-release": "^0.0.1",
     "esbuild": "^0.12.5",
     "framer-motion": "^4.1.17",
@@ -76,5 +76,8 @@
     "react-dom": {
       "optional": true
     }
+  },
+  "publishConfig": {
+    "directory": "lib"
   }
 }
