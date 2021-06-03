@@ -23,7 +23,9 @@ export function withoutTrailingSlash(v: string) {
 }
 
 export function concatHrefs(acumHref: string, currentHref: string) {
-  return (acumHref !== '/' ? acumHref + '/' : acumHref) + (currentHref === 'index' ? '' : currentHref);
+  return (
+    (acumHref !== '/' ? acumHref + '/' : acumHref) + (currentHref === 'index' || currentHref === 'README' ? '' : currentHref)
+  );
 }
 
 export function iterateRoutes(routes: IRoutes, paths: Paths[] = []): Paths[] {
@@ -45,7 +47,11 @@ export function iterateRoutes(routes: IRoutes, paths: Paths[] = []): Paths[] {
       href,
       name: $name,
       paths: iterateRoutes({ $routes, _: entryRoutes }),
-      isPage: !!$routes?.find(v => (Array.isArray(v) ? v[0] : v) === 'index') || Object.keys(entryRoutes).includes('index'),
+      isPage:
+        !!$routes?.find(v => {
+          const singleValue = Array.isArray(v) ? v[0] : v;
+          return singleValue === 'index' || singleValue === 'README';
+        }) || Object.keys(entryRoutes).some(v => v === 'index' || v === 'README'),
     });
   }
 

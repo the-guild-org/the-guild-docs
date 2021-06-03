@@ -46,13 +46,18 @@ async function readMarkdownFile(basePath: string, slugPath: string[]) {
   const mdPath = [...sharedStartPath, '.md'].join('');
   const indexMdPath = [...sharedStartPath, '/index.md'].join('');
   const indexMdxPath = [...sharedStartPath, '/index.mdx'].join('');
+  const indexReadmeMdPath = [...sharedStartPath, '/README.md'].join('');
+  const indexReadmeMdxPath = [...sharedStartPath, '/README.mdx'].join('');
 
-  const [mdPathExists, mdxPathExists, indexMdPathExists, indexMdxPathExists] = await Promise.all([
-    fileExists(mdPath),
-    fileExists(mdxPath),
-    fileExists(indexMdPath),
-    fileExists(indexMdxPath),
-  ]);
+  const [mdPathExists, mdxPathExists, indexMdPathExists, indexMdxPathExists, indexReadmeMdPathExists, indexReadmeMdxPathExists] =
+    await Promise.all([
+      fileExists(mdPath),
+      fileExists(mdxPath),
+      fileExists(indexMdPath),
+      fileExists(indexMdxPath),
+      fileExists(indexReadmeMdPath),
+      fileExists(indexReadmeMdxPath),
+    ]);
 
   if (mdPathExists) {
     return readFile(mdPath);
@@ -62,6 +67,10 @@ async function readMarkdownFile(basePath: string, slugPath: string[]) {
     return readFile(indexMdPath);
   } else if (indexMdxPathExists) {
     return readFile(indexMdxPath);
+  } else if (indexReadmeMdPathExists) {
+    return readFile(indexReadmeMdPath);
+  } else if (indexReadmeMdxPathExists) {
+    return readFile(indexReadmeMdxPath);
   }
   throw Error("Markdown File Couldn't be found!");
 }
@@ -206,7 +215,8 @@ export async function MDXPaths(
 
       const dupSlug = [...slug];
 
-      if (dupSlug.pop() === 'index') {
+      const poppedSlug = dupSlug.pop();
+      if (poppedSlug === 'index' || poppedSlug === 'README') {
         paths.push({
           params: {
             slug: dupSlug,
