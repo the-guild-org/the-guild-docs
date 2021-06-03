@@ -27,8 +27,8 @@
   },
   "devDependencies": {
     "@changesets/cli": "^2.16.0",
-    "@types/node": "^15.6.1",
-    "@types/react": "^17.0.8",
+    "@types/node": "^15.12.0",
+    "@types/react": "^17.0.9",
     "@types/react-instantsearch-core": "^6.10.2",
     "@types/react-instantsearch-dom": "^6.10.0",
     "@types/react-paginate": "^7.1.0",
@@ -50,7 +50,8 @@
     "overrides": {
       "esbuild": "0.12.5",
       "bob-esbuild": "0.1.13",
-      "bob-esbuild-cli": "0.1.15"
+      "bob-esbuild-cli": "0.1.15",
+      "@emotion/react": "11.4.0"
     }
   }
 }

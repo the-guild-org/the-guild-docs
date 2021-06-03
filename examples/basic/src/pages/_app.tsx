@@ -3,7 +3,7 @@ import 'prism-themes/themes/prism-atom-dark.css';
 import '../../public/style.css';
 
 import { appWithTranslation } from 'next-i18next';
-import { ReactNode, useMemo } from 'react';
+import { ReactNode, useMemo, Dispatch, SetStateAction } from 'react';
 import { Footer, GlobalStyles, Header, Subheader, ThemeProvider as ComponentsThemeProvider } from '@guild-docs/tgc';
 
 import { mode } from '@chakra-ui/theme-tools';
@@ -95,7 +95,7 @@ function ChakraWrapper({ color, appProps }: { color: string; appProps: AppProps 
 
   const isDocs = router.asPath.includes('docs');
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const { colorMode, toggleColorMode } = useColorMode();
+  const { colorMode, setColorMode } = useColorMode();
 
   const mdxRoutes: MdxInternalProps['mdxRoutes'] | undefined = pageProps.mdxRoutes;
   const Navigation = useMemo(() => {
@@ -108,8 +108,24 @@ function ChakraWrapper({ color, appProps }: { color: string; appProps: AppProps 
     );
   }, [mdxRoutes]);
 
+  const darkThemeProps = useMemo<{
+    isDarkTheme: boolean;
+    setDarkTheme: Dispatch<SetStateAction<boolean>>;
+  }>(() => {
+    return {
+      isDarkTheme: colorMode === 'dark',
+      setDarkTheme: (arg: boolean | ((prevState: boolean) => boolean)) => {
+        if (typeof arg === 'function') {
+          setColorMode(arg(colorMode === 'dark') ? 'dark' : 'light');
+        } else {
+          setColorMode(arg ? 'dark' : 'light');
+        }
+      },
+    };
+  }, [colorMode, setColorMode]);
+
   return (
-    <ComponentsThemeProvider isDarkTheme={colorMode === 'dark'} setDarkTheme={toggleColorMode}>
+    <ComponentsThemeProvider {...darkThemeProps}>
       <GlobalStyles />
       <Header accentColor={color} activeLink="/open-source" themeSwitch />
       <Subheader
