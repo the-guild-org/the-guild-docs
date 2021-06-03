@@ -2,16 +2,7 @@ import RouterDefault from 'next/router';
 import React, { useRef, useState } from 'react';
 
 import { ChevronDownIcon } from '@chakra-ui/icons';
-import {
-  BorderProps,
-  chakra,
-  Collapse,
-  CSSObject,
-  Text,
-  useDisclosure,
-  useSafeLayoutEffect,
-  useColorModeValue,
-} from '@chakra-ui/react';
+import { chakra, Collapse, CSSObject, Text, useDisclosure, useSafeLayoutEffect, useColorModeValue } from '@chakra-ui/react';
 
 import { arePathnamesEqual, concatHrefs } from './routes';
 import { getDefault } from './utils';
@@ -51,7 +42,7 @@ const Link = chakra('a', {
 const Router = getDefault(RouterDefault);
 
 function Item({
-  item: { href, name, paths, isPage },
+  item: { href, name, sidebar, paths, isPage },
   acumHref,
   depth,
   accentColor,
@@ -108,7 +99,7 @@ function Item({
     };
   }, [finalHref, currentIsActive]);
 
-  const label = name || href.replace(/-/g, ' ');
+  const label = sidebar || name || href.replace(/-/g, ' ');
 
   const propsArgs = {
     depth,

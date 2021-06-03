@@ -2,11 +2,12 @@ import type { ComponentProps, ReactNode, VoidFunctionComponent } from 'react';
 import type { SSRConfig, useTranslation } from 'next-i18next';
 
 import type { MDXRemoteSerializeResult } from 'next-mdx-remote';
-import type { BoxProps, TextProps, ChakraComponent, LinkProps, HeadingProps, Collapse } from '@chakra-ui/react';
+import type { BoxProps, TextProps, ChakraComponent, LinkProps, Collapse } from '@chakra-ui/react';
 
 export type IRoutes = {
-  $routes?: ([href: string, name: string] | string)[];
+  $routes?: ([href: string, name: string, sidebar?: string] | string)[];
   $name?: string;
+  $sidebar?: string;
   _?: Record<string, IRoutes>;
 };
 
@@ -15,6 +16,7 @@ export type TOC = [id: string, depth: number, label: string][];
 export interface Paths {
   href: string;
   name?: string;
+  sidebar?: string;
   isPage: boolean;
   paths?: Paths[];
 }

@@ -225,7 +225,7 @@ export async function writeDocPages() {
 
 export async function writeDocsDirectory() {
   await writeFileFormatIfNotExists(
-    [config.cwd, 'docs/index.mdx'],
+    [config.cwd, 'docs/README.mdx'],
     `
 ---
 title: Docs Index

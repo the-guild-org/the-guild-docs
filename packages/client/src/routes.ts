@@ -33,19 +33,21 @@ export function iterateRoutes(routes: IRoutes, paths: Paths[] = []): Paths[] {
 
   if ($routes) {
     for (const route of $routes) {
-      const [href, name] = Array.isArray(route) ? route : [route, route];
+      const [href, name, sidebar] = Array.isArray(route) ? route : [route, route];
       if (paths.find(v => v.href === href)) continue;
       paths.push({
         href,
         name,
+        sidebar,
         isPage: true,
       });
     }
   }
-  for (const [href, { $name, $routes, _: entryRoutes = {} }] of Object.entries(restRoutes)) {
+  for (const [href, { $name, $routes, $sidebar, _: entryRoutes = {} }] of Object.entries(restRoutes)) {
     paths.push({
       href,
       name: $name,
+      sidebar: $sidebar,
       paths: iterateRoutes({ $routes, _: entryRoutes }),
       isPage:
         !!$routes?.find(v => {

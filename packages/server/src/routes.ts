@@ -20,7 +20,15 @@ export interface AddRoutesConfig {
   basePath?: string;
   basePathLabel?: string;
   replaceBasePath?: string;
-  labels?: Record<string, string | undefined>;
+  labels?: Record<string, string | [title: string, sidebar_label: string] | undefined>;
+}
+
+function getTitle(value: string | [title: string, sidebar_label: string]): string {
+  return Array.isArray(value) ? value[0] : value;
+}
+
+function getSidebarLabel(value: string | [title: string, sidebar_label: string]): string {
+  return Array.isArray(value) ? value[1] : value;
 }
 
 export function GenerateRoutes(config: AddRoutesConfig) {
@@ -33,7 +41,7 @@ export function GenerateRoutes(config: AddRoutesConfig) {
 
     const md = readFileSync(path);
 
-    const { data } = matter(md);
+    const data: { [P in 'sidebar_label' | 'title']?: string } = matter(md).data;
 
     const slugList = getSlug({
       path,
@@ -50,21 +58,34 @@ export function GenerateRoutes(config: AddRoutesConfig) {
         const existingRouteIndex = currentRouteRoutes.findIndex(v => (Array.isArray(v) ? v[0] : v) === slug);
         const existingRoute = currentRouteRoutes[existingRouteIndex];
 
+        const sidebar = data.sidebar_label || labels[acumSlug];
+
+        const sidebarRest = sidebar ? ([getSidebarLabel(sidebar)] as const) : ([] as const);
+
         // Only overwrite the titles and prevent duplication of routes
         if (existingRoute) {
-          if (data.title || labels[acumSlug]) {
+          const title = data.title || labels[acumSlug];
+          // We ignore the case where title is not specified, but yes sidebar label
+          if (title) {
             currentRouteRoutes[existingRouteIndex] = [
               Array.isArray(existingRoute) ? existingRoute[0] : existingRoute,
-              data.title || labels[acumSlug],
+              getTitle(title),
+              ...sidebarRest,
             ];
           }
         } else {
-          currentRouteRoutes.push([slug, data.title || labels[acumSlug] || slug]);
+          const title = data.title || labels[acumSlug];
+
+          currentRouteRoutes.push([slug, title ? getTitle(title) : slug, ...sidebarRest]);
         }
       } else {
         currentRoute = (currentRoute._ ||= {})[slug] ||= {};
 
-        labels[acumSlug] && (currentRoute.$name = labels[acumSlug]);
+        const labelValue = labels[acumSlug];
+
+        labelValue && (currentRoute.$name = getTitle(labelValue));
+
+        Array.isArray(labelValue) && (currentRoute.$sidebar = getSidebarLabel(labelValue));
       }
 
       acumSlug += '.';
