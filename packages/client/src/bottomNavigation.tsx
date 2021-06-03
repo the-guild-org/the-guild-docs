@@ -3,14 +3,12 @@ import { useRouter } from 'next/router';
 import React, { FC, useMemo, useState } from 'react';
 
 import { ArrowBackIcon, ArrowForwardIcon } from '@chakra-ui/icons';
-import { useSafeLayoutEffect, chakra } from '@chakra-ui/react';
+import { useSafeLayoutEffect, chakra, useColorModeValue } from '@chakra-ui/react';
 
 import { arePathnamesEqual, concatHrefs, iterateRoutes, withoutTrailingSlash } from './routes';
 import { getDefault } from './utils';
 
 import type { BottomNavigationProps, Paths } from '@guild-docs/types';
-
-const NextLink = getDefault(NextLinkImport);
 
 const Wrapper = chakra('div', {
   baseStyle: {
@@ -34,7 +32,6 @@ const Title = chakra('p', {
     fontWeight: 'medium',
     fontSize: '0.75rem',
     textAlign: 'center',
-    color: '#6b7280',
   },
 });
 
@@ -46,16 +43,12 @@ const Link = chakra('a', {
     height: '2rem',
     width: '2rem',
     borderRadius: '0.5rem',
-    backgroundColor: '#F3F4F6',
     cursor: 'pointer',
     transition: '0.15s',
-    _hover: {
-      backgroundColor: '#000',
-      color: '#FFF',
-    },
   },
 });
 
+const NextLink = getDefault(NextLinkImport);
 export interface ReducedHref {
   href: string;
   name?: string;
@@ -111,6 +104,18 @@ export const ClientSideOnly: FC = ({ children }) => {
 };
 
 export function BottomNavigationComponent({ routes, wrapperProps, linkProps, titleProps }: BottomNavigationProps) {
+  const linkThemedStyles = {
+    backgroundColor: useColorModeValue('gray.200', 'gray.800'),
+    _hover: {
+      backgroundColor: useColorModeValue('black', 'white'),
+      color: useColorModeValue('white', 'black'),
+    },
+  };
+
+  const titleThemedStyles = {
+    color: useColorModeValue('gray.500', 'gray.200'),
+  };
+
   const Router = useRouter() || {};
 
   const asPath = Router.asPath || '_';
@@ -154,22 +159,26 @@ export function BottomNavigationComponent({ routes, wrapperProps, linkProps, tit
           <Link
             onMouseOver={() => setCurrentTitle(previous.name || 'Previous')}
             onMouseOut={() => setCurrentTitle(current.name || '')}
+            {...linkThemedStyles}
             {...linkProps}
           >
-            <ArrowBackIcon />
+            <ArrowBackIcon pointerEvents="none" />
           </Link>
         </NextLink>
       )}
 
-      <Title {...titleProps}>{currentTitle}</Title>
+      <Title {...titleProps} {...titleThemedStyles}>
+        {currentTitle}
+      </Title>
       {next && (
         <NextLink href={next.href} passHref>
           <Link
             onMouseOver={() => setCurrentTitle(next.name || 'Next')}
             onMouseOut={() => setCurrentTitle(current.name || '')}
+            {...linkThemedStyles}
             {...linkProps}
           >
-            <ArrowForwardIcon />
+            <ArrowForwardIcon pointerEvents="none" />
           </Link>
         </NextLink>
       )}

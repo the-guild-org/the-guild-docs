@@ -2,18 +2,21 @@ import RouterDefault from 'next/router';
 import React, { useRef, useState } from 'react';
 
 import { ChevronDownIcon } from '@chakra-ui/icons';
-import { BorderProps, chakra, Collapse, CSSObject, Text, useDisclosure, useSafeLayoutEffect } from '@chakra-ui/react';
+import {
+  BorderProps,
+  chakra,
+  Collapse,
+  CSSObject,
+  Text,
+  useDisclosure,
+  useSafeLayoutEffect,
+  useColorModeValue,
+} from '@chakra-ui/react';
 
 import { arePathnamesEqual, concatHrefs } from './routes';
 import { getDefault } from './utils';
 
 import type { MDXNavigationProps, Paths } from '@guild-docs/types';
-
-const Router = getDefault(RouterDefault);
-
-const Wrapper = chakra('nav', {
-  baseStyle: {},
-});
 
 const Details = chakra('div', {
   baseStyle: {},
@@ -28,14 +31,6 @@ const itemStyles: CSSObject = {
   cursor: 'pointer',
   userSelect: 'none',
   transition: '0.1s',
-  _hover: {
-    color: '#000',
-    backgroundColor: '#F3F4F6',
-  },
-};
-
-const innerItemStyles: BorderProps = {
-  borderLeft: '0.15rem solid #9ca3af',
 };
 
 const Summary = chakra('div', {
@@ -52,6 +47,8 @@ const Link = chakra('a', {
     ...itemStyles,
   },
 });
+
+const Router = getDefault(RouterDefault);
 
 function Item({
   item: { href, name, paths, isPage },
@@ -120,11 +117,28 @@ function Item({
     isOpen,
   };
 
+  const innerItemStyles = {
+    borderColor: useColorModeValue('gray.300', 'gray.600'),
+    borderLeftWidth: `0.15rem`,
+  };
+
+  const hoverItemStyles = {
+    _hover: {
+      color: useColorModeValue('black', 'white'),
+      backgroundColor: useColorModeValue('gray.100', 'gray.700'),
+    },
+  };
+
   return (
     <>
       {pathsData ? (
         <Details {...(depth !== 0 && innerItemStyles)} {...styleProps.detailsProps?.(propsArgs)}>
-          <Summary onClick={onToggle} color={isOpen ? '#000' : '#7F818C'} {...styleProps.summaryProps?.(propsArgs)}>
+          <Summary
+            onClick={onToggle}
+            color={isOpen ? useColorModeValue('black', 'white') : useColorModeValue('gray.400', 'gray.500')}
+            {...styleProps.summaryProps?.(propsArgs)}
+            {...hoverItemStyles}
+          >
             <ChevronDownIcon
               transition="transform 0.3s"
               transform={isOpen ? undefined : 'rotate(-90deg)'}
@@ -163,9 +177,10 @@ function Item({
                 }
           }
           href={isAnchor ? finalHref : undefined}
-          color={isActive ? accentColor : '#7F818C'}
+          color={isActive ? accentColor : useColorModeValue('gray.400', 'gray.500')}
           {...(depth !== 0 && innerItemStyles)}
           {...styleProps.linkProps?.(propsArgs)}
+          {...hoverItemStyles}
         >
           {label}
         </Link>
@@ -182,6 +197,10 @@ export function MDXNavigation({
   handleLinkClick,
   ...styleProps
 }: MDXNavigationProps) {
+  const Wrapper = chakra('nav', {
+    baseStyle: {},
+  });
+
   return (
     <Wrapper ml={depth !== 0 ? '1rem' : 0} {...styleProps.wrapperProps}>
       {paths.map((item, index) => {

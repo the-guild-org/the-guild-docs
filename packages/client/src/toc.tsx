@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { observe } from 'react-intersection-observer';
 import { useImmer } from 'use-immer';
 
-import { chakra, useSafeLayoutEffect, useUpdateEffect } from '@chakra-ui/react';
+import { chakra, useSafeLayoutEffect, useUpdateEffect, useColorModeValue } from '@chakra-ui/react';
 
 import type { MDXTOCProps } from '@guild-docs/types';
 
@@ -14,7 +14,6 @@ const Wrapper = chakra('div', {
     },
     width: '100%',
     p: '1rem',
-    backgroundColor: '#F3F4F6',
     borderRadius: '0.5rem',
   },
 });
@@ -104,7 +103,7 @@ export function MDXTOC({ toc, wrapperProps, linkProps, titleProps }: MDXTOCProps
   }, [toc]);
 
   return (
-    <Wrapper {...wrapperProps}>
+    <Wrapper {...wrapperProps} backgroundColor={useColorModeValue('gray.200', 'gray.800')}>
       <Title {...titleProps}>Content</Title>
       {toc.map(([id, depth, label]) => {
         const isActive = activeId === id;
