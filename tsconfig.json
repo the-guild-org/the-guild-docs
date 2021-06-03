@@ -2,7 +2,7 @@
   "compilerOptions": {
     "rootDir": ".",
     "baseUrl": ".",
-    "outDir": "lib-types",
+    "outDir": "lib",
     "paths": {
       "@guild-docs/*": ["packages/*/src/index.ts"]
     },
@@ -23,5 +23,5 @@
     "noUnusedLocals": true
   },
   "include": ["**/*.ts", "**/*.tsx"],
-  "exclude": ["node_modules", "examples", "lib-types"]
+  "exclude": ["node_modules", "examples", "lib"]
 }

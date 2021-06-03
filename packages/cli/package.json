@@ -8,15 +8,15 @@
   "license": "MIT",
   "author": "PabloSzx <pablosaez1995@gmail.com>",
   "bin": {
-    "guild-docs": "bin/index.js"
+    "guild-docs": "lib/index.js"
   },
   "files": [
-    "bin"
+    "lib"
   ],
   "scripts": {
     "build": "tsup --silent",
     "dev": "tsup --watch --onSuccess \"pnpm dev-start\"",
-    "dev-start": "node bin/index.js init ../../examples/basic",
+    "dev-start": "node lib/index.js init ../../examples/basic",
     "prepack": "pnpm build",
     "postpublish": "gh-release --repo the-guild-org/the-guild-docs"
   },
@@ -36,7 +36,7 @@
   },
   "tsup": {
     "splitting": false,
-    "outDir": "bin",
+    "outDir": "lib",
     "entryPoints": [
       "src/index.ts"
     ]
