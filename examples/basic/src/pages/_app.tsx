@@ -19,6 +19,7 @@ import {
   useDisclosure,
   useColorMode,
   useColorModeValue,
+  theme as defaultTheme,
 } from '@chakra-ui/react';
 import { mode } from '@chakra-ui/theme-tools';
 
@@ -49,7 +50,7 @@ ExtendComponents({
   },
 });
 
-const styles = {
+const styles: typeof defaultTheme['styles'] = {
   global: props => ({
     body: {
       bg: mode('white', 'gray.850')(props),
