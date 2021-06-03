@@ -1,5 +1,11 @@
 # @guild-docs/tgc
 
+## 0.2.0
+
+### Minor Changes
+
+- 3457086: Dark theme integration
+
 ## 0.1.1
 
 ### Patch Changes
