@@ -49,9 +49,9 @@ importers:
       '@chakra-ui/theme-tools': ^1.1.7
       '@emotion/react': 11.4.0
       '@emotion/styled': ^11.3.0
-      '@guild-docs/client': workspace:^0.2.0
-      '@guild-docs/server': workspace:^0.1.1
-      '@guild-docs/tgc': workspace:^0.2.0
+      '@guild-docs/client': workspace:^0.2.1
+      '@guild-docs/server': workspace:^0.2.1
+      '@guild-docs/tgc': workspace:^0.2.1
       '@mdx-js/react': ^1.6.22
       '@types/concurrently': ^6.2.0
       '@types/mdx-js__react': ^1.5.3
@@ -146,7 +146,7 @@ importers:
       '@chakra-ui/react': ^1.6.3
       '@chakra-ui/system': ^1.6.7
       '@emotion/react': 11.4.0
-      '@guild-docs/types': workspace:^0.1.1
+      '@guild-docs/types': workspace:^0.2.1
       '@mdx-js/react': ^1.6.22
       '@types/mdx-js__react': ^1.5.3
       '@types/nprogress': ^0.2.0
@@ -196,7 +196,7 @@ importers:
 
   packages/server:
     specifiers:
-      '@guild-docs/types': workspace:^0.1.1
+      '@guild-docs/types': workspace:^0.2.1
       '@types/github-slugger': ^1.3.0
       bob-esbuild-cli: ^0.1.21
       changesets-github-release: ^0.0.1

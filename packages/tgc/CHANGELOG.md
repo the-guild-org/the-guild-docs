@@ -1,5 +1,11 @@
 # @guild-docs/tgc
 
+## 0.2.1
+
+### Patch Changes
+
+- d2105c5: update build
+
 ## 0.2.0
 
 ### Minor Changes
