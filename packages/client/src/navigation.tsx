@@ -56,6 +56,7 @@ function Item({
   depth,
   accentColor,
   handleLinkClick,
+  defaultOpenDepth = 2,
   ...styleProps
 }: {
   item: Paths;
@@ -67,7 +68,7 @@ function Item({
   const finalHref = concatHrefs(acumHref, href);
 
   const { isOpen, onToggle } = useDisclosure({
-    defaultIsOpen: depth < 1,
+    defaultIsOpen: depth < defaultOpenDepth,
   });
 
   const pathsData = paths?.length ? paths : null;

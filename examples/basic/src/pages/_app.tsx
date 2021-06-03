@@ -3,10 +3,8 @@ import 'prism-themes/themes/prism-atom-dark.css';
 import '../../public/style.css';
 
 import { appWithTranslation } from 'next-i18next';
-import { ReactNode, useMemo, Dispatch, SetStateAction } from 'react';
-import { Footer, GlobalStyles, Header, Subheader, ThemeProvider as ComponentsThemeProvider } from '@guild-docs/tgc';
+import { Dispatch, ReactNode, SetStateAction, useMemo } from 'react';
 
-import { mode } from '@chakra-ui/theme-tools';
 import { HamburgerIcon } from '@chakra-ui/icons';
 import {
   ChakraProvider,
@@ -17,12 +15,12 @@ import {
   DrawerOverlay,
   extendTheme,
   IconButton,
-  useDisclosure,
+  theme as chakraTheme,
   useColorMode,
   useColorModeValue,
-  theme as chakraTheme,
+  useDisclosure,
 } from '@chakra-ui/react';
-
+import { mode } from '@chakra-ui/theme-tools';
 import {
   DocsContainer,
   DocsNavigation,
@@ -35,10 +33,11 @@ import {
   MDXNavigation,
   NextNProgress,
 } from '@guild-docs/client';
-
-import type { AppProps } from 'next/app';
+import { Footer, GlobalStyles, Header, Subheader, ThemeProvider as ComponentsThemeProvider } from '@guild-docs/tgc';
 
 import { handleRoute } from '../../next-helpers';
+
+import type { AppProps } from 'next/app';
 
 export function ChakraThemeProvider({ children }: { children: ReactNode }) {
   return <ChakraProvider theme={theme}>{children}</ChakraProvider>;

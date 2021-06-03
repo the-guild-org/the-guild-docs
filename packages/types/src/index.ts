@@ -54,6 +54,10 @@ export interface MDXNavigationProps {
   summaryIconProps?: (args: MDXNavigationAccordionArgs) => Omit<ComponentProps<ChakraComponent<'svg', {}>>, 'children'>;
   collapseProps?: (args: MDXNavigationAccordionArgs) => Omit<ComponentProps<typeof Collapse>, 'children'>;
   linkProps?: (args: MDXNavigationAccordionArgs) => Omit<ComponentProps<ChakraComponent<'a', {}>>, 'children'>;
+  /**
+   * @default 2
+   */
+  defaultOpenDepth?: number;
 }
 
 export interface BottomNavigationProps {
