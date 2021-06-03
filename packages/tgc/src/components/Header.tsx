@@ -111,7 +111,7 @@ export const Header: React.FC<IHeaderProps> = ({ accentColor, activeLink, sameSi
                 iconType="theme"
                 onClick={() => {
                   setDarkTheme((state: boolean) => !state);
-                  onThemeSwitch();
+                  onThemeSwitch && onThemeSwitch();
                 }}
               >
                 <img src={icons.themeToggle} height="16" width="16" alt="Theme toggle icon" />
