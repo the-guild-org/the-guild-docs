@@ -18,6 +18,36 @@ import { getDefault } from './utils';
 
 import type { MDXNavigationProps, Paths } from '@guild-docs/types';
 
+const Details = chakra('div', {
+  baseStyle: {},
+});
+
+const itemStyles: CSSObject = {
+  py: '0.45rem',
+  pl: '0.75rem',
+  fontSize: '0.875rem',
+  fontWeight: 'medium',
+  textTransform: 'capitalize',
+  cursor: 'pointer',
+  userSelect: 'none',
+  transition: '0.1s',
+};
+
+const Summary = chakra('div', {
+  baseStyle: {
+    ...itemStyles,
+    display: 'flex',
+    alignItems: 'center',
+  },
+});
+
+const Link = chakra('a', {
+  baseStyle: {
+    display: 'block',
+    ...itemStyles,
+  },
+});
+
 const Router = getDefault(RouterDefault);
 
 function Item({
@@ -34,45 +64,6 @@ function Item({
   accentColor: string;
   handleLinkClick: () => void;
 } & Partial<MDXNavigationProps>) {
-  const Details = chakra('div', {
-    baseStyle: {},
-  });
-
-  const itemStyles: CSSObject = {
-    py: '0.45rem',
-    pl: '0.75rem',
-    fontSize: '0.875rem',
-    fontWeight: 'medium',
-    textTransform: 'capitalize',
-    cursor: 'pointer',
-    userSelect: 'none',
-    transition: '0.1s',
-    _hover: {
-      color: useColorModeValue('black', 'white'),
-      backgroundColor: useColorModeValue('gray.100', 'gray.700'),
-    },
-  };
-
-  const innerItemStyles: BorderProps = {
-    borderLeftWidth: `0.15rem`,
-    borderColor: useColorModeValue('gray.300', 'gray.600'),
-  };
-
-  const Summary = chakra('div', {
-    baseStyle: {
-      ...itemStyles,
-      display: 'flex',
-      alignItems: 'center',
-    },
-  });
-
-  const Link = chakra('a', {
-    baseStyle: {
-      display: 'block',
-      ...itemStyles,
-    },
-  });
-
   const finalHref = concatHrefs(acumHref, href);
 
   const { isOpen, onToggle } = useDisclosure({
@@ -126,6 +117,18 @@ function Item({
     isOpen,
   };
 
+  const innerItemStyles = {
+    borderColor: useColorModeValue('gray.300', 'gray.600'),
+    borderLeftWidth: `0.15rem`,
+  };
+
+  const hoverItemStyles = {
+    _hover: {
+      color: useColorModeValue('black', 'white'),
+      backgroundColor: useColorModeValue('gray.100', 'gray.700'),
+    },
+  };
+
   return (
     <>
       {pathsData ? (
@@ -134,6 +137,7 @@ function Item({
             onClick={onToggle}
             color={isOpen ? useColorModeValue('black', 'white') : useColorModeValue('gray.400', 'gray.500')}
             {...styleProps.summaryProps?.(propsArgs)}
+            {...hoverItemStyles}
           >
             <ChevronDownIcon
               transition="transform 0.3s"
@@ -176,6 +180,7 @@ function Item({
           color={isActive ? accentColor : useColorModeValue('gray.400', 'gray.500')}
           {...(depth !== 0 && innerItemStyles)}
           {...styleProps.linkProps?.(propsArgs)}
+          {...hoverItemStyles}
         >
           {label}
         </Link>

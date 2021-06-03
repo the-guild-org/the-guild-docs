@@ -10,6 +10,44 @@ import { getDefault } from './utils';
 
 import type { BottomNavigationProps, Paths } from '@guild-docs/types';
 
+const Wrapper = chakra('div', {
+  baseStyle: {
+    display: 'flex',
+    alignItems: 'center',
+    pt: '1rem',
+  },
+});
+
+const Title = chakra('p', {
+  baseStyle: {
+    display: '-webkit-box',
+    WebkitLineClamp: 2,
+    WebkitBoxOrient: 'vertical',
+    overflow: 'hidden',
+
+    flex: '1 1 0%',
+    justifyContent: 'center',
+    alignItems: 'center',
+    px: '0.5rem',
+    fontWeight: 'medium',
+    fontSize: '0.75rem',
+    textAlign: 'center',
+  },
+});
+
+const Link = chakra('a', {
+  baseStyle: {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    height: '2rem',
+    width: '2rem',
+    borderRadius: '0.5rem',
+    cursor: 'pointer',
+    transition: '0.15s',
+  },
+});
+
 const NextLink = getDefault(NextLinkImport);
 export interface ReducedHref {
   href: string;
@@ -66,49 +104,17 @@ export const ClientSideOnly: FC = ({ children }) => {
 };
 
 export function BottomNavigationComponent({ routes, wrapperProps, linkProps, titleProps }: BottomNavigationProps) {
-  const Wrapper = chakra('div', {
-    baseStyle: {
-      display: 'flex',
-      alignItems: 'center',
-      pt: '1rem',
+  const linkThemedStyles = {
+    backgroundColor: useColorModeValue('gray.200', 'gray.800'),
+    _hover: {
+      backgroundColor: useColorModeValue('black', 'white'),
+      color: useColorModeValue('white', 'black'),
     },
-  });
+  };
 
-  const Title = chakra('p', {
-    baseStyle: {
-      display: '-webkit-box',
-      WebkitLineClamp: 2,
-      WebkitBoxOrient: 'vertical',
-      overflow: 'hidden',
-
-      flex: '1 1 0%',
-      justifyContent: 'center',
-      alignItems: 'center',
-      px: '0.5rem',
-      fontWeight: 'medium',
-      fontSize: '0.75rem',
-      textAlign: 'center',
-      color: useColorModeValue('gray.400', 'gray.200'),
-    },
-  });
-
-  const Link = chakra('a', {
-    baseStyle: {
-      display: 'flex',
-      justifyContent: 'center',
-      alignItems: 'center',
-      height: '2rem',
-      width: '2rem',
-      borderRadius: '0.5rem',
-      backgroundColor: useColorModeValue('gray.200', 'gray.800'),
-      cursor: 'pointer',
-      transition: '0.15s',
-      _hover: {
-        backgroundColor: useColorModeValue('black', 'white'),
-        color: useColorModeValue('white', 'black'),
-      },
-    },
-  });
+  const titleThemedStyles = {
+    color: useColorModeValue('gray.500', 'gray.200'),
+  };
 
   const Router = useRouter() || {};
 
@@ -153,6 +159,7 @@ export function BottomNavigationComponent({ routes, wrapperProps, linkProps, tit
           <Link
             onMouseOver={() => setCurrentTitle(previous.name || 'Previous')}
             onMouseOut={() => setCurrentTitle(current.name || '')}
+            {...linkThemedStyles}
             {...linkProps}
           >
             <ArrowBackIcon pointerEvents="none" />
@@ -160,12 +167,15 @@ export function BottomNavigationComponent({ routes, wrapperProps, linkProps, tit
         </NextLink>
       )}
 
-      <Title {...titleProps}>{currentTitle}</Title>
+      <Title {...titleProps} {...titleThemedStyles}>
+        {currentTitle}
+      </Title>
       {next && (
         <NextLink href={next.href} passHref>
           <Link
             onMouseOver={() => setCurrentTitle(next.name || 'Next')}
             onMouseOut={() => setCurrentTitle(current.name || '')}
+            {...linkThemedStyles}
             {...linkProps}
           >
             <ArrowForwardIcon pointerEvents="none" />

@@ -6,6 +6,7 @@ import { appWithTranslation } from 'next-i18next';
 import { ReactNode, useMemo, Dispatch, SetStateAction } from 'react';
 import { Footer, GlobalStyles, Header, Subheader, ThemeProvider as ComponentsThemeProvider } from '@guild-docs/tgc';
 
+import { mode } from '@chakra-ui/theme-tools';
 import { HamburgerIcon } from '@chakra-ui/icons';
 import {
   ChakraProvider,
@@ -19,9 +20,8 @@ import {
   useDisclosure,
   useColorMode,
   useColorModeValue,
-  theme as defaultTheme,
+  theme as chakraTheme,
 } from '@chakra-ui/react';
-import { mode } from '@chakra-ui/theme-tools';
 
 import {
   DocsContainer,
@@ -50,7 +50,7 @@ ExtendComponents({
   },
 });
 
-const styles: typeof defaultTheme['styles'] = {
+const styles: typeof chakraTheme['styles'] = {
   global: props => ({
     body: {
       bg: mode('white', 'gray.850')(props),
@@ -127,7 +127,7 @@ function ChakraWrapper({ color, appProps }: { color: string; appProps: AppProps 
   return (
     <ComponentsThemeProvider {...darkThemeProps}>
       <GlobalStyles />
-      <Header accentColor={color} activeLink="/open-source" themeSwitch onThemeSwitch={toggleColorMode} />
+      <Header accentColor={color} activeLink="/open-source" themeSwitch />
       <Subheader
         activeLink={router.asPath}
         product={{
