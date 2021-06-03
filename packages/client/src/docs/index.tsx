@@ -40,7 +40,16 @@ export const DocsNavigation = chakra('aside', {
   },
 });
 
-export const DocsDrawer = chakra('div', {
+export const DocsNavigationDesktop = chakra('div', {
+  baseStyle: {
+    display: {
+      base: 'none',
+      lg: 'block',
+    },
+  },
+});
+
+export const DocsNavigationMobile = chakra('div', {
   baseStyle: {
     display: {
       base: 'block',

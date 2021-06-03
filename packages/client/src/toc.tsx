@@ -2,51 +2,51 @@ import React, { useEffect, useState } from 'react';
 import { observe } from 'react-intersection-observer';
 import { useImmer } from 'use-immer';
 
-import { chakra, useSafeLayoutEffect, useUpdateEffect } from '@chakra-ui/react';
+import { chakra, useSafeLayoutEffect, useUpdateEffect, useColorModeValue } from '@chakra-ui/react';
 
 import type { MDXTOCProps } from '@guild-docs/types';
 
-const Wrapper = chakra('div', {
-  baseStyle: {
-    display: {
-      base: 'none',
-      lg: 'block',
-    },
-    width: '100%',
-    p: '1rem',
-    backgroundColor: '#F3F4F6',
-    borderRadius: '0.5rem',
-  },
-});
-
-const Title = chakra('h2', {
-  baseStyle: {
-    textTransform: 'uppercase',
-    fontSize: '0.75rem',
-    fontWeight: 'bold',
-  },
-});
-
-const Link = chakra('a', {
-  baseStyle: {
-    display: 'block',
-    width: 'fit-content',
-    my: '0.5rem',
-    fontSize: '0.875rem',
-    transition: '0.15s',
-    _hover: {
-      opacity: '100%',
-    },
-    _focus: {
-      opacity: '100%',
-    },
-    _last: {
-      mb: '0',
-    },
-  },
-});
-
 export function MDXTOC({ toc, wrapperProps, linkProps, titleProps }: MDXTOCProps) {
+  const Wrapper = chakra('div', {
+    baseStyle: {
+      display: {
+        base: 'none',
+        lg: 'block',
+      },
+      width: '100%',
+      p: '1rem',
+      backgroundColor: useColorModeValue('gray.200', 'gray.800'),
+      borderRadius: '0.5rem',
+    },
+  });
+
+  const Title = chakra('h2', {
+    baseStyle: {
+      textTransform: 'uppercase',
+      fontSize: '0.75rem',
+      fontWeight: 'bold',
+    },
+  });
+
+  const Link = chakra('a', {
+    baseStyle: {
+      display: 'block',
+      width: 'fit-content',
+      my: '0.5rem',
+      fontSize: '0.875rem',
+      transition: '0.15s',
+      _hover: {
+        opacity: '100%',
+      },
+      _focus: {
+        opacity: '100%',
+      },
+      _last: {
+        mb: '0',
+      },
+    },
+  });
+
   const [visibilityState, produceVisibilityState] = useImmer(() => {
     return toc.reduce((acum, [id]) => {
       acum[id] = false;

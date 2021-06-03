@@ -1,4 +1,5 @@
 import tw, { css, styled } from 'twin.macro';
+
 interface IStyleProps {
   accentColor?: string;
   isActiveLink?: boolean;
@@ -8,7 +9,7 @@ interface IStyleProps {
 
 export const Wrapper = styled.header(() => [
   tw`py-2 md:py-5`,
-  tw`dark:bg-gray-900 bg-white`,
+  tw`bg-white dark:bg-gray-900`,
   css`
     button:focus:not(:focus-visible) {
       ${tw`outline-none!`}
@@ -26,6 +27,9 @@ export const Navigation = styled.nav(({ isModalOpen }: IStyleProps) => [
     @media screen and (max-width: 768px) {
       ${[
         tw`inset-0`,
+        css`
+          z-index: 300; //TODO: Used for Docusaurus, remove when no longer needed.
+        `,
         !isModalOpen &&
           css`
             top: -100vh;
@@ -35,16 +39,12 @@ export const Navigation = styled.nav(({ isModalOpen }: IStyleProps) => [
     }
   `,
   tw`dark:bg-gray-900 bg-white`,
-  isModalOpen &&
-    css`
-      z-index: 300;
-    `, //TODO: Used for Docusaurus, remove when no longer needed.
 ]);
 
 export const Controls = styled.menu(() => [
   tw`flex justify-center m-0 p-0 md:ml-2.5`,
   css`
-    button:first-child:not(:only-child) {
+    button:first-of-type:not(:only-child) {
       ${tw`hidden md:flex`}
     }
   `,
@@ -76,7 +76,7 @@ export const Link = styled.a(({ accentColor, isActiveLink }: IStyleProps) => [
     `,
   isActiveLink
     ? [
-        tw`dark:text-white text-black relative`,
+        tw`dark:text-gray-50 text-black relative`,
         css`
           :after {
             content: '';

@@ -47,6 +47,7 @@ importers:
     specifiers:
       '@chakra-ui/icons': ^1.0.13
       '@chakra-ui/react': ^1.6.3
+      '@chakra-ui/theme-tools': ^1.1.7
       '@emotion/react': ^11.4.0
       '@emotion/styled': ^11.3.0
       '@guild-docs/client': workspace:^0.1.1
@@ -79,6 +80,7 @@ importers:
     dependencies:
       '@chakra-ui/icons': 1.0.13_react@17.0.2
       '@chakra-ui/react': 1.6.3_dea97089299626867a7ed9910f6342fc
+      '@chakra-ui/theme-tools': 1.1.7
       '@emotion/react': 11.4.0_@types+react@17.0.8+react@17.0.2
       '@emotion/styled': 11.3.0_84a062e36ae687a06656bc53146f8392
       '@guild-docs/client': link:../../packages/client
@@ -2920,6 +2922,16 @@ packages:
       '@chakra-ui/system': 1.6.7_c94ce1a602d602ceca4c9cb32dbce62d
       '@chakra-ui/utils': 1.8.0
       react: 17.0.2
+
+  /@chakra-ui/theme-tools/1.1.7:
+    resolution: {integrity: sha512-i8KpxjgoQPsoWAyHX+4kRMSioN9WVfyky+2sdFDHhEuDNL/iNYfKQMZjt8RR67apK/dSswMqh5UF2lWSM+lQhw==}
+    peerDependencies:
+      '@chakra-ui/system': '>=1.0.0'
+    dependencies:
+      '@chakra-ui/utils': 1.8.0
+      '@types/tinycolor2': 1.4.2
+      tinycolor2: 1.4.2
+    dev: false
 
   /@chakra-ui/theme-tools/1.1.7_@chakra-ui+system@1.6.7:
     resolution: {integrity: sha512-i8KpxjgoQPsoWAyHX+4kRMSioN9WVfyky+2sdFDHhEuDNL/iNYfKQMZjt8RR67apK/dSswMqh5UF2lWSM+lQhw==}

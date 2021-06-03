@@ -3,7 +3,7 @@ import { useRouter } from 'next/router';
 import React, { FC, useMemo, useState } from 'react';
 
 import { ArrowBackIcon, ArrowForwardIcon } from '@chakra-ui/icons';
-import { useSafeLayoutEffect, chakra } from '@chakra-ui/react';
+import { useSafeLayoutEffect, chakra, useColorModeValue } from '@chakra-ui/react';
 
 import { arePathnamesEqual, concatHrefs, iterateRoutes, withoutTrailingSlash } from './routes';
 import { getDefault } from './utils';
@@ -11,51 +11,6 @@ import { getDefault } from './utils';
 import type { BottomNavigationProps, Paths } from '@guild-docs/types';
 
 const NextLink = getDefault(NextLinkImport);
-
-const Wrapper = chakra('div', {
-  baseStyle: {
-    display: 'flex',
-    alignItems: 'center',
-    pt: '1rem',
-  },
-});
-
-const Title = chakra('p', {
-  baseStyle: {
-    display: '-webkit-box',
-    WebkitLineClamp: 2,
-    WebkitBoxOrient: 'vertical',
-    overflow: 'hidden',
-
-    flex: '1 1 0%',
-    justifyContent: 'center',
-    alignItems: 'center',
-    px: '0.5rem',
-    fontWeight: 'medium',
-    fontSize: '0.75rem',
-    textAlign: 'center',
-    color: '#6b7280',
-  },
-});
-
-const Link = chakra('a', {
-  baseStyle: {
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    height: '2rem',
-    width: '2rem',
-    borderRadius: '0.5rem',
-    backgroundColor: '#F3F4F6',
-    cursor: 'pointer',
-    transition: '0.15s',
-    _hover: {
-      backgroundColor: '#000',
-      color: '#FFF',
-    },
-  },
-});
-
 export interface ReducedHref {
   href: string;
   name?: string;
@@ -111,6 +66,50 @@ export const ClientSideOnly: FC = ({ children }) => {
 };
 
 export function BottomNavigationComponent({ routes, wrapperProps, linkProps, titleProps }: BottomNavigationProps) {
+  const Wrapper = chakra('div', {
+    baseStyle: {
+      display: 'flex',
+      alignItems: 'center',
+      pt: '1rem',
+    },
+  });
+
+  const Title = chakra('p', {
+    baseStyle: {
+      display: '-webkit-box',
+      WebkitLineClamp: 2,
+      WebkitBoxOrient: 'vertical',
+      overflow: 'hidden',
+
+      flex: '1 1 0%',
+      justifyContent: 'center',
+      alignItems: 'center',
+      px: '0.5rem',
+      fontWeight: 'medium',
+      fontSize: '0.75rem',
+      textAlign: 'center',
+      color: useColorModeValue('gray.400', 'gray.200'),
+    },
+  });
+
+  const Link = chakra('a', {
+    baseStyle: {
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+      height: '2rem',
+      width: '2rem',
+      borderRadius: '0.5rem',
+      backgroundColor: useColorModeValue('gray.200', 'gray.800'),
+      cursor: 'pointer',
+      transition: '0.15s',
+      _hover: {
+        backgroundColor: useColorModeValue('black', 'white'),
+        color: useColorModeValue('white', 'black'),
+      },
+    },
+  });
+
   const Router = useRouter() || {};
 
   const asPath = Router.asPath || '_';
@@ -156,7 +155,7 @@ export function BottomNavigationComponent({ routes, wrapperProps, linkProps, tit
             onMouseOut={() => setCurrentTitle(current.name || '')}
             {...linkProps}
           >
-            <ArrowBackIcon />
+            <ArrowBackIcon pointerEvents="none" />
           </Link>
         </NextLink>
       )}
@@ -169,7 +168,7 @@ export function BottomNavigationComponent({ routes, wrapperProps, linkProps, tit
             onMouseOut={() => setCurrentTitle(current.name || '')}
             {...linkProps}
           >
-            <ArrowForwardIcon />
+            <ArrowForwardIcon pointerEvents="none" />
           </Link>
         </NextLink>
       )}

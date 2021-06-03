@@ -1,11 +1,11 @@
-import tw, { css, styled, theme } from 'twin.macro';
+import tw, { css, styled } from 'twin.macro';
 
 interface IStyleProps {
   colors?: string[];
   hasImage?: boolean;
 }
 
-export const Wrapper = styled.section(() => [tw`text-white overflow-hidden md:pt-14`]);
+export const Wrapper = styled.section(() => [tw`bg-white dark:bg-gray-900 overflow-hidden md:pt-14`]);
 
 export const Container = styled.div(() => [tw`container-min relative`]);
 
@@ -29,7 +29,7 @@ export const CTA = styled.div(() => [
     }
 
     span {
-      ${tw`text-white opacity-60`}
+      ${tw`text-gray-50 opacity-60`}
     }
   `,
 ]);
@@ -46,7 +46,7 @@ export const Info = styled.div(() => [
 
     h1 {
       ${[
-        tw`max-w-lg mb-2.5 font-bold text-2xl md:text-3xl`,
+        tw`max-w-lg mb-2.5 font-bold text-white text-2xl md:text-3xl`,
         css`
           line-height: 2.5rem !important;
         `,
@@ -54,13 +54,13 @@ export const Info = styled.div(() => [
     }
 
     p {
-      ${tw`max-w-md text-base md:text-lg text-gray-50 opacity-70`}
+      ${tw`max-w-md text-base md:text-lg text-white opacity-70`}
     }
   `,
 ]);
 
 export const Gradient = styled.div(({ colors }: IStyleProps) => [
-  tw`absolute inset-0 bg-black md:(mx-6 rounded-3xl) overflow-hidden`,
+  tw`absolute inset-0 bg-black dark:bg-gray-900 md:(mx-6 rounded-3xl) overflow-hidden`,
   css`
     span {
       ${tw`absolute transform -translate-x-1/2 -translate-y-1/2`}
@@ -70,50 +70,50 @@ export const Gradient = styled.div(({ colors }: IStyleProps) => [
       border-radius: 500px;
       filter: blur(60px);
 
-      &:nth-child(1),
-      &:nth-child(2) {
+      &:nth-of-type(1),
+      &:nth-of-type(2) {
         background-color: ${(colors && colors[0]) || 'black'};
       }
 
-      &:nth-child(3),
-      &:nth-child(4) {
+      &:nth-of-type(3),
+      &:nth-of-type(4) {
         background-color: ${(colors && colors[1]) || 'black'};
       }
 
-      &:nth-child(1) {
+      &:nth-of-type(1) {
         top: -100px;
         left: -40px;
       }
 
-      &:nth-child(2) {
+      &:nth-of-type(2) {
         ${tw`hidden md:block`}
         top: -20px;
         right: -450px;
       }
 
-      &:nth-child(3) {
+      &:nth-of-type(3) {
         right: -350px;
         bottom: -500px;
         filter: blur(70px);
       }
 
-      &:nth-child(4) {
+      &:nth-of-type(4) {
         left: -50px;
         bottom: -600px;
       }
 
       @media screen and (max-width: 767px) {
-        &:nth-child(1) {
+        &:nth-of-type(1) {
           top: -115px;
           left: -15px;
         }
 
-        &:nth-child(3) {
+        &:nth-of-type(3) {
           right: -700px;
           bottom: -450px;
         }
 
-        &:nth-child(4) {
+        &:nth-of-type(4) {
           left: -10px;
           bottom: -475px;
         }

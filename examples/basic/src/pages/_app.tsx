@@ -4,7 +4,7 @@ import '../../public/style.css';
 
 import { appWithTranslation } from 'next-i18next';
 import { ReactNode, useMemo } from 'react';
-import { Footer, GlobalStyles, Header, Subheader } from '@guild-docs/tgc';
+import { Footer, GlobalStyles, Header, Subheader, ThemeProvider as ComponentsThemeProvider } from '@guild-docs/tgc';
 
 import { HamburgerIcon } from '@chakra-ui/icons';
 import {
@@ -16,14 +16,17 @@ import {
   DrawerOverlay,
   extendTheme,
   IconButton,
-  theme as chakraTheme,
   useDisclosure,
-  useMediaQuery,
+  useColorMode,
+  useColorModeValue,
 } from '@chakra-ui/react';
+import { mode } from '@chakra-ui/theme-tools';
+
 import {
   DocsContainer,
-  DocsDrawer,
   DocsNavigation,
+  DocsNavigationDesktop,
+  DocsNavigationMobile,
   DocsTitle,
   ExtendComponents,
   iterateRoutes,
@@ -46,7 +49,30 @@ ExtendComponents({
   },
 });
 
+const styles = {
+  global: props => ({
+    body: {
+      bg: mode('white', 'gray.850')(props),
+    },
+  }),
+};
+
 const theme = extendTheme({
+  colors: {
+    gray: {
+      50: '#fafafa',
+      100: '#f5f5f5',
+      200: '#e5e5e5',
+      300: '#d4d4d4',
+      400: '#a3a3a3',
+      500: '#737373',
+      600: '#525252',
+      700: '#404040',
+      800: '#262626',
+      850: '#1b1b1b',
+      900: '#171717',
+    },
+  },
   fonts: {
     heading: '"Poppins", sans-serif',
     body: '"Poppins", sans-serif',
@@ -55,16 +81,20 @@ const theme = extendTheme({
     initialColorMode: 'light',
     useSystemColorMode: false,
   },
-} as typeof chakraTheme);
+  styles,
+});
+
+const accentColor = '#1CC8EE';
 
 const serializedMdx = process.env.SERIALIZED_MDX_ROUTES;
 let mdxRoutesData = serializedMdx && JSON.parse(serializedMdx);
 
-function App({ Component, pageProps, router }: AppProps) {
-  const accentColor = '#1CC8EE';
+function ChakraWrapper({ color, appProps }: { color: string; appProps: AppProps }) {
+  const { Component, pageProps, router } = appProps;
+
   const isDocs = router.asPath.includes('docs');
-  const [isLg] = useMediaQuery('(min-width: 992px)');
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const { toggleColorMode } = useColorMode();
 
   const mdxRoutes: MdxInternalProps['mdxRoutes'] | undefined = pageProps.mdxRoutes;
   const Navigation = useMemo(() => {
@@ -72,16 +102,15 @@ function App({ Component, pageProps, router }: AppProps) {
     return (
       <DocsNavigation>
         <DocsTitle>Documentation</DocsTitle>
-        <MDXNavigation paths={iterateRoutes(paths)} accentColor={accentColor} handleLinkClick={onClose} />
+        <MDXNavigation paths={iterateRoutes(paths)} accentColor={color} handleLinkClick={onClose} />
       </DocsNavigation>
     );
   }, [mdxRoutes]);
 
   return (
-    <>
-      <NextNProgress />
+    <ComponentsThemeProvider>
       <GlobalStyles />
-      <Header accentColor={accentColor} activeLink="/open-source" />
+      <Header accentColor={color} activeLink="/open-source" themeSwitch onThemeSwitch={toggleColorMode} />
       <Subheader
         activeLink={router.asPath}
         product={{
@@ -115,52 +144,59 @@ function App({ Component, pageProps, router }: AppProps) {
           rel: 'noopener noreferrer',
         }}
       />
-
       {!isDocs ? (
         <Component {...pageProps} />
       ) : (
-        <ChakraThemeProvider>
-          <DocsContainer>
-            {isLg ? (
-              Navigation
-            ) : (
-              <DocsDrawer>
-                <IconButton
-                  onClick={onOpen}
-                  icon={<HamburgerIcon />}
-                  aria-label="Open navigation"
-                  size="sm"
-                  position="fixed"
+        <DocsContainer>
+          <DocsNavigationDesktop>{Navigation}</DocsNavigationDesktop>
+          <DocsNavigationMobile>
+            <IconButton
+              onClick={onOpen}
+              icon={<HamburgerIcon />}
+              aria-label="Open navigation"
+              size="sm"
+              position="fixed"
+              right="1.5rem"
+              bottom="1.5rem"
+              zIndex="1"
+              backgroundColor={color}
+              color="#fff"
+            />
+            <Drawer size="2xl" isOpen={isOpen} onClose={onClose} placement="left">
+              <DrawerOverlay />
+              <DrawerContent backgroundColor={useColorModeValue('white', 'gray.850')}>
+                <DrawerCloseButton
+                  backgroundColor={useColorModeValue('gray.200', 'gray.700')}
+                  color={useColorModeValue('gray.500', 'gray.100')}
+                  height="2.375rem"
+                  width="2.375rem"
+                  top="1.5rem"
                   right="1.5rem"
-                  bottom="1.5rem"
-                  zIndex="1"
-                  backgroundColor={accentColor}
-                  color="#fff"
+                  fontSize="0.85rem"
+                  borderRadius="0.5rem"
+                  border="2px solid transparent"
+                  _hover={{
+                    borderColor: 'gray.500',
+                  }}
                 />
-                <Drawer size="2xl" isOpen={isOpen} onClose={onClose} placement="left">
-                  <DrawerOverlay />
-                  <DrawerContent>
-                    <DrawerCloseButton
-                      backgroundColor="#E5E7EB"
-                      color="#7F818C"
-                      height="2.375rem"
-                      width="2.375rem"
-                      top="1.5rem"
-                      right="1.5rem"
-                      fontSize="0.85rem"
-                      borderRadius="0.5rem"
-                    />
-                    <DrawerBody>{Navigation}</DrawerBody>
-                  </DrawerContent>
-                </Drawer>
-              </DocsDrawer>
-            )}
-            <Component {...pageProps} />
-          </DocsContainer>
-        </ChakraThemeProvider>
+                <DrawerBody>{Navigation}</DrawerBody>
+              </DrawerContent>
+            </Drawer>
+          </DocsNavigationMobile>
+          <Component {...pageProps} />
+        </DocsContainer>
       )}
       <Footer />
-    </>
+    </ComponentsThemeProvider>
+  );
+}
+
+function App(appProps: AppProps) {
+  return (
+    <ChakraThemeProvider>
+      <NextNProgress color={accentColor} />
+      <ChakraWrapper color={accentColor} appProps={appProps} />
+    </ChakraThemeProvider>
   );
 }
 

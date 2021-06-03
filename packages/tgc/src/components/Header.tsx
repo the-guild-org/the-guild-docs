@@ -10,7 +10,7 @@ import { ThemeContext } from '../helpers/theme';
 import { headerThemedIcons, logoThemedIcons } from '../helpers/assets';
 import { toggleLockBodyScroll } from '../helpers/modals';
 
-export const Header: React.FC<IHeaderProps> = ({ accentColor, activeLink, sameSite, themeSwitch }) => {
+export const Header: React.FC<IHeaderProps> = ({ accentColor, activeLink, sameSite, themeSwitch, onThemeSwitch }) => {
   const { isDarkTheme, setDarkTheme } = React.useContext(ThemeContext);
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
   const [modalOpen, setModalOpen] = useState(false);
@@ -107,7 +107,13 @@ export const Header: React.FC<IHeaderProps> = ({ accentColor, activeLink, sameSi
           <Controls>
             <SearchBar accentColor={accentColor} title="Search docs" placeholder="Search..." />
             {themeSwitch && setDarkTheme && (
-              <Icon iconType="theme" onClick={() => setDarkTheme((state: boolean) => !state)}>
+              <Icon
+                iconType="theme"
+                onClick={() => {
+                  setDarkTheme((state: boolean) => !state);
+                  onThemeSwitch();
+                }}
+              >
                 <img src={icons.themeToggle} height="16" width="16" alt="Theme toggle icon" />
               </Icon>
             )}
