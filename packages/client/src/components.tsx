@@ -104,42 +104,176 @@ const hr = () => {
   return <Divider borderColor={borderColor} my={4} w="full" />;
 };
 
-const h1 = ({ children, ...delegated }: HeadingProps) => {
+const h1 = ({ children, id, ...delegated }: HeadingProps) => {
   return (
-    <Heading as="h1" size="xl" my={4} mt="-24" pt="28" {...delegated}>
+    <Heading
+      as="h1"
+      size="xl"
+      my={4}
+      mt="-24"
+      pt="28"
+      id={id}
+      _hover={{
+        a: {
+          opacity: '1',
+        },
+      }}
+      {...delegated}
+    >
       {children}
+      {id ? (
+        <Text
+          as="a"
+          paddingLeft="0.2em"
+          href={'#' + id}
+          transition="opacity 0.3s"
+          opacity="0"
+          _hover={{ opacity: '1', textDecoration: 'underline' }}
+          title="Direct link to heading"
+        >
+          #
+        </Text>
+      ) : null}
     </Heading>
   );
 };
 
-const h2 = ({ children, ...delegated }: HeadingProps) => {
+const h2 = ({ children, id, ...delegated }: HeadingProps) => {
   return (
-    <Heading as="h2" marginY="1em" mt="-24" pt="28" fontWeight="bold" size="lg" {...delegated}>
+    <Heading
+      as="h2"
+      marginY="1em"
+      mt="-24"
+      pt="28"
+      fontWeight="bold"
+      size="lg"
+      id={id}
+      _hover={{
+        a: {
+          opacity: '1',
+        },
+      }}
+      {...delegated}
+    >
       {children}
+      {id ? (
+        <Text
+          as="a"
+          paddingLeft="0.2em"
+          href={'#' + id}
+          transition="opacity 0.3s"
+          opacity="0"
+          _hover={{ opacity: '1', textDecoration: 'underline' }}
+          title="Direct link to heading"
+        >
+          #
+        </Text>
+      ) : null}
     </Heading>
   );
 };
 
-const h3 = ({ children, ...delegated }: HeadingProps) => {
+const h3 = ({ children, id, ...delegated }: HeadingProps) => {
   return (
-    <Heading as="h3" marginY="1em" mt="-24" pt="28" size="md" fontWeight="bold" {...delegated}>
+    <Heading
+      as="h3"
+      marginY="1em"
+      mt="-24"
+      pt="28"
+      size="md"
+      fontWeight="bold"
+      id={id}
+      _hover={{
+        a: {
+          opacity: '1',
+        },
+      }}
+      {...delegated}
+    >
       {children}
+      {id ? (
+        <Text
+          as="a"
+          paddingLeft="0.2em"
+          href={'#' + id}
+          transition="opacity 0.3s"
+          opacity="0"
+          _hover={{ opacity: '1', textDecoration: 'underline' }}
+          title="Direct link to heading"
+        >
+          #
+        </Text>
+      ) : null}
     </Heading>
   );
 };
 
-const h4 = ({ children, ...delegated }: HeadingProps) => {
+const h4 = ({ children, id, ...delegated }: HeadingProps) => {
   return (
-    <Heading as="h4" marginY="1em" mt="-24" pt="28" size="md" fontWeight="bold" {...delegated}>
+    <Heading
+      as="h4"
+      marginY="1em"
+      mt="-24"
+      pt="28"
+      size="md"
+      fontWeight="bold"
+      id={id}
+      _hover={{
+        a: {
+          opacity: '1',
+        },
+      }}
+      {...delegated}
+    >
       {children}
+      {id ? (
+        <Text
+          as="a"
+          paddingLeft="0.2em"
+          href={'#' + id}
+          transition="opacity 0.3s"
+          opacity="0"
+          _hover={{ opacity: '1', textDecoration: 'underline' }}
+          title="Direct link to heading"
+        >
+          #
+        </Text>
+      ) : null}
     </Heading>
   );
 };
 
-const h5 = ({ children, ...delegated }: HeadingProps) => {
+const h5 = ({ children, id, ...delegated }: HeadingProps) => {
   return (
-    <Heading as="h5" marginY="1em" mt="-24" pt="28" size="md" fontWeight="bold" {...delegated}>
+    <Heading
+      as="h5"
+      marginY="1em"
+      mt="-24"
+      pt="28"
+      size="md"
+      fontWeight="bold"
+      id={id}
+      _hover={{
+        a: {
+          opacity: '1',
+        },
+      }}
+      {...delegated}
+    >
       {children}
+      {id ? (
+        <Text
+          as="a"
+          paddingLeft="0.2em"
+          href={'#' + id}
+          transition="opacity 0.3s"
+          opacity="0"
+          _hover={{ opacity: '1', textDecoration: 'underline' }}
+          title="Direct link to heading"
+        >
+          #
+        </Text>
+      ) : null}
     </Heading>
   );
 };
