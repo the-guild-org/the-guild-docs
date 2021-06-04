@@ -58,9 +58,12 @@ function Item({
 } & Partial<MDXNavigationProps>) {
   const finalHref = concatHrefs(acumHref, href);
 
-  const { isOpen, onToggle } = useDisclosure({
+  const { isOpen, onToggle, onOpen } = useDisclosure({
     defaultIsOpen: depth < defaultOpenDepth,
   });
+
+  const currentIsOpen = useRef(isOpen);
+  currentIsOpen.current = isOpen;
 
   const pathsData = paths?.length ? paths : null;
 
@@ -73,23 +76,18 @@ function Item({
 
   // This logic has to be client-side only
   useSafeLayoutEffect(() => {
-    const handleToggle = () => {
-      const shouldToggle = !['/', '/docs', '/docs/'].includes(finalHref) && Router.asPath.includes(finalHref);
-      shouldToggle && onToggle();
-    };
-
-    const initialIsActive = arePathnamesEqual(Router.asPath || '_', finalHref);
+    const initialIsActive = arePathnamesEqual(Router.asPath, finalHref);
     if (initialIsActive !== currentIsActive.current) setIsActive(initialIsActive);
 
-    handleToggle();
+    if (!currentIsOpen.current && Router.asPath.includes(finalHref)) {
+      onOpen();
+    }
 
     function routeChangeHandler() {
-      const newIsActive = arePathnamesEqual(Router.asPath || '_', finalHref);
+      const newIsActive = arePathnamesEqual(Router.asPath, finalHref);
       if (newIsActive !== currentIsActive.current) {
         setIsActive(newIsActive);
       }
-
-      handleToggle();
     }
 
     Router.events.on('routeChangeComplete', routeChangeHandler);
@@ -97,7 +95,7 @@ function Item({
     return () => {
       Router.events.off('routeChangeComplete', routeChangeHandler);
     };
-  }, [finalHref, currentIsActive]);
+  }, [finalHref, currentIsActive, isAnchor]);
 
   const label = sidebar || name || href.replace(/-/g, ' ');
 
