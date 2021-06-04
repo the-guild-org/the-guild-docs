@@ -1,5 +1,11 @@
 # @guild-docs/client
 
+## 0.2.2
+
+### Patch Changes
+
+- 1203c71: fix navigation collapse logic
+
 ## 0.2.1
 
 ### Patch Changes
