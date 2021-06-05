@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "algoliasearch": "^4.9.1",
-    "core-js": "^3.13.1",
+    "core-js": "^3.14.0",
     "focus-trap-react": "^8.5.0",
     "hoist-non-react-statics": "^3.3.2",
     "polished": "^4.1.3",
@@ -33,7 +33,7 @@
     "@rollup/plugin-image": "^2.0.6",
     "@rollup/plugin-node-resolve": "^13.0.0",
     "babel-plugin-styled-components": "^1.12.0",
-    "bob-esbuild-cli": "^0.1.21",
+    "bob-esbuild-cli": "^0.1.23",
     "changesets-github-release": "^0.0.1",
     "postcss": "^8.3.0",
     "react": "^17.0.2",
