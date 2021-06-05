@@ -1,5 +1,11 @@
 # @guild-docs/client
 
+## 0.2.6
+
+### Patch Changes
+
+- b660e5e: improve markdown heading & re-export all components
+
 ## 0.2.5
 
 ### Patch Changes
