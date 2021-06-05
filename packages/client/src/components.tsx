@@ -104,12 +104,21 @@ const hr = () => {
   return <Divider borderColor={borderColor} my={4} w="full" />;
 };
 
-const h1 = ({ children, id, ...delegated }: HeadingProps) => {
+const HeadingMarkdown = ({
+  children,
+  id,
+  as,
+  size,
+  ...delegated
+}: HeadingProps & {
+  as: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
+  size: NonNullable<HeadingProps['size']>;
+}) => {
   return (
     <Heading
-      as="h1"
-      size="xl"
-      my={4}
+      as={as}
+      size={size}
+      my="0.5em"
       mt="-24"
       pt="28"
       id={id}
@@ -130,6 +139,7 @@ const h1 = ({ children, id, ...delegated }: HeadingProps) => {
           opacity="0"
           _hover={{ opacity: '1', textDecoration: 'underline' }}
           title="Direct link to heading"
+          className="heading_direct_link"
         >
           #
         </Text>
@@ -138,144 +148,28 @@ const h1 = ({ children, id, ...delegated }: HeadingProps) => {
   );
 };
 
-const h2 = ({ children, id, ...delegated }: HeadingProps) => {
-  return (
-    <Heading
-      as="h2"
-      marginY="1em"
-      mt="-24"
-      pt="28"
-      fontWeight="bold"
-      size="lg"
-      id={id}
-      _hover={{
-        a: {
-          opacity: '1',
-        },
-      }}
-      {...delegated}
-    >
-      {children}
-      {id ? (
-        <Text
-          as="a"
-          paddingLeft="0.2em"
-          href={'#' + id}
-          transition="opacity 0.3s"
-          opacity="0"
-          _hover={{ opacity: '1', textDecoration: 'underline' }}
-          title="Direct link to heading"
-        >
-          #
-        </Text>
-      ) : null}
-    </Heading>
-  );
+const h1 = (props: HeadingProps) => {
+  return <HeadingMarkdown {...props} as="h1" size="xl" />;
 };
 
-const h3 = ({ children, id, ...delegated }: HeadingProps) => {
-  return (
-    <Heading
-      as="h3"
-      marginY="1em"
-      mt="-24"
-      pt="28"
-      size="md"
-      fontWeight="bold"
-      id={id}
-      _hover={{
-        a: {
-          opacity: '1',
-        },
-      }}
-      {...delegated}
-    >
-      {children}
-      {id ? (
-        <Text
-          as="a"
-          paddingLeft="0.2em"
-          href={'#' + id}
-          transition="opacity 0.3s"
-          opacity="0"
-          _hover={{ opacity: '1', textDecoration: 'underline' }}
-          title="Direct link to heading"
-        >
-          #
-        </Text>
-      ) : null}
-    </Heading>
-  );
+const h2 = (props: HeadingProps) => {
+  return <HeadingMarkdown {...props} as="h2" size="lg" />;
 };
 
-const h4 = ({ children, id, ...delegated }: HeadingProps) => {
-  return (
-    <Heading
-      as="h4"
-      marginY="1em"
-      mt="-24"
-      pt="28"
-      size="md"
-      fontWeight="bold"
-      id={id}
-      _hover={{
-        a: {
-          opacity: '1',
-        },
-      }}
-      {...delegated}
-    >
-      {children}
-      {id ? (
-        <Text
-          as="a"
-          paddingLeft="0.2em"
-          href={'#' + id}
-          transition="opacity 0.3s"
-          opacity="0"
-          _hover={{ opacity: '1', textDecoration: 'underline' }}
-          title="Direct link to heading"
-        >
-          #
-        </Text>
-      ) : null}
-    </Heading>
-  );
+const h3 = (props: HeadingProps) => {
+  return <HeadingMarkdown {...props} as="h3" size="md" />;
 };
 
-const h5 = ({ children, id, ...delegated }: HeadingProps) => {
-  return (
-    <Heading
-      as="h5"
-      marginY="1em"
-      mt="-24"
-      pt="28"
-      size="md"
-      fontWeight="bold"
-      id={id}
-      _hover={{
-        a: {
-          opacity: '1',
-        },
-      }}
-      {...delegated}
-    >
-      {children}
-      {id ? (
-        <Text
-          as="a"
-          paddingLeft="0.2em"
-          href={'#' + id}
-          transition="opacity 0.3s"
-          opacity="0"
-          _hover={{ opacity: '1', textDecoration: 'underline' }}
-          title="Direct link to heading"
-        >
-          #
-        </Text>
-      ) : null}
-    </Heading>
-  );
+const h4 = (props: HeadingProps) => {
+  return <HeadingMarkdown {...props} as="h4" size="md" />;
+};
+
+const h5 = (props: HeadingProps) => {
+  return <HeadingMarkdown {...props} as="h5" size="md" />;
+};
+
+const h6 = (props: HeadingProps) => {
+  return <HeadingMarkdown {...props} as="h6" size="md" />;
 };
 
 const Link = ({ href, as, replace, scroll, shallow, passHref, prefetch, locale, ...props }: LinkProps & NextLinkProps) => {
@@ -341,6 +235,7 @@ export const components = {
   h3,
   h4,
   h5,
+  h6,
   p,
   ul,
   ol,
