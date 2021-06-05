@@ -1,5 +1,11 @@
 # @guild-docs/server
 
+## 0.2.5
+
+### Patch Changes
+
+- 66c26b0: always put index at the beggining of navigation routes
+
 ## 0.2.1
 
 ### Patch Changes
