@@ -74,7 +74,12 @@ function iterateReduce(
   if (value.isPage) {
     let href = withoutTrailingSlash(concatHrefs(acumHref, value.href));
 
-    if (!allHrefs.find(v => v.href === href)) {
+    const existingPage = allHrefs.find(v => v.href === href);
+    if (existingPage) {
+      if (!existingPage.name && value.name) {
+        existingPage.name = value.name;
+      }
+    } else {
       allHrefs.push({
         href,
         name: value.name,
