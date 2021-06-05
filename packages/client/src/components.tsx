@@ -45,7 +45,7 @@ export function Translated({ children, name }: { children?: ReactNode; name?: st
   return children;
 }
 
-const p = ({ children, ...delegated }: TextProps) => {
+export const p = ({ children, ...delegated }: TextProps) => {
   return (
     <Text as="p" mt={4} lineHeight="tall" {...delegated}>
       {children}
@@ -53,7 +53,7 @@ const p = ({ children, ...delegated }: TextProps) => {
   );
 };
 
-const ul = ({ children, ...delegated }: ListProps) => {
+export const ul = ({ children, ...delegated }: ListProps) => {
   return (
     <UnorderedList as="ul" pt={2} pl={4} ml={2} {...delegated}>
       {children}
@@ -61,7 +61,7 @@ const ul = ({ children, ...delegated }: ListProps) => {
   );
 };
 
-const ol = ({ children, ...delegated }: ListProps) => {
+export const ol = ({ children, ...delegated }: ListProps) => {
   return (
     <OrderedList as="ol" pt={2} pl={4} ml={2} {...delegated}>
       {children}
@@ -69,7 +69,7 @@ const ol = ({ children, ...delegated }: ListProps) => {
   );
 };
 
-const li = ({ children, ...delegated }: ListItemProps) => {
+export const li = ({ children, ...delegated }: ListItemProps) => {
   return (
     <ListItem as="li" pb={1} {...delegated}>
       {children}
@@ -77,7 +77,7 @@ const li = ({ children, ...delegated }: ListItemProps) => {
   );
 };
 
-const blockquote = (props: BoxProps) => {
+export const blockquote = (props: BoxProps) => {
   const bgColor = useColorModeValue('blue.50', 'blue.900');
 
   return (
@@ -98,29 +98,34 @@ const blockquote = (props: BoxProps) => {
   );
 };
 
-const hr = () => {
+export const hr = () => {
   const borderColor = useColorModeValue('gray.200', 'gray.600');
 
   return <Divider borderColor={borderColor} my={4} w="full" />;
 };
 
-const HeadingMarkdown = ({
+export interface HeadingMarkdownProps extends HeadingProps {
+  as: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
+  size: NonNullable<HeadingProps['size']>;
+}
+
+export const HeadingMarkdown = ({
   children,
   id,
   as,
   size,
+  directLinkProps,
   ...delegated
 }: HeadingProps & {
   as: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
   size: NonNullable<HeadingProps['size']>;
+  directLinkProps?: LinkProps;
 }) => {
   return (
     <Heading
       as={as}
       size={size}
-      my="0.5em"
-      mt="-24"
-      pt="28"
+      marginY="0.8em"
       id={id}
       _hover={{
         a: {
@@ -131,7 +136,7 @@ const HeadingMarkdown = ({
     >
       {children}
       {id ? (
-        <Text
+        <ChakraLink
           as="a"
           paddingLeft="0.2em"
           href={'#' + id}
@@ -139,40 +144,40 @@ const HeadingMarkdown = ({
           opacity="0"
           _hover={{ opacity: '1', textDecoration: 'underline' }}
           title="Direct link to heading"
-          className="heading_direct_link"
+          {...directLinkProps}
         >
           #
-        </Text>
+        </ChakraLink>
       ) : null}
     </Heading>
   );
 };
 
-const h1 = (props: HeadingProps) => {
+export const h1 = (props: HeadingProps) => {
   return <HeadingMarkdown {...props} as="h1" size="xl" />;
 };
 
-const h2 = (props: HeadingProps) => {
+export const h2 = (props: HeadingProps) => {
   return <HeadingMarkdown {...props} as="h2" size="lg" />;
 };
 
-const h3 = (props: HeadingProps) => {
+export const h3 = (props: HeadingProps) => {
   return <HeadingMarkdown {...props} as="h3" size="md" />;
 };
 
-const h4 = (props: HeadingProps) => {
+export const h4 = (props: HeadingProps) => {
   return <HeadingMarkdown {...props} as="h4" size="md" />;
 };
 
-const h5 = (props: HeadingProps) => {
+export const h5 = (props: HeadingProps) => {
   return <HeadingMarkdown {...props} as="h5" size="md" />;
 };
 
-const h6 = (props: HeadingProps) => {
+export const h6 = (props: HeadingProps) => {
   return <HeadingMarkdown {...props} as="h6" size="md" />;
 };
 
-const Link = ({ href, as, replace, scroll, shallow, passHref, prefetch, locale, ...props }: LinkProps & NextLinkProps) => {
+export const Link = ({ href, as, replace, scroll, shallow, passHref, prefetch, locale, ...props }: LinkProps & NextLinkProps) => {
   return (
     <NextLink
       href={href}
@@ -189,7 +194,7 @@ const Link = ({ href, as, replace, scroll, shallow, passHref, prefetch, locale, 
   );
 };
 
-const ButtonLink = ({
+export const ButtonLink = ({
   href,
   as,
   replace,
@@ -216,15 +221,15 @@ const ButtonLink = ({
   );
 };
 
-const table = (props: BoxProps) => <Box as="table" textAlign="left" mt="32px" width="full" {...props} />;
+export const table = (props: BoxProps) => <Box as="table" textAlign="left" mt="32px" width="full" {...props} />;
 
-const th = (props: BoxProps) => {
+export const th = (props: BoxProps) => {
   const bg = useColorModeValue('gray.50', 'whiteAlpha.100');
 
   return <Box as="th" bg={bg} fontWeight="semibold" p={2} fontSize="sm" {...props} />;
 };
 
-const td = (props: BoxProps) => (
+export const td = (props: BoxProps) => (
   <Box as="td" p={2} borderTopWidth="1px" borderColor="inherit" fontSize="sm" whiteSpace="normal" {...props} />
 );
 
