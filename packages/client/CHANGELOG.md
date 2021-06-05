@@ -1,5 +1,12 @@
 # @guild-docs/client
 
+## 0.2.5
+
+### Patch Changes
+
+- c4e42ee: improve mdx heading component
+- 0666200: fix missing bottom navigation name
+
 ## 0.2.4
 
 ### Patch Changes
