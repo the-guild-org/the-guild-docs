@@ -78,6 +78,24 @@ export function GenerateRoutes(config: AddRoutesConfig) {
 
           currentRouteRoutes.push([slug, title ? getTitle(title) : slug, ...sidebarRest]);
         }
+
+        const readmeIndex = currentRouteRoutes.findIndex(value => {
+          if (Array.isArray(value)) {
+            const href = value[0];
+            return href === 'README' || href === 'index';
+          }
+          return value === 'README' || value === 'index';
+        });
+
+        // Always put Index at the beggining
+        if (readmeIndex !== -1 && readmeIndex !== 0) {
+          const readmeRoute = currentRouteRoutes[readmeIndex];
+
+          if (readmeRoute) {
+            currentRouteRoutes.splice(readmeIndex, 1);
+            currentRouteRoutes.unshift(readmeRoute);
+          }
+        }
       } else {
         currentRoute = (currentRoute._ ||= {})[slug] ||= {};
 
