@@ -5,11 +5,11 @@
   "license": "MIT",
   "author": "PabloSzx <pablosaez1995@gmail.com>",
   "scripts": {
+    "analyze": "cross-env ANALYZE=true next build",
     "build": "next build",
     "dev": "concurrently -r \"next-remote-watch ./docs\" \"wait-on -s 1 http://localhost:3000 && open-cli http://localhost:3000\"",
     "next": "next",
-    "start": "next start",
-    "analyze": "cross-env ANALYZE=true next build"
+    "start": "next start"
   },
   "dependencies": {
     "@chakra-ui/icons": "^1.0.13",

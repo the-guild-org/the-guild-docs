@@ -12,6 +12,8 @@
     "postpublish": "gh-release --repo the-guild-org/the-guild-docs"
   },
   "dependencies": {
+    "@emotion/react": "^11.4.0",
+    "@emotion/styled": "^11.3.0",
     "algoliasearch": "^4.9.1",
     "core-js": "^3.14.0",
     "focus-trap-react": "^8.5.0",
@@ -29,8 +31,6 @@
     "@babel/preset-react": "^7.13.13",
     "@babel/preset-typescript": "^7.13.0",
     "@emotion/babel-plugin-jsx-pragmatic": "^0.1.5",
-    "@emotion/react": "^11.4.0",
-    "@emotion/styled": "^11.3.0",
     "@rollup/plugin-babel": "^5.3.0",
     "@rollup/plugin-image": "^2.0.6",
     "@rollup/plugin-node-resolve": "^13.0.0",
@@ -45,8 +45,6 @@
     "rollup-plugin-copy": "^3.4.0"
   },
   "peerDependencies": {
-    "@emotion/react": "^11.4.0",
-    "@emotion/styled": "^11.3.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
   },
