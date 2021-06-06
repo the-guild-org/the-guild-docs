@@ -1,5 +1,5 @@
 import babel from '@rollup/plugin-babel';
-import nodeResolve from '@rollup/plugin-node-resolve';
+import { nodeResolve } from '@rollup/plugin-node-resolve';
 import autoExternal from 'rollup-plugin-auto-external';
 import image from '@rollup/plugin-image';
 import bundleSize from 'rollup-plugin-bundle-size';
@@ -31,6 +31,7 @@ function bundle() {
         peerDependencies: true,
       }),
       babel({
+        babelHelpers: 'bundled',
         extensions: ['.tsx', '.ts'],
         configFile: join(__dirname, '.babelrc'),
       }),

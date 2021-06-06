@@ -2,7 +2,8 @@ lockfileVersion: 5.3
 
 overrides:
   esbuild: ^0.12.6
-  '@emotion/react': 11.4.0
+  '@emotion/react': ^11.4.0
+  '@emotion/styled': ^11.3.0
 
 importers:
 
@@ -15,8 +16,8 @@ importers:
       '@types/react-instantsearch-dom': ^6.10.0
       '@types/react-paginate': ^7.1.0
       '@types/styled-components': ^5.1.9
-      bob-esbuild: ^0.1.23
-      bob-esbuild-cli: ^0.1.23
+      bob-esbuild: ^0.1.25
+      bob-esbuild-cli: ^0.1.25
       concurrently: ^6.2.0
       esbuild: ^0.12.6
       husky: ^6.0.0
@@ -32,8 +33,8 @@ importers:
       '@types/react-instantsearch-dom': 6.10.0
       '@types/react-paginate': 7.1.0
       '@types/styled-components': 5.1.9
-      bob-esbuild: 0.1.23_10b86ec3e0ae69831b5d57b396c86e38
-      bob-esbuild-cli: 0.1.23_10b86ec3e0ae69831b5d57b396c86e38
+      bob-esbuild: 0.1.25_10b86ec3e0ae69831b5d57b396c86e38
+      bob-esbuild-cli: 0.1.25_10b86ec3e0ae69831b5d57b396c86e38
       concurrently: 6.2.0
       esbuild: 0.12.6
       husky: 6.0.0
@@ -47,7 +48,7 @@ importers:
       '@chakra-ui/icons': ^1.0.13
       '@chakra-ui/react': ^1.6.3
       '@chakra-ui/theme-tools': ^1.1.7
-      '@emotion/react': 11.4.0
+      '@emotion/react': ^11.4.0
       '@emotion/styled': ^11.3.0
       '@guild-docs/client': workspace:^0.2.6
       '@guild-docs/server': workspace:^0.2.5
@@ -58,7 +59,6 @@ importers:
       '@types/node': ^15.12.1
       '@types/react': ^17.0.9
       '@types/react-dom': ^17.0.6
-      '@types/styled-components': 5.1.9
       concurrently: ^6.2.0
       esbuild: ^0.12.6
       esbuild-register: ^2.5.0
@@ -72,7 +72,6 @@ importers:
       react-dom: ^17.0.2
       remark-admonitions: ^1.2.1
       remark-prism: ^1.3.6
-      styled-components: 5.3.0
       tsup: ^4.11.2
       typescript: ^4.3.2
       wait-on: ^5.3.0
@@ -94,14 +93,12 @@ importers:
       react-dom: 17.0.2_react@17.0.2
       remark-admonitions: 1.2.1
       remark-prism: 1.3.6
-      styled-components: 5.3.0_react-dom@17.0.2+react@17.0.2
     devDependencies:
       '@types/concurrently': 6.2.0
       '@types/mdx-js__react': 1.5.3
       '@types/node': 15.12.1
       '@types/react': 17.0.9
       '@types/react-dom': 17.0.6
-      '@types/styled-components': 5.1.9
       concurrently: 6.2.0
       esbuild: 0.12.6
       esbuild-register: 2.5.0
@@ -145,14 +142,14 @@ importers:
       '@chakra-ui/layout': ^1.4.5
       '@chakra-ui/react': ^1.6.3
       '@chakra-ui/system': ^1.6.7
-      '@emotion/react': 11.4.0
+      '@emotion/react': ^11.4.0
       '@guild-docs/types': workspace:^0.2.1
       '@mdx-js/react': ^1.6.22
       '@types/mdx-js__react': ^1.5.3
       '@types/nprogress': ^0.2.0
       '@types/react': ^17.0.9
       '@types/react-dom': ^17.0.6
-      bob-esbuild-cli: ^0.1.23
+      bob-esbuild-cli: ^0.1.25
       changesets-github-release: ^0.0.1
       esbuild: ^0.12.6
       framer-motion: ^4.1.17
@@ -185,7 +182,7 @@ importers:
       '@types/nprogress': 0.2.0
       '@types/react': 17.0.9
       '@types/react-dom': 17.0.6
-      bob-esbuild-cli: 0.1.23_typescript@4.3.2
+      bob-esbuild-cli: 0.1.25_typescript@4.3.2
       changesets-github-release: 0.0.1
       esbuild: 0.12.6
       framer-motion: 4.1.17_react-dom@17.0.2+react@17.0.2
@@ -198,7 +195,7 @@ importers:
     specifiers:
       '@guild-docs/types': workspace:^0.2.1
       '@types/github-slugger': ^1.3.0
-      bob-esbuild-cli: ^0.1.23
+      bob-esbuild-cli: ^0.1.25
       changesets-github-release: ^0.0.1
       esbuild: ^0.12.6
       github-slugger: ^1.3.0
@@ -221,7 +218,7 @@ importers:
       remark-slug: 6.0.0
     devDependencies:
       '@types/github-slugger': 1.3.0
-      bob-esbuild-cli: 0.1.23
+      bob-esbuild-cli: 0.1.25
       changesets-github-release: 0.0.1
       esbuild: 0.12.6
       next: 10.2.3_react-dom@17.0.2+react@17.0.2
@@ -237,16 +234,17 @@ importers:
       '@babel/preset-env': ^7.14.4
       '@babel/preset-react': ^7.13.13
       '@babel/preset-typescript': ^7.13.0
+      '@emotion/babel-plugin-jsx-pragmatic': ^0.1.5
+      '@emotion/react': ^11.4.0
+      '@emotion/styled': ^11.3.0
       '@rollup/plugin-babel': ^5.3.0
       '@rollup/plugin-image': ^2.0.6
       '@rollup/plugin-node-resolve': ^13.0.0
       algoliasearch: ^4.9.1
-      babel-plugin-styled-components: ^1.12.0
-      bob-esbuild-cli: ^0.1.23
+      bob-esbuild-cli: ^0.1.25
       changesets-github-release: ^0.0.1
       core-js: ^3.14.0
       focus-trap-react: ^8.5.0
-      hoist-non-react-statics: ^3.3.2
       polished: ^4.1.3
       postcss: ^8.3.0
       react: ^17.0.2
@@ -254,11 +252,10 @@ importers:
       react-instantsearch-dom: ^6.11.0
       react-paginate: ^7.1.3
       react-player: ^2.9.0
-      rollup: ^2.50.6
+      rollup: ^2.51.0
       rollup-plugin-auto-external: ^2.0.0
       rollup-plugin-bundle-size: ^1.0.3
       rollup-plugin-copy: ^3.4.0
-      styled-components: ^5.3.0
       tailwindcss: ^2.1.4
       twin.macro: ^2.4.2
       use-debounce: ^6.0.1
@@ -266,7 +263,6 @@ importers:
       algoliasearch: 4.9.1
       core-js: 3.14.0
       focus-trap-react: 8.5.0_react-dom@17.0.2+react@17.0.2
-      hoist-non-react-statics: 3.3.2
       polished: 4.1.3
       react-instantsearch-dom: 6.11.0_09da17d9b6c24f40dd0e29e052076c80
       react-paginate: 7.1.3_react@17.0.2
@@ -279,27 +275,28 @@ importers:
       '@babel/preset-env': 7.14.4_@babel+core@7.14.3
       '@babel/preset-react': 7.13.13_@babel+core@7.14.3
       '@babel/preset-typescript': 7.13.0_@babel+core@7.14.3
-      '@rollup/plugin-babel': 5.3.0_@babel+core@7.14.3+rollup@2.50.6
-      '@rollup/plugin-image': 2.0.6_rollup@2.50.6
-      '@rollup/plugin-node-resolve': 13.0.0_rollup@2.50.6
-      babel-plugin-styled-components: 1.12.0_styled-components@5.3.0
-      bob-esbuild-cli: 0.1.23
+      '@emotion/babel-plugin-jsx-pragmatic': 0.1.5_@babel+core@7.14.3
+      '@emotion/react': 11.4.0_@babel+core@7.14.3+react@17.0.2
+      '@emotion/styled': 11.3.0_7f798167d9f3cb0613ea717c055cb692
+      '@rollup/plugin-babel': 5.3.0_@babel+core@7.14.3+rollup@2.51.0
+      '@rollup/plugin-image': 2.0.6_rollup@2.51.0
+      '@rollup/plugin-node-resolve': 13.0.0_rollup@2.51.0
+      bob-esbuild-cli: 0.1.25
       changesets-github-release: 0.0.1
       postcss: 8.3.0
       react: 17.0.2
       react-dom: 17.0.2_react@17.0.2
-      rollup: 2.50.6
-      rollup-plugin-auto-external: 2.0.0_rollup@2.50.6
+      rollup: 2.51.0
+      rollup-plugin-auto-external: 2.0.0_rollup@2.51.0
       rollup-plugin-bundle-size: 1.0.3
       rollup-plugin-copy: 3.4.0
-      styled-components: 5.3.0_react-dom@17.0.2+react@17.0.2
 
   packages/types:
     specifiers:
       '@chakra-ui/react': ^1.6.3
       '@types/node': ^15.12.1
       '@types/react': ^17.0.9
-      bob-esbuild-cli: ^0.1.23
+      bob-esbuild-cli: ^0.1.25
       next-i18next: ^8.4.0
       next-mdx-remote: ^3.0.2
       typescript: ^4.3.2
@@ -307,7 +304,7 @@ importers:
       '@chakra-ui/react': 1.6.3_@types+react@17.0.9
       '@types/node': 15.12.1
       '@types/react': 17.0.9
-      bob-esbuild-cli: 0.1.23_10b86ec3e0ae69831b5d57b396c86e38
+      bob-esbuild-cli: 0.1.25_10b86ec3e0ae69831b5d57b396c86e38
       next-i18next: 8.4.0
       next-mdx-remote: 3.0.2
       typescript: 4.3.2
@@ -461,6 +458,7 @@ packages:
     resolution: {integrity: sha512-7YXfX5wQ5aYM/BOlbSccHDbuXXFPxeoUmfWtz8le2yTkTZc+BxsiEnENFoi2SlmA8ewDkG2LgIMIVzzn2h8kfw==}
     dependencies:
       '@babel/types': 7.14.4
+    dev: true
 
   /@babel/helper-builder-binary-assignment-operator-visitor/7.12.13:
     resolution: {integrity: sha512-CZOv9tGphhDRlVjVkAgm8Nhklm9RzSmWpX2my+t7Ua/KT616pEzXsQCjinzvkRvHWJ9itO4f296efroX23XCMA==}
@@ -1558,20 +1556,6 @@ packages:
       '@babel/parser': 7.14.4
       '@babel/types': 7.14.4
       debug: 4.3.1
-      globals: 11.12.0
-    transitivePeerDependencies:
-      - supports-color
-
-  /@babel/traverse/7.14.2_supports-color@5.5.0:
-    resolution: {integrity: sha512-TsdRgvBFHMyHOOzcP9S6QU0QQtjxlRpEYOy3mcCO5RgmC305ki42aSAmfZEMSSYBla2oZ9BMqYlncBaKmD/7iA==}
-    dependencies:
-      '@babel/code-frame': 7.12.13
-      '@babel/generator': 7.14.3
-      '@babel/helper-function-name': 7.14.2
-      '@babel/helper-split-export-declaration': 7.12.13
-      '@babel/parser': 7.14.4
-      '@babel/types': 7.14.4
-      debug: 4.3.1_supports-color@5.5.0
       globals: 11.12.0
     transitivePeerDependencies:
       - supports-color
@@ -3240,6 +3224,15 @@ packages:
       prettier: 1.19.1
     dev: true
 
+  /@emotion/babel-plugin-jsx-pragmatic/0.1.5_@babel+core@7.14.3:
+    resolution: {integrity: sha512-y+3AJ0SItMDaAgGPVkQBC/S/BaqaPACkQ6MyCI2CUlrjTxKttTVfD3TMtcs7vLEcLxqzZ1xiG0vzwCXjhopawQ==}
+    peerDependencies:
+      '@babel/core': ^7.0.0
+    dependencies:
+      '@babel/core': 7.14.3
+      '@babel/plugin-syntax-jsx': 7.12.13_@babel+core@7.14.3
+    dev: true
+
   /@emotion/babel-plugin/11.3.0:
     resolution: {integrity: sha512-UZKwBV2rADuhRp+ZOGgNWg2eYgbzKzQXfQPtJbu/PLy8onurxlNCLvxMQEvlr1/GudguPI5IU9qIY1+2z1M5bA==}
     peerDependencies:
@@ -3259,6 +3252,26 @@ packages:
       stylis: 4.0.10
     dev: false
 
+  /@emotion/babel-plugin/11.3.0_@babel+core@7.14.3:
+    resolution: {integrity: sha512-UZKwBV2rADuhRp+ZOGgNWg2eYgbzKzQXfQPtJbu/PLy8onurxlNCLvxMQEvlr1/GudguPI5IU9qIY1+2z1M5bA==}
+    peerDependencies:
+      '@babel/core': ^7.0.0
+    dependencies:
+      '@babel/core': 7.14.3
+      '@babel/helper-module-imports': 7.13.12
+      '@babel/plugin-syntax-jsx': 7.12.13_@babel+core@7.14.3
+      '@babel/runtime': 7.14.0
+      '@emotion/hash': 0.8.0
+      '@emotion/memoize': 0.7.5
+      '@emotion/serialize': 1.0.2
+      babel-plugin-macros: 2.8.0
+      convert-source-map: 1.7.0
+      escape-string-regexp: 4.0.0
+      find-root: 1.1.0
+      source-map: 0.5.7
+      stylis: 4.0.10
+    dev: true
+
   /@emotion/cache/11.4.0:
     resolution: {integrity: sha512-Zx70bjE7LErRO9OaZrhf22Qye1y4F7iDl+ITjet0J+i+B88PrAOBkKvaAWhxsZf72tDLajwCgfCjJ2dvH77C3g==}
     dependencies:
@@ -3275,18 +3288,42 @@ packages:
     resolution: {integrity: sha512-u5WtneEAr5IDG2Wv65yhunPSMLIpuKsbuOktRojfrEiEvRyC85LgPMZI63cr7NUqT8ZIGdSVg8ZKGxIug4lXcA==}
     dependencies:
       '@emotion/memoize': 0.7.4
+    optional: true
 
   /@emotion/is-prop-valid/1.1.0:
     resolution: {integrity: sha512-9RkilvXAufQHsSsjQ3PIzSns+pxuX4EW8EbGeSPjZMHuMx6z/MOzb9LpqNieQX4F3mre3NWS2+X3JNRHTQztUQ==}
     dependencies:
       '@emotion/memoize': 0.7.5
-    dev: false
 
   /@emotion/memoize/0.7.4:
     resolution: {integrity: sha512-Ja/Vfqe3HpuzRsG1oBtWTHk2PGZ7GR+2Vz5iYGelAw8dx32K0y7PjVuxK6z1nMpZOqAFsRUPCkK1YjJ56qJlgw==}
+    optional: true
 
   /@emotion/memoize/0.7.5:
     resolution: {integrity: sha512-igX9a37DR2ZPGYtV6suZ6whr8pTFtyHL3K/oLUotxpSVO2ASaprmAe2Dkq7tBo7CRY7MMDrAa9nuQP9/YG8FxQ==}
+
+  /@emotion/react/11.4.0_@babel+core@7.14.3+react@17.0.2:
+    resolution: {integrity: sha512-4XklWsl9BdtatLoJpSjusXhpKv9YVteYKh9hPKP1Sxl+mswEFoUe0WtmtWjxEjkA51DQ2QRMCNOvKcSlCQ7ivg==}
+    peerDependencies:
+      '@babel/core': ^7.0.0
+      '@types/react': '*'
+      react: '>=16.8.0'
+    peerDependenciesMeta:
+      '@babel/core':
+        optional: true
+      '@types/react':
+        optional: true
+    dependencies:
+      '@babel/core': 7.14.3
+      '@babel/runtime': 7.14.0
+      '@emotion/cache': 11.4.0
+      '@emotion/serialize': 1.0.2
+      '@emotion/sheet': 1.0.1
+      '@emotion/utils': 1.0.0
+      '@emotion/weak-memoize': 0.2.5
+      hoist-non-react-statics: 3.3.2
+      react: 17.0.2
+    dev: true
 
   /@emotion/react/11.4.0_@types+react@17.0.9+react@17.0.2:
     resolution: {integrity: sha512-4XklWsl9BdtatLoJpSjusXhpKv9YVteYKh9hPKP1Sxl+mswEFoUe0WtmtWjxEjkA51DQ2QRMCNOvKcSlCQ7ivg==}
@@ -3345,8 +3382,28 @@ packages:
       react: 17.0.2
     dev: false
 
-  /@emotion/stylis/0.8.5:
-    resolution: {integrity: sha512-h6KtPihKFn3T9fuIrwvXXUOwlx3rfUvfZIcP5a6rh8Y7zjE3O06hT5Ss4S/YI1AYhuZ1kjaE/5EaOOI2NqSylQ==}
+  /@emotion/styled/11.3.0_7f798167d9f3cb0613ea717c055cb692:
+    resolution: {integrity: sha512-fUoLcN3BfMiLlRhJ8CuPUMEyKkLEoM+n+UyAbnqGEsCd5IzKQ7VQFLtzpJOaCD2/VR2+1hXQTnSZXVJeiTNltA==}
+    peerDependencies:
+      '@babel/core': ^7.0.0
+      '@emotion/react': ^11.0.0-rc.0
+      '@types/react': '*'
+      react: '>=16.8.0'
+    peerDependenciesMeta:
+      '@babel/core':
+        optional: true
+      '@types/react':
+        optional: true
+    dependencies:
+      '@babel/core': 7.14.3
+      '@babel/runtime': 7.14.0
+      '@emotion/babel-plugin': 11.3.0_@babel+core@7.14.3
+      '@emotion/is-prop-valid': 1.1.0
+      '@emotion/react': 11.4.0_@babel+core@7.14.3+react@17.0.2
+      '@emotion/serialize': 1.0.2
+      '@emotion/utils': 1.0.0
+      react: 17.0.2
+    dev: true
 
   /@emotion/unitless/0.7.5:
     resolution: {integrity: sha512-OWORNpfjMsSSUBVrRBVGECkhWcULOAJz9ZW8uK9qgxD+87M7jHRcvh/A96XXNhXTLmKcoYSQtBEX7lHMO7YRwg==}
@@ -3939,7 +3996,7 @@ packages:
       react-dom: 17.0.2_react@17.0.2
       tslib: 2.2.0
 
-  /@rollup/plugin-babel/5.3.0_@babel+core@7.14.3+rollup@2.50.6:
+  /@rollup/plugin-babel/5.3.0_@babel+core@7.14.3+rollup@2.51.0:
     resolution: {integrity: sha512-9uIC8HZOnVLrLHxayq/PTzw+uS25E14KPUBh5ktF+18Mjo5yK0ToMMx6epY0uEgkjwJw0aBW4x2horYXh8juWw==}
     engines: {node: '>= 10.0.0'}
     peerDependencies:
@@ -3952,37 +4009,37 @@ packages:
     dependencies:
       '@babel/core': 7.14.3
       '@babel/helper-module-imports': 7.13.12
-      '@rollup/pluginutils': 3.1.0_rollup@2.50.6
-      rollup: 2.50.6
+      '@rollup/pluginutils': 3.1.0_rollup@2.51.0
+      rollup: 2.51.0
     dev: true
 
-  /@rollup/plugin-image/2.0.6_rollup@2.50.6:
+  /@rollup/plugin-image/2.0.6_rollup@2.51.0:
     resolution: {integrity: sha512-bB+spXogbPiFjhBS7i8ajUOgOnVwWK3bnJ6VroxKey/q8/EPRkoSh+4O1qPCw97qMIDspF4TlzXVBhZ7nojIPw==}
     engines: {node: '>= 8.0.0'}
     peerDependencies:
       rollup: ^1.20.0 || ^2.0.0
     dependencies:
-      '@rollup/pluginutils': 3.1.0_rollup@2.50.6
+      '@rollup/pluginutils': 3.1.0_rollup@2.51.0
       mini-svg-data-uri: 1.3.3
-      rollup: 2.50.6
+      rollup: 2.51.0
     dev: true
 
-  /@rollup/plugin-node-resolve/13.0.0_rollup@2.50.6:
+  /@rollup/plugin-node-resolve/13.0.0_rollup@2.51.0:
     resolution: {integrity: sha512-41X411HJ3oikIDivT5OKe9EZ6ud6DXudtfNrGbC4nniaxx2esiWjkLOzgnZsWq1IM8YIeL2rzRGLZLBjlhnZtQ==}
     engines: {node: '>= 10.0.0'}
     peerDependencies:
       rollup: ^2.42.0
     dependencies:
-      '@rollup/pluginutils': 3.1.0_rollup@2.50.6
+      '@rollup/pluginutils': 3.1.0_rollup@2.51.0
       '@types/resolve': 1.17.1
       builtin-modules: 3.2.0
       deepmerge: 4.2.2
       is-module: 1.0.0
       resolve: 1.20.0
-      rollup: 2.50.6
+      rollup: 2.51.0
     dev: true
 
-  /@rollup/pluginutils/3.1.0_rollup@2.50.6:
+  /@rollup/pluginutils/3.1.0_rollup@2.51.0:
     resolution: {integrity: sha512-GksZ6pr6TpIjHm8h9lSQ8pi8BE9VeubNT0OMJ3B5uZJ8pz73NPiqOtCog/x2/QzM1ENChPKxMDhiQuRHsqc+lg==}
     engines: {node: '>= 8.0.0'}
     peerDependencies:
@@ -3991,10 +4048,10 @@ packages:
       '@types/estree': 0.0.39
       estree-walker: 1.0.1
       picomatch: 2.3.0
-      rollup: 2.50.6
+      rollup: 2.51.0
     dev: true
 
-  /@rollup/pluginutils/4.1.0_rollup@2.50.6:
+  /@rollup/pluginutils/4.1.0_rollup@2.51.0:
     resolution: {integrity: sha512-TrBhfJkFxA+ER+ew2U2/fHbebhLT/l/2pRk0hfj9KusXUuRXd2v0R58AfaZK9VXDQ4TogOSEmICVrQAA3zFnHQ==}
     engines: {node: '>= 8.0.0'}
     peerDependencies:
@@ -4002,7 +4059,7 @@ packages:
     dependencies:
       estree-walker: 2.0.2
       picomatch: 2.3.0
-      rollup: 2.50.6
+      rollup: 2.51.0
     dev: true
 
   /@sideway/address/4.1.2:
@@ -4534,7 +4591,7 @@ packages:
       postcss: ^8.1.0
     dependencies:
       browserslist: 4.16.6
-      caniuse-lite: 1.0.30001234
+      caniuse-lite: 1.0.30001235
       colorette: 1.2.2
       fraction.js: 4.1.1
       normalize-range: 0.1.2
@@ -4588,7 +4645,6 @@ packages:
       '@babel/runtime': 7.14.0
       cosmiconfig: 6.0.0
       resolve: 1.20.0
-    dev: false
 
   /babel-plugin-polyfill-corejs2/0.2.2_@babel+core@7.14.3:
     resolution: {integrity: sha512-kISrENsJ0z5dNPq5eRvcctITNHYXWOA4DUZRFYCz3jYCcvTb/A546LIddmoGNMVYg2U38OyFeNosQwI9ENTqIQ==}
@@ -4625,17 +4681,6 @@ packages:
     transitivePeerDependencies:
       - supports-color
     dev: true
-
-  /babel-plugin-styled-components/1.12.0_styled-components@5.3.0:
-    resolution: {integrity: sha512-FEiD7l5ZABdJPpLssKXjBUJMYqzbcNzBowfXDCdJhOpbhWiewapUaY+LZGT8R4Jg2TwOjGjG4RKeyrO5p9sBkA==}
-    peerDependencies:
-      styled-components: '>= 2'
-    dependencies:
-      '@babel/helper-annotate-as-pure': 7.12.13
-      '@babel/helper-module-imports': 7.13.12
-      babel-plugin-syntax-jsx: 6.18.0
-      lodash: 4.17.21
-      styled-components: 5.3.0_react-dom@17.0.2+react@17.0.2
 
   /babel-plugin-syntax-jsx/6.18.0:
     resolution: {integrity: sha1-CvMqmm4Tyno/1QaeYtew9Y0NiUY=}
@@ -4706,8 +4751,8 @@ packages:
   /bn.js/5.2.0:
     resolution: {integrity: sha512-D7iWRBvnZE8ecXiLj/9wbxH7Tk79fAh8IHaTNq1RWRixsS02W+5qS+iE9yq6RYl0asXx5tw0bLhmT5pIfbSquw==}
 
-  /bob-esbuild-cli/0.1.23:
-    resolution: {integrity: sha512-qe8l7E2dJf8ERG/mT3hg6H7vnIWCbkjppbADFfTWxmrGCpXUGSZn/0RVgNo5nK1CPBd0z9fCAO07wfJhS0TOgA==}
+  /bob-esbuild-cli/0.1.25:
+    resolution: {integrity: sha512-L05W9F1h+gTecl2l6YeU+odis6Otkupa2y0a+6Ilay29XWIF8L8j0d5kRo06uMeOBT8cIO+LAiLgKfDeEnq+pQ==}
     engines: {node: '>=12.0.0'}
     hasBin: true
     dependencies:
@@ -4716,15 +4761,15 @@ packages:
       '@oclif/errors': 1.3.4
       '@oclif/parser': 3.8.5
       '@oclif/plugin-help': 3.2.2
-      bob-esbuild: 0.1.23
+      bob-esbuild: 0.1.25
     transitivePeerDependencies:
       - '@types/node'
       - supports-color
       - typescript
     dev: true
 
-  /bob-esbuild-cli/0.1.23_10b86ec3e0ae69831b5d57b396c86e38:
-    resolution: {integrity: sha512-qe8l7E2dJf8ERG/mT3hg6H7vnIWCbkjppbADFfTWxmrGCpXUGSZn/0RVgNo5nK1CPBd0z9fCAO07wfJhS0TOgA==}
+  /bob-esbuild-cli/0.1.25_10b86ec3e0ae69831b5d57b396c86e38:
+    resolution: {integrity: sha512-L05W9F1h+gTecl2l6YeU+odis6Otkupa2y0a+6Ilay29XWIF8L8j0d5kRo06uMeOBT8cIO+LAiLgKfDeEnq+pQ==}
     engines: {node: '>=12.0.0'}
     hasBin: true
     dependencies:
@@ -4733,15 +4778,15 @@ packages:
       '@oclif/errors': 1.3.4
       '@oclif/parser': 3.8.5
       '@oclif/plugin-help': 3.2.2
-      bob-esbuild: 0.1.23_10b86ec3e0ae69831b5d57b396c86e38
+      bob-esbuild: 0.1.25_10b86ec3e0ae69831b5d57b396c86e38
     transitivePeerDependencies:
       - '@types/node'
       - supports-color
       - typescript
     dev: true
 
-  /bob-esbuild-cli/0.1.23_typescript@4.3.2:
-    resolution: {integrity: sha512-qe8l7E2dJf8ERG/mT3hg6H7vnIWCbkjppbADFfTWxmrGCpXUGSZn/0RVgNo5nK1CPBd0z9fCAO07wfJhS0TOgA==}
+  /bob-esbuild-cli/0.1.25_typescript@4.3.2:
+    resolution: {integrity: sha512-L05W9F1h+gTecl2l6YeU+odis6Otkupa2y0a+6Ilay29XWIF8L8j0d5kRo06uMeOBT8cIO+LAiLgKfDeEnq+pQ==}
     engines: {node: '>=12.0.0'}
     hasBin: true
     dependencies:
@@ -4750,47 +4795,47 @@ packages:
       '@oclif/errors': 1.3.4
       '@oclif/parser': 3.8.5
       '@oclif/plugin-help': 3.2.2
-      bob-esbuild: 0.1.23_typescript@4.3.2
+      bob-esbuild: 0.1.25_typescript@4.3.2
     transitivePeerDependencies:
       - '@types/node'
       - supports-color
       - typescript
     dev: true
 
-  /bob-esbuild-plugin/0.1.21_730b7835286eb182f6a824b9d6aed045:
+  /bob-esbuild-plugin/0.1.21_f3de840ca5a18f7cb8e0f46150830fec:
     resolution: {integrity: sha512-EKA95lpeKpmfG0AnDXOHsTtc73n/Eqhnrdom1eNbzPN/CIiWwRMV+2pMYeLjNxNJ7kWzB81Fsqa4UULe7Ra9QQ==}
     peerDependencies:
       '@types/node': ^15.6.1
       rollup: ^2.50.3
     dependencies:
-      '@rollup/pluginutils': 4.1.0_rollup@2.50.6
+      '@rollup/pluginutils': 4.1.0_rollup@2.51.0
       '@types/node': 15.12.1
       esbuild: 0.12.6
       joycon: 3.0.1
       jsonc-parser: 3.0.0
-      rollup: 2.50.6
+      rollup: 2.51.0
     dev: true
 
-  /bob-esbuild-plugin/0.1.21_rollup@2.50.6:
+  /bob-esbuild-plugin/0.1.21_rollup@2.51.0:
     resolution: {integrity: sha512-EKA95lpeKpmfG0AnDXOHsTtc73n/Eqhnrdom1eNbzPN/CIiWwRMV+2pMYeLjNxNJ7kWzB81Fsqa4UULe7Ra9QQ==}
     peerDependencies:
       '@types/node': ^15.6.1
       rollup: ^2.50.3
     dependencies:
-      '@rollup/pluginutils': 4.1.0_rollup@2.50.6
+      '@rollup/pluginutils': 4.1.0_rollup@2.51.0
       esbuild: 0.12.6
       joycon: 3.0.1
       jsonc-parser: 3.0.0
-      rollup: 2.50.6
+      rollup: 2.51.0
     dev: true
 
-  /bob-esbuild/0.1.23:
-    resolution: {integrity: sha512-nI2CEhVckNNw1u2DqGZuVhrrOCb+xAzzCkAEf91poGxTK4oTYltY24uIcULVjcE6dGhNB+xUZnGi9Wava4NmgA==}
+  /bob-esbuild/0.1.25:
+    resolution: {integrity: sha512-Y/TXSe/XIMp8Np/TQjWguvCv4Ppf/mdfa/DQSeemNlO9H4pnRBCqoc5rC2lH0eU9EKhK4sRrwYMAiu7mmJC1mQ==}
     peerDependencies:
       typescript: ^4.3.2
     dependencies:
       '@pnpm/exportable-manifest': 2.1.4
-      bob-esbuild-plugin: 0.1.21_rollup@2.50.6
+      bob-esbuild-plugin: 0.1.21_rollup@2.51.0
       builtin-modules: 3.2.0
       chalk: 4.1.1
       cosmiconfig: 7.0.0
@@ -4803,7 +4848,7 @@ packages:
       lodash.get: 4.4.2
       oclif: 1.18.0
       rimraf: 3.0.2
-      rollup: 2.50.6
+      rollup: 2.51.0
       rollup-plugin-delete: 2.0.0
       rollup-plugin-node-externals: 2.2.0_builtin-modules@3.2.0
       sucrase: 3.18.1
@@ -4814,13 +4859,13 @@ packages:
       - supports-color
     dev: true
 
-  /bob-esbuild/0.1.23_10b86ec3e0ae69831b5d57b396c86e38:
-    resolution: {integrity: sha512-nI2CEhVckNNw1u2DqGZuVhrrOCb+xAzzCkAEf91poGxTK4oTYltY24uIcULVjcE6dGhNB+xUZnGi9Wava4NmgA==}
+  /bob-esbuild/0.1.25_10b86ec3e0ae69831b5d57b396c86e38:
+    resolution: {integrity: sha512-Y/TXSe/XIMp8Np/TQjWguvCv4Ppf/mdfa/DQSeemNlO9H4pnRBCqoc5rC2lH0eU9EKhK4sRrwYMAiu7mmJC1mQ==}
     peerDependencies:
       typescript: ^4.3.2
     dependencies:
       '@pnpm/exportable-manifest': 2.1.4
-      bob-esbuild-plugin: 0.1.21_730b7835286eb182f6a824b9d6aed045
+      bob-esbuild-plugin: 0.1.21_f3de840ca5a18f7cb8e0f46150830fec
       builtin-modules: 3.2.0
       chalk: 4.1.1
       cosmiconfig: 7.0.0
@@ -4833,7 +4878,7 @@ packages:
       lodash.get: 4.4.2
       oclif: 1.18.0
       rimraf: 3.0.2
-      rollup: 2.50.6
+      rollup: 2.51.0
       rollup-plugin-delete: 2.0.0
       rollup-plugin-node-externals: 2.2.0_builtin-modules@3.2.0
       sucrase: 3.18.1
@@ -4845,13 +4890,13 @@ packages:
       - supports-color
     dev: true
 
-  /bob-esbuild/0.1.23_typescript@4.3.2:
-    resolution: {integrity: sha512-nI2CEhVckNNw1u2DqGZuVhrrOCb+xAzzCkAEf91poGxTK4oTYltY24uIcULVjcE6dGhNB+xUZnGi9Wava4NmgA==}
+  /bob-esbuild/0.1.25_typescript@4.3.2:
+    resolution: {integrity: sha512-Y/TXSe/XIMp8Np/TQjWguvCv4Ppf/mdfa/DQSeemNlO9H4pnRBCqoc5rC2lH0eU9EKhK4sRrwYMAiu7mmJC1mQ==}
     peerDependencies:
       typescript: ^4.3.2
     dependencies:
       '@pnpm/exportable-manifest': 2.1.4
-      bob-esbuild-plugin: 0.1.21_rollup@2.50.6
+      bob-esbuild-plugin: 0.1.21_rollup@2.51.0
       builtin-modules: 3.2.0
       chalk: 4.1.1
       cosmiconfig: 7.0.0
@@ -4864,7 +4909,7 @@ packages:
       lodash.get: 4.4.2
       oclif: 1.18.0
       rimraf: 3.0.2
-      rollup: 2.50.6
+      rollup: 2.51.0
       rollup-plugin-delete: 2.0.0
       rollup-plugin-node-externals: 2.2.0_builtin-modules@3.2.0
       sucrase: 3.18.1
@@ -4999,7 +5044,7 @@ packages:
     engines: {node: ^6 || ^7 || ^8 || ^9 || ^10 || ^11 || ^12 || >=13.7}
     hasBin: true
     dependencies:
-      caniuse-lite: 1.0.30001234
+      caniuse-lite: 1.0.30001235
       colorette: 1.2.2
       electron-to-chromium: 1.3.749
       escalade: 3.1.1
@@ -5131,11 +5176,8 @@ packages:
     engines: {node: '>=6'}
     dev: true
 
-  /camelize/1.0.0:
-    resolution: {integrity: sha1-FkpUg+Yw+kMh5a8HAg5TGDGyYJs=}
-
-  /caniuse-lite/1.0.30001234:
-    resolution: {integrity: sha512-a3gjUVKkmwLdNysa1xkUAwN2VfJUJyVW47rsi3aCbkRCtbHAfo+rOsCqVw29G6coQ8gzAPb5XBXwiGHwme3isA==}
+  /caniuse-lite/1.0.30001235:
+    resolution: {integrity: sha512-zWEwIVqnzPkSAXOUlQnPW2oKoYb2aLQ4Q5ejdjBcnH63rfypaW34CxaeBn1VMya2XaEU3P/R2qHpWyj+l0BT1A==}
 
   /capture-stack-trace/1.0.1:
     resolution: {integrity: sha512-mYQLZnx5Qt1JgB1WEiMCf2647plpGeQ2NMR/5L0HNZzGQo4fuSPnK+wjfPnKZV0aiJDgzmWqqkV/g7JD+DW0qw==}
@@ -5647,7 +5689,6 @@ packages:
       parse-json: 5.2.0
       path-type: 4.0.0
       yaml: 1.10.2
-    dev: false
 
   /cosmiconfig/7.0.0:
     resolution: {integrity: sha512-pondGvTuVYDk++upghXJabWzL6Kxu6f26ljFw64Swq9v6sQPUL3EUlVDV56diOjpCayKihL6hVe8exIACU4XcA==}
@@ -5783,19 +5824,8 @@ packages:
     dependencies:
       tiny-invariant: 1.1.0
 
-  /css-color-keywords/1.0.0:
-    resolution: {integrity: sha1-/qJhbcZ2spYmhrOvjb2+GAskTgU=}
-    engines: {node: '>=4'}
-
   /css-selector-parser/1.4.1:
     resolution: {integrity: sha512-HYPSb7y/Z7BNDCOrakL4raGO2zltZkbeXyAd6Tg9obzix6QhzxCotdBl6VT0Dv4vZfJGVz3WL/xaEI9Ly3ul0g==}
-
-  /css-to-react-native/3.0.0:
-    resolution: {integrity: sha512-Ro1yETZA813eoyUp2GDBhG2j+YggidUmzO1/v9eYBKR2EHVEniE2MI/NqpTQ954BMpTPZFsGNPm46qFB9dpaPQ==}
-    dependencies:
-      camelize: 1.0.0
-      css-color-keywords: 1.0.0
-      postcss-value-parser: 4.1.0
 
   /css-unit-converter/1.1.2:
     resolution: {integrity: sha512-IiJwMC8rdZE0+xiEZHeru6YoONC4rfPMqGm2W85jMIbkFvv5nFTwJVFHam2eFrN6txmoUYFAFXiv8ICVeTO0MA==}
@@ -5815,7 +5845,7 @@ packages:
     peerDependencies:
       postcss: ^8.2.1
     dependencies:
-      caniuse-lite: 1.0.30001234
+      caniuse-lite: 1.0.30001235
       postcss: 8.2.13
 
   /cssnano-simple/2.0.0_postcss@8.2.13:
@@ -5921,18 +5951,6 @@ packages:
         optional: true
     dependencies:
       ms: 2.1.2
-
-  /debug/4.3.1_supports-color@5.5.0:
-    resolution: {integrity: sha512-doEwdvm4PCeK4K3RQN2ZC2BYUBaxwLARCqZmMjtF8a51J2Rb0xpVloFRnCODwqjpwnAoao4pelN8l3RJdv3gRQ==}
-    engines: {node: '>=6.0'}
-    peerDependencies:
-      supports-color: '*'
-    peerDependenciesMeta:
-      supports-color:
-        optional: true
-    dependencies:
-      ms: 2.1.2
-      supports-color: 5.5.0
 
   /debug/4.3.1_supports-color@7.2.0:
     resolution: {integrity: sha512-doEwdvm4PCeK4K3RQN2ZC2BYUBaxwLARCqZmMjtF8a51J2Rb0xpVloFRnCODwqjpwnAoao4pelN8l3RJdv3gRQ==}
@@ -6673,7 +6691,6 @@ packages:
 
   /find-root/1.1.0:
     resolution: {integrity: sha512-NKfW6bec6GfKc0SGx1e07QZY9PE99u0Bft/0rzSD5k3sO/vwkVUpDUKVm5Gpp5Ue3YfShPFTX2070tDs5kB9Ng==}
-    dev: false
 
   /find-up/1.1.2:
     resolution: {integrity: sha1-ay6YIrGizgpgq2TWEOzK1TyyTQ8=}
@@ -9003,7 +9020,7 @@ packages:
       browserify-zlib: 0.2.0
       browserslist: 4.16.6
       buffer: 5.6.0
-      caniuse-lite: 1.0.30001234
+      caniuse-lite: 1.0.30001235
       chalk: 2.4.2
       chokidar: 3.5.1
       constants-browserify: 1.0.0
@@ -9077,7 +9094,7 @@ packages:
       browserify-zlib: 0.2.0
       browserslist: 4.16.6
       buffer: 5.6.0
-      caniuse-lite: 1.0.30001234
+      caniuse-lite: 1.0.30001235
       chalk: 2.4.2
       chokidar: 3.5.1
       constants-browserify: 1.0.0
@@ -9152,7 +9169,7 @@ packages:
       browserify-zlib: 0.2.0
       browserslist: 4.16.6
       buffer: 5.6.0
-      caniuse-lite: 1.0.30001234
+      caniuse-lite: 1.0.30001235
       chalk: 2.4.2
       chokidar: 3.5.1
       constants-browserify: 1.0.0
@@ -9940,6 +9957,7 @@ packages:
 
   /postcss-value-parser/4.1.0:
     resolution: {integrity: sha512-97DXOFbQJhk71ne5/Mt6cOu6yxsSfM0QGQyl0L25Gca4yGWEGJaig7l7gbCX623VqTBNGLRLaVUCnNkcedlRSQ==}
+    dev: false
 
   /postcss/6.0.23:
     resolution: {integrity: sha512-soOk1h6J3VMTZtVeVpv15/Hpdl2cBLX3CAw4TAbkpTJiNPk9YP/zWcD1ND+xEtvyuuvKzbxliTOIyvkSeSJ6ag==}
@@ -10857,7 +10875,7 @@ packages:
       hash-base: 3.1.0
       inherits: 2.0.4
 
-  /rollup-plugin-auto-external/2.0.0_rollup@2.50.6:
+  /rollup-plugin-auto-external/2.0.0_rollup@2.51.0:
     resolution: {integrity: sha512-HQM3ZkZYfSam1uoZtAB9sK26EiAsfs1phrkf91c/YX+S07wugyRXSigBxrIwiLr5EPPilKYmoMxsrnlGBsXnuQ==}
     engines: {node: '>=6'}
     peerDependencies:
@@ -10865,7 +10883,7 @@ packages:
     dependencies:
       builtins: 2.0.1
       read-pkg: 3.0.0
-      rollup: 2.50.6
+      rollup: 2.51.0
       safe-resolve: 1.0.0
       semver: 5.7.1
     dev: true
@@ -10905,8 +10923,8 @@ packages:
       find-up: 4.1.0
     dev: true
 
-  /rollup/2.50.6:
-    resolution: {integrity: sha512-6c5CJPLVgo0iNaZWWliNu1Kl43tjP9LZcp6D/tkf2eLH2a9/WeHxg9vfTFl8QV/2SOyaJX37CEm9XuGM0rviUg==}
+  /rollup/2.51.0:
+    resolution: {integrity: sha512-ITLt9sScNCBVspSHauw/W49lEZ0vjN8LyCzSNsNaqT67vTss2lYEfOyxltX8hjrhr1l/rQwmZ2wazzEqhZ/fUg==}
     engines: {node: '>=10.0.0'}
     hasBin: true
     optionalDependencies:
@@ -11079,9 +11097,6 @@ packages:
     dependencies:
       kind-of: 6.0.3
     dev: true
-
-  /shallowequal/1.1.0:
-    resolution: {integrity: sha512-y0m1JoUZSlPAjXVtPPW70aZWfIL/dSP7AFkRnniLCrK/8MDKog3TySTBmckD+RObVxH0v4Tox67+F14PdED2oQ==}
 
   /shebang-command/1.2.0:
     resolution: {integrity: sha1-RKrGW2lbAzmJaMOfNj/uXer98eo=}
@@ -11515,27 +11530,6 @@ packages:
     dependencies:
       hey-listen: 1.0.8
       tslib: 2.2.0
-
-  /styled-components/5.3.0_react-dom@17.0.2+react@17.0.2:
-    resolution: {integrity: sha512-bPJKwZCHjJPf/hwTJl6TbkSZg/3evha+XPEizrZUGb535jLImwDUdjTNxXqjjaASt2M4qO4AVfoHJNe3XB/tpQ==}
-    engines: {node: '>=10'}
-    peerDependencies:
-      react: '>= 16.8.0'
-      react-dom: '>= 16.8.0'
-      react-is: '>= 16.8.0'
-    dependencies:
-      '@babel/helper-module-imports': 7.13.12
-      '@babel/traverse': 7.14.2_supports-color@5.5.0
-      '@emotion/is-prop-valid': 0.8.8
-      '@emotion/stylis': 0.8.5
-      '@emotion/unitless': 0.7.5
-      babel-plugin-styled-components: 1.12.0_styled-components@5.3.0
-      css-to-react-native: 3.0.0
-      hoist-non-react-statics: 3.3.2
-      react: 17.0.2
-      react-dom: 17.0.2_react@17.0.2
-      shallowequal: 1.1.0
-      supports-color: 5.5.0
 
   /styled-jsx/3.3.2:
     resolution: {integrity: sha512-daAkGd5mqhbBhLd6jYAjYBa9LpxYCzsgo/f6qzPdFxVB8yoGbhxvzQgkC0pfmCVvW3JuAEBn0UzFLBfkHVZG1g==}
@@ -12029,7 +12023,7 @@ packages:
       joycon: 3.0.1
       postcss-load-config: 3.0.1
       resolve-from: 5.0.0
-      rollup: 2.50.6
+      rollup: 2.51.0
       sucrase: 3.18.1
       tree-kill: 1.2.2
     transitivePeerDependencies:
@@ -12055,7 +12049,7 @@ packages:
       joycon: 3.0.1
       postcss-load-config: 3.0.1
       resolve-from: 5.0.0
-      rollup: 2.50.6
+      rollup: 2.51.0
       sucrase: 3.18.1
       tree-kill: 1.2.2
       typescript: 4.3.2
