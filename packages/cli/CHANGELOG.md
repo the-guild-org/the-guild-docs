@@ -1,5 +1,11 @@
 # guild-docs
 
+## 0.2.7
+
+### Patch Changes
+
+- 245669d: remove styled-components
+
 ## 0.2.1
 
 ### Patch Changes
