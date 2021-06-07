@@ -15,7 +15,6 @@ importers:
       '@types/react-instantsearch-core': ^6.10.2
       '@types/react-instantsearch-dom': ^6.10.0
       '@types/react-paginate': ^7.1.0
-      '@types/styled-components': ^5.1.9
       bob-esbuild: ^0.1.25
       bob-esbuild-cli: ^0.1.25
       concurrently: ^6.2.0
@@ -32,7 +31,6 @@ importers:
       '@types/react-instantsearch-core': 6.10.2
       '@types/react-instantsearch-dom': 6.10.0
       '@types/react-paginate': 7.1.0
-      '@types/styled-components': 5.1.9
       bob-esbuild: 0.1.25_10b86ec3e0ae69831b5d57b396c86e38
       bob-esbuild-cli: 0.1.25_10b86ec3e0ae69831b5d57b396c86e38
       concurrently: 6.2.0
@@ -4268,14 +4266,6 @@ packages:
 
   /@types/strip-json-comments/0.0.30:
     resolution: {integrity: sha512-7NQmHra/JILCd1QqpSzl8+mJRc8ZHz3uDm8YV1Ks9IhK0epEiTw8aIErbvH9PI+6XbqhyIQy3462nEsn7UVzjQ==}
-    dev: true
-
-  /@types/styled-components/5.1.9:
-    resolution: {integrity: sha512-kbEG6YlwK8rucITpKEr6pA4Ho9KSQHUUOzZ9lY3va1mtcjvS3D0wDciFyHEiNHKLL/npZCKDQJqm0x44sPO9oA==}
-    dependencies:
-      '@types/hoist-non-react-statics': 3.3.1
-      '@types/react': 17.0.9
-      csstype: 3.0.8
     dev: true
 
   /@types/tinycolor2/1.4.2:

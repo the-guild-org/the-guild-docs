@@ -32,7 +32,6 @@
     "@types/react-instantsearch-core": "^6.10.2",
     "@types/react-instantsearch-dom": "^6.10.0",
     "@types/react-paginate": "^7.1.0",
-    "@types/styled-components": "^5.1.9",
     "bob-esbuild": "^0.1.25",
     "bob-esbuild-cli": "^0.1.25",
     "concurrently": "^6.2.0",

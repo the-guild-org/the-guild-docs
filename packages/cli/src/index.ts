@@ -39,7 +39,6 @@ async function DepsAction(dir: string = process.cwd()) {
       'next-i18next',
       'react',
       'react-dom',
-      'styled-components',
     ]),
     addDependency(
       [
@@ -56,7 +55,6 @@ async function DepsAction(dir: string = process.cwd()) {
         'open-cli',
         'wait-on',
         'next-remote-watch',
-        '@types/styled-components',
       ],
       {
         isDev: true,
