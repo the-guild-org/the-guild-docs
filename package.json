@@ -26,21 +26,21 @@
     "pretty": "pretty-quick"
   },
   "devDependencies": {
-    "@changesets/cli": "^2.16.0",
-    "@types/node": "^15.12.1",
-    "@types/react": "^17.0.9",
-    "@types/react-instantsearch-core": "^6.10.2",
-    "@types/react-instantsearch-dom": "^6.10.0",
-    "@types/react-paginate": "^7.1.0",
-    "bob-esbuild": "^0.1.25",
-    "bob-esbuild-cli": "^0.1.25",
-    "concurrently": "^6.2.0",
-    "esbuild": "^0.12.6",
-    "husky": "^6.0.0",
-    "next": "^10.2.3",
-    "prettier": "^2.3.1",
-    "pretty-quick": "^3.1.0",
-    "typescript": "^4.3.2"
+    "@changesets/cli": "2.16.0",
+    "@types/node": "15.12.2",
+    "@types/react": "17.0.9",
+    "@types/react-instantsearch-core": "6.10.2",
+    "@types/react-instantsearch-dom": "6.10.0",
+    "@types/react-paginate": "7.1.0",
+    "bob-esbuild": "0.1.26",
+    "bob-esbuild-cli": "0.1.26",
+    "concurrently": "6.2.0",
+    "esbuild": "0.12.7",
+    "husky": "6.0.0",
+    "next": "10.2.3",
+    "prettier": "2.3.1",
+    "pretty-quick": "3.1.0",
+    "typescript": "4.3.2"
   },
   "engines": {
     "pnpm": ">=6.7.1"

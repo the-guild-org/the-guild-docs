@@ -16,13 +16,13 @@
     "prepack": "bob-esbuild build"
   },
   "devDependencies": {
-    "@chakra-ui/react": "^1.6.3",
-    "@types/node": "^15.12.1",
-    "@types/react": "^17.0.9",
-    "bob-esbuild-cli": "^0.1.25",
-    "next-i18next": "^8.4.0",
-    "next-mdx-remote": "^3.0.2",
-    "typescript": "^4.3.2"
+    "@chakra-ui/react": "1.6.3",
+    "@types/node": "15.12.2",
+    "@types/react": "17.0.9",
+    "bob-esbuild-cli": "0.1.26",
+    "next-i18next": "8.4.0",
+    "next-mdx-remote": "3.0.2",
+    "typescript": "4.3.2"
   },
   "peerDependencies": {
     "@chakra-ui/react": "^1.6.1",
