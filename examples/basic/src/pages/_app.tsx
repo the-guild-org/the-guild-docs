@@ -33,7 +33,7 @@ import {
   MDXNavigation,
   NextNProgress,
 } from '@guild-docs/client';
-import { Footer, GlobalStyles, Header, Subheader, ThemeProvider as ComponentsThemeProvider } from '@guild-docs/tgc';
+import { Footer, GlobalStyles, Header, Subheader, ThemeProvider as ComponentsThemeProvider } from '@theguild/components';
 
 import { handleRoute } from '../../next-helpers';
 
