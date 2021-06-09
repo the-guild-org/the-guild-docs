@@ -35,7 +35,7 @@
     "bob-esbuild": "0.1.26",
     "bob-esbuild-cli": "0.1.26",
     "concurrently": "6.2.0",
-    "esbuild": "0.12.7",
+    "esbuild": "^0.12.8",
     "husky": "6.0.0",
     "next": "10.2.3",
     "prettier": "2.3.1",
@@ -47,9 +47,7 @@
   },
   "pnpm": {
     "overrides": {
-      "esbuild": "^0.12.6",
-      "@emotion/react": "^11.4.0",
-      "@emotion/styled": "^11.3.0"
+      "esbuild": "^0.12.8"
     }
   }
 }
