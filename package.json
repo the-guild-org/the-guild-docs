@@ -43,7 +43,7 @@
     "typescript": "4.3.2"
   },
   "engines": {
-    "pnpm": ">=6.7.1"
+    "pnpm": ">=6.7.4"
   },
   "pnpm": {
     "overrides": {
