@@ -23,6 +23,8 @@ import {
   Stack,
   Text,
   TextProps,
+  Tooltip,
+  TooltipProps,
   UnorderedList,
   useColorModeValue,
 } from '@chakra-ui/react';
@@ -257,6 +259,7 @@ export const components = {
   Translated,
   Stack,
   inlineCode: (props: CodeProps) => <Code colorScheme="yellow" fontSize="0.84em" {...props} />,
+  Tooltip: (props: TooltipProps) => <Tooltip padding="1" textAlign="center" {...props} />,
 };
 
 // Workaround to this issue with TypeScript: https://github.com/microsoft/TypeScript/issues/42873
