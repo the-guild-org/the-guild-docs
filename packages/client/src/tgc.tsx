@@ -25,6 +25,7 @@ import { iterateRoutes } from './routes';
 import type { AppProps } from 'next/app';
 
 import type { Dict } from '@chakra-ui/utils';
+import type { IRoutes } from '@guild-docs/types';
 
 export interface CombinedThemeProps {
   children: ReactNode;
@@ -65,12 +66,10 @@ function TGCThemeProviderComponent({ children }: { children: ReactNode }) {
   return <TGCThemeProvider {...darkThemeProps} children={children} />;
 }
 
-const serializedMdx = process.env.SERIALIZED_MDX_ROUTES;
-let mdxRoutesData = serializedMdx && JSON.parse(serializedMdx);
-
 export interface DocsPageProps {
   appProps: AppProps;
   accentColor: string;
+  mdxRoutes: { data: IRoutes };
   docsNavigationProps?: Omit<ComponentProps<typeof DocsNavigation>, 'children'>;
   docsTitleProps?: ComponentProps<typeof DocsTitle>;
   mdxNavigationProps?: Partial<MDXNavigationProps>;
@@ -90,7 +89,9 @@ export function DocsPage({ appProps: { pageProps, Component }, accentColor, ...r
 
   const mdxRoutes: MdxInternalProps['mdxRoutes'] | undefined = pageProps.mdxRoutes;
   const Navigation = useMemo(() => {
-    const paths = mdxRoutes === 1 ? mdxRoutesData : (mdxRoutesData = mdxRoutes || mdxRoutesData);
+    const paths: IRoutes =
+      mdxRoutes === 1 ? restProps.mdxRoutes.data : (restProps.mdxRoutes.data = mdxRoutes || restProps.mdxRoutes.data);
+    if (!paths) throw Error('No MDX Navigation routes data!');
     return (
       <DocsNavigation {...restProps.docsNavigationProps}>
         <DocsTitle children="Documentation" {...restProps.docsTitleProps} />

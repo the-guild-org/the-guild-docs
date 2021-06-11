@@ -54,6 +54,9 @@ const theme = extendTheme({
 
 const accentColor = '#1CC8EE';
 
+const serializedMdx = process.env.SERIALIZED_MDX_ROUTES;
+const mdxRoutes = { data: serializedMdx && JSON.parse(serializedMdx) };
+
 function AppContent(appProps: AppProps) {
   const { Component, pageProps, router } = appProps;
   const isDocs = router.asPath.startsWith('/docs');
@@ -94,7 +97,7 @@ function AppContent(appProps: AppProps) {
           rel: 'noopener noreferrer',
         }}
       />
-      {isDocs ? <DocsPage appProps={appProps} accentColor={accentColor} /> : <Component {...pageProps} />}
+      {isDocs ? <DocsPage appProps={appProps} accentColor={accentColor} mdxRoutes={mdxRoutes} /> : <Component {...pageProps} />}
     </>
   );
 }
