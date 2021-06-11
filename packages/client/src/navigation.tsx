@@ -54,7 +54,6 @@ function Item({
   acumHref: string;
   depth: number;
   accentColor: string;
-  handleLinkClick: () => void;
 } & Partial<MDXNavigationProps>) {
   const finalHref = concatHrefs(acumHref, href);
 
@@ -156,7 +155,7 @@ function Item({
             ev.preventDefault();
             if (!isActive) {
               Router.push(finalHref);
-              handleLinkClick();
+              handleLinkClick?.();
             }
           }}
           onMouseOver={

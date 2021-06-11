@@ -48,7 +48,7 @@ export interface MDXNavigationProps {
   acumHref?: string;
   depth?: number;
   accentColor?: string;
-  handleLinkClick: () => void;
+  handleLinkClick?: () => void;
   wrapperProps?: Omit<ComponentProps<ChakraComponent<'nav', {}>>, 'children'>;
   detailsProps?: (args: MDXNavigationAccordionArgs) => Omit<ComponentProps<ChakraComponent<'div', {}>>, 'children'>;
   summaryProps?: (args: MDXNavigationAccordionArgs) => Omit<ComponentProps<ChakraComponent<'div', {}>>, 'children'>;
