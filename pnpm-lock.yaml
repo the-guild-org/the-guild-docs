@@ -44,9 +44,10 @@ importers:
       '@chakra-ui/icons': ^1.0.13
       '@chakra-ui/react': ^1.6.3
       '@chakra-ui/theme-tools': ^1.1.7
+      '@chakra-ui/utils': ^1.8.0
       '@emotion/react': ^11.4.0
       '@emotion/styled': ^11.3.0
-      '@guild-docs/client': workspace:^0.2.8
+      '@guild-docs/client': workspace:^0.2.9
       '@guild-docs/server': workspace:^0.2.5
       '@guild-docs/tgc': workspace:^0.2.7
       '@mdx-js/react': ^1.6.22
@@ -78,6 +79,7 @@ importers:
       '@chakra-ui/icons': 1.0.13_react@17.0.2
       '@chakra-ui/react': 1.6.3_1d20feb8407b5d497be6490ee7e493c6
       '@chakra-ui/theme-tools': 1.1.7
+      '@chakra-ui/utils': 1.8.0
       '@emotion/react': 11.4.0_189cc19b8edfe5959338b863f6e5c247
       '@emotion/styled': 11.3.0_3d30eb7fe446b0e582df4c9643515bd8
       '@guild-docs/client': link:../../packages/client

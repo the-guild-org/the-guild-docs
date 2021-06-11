@@ -1,5 +1,11 @@
 # @guild-docs/client
 
+## 0.2.9
+
+### Patch Changes
+
+- bc4569a: add "Tooltip" in default mdx components
+
 ## 0.2.8
 
 ### Patch Changes
