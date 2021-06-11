@@ -1,5 +1,11 @@
 # guild-docs
 
+## 0.2.10
+
+### Patch Changes
+
+- 9313299: improve static mdx routes data logic
+
 ## 0.2.9
 
 ### Patch Changes
