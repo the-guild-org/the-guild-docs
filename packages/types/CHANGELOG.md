@@ -1,5 +1,11 @@
 # @guild-docs/types
 
+## 0.2.8
+
+### Patch Changes
+
+- 56217ea: optional handleLinkClick
+
 ## 0.2.1
 
 ### Patch Changes
