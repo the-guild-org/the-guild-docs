@@ -56,7 +56,7 @@ const accentColor = '#1CC8EE';
 
 function AppContent(appProps: AppProps) {
   const { Component, pageProps, router } = appProps;
-  const isDocs = router.asPath.includes('docs');
+  const isDocs = router.asPath.startsWith('/docs');
 
   return (
     <>
