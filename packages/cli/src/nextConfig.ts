@@ -102,7 +102,7 @@ export async function writeApp() {
     import { extendTheme, theme as chakraTheme } from '@chakra-ui/react';
     import { mode } from '@chakra-ui/theme-tools';
     import { ExtendComponents, handlePushRoute, CombinedThemeProvider, DocsPage } from '@guild-docs/client';
-    import { Header, Subheader } from '@theguild/components';
+    import { Header, Subheader, Footer } from '@theguild/components';
     
     import type { AppProps } from 'next/app';
     
@@ -193,6 +193,7 @@ export async function writeApp() {
             }}
           />
           {isDocs ? <DocsPage appProps={appProps} accentColor={accentColor} mdxRoutes={mdxRoutes} /> : <Component {...pageProps} />}
+          <Footer />
         </>
       );
     }
