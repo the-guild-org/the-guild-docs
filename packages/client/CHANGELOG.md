@@ -1,5 +1,15 @@
 # @guild-docs/client
 
+## 0.2.8
+
+### Patch Changes
+
+- c60daab: fix & re-export tgc wrappers
+- d2af805: @theguild/components wrappers
+- 56217ea: optional handleLinkClick
+- Updated dependencies [56217ea]
+  - @guild-docs/types@0.2.8
+
 ## 0.2.6
 
 ### Patch Changes

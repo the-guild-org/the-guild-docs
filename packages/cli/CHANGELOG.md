@@ -1,5 +1,12 @@
 # guild-docs
 
+## 0.2.8
+
+### Patch Changes
+
+- d2af805: @theguild/components wrappers
+- 7be2ec7: update nextjs boilerplate
+
 ## 0.2.7
 
 ### Patch Changes
