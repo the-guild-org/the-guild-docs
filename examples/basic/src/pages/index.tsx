@@ -1,11 +1,8 @@
-import { useRouter } from 'next/router';
 import { HeroGradient, InfoList } from '@theguild/components';
 
-import { handleRoute } from '../../next-helpers';
+import { handlePushRoute } from '@guild-docs/client';
 
 export default function Index() {
-  const router = useRouter();
-
   return (
     <>
       <HeroGradient
@@ -15,7 +12,7 @@ export default function Index() {
           href: '/docs',
           children: 'Get Started',
           title: 'Get started with The Guild Docs',
-          onClick: e => handleRoute('/docs', e, router),
+          onClick: e => handlePushRoute('/docs', e),
         }}
         version="0.0.12"
         colors={['#000000', '#1CC8EE']}

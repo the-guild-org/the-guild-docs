@@ -3,45 +3,13 @@ import 'prism-themes/themes/prism-atom-dark.css';
 import '../../public/style.css';
 
 import { appWithTranslation } from 'next-i18next';
-import { Dispatch, ReactNode, SetStateAction, useMemo } from 'react';
 
-import { HamburgerIcon } from '@chakra-ui/icons';
-import {
-  ChakraProvider,
-  Drawer,
-  DrawerBody,
-  DrawerCloseButton,
-  DrawerContent,
-  DrawerOverlay,
-  extendTheme,
-  IconButton,
-  theme as chakraTheme,
-  useColorMode,
-  useColorModeValue,
-  useDisclosure,
-} from '@chakra-ui/react';
+import { extendTheme, theme as chakraTheme } from '@chakra-ui/react';
 import { mode } from '@chakra-ui/theme-tools';
-import {
-  DocsContainer,
-  DocsNavigation,
-  DocsNavigationDesktop,
-  DocsNavigationMobile,
-  DocsTitle,
-  ExtendComponents,
-  iterateRoutes,
-  MdxInternalProps,
-  MDXNavigation,
-  NextNProgress,
-} from '@guild-docs/client';
-import { Footer, GlobalStyles, Header, Subheader, ThemeProvider as ComponentsThemeProvider } from '@theguild/components';
-
-import { handleRoute } from '../../next-helpers';
+import { ExtendComponents, handlePushRoute, CombinedThemeProvider, DocsPage } from '@guild-docs/client';
+import { Header, Subheader } from '@theguild/components';
 
 import type { AppProps } from 'next/app';
-
-export function ChakraThemeProvider({ children }: { children: ReactNode }) {
-  return <ChakraProvider theme={theme}>{children}</ChakraProvider>;
-}
 
 ExtendComponents({
   HelloWorld() {
@@ -86,47 +54,13 @@ const theme = extendTheme({
 
 const accentColor = '#1CC8EE';
 
-const serializedMdx = process.env.SERIALIZED_MDX_ROUTES;
-let mdxRoutesData = serializedMdx && JSON.parse(serializedMdx);
-
-function ChakraWrapper({ color, appProps }: { color: string; appProps: AppProps }) {
+function AppContent(appProps: AppProps) {
   const { Component, pageProps, router } = appProps;
-
   const isDocs = router.asPath.includes('docs');
-  const { isOpen, onOpen, onClose } = useDisclosure();
-  const { colorMode, setColorMode } = useColorMode();
-
-  const mdxRoutes: MdxInternalProps['mdxRoutes'] | undefined = pageProps.mdxRoutes;
-  const Navigation = useMemo(() => {
-    const paths = mdxRoutes === 1 ? mdxRoutesData : (mdxRoutesData = mdxRoutes || mdxRoutesData);
-    return (
-      <DocsNavigation>
-        <DocsTitle>Documentation</DocsTitle>
-        <MDXNavigation paths={iterateRoutes(paths)} accentColor={color} handleLinkClick={onClose} />
-      </DocsNavigation>
-    );
-  }, [mdxRoutes]);
-
-  const darkThemeProps = useMemo<{
-    isDarkTheme: boolean;
-    setDarkTheme: Dispatch<SetStateAction<boolean>>;
-  }>(() => {
-    return {
-      isDarkTheme: colorMode === 'dark',
-      setDarkTheme: (arg: boolean | ((prevState: boolean) => boolean)) => {
-        if (typeof arg === 'function') {
-          setColorMode(arg(colorMode === 'dark') ? 'dark' : 'light');
-        } else {
-          setColorMode(arg ? 'dark' : 'light');
-        }
-      },
-    };
-  }, [colorMode, setColorMode]);
 
   return (
-    <ComponentsThemeProvider {...darkThemeProps}>
-      <GlobalStyles />
-      <Header accentColor={color} activeLink="/open-source" themeSwitch />
+    <>
+      <Header accentColor={accentColor} activeLink="/open-source" themeSwitch />
       <Subheader
         activeLink={router.asPath}
         product={{
@@ -136,20 +70,20 @@ function ChakraWrapper({ color, appProps }: { color: string; appProps: AppProps 
             src: '/assets/subheader-logo.svg',
             alt: 'Docs',
           },
-          onClick: e => handleRoute('/', e, router),
+          onClick: e => handlePushRoute('/', e),
         }}
         links={[
           {
             children: 'Home',
             title: 'Read about Guild Docs',
             href: '/',
-            onClick: e => handleRoute('/', e, router),
+            onClick: e => handlePushRoute('/', e),
           },
           {
             children: 'Docs',
             title: 'View examples',
             href: '/docs',
-            onClick: e => handleRoute('/docs', e, router),
+            onClick: e => handlePushRoute('/docs', e),
           },
         ]}
         cta={{
@@ -160,60 +94,19 @@ function ChakraWrapper({ color, appProps }: { color: string; appProps: AppProps 
           rel: 'noopener noreferrer',
         }}
       />
-      {!isDocs ? (
-        <Component {...pageProps} />
-      ) : (
-        <DocsContainer>
-          <DocsNavigationDesktop>{Navigation}</DocsNavigationDesktop>
-          <DocsNavigationMobile>
-            <IconButton
-              onClick={onOpen}
-              icon={<HamburgerIcon />}
-              aria-label="Open navigation"
-              size="sm"
-              position="fixed"
-              right="1.5rem"
-              bottom="1.5rem"
-              zIndex="1"
-              backgroundColor={color}
-              color="#fff"
-            />
-            <Drawer size="2xl" isOpen={isOpen} onClose={onClose} placement="left">
-              <DrawerOverlay />
-              <DrawerContent backgroundColor={useColorModeValue('white', 'gray.850')}>
-                <DrawerCloseButton
-                  backgroundColor={useColorModeValue('gray.200', 'gray.700')}
-                  color={useColorModeValue('gray.500', 'gray.100')}
-                  height="2.375rem"
-                  width="2.375rem"
-                  top="1.5rem"
-                  right="1.5rem"
-                  fontSize="0.85rem"
-                  borderRadius="0.5rem"
-                  border="2px solid transparent"
-                  _hover={{
-                    borderColor: 'gray.500',
-                  }}
-                />
-                <DrawerBody>{Navigation}</DrawerBody>
-              </DrawerContent>
-            </Drawer>
-          </DocsNavigationMobile>
-          <Component {...pageProps} />
-        </DocsContainer>
-      )}
-      <Footer />
-    </ComponentsThemeProvider>
+      {isDocs ? <DocsPage appProps={appProps} accentColor={accentColor} /> : <Component {...pageProps} />}
+    </>
   );
 }
 
-function App(appProps: AppProps) {
+const AppContentWrapper = appWithTranslation(function TranslatedApp(appProps) {
+  return <AppContent {...appProps} />;
+});
+
+export default function App(appProps: AppProps) {
   return (
-    <ChakraThemeProvider>
-      <NextNProgress color={accentColor} />
-      <ChakraWrapper color={accentColor} appProps={appProps} />
-    </ChakraThemeProvider>
+    <CombinedThemeProvider theme={theme} accentColor={accentColor}>
+      <AppContentWrapper {...appProps} />
+    </CombinedThemeProvider>
   );
 }
-
-export default appWithTranslation(App);
