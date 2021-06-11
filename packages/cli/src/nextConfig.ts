@@ -89,22 +89,53 @@ export async function writeTranslations() {
 }
 
 export async function writeApp() {
-  await writeFileFormatIfNotExists(
-    [config.cwd, 'src/pages/_app.tsx'],
-    `
+  await Promise.all([
+    writeFileFormatIfNotExists(
+      [config.cwd, 'src/pages/_app.tsx'],
+      `
     import 'remark-admonitions/styles/infima.css';
     import 'prism-themes/themes/prism-atom-dark.css';
+    import '../../public/style.css';
     
     import { appWithTranslation } from 'next-i18next';
-    import { ReactNode, useMemo } from 'react';
     
-    import { Box, ChakraProvider, extendTheme, theme as chakraTheme, Stack, chakra } from '@chakra-ui/react';
-    
-    import { NextNProgress, MdxInternalProps, MDXNavigation, iterateRoutes, ExtendComponents } from '@guild-docs/client';
+    import { extendTheme, theme as chakraTheme } from '@chakra-ui/react';
+    import { mode } from '@chakra-ui/theme-tools';
+    import { ExtendComponents, handlePushRoute, CombinedThemeProvider, DocsPage } from '@guild-docs/client';
+    import { Header, Subheader } from '@theguild/components';
     
     import type { AppProps } from 'next/app';
     
+    ExtendComponents({
+      HelloWorld() {
+        return <p>Hello World!</p>;
+      },
+    });
+    
+    const styles: typeof chakraTheme['styles'] = {
+      global: props => ({
+        body: {
+          bg: mode('white', 'gray.850')(props),
+        },
+      }),
+    };
+    
     const theme = extendTheme({
+      colors: {
+        gray: {
+          50: '#fafafa',
+          100: '#f5f5f5',
+          200: '#e5e5e5',
+          300: '#d4d4d4',
+          400: '#a3a3a3',
+          500: '#737373',
+          600: '#525252',
+          700: '#404040',
+          800: '#262626',
+          850: '#1b1b1b',
+          900: '#171717',
+        },
+      },
       fonts: {
         heading: '"Poppins", sans-serif',
         body: '"Poppins", sans-serif',
@@ -113,55 +144,72 @@ export async function writeApp() {
         initialColorMode: 'light',
         useSystemColorMode: false,
       },
-    } as typeof chakraTheme);
-
-    const a = chakra('a', {
-      baseStyle: {
-        fontWeight: 'bold',
-        color: 'blue.600',
-      },
+      styles,
     });
     
-    ExtendComponents({
-      HelloWorld() {
-        return <p>Hello World!</p>;
-      },
-      a
-    });
+    const accentColor = '#1CC8EE';
     
-    export function AppThemeProvider({ children }: { children: ReactNode }) {
-      return <ChakraProvider theme={theme}>{children}</ChakraProvider>;
-    }
+    function AppContent(appProps: AppProps) {
+      const { Component, pageProps, router } = appProps;
+      const isDocs = router.asPath.includes('docs');
     
-    const serializedMdx = process.env.SERIALIZED_MDX_ROUTES;
-    let mdxRoutesData = serializedMdx && JSON.parse(serializedMdx);
-    
-    function App({ Component, pageProps }: AppProps) {
-      const mdxRoutes: MdxInternalProps['mdxRoutes'] | undefined = pageProps.mdxRoutes;
-      const Navigation = useMemo(() => {
-        const paths = mdxRoutes === 1 ? mdxRoutesData : (mdxRoutesData = mdxRoutes || mdxRoutesData);
-    
-        return <MDXNavigation paths={iterateRoutes(paths)} />;
-      }, [mdxRoutes]);
       return (
         <>
-          <NextNProgress />
-          <AppThemeProvider>
-            <Stack isInline>
-              <Box maxW="280px" width="100%">
-                {Navigation}
-              </Box>
-              <Component {...pageProps} />
-            </Stack>
-          </AppThemeProvider>
+          <Header accentColor={accentColor} activeLink="/open-source" themeSwitch />
+          <Subheader
+            activeLink={router.asPath}
+            product={{
+              title: 'Docs',
+              description: 'Lorem ipsum dolor sit amet',
+              image: {
+                src: '/assets/subheader-logo.svg',
+                alt: 'Docs',
+              },
+              onClick: e => handlePushRoute('/', e),
+            }}
+            links={[
+              {
+                children: 'Home',
+                title: 'Read about Guild Docs',
+                href: '/',
+                onClick: e => handlePushRoute('/', e),
+              },
+              {
+                children: 'Docs',
+                title: 'View examples',
+                href: '/docs',
+                onClick: e => handlePushRoute('/docs', e),
+              },
+            ]}
+            cta={{
+              children: 'Get Started',
+              title: 'Start using The Guild Docs',
+              href: 'https://github.com/the-guild-org/the-guild-docs',
+              target: '_blank',
+              rel: 'noopener noreferrer',
+            }}
+          />
+          {isDocs ? <DocsPage appProps={appProps} accentColor={accentColor} /> : <Component {...pageProps} />}
         </>
       );
     }
     
-    export default appWithTranslation(App);
-        `,
-    'typescript'
-  );
+    const AppContentWrapper = appWithTranslation(function TranslatedApp(appProps) {
+      return <AppContent {...appProps} />;
+    });
+    
+    export default function App(appProps: AppProps) {
+      return (
+        <CombinedThemeProvider theme={theme} accentColor={accentColor}>
+          <AppContentWrapper {...appProps} />
+        </CombinedThemeProvider>
+      );
+    }
+            `,
+      'typescript'
+    ),
+    writeFileFormatIfNotExists([config.cwd, 'public/style.css'], `\n`, 'css'),
+  ]);
 }
 
 export async function writeDocPages() {
@@ -212,11 +260,47 @@ export async function writeDocPages() {
   const w2 = writeFileFormatIfNotExists(
     [config.cwd, 'src/pages/index.tsx'],
     `
-  export default function Index() {
-    return <p>Welcome!</p>;
-  }
-  
-  `,
+    import { HeroGradient, InfoList } from '@theguild/components';
+
+    import { handlePushRoute } from '@guild-docs/client';
+    
+    export default function Index() {
+      return (
+        <>
+          <HeroGradient
+            title="The Guild Docs"
+            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at gravida lacus"
+            link={{
+              href: '/docs',
+              children: 'Get Started',
+              title: 'Get started with The Guild Docs',
+              onClick: e => handlePushRoute('/docs', e),
+            }}
+            version="0.0.12"
+            colors={['#000000', '#1CC8EE']}
+          />
+    
+          <InfoList
+            title="First steps"
+            items={[
+              {
+                title: 'Install',
+                description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Egestas euismod amet duis quisque semper.',
+              },
+              {
+                title: 'Configure',
+                description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Egestas euismod amet duis quisque semper.',
+              },
+              {
+                title: 'Enjoy',
+                description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Egestas euismod amet duis quisque semper.',
+              },
+            ]}
+          />
+        </>
+      );
+    }
+      `,
     'typescript'
   );
 

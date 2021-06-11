@@ -29,6 +29,7 @@ async function DepsAction(dir: string = process.cwd()) {
       '@mdx-js/react',
       '@chakra-ui/react',
       '@chakra-ui/icons',
+      '@chakra-ui/utils',
       '@emotion/react',
       '@emotion/styled',
       'framer-motion',
