@@ -1,5 +1,11 @@
 # guild-docs
 
+## 0.2.9
+
+### Patch Changes
+
+- 032b9f4: fix "isDocs" check
+
 ## 0.2.8
 
 ### Patch Changes
