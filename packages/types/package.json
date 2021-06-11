@@ -13,13 +13,15 @@
   ],
   "scripts": {
     "dev": "bob-esbuild watch",
-    "prepack": "bob-esbuild build"
+    "prepack": "bob-esbuild build",
+    "postpublish": "gh-release --repo the-guild-org/the-guild-docs"
   },
   "devDependencies": {
     "@chakra-ui/react": "1.6.3",
     "@types/node": "15.12.2",
     "@types/react": "17.0.11",
     "bob-esbuild-cli": "0.1.26",
+    "changesets-github-release": "^0.0.1",
     "next-i18next": "8.4.0",
     "next-mdx-remote": "3.0.2",
     "typescript": "4.3.2"
