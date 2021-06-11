@@ -39,6 +39,7 @@ async function DepsAction(dir: string = process.cwd()) {
       'next-i18next',
       'react',
       'react-dom',
+      '@theguild/components',
     ]),
     addDependency(
       [

@@ -2,7 +2,7 @@ import RouterDefault from 'next/router';
 import React, { useRef, useState } from 'react';
 
 import { ChevronDownIcon } from '@chakra-ui/icons';
-import { chakra, Collapse, CSSObject, Text, useDisclosure, useSafeLayoutEffect, useColorModeValue } from '@chakra-ui/react';
+import { chakra, Collapse, CSSObject, Text, useColorModeValue, useDisclosure, useSafeLayoutEffect } from '@chakra-ui/react';
 
 import { arePathnamesEqual, concatHrefs } from './routes';
 import { getDefault } from './utils';
@@ -178,6 +178,8 @@ function Item({
   );
 }
 
+export type { MDXNavigationProps };
+
 export function MDXNavigation({
   paths,
   acumHref = '',
@@ -208,3 +210,10 @@ export function MDXNavigation({
     </Wrapper>
   );
 }
+
+export const handlePushRoute = (path: string, e: Pick<React.MouseEvent, 'preventDefault'>): void => {
+  e.preventDefault();
+  if (!path) return;
+
+  Router.push(path);
+};
