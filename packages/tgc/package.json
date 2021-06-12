@@ -2,6 +2,10 @@
   "name": "@guild-docs/tgc",
   "version": "0.2.7",
   "description": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/the-guild-org/the-guild-docs.git"
+  },
   "license": "MIT",
   "main": "lib/index.js",
   "module": "lib/index.esm.js",
@@ -9,7 +13,7 @@
   "scripts": {
     "dev": "rollup -w -c",
     "prepack": "rollup -c",
-    "postpublish": "gh-release --repo the-guild-org/the-guild-docs"
+    "postpublish": "gh-release"
   },
   "dependencies": {
     "@emotion/react": "^11.4.0",

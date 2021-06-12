@@ -27,7 +27,7 @@
   "scripts": {
     "dev": "bob-esbuild watch",
     "prepack": "bob-esbuild build",
-    "postpublish": "gh-release --repo the-guild-org/the-guild-docs"
+    "postpublish": "gh-release"
   },
   "dependencies": {
     "@guild-docs/types": "workspace:^0.2.8",

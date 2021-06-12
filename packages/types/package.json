@@ -14,7 +14,7 @@
   "scripts": {
     "dev": "bob-esbuild watch",
     "prepack": "bob-esbuild build",
-    "postpublish": "gh-release --repo the-guild-org/the-guild-docs"
+    "postpublish": "gh-release"
   },
   "devDependencies": {
     "@chakra-ui/react": "1.6.3",
