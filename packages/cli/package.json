@@ -18,14 +18,14 @@
     "dev": "tsup --watch --onSuccess \"pnpm dev-start\"",
     "dev-start": "node lib/index.js init ../../examples/basic",
     "prepack": "pnpm build",
-    "postpublish": "gh-release --repo the-guild-org/the-guild-docs"
+    "postpublish": "gh-release"
   },
   "devDependencies": {
     "@types/edit-json-file": "1.4.0",
     "@types/mkdirp": "1.0.1",
     "@types/node": "15.12.2",
     "@types/prettier": "2.3.0",
-    "changesets-github-release": "0.0.1",
+    "changesets-github-release": "0.0.2",
     "commander": "7.2.0",
     "edit-json-file": "1.6.0",
     "esbuild": "^0.12.8",
