@@ -1,13 +1,13 @@
 import React, { memo, useState } from 'react';
 import { MdContentCopy } from 'react-icons/md';
 import { TiTickOutline } from 'react-icons/ti';
-import useCopyToClipboardPackage from 'react-use/lib/useCopyToClipboard';
+import useCopyToClipboardImport from 'react-use/lib/useCopyToClipboard';
 
 import { IconButton, useToast } from '@chakra-ui/react';
 
 import { getDefault } from '../utils';
 
-const useCopyToClipboard = getDefault(useCopyToClipboardPackage);
+const useCopyToClipboard = getDefault(useCopyToClipboardImport);
 
 export const CopyToClipboard = memo(({ value }: { value: string }) => {
   const [, copy] = useCopyToClipboard();

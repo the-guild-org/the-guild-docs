@@ -1,8 +1,8 @@
 import { useTranslation } from 'next-i18next';
-import Image from 'next/image';
+import ImageImport from 'next/image';
 import NextLinkImport from 'next/link';
 import React, { ComponentType, ReactNode } from 'react';
-import dynamicImport from 'next/dynamic';
+import DynamicImport from 'next/dynamic';
 import {
   Box,
   BoxProps,
@@ -34,9 +34,10 @@ import { getDefault } from './utils';
 import type { LinkProps as NextLinkProps } from 'next/link';
 import type { PackageInstallProps } from './components/PackageInstall';
 
+const Image = getDefault(ImageImport);
 const NextLink = getDefault(NextLinkImport);
 
-const NextDynamic = getDefault(dynamicImport);
+const NextDynamic = getDefault(DynamicImport);
 
 export function Translated({ children, name }: { children?: ReactNode; name?: string }): ReactNode {
   const { t } = useTranslation('common');

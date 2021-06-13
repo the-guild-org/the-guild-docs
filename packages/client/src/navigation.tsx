@@ -1,4 +1,4 @@
-import RouterDefault from 'next/router';
+import RouterImport from 'next/router';
 import React, { useRef, useState } from 'react';
 
 import { ChevronDownIcon } from '@chakra-ui/icons';
@@ -39,7 +39,7 @@ const Link = chakra('a', {
   },
 });
 
-const Router = getDefault(RouterDefault);
+const Router = getDefault(RouterImport);
 
 function Item({
   item: { href, name, sidebar, paths, isPage },
