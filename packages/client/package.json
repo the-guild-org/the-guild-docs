@@ -34,8 +34,11 @@
     "immer": "^9.0.3",
     "next-mdx-remote": "^3.0.2",
     "nprogress": "^0.2.0",
+    "react-icons": "^4.2.0",
     "react-intersection-observer": "^8.32.0",
-    "use-immer": "^0.5.2"
+    "react-use": "^17.2.4",
+    "use-immer": "^0.5.2",
+    "zustand": "^3.5.2"
   },
   "devDependencies": {
     "@chakra-ui/icons": "1.0.13",

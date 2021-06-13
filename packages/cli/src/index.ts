@@ -41,6 +41,8 @@ async function DepsAction(dir: string = process.cwd()) {
       'react',
       'react-dom',
       '@theguild/components',
+      'react-icons',
+      'react-use',
     ]),
     addDependency(
       [
