@@ -30,3 +30,6 @@ jobs:
 
       - name: Install Dependencies & prepare
         run: pnpm i
+
+      - name: Build
+        run: pnpm -r --stream build
