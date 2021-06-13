@@ -43,6 +43,7 @@ async function DepsAction(dir: string = process.cwd()) {
       '@theguild/components',
       'react-icons',
       'react-use',
+      'next-seo',
     ]),
     addDependency(
       [

@@ -6,4 +6,4 @@ export * from './components';
 export * from './docs/index';
 
 export * from '@guild-docs/types';
-export * from './tgc';
+export * from './wrappers';

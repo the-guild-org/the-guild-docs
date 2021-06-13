@@ -108,7 +108,22 @@ const AppContentWrapper = appWithTranslation(function TranslatedApp(appProps) {
 
 export default function App(appProps: AppProps) {
   return (
-    <CombinedThemeProvider theme={theme} accentColor={accentColor}>
+    <CombinedThemeProvider
+      theme={theme}
+      accentColor={accentColor}
+      defaultSeo={{
+        title: 'Guild Docs',
+        description: 'Guild Docs Example',
+        openGraph: {
+          images: [
+            {
+              url: 'https://the-guild-docs.vercel.app/assets/subheader-logo.png',
+            },
+          ],
+          type: 'website',
+        },
+      }}
+    >
       <AppContentWrapper {...appProps} />
     </CombinedThemeProvider>
   );

@@ -16,7 +16,7 @@ import {
 } from '@chakra-ui/react';
 import { MdxInternalProps } from '@guild-docs/types';
 import { GlobalStyles, ThemeProvider as TGCThemeProvider } from '@theguild/components';
-
+import { DefaultSeo, DefaultSeoProps } from 'next-seo';
 import { DocsContainer, DocsNavigation, DocsNavigationDesktop, DocsNavigationMobile, DocsTitle } from './docs/index';
 import { MDXNavigation, MDXNavigationProps } from './navigation';
 import { NextNProgress } from './NextNProgress';
@@ -31,17 +31,21 @@ export interface CombinedThemeProps {
   children: ReactNode;
   theme: Dict;
   accentColor: string;
+  defaultSeo?: DefaultSeoProps;
 }
 
-export function CombinedThemeProvider({ children, theme, accentColor }: CombinedThemeProps) {
+export function CombinedThemeProvider({ children, theme, accentColor, defaultSeo }: CombinedThemeProps) {
   return (
-    <ChakraProvider theme={theme}>
-      <TGCThemeProviderComponent>
-        {children}
-        <GlobalStyles />
-      </TGCThemeProviderComponent>
-      <NextNProgress color={accentColor} />
-    </ChakraProvider>
+    <>
+      {defaultSeo && <DefaultSeo openGraph={{}} {...defaultSeo} />}
+      <ChakraProvider theme={theme}>
+        <TGCThemeProviderComponent>
+          {children}
+          <GlobalStyles />
+        </TGCThemeProviderComponent>
+        <NextNProgress color={accentColor} />
+      </ChakraProvider>
+    </>
   );
 }
 
