@@ -9,7 +9,7 @@ export function getRoutes(): IRoutes {
       },
       docs: {
         $name: 'Docs',
-        $routes: ['secondary', 'README'],
+        $routes: ['README', 'secondary', '$category-1', 'zzz'],
       },
     },
   };
