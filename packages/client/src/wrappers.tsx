@@ -44,6 +44,7 @@ export interface AppSeoProps extends DefaultSeoProps {
 
 export function CombinedThemeProvider({ children, theme, accentColor, defaultSeo }: CombinedThemeProps) {
   const DefaultSEO = useMemo(() => {
+    if (!defaultSeo) throw Error('No `defaultSeo` specified in CombinedThemeProvider');
     const { logo, ...props } = defaultSeo;
 
     if (!props?.title) throw Error(`No defaultSeo.title specified!`);

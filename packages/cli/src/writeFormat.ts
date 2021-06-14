@@ -18,3 +18,9 @@ export async function writeFileFormatIfNotExists(path: string[], content: string
 
   await writeFile(writePath, await formatPrettier(content, parser));
 }
+
+export async function writeFileFormat(writePath: string, content: string, parser: BuiltInParserName) {
+  await mkdirp(dirname(writePath));
+
+  await writeFile(writePath, await formatPrettier(content, parser));
+}

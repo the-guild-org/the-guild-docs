@@ -4,7 +4,7 @@ import { program } from 'commander';
 import { resolve } from 'path';
 
 import { getPaths, setConfig } from './cliConfig';
-import { addDependency, addPackageScripts } from './editPackageJson';
+import { addDependency, addPackageResolutions, addPackageScripts } from './editPackageJson';
 import {
   writeApp,
   writeDocPages,
@@ -28,6 +28,7 @@ async function DepsAction(dir: string = process.cwd()) {
       '@guild-docs/server',
       '@mdx-js/react',
       '@chakra-ui/react',
+      '@chakra-ui/theme-tools',
       '@chakra-ui/icons',
       '@chakra-ui/utils',
       '@emotion/react',
@@ -56,7 +57,6 @@ async function DepsAction(dir: string = process.cwd()) {
         'typescript',
         'concurrently',
         '@types/concurrently',
-        'tsup',
         'open-cli',
         'wait-on',
         'next-remote-watch',
@@ -71,9 +71,16 @@ async function DepsAction(dir: string = process.cwd()) {
       next: 'next',
       start: 'next start',
     }),
+    addPackageResolutions({
+      esbuild: '^0.12.8',
+    }),
   ]);
 
   console.log('Dependencies added!');
+
+  console.log(
+    `If this docs website is in a monorepo, please copy the "pnpm.overrides" or "resolutions" fields in your root package.json`
+  );
 }
 
 program.command('deps [dir]').description('Add deps to specified directory (default: process.cwd())').action(DepsAction);

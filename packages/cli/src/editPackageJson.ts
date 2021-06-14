@@ -22,6 +22,17 @@ export function addPackageScripts(scripts: Record<string, string>) {
   json.save();
 }
 
+export function addPackageResolutions(resolutions: Record<string, string>) {
+  const json = (jsonConfigs[config.packageJsonPath] ||= editJsonFile(config.packageJsonPath));
+
+  Object.entries(resolutions).forEach(([name, content]) => {
+    json.set(`pnpm.overrides.${name}`, content);
+    json.set(`resolutions.${name}`, content);
+  });
+
+  json.save();
+}
+
 export async function addDependency(
   dependency: string | string[],
   {
