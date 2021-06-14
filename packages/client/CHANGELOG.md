@@ -1,5 +1,11 @@
 # @guild-docs/client
 
+## 0.2.12
+
+### Patch Changes
+
+- 6ee94b2: check first if defaultSeo is specified
+
 ## 0.2.11
 
 ### Patch Changes
