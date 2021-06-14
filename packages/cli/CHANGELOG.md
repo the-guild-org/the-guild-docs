@@ -1,5 +1,13 @@
 # guild-docs
 
+## 0.2.11
+
+### Patch Changes
+
+- 45b7a70: add next-seo
+- 45c4bc9: add "PackageInstall" component
+- 7b2da95: add Footer in boilerplate \_app.tsx
+
 ## 0.2.10
 
 ### Patch Changes

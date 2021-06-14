@@ -1,5 +1,14 @@
 # @guild-docs/client
 
+## 0.2.11
+
+### Patch Changes
+
+- fc7d409: enforce default SEO & improve docs meta tags
+- 45b7a70: add next-seo
+- 45c4bc9: add "PackageInstall" component
+- 24605ad: allow reference to sub-category in routes to specify sub-category location in navigation
+
 ## 0.2.10
 
 ### Patch Changes
