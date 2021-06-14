@@ -9,6 +9,7 @@ import * as React from 'react';
 import remarkAdmonitions from 'remark-admonitions';
 import remarkPrism from 'remark-prism';
 import remarkSlug from 'remark-slug';
+import remarkEmoji from 'remark-emoji';
 
 import { IS_PRODUCTION } from './constants';
 import { getSlug } from './routes';
@@ -138,6 +139,7 @@ export async function MDXProps(
         ],
         remarkPrism,
         remarkSlug,
+        remarkEmoji,
       ],
       rehypePlugins: [],
     },
