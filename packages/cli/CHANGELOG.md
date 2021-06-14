@@ -1,5 +1,14 @@
 # guild-docs
 
+## 0.2.12
+
+### Patch Changes
+
+- 6ee94b2: remove tsup from devDeps
+- 6ee94b2: add resolutions with esbuild
+- 6ee94b2: add "@chakra-ui/theme-tools" dep init
+- 6ee94b2: add "defaultSeo" to init \_app.tsx
+
 ## 0.2.11
 
 ### Patch Changes

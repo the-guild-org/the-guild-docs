@@ -1,5 +1,11 @@
 # @guild-docs/server
 
+## 0.2.12
+
+### Patch Changes
+
+- bb5409c: add :emoji: support
+
 ## 0.2.5
 
 ### Patch Changes
