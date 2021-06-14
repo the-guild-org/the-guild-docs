@@ -99,18 +99,18 @@ export interface DocsPageProps {
   appProps: AppProps;
   accentColor: string;
   mdxRoutes: { data: IRoutes };
-  docsNavigationProps?: Omit<ComponentProps<typeof DocsNavigation>, 'children'>;
+  docsNavigationProps?: ComponentProps<typeof DocsNavigation>;
   docsTitleProps?: ComponentProps<typeof DocsTitle>;
   mdxNavigationProps?: Partial<MDXNavigationProps>;
-  docsContainerProps?: Omit<ComponentProps<typeof DocsContainer>, 'children'>;
-  docsNavigationDesktopProps?: Omit<ComponentProps<typeof DocsNavigationDesktop>, 'children'>;
-  docsNavigationMobileProps?: Omit<ComponentProps<typeof DocsNavigationMobile>, 'children'>;
-  hamburgerProps?: ComponentProps<typeof IconButton>;
-  drawerProps?: DrawerProps;
+  docsContainerProps?: ComponentProps<typeof DocsContainer>;
+  docsNavigationDesktopProps?: ComponentProps<typeof DocsNavigationDesktop>;
+  docsNavigationMobileProps?: ComponentProps<typeof DocsNavigationMobile>;
+  hamburgerProps?: Partial<ComponentProps<typeof IconButton>>;
+  drawerProps?: Partial<DrawerProps>;
   drawerOverlayProps?: ComponentProps<typeof DrawerOverlay>;
-  drawerContentProps?: Omit<ComponentProps<typeof DrawerContent>, 'children'>;
+  drawerContentProps?: ComponentProps<typeof DrawerContent>;
   drawerCloseButtonProps?: ComponentProps<typeof DrawerCloseButton>;
-  drawerBodyProps?: Omit<ComponentProps<typeof DrawerBody>, 'children'>;
+  drawerBodyProps?: ComponentProps<typeof DrawerBody>;
 }
 
 export function DocsPage({ appProps: { pageProps, Component }, accentColor, ...restProps }: DocsPageProps) {

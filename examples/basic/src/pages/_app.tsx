@@ -18,11 +18,15 @@ ExtendComponents({
 });
 
 const styles: typeof chakraTheme['styles'] = {
-  global: props => ({
-    body: {
-      bg: mode('white', 'gray.850')(props),
-    },
-  }),
+  global: props => {
+    const bg = mode('white', 'gray.850')(props);
+
+    return {
+      body: {
+        bg,
+      },
+    };
+  },
 };
 
 const theme = extendTheme({
