@@ -1,3 +1,4 @@
+import { DefaultSeo } from 'next-seo';
 import React, { ComponentProps, Dispatch, ReactNode, SetStateAction, useMemo } from 'react';
 
 import { HamburgerIcon } from '@chakra-ui/icons';
@@ -16,12 +17,13 @@ import {
 } from '@chakra-ui/react';
 import { MdxInternalProps } from '@guild-docs/types';
 import { GlobalStyles, ThemeProvider as TGCThemeProvider } from '@theguild/components';
-import { DefaultSeo, DefaultSeoProps } from 'next-seo';
+
 import { DocsContainer, DocsNavigation, DocsNavigationDesktop, DocsNavigationMobile, DocsTitle } from './docs/index';
 import { MDXNavigation, MDXNavigationProps } from './navigation';
 import { NextNProgress } from './NextNProgress';
 import { iterateRoutes } from './routes';
 
+import type { OpenGraphImages, DefaultSeoProps } from 'next-seo/lib/types';
 import type { AppProps } from 'next/app';
 
 import type { Dict } from '@chakra-ui/utils';
@@ -31,13 +33,35 @@ export interface CombinedThemeProps {
   children: ReactNode;
   theme: Dict;
   accentColor: string;
-  defaultSeo?: DefaultSeoProps;
+  defaultSeo: AppSeoProps;
+}
+
+export interface AppSeoProps extends DefaultSeoProps {
+  title: string;
+  description: string;
+  logo: OpenGraphImages;
 }
 
 export function CombinedThemeProvider({ children, theme, accentColor, defaultSeo }: CombinedThemeProps) {
+  const DefaultSEO = useMemo(() => {
+    const { logo, ...props } = defaultSeo;
+
+    if (!props?.title) throw Error(`No defaultSeo.title specified!`);
+
+    if (!props.description) throw Error(`No defaultSeo.description specified!`);
+
+    (props.openGraph ||= {}).type ||= 'website';
+
+    if (!logo?.url?.startsWith('https://')) throw Error(`No defaultSeo.logo.url specified with absolute https url!`);
+
+    props.openGraph.images ||= [logo];
+
+    return <DefaultSeo {...props} />;
+  }, [defaultSeo]);
+
   return (
     <>
-      {defaultSeo && <DefaultSeo openGraph={{}} {...defaultSeo} />}
+      {DefaultSEO}
       <ChakraProvider theme={theme}>
         <TGCThemeProviderComponent>
           {children}

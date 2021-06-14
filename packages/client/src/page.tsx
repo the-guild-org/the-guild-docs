@@ -1,6 +1,6 @@
 import { useTranslation } from 'next-i18next';
 import { MDXRemote } from 'next-mdx-remote';
-import { createElement, Fragment, PropsWithChildren, ReactElement, useCallback, useMemo } from 'react';
+import React, { PropsWithChildren, ReactElement, useCallback, useMemo } from 'react';
 
 import { BottomNavigationComponent } from './bottomNavigation';
 import { components } from './components';
@@ -17,30 +17,33 @@ export function MDXPage(
   { renderTitle }: MDXPageOptions = {}
 ) {
   return function MDXPage({ children, source, frontMatter, toc, mdxRoutes }: MdxInternalProps) {
-    const title = frontMatter.title;
+    const title: string | undefined = frontMatter.title;
+    const description: string | undefined = frontMatter.description;
 
     const MetaHead = useMemo(() => {
       let titleString = typeof title === 'string' ? title : undefined;
 
       if (renderTitle) titleString = renderTitle(titleString);
 
-      if (!titleString) return null;
-
-      return createElement(Fragment, null, createElement('title', null, titleString));
+      return (
+        <>
+          {titleString ? <title key="title" children={titleString} /> : null}
+          {titleString ? <meta key="og:title" property="og:title" content={titleString} /> : null}
+          {description ? <meta key="og:description" property="og:description" content={description} /> : null}
+          {description ? <meta key="description" name="description" content={description} /> : null}
+        </>
+      );
     }, [title]);
 
     const content = useMemo(() => {
-      return createElement(MDXRemote, { ...source, components });
+      return <MDXRemote {...source} components={components} />;
     }, [title, source]);
 
     const TOC = useCallback<MdxPageProps['TOC']>(
       function TOC(props) {
         if (toc.length < 2) return null;
 
-        return createElement(MDXTOC, {
-          toc,
-          ...props,
-        });
+        return <MDXTOC toc={toc} {...props} />;
       },
       [toc]
     );
@@ -55,25 +58,21 @@ export function MDXPage(
 
         if (!mdxRoutesData) return null;
 
-        return createElement(BottomNavigationComponent, {
-          ...props,
-          routes: mdxRoutesData,
-        });
+        return <BottomNavigationComponent {...props} routes={mdxRoutesData} />;
       },
       [mdxRoutes]
     );
 
-    return createElement(
-      Component,
-      {
-        content,
-        frontMatter,
-        useTranslation,
-        TOC,
-        MetaHead,
-        BottomNavigation,
-      },
-      children
+    return (
+      <Component
+        content={content}
+        frontMatter={frontMatter}
+        useTranslation={useTranslation}
+        TOC={TOC}
+        MetaHead={MetaHead}
+        BottomNavigation={BottomNavigation}
+        children={children}
+      />
     );
   };
 }

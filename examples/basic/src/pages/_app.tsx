@@ -6,7 +6,7 @@ import { appWithTranslation } from 'next-i18next';
 
 import { extendTheme, theme as chakraTheme } from '@chakra-ui/react';
 import { mode } from '@chakra-ui/theme-tools';
-import { ExtendComponents, handlePushRoute, CombinedThemeProvider, DocsPage } from '@guild-docs/client';
+import { ExtendComponents, handlePushRoute, CombinedThemeProvider, DocsPage, AppSeoProps } from '@guild-docs/client';
 import { Header, Subheader } from '@theguild/components';
 
 import type { AppProps } from 'next/app';
@@ -106,24 +106,19 @@ const AppContentWrapper = appWithTranslation(function TranslatedApp(appProps) {
   return <AppContent {...appProps} />;
 });
 
+const defaultSeo: AppSeoProps = {
+  title: 'Guild Docs',
+  description: 'Guild Docs Example',
+  logo: {
+    url: 'https://the-guild-docs.vercel.app/assets/subheader-logo.png',
+    width: 50,
+    height: 54,
+  },
+};
+
 export default function App(appProps: AppProps) {
   return (
-    <CombinedThemeProvider
-      theme={theme}
-      accentColor={accentColor}
-      defaultSeo={{
-        title: 'Guild Docs',
-        description: 'Guild Docs Example',
-        openGraph: {
-          images: [
-            {
-              url: 'https://the-guild-docs.vercel.app/assets/subheader-logo.png',
-            },
-          ],
-          type: 'website',
-        },
-      }}
-    >
+    <CombinedThemeProvider theme={theme} accentColor={accentColor} defaultSeo={defaultSeo}>
       <AppContentWrapper {...appProps} />
     </CombinedThemeProvider>
   );
