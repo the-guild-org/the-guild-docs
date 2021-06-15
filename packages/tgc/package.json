@@ -18,7 +18,7 @@
   "dependencies": {
     "@emotion/react": "^11.4.0",
     "@emotion/styled": "^11.3.0",
-    "algoliasearch": "^4.9.2",
+    "algoliasearch": "^4.9.3",
     "core-js": "^3.14.0",
     "focus-trap-react": "^8.5.1",
     "polished": "^4.1.3",
