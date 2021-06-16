@@ -13,9 +13,6 @@ export * from '@guild-docs/types';
 
 export function withGuildDocs({ env = {}, getRoutes, ...rest }: WithGuildDocsOptions) {
   return {
-    future: {
-      webpack5: true,
-    },
     env: {
       SERIALIZED_MDX_ROUTES: JSON.stringify(getRoutes()),
       ...env,
