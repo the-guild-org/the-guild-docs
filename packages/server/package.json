@@ -31,7 +31,7 @@
   "dependencies": {
     "@guild-docs/types": "workspace:^0.2.8",
     "github-slugger": "^1.3.0",
-    "globby": "^11.0.3",
+    "globby": "^11.0.4",
     "gray-matter": "^4.0.3",
     "next-mdx-remote": "^3.0.2",
     "remark-emoji": "^2.2.0",
