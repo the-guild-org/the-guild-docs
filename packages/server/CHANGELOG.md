@@ -1,5 +1,11 @@
 # @guild-docs/server
 
+## 0.2.13
+
+### Patch Changes
+
+- a09e602: add "ignorePaths" for "GenerateRoutes"
+
 ## 0.2.12
 
 ### Patch Changes

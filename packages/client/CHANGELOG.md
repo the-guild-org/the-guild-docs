@@ -1,5 +1,13 @@
 # @guild-docs/client
 
+## 0.2.13
+
+### Patch Changes
+
+- da82066: fix headings spacings
+- a41c026: improve mdx components
+- d95cf9e: fix DocsPageProps
+
 ## 0.2.12
 
 ### Patch Changes
