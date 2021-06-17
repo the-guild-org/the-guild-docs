@@ -21,6 +21,7 @@ export interface AddRoutesConfig {
   basePathLabel?: string;
   replaceBasePath?: string;
   labels?: Record<string, string | [title: string, sidebar_label: string] | undefined>;
+  ignorePaths?: string[];
 }
 
 function getTitle(value: string | [title: string, sidebar_label: string]): string {
@@ -32,7 +33,15 @@ function getSidebarLabel(value: string | [title: string, sidebar_label: string])
 }
 
 export function GenerateRoutes(config: AddRoutesConfig) {
-  const { basePath, basePathLabel, folderPattern, Routes = {}, replaceBasePath = config.folderPattern, labels = {} } = config;
+  const {
+    basePath,
+    basePathLabel,
+    folderPattern,
+    Routes = {},
+    replaceBasePath = config.folderPattern,
+    labels = {},
+    ignorePaths,
+  } = config;
 
   const baseRoutes: IRoutes = basePathLabel ? ({ $name: basePathLabel } as IRoutes) : {};
 
@@ -53,6 +62,8 @@ export function GenerateRoutes(config: AddRoutesConfig) {
     let acumSlug = '';
     for (const [index, slug] of slugList.entries()) {
       acumSlug += slug;
+      if (ignorePaths?.includes(acumSlug)) continue;
+
       if (index === slugList.length - 1) {
         const currentRouteRoutes = (currentRoute.$routes ||= []);
         const existingRouteIndex = currentRouteRoutes.findIndex(v => (Array.isArray(v) ? v[0] : v) === slug);
