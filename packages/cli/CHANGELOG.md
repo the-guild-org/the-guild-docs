@@ -1,5 +1,13 @@
 # guild-docs
 
+## 0.2.13
+
+### Patch Changes
+
+- ef68d6d: add bundle-analyzer & improve dev scripts
+- a41c026: update nextjs cli boilerplate
+- 6077e5f: remove duplicated navigation route
+
 ## 0.2.12
 
 ### Patch Changes
