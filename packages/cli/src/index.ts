@@ -1,9 +1,10 @@
 #!/usr/bin/env node
 
 import { program } from 'commander';
-import { resolve } from 'path';
+import mkdirp from 'mkdirp';
+import { dirname, resolve } from 'path';
 
-import { getPaths, setConfig } from './cliConfig';
+import { config, getPaths, setConfig } from './cliConfig';
 import { addDependency, addPackageResolutions, addPackageScripts } from './editPackageJson';
 import {
   writeApp,
@@ -21,6 +22,8 @@ program.version(require(resolve(__dirname, '../package.json')).version).descript
 
 async function DepsAction(dir: string = process.cwd()) {
   setConfig(getPaths(dir));
+
+  await mkdirp(dirname(config.packageJsonPath));
 
   await Promise.all([
     addDependency([

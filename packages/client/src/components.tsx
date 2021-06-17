@@ -2,7 +2,7 @@ import { useTranslation } from 'next-i18next';
 import ImageImport from 'next/image';
 import NextLinkImport from 'next/link';
 import React, { ComponentType, ReactNode } from 'react';
-import DynamicImport from 'next/dynamic';
+
 import {
   Box,
   BoxProps,
@@ -29,15 +29,13 @@ import {
   useColorModeValue,
 } from '@chakra-ui/react';
 
+import { PackageInstall } from './components/PackageInstall';
 import { getDefault } from './utils';
 
 import type { LinkProps as NextLinkProps } from 'next/link';
-import type { PackageInstallProps } from './components/PackageInstall';
 
 const Image = getDefault(ImageImport);
 const NextLink = getDefault(NextLinkImport);
-
-const NextDynamic = getDefault(DynamicImport);
 
 export function Translated({ children, name }: { children?: ReactNode; name?: string }): ReactNode {
   const { t } = useTranslation('common');
@@ -239,8 +237,6 @@ export const td = (props: BoxProps) => (
   <Box as="td" p={2} borderTopWidth="1px" borderColor="inherit" fontSize="sm" whiteSpace="normal" {...props} />
 );
 
-const PackageInstall = NextDynamic<PackageInstallProps>(() => import('./components/PackageInstall').then(v => v.PackageInstall));
-
 export const components = {
   Image,
   h1,
@@ -264,9 +260,27 @@ export const components = {
   Button,
   Translated,
   Stack,
-  inlineCode: (props: CodeProps) => <Code colorScheme="yellow" fontSize="0.84em" {...props} />,
+  inlineCode: (props: CodeProps) => {
+    const colorScheme = useColorModeValue('blackAlpha', undefined);
+
+    return <Code display={'inline'} margin="1px" colorScheme={colorScheme} fontWeight="semibold" fontSize="0.875em" {...props} />;
+  },
   Tooltip: (props: TooltipProps) => <Tooltip padding="1" textAlign="center" {...props} />,
   PackageInstall,
+  pre: (props: CodeProps) => {
+    const colorScheme = useColorModeValue('blackAlpha', undefined);
+
+    return (
+      <Code
+        fontSize="0.9rem"
+        colorScheme={colorScheme}
+        padding={'20px !important'}
+        width={'100%'}
+        borderRadius={'sm'}
+        {...props}
+      />
+    );
+  },
 };
 
 // Workaround to this issue with TypeScript: https://github.com/microsoft/TypeScript/issues/42873

@@ -18,7 +18,8 @@
     "dev": "tsup --watch --onSuccess \"pnpm dev-start\"",
     "dev-start": "node lib/index.js init ../../examples/basic",
     "prepack": "pnpm build",
-    "postpublish": "gh-release"
+    "postpublish": "gh-release",
+    "test-new": "rimraf \"../../examples/new\" && tsup --silent && node lib/index.js init \"../../examples/new\""
   },
   "devDependencies": {
     "@types/edit-json-file": "1.4.0",
