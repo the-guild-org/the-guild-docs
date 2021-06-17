@@ -129,7 +129,9 @@ export const HeadingMarkdown = ({
     <Heading
       as={as}
       size={size}
-      marginY="0.8em"
+      my="0.5em"
+      mt="-24"
+      pt="28"
       id={id}
       _hover={{
         a: {
@@ -263,7 +265,7 @@ export const components = {
   inlineCode: (props: CodeProps) => {
     const colorScheme = useColorModeValue('blackAlpha', undefined);
 
-    return <Code display={'inline'} margin="1px" colorScheme={colorScheme} fontWeight="semibold" fontSize="0.875em" {...props} />;
+    return <Code display="inline" margin="1px" colorScheme={colorScheme} fontWeight="semibold" fontSize="0.875em" {...props} />;
   },
   Tooltip: (props: TooltipProps) => <Tooltip padding="1" textAlign="center" {...props} />,
   PackageInstall,
@@ -271,14 +273,7 @@ export const components = {
     const colorScheme = useColorModeValue('blackAlpha', undefined);
 
     return (
-      <Code
-        fontSize="0.9rem"
-        colorScheme={colorScheme}
-        padding={'20px !important'}
-        width={'100%'}
-        borderRadius={'sm'}
-        {...props}
-      />
+      <Code fontSize="0.9rem" colorScheme={colorScheme} padding="20px !important" width="100%" borderRadius="sm" {...props} />
     );
   },
 };
