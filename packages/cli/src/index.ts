@@ -63,6 +63,8 @@ async function DepsAction(dir: string = process.cwd()) {
         'open-cli',
         'wait-on',
         'next-remote-watch',
+        '@next/bundle-analyzer',
+        'cross-env',
       ],
       {
         isDev: true,
@@ -70,9 +72,10 @@ async function DepsAction(dir: string = process.cwd()) {
     ),
     addPackageScripts({
       build: 'next build',
-      dev: 'concurrently -r "next-remote-watch ./docs" "wait-on -s 1 http://localhost:3000 && open-cli http://localhost:3000"',
+      dev: 'concurrently -r "next-remote-watch ./docs ./src/pages/_app.tsx ./src/pages/_document.tsx" "wait-on -s 1 http://localhost:3000 && open-cli http://localhost:3000"',
       next: 'next',
       start: 'next start',
+      analyze: 'cross-env ANALYZE=true next build',
     }),
     addPackageResolutions({
       esbuild: '^0.12.8',
