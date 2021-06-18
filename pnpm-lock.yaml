@@ -169,7 +169,7 @@ importers:
       next: ^11.0.0
       next-i18next: ^8.5.0
       next-mdx-remote: ^3.0.2
-      next-seo: ^4.25.1
+      next-seo: ^4.26.0
       nprogress: ^0.2.0
       react: 17.0.2
       react-dom: 17.0.2
@@ -183,7 +183,7 @@ importers:
       '@guild-docs/types': link:../types
       immer: 9.0.3
       next-mdx-remote: 3.0.2_react-dom@17.0.2+react@17.0.2
-      next-seo: 4.25.1_202b18601d71dc92f6dbf39b46c5242f
+      next-seo: 4.26.0_202b18601d71dc92f6dbf39b46c5242f
       nprogress: 0.2.0
       react-icons: 4.2.0_react@17.0.2
       react-intersection-observer: 8.32.0_react@17.0.2
@@ -9919,6 +9919,18 @@ packages:
 
   /next-seo/4.25.1_202b18601d71dc92f6dbf39b46c5242f:
     resolution: {integrity: sha512-McZxm24OWrq/7dFqE1PUrvb5+FR2l4vT8hEdjO5XmnhFqYi0GDvWG2bIOczif5afSVU4aYPmUli/cOYR36Q1dw==}
+    peerDependencies:
+      next: ^8.1.1-canary.54 || >=9.0.0
+      react: '>=16.0.0'
+      react-dom: '>=16.0.0'
+    dependencies:
+      next: 11.0.0_b8ab330e9e90828dbee94d91c8f5e91e
+      react: 17.0.2
+      react-dom: 17.0.2_react@17.0.2
+    dev: false
+
+  /next-seo/4.26.0_202b18601d71dc92f6dbf39b46c5242f:
+    resolution: {integrity: sha512-5TqywQ3XAwqdmEU1AyNZjR7WdDKFTkDD8aBtgQelPvzBUEy8i0mTjtiw+09jhiHFNik6FqS8uPKCaYcY6jRgSQ==}
     peerDependencies:
       next: ^8.1.1-canary.54 || >=9.0.0
       react: '>=16.0.0'
