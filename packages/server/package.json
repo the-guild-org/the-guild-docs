@@ -39,7 +39,7 @@
   },
   "devDependencies": {
     "@types/github-slugger": "1.3.0",
-    "bob-esbuild-cli": "0.1.26",
+    "bob-esbuild-cli": "0.1.27",
     "changesets-github-release": "0.0.3",
     "esbuild": "^0.12.9",
     "next": "^11.0.0",
