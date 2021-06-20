@@ -267,7 +267,7 @@ importers:
       algoliasearch: ^4.9.3
       bob-esbuild-cli: 0.1.27
       changesets-github-release: 0.0.3
-      core-js: ^3.14.0
+      core-js: ^3.15.0
       focus-trap-react: ^8.6.0
       polished: ^4.1.3
       postcss: 8.3.5
@@ -287,7 +287,7 @@ importers:
       '@emotion/react': 11.4.0_@babel+core@7.14.6+react@17.0.2
       '@emotion/styled': 11.3.0_7020f8910c5fb7994a2955b2c6d07b0c
       algoliasearch: 4.9.3
-      core-js: 3.14.0
+      core-js: 3.15.0
       focus-trap-react: 8.6.0_react-dom@17.0.2+react@17.0.2
       polished: 4.1.3
       react-instantsearch-dom: 6.11.1_79cc8070834cd1c7531f7ba36c226e2a
@@ -5856,6 +5856,11 @@ packages:
   /core-js/3.14.0:
     resolution: {integrity: sha512-3s+ed8er9ahK+zJpp9ZtuVcDoFzHNiZsPbNAAE4KXgrRHbjSqqNN6xGSXq6bq7TZIbKj4NLrLb6bJ5i+vSVjHA==}
     requiresBuild: true
+
+  /core-js/3.15.0:
+    resolution: {integrity: sha512-GUbtPllXMYRzIgHNZ4dTYTcUemls2cni83Q4Q/TrFONHfhcg9oEGOtaGHfb0cpzec60P96UKPvMkjX1jET8rUw==}
+    requiresBuild: true
+    dev: false
 
   /core-util-is/1.0.2:
     resolution: {integrity: sha1-tf1UIgqivFq1eqtxQMlAdUUDwac=}
