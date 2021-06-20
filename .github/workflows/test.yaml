@@ -32,4 +32,4 @@ jobs:
         run: pnpm i
 
       - name: Build
-        run: pnpm -r --stream build
+        run: pnpm -r build
