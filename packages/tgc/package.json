@@ -27,7 +27,7 @@
     "react-player": "^2.9.0",
     "tailwindcss": "^2.2.2",
     "twin.macro": "^2.5.0",
-    "use-debounce": "^6.0.1"
+    "use-debounce": "^7.0.0"
   },
   "devDependencies": {
     "@babel/core": "7.14.6",

@@ -282,7 +282,7 @@ importers:
       rollup-plugin-copy: 3.4.0
       tailwindcss: ^2.2.2
       twin.macro: ^2.5.0
-      use-debounce: ^6.0.1
+      use-debounce: ^7.0.0
     dependencies:
       '@emotion/react': 11.4.0_@babel+core@7.14.6+react@17.0.2
       '@emotion/styled': 11.3.0_7020f8910c5fb7994a2955b2c6d07b0c
@@ -295,7 +295,7 @@ importers:
       react-player: 2.9.0_react@17.0.2
       tailwindcss: 2.2.2_postcss@8.3.5
       twin.macro: 2.5.0
-      use-debounce: 6.0.1_react@17.0.2
+      use-debounce: 7.0.0_react@17.0.2
     devDependencies:
       '@babel/core': 7.14.6
       '@babel/preset-env': 7.14.5_@babel+core@7.14.6
@@ -13695,6 +13695,15 @@ packages:
       react: '>=16.8.0'
     dependencies:
       react: 17.0.2
+
+  /use-debounce/7.0.0_react@17.0.2:
+    resolution: {integrity: sha512-4fvxEEs7ztdNMh+c497HAgysdq2+Ascem6EaDANGlCIap1JzqfL03Xw8xkYc2lShfXm4uO6PA6V5zcXN7gJdFA==}
+    engines: {node: '>= 10.0.0'}
+    peerDependencies:
+      react: '>=16.8.0'
+    dependencies:
+      react: 17.0.2
+    dev: false
 
   /use-immer/0.5.2_immer@9.0.3+react@17.0.2:
     resolution: {integrity: sha512-aHnLa85kftWo05lqJVOy3GLXrydqu6kl0MXvo5k5OW8IoLJixa9NY/48Xdy0LlcqdakBTFLbSDZaYVPMVhYy8Q==}
