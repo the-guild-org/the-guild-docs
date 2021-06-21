@@ -101,7 +101,20 @@ function AppContent(appProps: AppProps) {
           rel: 'noopener noreferrer',
         }}
       />
-      {isDocs ? <DocsPage appProps={appProps} accentColor={accentColor} mdxRoutes={mdxRoutes} /> : <Component {...pageProps} />}
+      {isDocs ? (
+        <DocsPage
+          appProps={appProps}
+          accentColor={accentColor}
+          mdxRoutes={mdxRoutes}
+          docsContainerProps={{
+            maxW: '1600px',
+            display: 'flex',
+            justifyContent: 'center',
+          }}
+        />
+      ) : (
+        <Component {...pageProps} />
+      )}
     </>
   );
 }
