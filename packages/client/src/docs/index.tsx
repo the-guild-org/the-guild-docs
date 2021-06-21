@@ -94,6 +94,7 @@ export const DocsContent = chakra('article', {
     flex: {
       lg: '1 1 0%',
     },
+    wordBreak: 'break-word',
   },
 });
 
