@@ -47,7 +47,7 @@ function Item({
   depth,
   accentColor,
   handleLinkClick,
-  defaultOpenDepth = 2,
+  defaultOpenDepth = 1,
   ...styleProps
 }: {
   item: Paths;
