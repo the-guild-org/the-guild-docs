@@ -145,6 +145,7 @@ function Item({
               depth={depth + 1}
               accentColor={accentColor}
               handleLinkClick={handleLinkClick}
+              defaultOpenDepth={defaultOpenDepth}
               {...styleProps}
             />
           </Collapse>
