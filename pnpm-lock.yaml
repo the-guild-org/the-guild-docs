@@ -178,7 +178,7 @@ importers:
       react-use: ^17.2.4
       typescript: 4.3.4
       use-immer: ^0.5.2
-      zustand: ^3.5.2
+      zustand: ^3.5.4
     dependencies:
       '@guild-docs/types': link:../types
       immer: 9.0.3
@@ -189,7 +189,7 @@ importers:
       react-intersection-observer: 8.32.0_react@17.0.2
       react-use: 17.2.4_react-dom@17.0.2+react@17.0.2
       use-immer: 0.5.2_immer@9.0.3+react@17.0.2
-      zustand: 3.5.2_react@17.0.2
+      zustand: 3.5.4_react@17.0.2
     devDependencies:
       '@chakra-ui/icons': 1.0.13_f314da12debc3366f1a8ba17c0536e75
       '@chakra-ui/layout': 1.4.6_f314da12debc3366f1a8ba17c0536e75
@@ -13315,8 +13315,8 @@ packages:
       wrap-ansi: 2.1.0
     dev: true
 
-  /zustand/3.5.2_react@17.0.2:
-    resolution: {integrity: sha512-HUCQI9O77/D/zvoWPNv4dwLriiiY2xtEqnQ0TVY8uaPjmOHls04Okd0w3sWUE9Ex2LaYlSk11DbPPIOZ6shEWg==}
+  /zustand/3.5.4_react@17.0.2:
+    resolution: {integrity: sha512-EtS3D83il8eiydRS+xUcpczffT0MpD9ePIqAT10ns2tfzPvq85nmMmYJl9mOLOJjPLaXAMK8lgk0iCz2h7CxGg==}
     peerDependencies:
       react: '>=16.8'
     peerDependenciesMeta:
