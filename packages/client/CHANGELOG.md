@@ -1,5 +1,14 @@
 # @guild-docs/client
 
+## 0.2.14
+
+### Patch Changes
+
+- e4c8fba: add isAccordionDefaultOpen callback & minor improvements/fixes
+- e4c8fba: default style improvements & fix defaultOpenDepth
+- Updated dependencies [e4c8fba]
+  - @guild-docs/types@0.2.14
+
 ## 0.2.13
 
 ### Patch Changes
