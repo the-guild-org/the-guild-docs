@@ -78,7 +78,7 @@ async function DepsAction(dir: string = process.cwd()) {
       analyze: 'cross-env ANALYZE=true next build',
     }),
     addPackageResolutions({
-      esbuild: '^0.12.8',
+      esbuild: '^0.12.9',
     }),
   ]);
 
