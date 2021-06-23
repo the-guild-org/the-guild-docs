@@ -102,8 +102,10 @@ export function MDXTOC({ toc, wrapperProps, linkProps, titleProps }: MDXTOCProps
     };
   }, [toc]);
 
+  const tocWrapperBackgroundColor = useColorModeValue('gray.200', 'gray.800');
+
   return (
-    <Wrapper {...wrapperProps} backgroundColor={useColorModeValue('gray.200', 'gray.800')}>
+    <Wrapper backgroundColor={tocWrapperBackgroundColor} {...wrapperProps}>
       <Title {...titleProps}>Content</Title>
       {toc.map(([id, depth, label]) => {
         const isActive = activeId === id;

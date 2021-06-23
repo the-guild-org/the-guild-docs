@@ -7,7 +7,8 @@ export const DocsContainer = chakra('section', {
       base: 'wrap',
       lg: 'nowrap',
     },
-    maxW: '1200px',
+    maxW: '1600px',
+    justifyContent: 'center',
     width: '100%',
     mx: 'auto',
     px: '1.5rem',
@@ -94,6 +95,8 @@ export const DocsContent = chakra('article', {
     flex: {
       lg: '1 1 0%',
     },
+    wordBreak: 'break-word',
+    maxW: '80ch',
   },
 });
 

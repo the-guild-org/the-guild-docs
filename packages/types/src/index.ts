@@ -60,6 +60,10 @@ export interface MDXNavigationProps {
    * @default 2
    */
   defaultOpenDepth?: number;
+  /**
+   * Override defaultOpenDepth logic with custom function
+   */
+  isAccordionDefaultOpen?: (args: { href: string; currentDepth: number }) => boolean;
 }
 
 export interface BottomNavigationProps {

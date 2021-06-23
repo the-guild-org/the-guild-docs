@@ -47,7 +47,8 @@ function Item({
   depth,
   accentColor,
   handleLinkClick,
-  defaultOpenDepth = 2,
+  defaultOpenDepth = 1,
+  isAccordionDefaultOpen,
   ...styleProps
 }: {
   item: Paths;
@@ -57,16 +58,23 @@ function Item({
 } & Partial<MDXNavigationProps>) {
   const finalHref = concatHrefs(acumHref, href);
 
+  const pathsData = paths?.length ? paths : null;
+
+  const isAnchor = isPage && !pathsData;
+
   const { isOpen, onToggle, onOpen } = useDisclosure({
-    defaultIsOpen: depth < defaultOpenDepth,
+    defaultIsOpen: pathsData
+      ? isAccordionDefaultOpen
+        ? isAccordionDefaultOpen({
+            currentDepth: depth,
+            href: finalHref,
+          })
+        : depth < defaultOpenDepth
+      : false,
   });
 
   const currentIsOpen = useRef(isOpen);
   currentIsOpen.current = isOpen;
-
-  const pathsData = paths?.length ? paths : null;
-
-  const isAnchor = isPage && !pathsData;
 
   const [isActive, setIsActive] = useState(false);
 
@@ -94,7 +102,7 @@ function Item({
     return () => {
       Router.events.off('routeChangeComplete', routeChangeHandler);
     };
-  }, [finalHref, currentIsActive, isAnchor]);
+  }, [finalHref, currentIsActive]);
 
   const label = sidebar || name || href.replace(/-/g, ' ');
 
@@ -118,13 +126,19 @@ function Item({
     },
   };
 
+  const inactiveLinkColor = useColorModeValue('gray.400', 'gray.500');
+
+  const summaryOpenColor = useColorModeValue('black', 'white');
+
+  const summaryClosedColor = useColorModeValue('gray.400', 'gray.500');
+
   return (
     <>
       {pathsData ? (
         <Details {...(depth !== 0 && innerItemStyles)} {...styleProps.detailsProps?.(propsArgs)}>
           <Summary
             onClick={onToggle}
-            color={isOpen ? useColorModeValue('black', 'white') : useColorModeValue('gray.400', 'gray.500')}
+            color={isOpen ? summaryOpenColor : summaryClosedColor}
             {...styleProps.summaryProps?.(propsArgs)}
             {...hoverItemStyles}
           >
@@ -145,6 +159,8 @@ function Item({
               depth={depth + 1}
               accentColor={accentColor}
               handleLinkClick={handleLinkClick}
+              defaultOpenDepth={defaultOpenDepth}
+              isAccordionDefaultOpen={isAccordionDefaultOpen}
               {...styleProps}
             />
           </Collapse>
@@ -166,7 +182,7 @@ function Item({
                 }
           }
           href={isAnchor ? finalHref : undefined}
-          color={isActive ? accentColor : useColorModeValue('gray.400', 'gray.500')}
+          color={isActive ? accentColor : inactiveLinkColor}
           {...(depth !== 0 && innerItemStyles)}
           {...styleProps.linkProps?.(propsArgs)}
           {...hoverItemStyles}
@@ -180,6 +196,10 @@ function Item({
 
 export type { MDXNavigationProps };
 
+const MdxNavWrapper = chakra('nav', {
+  baseStyle: {},
+});
+
 export function MDXNavigation({
   paths,
   acumHref = '',
@@ -188,12 +208,8 @@ export function MDXNavigation({
   handleLinkClick,
   ...styleProps
 }: MDXNavigationProps) {
-  const Wrapper = chakra('nav', {
-    baseStyle: {},
-  });
-
   return (
-    <Wrapper ml={depth !== 0 ? '1rem' : 0} {...styleProps.wrapperProps}>
+    <MdxNavWrapper ml={depth !== 0 ? '1rem' : 0} {...styleProps.wrapperProps}>
       {paths.map((item, index) => {
         return (
           <Item
@@ -207,7 +223,7 @@ export function MDXNavigation({
           />
         );
       })}
-    </Wrapper>
+    </MdxNavWrapper>
   );
 }
 

@@ -128,7 +128,6 @@ export function DocsPage({ appProps: { pageProps, Component }, accentColor, ...r
           paths={iterateRoutes(paths)}
           accentColor={accentColor}
           handleLinkClick={onClose}
-          defaultOpenDepth={4}
           {...restProps.mdxNavigationProps}
         />
       </DocsNavigation>
