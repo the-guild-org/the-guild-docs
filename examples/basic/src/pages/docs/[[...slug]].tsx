@@ -11,7 +11,7 @@ export default MDXPage(function PostPage({ content, TOC, MetaHead, BottomNavigat
   return (
     <>
       <Head>{MetaHead}</Head>
-      <DocsContent maxW="80ch">{content}</DocsContent>
+      <DocsContent>{content}</DocsContent>
       <DocsTOC>
         <TOC />
         <BottomNavigation />
