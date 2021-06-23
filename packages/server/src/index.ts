@@ -17,6 +17,10 @@ export function withGuildDocs({ env = {}, getRoutes, ...rest }: WithGuildDocsOpt
       SERIALIZED_MDX_ROUTES: JSON.stringify(getRoutes()),
       ...env,
     },
+    // Disable eslint by default, it can be overriden
+    eslint: {
+      ignoreDuringBuilds: true,
+    },
     ...rest,
   };
 }
