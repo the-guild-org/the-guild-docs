@@ -1,5 +1,11 @@
 # @guild-docs/types
 
+## 0.2.14
+
+### Patch Changes
+
+- e4c8fba: add isAccordionDefaultOpen callback & minor improvements/fixes
+
 ## 0.2.8
 
 ### Patch Changes
