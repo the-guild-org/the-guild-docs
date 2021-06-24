@@ -1,5 +1,4 @@
 ---
-'basic': patch
 '@guild-docs/client': patch
 ---
 
