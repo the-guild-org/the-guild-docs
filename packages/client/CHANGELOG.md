@@ -1,5 +1,11 @@
 # @guild-docs/client
 
+## 0.2.15
+
+### Patch Changes
+
+- 9d8ef05: Fixed ToC links overflow
+
 ## 0.2.14
 
 ### Patch Changes

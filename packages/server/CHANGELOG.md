@@ -1,5 +1,11 @@
 # @guild-docs/server
 
+## 0.2.15
+
+### Patch Changes
+
+- b25d5ec: Disable eslint by default, it can be overriden
+
 ## 0.2.13
 
 ### Patch Changes
