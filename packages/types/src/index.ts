@@ -57,7 +57,7 @@ export interface MDXNavigationProps {
   collapseProps?: (args: MDXNavigationAccordionArgs) => Omit<ComponentProps<typeof Collapse>, 'children'>;
   linkProps?: (args: MDXNavigationAccordionArgs) => Omit<ComponentProps<ChakraComponent<'a', {}>>, 'children'>;
   /**
-   * @default 2
+   * @default 1
    */
   defaultOpenDepth?: number;
   /**
