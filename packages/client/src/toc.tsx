@@ -30,7 +30,7 @@ const Link = chakra('a', {
   baseStyle: {
     display: 'block',
     width: 'fit-content',
-    wordBreak: 'break-all',
+    wordBreak: 'break-word',
     my: '0.5rem',
     fontSize: '0.875rem',
     transition: '0.15s',
