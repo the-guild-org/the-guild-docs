@@ -1,5 +1,11 @@
 # guild-docs
 
+## 0.2.15
+
+### Patch Changes
+
+- 947a020: update esbuild
+
 ## 0.2.13
 
 ### Patch Changes
