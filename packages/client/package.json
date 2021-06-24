@@ -38,7 +38,7 @@
     "react-icons": "^4.2.0",
     "react-intersection-observer": "^8.32.0",
     "react-use": "^17.2.4",
-    "use-immer": "^0.5.2",
+    "use-immer": "^0.6.0",
     "zustand": "^3.5.4"
   },
   "devDependencies": {
