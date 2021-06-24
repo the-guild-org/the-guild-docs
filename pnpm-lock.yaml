@@ -177,7 +177,7 @@ importers:
       react-intersection-observer: ^8.32.0
       react-use: ^17.2.4
       typescript: 4.3.4
-      use-immer: ^0.5.2
+      use-immer: ^0.6.0
       zustand: ^3.5.4
     dependencies:
       '@guild-docs/types': link:../types
@@ -188,7 +188,7 @@ importers:
       react-icons: 4.2.0_react@17.0.2
       react-intersection-observer: 8.32.0_react@17.0.2
       react-use: 17.2.4_react-dom@17.0.2+react@17.0.2
-      use-immer: 0.5.2_immer@9.0.3+react@17.0.2
+      use-immer: 0.6.0_immer@9.0.3+react@17.0.2
       zustand: 3.5.4_react@17.0.2
     devDependencies:
       '@chakra-ui/icons': 1.0.13_f314da12debc3366f1a8ba17c0536e75
@@ -12659,8 +12659,8 @@ packages:
     dependencies:
       react: 17.0.2
 
-  /use-immer/0.5.2_immer@9.0.3+react@17.0.2:
-    resolution: {integrity: sha512-aHnLa85kftWo05lqJVOy3GLXrydqu6kl0MXvo5k5OW8IoLJixa9NY/48Xdy0LlcqdakBTFLbSDZaYVPMVhYy8Q==}
+  /use-immer/0.6.0_immer@9.0.3+react@17.0.2:
+    resolution: {integrity: sha512-dFGRfvWCqPDTOt/S431ETYTg6+uxbpb7A1pptufwXVzGJY3RlXr38+3wyLNpc6SbbmAKjWl6+EP6uW74fkEsXQ==}
     peerDependencies:
       immer: '>=2.0.0'
       react: ^16.8.0 || ^17.0.1
