@@ -125,7 +125,7 @@ importers:
       '@types/node': 15.12.2
       '@types/prettier': 2.3.0
       changesets-github-release: 0.0.3
-      commander: 7.2.0
+      commander: 8.0.0
       edit-json-file: 1.6.0
       esbuild: ^0.12.9
       mkdirp: 1.0.4
@@ -138,7 +138,7 @@ importers:
       '@types/node': 15.12.2
       '@types/prettier': 2.3.0
       changesets-github-release: 0.0.3
-      commander: 7.2.0
+      commander: 8.0.0
       edit-json-file: 1.6.0
       esbuild: 0.12.9
       mkdirp: 1.0.4
@@ -5636,6 +5636,11 @@ packages:
   /commander/7.2.0:
     resolution: {integrity: sha512-QrWXB+ZQSVPmIWIhtEO9H+gwHaMGYiF5ChvoJ+K9ZGHG/sVsa6yiesAD1GC/x46sET00Xlwo1u49RVVVzvcSkw==}
     engines: {node: '>= 10'}
+    dev: true
+
+  /commander/8.0.0:
+    resolution: {integrity: sha512-Xvf85aAtu6v22+E5hfVoLHqyul/jyxh91zvqk/ioJTQuJR7Z78n7H558vMPKanPSRgIEeZemT92I2g9Y8LPbSQ==}
+    engines: {node: '>= 12'}
     dev: true
 
   /common-tags/1.8.0:
