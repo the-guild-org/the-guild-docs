@@ -34,6 +34,10 @@ export interface CombinedThemeProps {
   theme: Dict;
   accentColor: string;
   defaultSeo: AppSeoProps;
+  /**
+   * @default true
+   */
+  includeFonts?: boolean;
 }
 
 export interface AppSeoProps extends DefaultSeoProps {
@@ -42,7 +46,7 @@ export interface AppSeoProps extends DefaultSeoProps {
   logo: OpenGraphImages;
 }
 
-export function CombinedThemeProvider({ children, theme, accentColor, defaultSeo }: CombinedThemeProps) {
+export function CombinedThemeProvider({ children, theme, accentColor, defaultSeo, includeFonts = true }: CombinedThemeProps) {
   const DefaultSEO = useMemo(() => {
     if (!defaultSeo) throw Error('No `defaultSeo` specified in CombinedThemeProvider');
     const { logo, ...props } = defaultSeo;
@@ -66,7 +70,7 @@ export function CombinedThemeProvider({ children, theme, accentColor, defaultSeo
       <ChakraProvider theme={theme}>
         <TGCThemeProviderComponent>
           {children}
-          <GlobalStyles />
+          <GlobalStyles includeFonts={includeFonts} />
         </TGCThemeProviderComponent>
         <NextNProgress color={accentColor} />
       </ChakraProvider>
@@ -116,7 +120,7 @@ export interface DocsPageProps {
 export function DocsPage({ appProps: { pageProps, Component }, accentColor, ...restProps }: DocsPageProps) {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
-  const mdxRoutes: MdxInternalProps['mdxRoutes'] | undefined = pageProps.mdxRoutes;
+  const mdxRoutes: MdxInternalProps['mdxRoutes'] = pageProps.mdxRoutes;
   const Navigation = useMemo(() => {
     const paths: IRoutes =
       mdxRoutes === 1 ? restProps.mdxRoutes.data : (restProps.mdxRoutes.data = mdxRoutes || restProps.mdxRoutes.data);
