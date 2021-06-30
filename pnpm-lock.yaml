@@ -156,7 +156,7 @@ importers:
       '@emotion/react': 11.4.0
       '@guild-docs/types': workspace:^0.2.14
       '@mdx-js/react': 1.6.22
-      '@theguild/components': ^1.4.0
+      '@theguild/components': ^1.4.2
       '@types/mdx-js__react': 1.5.3
       '@types/nprogress': 0.2.0
       '@types/react': 17.0.11
@@ -198,7 +198,7 @@ importers:
       '@chakra-ui/utils': 1.8.0
       '@emotion/react': 11.4.0_189cc19b8edfe5959338b863f6e5c247
       '@mdx-js/react': 1.6.22_react@17.0.2
-      '@theguild/components': 1.4.0_7a759d72fcbc11ce03c9de110c21df82
+      '@theguild/components': 1.4.2_7a759d72fcbc11ce03c9de110c21df82
       '@types/mdx-js__react': 1.5.3
       '@types/nprogress': 0.2.0
       '@types/react': 17.0.11
@@ -4230,6 +4230,37 @@ packages:
       - postcss
       - prop-types
       - ts-node
+    dev: false
+
+  /@theguild/components/1.4.2_7a759d72fcbc11ce03c9de110c21df82:
+    resolution: {integrity: sha512-ERz8MclhrvuSOl7cLMYPQWQT/vNkDyRiow6VpMVKCC2SiXf2Js2RtG8KKMNZY9QwRjX8PhDkJW9KXikV6ugdGA==}
+    peerDependencies:
+      react: ^17.0.2
+      react-dom: ^17.0.2
+    dependencies:
+      '@emotion/react': 11.4.0_189cc19b8edfe5959338b863f6e5c247
+      '@emotion/styled': 11.3.0_3d30eb7fe446b0e582df4c9643515bd8
+      algoliasearch: 4.10.2
+      core-js: 3.15.2
+      focus-trap-react: 8.6.0_react-dom@17.0.2+react@17.0.2
+      polished: 4.1.3
+      react: 17.0.2
+      react-dom: 17.0.2_react@17.0.2
+      react-instantsearch-dom: 6.11.2_6310df5dfbe4ce9a515e604bdeda02d7
+      react-paginate: 7.1.3_react@17.0.2
+      react-player: 2.9.0_react@17.0.2
+      tailwindcss: 2.2.4
+      twin.macro: 2.5.0
+      use-debounce: 7.0.0_react@17.0.2
+      validator: 13.6.0
+    transitivePeerDependencies:
+      - '@babel/core'
+      - '@types/react'
+      - autoprefixer
+      - postcss
+      - prop-types
+      - ts-node
+    dev: true
 
   /@tokenizer/token/0.1.1:
     resolution: {integrity: sha512-XO6INPbZCxdprl+9qa/AAbFFOMzzwqYxpjPgLICrMD6C2FCw6qfJOPcBk6JqqPLSaZ/Qx87qn4rpPmPMwaAK6w==}
