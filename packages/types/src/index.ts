@@ -87,6 +87,6 @@ export interface MdxInternalProps {
   source: MDXRemoteSerializeResult<Record<string, unknown>>;
   frontMatter: Record<string, any>;
   _nextI18Next: SSRConfig['_nextI18Next'];
-  mdxRoutes: IRoutes | 1;
+  mdxRoutes?: IRoutes | 1;
   toc: TOC;
 }

@@ -16,7 +16,7 @@
   "scripts": {
     "build": "tsup --silent",
     "dev": "tsup --watch --onSuccess \"pnpm dev-start\"",
-    "dev-start": "node lib/index.js init ../../examples/basic",
+    "dev-start": "node lib/index.js init ../../examples/basic && pnpm -w pretty",
     "prepack": "pnpm build",
     "postpublish": "gh-release",
     "test-new": "rimraf \"../../examples/new\" && tsup --silent && node lib/index.js init \"../../examples/new\""

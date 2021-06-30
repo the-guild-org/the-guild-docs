@@ -86,10 +86,10 @@ export async function MDXProps(
     getStringParam: (name: string) => string;
     getArrayParam: (name: string) => string[];
   }) => Promise<string | Buffer>,
-  { locale = 'es', params = {} }: Pick<GetStaticPropsContext, 'locale' | 'params'>,
-  { getRoutes }: { getRoutes: () => IRoutes }
+  { locale = 'en', params = {} }: Pick<GetStaticPropsContext, 'locale' | 'params'>,
+  { getRoutes }: { getRoutes?: () => IRoutes } = {}
 ): Promise<GetStaticPropsResult<MdxInternalProps>> {
-  const mdxRoutes: MdxInternalProps['mdxRoutes'] = IS_PRODUCTION ? 1 : getRoutes();
+  const mdxRoutes: MdxInternalProps['mdxRoutes'] = getRoutes ? (IS_PRODUCTION ? 1 : getRoutes()) : undefined;
 
   const prepareMDX = prepareMDXRenderWithTranslations(locale);
 
@@ -148,15 +148,18 @@ export async function MDXProps(
 
   const toc = SerializeTOC(content);
 
-  return {
+  const result: GetStaticPropsResult<MdxInternalProps> = {
     props: {
       source: mdxSource,
       frontMatter: data,
       _nextI18Next,
-      mdxRoutes,
       toc,
     },
   };
+
+  if (mdxRoutes) result.props.mdxRoutes = mdxRoutes;
+
+  return result;
 }
 
 export type MDXCatchAllPathsResult = Promise<{
@@ -179,10 +182,7 @@ export interface MDXPathsOptions {
 
 export async function MDXPaths(
   patterns: string | string[],
-  {
-    ctx: { locales = ['en', 'es'] } = {},
-    replaceBasePath = typeof patterns === 'string' ? patterns : undefined,
-  }: MDXPathsOptions = {}
+  { ctx: { locales = ['en'] } = {}, replaceBasePath = typeof patterns === 'string' ? patterns : undefined }: MDXPathsOptions = {}
 ): MDXCatchAllPathsResult {
   const paths: {
     params: {
