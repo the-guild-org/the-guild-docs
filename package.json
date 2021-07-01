@@ -29,7 +29,7 @@
   "devDependencies": {
     "@changesets/cli": "2.16.0",
     "@types/node": "15.12.5",
-    "@types/react": "17.0.12",
+    "@types/react": "17.0.13",
     "@types/react-instantsearch-core": "6.10.2",
     "@types/react-instantsearch-dom": "6.10.1",
     "@types/react-paginate": "7.1.0",
