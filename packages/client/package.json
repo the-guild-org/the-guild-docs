@@ -56,7 +56,7 @@
     "@types/react-dom": "17.0.8",
     "bob-esbuild-cli": "0.1.27",
     "changesets-github-release": "0.0.3",
-    "esbuild": "^0.12.12",
+    "esbuild": "^0.12.13",
     "framer-motion": "4.1.17",
     "next": "^11.0.1",
     "next-i18next": "^8.5.1",
