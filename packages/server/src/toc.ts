@@ -2,7 +2,7 @@ import githubSlugger from 'github-slugger';
 
 import type { TOC } from '@guild-docs/types';
 
-export function SerializeTOC(content: string) {
+export function SerializeTOC(content: string): TOC {
   const slugger = new githubSlugger();
 
   const lines = content.split('\n');
