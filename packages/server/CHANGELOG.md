@@ -1,5 +1,16 @@
 # @guild-docs/server
 
+## 0.2.16
+
+### Patch Changes
+
+- 919abbb: fix single mdx page outside of docs
+- 7e79a7f: separate and export buildMDX function
+- 19b4cb5: mdx component client & server side
+- Updated dependencies [919abbb]
+- Updated dependencies [19b4cb5]
+  - @guild-docs/types@0.2.16
+
 ## 0.2.15
 
 ### Patch Changes

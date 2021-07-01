@@ -1,5 +1,12 @@
 # @guild-docs/types
 
+## 0.2.16
+
+### Patch Changes
+
+- 919abbb: fix single mdx page outside of docs
+- 19b4cb5: mdx component client & server side
+
 ## 0.2.14
 
 ### Patch Changes

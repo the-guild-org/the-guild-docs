@@ -1,6 +1,6 @@
 {
   "name": "@guild-docs/types",
-  "version": "0.2.14",
+  "version": "0.2.16",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/the-guild-org/the-guild-docs.git"
