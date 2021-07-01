@@ -15,9 +15,9 @@ import { IS_PRODUCTION } from './constants';
 import { getSlug } from './routes';
 import { SerializeTOC } from './toc';
 
-import type { SerializeOptions } from 'next-mdx-remote/dist/types';
+import type { SerializeOptions, MDXRemoteSerializeResult } from 'next-mdx-remote/dist/types';
 import type { GetStaticPathsContext, GetStaticPropsContext, GetStaticPropsResult } from 'next';
-import type { IRoutes, MdxInternalProps, TOC } from '@guild-docs/types';
+import type { IRoutes, MdxInternalProps, TOC, PossiblePromise } from '@guild-docs/types';
 
 const Provideri18n = appWithTranslation(({ children }) => <React.Fragment children={children} />);
 
@@ -77,25 +77,27 @@ async function readMarkdownFile(basePath: string, slugPath: string[]) {
   throw Error("Markdown File Couldn't be found!");
 }
 
-export type {} from 'next-mdx-remote';
+export interface BuildMDXOptions {
+  /**
+   * @default true
+   */
+  buildTOC?: boolean;
+
+  extraRemarkPlugins?: NonNullable<SerializeOptions['mdxOptions']>['remarkPlugins'];
+  extraRehypePlugins?: NonNullable<SerializeOptions['mdxOptions']>['rehypePlugins'];
+}
+
+export interface CompiledMDX {
+  mdx: MDXRemoteSerializeResult<Record<string, unknown>>;
+  toc: TOC;
+  frontMatter: Record<string, any>;
+}
 
 export async function buildMDX(
-  source: string | Buffer,
-  {
-    buildTOC = true,
-    extraRemarkPlugins = [],
-    extraRehypePlugins = [],
-  }: {
-    /**
-     * @default true
-     */
-    buildTOC?: boolean;
-
-    extraRemarkPlugins?: NonNullable<SerializeOptions['mdxOptions']>['remarkPlugins'];
-    extraRehypePlugins?: NonNullable<SerializeOptions['mdxOptions']>['rehypePlugins'];
-  } = {}
-) {
-  const { content, data } = matter(source);
+  source: PossiblePromise<string | Buffer>,
+  { buildTOC = true, extraRemarkPlugins = [], extraRehypePlugins = [] }: BuildMDXOptions = {}
+): Promise<CompiledMDX> {
+  const { content, data } = matter(await source);
 
   const mdx = await serialize(content, {
     mdxOptions: {
@@ -127,6 +129,13 @@ export async function buildMDX(
     toc,
     frontMatter: data,
   };
+}
+
+export async function buildMultipleMDX(
+  source: PossiblePromise<Array<PossiblePromise<string | Buffer>>>,
+  opts?: BuildMDXOptions
+): Promise<Array<CompiledMDX>> {
+  return Promise.all((await source).map(value => buildMDX(value, opts)));
 }
 
 export async function MDXProps(

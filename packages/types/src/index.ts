@@ -90,3 +90,5 @@ export interface MdxInternalProps {
   mdxRoutes?: IRoutes | 1;
   toc: TOC;
 }
+
+export type PossiblePromise<T> = T | Promise<T>;

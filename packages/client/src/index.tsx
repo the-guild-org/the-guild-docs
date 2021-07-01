@@ -7,3 +7,4 @@ export * from './docs/index';
 
 export * from '@guild-docs/types';
 export * from './wrappers';
+export * from './mdx';
