@@ -125,7 +125,7 @@ importers:
       '@types/edit-json-file': 1.4.0
       '@types/mkdirp': 1.0.1
       '@types/node': 15.12.5
-      '@types/prettier': 2.3.0
+      '@types/prettier': 2.3.1
       changesets-github-release: 0.0.3
       commander: 8.0.0
       edit-json-file: 1.6.0
@@ -138,7 +138,7 @@ importers:
       '@types/edit-json-file': 1.4.0
       '@types/mkdirp': 1.0.1
       '@types/node': 15.12.5
-      '@types/prettier': 2.3.0
+      '@types/prettier': 2.3.1
       changesets-github-release: 0.0.3
       commander: 8.0.0
       edit-json-file: 1.6.0
@@ -4470,8 +4470,8 @@ packages:
   /@types/parse5/5.0.3:
     resolution: {integrity: sha512-kUNnecmtkunAoQ3CnjmMkzNU/gtxG8guhi+Fk2U/kOpIKjIMKnXGp4IJCgQJrXSgMsWYimYG4TGjz/UzbGEBTw==}
 
-  /@types/prettier/2.3.0:
-    resolution: {integrity: sha512-hkc1DATxFLQo4VxPDpMH1gCkPpBbpOoJ/4nhuXw4n63/0R6bCpQECj4+K226UJ4JO/eJQz+1mC2I7JsWanAdQw==}
+  /@types/prettier/2.3.1:
+    resolution: {integrity: sha512-NVkb4p4YjI8E3O6+1m8I+8JlMpFZwfSbPGdaw0wXuyPRTEz0SLKwBUWNSO7Maoi8tQMPC8JLZNWkrcKPI7/sLA==}
     dev: true
 
   /@types/prop-types/15.7.3:

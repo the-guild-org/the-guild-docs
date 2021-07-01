@@ -25,7 +25,7 @@
     "@types/edit-json-file": "1.4.0",
     "@types/mkdirp": "1.0.1",
     "@types/node": "15.12.5",
-    "@types/prettier": "2.3.0",
+    "@types/prettier": "2.3.1",
     "changesets-github-release": "0.0.3",
     "commander": "8.0.0",
     "edit-json-file": "1.6.0",
