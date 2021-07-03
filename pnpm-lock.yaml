@@ -270,7 +270,7 @@ importers:
       bob-esbuild-cli: 0.1.27
       changesets-github-release: 0.0.3
       core-js: ^3.15.2
-      focus-trap-react: ^8.6.0
+      focus-trap-react: ^8.7.0
       polished: ^4.1.3
       postcss: 8.3.5
       react: 17.0.2
@@ -290,7 +290,7 @@ importers:
       '@emotion/styled': 11.3.0_5bc32dd87bae2763267eb90400af3a70
       algoliasearch: 4.10.2
       core-js: 3.15.2
-      focus-trap-react: 8.6.0_react-dom@17.0.2+react@17.0.2
+      focus-trap-react: 8.7.0_react-dom@17.0.2+react@17.0.2
       polished: 4.1.3
       react-instantsearch-dom: 6.11.2_6310df5dfbe4ce9a515e604bdeda02d7
       react-paginate: 7.1.3_react@17.0.2
@@ -1699,7 +1699,7 @@ packages:
       '@chakra-ui/hooks': 1.5.3_react@17.0.2
       '@chakra-ui/icon': 1.1.9_f314da12debc3366f1a8ba17c0536e75
       '@chakra-ui/react-utils': 1.1.2_react@17.0.2
-      '@chakra-ui/system': 1.7.0_c94ce1a602d602ceca4c9cb32dbce62d
+      '@chakra-ui/system': 1.7.0_7874f5fd290ce587db5f5f81e8a37ea9
       '@chakra-ui/transition': 1.3.2_6e811357ed36e65ef860931c3f3c4cd0
       '@chakra-ui/utils': 1.8.0
       react: 17.0.2
@@ -1743,7 +1743,7 @@ packages:
     dependencies:
       '@chakra-ui/icon': 1.1.9_f314da12debc3366f1a8ba17c0536e75
       '@chakra-ui/react-utils': 1.1.2_react@17.0.2
-      '@chakra-ui/system': 1.7.0_c94ce1a602d602ceca4c9cb32dbce62d
+      '@chakra-ui/system': 1.7.0_7874f5fd290ce587db5f5f81e8a37ea9
       '@chakra-ui/utils': 1.8.0
       react: 17.0.2
 
@@ -1767,7 +1767,7 @@ packages:
     dependencies:
       '@chakra-ui/image': 1.0.16_f314da12debc3366f1a8ba17c0536e75
       '@chakra-ui/react-utils': 1.1.2_react@17.0.2
-      '@chakra-ui/system': 1.7.0_c94ce1a602d602ceca4c9cb32dbce62d
+      '@chakra-ui/system': 1.7.0_7874f5fd290ce587db5f5f81e8a37ea9
       '@chakra-ui/utils': 1.8.0
       react: 17.0.2
 
@@ -1789,7 +1789,7 @@ packages:
       react: '>=16.8.6'
     dependencies:
       '@chakra-ui/react-utils': 1.1.2_react@17.0.2
-      '@chakra-ui/system': 1.7.0_c94ce1a602d602ceca4c9cb32dbce62d
+      '@chakra-ui/system': 1.7.0_7874f5fd290ce587db5f5f81e8a37ea9
       '@chakra-ui/utils': 1.8.0
       react: 17.0.2
 
@@ -1813,7 +1813,7 @@ packages:
     dependencies:
       '@chakra-ui/react-utils': 1.1.2_react@17.0.2
       '@chakra-ui/spinner': 1.1.10_f314da12debc3366f1a8ba17c0536e75
-      '@chakra-ui/system': 1.7.0_c94ce1a602d602ceca4c9cb32dbce62d
+      '@chakra-ui/system': 1.7.0_7874f5fd290ce587db5f5f81e8a37ea9
       '@chakra-ui/utils': 1.8.0
       react: 17.0.2
 
@@ -1826,7 +1826,7 @@ packages:
     dependencies:
       '@chakra-ui/hooks': 1.5.3_react@17.0.2
       '@chakra-ui/react-utils': 1.1.2_react@17.0.2
-      '@chakra-ui/system': 1.7.0_c94ce1a602d602ceca4c9cb32dbce62d
+      '@chakra-ui/system': 1.7.0_7874f5fd290ce587db5f5f81e8a37ea9
       '@chakra-ui/utils': 1.8.0
       '@chakra-ui/visually-hidden': 1.0.12_f314da12debc3366f1a8ba17c0536e75
       framer-motion: 4.1.17_react-dom@17.0.2+react@17.0.2
@@ -1882,7 +1882,7 @@ packages:
       react: '>=16.8.6'
     dependencies:
       '@chakra-ui/icon': 1.1.9_f314da12debc3366f1a8ba17c0536e75
-      '@chakra-ui/system': 1.7.0_c94ce1a602d602ceca4c9cb32dbce62d
+      '@chakra-ui/system': 1.7.0_7874f5fd290ce587db5f5f81e8a37ea9
       '@chakra-ui/utils': 1.8.0
       react: 17.0.2
 
@@ -1920,7 +1920,7 @@ packages:
       '@chakra-ui/system': '>=1.0.0'
       react: '>=16.8.6'
     dependencies:
-      '@chakra-ui/system': 1.7.0_c94ce1a602d602ceca4c9cb32dbce62d
+      '@chakra-ui/system': 1.7.0_7874f5fd290ce587db5f5f81e8a37ea9
       '@chakra-ui/utils': 1.8.0
       react: 17.0.2
 
@@ -1955,7 +1955,7 @@ packages:
       '@emotion/react': '>=10.0.35'
       react: '>=16.8.6'
     dependencies:
-      '@emotion/react': 11.4.0_43559efe81628b42e1e465743e6a3ffa
+      '@emotion/react': 11.4.0_189cc19b8edfe5959338b863f6e5c247
       react: 17.0.2
 
   /@chakra-ui/descendant/2.0.1:
@@ -1994,7 +1994,7 @@ packages:
     dependencies:
       '@chakra-ui/hooks': 1.5.3_react@17.0.2
       '@chakra-ui/react-utils': 1.1.2_react@17.0.2
-      '@chakra-ui/system': 1.7.0_c94ce1a602d602ceca4c9cb32dbce62d
+      '@chakra-ui/system': 1.7.0_7874f5fd290ce587db5f5f81e8a37ea9
       '@chakra-ui/utils': 1.8.0
       react: 17.0.2
 
@@ -2055,7 +2055,7 @@ packages:
       '@chakra-ui/hooks': 1.5.3_react@17.0.2
       '@chakra-ui/icon': 1.1.9_f314da12debc3366f1a8ba17c0536e75
       '@chakra-ui/react-utils': 1.1.2_react@17.0.2
-      '@chakra-ui/system': 1.7.0_c94ce1a602d602ceca4c9cb32dbce62d
+      '@chakra-ui/system': 1.7.0_7874f5fd290ce587db5f5f81e8a37ea9
       '@chakra-ui/utils': 1.8.0
       react: 17.0.2
 
@@ -2097,7 +2097,7 @@ packages:
       '@chakra-ui/system': '>=1.0.0'
       react: '>=16.8.6'
     dependencies:
-      '@chakra-ui/system': 1.7.0_c94ce1a602d602ceca4c9cb32dbce62d
+      '@chakra-ui/system': 1.7.0_7874f5fd290ce587db5f5f81e8a37ea9
       '@chakra-ui/utils': 1.8.0
       react: 17.0.2
 
@@ -2152,7 +2152,7 @@ packages:
       react: '>=16.8.6'
     dependencies:
       '@chakra-ui/hooks': 1.5.3_react@17.0.2
-      '@chakra-ui/system': 1.7.0_c94ce1a602d602ceca4c9cb32dbce62d
+      '@chakra-ui/system': 1.7.0_7874f5fd290ce587db5f5f81e8a37ea9
       '@chakra-ui/utils': 1.8.0
       react: 17.0.2
 
@@ -2176,7 +2176,7 @@ packages:
     dependencies:
       '@chakra-ui/form-control': 1.3.7_f314da12debc3366f1a8ba17c0536e75
       '@chakra-ui/react-utils': 1.1.2_react@17.0.2
-      '@chakra-ui/system': 1.7.0_c94ce1a602d602ceca4c9cb32dbce62d
+      '@chakra-ui/system': 1.7.0_7874f5fd290ce587db5f5f81e8a37ea9
       '@chakra-ui/utils': 1.8.0
       react: 17.0.2
 
@@ -2228,7 +2228,7 @@ packages:
       react: '>=16.8.6'
     dependencies:
       '@chakra-ui/react-env': 1.0.4_react@17.0.2
-      '@chakra-ui/system': 1.7.0_c94ce1a602d602ceca4c9cb32dbce62d
+      '@chakra-ui/system': 1.7.0_7874f5fd290ce587db5f5f81e8a37ea9
       '@chakra-ui/theme': 1.9.1_@chakra-ui+system@1.7.0
       '@chakra-ui/utils': 1.8.0
       react: 17.0.2
@@ -2258,7 +2258,7 @@ packages:
       '@chakra-ui/hooks': 1.5.3_react@17.0.2
       '@chakra-ui/popper': 2.2.1_react@17.0.2
       '@chakra-ui/react-utils': 1.1.2_react@17.0.2
-      '@chakra-ui/system': 1.7.0_c94ce1a602d602ceca4c9cb32dbce62d
+      '@chakra-ui/system': 1.7.0_7874f5fd290ce587db5f5f81e8a37ea9
       '@chakra-ui/transition': 1.3.2_6e811357ed36e65ef860931c3f3c4cd0
       '@chakra-ui/utils': 1.8.0
       framer-motion: 4.1.17_react-dom@17.0.2+react@17.0.2
@@ -2379,7 +2379,7 @@ packages:
       '@chakra-ui/hooks': 1.5.3_react@17.0.2
       '@chakra-ui/icon': 1.1.9_f314da12debc3366f1a8ba17c0536e75
       '@chakra-ui/react-utils': 1.1.2_react@17.0.2
-      '@chakra-ui/system': 1.7.0_c94ce1a602d602ceca4c9cb32dbce62d
+      '@chakra-ui/system': 1.7.0_7874f5fd290ce587db5f5f81e8a37ea9
       '@chakra-ui/utils': 1.8.0
       react: 17.0.2
 
@@ -2405,7 +2405,7 @@ packages:
       '@chakra-ui/descendant': 2.0.1_react@17.0.2
       '@chakra-ui/hooks': 1.5.3_react@17.0.2
       '@chakra-ui/react-utils': 1.1.2_react@17.0.2
-      '@chakra-ui/system': 1.7.0_c94ce1a602d602ceca4c9cb32dbce62d
+      '@chakra-ui/system': 1.7.0_7874f5fd290ce587db5f5f81e8a37ea9
       '@chakra-ui/utils': 1.8.0
       react: 17.0.2
 
@@ -2420,7 +2420,7 @@ packages:
       '@chakra-ui/hooks': 1.5.3_react@17.0.2
       '@chakra-ui/popper': 2.2.1_react@17.0.2
       '@chakra-ui/react-utils': 1.1.2_react@17.0.2
-      '@chakra-ui/system': 1.7.0_c94ce1a602d602ceca4c9cb32dbce62d
+      '@chakra-ui/system': 1.7.0_7874f5fd290ce587db5f5f81e8a37ea9
       '@chakra-ui/utils': 1.8.0
       framer-motion: 4.1.17_react-dom@17.0.2+react@17.0.2
       react: 17.0.2
@@ -2498,7 +2498,7 @@ packages:
       '@chakra-ui/system': '>=1.0.0'
       react: '>=16.8.6'
     dependencies:
-      '@chakra-ui/system': 1.7.0_c94ce1a602d602ceca4c9cb32dbce62d
+      '@chakra-ui/system': 1.7.0_7874f5fd290ce587db5f5f81e8a37ea9
       '@chakra-ui/theme-tools': 1.1.7_@chakra-ui+system@1.7.0
       '@chakra-ui/utils': 1.8.0
       react: 17.0.2
@@ -2526,7 +2526,7 @@ packages:
       '@chakra-ui/form-control': 1.3.7_f314da12debc3366f1a8ba17c0536e75
       '@chakra-ui/hooks': 1.5.3_react@17.0.2
       '@chakra-ui/react-utils': 1.1.2_react@17.0.2
-      '@chakra-ui/system': 1.7.0_c94ce1a602d602ceca4c9cb32dbce62d
+      '@chakra-ui/system': 1.7.0_7874f5fd290ce587db5f5f81e8a37ea9
       '@chakra-ui/utils': 1.8.0
       '@chakra-ui/visually-hidden': 1.0.12_f314da12debc3366f1a8ba17c0536e75
       react: 17.0.2
@@ -2767,7 +2767,7 @@ packages:
       react: '>=16.8.6'
     dependencies:
       '@chakra-ui/form-control': 1.3.7_f314da12debc3366f1a8ba17c0536e75
-      '@chakra-ui/system': 1.7.0_c94ce1a602d602ceca4c9cb32dbce62d
+      '@chakra-ui/system': 1.7.0_7874f5fd290ce587db5f5f81e8a37ea9
       '@chakra-ui/utils': 1.8.0
       react: 17.0.2
 
@@ -2838,7 +2838,7 @@ packages:
     dependencies:
       '@chakra-ui/hooks': 1.5.3_react@17.0.2
       '@chakra-ui/react-utils': 1.1.2_react@17.0.2
-      '@chakra-ui/system': 1.7.0_c94ce1a602d602ceca4c9cb32dbce62d
+      '@chakra-ui/system': 1.7.0_7874f5fd290ce587db5f5f81e8a37ea9
       '@chakra-ui/utils': 1.8.0
       react: 17.0.2
 
@@ -2859,7 +2859,7 @@ packages:
       '@chakra-ui/system': '>=1.0.0'
       react: '>=16.8.6'
     dependencies:
-      '@chakra-ui/system': 1.7.0_c94ce1a602d602ceca4c9cb32dbce62d
+      '@chakra-ui/system': 1.7.0_7874f5fd290ce587db5f5f81e8a37ea9
       '@chakra-ui/utils': 1.8.0
       '@chakra-ui/visually-hidden': 1.0.12_f314da12debc3366f1a8ba17c0536e75
       react: 17.0.2
@@ -2883,7 +2883,7 @@ packages:
       react: '>=16.8.6'
     dependencies:
       '@chakra-ui/icon': 1.1.9_f314da12debc3366f1a8ba17c0536e75
-      '@chakra-ui/system': 1.7.0_c94ce1a602d602ceca4c9cb32dbce62d
+      '@chakra-ui/system': 1.7.0_7874f5fd290ce587db5f5f81e8a37ea9
       '@chakra-ui/utils': 1.8.0
       '@chakra-ui/visually-hidden': 1.0.12_f314da12debc3366f1a8ba17c0536e75
       react: 17.0.2
@@ -2901,7 +2901,7 @@ packages:
       react: '>=16.8.6'
     dependencies:
       '@chakra-ui/checkbox': 1.5.3_1a172f0d9e69dd769f3070844504455b
-      '@chakra-ui/system': 1.7.0_c94ce1a602d602ceca4c9cb32dbce62d
+      '@chakra-ui/system': 1.7.0_7874f5fd290ce587db5f5f81e8a37ea9
       '@chakra-ui/utils': 1.8.0
       react: 17.0.2
     transitivePeerDependencies:
@@ -2983,7 +2983,7 @@ packages:
       '@chakra-ui/system': '>=1.0.0'
       react: '>=16.8.6'
     dependencies:
-      '@chakra-ui/system': 1.7.0_c94ce1a602d602ceca4c9cb32dbce62d
+      '@chakra-ui/system': 1.7.0_7874f5fd290ce587db5f5f81e8a37ea9
       '@chakra-ui/utils': 1.8.0
       react: 17.0.2
 
@@ -3011,7 +3011,7 @@ packages:
       '@chakra-ui/descendant': 2.0.1_react@17.0.2
       '@chakra-ui/hooks': 1.5.3_react@17.0.2
       '@chakra-ui/react-utils': 1.1.2_react@17.0.2
-      '@chakra-ui/system': 1.7.0_c94ce1a602d602ceca4c9cb32dbce62d
+      '@chakra-ui/system': 1.7.0_7874f5fd290ce587db5f5f81e8a37ea9
       '@chakra-ui/utils': 1.8.0
       react: 17.0.2
 
@@ -3033,7 +3033,7 @@ packages:
       react: '>=16.8.6'
     dependencies:
       '@chakra-ui/icon': 1.1.9_f314da12debc3366f1a8ba17c0536e75
-      '@chakra-ui/system': 1.7.0_c94ce1a602d602ceca4c9cb32dbce62d
+      '@chakra-ui/system': 1.7.0_7874f5fd290ce587db5f5f81e8a37ea9
       '@chakra-ui/utils': 1.8.0
       react: 17.0.2
 
@@ -3055,7 +3055,7 @@ packages:
       react: '>=16.8.6'
     dependencies:
       '@chakra-ui/form-control': 1.3.7_f314da12debc3366f1a8ba17c0536e75
-      '@chakra-ui/system': 1.7.0_c94ce1a602d602ceca4c9cb32dbce62d
+      '@chakra-ui/system': 1.7.0_7874f5fd290ce587db5f5f81e8a37ea9
       '@chakra-ui/utils': 1.8.0
       react: 17.0.2
 
@@ -3074,7 +3074,7 @@ packages:
     peerDependencies:
       '@chakra-ui/system': '>=1.0.0'
     dependencies:
-      '@chakra-ui/system': 1.7.0
+      '@chakra-ui/system': 1.7.0_7874f5fd290ce587db5f5f81e8a37ea9
       '@chakra-ui/utils': 1.8.0
       '@types/tinycolor2': 1.4.2
       tinycolor2: 1.4.2
@@ -3084,7 +3084,7 @@ packages:
     peerDependencies:
       '@chakra-ui/system': '>=1.0.0'
     dependencies:
-      '@chakra-ui/system': 1.7.0
+      '@chakra-ui/system': 1.7.0_7874f5fd290ce587db5f5f81e8a37ea9
       '@chakra-ui/theme-tools': 1.1.7_@chakra-ui+system@1.7.0
       '@chakra-ui/utils': 1.8.0
 
@@ -3099,7 +3099,7 @@ packages:
       '@chakra-ui/alert': 1.2.5_f314da12debc3366f1a8ba17c0536e75
       '@chakra-ui/close-button': 1.1.9_f314da12debc3366f1a8ba17c0536e75
       '@chakra-ui/hooks': 1.5.3_react@17.0.2
-      '@chakra-ui/system': 1.7.0_c94ce1a602d602ceca4c9cb32dbce62d
+      '@chakra-ui/system': 1.7.0_7874f5fd290ce587db5f5f81e8a37ea9
       '@chakra-ui/theme': 1.9.1_@chakra-ui+system@1.7.0
       '@chakra-ui/transition': 1.3.2_6e811357ed36e65ef860931c3f3c4cd0
       '@chakra-ui/utils': 1.8.0
@@ -3138,7 +3138,7 @@ packages:
       '@chakra-ui/popper': 2.2.1_react@17.0.2
       '@chakra-ui/portal': 1.2.6_react-dom@17.0.2+react@17.0.2
       '@chakra-ui/react-utils': 1.1.2_react@17.0.2
-      '@chakra-ui/system': 1.7.0_c94ce1a602d602ceca4c9cb32dbce62d
+      '@chakra-ui/system': 1.7.0_7874f5fd290ce587db5f5f81e8a37ea9
       '@chakra-ui/utils': 1.8.0
       '@chakra-ui/visually-hidden': 1.0.12_f314da12debc3366f1a8ba17c0536e75
       framer-motion: 4.1.17_react-dom@17.0.2+react@17.0.2
@@ -3205,7 +3205,7 @@ packages:
       '@chakra-ui/system': '>=1.0.0'
       react: '>=16.8.6'
     dependencies:
-      '@chakra-ui/system': 1.7.0_c94ce1a602d602ceca4c9cb32dbce62d
+      '@chakra-ui/system': 1.7.0_7874f5fd290ce587db5f5f81e8a37ea9
       '@chakra-ui/utils': 1.8.0
       react: 17.0.2
 
@@ -7013,10 +7013,28 @@ packages:
       react: 17.0.2
       react-dom: 17.0.2_react@17.0.2
 
+  /focus-trap-react/8.7.0_react-dom@17.0.2+react@17.0.2:
+    resolution: {integrity: sha512-zqQKgyYFvd9F1We6WeUZkLo/qGWrZKMGMtOXBz+18gyjg5XIzjz+cX8qdtpUZ2eJdyp/1AdHhcklCN8edyF0Ew==}
+    peerDependencies:
+      prop-types: ^15.7.2
+      react: '>=16.0.0'
+      react-dom: '>=16.0.0'
+    dependencies:
+      focus-trap: 6.6.0
+      react: 17.0.2
+      react-dom: 17.0.2_react@17.0.2
+    dev: false
+
   /focus-trap/6.5.1:
     resolution: {integrity: sha512-q57JebeQXVThn9DWvWLP2rUwuArvk8w3PyqZLSddto0thmVmklFzYJQO97Aq3pUcWkTXjflUa88fT0CrASsaHQ==}
     dependencies:
       tabbable: 5.2.0
+
+  /focus-trap/6.6.0:
+    resolution: {integrity: sha512-2hWVR3XbBejn5v8wDW9DFzLWXcxMNaSJ/CtE3E+FJjjBCLwIYbZJwjUi2RDBfQPM58gHEt5hck0jrJgHR9/s+A==}
+    dependencies:
+      tabbable: 5.2.0
+    dev: false
 
   /folder-hash/4.0.1:
     resolution: {integrity: sha512-oF1MGtGAPezYJJRMRPzTwtDYwZdQ16UTnthsVAxjVZnlrQ36WuF6YxSgyZxnoUEK6JNPX+04FCFAkw5CzE5OMw==}
