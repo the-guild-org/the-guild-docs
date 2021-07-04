@@ -1,5 +1,11 @@
 # @guild-docs/types
 
+## 0.2.17
+
+### Patch Changes
+
+- 128ec1a: fix override toc & navigation prop types
+
 ## 0.2.16
 
 ### Patch Changes
