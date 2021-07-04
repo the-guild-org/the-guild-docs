@@ -139,8 +139,8 @@ function Item({
           <Summary
             onClick={onToggle}
             color={isOpen ? summaryOpenColor : summaryClosedColor}
-            {...styleProps.summaryProps?.(propsArgs)}
             {...hoverItemStyles}
+            {...styleProps.summaryProps?.(propsArgs)}
           >
             <ChevronDownIcon
               transition="transform 0.3s"
@@ -184,8 +184,8 @@ function Item({
           href={isAnchor ? finalHref : undefined}
           color={isActive ? accentColor : inactiveLinkColor}
           {...(depth !== 0 && innerItemStyles)}
-          {...styleProps.linkProps?.(propsArgs)}
           {...hoverItemStyles}
+          {...styleProps.linkProps?.(propsArgs)}
         >
           {label}
         </Link>

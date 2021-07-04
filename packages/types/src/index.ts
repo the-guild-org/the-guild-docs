@@ -2,7 +2,7 @@ import type { ComponentProps, ReactNode, VoidFunctionComponent } from 'react';
 import type { SSRConfig, useTranslation } from 'next-i18next';
 
 import type { MDXRemoteSerializeResult } from 'next-mdx-remote';
-import type { BoxProps, TextProps, ChakraComponent, LinkProps, Collapse } from '@chakra-ui/react';
+import type { BoxProps, TextProps, ChakraComponent, LinkProps, Collapse, ChakraProps, MergeWithAs } from '@chakra-ui/react';
 
 export type IRoutes = {
   $routes?: ([href: string, name: string, sidebar?: string] | string)[];
@@ -28,11 +28,17 @@ export interface TOCHeading {
   isActive: boolean;
 }
 
+export type ChakraComponentProps<Key extends keyof JSX.IntrinsicElements> = MergeWithAs<
+  ComponentProps<Key>,
+  ComponentProps<ChakraComponent<Key>>
+> &
+  ChakraProps;
+
 export interface MDXTOCProps {
   toc: TOC;
-  wrapperProps?: Omit<ComponentProps<ChakraComponent<'div', {}>>, 'children'>;
-  titleProps?: Omit<ComponentProps<ChakraComponent<'h2', {}>>, 'children'>;
-  linkProps?: (args: TOCHeading) => Omit<ComponentProps<ChakraComponent<'a', {}>>, 'children'>;
+  wrapperProps?: ChakraComponentProps<'div'>;
+  titleProps?: ChakraComponentProps<'h2'>;
+  linkProps?: (args: TOCHeading) => ChakraComponentProps<'a'>;
 }
 
 export interface MDXNavigationAccordionArgs {
@@ -49,13 +55,13 @@ export interface MDXNavigationProps {
   depth?: number;
   accentColor?: string;
   handleLinkClick?: () => void;
-  wrapperProps?: Omit<ComponentProps<ChakraComponent<'nav', {}>>, 'children'>;
-  detailsProps?: (args: MDXNavigationAccordionArgs) => Omit<ComponentProps<ChakraComponent<'div', {}>>, 'children'>;
-  summaryProps?: (args: MDXNavigationAccordionArgs) => Omit<ComponentProps<ChakraComponent<'div', {}>>, 'children'>;
-  summaryLabelProps?: (args: MDXNavigationAccordionArgs) => Omit<ComponentProps<ChakraComponent<'p', {}>>, 'children'>;
-  summaryIconProps?: (args: MDXNavigationAccordionArgs) => Omit<ComponentProps<ChakraComponent<'svg', {}>>, 'children'>;
+  wrapperProps?: ChakraComponentProps<'nav'>;
+  detailsProps?: (args: MDXNavigationAccordionArgs) => ChakraComponentProps<'div'>;
+  summaryProps?: (args: MDXNavigationAccordionArgs) => ChakraComponentProps<'div'>;
+  summaryLabelProps?: (args: MDXNavigationAccordionArgs) => ChakraComponentProps<'p'>;
+  summaryIconProps?: (args: MDXNavigationAccordionArgs) => ChakraComponentProps<'svg'>;
   collapseProps?: (args: MDXNavigationAccordionArgs) => Omit<ComponentProps<typeof Collapse>, 'children'>;
-  linkProps?: (args: MDXNavigationAccordionArgs) => Omit<ComponentProps<ChakraComponent<'a', {}>>, 'children'>;
+  linkProps?: (args: MDXNavigationAccordionArgs) => ChakraComponentProps<'a'>;
   /**
    * @default 1
    */
