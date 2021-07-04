@@ -50,7 +50,7 @@ importers:
       '@chakra-ui/utils': ^1.8.0
       '@emotion/react': ^11.4.0
       '@emotion/styled': ^11.3.0
-      '@guild-docs/client': workspace:^0.2.16
+      '@guild-docs/client': workspace:^0.2.17
       '@guild-docs/server': workspace:^0.2.16
       '@guild-docs/tgc': workspace:^0.2.7
       '@mdx-js/react': ^1.6.22
@@ -157,7 +157,7 @@ importers:
       '@chakra-ui/system': 1.7.0
       '@chakra-ui/utils': ^1.8.0
       '@emotion/react': 11.4.0
-      '@guild-docs/types': workspace:^0.2.16
+      '@guild-docs/types': workspace:^0.2.17
       '@mdx-js/react': 1.6.22
       '@theguild/components': ^1.4.2
       '@types/mdx-js__react': 1.5.3

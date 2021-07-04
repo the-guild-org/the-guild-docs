@@ -1,5 +1,13 @@
 # @guild-docs/client
 
+## 0.2.17
+
+### Patch Changes
+
+- 128ec1a: fix override toc & navigation prop types
+- Updated dependencies [128ec1a]
+  - @guild-docs/types@0.2.17
+
 ## 0.2.16
 
 ### Patch Changes
