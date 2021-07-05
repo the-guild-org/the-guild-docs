@@ -1,5 +1,13 @@
 # @guild-docs/client
 
+## 0.2.18
+
+### Patch Changes
+
+- 900274e: re-export PackageInstall
+- d4aa434: re-export CopyToClipboard
+- a00a969: add RemoteGHMarkdown component
+
 ## 0.2.17
 
 ### Patch Changes
