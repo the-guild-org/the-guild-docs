@@ -88,5 +88,16 @@
   },
   "publishConfig": {
     "directory": "lib"
+  },
+  "typesVersions": {
+    "*": {
+      "lib/index.d.ts": [
+        "lib/index.d.ts"
+      ],
+      "*": [
+        "lib/*",
+        "lib/*/index.d.ts"
+      ]
+    }
   }
 }

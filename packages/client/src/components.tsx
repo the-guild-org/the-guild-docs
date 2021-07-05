@@ -34,6 +34,7 @@ import { getDefault } from './utils';
 
 import type { LinkProps as NextLinkProps } from 'next/link';
 
+export { PackageInstall };
 const Image = getDefault(ImageImport);
 const NextLink = getDefault(NextLinkImport);
 
