@@ -60,7 +60,7 @@ export default function Page({ data }: Props) {
     <Stack spacing="10em">
       {data.map(value => {
         return (
-          <Box>
+          <Box key={value.identifier}>
             <Heading fontSize="2em">{value.title}</Heading>
             <PackageInstall packages={[value.npmPackage]} />
 
