@@ -1,5 +1,11 @@
 # @guild-docs/server
 
+## 0.2.18
+
+### Patch Changes
+
+- 35ebc64: add "getPackagesData" npm package data fetcher, import via `@guild-docs/server/npm`
+
 ## 0.2.16
 
 ### Patch Changes
