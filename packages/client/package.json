@@ -31,7 +31,7 @@
   },
   "dependencies": {
     "@guild-docs/types": "workspace:^0.2.17",
-    "immer": "^9.0.3",
+    "immer": "^9.0.5",
     "next-mdx-remote": "^3.0.2",
     "next-seo": "^4.26.0",
     "nprogress": "^0.2.0",

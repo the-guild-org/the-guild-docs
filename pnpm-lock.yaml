@@ -168,7 +168,7 @@ importers:
       changesets-github-release: 0.0.3
       esbuild: 0.12.14
       framer-motion: 4.1.17
-      immer: ^9.0.3
+      immer: ^9.0.5
       next: ^11.0.1
       next-i18next: ^8.5.1
       next-mdx-remote: ^3.0.2
@@ -184,14 +184,14 @@ importers:
       zustand: ^3.5.5
     dependencies:
       '@guild-docs/types': link:../types
-      immer: 9.0.3
+      immer: 9.0.5
       next-mdx-remote: 3.0.2_react-dom@17.0.2+react@17.0.2
       next-seo: 4.26.0_de3a444b12c9ebc463b1db22b5bac6fe
       nprogress: 0.2.0
       react-icons: 4.2.0_react@17.0.2
       react-intersection-observer: 8.32.0_react@17.0.2
       react-use: 17.2.4_react-dom@17.0.2+react@17.0.2
-      use-immer: 0.6.0_immer@9.0.3+react@17.0.2
+      use-immer: 0.6.0_immer@9.0.5+react@17.0.2
       zustand: 3.5.5_react@17.0.2
     devDependencies:
       '@chakra-ui/icons': 1.0.13_f314da12debc3366f1a8ba17c0536e75
@@ -7715,8 +7715,8 @@ packages:
     dependencies:
       queue: 6.0.2
 
-  /immer/9.0.3:
-    resolution: {integrity: sha512-mONgeNSMuyjIe0lkQPa9YhdmTv8P19IeHV0biYhcXhbd5dhdB9HSK93zBpyKjp6wersSUgT5QyU0skmejUVP2A==}
+  /immer/9.0.5:
+    resolution: {integrity: sha512-2WuIehr2y4lmYz9gaQzetPR2ECniCifk4ORaQbU3g5EalLt+0IVTosEPJ5BoYl/75ky2mivzdRzV8wWgQGOSYQ==}
     dev: false
 
   /import-cwd/3.0.0:
@@ -12660,13 +12660,13 @@ packages:
     dependencies:
       react: 17.0.2
 
-  /use-immer/0.6.0_immer@9.0.3+react@17.0.2:
+  /use-immer/0.6.0_immer@9.0.5+react@17.0.2:
     resolution: {integrity: sha512-dFGRfvWCqPDTOt/S431ETYTg6+uxbpb7A1pptufwXVzGJY3RlXr38+3wyLNpc6SbbmAKjWl6+EP6uW74fkEsXQ==}
     peerDependencies:
       immer: '>=2.0.0'
       react: ^16.8.0 || ^17.0.1
     dependencies:
-      immer: 9.0.3
+      immer: 9.0.5
       react: 17.0.2
     dev: false
 
