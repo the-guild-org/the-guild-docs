@@ -1,5 +1,11 @@
 # @guild-docs/client
 
+## 0.2.19
+
+### Patch Changes
+
+- 127312f: add "NPMBadge" component
+
 ## 0.2.18
 
 ### Patch Changes
