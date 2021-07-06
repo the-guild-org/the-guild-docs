@@ -244,7 +244,7 @@ export const td = (props: BoxProps) => (
   <Box as="td" p={2} borderTopWidth="1px" borderColor="inherit" fontSize="sm" whiteSpace="normal" {...props} />
 );
 
-export const components = {
+export const originalComponents = {
   Image,
   h1,
   h2,
@@ -281,6 +281,11 @@ export const components = {
       <Code fontSize="0.9rem" colorScheme={colorScheme} padding="20px !important" width="100%" borderRadius="sm" {...props} />
     );
   },
+
+}
+
+export const components = {
+  ...originalComponents
 };
 
 // Workaround to this issue with TypeScript: https://github.com/microsoft/TypeScript/issues/42873
