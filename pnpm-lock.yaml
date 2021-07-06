@@ -18,7 +18,7 @@ importers:
       bob-esbuild-cli: 0.1.27
       concurrently: 6.2.0
       esbuild: 0.12.14
-      husky: 7.0.0
+      husky: 7.0.1
       next: ^11.0.1
       prettier: 2.3.2
       pretty-quick: 3.1.1
@@ -35,7 +35,7 @@ importers:
       bob-esbuild-cli: 0.1.27_488376d43314e2606bceb2872a37d0ef
       concurrently: 6.2.0
       esbuild: 0.12.14
-      husky: 7.0.0
+      husky: 7.0.1
       next: 11.0.1_typescript@4.3.5
       prettier: 2.3.2
       pretty-quick: 3.1.1_prettier@2.3.2
@@ -7652,8 +7652,8 @@ packages:
     engines: {node: '>=10.17.0'}
     dev: true
 
-  /husky/7.0.0:
-    resolution: {integrity: sha512-xK7lO0EtSzfFPiw+oQncQVy/XqV7UVVjxBByc+Iv5iK3yhW9boDoWgvZy3OGo48QKg/hUtZkzz0hi2HXa0kn7w==}
+  /husky/7.0.1:
+    resolution: {integrity: sha512-gceRaITVZ+cJH9sNHqx5tFwbzlLCVxtVZcusME8JYQ8Edy5mpGDOqD8QBCdMhpyo9a+JXddnujQ4rpY2Ff9SJA==}
     engines: {node: '>=12'}
     hasBin: true
     dev: true
