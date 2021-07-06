@@ -134,7 +134,7 @@ importers:
       mkdirp: 1.0.4
       npm-api: 1.0.1
       prettier: 2.3.2
-      tsup: 4.12.4
+      tsup: 4.12.5
     devDependencies:
       '@types/edit-json-file': 1.4.0
       '@types/mkdirp': 1.0.1
@@ -147,7 +147,7 @@ importers:
       mkdirp: 1.0.4
       npm-api: 1.0.1
       prettier: 2.3.2
-      tsup: 4.12.4_typescript@4.3.5
+      tsup: 4.12.5_typescript@4.3.5
 
   packages/client:
     specifiers:
@@ -12310,6 +12310,34 @@ packages:
 
   /tsup/4.12.4_typescript@4.3.5:
     resolution: {integrity: sha512-4fs0ijdZ2o/lrg3OAitFYySvND/mEiEbHADNfBlrwd22Vz4iNB1p7y5BX8vkPrZJXeZ4cGAwYlkruy5oRwIy9g==}
+    hasBin: true
+    peerDependencies:
+      typescript: ^4.2.3
+    peerDependenciesMeta:
+      typescript:
+        optional: true
+    dependencies:
+      cac: 6.7.3
+      chalk: 4.1.1
+      chokidar: 3.5.2
+      debug: 4.3.2
+      esbuild: 0.12.15
+      execa: 5.1.1
+      globby: 11.0.4
+      joycon: 3.0.1
+      postcss-load-config: 3.1.0
+      resolve-from: 5.0.0
+      rollup: 2.52.7
+      sucrase: 3.19.0
+      tree-kill: 1.2.2
+      typescript: 4.3.5
+    transitivePeerDependencies:
+      - supports-color
+      - ts-node
+    dev: true
+
+  /tsup/4.12.5_typescript@4.3.5:
+    resolution: {integrity: sha512-3f0StcX+trOZvgaY/iU11U8HvvQ4v/LLgoP9OmxtOQVXP8e/Q8FSk69d0bXFb2pHB77CmVxvqiWdwybELQfx1A==}
     hasBin: true
     peerDependencies:
       typescript: ^4.2.3
