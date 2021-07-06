@@ -37,6 +37,8 @@ import type { LinkProps as NextLinkProps } from 'next/link';
 export { CopyToClipboard } from './components/CopyToClipboard';
 export { PackageInstall };
 
+export * from './components/npmBadge';
+
 const Image = getDefault(ImageImport);
 const NextLink = getDefault(NextLinkImport);
 
