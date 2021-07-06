@@ -36,7 +36,7 @@
     "bob-esbuild": "0.1.27",
     "bob-esbuild-cli": "0.1.27",
     "concurrently": "6.2.0",
-    "esbuild": "0.12.14",
+    "esbuild": "0.12.15",
     "husky": "7.0.0",
     "next": "^11.0.1",
     "prettier": "2.3.2",
