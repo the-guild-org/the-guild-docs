@@ -123,7 +123,7 @@ importers:
 
   packages/cli:
     specifiers:
-      '@types/edit-json-file': 1.4.0
+      '@types/edit-json-file': 1.4.1
       '@types/mkdirp': 1.0.1
       '@types/node': 16.0.0
       '@types/prettier': 2.3.1
@@ -136,7 +136,7 @@ importers:
       prettier: 2.3.2
       tsup: 4.12.4
     devDependencies:
-      '@types/edit-json-file': 1.4.0
+      '@types/edit-json-file': 1.4.1
       '@types/mkdirp': 1.0.1
       '@types/node': 16.0.0
       '@types/prettier': 2.3.1
@@ -4256,8 +4256,8 @@ packages:
     resolution: {integrity: sha512-7fDOJFA/x8B+sO1901BmHlf5dE1cxBU8mRXj8QOEDnn16hhGJv/IHxJtZhvsabZsIMn0eLIyeOKAeqSNJJYTpA==}
     dev: true
 
-  /@types/edit-json-file/1.4.0:
-    resolution: {integrity: sha512-7wNUSBgizVbb86WLcs8q3neK9ba/sb2IYSkg0VeICE7hETBRTGUPTcgBelmCdMi0Vhp6rbQRhFiwuJXRkEm4Ug==}
+  /@types/edit-json-file/1.4.1:
+    resolution: {integrity: sha512-XFs6SU4HNIzWOdBFy89AhiSFNBzI/sXXwvuffeATq4/2ZapKtmYEESK/cpHHBxPlgvzTQHPqUeaoDy0OJ5u/Dg==}
     dependencies:
       '@types/node': 16.0.0
     dev: true
