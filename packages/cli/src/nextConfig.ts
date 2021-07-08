@@ -143,8 +143,8 @@ export async function writeApp() {
         },
       },
       fonts: {
-        heading: '"Poppins", sans-serif',
-        body: '"Poppins", sans-serif',
+        heading: 'TGCFont, sans-serif',
+        body: 'TGCFont, sans-serif',
       },
       config: {
         initialColorMode: 'light',
@@ -245,6 +245,10 @@ code * {
 article {
   width: 100%;
   overflow-x: auto;
+}
+
+#__next {
+  font-family: TGCFont, sans-serif;
 }
 
     `,
@@ -452,7 +456,6 @@ export async function writeDocument() {
             <Head />
             <head>
               <link rel="preconnect" href="https://fonts.gstatic.com" />
-              <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
               <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet" />
             </head>
             <body>
