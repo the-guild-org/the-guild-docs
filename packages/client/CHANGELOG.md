@@ -1,5 +1,12 @@
 # @guild-docs/client
 
+## 0.2.20
+
+### Patch Changes
+
+- 73bac83: update @theguild/components
+- 4491fcb: export original mdx components
+
 ## 0.2.19
 
 ### Patch Changes
