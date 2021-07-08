@@ -160,7 +160,7 @@ importers:
       '@guild-docs/types': workspace:^0.2.17
       '@mdx-js/react': 1.6.22
       '@theguild/components': ^1.4.3
-      '@types/mdx-js__react': 1.5.3
+      '@types/mdx-js__react': 1.5.4
       '@types/nprogress': 0.2.0
       '@types/react': 17.0.14
       '@types/react-dom': 17.0.9
@@ -202,7 +202,7 @@ importers:
       '@emotion/react': 11.4.0_b2f98f1a44929e460196386bafc39b6a
       '@mdx-js/react': 1.6.22_react@17.0.2
       '@theguild/components': 1.4.3_28c0df05a9559c3217649c6005b51123
-      '@types/mdx-js__react': 1.5.3
+      '@types/mdx-js__react': 1.5.4
       '@types/nprogress': 0.2.0
       '@types/react': 17.0.14
       '@types/react-dom': 17.0.9
@@ -4318,6 +4318,12 @@ packages:
 
   /@types/mdx-js__react/1.5.3:
     resolution: {integrity: sha512-flP0BpS5rXnEbkU5ih79ARaI/+rK10Iee+zxTaWYtoiyc2+f1EJ8EnYgMmXHdAuI7OX4J9/hdoXfrfrri0AT+Q==}
+    dependencies:
+      '@types/react': 17.0.14
+    dev: true
+
+  /@types/mdx-js__react/1.5.4:
+    resolution: {integrity: sha512-hce+Hymj3cEMOma13eQRhpT3mhQrOkN4CAYEwKWB/qj2BiuUrrTpCkOShEERGmLVgDc3nxF4Dc0k7W999EQxnQ==}
     dependencies:
       '@types/react': 17.0.14
     dev: true
