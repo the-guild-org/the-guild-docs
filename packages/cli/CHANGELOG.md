@@ -1,5 +1,11 @@
 # guild-docs
 
+## 0.2.21
+
+### Patch Changes
+
+- ad94382: fix body TGCFont
+
 ## 0.2.15
 
 ### Patch Changes
