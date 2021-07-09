@@ -2,14 +2,14 @@ lockfileVersion: 5.3
 
 overrides:
   esbuild: 0.12.15
-  '@types/node': 16.0.1
+  '@types/node': ^16.3.0
 
 importers:
 
   .:
     specifiers:
       '@changesets/cli': 2.16.0
-      '@types/node': 16.0.1
+      '@types/node': ^16.3.0
       '@types/react': 17.0.14
       '@types/react-instantsearch-core': 6.10.4
       '@types/react-instantsearch-dom': 6.10.2
@@ -26,13 +26,13 @@ importers:
       typescript: ^4.3.5
     devDependencies:
       '@changesets/cli': 2.16.0
-      '@types/node': 16.0.1
+      '@types/node': 16.3.0
       '@types/react': 17.0.14
       '@types/react-instantsearch-core': 6.10.4
       '@types/react-instantsearch-dom': 6.10.2
       '@types/react-paginate': 7.1.1
-      bob-esbuild: 0.1.27_fccbb94b0fcbb19a3ea87c1e7ea84727
-      bob-esbuild-cli: 0.1.27_fccbb94b0fcbb19a3ea87c1e7ea84727
+      bob-esbuild: 0.1.27_1059216209fc0c6e1d3e427ca3e1553a
+      bob-esbuild-cli: 0.1.27_1059216209fc0c6e1d3e427ca3e1553a
       concurrently: 6.2.0
       esbuild: 0.12.15
       husky: 7.0.1
@@ -57,8 +57,8 @@ importers:
       '@next/bundle-analyzer': ^11.0.1
       '@theguild/components': ^1.4.3
       '@types/concurrently': ^6.2.1
-      '@types/mdx-js__react': ^1.5.3
-      '@types/node': 16.0.1
+      '@types/mdx-js__react': ^1.5.4
+      '@types/node': ^16.3.0
       '@types/react': ^17.0.14
       '@types/react-dom': ^17.0.9
       concurrently: ^6.2.0
@@ -107,8 +107,8 @@ importers:
     devDependencies:
       '@next/bundle-analyzer': 11.0.1
       '@types/concurrently': 6.2.1
-      '@types/mdx-js__react': 1.5.3
-      '@types/node': 16.0.1
+      '@types/mdx-js__react': 1.5.4
+      '@types/node': 16.3.0
       '@types/react': 17.0.14
       '@types/react-dom': 17.0.9
       concurrently: 6.2.0
@@ -125,7 +125,7 @@ importers:
     specifiers:
       '@types/edit-json-file': 1.4.1
       '@types/mkdirp': 1.0.2
-      '@types/node': 16.0.1
+      '@types/node': ^16.3.0
       '@types/prettier': 2.3.2
       changesets-github-release: 0.0.3
       commander: 8.0.0
@@ -138,7 +138,7 @@ importers:
     devDependencies:
       '@types/edit-json-file': 1.4.1
       '@types/mkdirp': 1.0.2
-      '@types/node': 16.0.1
+      '@types/node': 16.3.0
       '@types/prettier': 2.3.2
       changesets-github-release: 0.0.3
       commander: 8.0.0
@@ -160,7 +160,7 @@ importers:
       '@guild-docs/types': workspace:^0.2.17
       '@mdx-js/react': 1.6.22
       '@theguild/components': ^1.4.3
-      '@types/mdx-js__react': 1.5.3
+      '@types/mdx-js__react': 1.5.4
       '@types/nprogress': 0.2.0
       '@types/react': 17.0.14
       '@types/react-dom': 17.0.9
@@ -181,7 +181,7 @@ importers:
       react-use: ^17.2.4
       typescript: ^4.3.5
       use-immer: ^0.6.0
-      zustand: ^3.5.5
+      zustand: ^3.5.6
     dependencies:
       '@guild-docs/types': link:../types
       immer: 9.0.5
@@ -192,7 +192,7 @@ importers:
       react-intersection-observer: 8.32.0_react@17.0.2
       react-use: 17.2.4_react-dom@17.0.2+react@17.0.2
       use-immer: 0.6.0_immer@9.0.5+react@17.0.2
-      zustand: 3.5.5_react@17.0.2
+      zustand: 3.5.6_react@17.0.2
     devDependencies:
       '@chakra-ui/icons': 1.0.14_f83ab07dbf33058351684eb913819748
       '@chakra-ui/layout': 1.4.7_f83ab07dbf33058351684eb913819748
@@ -202,11 +202,11 @@ importers:
       '@emotion/react': 11.4.0_b2f98f1a44929e460196386bafc39b6a
       '@mdx-js/react': 1.6.22_react@17.0.2
       '@theguild/components': 1.4.3_28c0df05a9559c3217649c6005b51123
-      '@types/mdx-js__react': 1.5.3
+      '@types/mdx-js__react': 1.5.4
       '@types/nprogress': 0.2.0
       '@types/react': 17.0.14
       '@types/react-dom': 17.0.9
-      bob-esbuild-cli: 0.1.27_fccbb94b0fcbb19a3ea87c1e7ea84727
+      bob-esbuild-cli: 0.1.27_1059216209fc0c6e1d3e427ca3e1553a
       changesets-github-release: 0.0.3
       esbuild: 0.12.15
       framer-motion: 4.1.17_react-dom@17.0.2+react@17.0.2
@@ -249,7 +249,7 @@ importers:
       tiny-lru: 7.0.6
     devDependencies:
       '@types/github-slugger': 1.3.0
-      bob-esbuild-cli: 0.1.27_fccbb94b0fcbb19a3ea87c1e7ea84727
+      bob-esbuild-cli: 0.1.27_1059216209fc0c6e1d3e427ca3e1553a
       changesets-github-release: 0.0.3
       esbuild: 0.12.15
       next: 11.0.1_f31b35bdaa3b7c2fce82404f09d2dac4
@@ -283,7 +283,7 @@ importers:
       react-instantsearch-dom: ^6.12.0
       react-paginate: ^7.1.3
       react-player: ^2.9.0
-      rollup: 2.52.8
+      rollup: ^2.53.0
       rollup-plugin-auto-external: 2.0.0
       rollup-plugin-bundle-size: 1.0.3
       rollup-plugin-copy: 3.4.0
@@ -309,23 +309,23 @@ importers:
       '@babel/preset-react': 7.14.5_@babel+core@7.14.6
       '@babel/preset-typescript': 7.14.5_@babel+core@7.14.6
       '@emotion/babel-plugin-jsx-pragmatic': 0.1.5_@babel+core@7.14.6
-      '@rollup/plugin-babel': 5.3.0_@babel+core@7.14.6+rollup@2.52.8
-      '@rollup/plugin-image': 2.0.6_rollup@2.52.8
-      '@rollup/plugin-node-resolve': 13.0.0_rollup@2.52.8
-      bob-esbuild-cli: 0.1.27_fccbb94b0fcbb19a3ea87c1e7ea84727
+      '@rollup/plugin-babel': 5.3.0_@babel+core@7.14.6+rollup@2.53.0
+      '@rollup/plugin-image': 2.0.6_rollup@2.53.0
+      '@rollup/plugin-node-resolve': 13.0.0_rollup@2.53.0
+      bob-esbuild-cli: 0.1.27_1059216209fc0c6e1d3e427ca3e1553a
       changesets-github-release: 0.0.3
       postcss: 8.3.5
       react: 17.0.2
       react-dom: 17.0.2_react@17.0.2
-      rollup: 2.52.8
-      rollup-plugin-auto-external: 2.0.0_rollup@2.52.8
+      rollup: 2.53.0
+      rollup-plugin-auto-external: 2.0.0_rollup@2.53.0
       rollup-plugin-bundle-size: 1.0.3
       rollup-plugin-copy: 3.4.0
 
   packages/types:
     specifiers:
       '@chakra-ui/react': 1.6.5
-      '@types/node': 16.0.1
+      '@types/node': ^16.3.0
       '@types/react': 17.0.14
       bob-esbuild-cli: 0.1.27
       changesets-github-release: ^0.0.3
@@ -334,9 +334,9 @@ importers:
       typescript: ^4.3.5
     devDependencies:
       '@chakra-ui/react': 1.6.5_@types+react@17.0.14
-      '@types/node': 16.0.1
+      '@types/node': 16.3.0
       '@types/react': 17.0.14
-      bob-esbuild-cli: 0.1.27_fccbb94b0fcbb19a3ea87c1e7ea84727
+      bob-esbuild-cli: 0.1.27_1059216209fc0c6e1d3e427ca3e1553a
       changesets-github-release: 0.0.3
       next-i18next: 8.5.3_next@11.0.1
       next-mdx-remote: 3.0.2
@@ -3574,7 +3574,7 @@ packages:
     resolution: {integrity: sha512-mki5uBvhHzO8kYYix/WRy2WX8S3B5wdVSc9D6KcU5lQNglP2yt58/VfLuAK49glRXChosY8ap2oJ1qgma3GUVA==}
     dependencies:
       '@babel/runtime': 7.14.6
-      '@types/node': 16.0.1
+      '@types/node': 16.3.0
       find-up: 4.1.0
       fs-extra: 8.1.0
     dev: true
@@ -3719,8 +3719,8 @@ packages:
     resolution: {integrity: sha512-RkhPPp2zrqDAQA/2jNhnztcPAlv64XdhIp7a7454A5ovI7Bukxgt7MX7udwAu3zg1DcpPU0rz3VV1SeaqvY4+A==}
     engines: {node: '>= 8'}
 
-  /@nodelib/fs.walk/1.2.7:
-    resolution: {integrity: sha512-BTIhocbPBSrRmHxOAJFtR18oLhxTtAFDAvL8hY1S3iU8k+E60W/YFs4jrixGzQjMpF4qPXxIQHcjVD9dz1C2QA==}
+  /@nodelib/fs.walk/1.2.8:
+    resolution: {integrity: sha512-oGB+UxlgWcgQkgwo8GcEGwemoTFt3FIO9ababBmaGwXIoBKZ+GTy0pP185beGg7Llih/NSHSV2XAs1lnznocSg==}
     engines: {node: '>= 8'}
     dependencies:
       '@nodelib/fs.scandir': 2.1.5
@@ -4129,7 +4129,7 @@ packages:
       react-dom: 17.0.2_react@17.0.2
       tslib: 2.3.0
 
-  /@rollup/plugin-babel/5.3.0_@babel+core@7.14.6+rollup@2.52.8:
+  /@rollup/plugin-babel/5.3.0_@babel+core@7.14.6+rollup@2.53.0:
     resolution: {integrity: sha512-9uIC8HZOnVLrLHxayq/PTzw+uS25E14KPUBh5ktF+18Mjo5yK0ToMMx6epY0uEgkjwJw0aBW4x2horYXh8juWw==}
     engines: {node: '>= 10.0.0'}
     peerDependencies:
@@ -4142,37 +4142,37 @@ packages:
     dependencies:
       '@babel/core': 7.14.6
       '@babel/helper-module-imports': 7.14.5
-      '@rollup/pluginutils': 3.1.0_rollup@2.52.8
-      rollup: 2.52.8
+      '@rollup/pluginutils': 3.1.0_rollup@2.53.0
+      rollup: 2.53.0
     dev: true
 
-  /@rollup/plugin-image/2.0.6_rollup@2.52.8:
+  /@rollup/plugin-image/2.0.6_rollup@2.53.0:
     resolution: {integrity: sha512-bB+spXogbPiFjhBS7i8ajUOgOnVwWK3bnJ6VroxKey/q8/EPRkoSh+4O1qPCw97qMIDspF4TlzXVBhZ7nojIPw==}
     engines: {node: '>= 8.0.0'}
     peerDependencies:
       rollup: ^1.20.0 || ^2.0.0
     dependencies:
-      '@rollup/pluginutils': 3.1.0_rollup@2.52.8
+      '@rollup/pluginutils': 3.1.0_rollup@2.53.0
       mini-svg-data-uri: 1.3.3
-      rollup: 2.52.8
+      rollup: 2.53.0
     dev: true
 
-  /@rollup/plugin-node-resolve/13.0.0_rollup@2.52.8:
+  /@rollup/plugin-node-resolve/13.0.0_rollup@2.53.0:
     resolution: {integrity: sha512-41X411HJ3oikIDivT5OKe9EZ6ud6DXudtfNrGbC4nniaxx2esiWjkLOzgnZsWq1IM8YIeL2rzRGLZLBjlhnZtQ==}
     engines: {node: '>= 10.0.0'}
     peerDependencies:
       rollup: ^2.42.0
     dependencies:
-      '@rollup/pluginutils': 3.1.0_rollup@2.52.8
+      '@rollup/pluginutils': 3.1.0_rollup@2.53.0
       '@types/resolve': 1.17.1
       builtin-modules: 3.2.0
       deepmerge: 4.2.2
       is-module: 1.0.0
       resolve: 1.20.0
-      rollup: 2.52.8
+      rollup: 2.53.0
     dev: true
 
-  /@rollup/pluginutils/3.1.0_rollup@2.52.8:
+  /@rollup/pluginutils/3.1.0_rollup@2.53.0:
     resolution: {integrity: sha512-GksZ6pr6TpIjHm8h9lSQ8pi8BE9VeubNT0OMJ3B5uZJ8pz73NPiqOtCog/x2/QzM1ENChPKxMDhiQuRHsqc+lg==}
     engines: {node: '>= 8.0.0'}
     peerDependencies:
@@ -4181,10 +4181,10 @@ packages:
       '@types/estree': 0.0.39
       estree-walker: 1.0.1
       picomatch: 2.3.0
-      rollup: 2.52.8
+      rollup: 2.53.0
     dev: true
 
-  /@rollup/pluginutils/4.1.0_rollup@2.52.8:
+  /@rollup/pluginutils/4.1.0_rollup@2.53.0:
     resolution: {integrity: sha512-TrBhfJkFxA+ER+ew2U2/fHbebhLT/l/2pRk0hfj9KusXUuRXd2v0R58AfaZK9VXDQ4TogOSEmICVrQAA3zFnHQ==}
     engines: {node: '>= 8.0.0'}
     peerDependencies:
@@ -4192,7 +4192,7 @@ packages:
     dependencies:
       estree-walker: 2.0.2
       picomatch: 2.3.0
-      rollup: 2.52.8
+      rollup: 2.53.0
     dev: true
 
   /@sideway/address/4.1.2:
@@ -4249,7 +4249,7 @@ packages:
   /@types/concurrently/6.2.1:
     resolution: {integrity: sha512-l+AH7GuHYSgIYoXAufh7P9/oYzRobM+m863XobAARzFiafcGdCjMQQ1grLbVc69+AJTBbO3S8mtt2UPsipk6WA==}
     dependencies:
-      '@types/node': 16.0.1
+      '@types/node': 16.3.0
     dev: true
 
   /@types/debug/4.1.6:
@@ -4259,7 +4259,7 @@ packages:
   /@types/edit-json-file/1.4.1:
     resolution: {integrity: sha512-XFs6SU4HNIzWOdBFy89AhiSFNBzI/sXXwvuffeATq4/2ZapKtmYEESK/cpHHBxPlgvzTQHPqUeaoDy0OJ5u/Dg==}
     dependencies:
-      '@types/node': 16.0.1
+      '@types/node': 16.3.0
     dev: true
 
   /@types/estree/0.0.39:
@@ -4269,7 +4269,7 @@ packages:
   /@types/fs-extra/8.1.2:
     resolution: {integrity: sha512-SvSrYXfWSc7R4eqnOzbQF4TZmfpNSM9FrSWLU3EUnWBuyZqNBOrv1B1JA3byUDPUl9z4Ab3jeZG2eDdySlgNMg==}
     dependencies:
-      '@types/node': 16.0.1
+      '@types/node': 16.3.0
     dev: true
 
   /@types/github-slugger/1.3.0:
@@ -4280,7 +4280,7 @@ packages:
     resolution: {integrity: sha512-w+LsMxKyYQm347Otw+IfBXOv9UWVjpHpCDdbBMt8Kz/xbvCYNjP+0qPh91Km3iKfSRLBB0P7fAMf0KHrPu+MyA==}
     dependencies:
       '@types/minimatch': 3.0.5
-      '@types/node': 16.0.1
+      '@types/node': 16.3.0
     dev: true
 
   /@types/hast/2.3.2:
@@ -4316,8 +4316,8 @@ packages:
     dependencies:
       '@types/unist': 2.0.5
 
-  /@types/mdx-js__react/1.5.3:
-    resolution: {integrity: sha512-flP0BpS5rXnEbkU5ih79ARaI/+rK10Iee+zxTaWYtoiyc2+f1EJ8EnYgMmXHdAuI7OX4J9/hdoXfrfrri0AT+Q==}
+  /@types/mdx-js__react/1.5.4:
+    resolution: {integrity: sha512-hce+Hymj3cEMOma13eQRhpT3mhQrOkN4CAYEwKWB/qj2BiuUrrTpCkOShEERGmLVgDc3nxF4Dc0k7W999EQxnQ==}
     dependencies:
       '@types/react': 17.0.14
     dev: true
@@ -4333,11 +4333,11 @@ packages:
   /@types/mkdirp/1.0.2:
     resolution: {integrity: sha512-o0K1tSO0Dx5X6xlU5F1D6625FawhC3dU3iqr25lluNv/+/QIVH8RLNEiVokgIZo+mz+87w/3Mkg/VvQS+J51fQ==}
     dependencies:
-      '@types/node': 16.0.1
+      '@types/node': 16.3.0
     dev: true
 
-  /@types/node/16.0.1:
-    resolution: {integrity: sha512-hBOx4SUlEPKwRi6PrXuTGw1z6lz0fjsibcWCM378YxsSu/6+C30L6CR49zIBKHiwNWCYIcOLjg4OHKZaFeLAug==}
+  /@types/node/16.3.0:
+    resolution: {integrity: sha512-OydMCocGMGqw/1BnWbhtK+AtwyWTOigtrQlRe57OQmTNcI3HKlVI5FGlh+c4mSqInMPLynFrTlYjfajPu9O/eQ==}
 
   /@types/normalize-package-data/2.4.1:
     resolution: {integrity: sha512-Gj7cI7z+98M282Tqmp2K5EIsoouUEzbBJhQQzDE3jSIRk6r9gsz0oUokqIUR4u1R3dMHo0pDHM7sNOHyhulypw==}
@@ -4397,14 +4397,14 @@ packages:
   /@types/readable-stream/2.3.11:
     resolution: {integrity: sha512-0z+/apYJwKFz/RHp6mOMxz/y7xOvWPYPevuCEyAY3gXsjtaac02E26RvxA+I96rfvmVH/dEMGXNvyJfViR1FSQ==}
     dependencies:
-      '@types/node': 16.0.1
+      '@types/node': 16.3.0
       safe-buffer: 5.2.1
     dev: true
 
   /@types/resolve/1.17.1:
     resolution: {integrity: sha512-yy7HuzQhj0dhGpD8RLXSZWEkLsV9ibvxvi6EiJ3bkqLAO1RGo0WbkWQiwpRlSFymTJRz0d3k5LM3kkx8ArDbLw==}
     dependencies:
-      '@types/node': 16.0.1
+      '@types/node': 16.3.0
     dev: true
 
   /@types/scheduler/0.16.2:
@@ -4916,7 +4916,7 @@ packages:
   /bn.js/5.2.0:
     resolution: {integrity: sha512-D7iWRBvnZE8ecXiLj/9wbxH7Tk79fAh8IHaTNq1RWRixsS02W+5qS+iE9yq6RYl0asXx5tw0bLhmT5pIfbSquw==}
 
-  /bob-esbuild-cli/0.1.27_fccbb94b0fcbb19a3ea87c1e7ea84727:
+  /bob-esbuild-cli/0.1.27_1059216209fc0c6e1d3e427ca3e1553a:
     resolution: {integrity: sha512-l3Hv3BRdlMZlqV+k2QPIu1/eYwiYE2x46W4SyJvEvJAslzFdeULzhZi7tlfbd9DzUYhis7Y0oEUzIdBydv7agw==}
     engines: {node: '>=12.0.0'}
     hasBin: true
@@ -4926,34 +4926,34 @@ packages:
       '@oclif/errors': 1.3.5
       '@oclif/parser': 3.8.5
       '@oclif/plugin-help': 3.2.2
-      bob-esbuild: 0.1.27_fccbb94b0fcbb19a3ea87c1e7ea84727
+      bob-esbuild: 0.1.27_1059216209fc0c6e1d3e427ca3e1553a
     transitivePeerDependencies:
       - '@types/node'
       - supports-color
       - typescript
     dev: true
 
-  /bob-esbuild-plugin/0.1.21_@types+node@16.0.1+rollup@2.52.8:
+  /bob-esbuild-plugin/0.1.21_@types+node@16.3.0+rollup@2.53.0:
     resolution: {integrity: sha512-EKA95lpeKpmfG0AnDXOHsTtc73n/Eqhnrdom1eNbzPN/CIiWwRMV+2pMYeLjNxNJ7kWzB81Fsqa4UULe7Ra9QQ==}
     peerDependencies:
       '@types/node': ^15.6.1
       rollup: ^2.50.3
     dependencies:
-      '@rollup/pluginutils': 4.1.0_rollup@2.52.8
-      '@types/node': 16.0.1
+      '@rollup/pluginutils': 4.1.0_rollup@2.53.0
+      '@types/node': 16.3.0
       esbuild: 0.12.15
       joycon: 3.0.1
       jsonc-parser: 3.0.0
-      rollup: 2.52.8
+      rollup: 2.53.0
     dev: true
 
-  /bob-esbuild/0.1.27_fccbb94b0fcbb19a3ea87c1e7ea84727:
+  /bob-esbuild/0.1.27_1059216209fc0c6e1d3e427ca3e1553a:
     resolution: {integrity: sha512-N+Hwganwx5rKjTjtmamKjuOJ3A9bFB7dMU9t6rbtMj9VQ7z135/r5gWe6PHqdpU3DwMbnUFHZnvmAmJe9ji8Hw==}
     peerDependencies:
       typescript: ^4.3.3
     dependencies:
       '@pnpm/exportable-manifest': 2.1.5
-      bob-esbuild-plugin: 0.1.21_@types+node@16.0.1+rollup@2.52.8
+      bob-esbuild-plugin: 0.1.21_@types+node@16.3.0+rollup@2.53.0
       builtin-modules: 3.2.0
       chalk: 4.1.1
       cosmiconfig: 7.0.0
@@ -4966,7 +4966,7 @@ packages:
       lodash.get: 4.4.2
       oclif: 1.18.1
       rimraf: 3.0.2
-      rollup: 2.52.8
+      rollup: 2.53.0
       rollup-plugin-delete: 2.0.0
       rollup-plugin-node-externals: 2.2.0_builtin-modules@3.2.0
       sucrase: 3.20.0
@@ -5103,7 +5103,7 @@ packages:
     dependencies:
       caniuse-lite: 1.0.30001243
       colorette: 1.2.2
-      electron-to-chromium: 1.3.770
+      electron-to-chromium: 1.3.771
       escalade: 3.1.1
       node-releases: 1.1.73
 
@@ -6343,8 +6343,8 @@ packages:
       jake: 10.8.2
     dev: true
 
-  /electron-to-chromium/1.3.770:
-    resolution: {integrity: sha512-Kyh8DGK1KfEZuYKIHvuOmrKotsKZQ+qBkDIWHciE3QoFkxXB1KzPP+tfLilSHAfxTON0yYMnFCWkQtUOR7g6KQ==}
+  /electron-to-chromium/1.3.771:
+    resolution: {integrity: sha512-zHMomTqkpnAD9W5rhXE1aiU3ogGFrqWzdvM4C6222SREiqsWQb2w0S7P2Ii44qCaGimmAP1z+OydllM438uJyA==}
 
   /elliptic/6.5.4:
     resolution: {integrity: sha512-iLhC6ULemrljPZb+QutR5TQGB+pdW6KGD5RSegS+8sorOZT+rdQFbsQFJgvN3eRqNALqJer4oQ16YvJHlU8hzQ==}
@@ -6716,12 +6716,12 @@ packages:
       micromatch: 3.1.10
     dev: true
 
-  /fast-glob/3.2.6:
-    resolution: {integrity: sha512-GnLuqj/pvQ7pX8/L4J84nijv6sAnlwvSDpMkJi9i7nPmPxGtRPkBSStfvDW5l6nMdX9VWe+pkKWFTgD+vF2QSQ==}
+  /fast-glob/3.2.7:
+    resolution: {integrity: sha512-rYGMRwip6lUMvYD3BTScMwT1HtAs2d71SMv66Vrxs0IekGZEjhM0pcMfjQPnknBt2zeCwQMEupiN02ZP4DiT1Q==}
     engines: {node: '>=8'}
     dependencies:
       '@nodelib/fs.stat': 2.0.5
-      '@nodelib/fs.walk': 1.2.7
+      '@nodelib/fs.walk': 1.2.8
       glob-parent: 5.1.2
       merge2: 1.4.1
       micromatch: 4.0.4
@@ -7212,7 +7212,7 @@ packages:
       '@types/glob': 7.1.4
       array-union: 2.1.0
       dir-glob: 3.0.1
-      fast-glob: 3.2.6
+      fast-glob: 3.2.7
       glob: 7.1.7
       ignore: 5.1.8
       merge2: 1.4.1
@@ -7226,7 +7226,7 @@ packages:
       '@types/glob': 7.1.4
       array-union: 2.1.0
       dir-glob: 3.0.1
-      fast-glob: 3.2.6
+      fast-glob: 3.2.7
       glob: 7.1.7
       ignore: 5.1.8
       merge2: 1.4.1
@@ -7239,7 +7239,7 @@ packages:
     dependencies:
       array-union: 2.1.0
       dir-glob: 3.0.1
-      fast-glob: 3.2.6
+      fast-glob: 3.2.7
       ignore: 5.1.8
       merge2: 1.4.1
       slash: 3.0.0
@@ -8243,7 +8243,7 @@ packages:
     resolution: {integrity: sha512-mk0umAQ5lT+CaOJ+Qp01N6kz48sJG2kr2n1rX0koqKf6FIygQV0qLOdN9SCYID4IVeSigDOcPeGLozdMLYfb5g==}
     engines: {node: ^10.13.0 || ^12.13.0 || ^14.15.0 || >=15.0.0}
     dependencies:
-      '@types/node': 16.0.1
+      '@types/node': 16.3.0
       merge-stream: 2.0.0
       supports-color: 8.1.1
 
@@ -11042,7 +11042,7 @@ packages:
       hash-base: 3.1.0
       inherits: 2.0.4
 
-  /rollup-plugin-auto-external/2.0.0_rollup@2.52.8:
+  /rollup-plugin-auto-external/2.0.0_rollup@2.53.0:
     resolution: {integrity: sha512-HQM3ZkZYfSam1uoZtAB9sK26EiAsfs1phrkf91c/YX+S07wugyRXSigBxrIwiLr5EPPilKYmoMxsrnlGBsXnuQ==}
     engines: {node: '>=6'}
     peerDependencies:
@@ -11050,7 +11050,7 @@ packages:
     dependencies:
       builtins: 2.0.1
       read-pkg: 3.0.0
-      rollup: 2.52.8
+      rollup: 2.53.0
       safe-resolve: 1.0.0
       semver: 5.7.1
     dev: true
@@ -11090,8 +11090,8 @@ packages:
       find-up: 4.1.0
     dev: true
 
-  /rollup/2.52.8:
-    resolution: {integrity: sha512-IjAB0C6KK5/lvqzJWAzsvOik+jV5Bt907QdkQ/gDP4j+R9KYNI1tjqdxiPitGPVrWC21Mf/ucXgowUjN/VemaQ==}
+  /rollup/2.53.0:
+    resolution: {integrity: sha512-spgrY78Toh+m0+zaOoeaayJKuzFuWy6o1PdFIBMVwRcuxT0xCOX9A5rChyKe+2ruL4lePKWUMImS4mMW1QAkmQ==}
     engines: {node: '>=10.0.0'}
     hasBin: true
     optionalDependencies:
@@ -11890,7 +11890,7 @@ packages:
       detective: 5.2.0
       didyoumean: 1.2.2
       dlv: 1.1.3
-      fast-glob: 3.2.6
+      fast-glob: 3.2.7
       fs-extra: 10.0.0
       glob-parent: 6.0.0
       html-tags: 3.1.0
@@ -11933,7 +11933,7 @@ packages:
       detective: 5.2.0
       didyoumean: 1.2.2
       dlv: 1.1.3
-      fast-glob: 3.2.6
+      fast-glob: 3.2.7
       fs-extra: 10.0.0
       glob-parent: 6.0.0
       html-tags: 3.1.0
@@ -11976,7 +11976,7 @@ packages:
       detective: 5.2.0
       didyoumean: 1.2.2
       dlv: 1.1.3
-      fast-glob: 3.2.6
+      fast-glob: 3.2.7
       fs-extra: 10.0.0
       glob-parent: 6.0.0
       html-tags: 3.1.0
@@ -12327,7 +12327,7 @@ packages:
       joycon: 3.0.1
       postcss-load-config: 3.1.0
       resolve-from: 5.0.0
-      rollup: 2.52.8
+      rollup: 2.53.0
       sucrase: 3.20.0
       tree-kill: 1.2.2
       typescript: 4.3.5
@@ -13253,8 +13253,8 @@ packages:
       wrap-ansi: 2.1.0
     dev: true
 
-  /zustand/3.5.5_react@17.0.2:
-    resolution: {integrity: sha512-iTiJoxzYFtiD7DhscgwK2P4Kft1JcZEI2U7mG8IxiOFM4KpBAiJZfFop3r/3wbCuyltXI6ph1Fx90e4j/S43XA==}
+  /zustand/3.5.6_react@17.0.2:
+    resolution: {integrity: sha512-8XrpRO5scF8MSxeAlu7vFupmLG+5MTWhT+6+3QNsihs0QZfOjaArFyvenUgrk30WdZVGVHLHXBhbqC2/QzLeMA==}
     peerDependencies:
       react: '>=16.8'
     peerDependenciesMeta:
