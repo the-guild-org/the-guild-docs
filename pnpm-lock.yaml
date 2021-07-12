@@ -159,7 +159,7 @@ importers:
       '@emotion/react': 11.4.0
       '@guild-docs/types': workspace:^0.2.17
       '@mdx-js/react': 1.6.22
-      '@theguild/components': ^1.4.3
+      '@theguild/components': ^1.4.5
       '@types/mdx-js__react': 1.5.4
       '@types/nprogress': 0.2.0
       '@types/react': 17.0.14
@@ -201,7 +201,7 @@ importers:
       '@chakra-ui/utils': 1.8.1
       '@emotion/react': 11.4.0_b2f98f1a44929e460196386bafc39b6a
       '@mdx-js/react': 1.6.22_react@17.0.2
-      '@theguild/components': 1.4.3_28c0df05a9559c3217649c6005b51123
+      '@theguild/components': 1.4.5_28c0df05a9559c3217649c6005b51123
       '@types/mdx-js__react': 1.5.4
       '@types/nprogress': 0.2.0
       '@types/react': 17.0.14
@@ -3040,7 +3040,7 @@ packages:
     peerDependencies:
       '@chakra-ui/system': '>=1.0.0'
     dependencies:
-      '@chakra-ui/system': 1.7.1_c94ce1a602d602ceca4c9cb32dbce62d
+      '@chakra-ui/system': 1.7.1
       '@chakra-ui/utils': 1.8.1
       '@types/tinycolor2': 1.4.2
       tinycolor2: 1.4.2
@@ -3050,7 +3050,7 @@ packages:
     peerDependencies:
       '@chakra-ui/system': '>=1.0.0'
     dependencies:
-      '@chakra-ui/system': 1.7.1_c94ce1a602d602ceca4c9cb32dbce62d
+      '@chakra-ui/system': 1.7.1
       '@chakra-ui/theme-tools': 1.1.8_@chakra-ui+system@1.7.1
       '@chakra-ui/utils': 1.8.1
 
@@ -4237,6 +4237,37 @@ packages:
       - postcss
       - prop-types
       - ts-node
+    dev: false
+
+  /@theguild/components/1.4.5_28c0df05a9559c3217649c6005b51123:
+    resolution: {integrity: sha512-OONwnqCDU7517rD9n0pASm2gqnIgHbOUIqn65MrcluJwYgkru3LTrcpCusCeoCxOYcaM4CHfMmZmNX2n9DaI1Q==}
+    peerDependencies:
+      react: ^17.0.2
+      react-dom: ^17.0.2
+    dependencies:
+      '@emotion/react': 11.4.0_b2f98f1a44929e460196386bafc39b6a
+      '@emotion/styled': 11.3.0_da675241f78bb54d4f9123e607fbb27c
+      algoliasearch: 4.10.3
+      core-js: 3.15.2
+      focus-trap-react: 8.7.0_react-dom@17.0.2+react@17.0.2
+      polished: 4.1.3
+      react: 17.0.2
+      react-dom: 17.0.2_react@17.0.2
+      react-instantsearch-dom: 6.12.0_183d5bb33a781e378a94ae4c13e76371
+      react-paginate: 7.1.3_react@17.0.2
+      react-player: 2.9.0_react@17.0.2
+      tailwindcss: 2.2.4
+      twin.macro: 2.6.2
+      use-debounce: 7.0.0_react@17.0.2
+      validator: 13.6.0
+    transitivePeerDependencies:
+      - '@babel/core'
+      - '@types/react'
+      - autoprefixer
+      - postcss
+      - prop-types
+      - ts-node
+    dev: true
 
   /@tokenizer/token/0.1.1:
     resolution: {integrity: sha512-XO6INPbZCxdprl+9qa/AAbFFOMzzwqYxpjPgLICrMD6C2FCw6qfJOPcBk6JqqPLSaZ/Qx87qn4rpPmPMwaAK6w==}
