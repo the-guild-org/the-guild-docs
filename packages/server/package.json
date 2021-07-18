@@ -36,7 +36,7 @@
     "next-mdx-remote": "^3.0.4",
     "npms.io": "^2.0.6",
     "remark-emoji": "^2.2.0",
-    "remark-slug": "^6.0.0",
+    "remark-slug": "^6.1.0",
     "tiny-lru": "^7.0.6"
   },
   "devDependencies": {
