@@ -159,7 +159,7 @@ importers:
       '@emotion/react': 11.4.0
       '@guild-docs/types': workspace:^0.2.17
       '@mdx-js/react': 1.6.22
-      '@theguild/components': ^1.4.5
+      '@theguild/components': ^1.4.6
       '@types/mdx-js__react': 1.5.4
       '@types/nprogress': 0.2.0
       '@types/react': 17.0.14
@@ -201,7 +201,7 @@ importers:
       '@chakra-ui/utils': 1.8.1
       '@emotion/react': 11.4.0_b2f98f1a44929e460196386bafc39b6a
       '@mdx-js/react': 1.6.22_react@17.0.2
-      '@theguild/components': 1.4.5_28c0df05a9559c3217649c6005b51123
+      '@theguild/components': 1.4.6_28c0df05a9559c3217649c6005b51123
       '@types/mdx-js__react': 1.5.4
       '@types/nprogress': 0.2.0
       '@types/react': 17.0.14
@@ -4239,8 +4239,8 @@ packages:
       - ts-node
     dev: false
 
-  /@theguild/components/1.4.5_28c0df05a9559c3217649c6005b51123:
-    resolution: {integrity: sha512-OONwnqCDU7517rD9n0pASm2gqnIgHbOUIqn65MrcluJwYgkru3LTrcpCusCeoCxOYcaM4CHfMmZmNX2n9DaI1Q==}
+  /@theguild/components/1.4.6_28c0df05a9559c3217649c6005b51123:
+    resolution: {integrity: sha512-CBxci6HxBF1iRoSqi8/IgFc6tuakaP4C5mCIAZnnQZg2DAgPQamKrgIQJq2ZZptMVmvB+M70bOiNx5BM2EBl2w==}
     peerDependencies:
       react: ^17.0.2
       react-dom: ^17.0.2
