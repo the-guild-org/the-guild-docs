@@ -22,7 +22,7 @@
     "@guild-docs/server": "workspace:^0.2.18",
     "@guild-docs/tgc": "workspace:^0.2.7",
     "@mdx-js/react": "^1.6.22",
-    "@theguild/components": "^1.4.6",
+    "@theguild/components": "^1.4.7",
     "framer-motion": "^4.1.17",
     "next": "^11.0.1",
     "next-i18next": "^8.5.5",
