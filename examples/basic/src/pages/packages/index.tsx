@@ -22,6 +22,11 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
         npmPackage: '@guild-docs/client',
         tags: [],
         title: 'Guild Docs Client',
+        githubReadme: {
+          repo: 'the-guild-org/the-guild-docs',
+          path: '/examples/basic/docs/secondary.mdx',
+        },
+        devFilePath: 'docs/secondary.mdx',
       },
       {
         identifier: 'envelop',
