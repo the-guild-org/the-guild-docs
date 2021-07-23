@@ -24,11 +24,12 @@
     "dev:server": "pnpm -r --filter @guild-docs/server dev",
     "dev:types": "pnpm -r --filter @guild-docs/types dev",
     "prepare": "concurrently -r \"bob-esbuild tsc && pnpm -r prepack\" \"husky install\"",
-    "pretty": "pretty-quick"
+    "pretty": "pretty-quick",
+    "pretty:all": "prettier -w \"**/*.{ts,tsx,json}\""
   },
   "devDependencies": {
     "@changesets/cli": "2.16.0",
-    "@types/node": "^16.4.0",
+    "@types/node": "^16.4.1",
     "@types/react": "17.0.14",
     "@types/react-instantsearch-core": "6.10.4",
     "@types/react-instantsearch-dom": "6.12.0",
@@ -50,7 +51,7 @@
   "pnpm": {
     "overrides": {
       "esbuild": "0.12.15",
-      "@types/node": "^16.4.0"
+      "@types/node": "^16.4.1"
     }
   }
 }

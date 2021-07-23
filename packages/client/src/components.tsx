@@ -281,11 +281,10 @@ export const originalComponents = {
       <Code fontSize="0.9rem" colorScheme={colorScheme} padding="20px !important" width="100%" borderRadius="sm" {...props} />
     );
   },
-
-}
+};
 
 export const components = {
-  ...originalComponents
+  ...originalComponents,
 };
 
 // Workaround to this issue with TypeScript: https://github.com/microsoft/TypeScript/issues/42873
