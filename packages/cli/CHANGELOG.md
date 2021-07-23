@@ -1,5 +1,11 @@
 # guild-docs
 
+## 0.2.22
+
+### Patch Changes
+
+- 3136b39: add margin to code blocks in boilerplate css
+
 ## 0.2.21
 
 ### Patch Changes
