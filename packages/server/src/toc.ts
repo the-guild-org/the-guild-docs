@@ -7,8 +7,22 @@ export function SerializeTOC(content: string): TOC {
 
   const lines = content.split('\n');
 
+  let isCodeBlock = false;
+
   const slugs = lines.reduce((acum, value) => {
+    if (value.match(/^```(.*)/)) {
+      if (isCodeBlock) {
+        isCodeBlock = false;
+      } else {
+        isCodeBlock = true;
+        return acum;
+      }
+    } else if (isCodeBlock) {
+      return acum;
+    }
+
     const result = value.match(/(\#\#+ )(.+)/);
+
     if (!result) return acum;
 
     const depth = result[1]?.length;
