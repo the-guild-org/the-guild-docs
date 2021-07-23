@@ -1,5 +1,12 @@
 # @guild-docs/server
 
+## 0.2.22
+
+### Patch Changes
+
+- 7c6f5ac: skip TOC in code blocks
+- 8dc1a2d: NPM Package README from GitHub & development readFile
+
 ## 0.2.18
 
 ### Patch Changes
