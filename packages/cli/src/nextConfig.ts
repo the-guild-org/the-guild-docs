@@ -239,7 +239,10 @@ pre[class*='language-'] {
 
 code,
 code * {
-  font-family: 'SF Mono', 'Source Code Pro', Menlo, monospace;
+  font-family: 'SF Mono', 'Source Code Pro', Menlo, monospace !important;
+
+  margin-top: 0.2em;
+  margin-bottom: 0.2em;
 }
 
 article {
