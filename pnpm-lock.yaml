@@ -273,7 +273,7 @@ importers:
       '@emotion/react': ^11.4.0
       '@emotion/styled': ^11.3.0
       '@rollup/plugin-babel': 5.3.0
-      '@rollup/plugin-image': 2.0.6
+      '@rollup/plugin-image': 2.1.0
       '@rollup/plugin-node-resolve': 13.0.2
       algoliasearch: ^4.10.3
       bob-esbuild-cli: 0.1.27
@@ -314,7 +314,7 @@ importers:
       '@babel/preset-typescript': 7.14.5_@babel+core@7.14.8
       '@emotion/babel-plugin-jsx-pragmatic': 0.1.5_@babel+core@7.14.8
       '@rollup/plugin-babel': 5.3.0_@babel+core@7.14.8+rollup@2.53.3
-      '@rollup/plugin-image': 2.0.6_rollup@2.53.3
+      '@rollup/plugin-image': 2.1.0_rollup@2.53.3
       '@rollup/plugin-node-resolve': 13.0.2_rollup@2.53.3
       bob-esbuild-cli: 0.1.27_a8fea423019585bcf1ffe01c52481e79
       changesets-github-release: 0.0.3
@@ -4135,8 +4135,8 @@ packages:
       rollup: 2.53.3
     dev: true
 
-  /@rollup/plugin-image/2.0.6_rollup@2.53.3:
-    resolution: {integrity: sha512-bB+spXogbPiFjhBS7i8ajUOgOnVwWK3bnJ6VroxKey/q8/EPRkoSh+4O1qPCw97qMIDspF4TlzXVBhZ7nojIPw==}
+  /@rollup/plugin-image/2.1.0_rollup@2.53.3:
+    resolution: {integrity: sha512-IiRhjv65A4Rb/9R+gTP2JdIciumkc8c+3xFoUfw3PUkX77SqqzvJ028AfX856E3ZdExMrqY9C9ZVXN46w6rh9A==}
     engines: {node: '>= 8.0.0'}
     peerDependencies:
       rollup: ^1.20.0 || ^2.0.0
