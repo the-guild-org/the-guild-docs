@@ -231,7 +231,7 @@ importers:
       next-i18next: 8.5.5
       next-mdx-remote: ^3.0.4
       node-fetch: ^2.6.1
-      npms.io: ^2.0.6
+      npms.io: ^2.1.0
       react: 17.0.2
       react-dom: 17.0.2
       remark-admonitions: 1.2.1
@@ -246,7 +246,7 @@ importers:
       gray-matter: 4.0.3
       next-mdx-remote: 3.0.4_react-dom@17.0.2+react@17.0.2
       node-fetch: 2.6.1
-      npms.io: 2.0.6
+      npms.io: 2.1.0
       remark-emoji: 2.2.0
       remark-slug: 6.1.0
       tiny-lru: 7.0.6
@@ -9420,8 +9420,8 @@ packages:
       path-key: 3.1.1
     dev: true
 
-  /npms.io/2.0.6:
-    resolution: {integrity: sha512-trjF9FDKWSy6qAbjIhvfNxtepxokgS7DQzog3cgrZmnunhFJ9yaZDRiu36a4GuBjuxbLLQxayjTsYoGIJlpcnQ==}
+  /npms.io/2.1.0:
+    resolution: {integrity: sha512-dImPsPz9MXBW3Q3GRW4OqDoq1quo5bgrRLnUye3XQXFRluFxAqbSvnkBZbHMsnGvv7rlqhbTn4miU26KgST9ZA==}
     engines: {node: '>= 10.9'}
     dependencies:
       axios: 0.21.1
