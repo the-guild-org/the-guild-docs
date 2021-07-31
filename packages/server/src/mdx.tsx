@@ -122,6 +122,8 @@ export async function buildMDX(
     },
   });
 
+  mdx.compiledSource = mdx.compiledSource.replace(/&quot;/g, '"');
+
   const toc: TOC = buildTOC ? SerializeTOC(content) : [];
 
   return {
