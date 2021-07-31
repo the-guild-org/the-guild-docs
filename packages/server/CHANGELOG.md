@@ -1,5 +1,12 @@
 # @guild-docs/server
 
+## 0.2.23
+
+### Patch Changes
+
+- 39ab56d: update deps
+- 33f0e5f: fix quotes encode in code blocks
+
 ## 0.2.22
 
 ### Patch Changes
