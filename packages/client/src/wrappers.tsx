@@ -4,13 +4,17 @@ import React, { ComponentProps, Dispatch, ReactNode, SetStateAction, useMemo } f
 import { HamburgerIcon } from '@chakra-ui/icons';
 import {
   ChakraProvider,
+  Divider,
   Drawer,
   DrawerBody,
   DrawerCloseButton,
   DrawerContent,
   DrawerOverlay,
   DrawerProps,
+  Heading,
+  HStack,
   IconButton,
+  Text,
   useColorMode,
   useColorModeValue,
   useDisclosure,
@@ -22,6 +26,7 @@ import { DocsContainer, DocsNavigation, DocsNavigationDesktop, DocsNavigationMob
 import { MDXNavigation, MDXNavigationProps } from './navigation';
 import { NextNProgress } from './NextNProgress';
 import { iterateRoutes } from './routes';
+import { useIs404 } from './utils';
 
 import type { OpenGraphImages, DefaultSeoProps } from 'next-seo/lib/types';
 import type { AppProps } from 'next/app';
@@ -142,6 +147,8 @@ export function DocsPage({ appProps: { pageProps, Component }, accentColor, ...r
   const drawerBgButton = useColorModeValue('gray.200', 'gray.700');
   const drawerColorButton = useColorModeValue('gray.500', 'gray.100');
 
+  const is404 = useIs404();
+
   return (
     <DocsContainer {...restProps.docsContainerProps}>
       <DocsNavigationDesktop {...restProps.docsNavigationDesktopProps} children={Navigation} />
@@ -181,7 +188,15 @@ export function DocsPage({ appProps: { pageProps, Component }, accentColor, ...r
           </DrawerContent>
         </Drawer>
       </DocsNavigationMobile>
-      <Component {...pageProps} />
+      {is404 ? (
+        <HStack>
+          <Heading fontSize="2em">404</Heading>
+          <Divider orientation="vertical" height="100px" />
+          <Text>This page could not be found.</Text>
+        </HStack>
+      ) : (
+        <Component {...pageProps} />
+      )}
     </DocsContainer>
   );
 }
