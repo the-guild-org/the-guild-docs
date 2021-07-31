@@ -189,7 +189,7 @@ export function DocsPage({ appProps: { pageProps, Component }, accentColor, ...r
         </Drawer>
       </DocsNavigationMobile>
       {is404 ? (
-        <HStack>
+        <HStack as="main">
           <Heading fontSize="2em">404</Heading>
           <Divider orientation="vertical" height="100px" />
           <Text>This page could not be found.</Text>
