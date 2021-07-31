@@ -1,6 +1,6 @@
 {
   "name": "@guild-docs/server",
-  "version": "0.2.22",
+  "version": "0.2.23",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/the-guild-org/the-guild-docs.git"

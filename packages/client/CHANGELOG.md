@@ -1,5 +1,12 @@
 # @guild-docs/client
 
+## 0.2.23
+
+### Patch Changes
+
+- 39ab56d: update deps
+- f6b3879: fix docs 404
+
 ## 0.2.20
 
 ### Patch Changes
