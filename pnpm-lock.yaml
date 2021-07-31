@@ -50,7 +50,7 @@ importers:
       '@chakra-ui/utils': ^1.8.1
       '@emotion/react': ^11.4.0
       '@emotion/styled': ^11.3.0
-      '@guild-docs/client': workspace:^0.2.23
+      '@guild-docs/client': workspace:^0.2.24
       '@guild-docs/server': workspace:^0.2.23
       '@guild-docs/tgc': workspace:^0.2.7
       '@mdx-js/react': ^1.6.22
