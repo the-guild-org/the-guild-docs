@@ -8,6 +8,7 @@ import {
   BoxProps,
   Button,
   ButtonProps,
+  chakra,
   Code,
   CodeProps,
   Divider,
@@ -143,22 +144,24 @@ export const HeadingMarkdown = ({
           opacity: '1',
         },
       }}
+      sx={{
+        a: {
+          paddingLeft: '0.2em',
+          transition: 'opacity 0.3s',
+          opacity: '0',
+        },
+        'a:hover': {
+          opacity: '1',
+          textDecoration: 'underline',
+        },
+      }}
       {...delegated}
     >
       {children}
       {id ? (
-        <ChakraLink
-          as="a"
-          paddingLeft="0.2em"
-          href={'#' + id}
-          transition="opacity 0.3s"
-          opacity="0"
-          _hover={{ opacity: '1', textDecoration: 'underline' }}
-          title="Direct link to heading"
-          {...directLinkProps}
-        >
+        <chakra.a as="a" href={'#' + id} title="Direct link to heading" {...directLinkProps}>
           #
-        </ChakraLink>
+        </chakra.a>
       ) : null}
     </Heading>
   );
