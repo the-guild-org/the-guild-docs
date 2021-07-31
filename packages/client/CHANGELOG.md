@@ -1,5 +1,11 @@
 # @guild-docs/client
 
+## 0.2.24
+
+### Patch Changes
+
+- 113ddd7: fix heading direct link ssr inline css
+
 ## 0.2.23
 
 ### Patch Changes
