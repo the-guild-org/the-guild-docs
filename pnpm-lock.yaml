@@ -284,7 +284,7 @@ importers:
       postcss: 8.3.6
       react: 17.0.2
       react-dom: 17.0.2
-      react-instantsearch-dom: ^6.12.0
+      react-instantsearch-dom: ^6.12.1
       react-paginate: ^7.1.3
       react-player: ^2.9.0
       rollup: ^2.55.1
@@ -301,7 +301,7 @@ importers:
       core-js: 3.16.0
       focus-trap-react: 8.7.0_react-dom@17.0.2+react@17.0.2
       polished: 4.1.3
-      react-instantsearch-dom: 6.12.0_183d5bb33a781e378a94ae4c13e76371
+      react-instantsearch-dom: 6.12.1_183d5bb33a781e378a94ae4c13e76371
       react-paginate: 7.1.3_react@17.0.2
       react-player: 2.9.0_react@17.0.2
       tailwindcss: 2.2.7_postcss@8.3.6
@@ -10424,6 +10424,20 @@ packages:
       react: 17.0.2
       react-fast-compare: 3.2.0
 
+  /react-instantsearch-core/6.12.1_66a7a6372580873a0a5a8f9917718dda:
+    resolution: {integrity: sha512-X4OqakDI3DOcFiS1S46z+cciKEQcKBmH8HGQLztzW14hoHRqFfZzuqWydlSxfJZN5WksMMm78EmL2jvoqIHd/A==}
+    peerDependencies:
+      algoliasearch: '>= 3.1 < 5'
+      react: '>= 16.3.0 < 18'
+    dependencies:
+      '@babel/runtime': 7.14.8
+      algoliasearch: 4.10.3
+      algoliasearch-helper: 3.5.5_algoliasearch@4.10.3
+      prop-types: 15.7.2
+      react: 17.0.2
+      react-fast-compare: 3.2.0
+    dev: false
+
   /react-instantsearch-dom/6.12.0_183d5bb33a781e378a94ae4c13e76371:
     resolution: {integrity: sha512-/UMnmX0SPkvT8yOL2mAAfjz89ohGSZScb9X6hql9hydcS94cGoojysIUHJ/C+/1f8ciF2zni6I8AYddMdaqrSg==}
     peerDependencies:
@@ -10440,6 +10454,24 @@ packages:
       react-instantsearch-core: 6.12.0_66a7a6372580873a0a5a8f9917718dda
     transitivePeerDependencies:
       - algoliasearch
+
+  /react-instantsearch-dom/6.12.1_183d5bb33a781e378a94ae4c13e76371:
+    resolution: {integrity: sha512-KXk2UDmJ3OP9B57owPC0+7fdcVtmYAA6/UWimR9CXhvFGCMi11xlR/wscYMYxdPuxs9IkmnnLDIJSjSGADYnow==}
+    peerDependencies:
+      react: '>= 16.3.0 < 18'
+      react-dom: '>= 16.3.0 < 18'
+    dependencies:
+      '@babel/runtime': 7.14.8
+      algoliasearch-helper: 3.5.5_algoliasearch@4.10.3
+      classnames: 2.3.1
+      prop-types: 15.7.2
+      react: 17.0.2
+      react-dom: 17.0.2_react@17.0.2
+      react-fast-compare: 3.2.0
+      react-instantsearch-core: 6.12.1_66a7a6372580873a0a5a8f9917718dda
+    transitivePeerDependencies:
+      - algoliasearch
+    dev: false
 
   /react-intersection-observer/8.32.0_react@17.0.2:
     resolution: {integrity: sha512-RlC6FvS3MFShxTn4FHAy904bVjX5Nn4/eTjUkurW0fHK+M/fyQdXuyCy9+L7yjA+YMGogzzSJNc7M4UtfSKvtw==}
