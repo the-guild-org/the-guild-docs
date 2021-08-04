@@ -1,5 +1,11 @@
 # @guild-docs/server
 
+## 0.2.25
+
+### Patch Changes
+
+- ab4edfb: automatically add h1 heading to MDX if not found and frontMatter title is specified
+
 ## 0.2.23
 
 ### Patch Changes
