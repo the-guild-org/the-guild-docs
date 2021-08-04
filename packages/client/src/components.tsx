@@ -30,13 +30,13 @@ import {
   useColorModeValue,
 } from '@chakra-ui/react';
 
-import { PackageInstall } from './components/PackageInstall';
+import { PackageInstall, PackageRun } from './components/Package';
 import { getDefault } from './utils';
 
 import type { LinkProps as NextLinkProps } from 'next/link';
 
 export { CopyToClipboard } from './components/CopyToClipboard';
-export { PackageInstall };
+export { PackageInstall, PackageRun };
 
 export * from './components/npmBadge';
 
@@ -277,6 +277,7 @@ export const originalComponents = {
   },
   Tooltip: (props: TooltipProps) => <Tooltip padding="1" textAlign="center" {...props} />,
   PackageInstall,
+  PackageRun,
   pre: (props: CodeProps) => {
     const colorScheme = useColorModeValue('blackAlpha', undefined);
 
