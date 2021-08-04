@@ -97,7 +97,11 @@ export async function buildMDX(
   source: PossiblePromise<string | Buffer>,
   { buildTOC = true, extraRemarkPlugins = [], extraRehypePlugins = [] }: BuildMDXOptions = {}
 ): Promise<CompiledMDX> {
-  const { content, data } = matter(await source);
+  let { content, data } = matter(await source);
+
+  if (data.title && !content.trimStart().startsWith('# ') && data.add_heading !== false) {
+    content = '# ' + data.title + '\n\n' + content.trimStart();
+  }
 
   const mdx = await serialize(content, {
     mdxOptions: {
