@@ -24,7 +24,7 @@
   "devDependencies": {
     "@types/edit-json-file": "1.4.1",
     "@types/mkdirp": "1.0.2",
-    "@types/node": "^16.4.10",
+    "@types/node": "^16.4.12",
     "@types/prettier": "2.3.2",
     "changesets-github-release": "0.0.3",
     "commander": "8.1.0",
@@ -33,7 +33,7 @@
     "mkdirp": "1.0.4",
     "npm-api": "1.0.1",
     "prettier": "2.3.2",
-    "tsup": "4.12.5"
+    "tsup": "4.13.1"
   },
   "tsup": {
     "splitting": false,
