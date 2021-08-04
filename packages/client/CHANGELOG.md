@@ -1,5 +1,11 @@
 # @guild-docs/client
 
+## 0.2.26
+
+### Patch Changes
+
+- ce4df6d: add "PackageRun" component
+
 ## 0.2.24
 
 ### Patch Changes
