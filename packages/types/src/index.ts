@@ -55,7 +55,7 @@ export interface MDXNavigationProps {
   depth?: number;
   accentColor?: string;
   handleLinkClick?: () => void;
-  wrapperProps?: ChakraComponentProps<'nav'>;
+  wrapperProps?: ChakraComponentProps<'nav'> | ((args: { depth: number; acumHref: string }) => ChakraComponentProps<'nav'>);
   detailsProps?: (args: MDXNavigationAccordionArgs) => ChakraComponentProps<'div'>;
   summaryProps?: (args: MDXNavigationAccordionArgs) => ChakraComponentProps<'div'>;
   summaryLabelProps?: (args: MDXNavigationAccordionArgs) => ChakraComponentProps<'p'>;

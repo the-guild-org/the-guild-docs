@@ -209,7 +209,12 @@ export function MDXNavigation({
   ...styleProps
 }: MDXNavigationProps) {
   return (
-    <MdxNavWrapper ml={depth !== 0 ? '1rem' : 0} {...styleProps.wrapperProps}>
+    <MdxNavWrapper
+      ml={depth !== 0 ? '1rem' : 0}
+      {...(typeof styleProps.wrapperProps === 'function'
+        ? styleProps.wrapperProps({ depth, acumHref })
+        : styleProps.wrapperProps)}
+    >
       {paths.map((item, index) => {
         return (
           <Item
