@@ -1,5 +1,11 @@
 # @guild-docs/types
 
+## 0.2.27
+
+### Patch Changes
+
+- 3fc9b94: improve MDXNavigation wrapperProps
+
 ## 0.2.17
 
 ### Patch Changes
