@@ -37,7 +37,7 @@
     "bob-esbuild": "0.2.4",
     "bob-esbuild-cli": "0.2.4",
     "concurrently": "6.2.1",
-    "esbuild": "0.12.18",
+    "esbuild": "0.12.19",
     "husky": "7.0.1",
     "next": "^11.0.1",
     "prettier": "2.3.2",
@@ -50,7 +50,7 @@
   },
   "pnpm": {
     "overrides": {
-      "esbuild": "0.12.18",
+      "esbuild": "0.12.19",
       "@types/node": "^16.4.13"
     }
   }
