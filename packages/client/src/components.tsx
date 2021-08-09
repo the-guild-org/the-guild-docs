@@ -139,27 +139,35 @@ export const HeadingMarkdown = ({
       mt="-24"
       pt="28"
       id={id}
-      _hover={{
-        a: {
-          opacity: '1',
-        },
-      }}
-      sx={{
-        a: {
-          paddingLeft: '0.2em',
-          transition: 'opacity 0.3s',
-          opacity: '0',
-        },
-        'a:hover': {
-          opacity: '1',
-          textDecoration: 'underline',
-        },
-      }}
+      _hover={
+        id
+          ? {
+              'a.direct_link': {
+                opacity: '1',
+              },
+            }
+          : undefined
+      }
+      sx={
+        id
+          ? {
+              'a.direct_link': {
+                paddingLeft: '0.2em',
+                transition: 'opacity 0.3s',
+                opacity: '0',
+              },
+              'a.direct_link:hover': {
+                opacity: '1',
+                textDecoration: 'underline',
+              },
+            }
+          : undefined
+      }
       {...delegated}
     >
       {children}
       {id ? (
-        <chakra.a as="a" href={'#' + id} title="Direct link to heading" {...directLinkProps}>
+        <chakra.a className="direct_link" href={'#' + id} title="Direct link to heading" {...directLinkProps}>
           #
         </chakra.a>
       ) : null}
