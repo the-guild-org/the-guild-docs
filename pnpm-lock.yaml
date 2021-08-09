@@ -50,7 +50,7 @@ importers:
       '@chakra-ui/utils': ^1.8.2
       '@emotion/react': ^11.4.1
       '@emotion/styled': ^11.3.0
-      '@guild-docs/client': workspace:^0.2.27
+      '@guild-docs/client': workspace:^0.2.28
       '@guild-docs/server': workspace:^0.2.25
       '@guild-docs/tgc': workspace:^0.2.7
       '@mdx-js/react': ^1.6.22
@@ -3044,7 +3044,7 @@ packages:
     peerDependencies:
       '@chakra-ui/system': '>=1.0.0'
     dependencies:
-      '@chakra-ui/system': 1.7.2_a004d704e6197b43c0d970f424150c43
+      '@chakra-ui/system': 1.7.2
       '@chakra-ui/utils': 1.8.2
       '@types/tinycolor2': 1.4.2
       tinycolor2: 1.4.2
@@ -3054,7 +3054,7 @@ packages:
     peerDependencies:
       '@chakra-ui/system': '>=1.0.0'
     dependencies:
-      '@chakra-ui/system': 1.7.2_a004d704e6197b43c0d970f424150c43
+      '@chakra-ui/system': 1.7.2
       '@chakra-ui/theme-tools': 1.1.9_@chakra-ui+system@1.7.2
       '@chakra-ui/utils': 1.8.2
 
