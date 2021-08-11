@@ -98,3 +98,5 @@ export interface MdxInternalProps {
 }
 
 export type PossiblePromise<T> = T | Promise<T>;
+
+export * from './utils';
