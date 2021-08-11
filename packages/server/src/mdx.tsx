@@ -1,4 +1,4 @@
-import { access, readFile } from 'fs/promises';
+import { promises } from 'fs';
 import globby from 'globby';
 import matter from 'gray-matter';
 import { appWithTranslation } from 'next-i18next';
@@ -6,10 +6,7 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { serialize } from 'next-mdx-remote/serialize';
 import { join, resolve } from 'path';
 import * as React from 'react';
-import remarkAdmonitions from 'remark-admonitions';
-import remarkPrism from 'remark-prism';
-import remarkSlug from 'remark-slug';
-import remarkEmoji from 'remark-emoji';
+import { LazyPromise } from '@guild-docs/types';
 
 import { IS_PRODUCTION } from './constants';
 import { getSlug } from './routes';
@@ -19,6 +16,7 @@ import type { SerializeOptions, MDXRemoteSerializeResult } from 'next-mdx-remote
 import type { GetStaticPathsContext, GetStaticPropsContext, GetStaticPropsResult } from 'next';
 import type { IRoutes, MdxInternalProps, TOC, PossiblePromise } from '@guild-docs/types';
 
+export const { access, readFile } = promises;
 const Provideri18n = appWithTranslation(({ children }) => <React.Fragment children={children} />);
 
 async function prepareMDXRenderWithTranslations(locale: string | undefined) {
@@ -93,6 +91,22 @@ export interface CompiledMDX {
   frontMatter: Record<string, any>;
 }
 
+const RemarkPlugins = LazyPromise(async () => {
+  const [remarkAdmonitions, remarkPrism, remarkSlug, remarkEmoji] = await Promise.all([
+    import('remark-admonitions').then(v => v.default),
+    import('remark-prism').then(v => v.default),
+    import('remark-slug').then(v => v.default),
+    import('remark-emoji').then(v => v.default),
+  ]);
+
+  return {
+    remarkAdmonitions,
+    remarkPrism,
+    remarkSlug,
+    remarkEmoji,
+  };
+});
+
 export async function buildMDX(
   source: PossiblePromise<string | Buffer>,
   { buildTOC = true, extraRemarkPlugins = [], extraRehypePlugins = [] }: BuildMDXOptions = {}
@@ -102,6 +116,8 @@ export async function buildMDX(
   if (data.title && !content.trimStart().startsWith('# ') && data.add_heading !== false) {
     content = '# ' + data.title + '\n\n' + content.trimStart();
   }
+
+  const { remarkAdmonitions, remarkPrism, remarkEmoji, remarkSlug } = await RemarkPlugins;
 
   const mdx = await serialize(content, {
     mdxOptions: {

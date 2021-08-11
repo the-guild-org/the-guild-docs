@@ -5,4 +5,5 @@ export const config: import('bob-esbuild').BobConfig = {
   verbose: true,
   clean: false,
   distDir: 'lib',
+  keepDynamicImport: true,
 };
