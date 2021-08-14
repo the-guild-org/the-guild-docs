@@ -45,7 +45,7 @@
     "@types/node-fetch": "^2.5.12",
     "bob-esbuild-cli": "1.0.1",
     "changesets-github-release": "0.0.3",
-    "esbuild": "0.12.19",
+    "esbuild": "^0.12.20",
     "next": "^11.1.0",
     "next-i18next": "8.6.0",
     "react": "17.0.2",
