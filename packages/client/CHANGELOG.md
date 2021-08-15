@@ -1,5 +1,11 @@
 # @guild-docs/client
 
+## 1.0.2
+
+### Patch Changes
+
+- cf376eb: auto-include TGCFont fontFamily
+
 ## 1.0.0
 
 ### Major Changes
