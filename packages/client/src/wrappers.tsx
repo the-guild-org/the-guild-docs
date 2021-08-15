@@ -51,7 +51,7 @@ export interface AppSeoProps extends DefaultSeoProps {
   logo: OpenGraphImages;
 }
 
-export function CombinedThemeProvider({ children, theme, accentColor, defaultSeo, globalStyleProps }: CombinedThemeProps) {
+export function CombinedThemeProvider({ children, theme, accentColor, defaultSeo, globalStyleProps = {} }: CombinedThemeProps) {
   const DefaultSEO = useMemo(() => {
     if (!defaultSeo) throw Error('No `defaultSeo` specified in CombinedThemeProvider');
     const { logo, ...props } = defaultSeo;
@@ -69,20 +69,29 @@ export function CombinedThemeProvider({ children, theme, accentColor, defaultSeo
     return <DefaultSeo {...props} />;
   }, [defaultSeo]);
 
+  const includeFonts = globalStyleProps.includeFonts ?? true;
+
   return (
     <>
       {DefaultSEO}
       <ChakraProvider theme={theme}>
         <Global
-          styles={{
-            '.shiki': {
-              whiteSpace: 'pre-wrap',
+          styles={[
+            {
+              '.shiki': {
+                whiteSpace: 'pre-wrap',
+              },
             },
-          }}
+            includeFonts && {
+              '#__next': {
+                fontFamily: 'TGCFont, sans-serif',
+              },
+            },
+          ]}
         />
         <TGCThemeProviderComponent>
           {children}
-          <GlobalStyles includeFonts includeBase {...globalStyleProps} />
+          <GlobalStyles includeBase {...globalStyleProps} includeFonts={includeFonts} />
         </TGCThemeProviderComponent>
         <NextNProgress color={accentColor} />
       </ChakraProvider>
