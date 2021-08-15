@@ -1,5 +1,11 @@
 # @guild-docs/types
 
+## 1.0.0
+
+### Minor Changes
+
+- fb55d6a: export LazyPromise util
+
 ## 0.2.27
 
 ### Patch Changes

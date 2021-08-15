@@ -1,5 +1,16 @@
 # @guild-docs/client
 
+## 1.0.0
+
+### Major Changes
+
+- ff7a170: change code highlight from prism to shiki
+
+### Patch Changes
+
+- Updated dependencies [fb55d6a]
+  - @guild-docs/types@1.0.0
+
 ## 0.2.28
 
 ### Patch Changes

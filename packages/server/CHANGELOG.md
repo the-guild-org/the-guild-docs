@@ -1,5 +1,17 @@
 # @guild-docs/server
 
+## 1.0.0
+
+### Major Changes
+
+- ff7a170: change code highlight from prism to shiki
+
+### Patch Changes
+
+- 1383ef6: update remark plugins with ESM only using dynamic imports
+- Updated dependencies [fb55d6a]
+  - @guild-docs/types@1.0.0
+
 ## 0.2.25
 
 ### Patch Changes

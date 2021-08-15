@@ -1,6 +1,6 @@
 {
   "name": "@guild-docs/server",
-  "version": "0.2.25",
+  "version": "1.0.0",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/the-guild-org/the-guild-docs.git"
@@ -29,7 +29,7 @@
     "postpublish": "gh-release"
   },
   "dependencies": {
-    "@guild-docs/types": "workspace:^0.2.27",
+    "@guild-docs/types": "workspace:^1.0.0",
     "@stefanprobst/remark-shiki": "^1.1.1",
     "github-slugger": "^1.3.0",
     "globby": "^11.0.4",
