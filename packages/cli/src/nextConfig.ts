@@ -100,7 +100,6 @@ export async function writeApp() {
       [config.cwd, 'src/pages/_app.tsx'],
       `
     import 'remark-admonitions/styles/infima.css';
-    import 'prism-themes/themes/prism-atom-dark.css';
     import '../../public/style.css';
     
     import { appWithTranslation } from 'next-i18next';

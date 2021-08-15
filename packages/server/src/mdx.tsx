@@ -6,7 +6,10 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { serialize } from 'next-mdx-remote/serialize';
 import { join, resolve } from 'path';
 import * as React from 'react';
+import shiki from 'shiki';
+
 import { LazyPromise } from '@guild-docs/types';
+import withShiki from '@stefanprobst/remark-shiki';
 
 import { IS_PRODUCTION } from './constants';
 import { getSlug } from './routes';
@@ -91,19 +94,22 @@ export interface CompiledMDX {
   frontMatter: Record<string, any>;
 }
 
-const RemarkPlugins = LazyPromise(async () => {
-  const [remarkAdmonitions, remarkPrism, remarkSlug, remarkEmoji] = await Promise.all([
+const RemarkDeps = LazyPromise(async () => {
+  const [remarkAdmonitions, remarkSlug, remarkEmoji, highlighter] = await Promise.all([
     import('remark-admonitions').then(v => v.default),
-    import('remark-prism').then(v => v.default),
     import('remark-slug').then(v => v.default),
     import('remark-emoji').then(v => v.default),
+    shiki.getHighlighter({
+      theme: 'dark-plus',
+      langs: ['javascript', 'typescript', 'sh', 'shell', 'bash', 'json', 'yaml', 'markdown'],
+    }),
   ]);
 
   return {
     remarkAdmonitions,
-    remarkPrism,
     remarkSlug,
     remarkEmoji,
+    highlighter,
   };
 });
 
@@ -117,7 +123,7 @@ export async function buildMDX(
     content = '# ' + data.title + '\n\n' + content.trimStart();
   }
 
-  const { remarkAdmonitions, remarkPrism, remarkEmoji, remarkSlug } = await RemarkPlugins;
+  const { remarkAdmonitions, remarkEmoji, remarkSlug, highlighter } = await RemarkDeps;
 
   const mdx = await serialize(content, {
     mdxOptions: {
@@ -133,7 +139,12 @@ export async function buildMDX(
             },
           },
         ],
-        remarkPrism,
+        [
+          withShiki,
+          {
+            highlighter,
+          },
+        ],
         remarkSlug,
         remarkEmoji,
         ...extraRemarkPlugins,

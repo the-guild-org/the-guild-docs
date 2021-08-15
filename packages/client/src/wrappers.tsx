@@ -21,7 +21,7 @@ import {
 } from '@chakra-ui/react';
 import { MdxInternalProps } from '@guild-docs/types';
 import { GlobalStyles, ThemeProvider as TGCThemeProvider } from '@theguild/components';
-
+import { Global } from '@emotion/react';
 import { DocsContainer, DocsNavigation, DocsNavigationDesktop, DocsNavigationMobile, DocsTitle } from './docs/index';
 import { MDXNavigation, MDXNavigationProps } from './navigation';
 import { NextNProgress } from './NextNProgress';
@@ -73,6 +73,13 @@ export function CombinedThemeProvider({ children, theme, accentColor, defaultSeo
     <>
       {DefaultSEO}
       <ChakraProvider theme={theme}>
+        <Global
+          styles={{
+            '.shiki': {
+              whiteSpace: 'pre-wrap',
+            },
+          }}
+        />
         <TGCThemeProviderComponent>
           {children}
           <GlobalStyles includeFonts includeBase {...globalStyleProps} />

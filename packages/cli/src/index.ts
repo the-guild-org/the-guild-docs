@@ -39,8 +39,6 @@ async function DepsAction(dir: string = process.cwd()) {
       'framer-motion',
       'next',
       'remark-admonitions',
-      'remark-prism',
-      'prism-themes',
       'next-i18next',
       'react',
       'react-dom',
@@ -48,6 +46,7 @@ async function DepsAction(dir: string = process.cwd()) {
       'react-icons',
       'react-use',
       'next-seo',
+      'shiki',
     ]),
     addDependency(
       [
