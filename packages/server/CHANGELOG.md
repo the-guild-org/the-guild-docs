@@ -1,5 +1,11 @@
 # @guild-docs/server
 
+## 1.0.1
+
+### Patch Changes
+
+- 8d21aad: add extra languages
+
 ## 1.0.0
 
 ### Major Changes
