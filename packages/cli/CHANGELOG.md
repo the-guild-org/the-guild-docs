@@ -1,5 +1,11 @@
 # guild-docs
 
+## 1.0.0
+
+### Major Changes
+
+- ff7a170: change code highlight from prism to shiki
+
 ## 0.2.22
 
 ### Patch Changes
