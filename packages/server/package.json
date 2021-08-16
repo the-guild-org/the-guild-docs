@@ -37,7 +37,7 @@
     "next-mdx-remote": "^3.0.4",
     "node-fetch": "^2.6.1",
     "npms.io": "^2.1.0",
-    "remark-emoji": "^3.0.0",
+    "remark-emoji": "^3.0.1",
     "remark-slug": "^7.0.0",
     "tiny-lru": "^7.0.6"
   },
