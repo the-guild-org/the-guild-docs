@@ -33,7 +33,7 @@
     "mkdirp": "1.0.4",
     "npm-api": "1.0.1",
     "prettier": "2.3.2",
-    "tsup": "4.13.1"
+    "tsup": "4.14.0"
   },
   "tsup": {
     "splitting": false,
