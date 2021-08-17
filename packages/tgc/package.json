@@ -19,7 +19,7 @@
     "@emotion/react": "^11.4.1",
     "@emotion/styled": "^11.3.0",
     "algoliasearch": "^4.10.3",
-    "core-js": "^3.16.1",
+    "core-js": "^3.16.2",
     "focus-trap-react": "^8.7.1",
     "polished": "^4.1.3",
     "react-instantsearch-dom": "^6.12.1",
