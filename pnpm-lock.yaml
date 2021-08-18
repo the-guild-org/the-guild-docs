@@ -179,7 +179,7 @@ importers:
       react-use: ^17.2.4
       typescript: ^4.3.5
       use-immer: ^0.6.0
-      zustand: ^3.5.8
+      zustand: ^3.5.9
     dependencies:
       '@guild-docs/types': link:../types
       immer: 9.0.5
@@ -190,7 +190,7 @@ importers:
       react-intersection-observer: 8.32.0_react@17.0.2
       react-use: 17.2.4_react-dom@17.0.2+react@17.0.2
       use-immer: 0.6.0_immer@9.0.5+react@17.0.2
-      zustand: 3.5.8_react@17.0.2
+      zustand: 3.5.9_react@17.0.2
     devDependencies:
       '@chakra-ui/icons': 1.0.15_8194fd905f3c2a4eb270d17bdb6ec109
       '@chakra-ui/layout': 1.4.8_8194fd905f3c2a4eb270d17bdb6ec109
@@ -10482,8 +10482,8 @@ packages:
     resolution: {integrity: sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==}
     engines: {node: '>=10'}
 
-  /zustand/3.5.8_react@17.0.2:
-    resolution: {integrity: sha512-QA5h4cyJFPG0Gsk7u9gvwF7x6HbrjllSifwePluFK+tcthvaIo9zqiwjoUrXwb4e3BGxzVOXEgbhaB6jVCD7Kw==}
+  /zustand/3.5.9_react@17.0.2:
+    resolution: {integrity: sha512-ELj8XLrf5TZoiffbsZKaJ0uGnT1t4PGU9IgFLfiLsjMhOXFfKEl3fEUa5mNAWTzrietJuA1R2YY6GBE1siyE5Q==}
     peerDependencies:
       react: '>=16.8'
     peerDependenciesMeta:
