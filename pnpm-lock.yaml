@@ -292,7 +292,7 @@ importers:
       rollup-plugin-bundle-size: 1.0.3
       rollup-plugin-copy: 3.4.0
       tailwindcss: ^2.2.7
-      twin.macro: ^2.6.2
+      twin.macro: ^2.7.0
       use-debounce: ^7.0.0
     dependencies:
       '@emotion/react': 11.4.1_e84a63f9de209898dae6934a2d005808
@@ -305,7 +305,7 @@ importers:
       react-paginate: 7.1.3_react@17.0.2
       react-player: 2.9.0_react@17.0.2
       tailwindcss: 2.2.7_postcss@8.3.6
-      twin.macro: 2.6.2
+      twin.macro: 2.7.0
       use-debounce: 7.0.0_react@17.0.2
     devDependencies:
       '@babel/core': 7.15.0
@@ -9851,6 +9851,29 @@ packages:
       timsort: 0.3.0
     transitivePeerDependencies:
       - ts-node
+
+  /twin.macro/2.7.0:
+    resolution: {integrity: sha512-7RictvVsITP3Odm7zd5EcZ3i8+deBuDCZBAwnm/H5MSixaKESjvEFQaHA/T8nkHb6vKcp/2f/6+txRzXLj//gg==}
+    engines: {node: '>=12.13.0'}
+    dependencies:
+      '@babel/parser': 7.15.3
+      '@babel/template': 7.14.5
+      autoprefixer: 10.3.1_postcss@8.3.6
+      babel-plugin-macros: 2.8.0
+      chalk: 4.1.2
+      clean-set: 1.1.2
+      color: 3.2.1
+      dset: 2.1.0
+      lodash.flatmap: 4.5.0
+      lodash.get: 4.4.2
+      lodash.merge: 4.6.2
+      postcss: 8.3.6
+      string-similarity: 4.0.4
+      tailwindcss: 2.2.7_7b69a43ec4689fa7484dee35f79a7806
+      timsort: 0.3.0
+    transitivePeerDependencies:
+      - ts-node
+    dev: false
 
   /type-fest/0.13.1:
     resolution: {integrity: sha512-34R7HTnG0XIJcBSn5XhDd7nNFPRcXYRZrBB2O2jdKqYODldSzBAqzsWoZYYvduky73toYS/ESqxPvkDf/F0XMg==}
