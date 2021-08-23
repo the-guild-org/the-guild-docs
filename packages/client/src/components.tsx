@@ -92,15 +92,17 @@ export const blockquote = (props: BoxProps) => {
 
   return (
     <Box
+      borderLeft="5px solid #559eff"
       mt={4}
+      padding="0.8em"
       w="full"
+      borderRadius="5px"
       bg={bgColor}
       variant="left-accent"
       status="info"
       css={{
         '> *:first-of-type': {
           marginTop: 0,
-          marginLeft: 8,
         },
       }}
       {...props}
