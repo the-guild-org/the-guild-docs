@@ -1,5 +1,11 @@
 # @guild-docs/client
 
+## 1.0.3
+
+### Patch Changes
+
+- 42f9c3b: improve default "blockquote" mdx component
+
 ## 1.0.2
 
 ### Patch Changes
