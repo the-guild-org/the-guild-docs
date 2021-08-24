@@ -223,7 +223,7 @@ importers:
       bob-esbuild-cli: 1.0.1
       changesets-github-release: 0.0.3
       esbuild: ^0.12.22
-      github-slugger: ^1.3.0
+      github-slugger: ^1.4.0
       globby: ^11.0.4
       gray-matter: ^4.0.3
       next: ^11.1.0
@@ -241,7 +241,7 @@ importers:
     dependencies:
       '@guild-docs/types': link:../types
       '@stefanprobst/remark-shiki': 1.1.1_shiki@0.9.7
-      github-slugger: 1.3.0
+      github-slugger: 1.4.0
       globby: 11.0.4
       gray-matter: 4.0.3
       next-mdx-remote: 3.0.4_react-dom@17.0.2+react@17.0.2
@@ -6064,6 +6064,10 @@ packages:
     resolution: {integrity: sha512-gwJScWVNhFYSRDvURk/8yhcFBee6aFjye2a7Lhb2bUyRulpIoek9p0I9Kt7PT67d/nUlZbFu8L9RLiA0woQN8Q==}
     dependencies:
       emoji-regex: 6.1.1
+    dev: false
+
+  /github-slugger/1.4.0:
+    resolution: {integrity: sha512-w0dzqw/nt51xMVmlaV1+JRzN+oCa1KfcgGEWhxUG16wbdA+Xnt/yoFO8Z8x/V82ZcZ0wy6ln9QDup5avbhiDhQ==}
     dev: false
 
   /glob-parent/5.1.2:
