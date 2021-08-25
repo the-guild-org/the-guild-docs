@@ -1,6 +1,5 @@
+import { chakra, Link, Skeleton, useImage } from '@chakra-ui/react';
 import React, { useEffect, useState } from 'react';
-
-import { Image, Link, Skeleton, useImage } from '@chakra-ui/react';
 
 export const NPMBadge = ({ name }: { name: string }) => {
   const encodedPackage = encodeURIComponent(name);
@@ -37,7 +36,7 @@ export const NPMBadge = ({ name }: { name: string }) => {
         height="25px"
         isLoaded={isLoaded}
       >
-        <Image src={src} alt="npm version" height="18" />
+        <chakra.img src={src} alt="npm version" height="18" />
       </Skeleton>
     </Link>
   );
