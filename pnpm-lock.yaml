@@ -275,7 +275,7 @@ importers:
       '@rollup/plugin-babel': 5.3.0
       '@rollup/plugin-image': 2.1.1
       '@rollup/plugin-node-resolve': 13.0.4
-      algoliasearch: ^4.10.4
+      algoliasearch: ^4.10.5
       bob-esbuild-cli: 1.0.1
       changesets-github-release: 0.0.3
       core-js: ^3.16.3
@@ -297,11 +297,11 @@ importers:
     dependencies:
       '@emotion/react': 11.4.1_56f22c50b68024c6e259393098372ce5
       '@emotion/styled': 11.3.0_35b1fcf8648d3bb8c6845494ee391502
-      algoliasearch: 4.10.4
+      algoliasearch: 4.10.5
       core-js: 3.16.3
       focus-trap-react: 8.7.1_react-dom@17.0.2+react@17.0.2
       polished: 4.1.3
-      react-instantsearch-dom: 6.12.1_6c6ff28fde4af31d1435ef8cf828ce9d
+      react-instantsearch-dom: 6.12.1_7f770dea5663f3612b40f53110f92d57
       react-paginate: 7.1.3_react@17.0.2
       react-player: 2.9.0_react@17.0.2
       tailwindcss: 2.2.7_postcss@8.3.6
@@ -353,17 +353,17 @@ packages:
     dependencies:
       '@algolia/cache-common': 4.10.3
 
-  /@algolia/cache-browser-local-storage/4.10.4:
-    resolution: {integrity: sha512-oNCRQWI9cTYqNkyt+lelkqF5Z3sQNSJ2OT9tK5w0587IJNWqkzZzqipJyWHZv2sWyBbOboDrwZfZUcik3y0Qrg==}
+  /@algolia/cache-browser-local-storage/4.10.5:
+    resolution: {integrity: sha512-cfX2rEKOtuuljcGI5DMDHClwZHdDqd2nT2Ohsc8aHtBiz6bUxKVyIqxr2gaC6tU8AgPtrTVBzcxCA+UavXpKww==}
     dependencies:
-      '@algolia/cache-common': 4.10.4
+      '@algolia/cache-common': 4.10.5
     dev: false
 
   /@algolia/cache-common/4.10.3:
     resolution: {integrity: sha512-q13cPPUmtf8a2suBC4kySSr97EyulSXuxUkn7l1tZUCX/k1y5KNheMp8npBy8Kc8gPPmHpacxddRSfOncjiKFw==}
 
-  /@algolia/cache-common/4.10.4:
-    resolution: {integrity: sha512-R2Sbg8zvVMsxFDKWQYAZD1cQIEO6J00dZFjFfYDMTH+r/t2CCOZal2EFGnHl7FcgTIEUsSrNJUzLefL8NM8/iA==}
+  /@algolia/cache-common/4.10.5:
+    resolution: {integrity: sha512-1mClwdmTHll+OnHkG+yeRoFM17kSxDs4qXkjf6rNZhoZGXDvfYLy3YcZ1FX4Kyz0DJv8aroq5RYGBDsWkHj6Tw==}
     dev: false
 
   /@algolia/cache-in-memory/4.10.3:
@@ -371,10 +371,10 @@ packages:
     dependencies:
       '@algolia/cache-common': 4.10.3
 
-  /@algolia/cache-in-memory/4.10.4:
-    resolution: {integrity: sha512-ReQnhekfAvYFRu2odShmMxPM2OcRjSK1Atncam2HSu7Zt/51gtQp6WJMm7K+Mb3y+mT+ckBbOTamv/uTREcu2A==}
+  /@algolia/cache-in-memory/4.10.5:
+    resolution: {integrity: sha512-+ciQnfIGi5wjMk02XhEY8fmy2pzy+oY1nIIfu8LBOglaSipCRAtjk6WhHc7/KIbXPiYzIwuDbM2K1+YOwSGjwA==}
     dependencies:
-      '@algolia/cache-common': 4.10.4
+      '@algolia/cache-common': 4.10.5
     dev: false
 
   /@algolia/client-account/4.10.3:
@@ -384,12 +384,12 @@ packages:
       '@algolia/client-search': 4.10.3
       '@algolia/transporter': 4.10.3
 
-  /@algolia/client-account/4.10.4:
-    resolution: {integrity: sha512-Wtr91lXidDh5niXL0LPWxCluRdKA2CDpE2O/RKc9uMNDYCzCOkAxF2CcUuIpEW0IceO0D3d8n/TLuuKOIk2mww==}
+  /@algolia/client-account/4.10.5:
+    resolution: {integrity: sha512-I9UkSS2glXm7RBZYZIALjBMmXSQbw/fI/djPcBHxiwXIheNIlqIFl2SNPkvihpPF979BSkzjqdJNRPhE1vku3Q==}
     dependencies:
-      '@algolia/client-common': 4.10.4
-      '@algolia/client-search': 4.10.4
-      '@algolia/transporter': 4.10.4
+      '@algolia/client-common': 4.10.5
+      '@algolia/client-search': 4.10.5
+      '@algolia/transporter': 4.10.5
     dev: false
 
   /@algolia/client-analytics/4.10.3:
@@ -400,13 +400,13 @@ packages:
       '@algolia/requester-common': 4.10.3
       '@algolia/transporter': 4.10.3
 
-  /@algolia/client-analytics/4.10.4:
-    resolution: {integrity: sha512-CNOqWwq735i2kDh4DWk9Y4AN4mPIYOOec83xeWRnlSTfoL6DbLWVZTNBHi7Mi97h3prKVpr/Zm4f46RPrTYSsA==}
+  /@algolia/client-analytics/4.10.5:
+    resolution: {integrity: sha512-h2owwJSkovPxzc+xIsjY1pMl0gj+jdVwP9rcnGjlaTY2fqHbSLrR9yvGyyr6305LvTppxsQnfAbRdE/5Z3eFxw==}
     dependencies:
-      '@algolia/client-common': 4.10.4
-      '@algolia/client-search': 4.10.4
-      '@algolia/requester-common': 4.10.4
-      '@algolia/transporter': 4.10.4
+      '@algolia/client-common': 4.10.5
+      '@algolia/client-search': 4.10.5
+      '@algolia/requester-common': 4.10.5
+      '@algolia/transporter': 4.10.5
     dev: false
 
   /@algolia/client-common/4.10.3:
@@ -415,11 +415,11 @@ packages:
       '@algolia/requester-common': 4.10.3
       '@algolia/transporter': 4.10.3
 
-  /@algolia/client-common/4.10.4:
-    resolution: {integrity: sha512-O5GcD/7JW7eLlLPc2AUGUHmWP95JZthivpiOmwloAVR1DFvgKZL3+1e3/e1wederPA3ETvz80++aL+6yPRhb8w==}
+  /@algolia/client-common/4.10.5:
+    resolution: {integrity: sha512-21FAvIai5qm8DVmZHm2Gp4LssQ/a0nWwMchAx+1hIRj1TX7OcdW6oZDPyZ8asQdvTtK7rStQrRnD8a95SCUnzA==}
     dependencies:
-      '@algolia/requester-common': 4.10.4
-      '@algolia/transporter': 4.10.4
+      '@algolia/requester-common': 4.10.5
+      '@algolia/transporter': 4.10.5
     dev: false
 
   /@algolia/client-personalization/4.10.3:
@@ -429,12 +429,12 @@ packages:
       '@algolia/requester-common': 4.10.3
       '@algolia/transporter': 4.10.3
 
-  /@algolia/client-personalization/4.10.4:
-    resolution: {integrity: sha512-n5lb4DXLhk0rbCBSE2TgjKko+NCX0/lNBCSTszdanznkdA8NaHnOdy0/LvDoXh2ZYAMJx2etZvfWLYcSLO8cGQ==}
+  /@algolia/client-personalization/4.10.5:
+    resolution: {integrity: sha512-nH+IyFKBi8tCyzGOanJTbXC5t4dspSovX3+ABfmwKWUYllYzmiQNFUadpb3qo+MLA3jFx5IwBesjneN6dD5o3w==}
     dependencies:
-      '@algolia/client-common': 4.10.4
-      '@algolia/requester-common': 4.10.4
-      '@algolia/transporter': 4.10.4
+      '@algolia/client-common': 4.10.5
+      '@algolia/requester-common': 4.10.5
+      '@algolia/transporter': 4.10.5
     dev: false
 
   /@algolia/client-search/4.10.3:
@@ -444,19 +444,19 @@ packages:
       '@algolia/requester-common': 4.10.3
       '@algolia/transporter': 4.10.3
 
-  /@algolia/client-search/4.10.4:
-    resolution: {integrity: sha512-qqSKogn85YTub8g01N4tcctsowbxq+QJzzzHSQA0+j4Pw93CguinDpX6mU/WbLIZIu2eaTeAQ7pORual3Li0yA==}
+  /@algolia/client-search/4.10.5:
+    resolution: {integrity: sha512-1eQFMz9uodrc5OM+9HeT+hHcfR1E1AsgFWXwyJ9Q3xejA2c1c4eObGgOgC9ZoshuHHdptaTN1m3rexqAxXRDBg==}
     dependencies:
-      '@algolia/client-common': 4.10.4
-      '@algolia/requester-common': 4.10.4
-      '@algolia/transporter': 4.10.4
+      '@algolia/client-common': 4.10.5
+      '@algolia/requester-common': 4.10.5
+      '@algolia/transporter': 4.10.5
     dev: false
 
   /@algolia/logger-common/4.10.3:
     resolution: {integrity: sha512-M6xi+qov2bkgg1H9e1Qtvq/E/eKsGcgz8RBbXNzqPIYoDGZNkv+b3b8YMo3dxd4Wd6M24HU1iqF3kmr1LaXndg==}
 
-  /@algolia/logger-common/4.10.4:
-    resolution: {integrity: sha512-B4D6HqS2TDcf6S8YEr9cFm8S7eswIniojC8IFoCtlfMxhCj2OM70rH1eqfY2VQy/KPY1txYPdMPk8AG8685fHg==}
+  /@algolia/logger-common/4.10.5:
+    resolution: {integrity: sha512-gRJo9zt1UYP4k3woEmZm4iuEBIQd/FrArIsjzsL/b+ihNoOqIxZKTSuGFU4UUZOEhvmxDReiA4gzvQXG+TMTmA==}
     dev: false
 
   /@algolia/logger-console/4.10.3:
@@ -464,10 +464,10 @@ packages:
     dependencies:
       '@algolia/logger-common': 4.10.3
 
-  /@algolia/logger-console/4.10.4:
-    resolution: {integrity: sha512-217KiWZ66BcQ5begHhD+h8mNTjOHvTmUYV203pXteExOgfAm/gzQ4GzzAwXVAhCID2tzRDObfDq8M3BCMp8NPA==}
+  /@algolia/logger-console/4.10.5:
+    resolution: {integrity: sha512-4WfIbn4253EDU12u9UiYvz+QTvAXDv39mKNg9xSoMCjKE5szcQxfcSczw2byc6pYhahOJ9PmxPBfs1doqsdTKQ==}
     dependencies:
-      '@algolia/logger-common': 4.10.4
+      '@algolia/logger-common': 4.10.5
     dev: false
 
   /@algolia/requester-browser-xhr/4.10.3:
@@ -475,17 +475,17 @@ packages:
     dependencies:
       '@algolia/requester-common': 4.10.3
 
-  /@algolia/requester-browser-xhr/4.10.4:
-    resolution: {integrity: sha512-a8sEt9WQeolA/ZCSfhd2ImH+8v7o45359Omn2iBXzB3+UD/fo1jOFcDgyX35AusXw8pNtDI/Jd4n0vBYJvtSWg==}
+  /@algolia/requester-browser-xhr/4.10.5:
+    resolution: {integrity: sha512-53/MURQEqtK+bGdfq4ITSPwTh5hnADU99qzvpAINGQveUFNSFGERipJxHjTJjIrjFz3vxj5kKwjtxDnU6ygO9g==}
     dependencies:
-      '@algolia/requester-common': 4.10.4
+      '@algolia/requester-common': 4.10.5
     dev: false
 
   /@algolia/requester-common/4.10.3:
     resolution: {integrity: sha512-PNfLHmg0Hujugs3rx55uz/ifv7b9HVdSFQDb2hj0O5xZaBEuQCNOXC6COrXR8+9VEfqp2swpg7zwgtqFxh+BtQ==}
 
-  /@algolia/requester-common/4.10.4:
-    resolution: {integrity: sha512-RkAxkX/z8DAHUGg0vtZkY/lZXBPc/aEUf/DmWPp2dspAiCp1ekYlyf+qLNwOwEHMu+Q6nm+meStpAUl0BpsNVg==}
+  /@algolia/requester-common/4.10.5:
+    resolution: {integrity: sha512-UkVa1Oyuj6NPiAEt5ZvrbVopEv1m/mKqjs40KLB+dvfZnNcj+9Fry4Oxnt15HMy/HLORXsx4UwcthAvBuOXE9Q==}
     dev: false
 
   /@algolia/requester-node-http/4.10.3:
@@ -493,10 +493,10 @@ packages:
     dependencies:
       '@algolia/requester-common': 4.10.3
 
-  /@algolia/requester-node-http/4.10.4:
-    resolution: {integrity: sha512-iixy8GOrj0A4sIQX2Q0GChc1z3iM6LF8fJNXVXG629hbXlssEECAl8wO3+6bqAOgbCLiYeY9Aj3QsJyA6vJ4Iw==}
+  /@algolia/requester-node-http/4.10.5:
+    resolution: {integrity: sha512-aNEKVKXL4fiiC+bS7yJwAHdxln81ieBwY3tsMCtM4zF9f5KwCzY2OtN4WKEZa5AAADVcghSAUdyjs4AcGUlO5w==}
     dependencies:
-      '@algolia/requester-common': 4.10.4
+      '@algolia/requester-common': 4.10.5
     dev: false
 
   /@algolia/transporter/4.10.3:
@@ -506,12 +506,12 @@ packages:
       '@algolia/logger-common': 4.10.3
       '@algolia/requester-common': 4.10.3
 
-  /@algolia/transporter/4.10.4:
-    resolution: {integrity: sha512-I60q9+4mYo3D9qIsUYaxU8ZukJVG/DWn1FBAeB5bW9c6/+chmppYJ5CJd/ZvKYEWd7ESwaRrrceYev94O4VrWw==}
+  /@algolia/transporter/4.10.5:
+    resolution: {integrity: sha512-F8DLkmIlvCoMwSCZA3FKHtmdjH3o5clbt0pi2ktFStVNpC6ZDmY307HcK619bKP5xW6h8sVJhcvrLB775D2cyA==}
     dependencies:
-      '@algolia/cache-common': 4.10.4
-      '@algolia/logger-common': 4.10.4
-      '@algolia/requester-common': 4.10.4
+      '@algolia/cache-common': 4.10.5
+      '@algolia/logger-common': 4.10.5
+      '@algolia/requester-common': 4.10.5
     dev: false
 
   /@babel/code-frame/7.12.11:
@@ -1808,7 +1808,7 @@ packages:
       '@chakra-ui/hooks': 1.5.5_react@17.0.2
       '@chakra-ui/icon': 1.1.11_8194fd905f3c2a4eb270d17bdb6ec109
       '@chakra-ui/react-utils': 1.1.2_react@17.0.2
-      '@chakra-ui/system': 1.7.2_2305e84770652125202aaa4817ae97a9
+      '@chakra-ui/system': 1.7.2_a004d704e6197b43c0d970f424150c43
       '@chakra-ui/transition': 1.3.4_6e811357ed36e65ef860931c3f3c4cd0
       '@chakra-ui/utils': 1.8.2
       react: 17.0.2
@@ -1823,7 +1823,7 @@ packages:
     dependencies:
       '@chakra-ui/icon': 1.1.11_8194fd905f3c2a4eb270d17bdb6ec109
       '@chakra-ui/react-utils': 1.1.2_react@17.0.2
-      '@chakra-ui/system': 1.7.2_2305e84770652125202aaa4817ae97a9
+      '@chakra-ui/system': 1.7.2_a004d704e6197b43c0d970f424150c43
       '@chakra-ui/utils': 1.8.2
       react: 17.0.2
 
@@ -1847,7 +1847,7 @@ packages:
     dependencies:
       '@chakra-ui/image': 1.0.18_8194fd905f3c2a4eb270d17bdb6ec109
       '@chakra-ui/react-utils': 1.1.2_react@17.0.2
-      '@chakra-ui/system': 1.7.2_2305e84770652125202aaa4817ae97a9
+      '@chakra-ui/system': 1.7.2_a004d704e6197b43c0d970f424150c43
       '@chakra-ui/utils': 1.8.2
       react: 17.0.2
 
@@ -1870,7 +1870,7 @@ packages:
       react: '>=16.8.6'
     dependencies:
       '@chakra-ui/react-utils': 1.1.2_react@17.0.2
-      '@chakra-ui/system': 1.7.2_2305e84770652125202aaa4817ae97a9
+      '@chakra-ui/system': 1.7.2_a004d704e6197b43c0d970f424150c43
       '@chakra-ui/utils': 1.8.2
       react: 17.0.2
 
@@ -1893,7 +1893,7 @@ packages:
     dependencies:
       '@chakra-ui/react-utils': 1.1.2_react@17.0.2
       '@chakra-ui/spinner': 1.1.12_8194fd905f3c2a4eb270d17bdb6ec109
-      '@chakra-ui/system': 1.7.2_2305e84770652125202aaa4817ae97a9
+      '@chakra-ui/system': 1.7.2_a004d704e6197b43c0d970f424150c43
       '@chakra-ui/utils': 1.8.2
       react: 17.0.2
 
@@ -1932,7 +1932,7 @@ packages:
     dependencies:
       '@chakra-ui/hooks': 1.5.5_react@17.0.2
       '@chakra-ui/react-utils': 1.1.2_react@17.0.2
-      '@chakra-ui/system': 1.7.2_2305e84770652125202aaa4817ae97a9
+      '@chakra-ui/system': 1.7.2_a004d704e6197b43c0d970f424150c43
       '@chakra-ui/utils': 1.8.2
       '@chakra-ui/visually-hidden': 1.0.14_8194fd905f3c2a4eb270d17bdb6ec109
       framer-motion: 4.1.17_react-dom@17.0.2+react@17.0.2
@@ -1963,7 +1963,7 @@ packages:
       react: '>=16.8.6'
     dependencies:
       '@chakra-ui/icon': 1.1.11_8194fd905f3c2a4eb270d17bdb6ec109
-      '@chakra-ui/system': 1.7.2_2305e84770652125202aaa4817ae97a9
+      '@chakra-ui/system': 1.7.2_a004d704e6197b43c0d970f424150c43
       '@chakra-ui/utils': 1.8.2
       react: 17.0.2
 
@@ -2002,7 +2002,7 @@ packages:
       '@chakra-ui/system': '>=1.0.0'
       react: '>=16.8.6'
     dependencies:
-      '@chakra-ui/system': 1.7.2_2305e84770652125202aaa4817ae97a9
+      '@chakra-ui/system': 1.7.2_a004d704e6197b43c0d970f424150c43
       '@chakra-ui/utils': 1.8.2
       react: 17.0.2
 
@@ -2074,7 +2074,7 @@ packages:
     dependencies:
       '@chakra-ui/hooks': 1.5.5_react@17.0.2
       '@chakra-ui/react-utils': 1.1.2_react@17.0.2
-      '@chakra-ui/system': 1.7.2_2305e84770652125202aaa4817ae97a9
+      '@chakra-ui/system': 1.7.2_a004d704e6197b43c0d970f424150c43
       '@chakra-ui/utils': 1.8.2
       react: 17.0.2
 
@@ -2121,7 +2121,7 @@ packages:
       '@chakra-ui/hooks': 1.5.5_react@17.0.2
       '@chakra-ui/icon': 1.1.11_8194fd905f3c2a4eb270d17bdb6ec109
       '@chakra-ui/react-utils': 1.1.2_react@17.0.2
-      '@chakra-ui/system': 1.7.2_2305e84770652125202aaa4817ae97a9
+      '@chakra-ui/system': 1.7.2_a004d704e6197b43c0d970f424150c43
       '@chakra-ui/utils': 1.8.2
       react: 17.0.2
 
@@ -2166,7 +2166,7 @@ packages:
       '@chakra-ui/system': '>=1.0.0'
       react: '>=16.8.6'
     dependencies:
-      '@chakra-ui/system': 1.7.2_2305e84770652125202aaa4817ae97a9
+      '@chakra-ui/system': 1.7.2_a004d704e6197b43c0d970f424150c43
       '@chakra-ui/utils': 1.8.2
       react: 17.0.2
 
@@ -2220,7 +2220,7 @@ packages:
       react: '>=16.8.6'
     dependencies:
       '@chakra-ui/hooks': 1.5.5_react@17.0.2
-      '@chakra-ui/system': 1.7.2_2305e84770652125202aaa4817ae97a9
+      '@chakra-ui/system': 1.7.2_a004d704e6197b43c0d970f424150c43
       '@chakra-ui/utils': 1.8.2
       react: 17.0.2
 
@@ -2243,7 +2243,7 @@ packages:
     dependencies:
       '@chakra-ui/form-control': 1.4.0_8194fd905f3c2a4eb270d17bdb6ec109
       '@chakra-ui/react-utils': 1.1.2_react@17.0.2
-      '@chakra-ui/system': 1.7.2_2305e84770652125202aaa4817ae97a9
+      '@chakra-ui/system': 1.7.2_a004d704e6197b43c0d970f424150c43
       '@chakra-ui/utils': 1.8.2
       react: 17.0.2
 
@@ -2307,7 +2307,7 @@ packages:
       react: '>=16.8.6'
     dependencies:
       '@chakra-ui/react-env': 1.0.6_react@17.0.2
-      '@chakra-ui/system': 1.7.2_2305e84770652125202aaa4817ae97a9
+      '@chakra-ui/system': 1.7.2_a004d704e6197b43c0d970f424150c43
       '@chakra-ui/theme': 1.10.0_@chakra-ui+system@1.7.2
       '@chakra-ui/utils': 1.8.2
       react: 17.0.2
@@ -2354,7 +2354,7 @@ packages:
       '@chakra-ui/hooks': 1.5.5_react@17.0.2
       '@chakra-ui/popper': 2.2.1_react@17.0.2
       '@chakra-ui/react-utils': 1.1.2_react@17.0.2
-      '@chakra-ui/system': 1.7.2_2305e84770652125202aaa4817ae97a9
+      '@chakra-ui/system': 1.7.2_a004d704e6197b43c0d970f424150c43
       '@chakra-ui/transition': 1.3.4_6e811357ed36e65ef860931c3f3c4cd0
       '@chakra-ui/utils': 1.8.2
       framer-motion: 4.1.17_react-dom@17.0.2+react@17.0.2
@@ -2373,7 +2373,7 @@ packages:
       '@chakra-ui/hooks': 1.5.5_react@17.0.2
       '@chakra-ui/portal': 1.2.8_react-dom@17.0.2+react@17.0.2
       '@chakra-ui/react-utils': 1.1.2_react@17.0.2
-      '@chakra-ui/system': 1.7.2_2305e84770652125202aaa4817ae97a9
+      '@chakra-ui/system': 1.7.2_a004d704e6197b43c0d970f424150c43
       '@chakra-ui/transition': 1.3.4_6e811357ed36e65ef860931c3f3c4cd0
       '@chakra-ui/utils': 1.8.2
       aria-hidden: 1.1.3
@@ -2417,7 +2417,7 @@ packages:
       '@chakra-ui/hooks': 1.5.5_react@17.0.2
       '@chakra-ui/icon': 1.1.11_8194fd905f3c2a4eb270d17bdb6ec109
       '@chakra-ui/react-utils': 1.1.2_react@17.0.2
-      '@chakra-ui/system': 1.7.2_2305e84770652125202aaa4817ae97a9
+      '@chakra-ui/system': 1.7.2_a004d704e6197b43c0d970f424150c43
       '@chakra-ui/utils': 1.8.2
       react: 17.0.2
 
@@ -2445,7 +2445,7 @@ packages:
       '@chakra-ui/descendant': 2.0.1_react@17.0.2
       '@chakra-ui/hooks': 1.5.5_react@17.0.2
       '@chakra-ui/react-utils': 1.1.2_react@17.0.2
-      '@chakra-ui/system': 1.7.2_2305e84770652125202aaa4817ae97a9
+      '@chakra-ui/system': 1.7.2_a004d704e6197b43c0d970f424150c43
       '@chakra-ui/utils': 1.8.2
       react: 17.0.2
 
@@ -2488,7 +2488,7 @@ packages:
       '@chakra-ui/hooks': 1.5.5_react@17.0.2
       '@chakra-ui/popper': 2.2.1_react@17.0.2
       '@chakra-ui/react-utils': 1.1.2_react@17.0.2
-      '@chakra-ui/system': 1.7.2_2305e84770652125202aaa4817ae97a9
+      '@chakra-ui/system': 1.7.2_a004d704e6197b43c0d970f424150c43
       '@chakra-ui/utils': 1.8.2
       framer-motion: 4.1.17_react-dom@17.0.2+react@17.0.2
       react: 17.0.2
@@ -2540,7 +2540,7 @@ packages:
       '@chakra-ui/system': '>=1.0.0'
       react: '>=16.8.6'
     dependencies:
-      '@chakra-ui/system': 1.7.2_2305e84770652125202aaa4817ae97a9
+      '@chakra-ui/system': 1.7.2_a004d704e6197b43c0d970f424150c43
       '@chakra-ui/theme-tools': 1.1.9_@chakra-ui+system@1.7.2
       '@chakra-ui/utils': 1.8.2
       react: 17.0.2
@@ -2565,7 +2565,7 @@ packages:
       '@chakra-ui/form-control': 1.4.0_8194fd905f3c2a4eb270d17bdb6ec109
       '@chakra-ui/hooks': 1.5.5_react@17.0.2
       '@chakra-ui/react-utils': 1.1.2_react@17.0.2
-      '@chakra-ui/system': 1.7.2_2305e84770652125202aaa4817ae97a9
+      '@chakra-ui/system': 1.7.2_a004d704e6197b43c0d970f424150c43
       '@chakra-ui/utils': 1.8.2
       '@chakra-ui/visually-hidden': 1.0.14_8194fd905f3c2a4eb270d17bdb6ec109
       react: 17.0.2
@@ -2809,7 +2809,7 @@ packages:
       react: '>=16.8.6'
     dependencies:
       '@chakra-ui/form-control': 1.4.0_8194fd905f3c2a4eb270d17bdb6ec109
-      '@chakra-ui/system': 1.7.2_2305e84770652125202aaa4817ae97a9
+      '@chakra-ui/system': 1.7.2_a004d704e6197b43c0d970f424150c43
       '@chakra-ui/utils': 1.8.2
       react: 17.0.2
 
@@ -2879,7 +2879,7 @@ packages:
     dependencies:
       '@chakra-ui/hooks': 1.5.5_react@17.0.2
       '@chakra-ui/react-utils': 1.1.2_react@17.0.2
-      '@chakra-ui/system': 1.7.2_2305e84770652125202aaa4817ae97a9
+      '@chakra-ui/system': 1.7.2_a004d704e6197b43c0d970f424150c43
       '@chakra-ui/utils': 1.8.2
       react: 17.0.2
 
@@ -2901,7 +2901,7 @@ packages:
       '@chakra-ui/system': '>=1.0.0'
       react: '>=16.8.6'
     dependencies:
-      '@chakra-ui/system': 1.7.2_2305e84770652125202aaa4817ae97a9
+      '@chakra-ui/system': 1.7.2_a004d704e6197b43c0d970f424150c43
       '@chakra-ui/utils': 1.8.2
       '@chakra-ui/visually-hidden': 1.0.14_8194fd905f3c2a4eb270d17bdb6ec109
       react: 17.0.2
@@ -2924,7 +2924,7 @@ packages:
       react: '>=16.8.6'
     dependencies:
       '@chakra-ui/icon': 1.1.11_8194fd905f3c2a4eb270d17bdb6ec109
-      '@chakra-ui/system': 1.7.2_2305e84770652125202aaa4817ae97a9
+      '@chakra-ui/system': 1.7.2_a004d704e6197b43c0d970f424150c43
       '@chakra-ui/utils': 1.8.2
       '@chakra-ui/visually-hidden': 1.0.14_8194fd905f3c2a4eb270d17bdb6ec109
       react: 17.0.2
@@ -2967,7 +2967,7 @@ packages:
       react: '>=16.8.6'
     dependencies:
       '@chakra-ui/checkbox': 1.5.5_a273197a5e5d817c9d1bc2784b645666
-      '@chakra-ui/system': 1.7.2_2305e84770652125202aaa4817ae97a9
+      '@chakra-ui/system': 1.7.2_a004d704e6197b43c0d970f424150c43
       '@chakra-ui/utils': 1.8.2
       react: 17.0.2
     transitivePeerDependencies:
@@ -3026,7 +3026,7 @@ packages:
       '@chakra-ui/system': '>=1.0.0'
       react: '>=16.8.6'
     dependencies:
-      '@chakra-ui/system': 1.7.2_2305e84770652125202aaa4817ae97a9
+      '@chakra-ui/system': 1.7.2_a004d704e6197b43c0d970f424150c43
       '@chakra-ui/utils': 1.8.2
       react: 17.0.2
 
@@ -3050,7 +3050,7 @@ packages:
       '@chakra-ui/descendant': 2.0.1_react@17.0.2
       '@chakra-ui/hooks': 1.5.5_react@17.0.2
       '@chakra-ui/react-utils': 1.1.2_react@17.0.2
-      '@chakra-ui/system': 1.7.2_2305e84770652125202aaa4817ae97a9
+      '@chakra-ui/system': 1.7.2_a004d704e6197b43c0d970f424150c43
       '@chakra-ui/utils': 1.8.2
       react: 17.0.2
 
@@ -3075,7 +3075,7 @@ packages:
       react: '>=16.8.6'
     dependencies:
       '@chakra-ui/icon': 1.1.11_8194fd905f3c2a4eb270d17bdb6ec109
-      '@chakra-ui/system': 1.7.2_2305e84770652125202aaa4817ae97a9
+      '@chakra-ui/system': 1.7.2_a004d704e6197b43c0d970f424150c43
       '@chakra-ui/utils': 1.8.2
       react: 17.0.2
 
@@ -3097,7 +3097,7 @@ packages:
       react: '>=16.8.6'
     dependencies:
       '@chakra-ui/form-control': 1.4.0_8194fd905f3c2a4eb270d17bdb6ec109
-      '@chakra-ui/system': 1.7.2_2305e84770652125202aaa4817ae97a9
+      '@chakra-ui/system': 1.7.2_a004d704e6197b43c0d970f424150c43
       '@chakra-ui/utils': 1.8.2
       react: 17.0.2
 
@@ -3127,7 +3127,7 @@ packages:
     peerDependencies:
       '@chakra-ui/system': '>=1.0.0'
     dependencies:
-      '@chakra-ui/system': 1.7.2_2305e84770652125202aaa4817ae97a9
+      '@chakra-ui/system': 1.7.2
       '@chakra-ui/utils': 1.8.2
       '@types/tinycolor2': 1.4.2
       tinycolor2: 1.4.2
@@ -3137,7 +3137,7 @@ packages:
     peerDependencies:
       '@chakra-ui/system': '>=1.0.0'
     dependencies:
-      '@chakra-ui/system': 1.7.2_2305e84770652125202aaa4817ae97a9
+      '@chakra-ui/system': 1.7.2
       '@chakra-ui/theme-tools': 1.1.9_@chakra-ui+system@1.7.2
       '@chakra-ui/utils': 1.8.2
 
@@ -3152,7 +3152,7 @@ packages:
       '@chakra-ui/alert': 1.2.7_8194fd905f3c2a4eb270d17bdb6ec109
       '@chakra-ui/close-button': 1.1.11_8194fd905f3c2a4eb270d17bdb6ec109
       '@chakra-ui/hooks': 1.5.5_react@17.0.2
-      '@chakra-ui/system': 1.7.2_2305e84770652125202aaa4817ae97a9
+      '@chakra-ui/system': 1.7.2_a004d704e6197b43c0d970f424150c43
       '@chakra-ui/theme': 1.10.0_@chakra-ui+system@1.7.2
       '@chakra-ui/transition': 1.3.4_6e811357ed36e65ef860931c3f3c4cd0
       '@chakra-ui/utils': 1.8.2
@@ -3191,7 +3191,7 @@ packages:
       '@chakra-ui/popper': 2.2.1_react@17.0.2
       '@chakra-ui/portal': 1.2.8_react-dom@17.0.2+react@17.0.2
       '@chakra-ui/react-utils': 1.1.2_react@17.0.2
-      '@chakra-ui/system': 1.7.2_2305e84770652125202aaa4817ae97a9
+      '@chakra-ui/system': 1.7.2_a004d704e6197b43c0d970f424150c43
       '@chakra-ui/utils': 1.8.2
       '@chakra-ui/visually-hidden': 1.0.14_8194fd905f3c2a4eb270d17bdb6ec109
       framer-motion: 4.1.17_react-dom@17.0.2+react@17.0.2
@@ -3248,7 +3248,7 @@ packages:
       '@chakra-ui/system': '>=1.0.0'
       react: '>=16.8.6'
     dependencies:
-      '@chakra-ui/system': 1.7.2_2305e84770652125202aaa4817ae97a9
+      '@chakra-ui/system': 1.7.2_a004d704e6197b43c0d970f424150c43
       '@chakra-ui/utils': 1.8.2
       react: 17.0.2
 
@@ -4392,12 +4392,12 @@ packages:
       algoliasearch: 4.10.3
       events: 1.1.1
 
-  /algoliasearch-helper/3.5.5_algoliasearch@4.10.4:
+  /algoliasearch-helper/3.5.5_algoliasearch@4.10.5:
     resolution: {integrity: sha512-JDH14gMpSj8UzEaKwVkrqKOeAOyK0dDWsFlKvWhk0Xl5yw9FyafYf1xZPb4uSXaPBAFQtUouFlR1Zt68BCY0/w==}
     peerDependencies:
       algoliasearch: '>= 3.1 < 5'
     dependencies:
-      algoliasearch: 4.10.4
+      algoliasearch: 4.10.5
       events: 1.1.1
     dev: false
 
@@ -4419,23 +4419,23 @@ packages:
       '@algolia/requester-node-http': 4.10.3
       '@algolia/transporter': 4.10.3
 
-  /algoliasearch/4.10.4:
-    resolution: {integrity: sha512-noZ59PZYyYJVsm78YEo6EXH5DgaU0jSKf17xxJ3q9WtpBkmiaNk5b53mSJFsAI3c5gMOWgXM4+4o1EEaCbXXGg==}
+  /algoliasearch/4.10.5:
+    resolution: {integrity: sha512-KmH2XkiN+8FxhND4nWFbQDkIoU6g2OjfeU9kIv4Lb+EiOOs3Gpp7jvd+JnatsCisAZsnWQdjd7zVlW7I/85QvQ==}
     dependencies:
-      '@algolia/cache-browser-local-storage': 4.10.4
-      '@algolia/cache-common': 4.10.4
-      '@algolia/cache-in-memory': 4.10.4
-      '@algolia/client-account': 4.10.4
-      '@algolia/client-analytics': 4.10.4
-      '@algolia/client-common': 4.10.4
-      '@algolia/client-personalization': 4.10.4
-      '@algolia/client-search': 4.10.4
-      '@algolia/logger-common': 4.10.4
-      '@algolia/logger-console': 4.10.4
-      '@algolia/requester-browser-xhr': 4.10.4
-      '@algolia/requester-common': 4.10.4
-      '@algolia/requester-node-http': 4.10.4
-      '@algolia/transporter': 4.10.4
+      '@algolia/cache-browser-local-storage': 4.10.5
+      '@algolia/cache-common': 4.10.5
+      '@algolia/cache-in-memory': 4.10.5
+      '@algolia/client-account': 4.10.5
+      '@algolia/client-analytics': 4.10.5
+      '@algolia/client-common': 4.10.5
+      '@algolia/client-personalization': 4.10.5
+      '@algolia/client-search': 4.10.5
+      '@algolia/logger-common': 4.10.5
+      '@algolia/logger-console': 4.10.5
+      '@algolia/requester-browser-xhr': 4.10.5
+      '@algolia/requester-common': 4.10.5
+      '@algolia/requester-node-http': 4.10.5
+      '@algolia/transporter': 4.10.5
     dev: false
 
   /anser/1.4.9:
@@ -8453,15 +8453,15 @@ packages:
       react: 17.0.2
       react-fast-compare: 3.2.0
 
-  /react-instantsearch-core/6.12.1_b4426add49174a29fafdf75dfef77d0f:
+  /react-instantsearch-core/6.12.1_bdc42e7c8af415d3d7b8c54bad5b9087:
     resolution: {integrity: sha512-X4OqakDI3DOcFiS1S46z+cciKEQcKBmH8HGQLztzW14hoHRqFfZzuqWydlSxfJZN5WksMMm78EmL2jvoqIHd/A==}
     peerDependencies:
       algoliasearch: '>= 3.1 < 5'
       react: '>= 16.3.0 < 18'
     dependencies:
       '@babel/runtime': 7.15.3
-      algoliasearch: 4.10.4
-      algoliasearch-helper: 3.5.5_algoliasearch@4.10.4
+      algoliasearch: 4.10.5
+      algoliasearch-helper: 3.5.5_algoliasearch@4.10.5
       prop-types: 15.7.2
       react: 17.0.2
       react-fast-compare: 3.2.0
@@ -8484,20 +8484,20 @@ packages:
     transitivePeerDependencies:
       - algoliasearch
 
-  /react-instantsearch-dom/6.12.1_6c6ff28fde4af31d1435ef8cf828ce9d:
+  /react-instantsearch-dom/6.12.1_7f770dea5663f3612b40f53110f92d57:
     resolution: {integrity: sha512-KXk2UDmJ3OP9B57owPC0+7fdcVtmYAA6/UWimR9CXhvFGCMi11xlR/wscYMYxdPuxs9IkmnnLDIJSjSGADYnow==}
     peerDependencies:
       react: '>= 16.3.0 < 18'
       react-dom: '>= 16.3.0 < 18'
     dependencies:
       '@babel/runtime': 7.15.3
-      algoliasearch-helper: 3.5.5_algoliasearch@4.10.4
+      algoliasearch-helper: 3.5.5_algoliasearch@4.10.5
       classnames: 2.3.1
       prop-types: 15.7.2
       react: 17.0.2
       react-dom: 17.0.2_react@17.0.2
       react-fast-compare: 3.2.0
-      react-instantsearch-core: 6.12.1_b4426add49174a29fafdf75dfef77d0f
+      react-instantsearch-core: 6.12.1_bdc42e7c8af415d3d7b8c54bad5b9087
     transitivePeerDependencies:
       - algoliasearch
     dev: false
