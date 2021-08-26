@@ -39,7 +39,7 @@
     "react-intersection-observer": "^8.32.0",
     "react-use": "^17.2.4",
     "use-immer": "^0.6.0",
-    "zustand": "^3.5.9"
+    "zustand": "^3.5.10"
   },
   "devDependencies": {
     "@chakra-ui/icons": "1.0.15",
@@ -56,7 +56,7 @@
     "@types/react-dom": "17.0.9",
     "bob-esbuild-cli": "1.0.1",
     "changesets-github-release": "0.0.3",
-    "esbuild": "^0.12.22",
+    "esbuild": "^0.12.23",
     "framer-motion": "4.1.17",
     "next": "^11.1.0",
     "next-i18next": "^8.6.0",
