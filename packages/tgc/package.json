@@ -39,7 +39,7 @@
     "@rollup/plugin-image": "2.1.1",
     "@rollup/plugin-node-resolve": "13.0.4",
     "bob-esbuild-cli": "1.0.1",
-    "changesets-github-release": "0.0.3",
+    "changesets-github-release": "0.0.4",
     "postcss": "8.3.6",
     "react": "17.0.2",
     "react-dom": "17.0.2",
