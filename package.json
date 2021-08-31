@@ -28,7 +28,7 @@
     "pretty:all": "prettier -w \"**/*.{ts,tsx,json}\""
   },
   "devDependencies": {
-    "@changesets/cli": "2.16.0",
+    "@changesets/cli": "2.17.0",
     "@types/node": "^16.7.8",
     "@types/react": "17.0.19",
     "@types/react-instantsearch-core": "6.10.4",
