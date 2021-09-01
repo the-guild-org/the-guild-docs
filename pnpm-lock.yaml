@@ -217,7 +217,7 @@ importers:
   packages/server:
     specifiers:
       '@guild-docs/types': workspace:^1.0.0
-      '@stefanprobst/remark-shiki': ^1.1.1
+      '@stefanprobst/remark-shiki': ^1.1.2
       '@types/github-slugger': 1.3.0
       '@types/node-fetch': ^2.5.12
       bob-esbuild-cli: 1.0.1
@@ -240,7 +240,7 @@ importers:
       tiny-lru: ^7.0.6
     dependencies:
       '@guild-docs/types': link:../types
-      '@stefanprobst/remark-shiki': 1.1.1_shiki@0.9.9
+      '@stefanprobst/remark-shiki': 1.1.2_shiki@0.9.9
       github-slugger: 1.4.0
       globby: 11.0.4
       gray-matter: 4.0.3
@@ -4097,8 +4097,8 @@ packages:
     resolution: {integrity: sha512-RNiOoTPkptFtSVzQevY/yWtZwf/RxyVnPy/OcA9HBM3MlGDnBEYL5B41H0MTn0Uec8Hi+2qUtTfG2WWZBmMejQ==}
     dev: true
 
-  /@stefanprobst/remark-shiki/1.1.1_shiki@0.9.9:
-    resolution: {integrity: sha512-IYRnxc3PkIMzBBsHHadEsAfml9OgFxkvHRPh5l2Trq7mCMpB0Sz/BT443DHrTtV+3S8WK02e9TUohPBUhywJ1A==}
+  /@stefanprobst/remark-shiki/1.1.2_shiki@0.9.9:
+    resolution: {integrity: sha512-/CkPffE219XehykR2hcmZ4q2iOOKGZhgof989ylSyRoQ+VPFtL1y0ElmO5Jl2ULUA1ehBhd1Hi6z2rOMqLaJyA==}
     engines: {node: '>=12.9', yarn: ^1}
     peerDependencies:
       shiki: ^0.9.6

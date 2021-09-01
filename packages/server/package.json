@@ -30,7 +30,7 @@
   },
   "dependencies": {
     "@guild-docs/types": "workspace:^1.0.0",
-    "@stefanprobst/remark-shiki": "^1.1.1",
+    "@stefanprobst/remark-shiki": "^1.1.2",
     "github-slugger": "^1.4.0",
     "globby": "^11.0.4",
     "gray-matter": "^4.0.3",
