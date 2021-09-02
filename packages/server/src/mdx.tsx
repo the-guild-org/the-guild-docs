@@ -9,7 +9,6 @@ import * as React from 'react';
 import shiki from 'shiki';
 
 import { LazyPromise } from '@guild-docs/types';
-import withShiki from '@stefanprobst/remark-shiki';
 
 import { IS_PRODUCTION } from './constants';
 import { getSlug } from './routes';
@@ -95,7 +94,7 @@ export interface CompiledMDX {
 }
 
 const RemarkDeps = LazyPromise(async () => {
-  const [remarkAdmonitions, remarkSlug, remarkEmoji, highlighter] = await Promise.all([
+  const [remarkAdmonitions, remarkSlug, remarkEmoji, highlighter, { default: withShiki }] = await Promise.all([
     import('remark-admonitions').then(v => v.default),
     import('remark-slug').then(v => v.default),
     import('remark-emoji').then(v => v.default),
@@ -118,6 +117,7 @@ const RemarkDeps = LazyPromise(async () => {
         'swift',
       ],
     }),
+    import('@stefanprobst/remark-shiki'),
   ]);
 
   return {
@@ -125,6 +125,7 @@ const RemarkDeps = LazyPromise(async () => {
     remarkSlug,
     remarkEmoji,
     highlighter,
+    withShiki,
   };
 });
 
@@ -138,7 +139,7 @@ export async function buildMDX(
     content = '# ' + data.title + '\n\n' + content.trimStart();
   }
 
-  const { remarkAdmonitions, remarkEmoji, remarkSlug, highlighter } = await RemarkDeps;
+  const { remarkAdmonitions, remarkEmoji, remarkSlug, highlighter, withShiki } = await RemarkDeps;
 
   const mdx = await serialize(content, {
     mdxOptions: {

@@ -30,7 +30,7 @@
   },
   "dependencies": {
     "@guild-docs/types": "workspace:^1.0.0",
-    "@stefanprobst/remark-shiki": "^1.1.1",
+    "@stefanprobst/remark-shiki": "^2.0.0",
     "github-slugger": "^1.4.0",
     "globby": "^11.0.4",
     "gray-matter": "^4.0.3",
@@ -46,13 +46,13 @@
     "@types/node-fetch": "^2.5.12",
     "bob-esbuild-cli": "1.0.1",
     "changesets-github-release": "0.0.4",
-    "esbuild": "^0.12.24",
+    "esbuild": "^0.12.25",
     "next": "^11.1.2",
     "next-i18next": "8.6.0",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "remark-admonitions": "1.2.1",
-    "shiki": "^0.9.9"
+    "shiki": "^0.9.10"
   },
   "peerDependencies": {
     "next": "^11.1.0",
