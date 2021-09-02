@@ -1,5 +1,11 @@
 # @guild-docs/client
 
+## 1.0.4
+
+### Patch Changes
+
+- aafdd8d: use vanilla img for npm badge
+
 ## 1.0.3
 
 ### Patch Changes
