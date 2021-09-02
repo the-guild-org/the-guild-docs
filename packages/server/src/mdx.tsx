@@ -101,7 +101,22 @@ const RemarkDeps = LazyPromise(async () => {
     import('remark-emoji').then(v => v.default),
     shiki.getHighlighter({
       theme: 'dark-plus',
-      langs: ['javascript', 'typescript', 'sh', 'shell', 'bash', 'json', 'yaml', 'markdown', 'md', 'mdx', 'tsx', 'ts', 'graphql'],
+      langs: [
+        'javascript',
+        'typescript',
+        'sh',
+        'shell',
+        'bash',
+        'json',
+        'yaml',
+        'markdown',
+        'md',
+        'mdx',
+        'tsx',
+        'ts',
+        'graphql',
+        'swift',
+      ],
     }),
   ]);
 
