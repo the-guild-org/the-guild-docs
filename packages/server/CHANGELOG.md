@@ -1,5 +1,11 @@
 # @guild-docs/server
 
+## 1.0.2
+
+### Patch Changes
+
+- 01ebd5c: add "swift" in code highlighter
+
 ## 1.0.1
 
 ### Patch Changes
