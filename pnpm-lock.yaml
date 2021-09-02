@@ -236,11 +236,11 @@ importers:
       remark-admonitions: 1.2.1
       remark-emoji: ^3.0.1
       remark-slug: ^7.0.0
-      shiki: ^0.9.9
+      shiki: ^0.9.10
       tiny-lru: ^7.0.6
     dependencies:
       '@guild-docs/types': link:../types
-      '@stefanprobst/remark-shiki': 1.1.1_shiki@0.9.9
+      '@stefanprobst/remark-shiki': 1.1.1_shiki@0.9.10
       github-slugger: 1.4.0
       globby: 11.0.4
       gray-matter: 4.0.3
@@ -261,7 +261,7 @@ importers:
       react: 17.0.2
       react-dom: 17.0.2_react@17.0.2
       remark-admonitions: 1.2.1
-      shiki: 0.9.9
+      shiki: 0.9.10
 
   packages/tgc:
     specifiers:
@@ -4097,13 +4097,13 @@ packages:
     resolution: {integrity: sha512-RNiOoTPkptFtSVzQevY/yWtZwf/RxyVnPy/OcA9HBM3MlGDnBEYL5B41H0MTn0Uec8Hi+2qUtTfG2WWZBmMejQ==}
     dev: true
 
-  /@stefanprobst/remark-shiki/1.1.1_shiki@0.9.9:
+  /@stefanprobst/remark-shiki/1.1.1_shiki@0.9.10:
     resolution: {integrity: sha512-IYRnxc3PkIMzBBsHHadEsAfml9OgFxkvHRPh5l2Trq7mCMpB0Sz/BT443DHrTtV+3S8WK02e9TUohPBUhywJ1A==}
     engines: {node: '>=12.9', yarn: ^1}
     peerDependencies:
       shiki: ^0.9.6
     dependencies:
-      shiki: 0.9.9
+      shiki: 0.9.10
       unified: 9.2.2
       unist-util-visit: 2.0.3
     dev: false
@@ -9250,12 +9250,21 @@ packages:
   /shell-quote/1.7.2:
     resolution: {integrity: sha512-mRz/m/JVscCrkMyPqHc/bczi3OQHkLTqXHEFu0zDhK/qfv3UcOA4SVmRCLmos4bhjr9ekVQubj/R7waKapmiQg==}
 
+  /shiki/0.9.10:
+    resolution: {integrity: sha512-xeM7Oc6hY+6iW5O/T5hor8ul7mEprzyl5y4r5zthEHToQNw7MIhREMgU3r2gKDB0NaMLNrkcEQagudCdzE13Lg==}
+    dependencies:
+      json5: 2.2.0
+      onigasm: 2.2.5
+      vscode-textmate: 5.2.0
+    dev: true
+
   /shiki/0.9.9:
     resolution: {integrity: sha512-xqmbBqdXlm05t7cdenDGPADOt6v2jj51GE7cbKmDXCupRw4DzF0QNkiWgNkd+0IvquZWiVP3pEnZgunwVatoPg==}
     dependencies:
       json5: 2.2.0
       onigasm: 2.2.5
       vscode-textmate: 5.2.0
+    dev: false
 
   /side-channel/1.0.4:
     resolution: {integrity: sha512-q5XPytqFEIKHkGdiMIrY10mvLRvnQh42/+GoBlFW3b2LXLE2xxJpZFdm94we0BaoV3RwJyGqg5wS7epxTv0Zvw==}
