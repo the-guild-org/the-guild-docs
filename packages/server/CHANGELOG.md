@@ -1,5 +1,11 @@
 # @guild-docs/server
 
+## 1.0.3
+
+### Patch Changes
+
+- 4a32ca8: inline remark shiki transformer (fix node12 engines issue)
+
 ## 1.0.2
 
 ### Patch Changes
