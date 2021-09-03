@@ -30,8 +30,9 @@
   },
   "dependencies": {
     "@guild-docs/types": "workspace:^1.0.0",
-    "@stefanprobst/remark-shiki": "^2.0.0",
     "github-slugger": "^1.4.0",
+    "unist-util-visit": "^4.0.0",
+    "unified": "^10.1.0",
     "globby": "^11.0.4",
     "gray-matter": "^4.0.3",
     "next-mdx-remote": "^3.0.4",

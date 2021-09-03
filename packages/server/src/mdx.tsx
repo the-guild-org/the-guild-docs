@@ -94,7 +94,7 @@ export interface CompiledMDX {
 }
 
 const RemarkDeps = LazyPromise(async () => {
-  const [remarkAdmonitions, remarkSlug, remarkEmoji, highlighter, { default: withShiki }] = await Promise.all([
+  const [remarkAdmonitions, remarkSlug, remarkEmoji, highlighter, withShiki] = await Promise.all([
     import('remark-admonitions').then(v => v.default),
     import('remark-slug').then(v => v.default),
     import('remark-emoji').then(v => v.default),
@@ -117,7 +117,7 @@ const RemarkDeps = LazyPromise(async () => {
         'swift',
       ],
     }),
-    import('@stefanprobst/remark-shiki'),
+    import('./remarkShiki').then(v => v.withShiki()),
   ]);
 
   return {
