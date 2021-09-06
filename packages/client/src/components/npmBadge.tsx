@@ -33,7 +33,6 @@ export const NPMBadge = ({ name }: { name: string }) => {
         colorScheme="gray"
         animation="ease-in-out"
         width="115px"
-        height="25px"
         isLoaded={isLoaded}
       >
         <chakra.img src={src} alt="npm version" height="18" />
