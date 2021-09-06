@@ -30,7 +30,7 @@
   "peerDependencies": {
     "@chakra-ui/react": "^1.6.6",
     "@types/react": "^17.0.20",
-    "next-i18next": "^8.6.0",
+    "next-i18next": "^8.7.0",
     "next-mdx-remote": "^3.0.4"
   }
 }
