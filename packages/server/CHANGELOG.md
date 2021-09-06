@@ -1,5 +1,11 @@
 # @guild-docs/server
 
+## 1.0.4
+
+### Patch Changes
+
+- 4ab6ca3: "sideEffects": false
+
 ## 1.0.3
 
 ### Patch Changes

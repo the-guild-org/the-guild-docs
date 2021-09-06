@@ -1,5 +1,11 @@
 # @guild-docs/client
 
+## 1.0.5
+
+### Patch Changes
+
+- f5fc62c: fix: make badge height consistent
+
 ## 1.0.4
 
 ### Patch Changes
