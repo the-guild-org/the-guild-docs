@@ -299,7 +299,7 @@ importers:
       rollup-plugin-auto-external: 2.0.0
       rollup-plugin-bundle-size: 1.0.3
       rollup-plugin-copy: 3.4.0
-      tailwindcss: ^2.2.10
+      tailwindcss: ^2.2.11
       twin.macro: ^2.7.0
       use-debounce: ^7.0.0
     dependencies:
@@ -312,7 +312,7 @@ importers:
       react-instantsearch-dom: 6.12.1_7f770dea5663f3612b40f53110f92d57
       react-paginate: 7.1.3_react@17.0.2
       react-player: 2.9.0_react@17.0.2
-      tailwindcss: 2.2.10_postcss@8.3.6
+      tailwindcss: 2.2.11_postcss@8.3.6
       twin.macro: 2.7.0
       use-debounce: 7.0.0_react@17.0.2
     devDependencies:
@@ -4941,6 +4941,10 @@ packages:
     dependencies:
       tiny-invariant: 1.1.0
 
+  /css-color-names/0.0.4:
+    resolution: {integrity: sha1-gIrcLnnPhHOAabZGyyDsJ762KeA=}
+    dev: false
+
   /css-in-js-utils/2.0.1:
     resolution: {integrity: sha512-PJF0SpJT+WdbVVt0AOYp9C8GnuruRlL/UFW7932nLWmFLQTaWEzTBQEx7/hn4BuV+WON75iAViSUJLiU3PKbpA==}
     dependencies:
@@ -6006,6 +6010,10 @@ packages:
     resolution: {integrity: sha512-F/1DnUGPopORZi0ni+CvrCgHQ5FyEAHRLSApuYWMmrbSwoN2Mn/7k+Gl38gJnR7yyDZk6WLXwiGod1JOWNDKGw==}
     hasBin: true
 
+  /hex-color-regex/1.1.0:
+    resolution: {integrity: sha512-l9sfDFsuqtOqKDsQdqrMRk0U85RZc0RtOR9yPI7mRVOa4FsR/BVnZ0shmQRM96Ji99kYZP/7hn1cedc1+ApsTQ==}
+    dev: false
+
   /hey-listen/1.0.8:
     resolution: {integrity: sha512-COpmrF2NOg4TBWUJ5UVyaCU2A88wEMkUPK4hNqyCkqHbxT92BbvfjoSozkAIIm6XhicGlJHhFdullInrdhwU8Q==}
 
@@ -6031,6 +6039,14 @@ packages:
     dependencies:
       lru-cache: 6.0.0
     dev: true
+
+  /hsl-regex/1.0.0:
+    resolution: {integrity: sha1-1JMwx4ntgZ4nakwNJy3/owsY/m4=}
+    dev: false
+
+  /hsla-regex/1.0.0:
+    resolution: {integrity: sha1-wc56MWjIxmFAM6S194d/OyJfnDg=}
+    dev: false
 
   /html-parse-stringify/3.0.1:
     resolution: {integrity: sha512-KknJ50kTInJ7qIScF3jeaFRpMpE8/lfiTdzf/twXyPBLAGrLRTmkz3AdTnKeh40X8k9L2fdYwEp/42WGXIRGcg==}
@@ -6274,6 +6290,17 @@ packages:
     dependencies:
       ci-info: 2.0.0
     dev: true
+
+  /is-color-stop/1.1.0:
+    resolution: {integrity: sha1-z/9HGu5N1cnhWFmPvhKWe1za00U=}
+    dependencies:
+      css-color-names: 0.0.4
+      hex-color-regex: 1.1.0
+      hsl-regex: 1.0.0
+      hsla-regex: 1.0.0
+      rgb-regex: 1.0.1
+      rgba-regex: 1.0.0
+    dev: false
 
   /is-core-module/2.6.0:
     resolution: {integrity: sha512-wShG8vs60jKfPWpF2KZRaAtvt3a20OAn7+IJ6hLPECpSABLcKtFKTTI4ZtH5QcBruBHlq+WsdHWyz0BCZW7svQ==}
@@ -8389,6 +8416,14 @@ packages:
     resolution: {integrity: sha512-U9nH88a3fc/ekCF1l0/UP1IosiuIjyTh7hBvXVMHYgVcfGvt897Xguj2UOLDeI5BG2m7/uwyaLVT6fbtCwTyzw==}
     engines: {iojs: '>=1.0.0', node: '>=0.10.0'}
 
+  /rgb-regex/1.0.1:
+    resolution: {integrity: sha1-wODWiC3w4jviVKR16O3UGRX+rrE=}
+    dev: false
+
+  /rgba-regex/1.0.0:
+    resolution: {integrity: sha1-QzdOLiyglosO8VI0YLfXMP8i7rM=}
+    dev: false
+
   /rimraf/3.0.2:
     resolution: {integrity: sha512-JZkJMZkAGFFPP2YqXZXPbMlMBgsxzE8ILs4lMIX/2o0L9UBw9O/Y3o6wFw/i9YLapcUJWwqbi3kdxIPdC62TIA==}
     hasBin: true
@@ -9122,8 +9157,8 @@ packages:
     transitivePeerDependencies:
       - ts-node
 
-  /tailwindcss/2.2.10_postcss@8.3.6:
-    resolution: {integrity: sha512-OFm08RRy7elXhv57DRLzCVKrylIbnu6htJzcD/bGPOdokLQrqywSTYPs3SSqsxqXF+6Mzy/XJcS89gZDIF057A==}
+  /tailwindcss/2.2.11_postcss@8.3.6:
+    resolution: {integrity: sha512-nXHuyB94Q5n3eSy41qdNEORDb2R6Vtq0LZmFfVfpYJxTWEZJ50IzaOkq2tCN8KJTNsQ5kZHhy+rj2aX6lJyGbQ==}
     engines: {node: '>=12.13.0'}
     hasBin: true
     peerDependencies:
@@ -9143,6 +9178,7 @@ packages:
       fs-extra: 10.0.0
       glob-parent: 6.0.1
       html-tags: 3.1.0
+      is-color-stop: 1.1.0
       is-glob: 4.0.1
       lodash: 4.17.21
       lodash.topath: 4.5.2
