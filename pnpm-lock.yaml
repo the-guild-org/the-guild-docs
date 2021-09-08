@@ -299,7 +299,7 @@ importers:
       rollup-plugin-auto-external: 2.0.0
       rollup-plugin-bundle-size: 1.0.3
       rollup-plugin-copy: 3.4.0
-      tailwindcss: ^2.2.11
+      tailwindcss: ^2.2.14
       twin.macro: ^2.7.0
       use-debounce: ^7.0.0
     dependencies:
@@ -312,7 +312,7 @@ importers:
       react-instantsearch-dom: 6.12.1_7f770dea5663f3612b40f53110f92d57
       react-paginate: 7.1.3_react@17.0.2
       react-player: 2.9.0_react@17.0.2
-      tailwindcss: 2.2.11_postcss@8.3.6
+      tailwindcss: 2.2.14_postcss@8.3.6
       twin.macro: 2.7.0
       use-debounce: 7.0.0_react@17.0.2
     devDependencies:
@@ -9157,8 +9157,8 @@ packages:
     transitivePeerDependencies:
       - ts-node
 
-  /tailwindcss/2.2.11_postcss@8.3.6:
-    resolution: {integrity: sha512-nXHuyB94Q5n3eSy41qdNEORDb2R6Vtq0LZmFfVfpYJxTWEZJ50IzaOkq2tCN8KJTNsQ5kZHhy+rj2aX6lJyGbQ==}
+  /tailwindcss/2.2.14_postcss@8.3.6:
+    resolution: {integrity: sha512-gQQPKbV8qb8GthGhJGbRR+lKluSpFq+L78CJZLmqumEBKPMDkD+l5wFlOTzlOhWozG4S1I9AUSaPkD1EfnNsug==}
     engines: {node: '>=12.13.0'}
     hasBin: true
     peerDependencies:
