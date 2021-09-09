@@ -32,7 +32,7 @@
     "esbuild": "^0.12.25",
     "mkdirp": "1.0.4",
     "npm-api": "1.0.1",
-    "prettier": "2.3.2",
+    "prettier": "2.4.0",
     "tsup": "4.14.0"
   },
   "tsup": {
