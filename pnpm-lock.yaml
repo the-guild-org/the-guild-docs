@@ -27,7 +27,7 @@ importers:
       react: ^17.0.2
       react-dom: ^17.0.2
       rimraf: ^3.0.2
-      typescript: ^4.4.2
+      typescript: ^4.4.3
     devDependencies:
       '@changesets/cli': 2.17.0
       '@types/node': 16.9.0
@@ -35,18 +35,18 @@ importers:
       '@types/react-instantsearch-core': 6.10.4
       '@types/react-instantsearch-dom': 6.12.0
       '@types/react-paginate': 7.1.1
-      bob-esbuild: 1.2.3_9a8cc85b2d96f040413d5b20218085f6
+      bob-esbuild: 1.2.3_d4ae5e50d919144efd352d7b63441c23
       bob-esbuild-cli: 1.0.1_bob-esbuild@1.2.3
       concurrently: 6.2.1
       esbuild: 0.12.26
       husky: 7.0.2
-      next: 11.1.2_01b6e46c81e6fda6a6d233df547d9171
+      next: 11.1.2_bd7797d63db473de6e2318609a63c933
       prettier: 2.4.0
       pretty-quick: 3.1.1_prettier@2.4.0
       react: 17.0.2
       react-dom: 17.0.2_react@17.0.2
       rimraf: 3.0.2
-      typescript: 4.4.2
+      typescript: 4.4.3
 
   examples/basic:
     specifiers:
@@ -151,7 +151,7 @@ importers:
       mkdirp: 1.0.4
       npm-api: 1.0.1
       prettier: 2.4.0
-      tsup: 4.14.0_typescript@4.4.2
+      tsup: 4.14.0_typescript@4.4.3
 
   packages/client:
     specifiers:
@@ -183,7 +183,7 @@ importers:
       react-icons: ^4.2.0
       react-intersection-observer: ^8.32.1
       react-use: ^17.3.1
-      typescript: ^4.4.2
+      typescript: ^4.4.3
       use-immer: ^0.6.0
       zustand: ^3.5.10
     dependencies:
@@ -214,11 +214,11 @@ importers:
       changesets-github-release: 0.0.4
       esbuild: 0.12.26
       framer-motion: 4.1.17_react-dom@17.0.2+react@17.0.2
-      next: 11.1.2_01b6e46c81e6fda6a6d233df547d9171
+      next: 11.1.2_bd7797d63db473de6e2318609a63c933
       next-i18next: 8.7.0_next@11.1.2+react@17.0.2
       react: 17.0.2
       react-dom: 17.0.2_react@17.0.2
-      typescript: 4.4.2
+      typescript: 4.4.3
 
   packages/server:
     specifiers:
@@ -264,7 +264,7 @@ importers:
       bob-esbuild-cli: 1.0.1_bob-esbuild@1.2.3
       changesets-github-release: 0.0.4
       esbuild: 0.12.26
-      next: 11.1.2_01b6e46c81e6fda6a6d233df547d9171
+      next: 11.1.2_bd7797d63db473de6e2318609a63c933
       next-i18next: 8.7.0_next@11.1.2+react@17.0.2
       react: 17.0.2
       react-dom: 17.0.2_react@17.0.2
@@ -343,7 +343,7 @@ importers:
       changesets-github-release: ^0.0.4
       next-i18next: 8.7.0
       next-mdx-remote: 3.0.4
-      typescript: ^4.4.2
+      typescript: ^4.4.3
     devDependencies:
       '@chakra-ui/react': 1.6.7_6a88e7f1db8ec87ba2f5d7a905ae46ed
       '@types/node': 16.9.0
@@ -352,7 +352,7 @@ importers:
       changesets-github-release: 0.0.4
       next-i18next: 8.7.0_next@11.1.2+react@17.0.2
       next-mdx-remote: 3.0.4_react-dom@17.0.2+react@17.0.2
-      typescript: 4.4.2
+      typescript: 4.4.3
 
 packages:
 
@@ -4260,7 +4260,7 @@ packages:
     peerDependencies:
       bob-esbuild: ^1.0.0
     dependencies:
-      bob-esbuild: 1.2.3_9a8cc85b2d96f040413d5b20218085f6
+      bob-esbuild: 1.2.3_d4ae5e50d919144efd352d7b63441c23
       commander: 8.1.0
     dev: true
 
@@ -4278,7 +4278,7 @@ packages:
       rollup: 2.56.3
     dev: true
 
-  /bob-esbuild/1.2.3_9a8cc85b2d96f040413d5b20218085f6:
+  /bob-esbuild/1.2.3_d4ae5e50d919144efd352d7b63441c23:
     resolution: {integrity: sha512-cLKIedYjbECm2SOtbuSjvXQ+Kmrjdfv5DN7iFxcuEXCon5cxwhpdbi9PA1A+7Iq6KFRle5Vo1KGj+oQY9493AQ==}
     peerDependencies:
       typescript: '*'
@@ -4302,7 +4302,7 @@ packages:
       sucrase: 3.20.1
       tree-kill: 1.2.2
       tsconfig: 7.0.0
-      typescript: 4.4.2
+      typescript: 4.4.3
     transitivePeerDependencies:
       - '@types/node'
       - supports-color
@@ -7064,7 +7064,7 @@ packages:
       hoist-non-react-statics: 3.3.2
       i18next: 20.6.1
       i18next-fs-backend: 1.1.1
-      next: 11.1.2_01b6e46c81e6fda6a6d233df547d9171
+      next: 11.1.2_bd7797d63db473de6e2318609a63c933
       react: 17.0.2
       react-i18next: 11.12.0_i18next@20.6.1+react@17.0.2
 
@@ -7101,7 +7101,7 @@ packages:
       react: '>=16.0.0'
       react-dom: '>=16.0.0'
     dependencies:
-      next: 11.1.2_01b6e46c81e6fda6a6d233df547d9171
+      next: 11.1.2_bd7797d63db473de6e2318609a63c933
       react: 17.0.2
       react-dom: 17.0.2_react@17.0.2
     dev: false
@@ -7185,6 +7185,88 @@ packages:
       - '@babel/core'
       - typescript
       - webpack
+    dev: false
+
+  /next/11.1.2_bd7797d63db473de6e2318609a63c933:
+    resolution: {integrity: sha512-azEYL0L+wFjv8lstLru3bgvrzPvK0P7/bz6B/4EJ9sYkXeW8r5Bjh78D/Ol7VOg0EIPz0CXoe72hzAlSAXo9hw==}
+    engines: {node: '>=12.0.0'}
+    hasBin: true
+    peerDependencies:
+      fibers: '>= 3.1.0'
+      node-sass: ^4.0.0 || ^5.0.0
+      react: ^17.0.2
+      react-dom: ^17.0.2
+      sass: ^1.3.0
+    peerDependenciesMeta:
+      fibers:
+        optional: true
+      node-sass:
+        optional: true
+      sass:
+        optional: true
+    dependencies:
+      '@babel/runtime': 7.15.3
+      '@hapi/accept': 5.0.2
+      '@next/env': 11.1.2
+      '@next/polyfill-module': 11.1.2
+      '@next/react-dev-overlay': 11.1.2_react-dom@17.0.2+react@17.0.2
+      '@next/react-refresh-utils': 11.1.2_react-refresh@0.8.3
+      '@node-rs/helper': 1.2.1
+      assert: 2.0.0
+      ast-types: 0.13.2
+      browserify-zlib: 0.2.0
+      browserslist: 4.16.6
+      buffer: 5.6.0
+      caniuse-lite: 1.0.30001255
+      chalk: 2.4.2
+      chokidar: 3.5.1
+      constants-browserify: 1.0.0
+      crypto-browserify: 3.12.0
+      cssnano-simple: 3.0.0_postcss@8.2.15
+      domain-browser: 4.19.0
+      encoding: 0.1.13
+      etag: 1.8.1
+      find-cache-dir: 3.3.1
+      get-orientation: 1.1.2
+      https-browserify: 1.0.0
+      image-size: 1.0.0
+      jest-worker: 27.0.0-next.5
+      native-url: 0.3.4
+      node-fetch: 2.6.1
+      node-html-parser: 1.4.9
+      node-libs-browser: 2.2.1
+      os-browserify: 0.3.0
+      p-limit: 3.1.0
+      path-browserify: 1.0.1
+      pnp-webpack-plugin: 1.6.4_typescript@4.4.3
+      postcss: 8.2.15
+      process: 0.11.10
+      querystring-es3: 0.2.1
+      raw-body: 2.4.1
+      react: 17.0.2
+      react-dom: 17.0.2_react@17.0.2
+      react-is: 17.0.2
+      react-refresh: 0.8.3
+      stream-browserify: 3.0.0
+      stream-http: 3.1.1
+      string_decoder: 1.3.0
+      styled-jsx: 4.0.1_react@17.0.2
+      timers-browserify: 2.0.12
+      tty-browserify: 0.0.1
+      use-subscription: 1.5.1_react@17.0.2
+      util: 0.12.4
+      vm-browserify: 1.1.2
+      watchpack: 2.1.1
+    optionalDependencies:
+      '@next/swc-darwin-arm64': 11.1.2
+      '@next/swc-darwin-x64': 11.1.2
+      '@next/swc-linux-x64-gnu': 11.1.2
+      '@next/swc-win32-x64-msvc': 11.1.2
+    transitivePeerDependencies:
+      - '@babel/core'
+      - typescript
+      - webpack
+    dev: true
 
   /node-emoji/1.11.0:
     resolution: {integrity: sha512-wo2DpQkQp7Sjm2A0cq+sN7EHKO6Sl0ctXeBdFZrL9T9+UywORbufTcTZxom8YqpLQt/FqNMUkOpkZrJVYSKD3A==}
@@ -7644,6 +7726,16 @@ packages:
       ts-pnp: 1.2.0_typescript@4.4.2
     transitivePeerDependencies:
       - typescript
+    dev: false
+
+  /pnp-webpack-plugin/1.6.4_typescript@4.4.3:
+    resolution: {integrity: sha512-7Wjy+9E3WwLOEL30D+m8TSTF7qJJUJLONBnwQp0518siuMxUQUbgZwssaFX+QKlZkjHZcw/IpZCt/H0srrntSg==}
+    engines: {node: '>=6'}
+    dependencies:
+      ts-pnp: 1.2.0_typescript@4.4.3
+    transitivePeerDependencies:
+      - typescript
+    dev: true
 
   /polished/4.1.3:
     resolution: {integrity: sha512-ocPAcVBUOryJEKe0z2KLd1l9EBa1r5mSwlKpExmrLzsnIzJo4axsoU9O2BjOTkDGDT4mZ0WFE5XKTlR3nLnZOA==}
@@ -9392,6 +9484,19 @@ packages:
         optional: true
     dependencies:
       typescript: 4.4.2
+    dev: false
+
+  /ts-pnp/1.2.0_typescript@4.4.3:
+    resolution: {integrity: sha512-csd+vJOb/gkzvcCHgTGSChYpy5f1/XKNsmvBGO4JXS+z1v2HobugDz4s1IeFXM3wZB44uczs+eazB5Q/ccdhQw==}
+    engines: {node: '>=6'}
+    peerDependencies:
+      typescript: '*'
+    peerDependenciesMeta:
+      typescript:
+        optional: true
+    dependencies:
+      typescript: 4.4.3
+    dev: true
 
   /tsconfig/7.0.0:
     resolution: {integrity: sha512-vZXmzPrL+EmC4T/4rVlT2jNVMWCi/O4DIiSj3UHg1OE5kCKbk4mfrXc6dZksLgRM/TZlKnousKH9bbTazUWRRw==}
@@ -9435,6 +9540,34 @@ packages:
       sucrase: 3.20.1
       tree-kill: 1.2.2
       typescript: 4.4.2
+    transitivePeerDependencies:
+      - supports-color
+      - ts-node
+    dev: true
+
+  /tsup/4.14.0_typescript@4.4.3:
+    resolution: {integrity: sha512-77rWdzhikTP9mQ34XMRzK83tw++LF6f4ox/HNERlgesB7g6g5VQ1iJlueG9O0P9HAZGVKavUwyoZv0+322p6rg==}
+    hasBin: true
+    peerDependencies:
+      typescript: ^4.2.3
+    peerDependenciesMeta:
+      typescript:
+        optional: true
+    dependencies:
+      cac: 6.7.3
+      chalk: 4.1.2
+      chokidar: 3.5.2
+      debug: 4.3.2
+      esbuild: 0.12.26
+      execa: 5.1.1
+      globby: 11.0.4
+      joycon: 3.0.1
+      postcss-load-config: 3.1.0
+      resolve-from: 5.0.0
+      rollup: 2.56.3
+      sucrase: 3.20.1
+      tree-kill: 1.2.2
+      typescript: 4.4.3
     transitivePeerDependencies:
       - supports-color
       - ts-node
@@ -9526,6 +9659,12 @@ packages:
 
   /typescript/4.4.2:
     resolution: {integrity: sha512-gzP+t5W4hdy4c+68bfcv0t400HVJMMd2+H9B7gae1nQlBzCqvrXX+6GL/b3GAgyTH966pzrZ70/fRjwAtZksSQ==}
+    engines: {node: '>=4.2.0'}
+    hasBin: true
+    dev: true
+
+  /typescript/4.4.3:
+    resolution: {integrity: sha512-4xfscpisVgqqDfPaJo5vkd+Qd/ItkoagnHpufr+i2QCHBsNYp+G7UAoyFl8aPtx879u38wPV65rZ8qbGZijalA==}
     engines: {node: '>=4.2.0'}
     hasBin: true
     dev: true
