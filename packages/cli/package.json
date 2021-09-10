@@ -27,7 +27,7 @@
     "@types/node": "^16.9.0",
     "@types/prettier": "2.3.2",
     "changesets-github-release": "0.0.4",
-    "commander": "8.1.0",
+    "commander": "8.2.0",
     "edit-json-file": "1.6.0",
     "esbuild": "^0.12.26",
     "mkdirp": "1.0.4",
