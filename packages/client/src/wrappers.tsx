@@ -28,7 +28,7 @@ import { NextNProgress } from './NextNProgress';
 import { iterateRoutes } from './routes';
 import { useIs404 } from './utils';
 
-import type { OpenGraphImages, DefaultSeoProps } from 'next-seo/lib/types';
+import type { OpenGraphMedia, DefaultSeoProps } from 'next-seo/lib/types';
 import type { AppProps } from 'next/app';
 
 import type { Dict } from '@chakra-ui/utils';
@@ -48,7 +48,7 @@ export interface CombinedThemeProps {
 export interface AppSeoProps extends DefaultSeoProps {
   title: string;
   description: string;
-  logo: OpenGraphImages;
+  logo: OpenGraphMedia;
 }
 
 export function CombinedThemeProvider({ children, theme, accentColor, defaultSeo, globalStyleProps = {} }: CombinedThemeProps) {
