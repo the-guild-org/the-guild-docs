@@ -29,11 +29,11 @@
     "changesets-github-release": "0.0.4",
     "commander": "8.2.0",
     "edit-json-file": "1.6.0",
-    "esbuild": "^0.12.27",
+    "esbuild": "^0.12.28",
     "mkdirp": "1.0.4",
     "npm-api": "1.0.1",
-    "prettier": "2.4.0",
-    "tsup": "4.14.0"
+    "prettier": "2.4.1",
+    "tsup": "5.0.0"
   },
   "tsup": {
     "splitting": false,
