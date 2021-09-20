@@ -1,5 +1,12 @@
 # @guild-docs/client
 
+## 1.0.6
+
+### Patch Changes
+
+- 80ef62e: update next-seo
+- f9af428: Create new `"hamburgerSide"` prop for `DocsPage` component & now by default mobile hamburger is at the left side
+
 ## 1.0.5
 
 ### Patch Changes
