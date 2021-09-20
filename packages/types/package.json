@@ -19,7 +19,7 @@
   },
   "devDependencies": {
     "@chakra-ui/react": "1.6.7",
-    "@types/node": "^16.9.1",
+    "@types/node": "^16.9.4",
     "@types/react": "17.0.21",
     "bob-esbuild-cli": "1.0.1",
     "changesets-github-release": "^0.0.4",
