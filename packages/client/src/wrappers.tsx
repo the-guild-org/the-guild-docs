@@ -136,9 +136,18 @@ export interface DocsPageProps {
   drawerContentProps?: ComponentProps<typeof DrawerContent>;
   drawerCloseButtonProps?: ComponentProps<typeof DrawerCloseButton>;
   drawerBodyProps?: ComponentProps<typeof DrawerBody>;
+  /**
+   * @default "left"
+   */
+  hamburgerSide?: 'left' | 'right';
 }
 
-export function DocsPage({ appProps: { pageProps, Component }, accentColor, ...restProps }: DocsPageProps) {
+export function DocsPage({
+  appProps: { pageProps, Component },
+  accentColor,
+  hamburgerSide = 'left',
+  ...restProps
+}: DocsPageProps) {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   const mdxRoutes: MdxInternalProps['mdxRoutes'] = pageProps.mdxRoutes;
@@ -175,7 +184,8 @@ export function DocsPage({ appProps: { pageProps, Component }, accentColor, ...r
           aria-label="Open navigation"
           size="sm"
           position="fixed"
-          right="1.5rem"
+          left={hamburgerSide === 'left' ? '1.5rem' : undefined}
+          right={hamburgerSide === 'right' ? '1.5rem' : undefined}
           bottom="1.5rem"
           zIndex="1"
           backgroundColor={accentColor}
