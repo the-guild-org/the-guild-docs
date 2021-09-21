@@ -18,19 +18,19 @@
     "postpublish": "gh-release"
   },
   "devDependencies": {
-    "@chakra-ui/react": "1.6.8",
-    "@types/node": "^16.9.4",
-    "@types/react": "17.0.22",
-    "bob-esbuild-cli": "1.0.1",
+    "@chakra-ui/react": "^1.6.8",
+    "@types/node": "^16.9.6",
+    "@types/react": "^17.0.24",
+    "bob-esbuild-cli": "^1.0.1",
     "changesets-github-release": "^0.0.4",
-    "next-i18next": "8.8.0",
-    "next-mdx-remote": "3.0.4",
+    "next-i18next": "^8.8.0",
+    "next-mdx-remote": "^3.0.4",
     "typescript": "^4.4.3"
   },
   "peerDependencies": {
-    "@chakra-ui/react": "^1.6.8",
-    "@types/react": "^17.0.22",
-    "next-i18next": "^8.8.0",
-    "next-mdx-remote": "^3.0.4"
+    "@chakra-ui/react": "*",
+    "@types/react": "*",
+    "next-i18next": "*",
+    "next-mdx-remote": "*"
   }
 }
