@@ -33,7 +33,7 @@
     "@guild-docs/types": "workspace:^1.0.0",
     "immer": "^9.0.6",
     "next-mdx-remote": "^3.0.4",
-    "next-seo": "^4.28.0",
+    "next-seo": "^4.28.1",
     "nprogress": "^0.2.0",
     "react-icons": "^4.2.0",
     "react-intersection-observer": "^8.32.1",
