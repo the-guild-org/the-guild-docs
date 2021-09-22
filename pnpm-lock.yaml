@@ -234,7 +234,7 @@ importers:
       next: ^11.1.2
       next-i18next: 8.8.0
       next-mdx-remote: ^3.0.4
-      node-fetch: ^2.6.4
+      node-fetch: ^2.6.5
       npms.io: ^2.1.0
       react: ^17.0.2
       react-dom: ^17.0.2
@@ -251,7 +251,7 @@ importers:
       globby: 11.0.4
       gray-matter: 4.0.3
       next-mdx-remote: 3.0.4_react-dom@17.0.2+react@17.0.2
-      node-fetch: 2.6.4
+      node-fetch: 2.6.5
       npms.io: 2.1.0
       remark-emoji: 3.0.1
       remark-slug: 7.0.0
@@ -7188,6 +7188,14 @@ packages:
     engines: {node: 4.x || >=6.0.0}
     dependencies:
       whatwg-url: 5.0.0
+    dev: true
+
+  /node-fetch/2.6.5:
+    resolution: {integrity: sha512-mmlIVHJEu5rnIxgEgez6b9GgWXbkZj5YZ7fx+2r94a2E+Uirsp6HsPTPlomfdHtpt/B0cdKviwkoaM6pyvUOpQ==}
+    engines: {node: 4.x || >=6.0.0}
+    dependencies:
+      whatwg-url: 5.0.0
+    dev: false
 
   /node-html-parser/1.4.9:
     resolution: {integrity: sha512-UVcirFD1Bn0O+TSmloHeHqZZCxHjvtIeGdVdGMhyZ8/PWlEiZaZ5iJzR189yKZr8p0FXN58BUeC7RHRkf/KYGw==}
