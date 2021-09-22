@@ -21,7 +21,7 @@
     "@chakra-ui/react": "^1.6.8",
     "@types/node": "^16.9.6",
     "@types/react": "^17.0.24",
-    "bob-esbuild-cli": "^1.0.1",
+    "bob-esbuild-cli": "^2.0.0",
     "changesets-github-release": "^0.0.4",
     "next-i18next": "^8.8.0",
     "next-mdx-remote": "^3.0.4",

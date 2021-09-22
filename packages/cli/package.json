@@ -22,18 +22,18 @@
     "test-new": "rimraf \"../../examples/new\" && tsup --silent && node lib/index.js init \"../../examples/new\""
   },
   "devDependencies": {
-    "@types/edit-json-file": "1.6.0",
-    "@types/mkdirp": "1.0.2",
+    "@types/edit-json-file": "^1.6.0",
+    "@types/mkdirp": "^1.0.2",
     "@types/node": "^16.9.6",
-    "@types/prettier": "2.3.2",
-    "changesets-github-release": "0.0.4",
-    "commander": "8.2.0",
-    "edit-json-file": "1.6.0",
-    "esbuild": "^0.12.28",
-    "mkdirp": "1.0.4",
-    "npm-api": "1.0.1",
-    "prettier": "2.4.1",
-    "tsup": "5.1.0"
+    "@types/prettier": "^2.3.2",
+    "changesets-github-release": "^0.0.4",
+    "commander": "^8.2.0",
+    "edit-json-file": "^1.6.0",
+    "esbuild": "^0.13.0",
+    "mkdirp": "^1.0.4",
+    "npm-api": "^1.0.1",
+    "prettier": "^2.4.1",
+    "tsup": "^5.1.0"
   },
   "tsup": {
     "splitting": false,
