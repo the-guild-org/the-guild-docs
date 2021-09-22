@@ -17,7 +17,7 @@ importers:
       '@types/react-instantsearch-dom': ^6.12.0
       '@types/react-paginate': ^7.1.1
       bob-esbuild: ^1.3.0
-      bob-esbuild-cli: ^1.0.1
+      bob-esbuild-cli: ^2.0.0
       concurrently: ^6.2.1
       esbuild: '>=0.12.24'
       husky: 7.0.2
@@ -36,7 +36,7 @@ importers:
       '@types/react-instantsearch-dom': 6.12.0
       '@types/react-paginate': 7.1.1
       bob-esbuild: 1.3.0_48cf0e1f5c27c5317da4120390b4c470
-      bob-esbuild-cli: 1.0.1_bob-esbuild@1.3.0
+      bob-esbuild-cli: 2.0.0_bob-esbuild@1.3.0
       concurrently: 6.2.1
       esbuild: 0.12.28
       husky: 7.0.2
@@ -168,7 +168,7 @@ importers:
       '@types/nprogress': ^0.2.0
       '@types/react': ^17.0.24
       '@types/react-dom': ^17.0.9
-      bob-esbuild-cli: ^1.0.1
+      bob-esbuild-cli: ^2.0.0
       changesets-github-release: ^0.0.4
       esbuild: '>=0.12.24'
       framer-motion: ^4.1.17
@@ -210,7 +210,7 @@ importers:
       '@types/nprogress': 0.2.0
       '@types/react': 17.0.24
       '@types/react-dom': 17.0.9
-      bob-esbuild-cli: 1.0.1_bob-esbuild@1.3.0
+      bob-esbuild-cli: 2.0.0_bob-esbuild@1.3.0
       changesets-github-release: 0.0.4
       esbuild: 0.12.28
       framer-motion: 4.1.17_react-dom@17.0.2+react@17.0.2
@@ -225,7 +225,7 @@ importers:
       '@guild-docs/types': workspace:^1.0.0
       '@types/github-slugger': 1.3.0
       '@types/node-fetch': ^2.5.12
-      bob-esbuild-cli: 1.0.1
+      bob-esbuild-cli: 2.0.0
       changesets-github-release: 0.0.4
       esbuild: '>=0.12.24'
       github-slugger: ^1.4.0
@@ -261,7 +261,7 @@ importers:
     devDependencies:
       '@types/github-slugger': 1.3.0
       '@types/node-fetch': 2.5.12
-      bob-esbuild-cli: 1.0.1_bob-esbuild@1.3.0
+      bob-esbuild-cli: 2.0.0_bob-esbuild@1.3.0
       changesets-github-release: 0.0.4
       esbuild: 0.12.28
       next: 11.1.2_bd7797d63db473de6e2318609a63c933
@@ -284,7 +284,7 @@ importers:
       '@rollup/plugin-image': 2.1.1
       '@rollup/plugin-node-resolve': 13.0.4
       algoliasearch: ^4.10.5
-      bob-esbuild-cli: 1.0.1
+      bob-esbuild-cli: 2.0.0
       changesets-github-release: 0.0.4
       core-js: ^3.18.0
       focus-trap-react: ^8.7.1
@@ -324,7 +324,7 @@ importers:
       '@rollup/plugin-babel': 5.3.0_@babel+core@7.15.5+rollup@2.56.3
       '@rollup/plugin-image': 2.1.1_rollup@2.56.3
       '@rollup/plugin-node-resolve': 13.0.4_rollup@2.56.3
-      bob-esbuild-cli: 1.0.1_bob-esbuild@1.3.0
+      bob-esbuild-cli: 2.0.0_bob-esbuild@1.3.0
       changesets-github-release: 0.0.4
       postcss: 8.3.6
       react: 17.0.2
@@ -339,7 +339,7 @@ importers:
       '@chakra-ui/react': ^1.6.8
       '@types/node': '>=16.7.4'
       '@types/react': ^17.0.24
-      bob-esbuild-cli: ^1.0.1
+      bob-esbuild-cli: ^2.0.0
       changesets-github-release: ^0.0.4
       next-i18next: ^8.8.0
       next-mdx-remote: ^3.0.4
@@ -348,7 +348,7 @@ importers:
       '@chakra-ui/react': 1.6.8_3b7f7b84f013384d046f72a4522eddf8
       '@types/node': 16.9.6
       '@types/react': 17.0.24
-      bob-esbuild-cli: 1.0.1_bob-esbuild@1.3.0
+      bob-esbuild-cli: 2.0.0_bob-esbuild@1.3.0
       changesets-github-release: 0.0.4
       next-i18next: 8.8.0_next@11.1.2+react@17.0.2
       next-mdx-remote: 3.0.4_react-dom@17.0.2+react@17.0.2
@@ -4251,12 +4251,12 @@ packages:
   /bn.js/5.2.0:
     resolution: {integrity: sha512-D7iWRBvnZE8ecXiLj/9wbxH7Tk79fAh8IHaTNq1RWRixsS02W+5qS+iE9yq6RYl0asXx5tw0bLhmT5pIfbSquw==}
 
-  /bob-esbuild-cli/1.0.1_bob-esbuild@1.3.0:
-    resolution: {integrity: sha512-z1WBNCPNgwL9CaQ7sTA0xGCHX0xjLKhjvMHrBmBhk/Fl3fLX78qq14CarFCRPn8MUjDXc1KDRXYSfhVcdS/rDQ==}
+  /bob-esbuild-cli/2.0.0_bob-esbuild@1.3.0:
+    resolution: {integrity: sha512-PHnKbBizn11/zFNZF7R69WWB6VlqTsrZGwtFwvNiXTzPUT47ygxCm/AF4ynBn9KSFnuS1ueLA5OPzm1IN4FRNg==}
     engines: {node: '>=12.0.0'}
     hasBin: true
     peerDependencies:
-      bob-esbuild: ^1.0.0
+      bob-esbuild: ^2.0.0
     dependencies:
       bob-esbuild: 1.3.0_48cf0e1f5c27c5317da4120390b4c470
       commander: 8.2.0
