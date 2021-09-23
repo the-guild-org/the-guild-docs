@@ -1,7 +1,7 @@
 import type { Visitor } from 'unist-util-visit';
 
 import type { Transformer } from 'unified';
-import type { Highlighter } from 'shiki';
+import type { Highlighter, Lang } from 'shiki';
 
 export interface Options {
   highlighter: Highlighter;
@@ -18,8 +18,9 @@ export async function withShiki(): Promise<(options: Options) => Transformer> {
     const ignoreUnknownLanguage = options.ignoreUnknownLanguage == null ? true : options.ignoreUnknownLanguage;
 
     const transformer: Transformer = async function transformer(tree) {
-      const visitor: Visitor<any> = function visitor(node) {
-        const lang = ignoreUnknownLanguage && !loadedLanguages.includes(node.lang) ? null : node.lang;
+      const visitor: Visitor = function visitor(nodeArg: any) {
+        const node: { value: string; lang: Lang; type: string } = nodeArg;
+        const lang = ignoreUnknownLanguage && !loadedLanguages.includes(node.lang) ? undefined : node.lang;
 
         const highlighted = highlighter.codeToHtml(node.value, lang);
         node.type = 'html';
