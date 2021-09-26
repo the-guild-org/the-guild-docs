@@ -138,7 +138,7 @@ importers:
       mkdirp: ^1.0.4
       npm-api: ^1.0.1
       prettier: ^2.4.1
-      tsup: ^5.2.0
+      tsup: ^5.2.1
     devDependencies:
       '@types/edit-json-file': 1.6.0
       '@types/mkdirp': 1.0.2
@@ -151,7 +151,7 @@ importers:
       mkdirp: 1.0.4
       npm-api: 1.0.1
       prettier: 2.4.1
-      tsup: 5.2.0_typescript@4.4.3
+      tsup: 5.2.1_typescript@4.4.3
 
   packages/client:
     specifiers:
@@ -9571,8 +9571,8 @@ packages:
       - ts-node
     dev: true
 
-  /tsup/5.2.0_typescript@4.4.3:
-    resolution: {integrity: sha512-Im6TcLyjP3wfid1OdIRJw+7E4E5WAKvXi1GSz4V0qxBDblG14dPlnoxZGNuvfk/6X3DlhxgTbWbnyR+JRruYPA==}
+  /tsup/5.2.1_typescript@4.4.3:
+    resolution: {integrity: sha512-eQmRfKoHIiTFg38Dh2MARCx3J0+P+wbwB5iSHcXTwsnVR9csGLpln5qqBjdgyAGV1VTbOmyU37veCi2eA+wuqA==}
     hasBin: true
     peerDependencies:
       typescript: ^4.2.3
