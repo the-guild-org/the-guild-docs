@@ -62,7 +62,7 @@ importers:
       '@guild-docs/server': workspace:^1.0.4
       '@mdx-js/react': ^1.6.22
       '@next/bundle-analyzer': ^11.1.2
-      '@theguild/components': ^1.4.8
+      '@theguild/components': ^1.5.0
       '@types/concurrently': ^6.2.1
       '@types/mdx-js__react': ^1.5.4
       '@types/node': '>=16.10.1'
@@ -97,7 +97,7 @@ importers:
       '@guild-docs/client': link:../../packages/client
       '@guild-docs/server': link:../../packages/server
       '@mdx-js/react': 1.6.22_react@17.0.2
-      '@theguild/components': 1.4.8_3b7f7b84f013384d046f72a4522eddf8
+      '@theguild/components': 1.5.0_3b7f7b84f013384d046f72a4522eddf8
       framer-motion: 4.1.17_react-dom@17.0.2+react@17.0.2
       next: 11.1.2_bd7797d63db473de6e2318609a63c933
       next-i18next: 8.8.0_next@11.1.2+react@17.0.2
@@ -163,7 +163,7 @@ importers:
       '@emotion/react': ^11.4.1
       '@guild-docs/types': workspace:^1.0.0
       '@mdx-js/react': ^1.6.22
-      '@theguild/components': ^1.4.8
+      '@theguild/components': ^1.5.0
       '@types/mdx-js__react': ^1.5.4
       '@types/nprogress': ^0.2.0
       '@types/react': ^17.0.24
@@ -205,7 +205,7 @@ importers:
       '@chakra-ui/utils': 1.8.2
       '@emotion/react': 11.4.1_9b26932173ac5a93c18fc8634be19f05
       '@mdx-js/react': 1.6.22_react@17.0.2
-      '@theguild/components': 1.4.8_3b7f7b84f013384d046f72a4522eddf8
+      '@theguild/components': 1.5.0_3b7f7b84f013384d046f72a4522eddf8
       '@types/mdx-js__react': 1.5.4
       '@types/nprogress': 0.2.0
       '@types/react': 17.0.24
@@ -2457,8 +2457,8 @@ packages:
     resolution: {integrity: sha512-RNiOoTPkptFtSVzQevY/yWtZwf/RxyVnPy/OcA9HBM3MlGDnBEYL5B41H0MTn0Uec8Hi+2qUtTfG2WWZBmMejQ==}
     dev: true
 
-  /@theguild/components/1.4.8_3b7f7b84f013384d046f72a4522eddf8:
-    resolution: {integrity: sha512-X0bY//fBpxtsAxL0u5/OQsdTOpvv5J6WldX/+npgkgAh6vIm/cGMD0433/0LVB9BhqjY4+6NbfqufutsawI47A==}
+  /@theguild/components/1.5.0_3b7f7b84f013384d046f72a4522eddf8:
+    resolution: {integrity: sha512-/0iJwNMDsBk4C/ZWOUcbWcuZHFT4R11Cb/mzOR64D1vJjxZgyvT/lu9n76BAnoB6O2pHgw1R2RBpAEGn38Ltaw==}
     peerDependencies:
       react: ^17.0.2
       react-dom: ^17.0.2
