@@ -49,13 +49,5 @@
     "tsup": "^5.2.1",
     "typescript": "^4.4.3",
     "wait-on": "^6.0.0"
-  },
-  "pnpm": {
-    "overrides": {
-      "esbuild": "^0.12.9"
-    }
-  },
-  "resolutions": {
-    "esbuild": "^0.12.9"
   }
 }
