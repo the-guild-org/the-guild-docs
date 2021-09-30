@@ -174,7 +174,7 @@ importers:
       immer: ^9.0.6
       next: ^11.1.2
       next-i18next: ^8.8.0
-      next-mdx-remote: ^3.0.4
+      next-mdx-remote: ^3.0.5
       next-seo: ^4.28.1
       nprogress: ^0.2.0
       react: ^17.0.2
@@ -188,7 +188,7 @@ importers:
     dependencies:
       '@guild-docs/types': link:../types
       immer: 9.0.6
-      next-mdx-remote: 3.0.4_react-dom@17.0.2+react@17.0.2
+      next-mdx-remote: 3.0.5_react-dom@17.0.2+react@17.0.2
       next-seo: 4.28.1_6fbf59523517da779df50d355b375324
       nprogress: 0.2.0
       react-icons: 4.2.0_react@17.0.2
@@ -232,7 +232,7 @@ importers:
       gray-matter: ^4.0.3
       next: ^11.1.2
       next-i18next: 8.8.0
-      next-mdx-remote: ^3.0.4
+      next-mdx-remote: ^3.0.5
       node-fetch: ^2.6.5
       npms.io: ^2.1.0
       react: ^17.0.2
@@ -249,7 +249,7 @@ importers:
       github-slugger: 1.4.0
       globby: 11.0.4
       gray-matter: 4.0.3
-      next-mdx-remote: 3.0.4_react-dom@17.0.2+react@17.0.2
+      next-mdx-remote: 3.0.5_react-dom@17.0.2+react@17.0.2
       node-fetch: 2.6.5
       npms.io: 2.1.0
       remark-emoji: 3.0.1
@@ -278,7 +278,7 @@ importers:
       bob-esbuild-cli: ^2.0.0
       changesets-github-release: ^0.0.4
       next-i18next: ^8.8.0
-      next-mdx-remote: ^3.0.4
+      next-mdx-remote: ^3.0.5
       typescript: ^4.4.3
     devDependencies:
       '@chakra-ui/react': 1.6.8_c8ea7ae9f1996cb21e9c3967f824a58b
@@ -287,7 +287,7 @@ importers:
       bob-esbuild-cli: 2.0.0_bob-esbuild@2.0.0
       changesets-github-release: 0.0.4
       next-i18next: 8.8.0_next@11.1.2+react@17.0.2
-      next-mdx-remote: 3.0.4_react-dom@17.0.2+react@17.0.2
+      next-mdx-remote: 3.0.5_react-dom@17.0.2+react@17.0.2
       typescript: 4.4.3
 
 packages:
@@ -526,7 +526,7 @@ packages:
       '@babel/core': ^7.0.0-0
     dependencies:
       '@babel/core': 7.12.9
-      '@babel/helper-plugin-utils': 7.10.4
+      '@babel/helper-plugin-utils': 7.14.5
       '@babel/plugin-syntax-object-rest-spread': 7.8.3_@babel+core@7.12.9
       '@babel/plugin-transform-parameters': 7.15.4_@babel+core@7.12.9
 
@@ -5795,8 +5795,8 @@ packages:
       react: 17.0.2
       react-i18next: 11.12.0_i18next@20.6.1+react@17.0.2
 
-  /next-mdx-remote/3.0.4_react-dom@17.0.2+react@17.0.2:
-    resolution: {integrity: sha512-n/xN6GaeBgJiuTJDrG6iqJ2EY5rEZ99Vf2H1nc75MNn1a6XnZLgT6uQJxqbSN84svc9aU3CSxfRlOqgqVVPHIg==}
+  /next-mdx-remote/3.0.5_react-dom@17.0.2+react@17.0.2:
+    resolution: {integrity: sha512-m9OD2GBuqvz/IeM/h4kufQ7GEdaCaZ4owqkCQ+yoxzCIM7jVQYK9JWXNVcyPP/Y6FBS00fLH03Hn5VFdvkFf0A==}
     peerDependencies:
       react: '>=16.x <=17.x'
       react-dom: '>=16.x <=17.x'
