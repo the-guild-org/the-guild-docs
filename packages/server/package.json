@@ -34,7 +34,7 @@
     "github-slugger": "^1.4.0",
     "globby": "^11.0.4",
     "gray-matter": "^4.0.3",
-    "next-mdx-remote": "^3.0.4",
+    "next-mdx-remote": "^3.0.5",
     "node-fetch": "^2.6.5",
     "npms.io": "^2.1.0",
     "remark-emoji": "^3.0.1",
