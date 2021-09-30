@@ -20,7 +20,7 @@
   "devDependencies": {
     "@chakra-ui/react": "^1.6.8",
     "@types/node": "^16.10.1",
-    "@types/react": "^17.0.25",
+    "@types/react": "^17.0.26",
     "bob-esbuild-cli": "^2.0.0",
     "changesets-github-release": "^0.0.4",
     "next-i18next": "^8.8.0",
