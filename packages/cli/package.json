@@ -24,7 +24,7 @@
   "devDependencies": {
     "@types/edit-json-file": "^1.6.0",
     "@types/mkdirp": "^1.0.2",
-    "@types/node": "^16.10.1",
+    "@types/node": "^16.10.2",
     "@types/prettier": "^2.4.1",
     "changesets-github-release": "^0.0.4",
     "commander": "^8.2.0",
