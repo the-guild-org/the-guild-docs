@@ -19,7 +19,7 @@ importers:
       '@types/react-paginate': ^7.1.1
       bob-esbuild: ^2.0.0
       bob-esbuild-cli: ^2.0.0
-      concurrently: ^6.2.2
+      concurrently: ^6.3.0
       esbuild: '>=0.13.2'
       husky: 7.0.2
       next: ^11.1.2
@@ -38,7 +38,7 @@ importers:
       '@types/react-paginate': 7.1.1
       bob-esbuild: 2.0.0_ed3c606455232108d3facd9e90aefe19
       bob-esbuild-cli: 2.0.0_bob-esbuild@2.0.0
-      concurrently: 6.2.2
+      concurrently: 6.3.0
       esbuild: 0.13.3
       husky: 7.0.2
       next: 11.1.2_bd7797d63db473de6e2318609a63c933
@@ -67,7 +67,7 @@ importers:
       '@types/node': '>=16.10.1'
       '@types/react': ^17.0.26
       '@types/react-dom': ^17.0.9
-      concurrently: ^6.2.2
+      concurrently: ^6.3.0
       cross-env: ^7.0.3
       esbuild: '>=0.13.2'
       esbuild-register: ^3.0.0
@@ -114,7 +114,7 @@ importers:
       '@types/node': 16.10.1
       '@types/react': 17.0.26
       '@types/react-dom': 17.0.9
-      concurrently: 6.2.2
+      concurrently: 6.3.0
       cross-env: 7.0.3
       esbuild: 0.13.3
       esbuild-register: 3.0.0_esbuild@0.13.3
@@ -3473,8 +3473,8 @@ packages:
   /concat-map/0.0.1:
     resolution: {integrity: sha1-2Klr13/Wjfd5OnMDajug1UBdR3s=}
 
-  /concurrently/6.2.2:
-    resolution: {integrity: sha512-7a45BjVakAl3pprLOeqaOoZfIWZRmdC68NkjyzPbKu0/pE6CRmqS3l8RG7Q2cX9LnRHkB0oPM6af8PS7NEQvYQ==}
+  /concurrently/6.3.0:
+    resolution: {integrity: sha512-k4k1jQGHHKsfbqzkUszVf29qECBrkvBKkcPJEUDTyVR7tZd1G/JOfnst4g1sYbFvJ4UjHZisj1aWQR8yLKpGPw==}
     engines: {node: '>=10.0.0'}
     hasBin: true
     dependencies:

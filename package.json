@@ -36,7 +36,7 @@
     "@types/react-paginate": "^7.1.1",
     "bob-esbuild": "^2.0.0",
     "bob-esbuild-cli": "^2.0.0",
-    "concurrently": "^6.2.2",
+    "concurrently": "^6.3.0",
     "esbuild": "^0.13.3",
     "husky": "7.0.2",
     "next": "^11.1.2",
