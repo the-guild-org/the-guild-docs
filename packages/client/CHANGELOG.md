@@ -1,5 +1,11 @@
 # @guild-docs/client
 
+## 1.0.7
+
+### Patch Changes
+
+- 71504e6: pin react-icons to 4.2.0
+
 ## 1.0.6
 
 ### Patch Changes
