@@ -881,7 +881,7 @@ packages:
     dependencies:
       '@chakra-ui/icon': 1.1.11_beb3eeb2d477ea47016f511436674e29
       '@chakra-ui/system': 1.7.3_a004d704e6197b43c0d970f424150c43
-      '@types/react': 17.0.26
+      '@types/react': 17.0.27
       react: 17.0.2
     dev: true
 
@@ -892,7 +892,7 @@ packages:
       react: '>=16.8.6'
     dependencies:
       '@chakra-ui/icon': 1.1.11_react@17.0.2
-      '@types/react': 17.0.26
+      '@types/react': 17.0.27
       react: 17.0.2
     dev: false
 
@@ -2520,13 +2520,13 @@ packages:
   /@types/hoist-non-react-statics/3.3.1:
     resolution: {integrity: sha512-iMIqiko6ooLrTh1joXodJK5X9xeEALT1kM5G3ZLhD3hszxBdIEd5C75U834D9mLcINgD4OyZf5uQXjkuYydWvA==}
     dependencies:
-      '@types/react': 17.0.26
+      '@types/react': 17.0.27
       hoist-non-react-statics: 3.3.2
 
   /@types/i18next-fs-backend/1.1.2:
     resolution: {integrity: sha512-ZzTRXA5B0x0oGhzKNp08IsYjZpli4LjRZpg3q4j0XFxN5lKG2MVLnR4yHX8PPExBk4sj9Yfk1z9O6CjPrAlmIQ==}
     dependencies:
-      i18next: 21.2.3
+      i18next: 21.2.4
 
   /@types/js-cookie/2.2.7:
     resolution: {integrity: sha512-aLkWa0C0vO5b4Sr798E26QgOkss68Un0bLjs7u9qxzPT5CG+8DuNTffWES58YzJs3hrVAOs1wonycqEBqNJubA==}
@@ -2548,7 +2548,7 @@ packages:
   /@types/mdx-js__react/1.5.4:
     resolution: {integrity: sha512-hce+Hymj3cEMOma13eQRhpT3mhQrOkN4CAYEwKWB/qj2BiuUrrTpCkOShEERGmLVgDc3nxF4Dc0k7W999EQxnQ==}
     dependencies:
-      '@types/react': 17.0.26
+      '@types/react': 17.0.27
     dev: true
 
   /@types/minimatch/3.0.5:
@@ -2599,13 +2599,13 @@ packages:
   /@types/react-dom/17.0.9:
     resolution: {integrity: sha512-wIvGxLfgpVDSAMH5utdL9Ngm5Owu0VsGmldro3ORLXV8CShrL8awVj06NuEXFQ5xyaYfdca7Sgbk/50Ri1GdPg==}
     dependencies:
-      '@types/react': 17.0.26
+      '@types/react': 17.0.27
     dev: true
 
   /@types/react-instantsearch-core/6.10.4:
     resolution: {integrity: sha512-Qdc7h2bkXaVljbNL2wg0hRLN7FLTi7NeaD+VLvjF8A5M41olgEIIzdoDye+OfiB/COk4ynXbw0bqxhhNUA6gxw==}
     dependencies:
-      '@types/react': 17.0.26
+      '@types/react': 17.0.27
       algoliasearch: 4.10.5
       algoliasearch-helper: 3.5.5_algoliasearch@4.10.5
     dev: true
@@ -2613,22 +2613,15 @@ packages:
   /@types/react-instantsearch-dom/6.12.0:
     resolution: {integrity: sha512-O08H+ye4e4kEnYHmMrov9FPNRDJwfCWthNZf4aztqahpU8LSbAiuFQGVy84SHUvg/jfNcG4333SsVnAQLtbS7A==}
     dependencies:
-      '@types/react': 17.0.26
+      '@types/react': 17.0.27
       '@types/react-instantsearch-core': 6.10.4
     dev: true
 
   /@types/react-paginate/7.1.1:
     resolution: {integrity: sha512-94cEJHfBaINba2XGQOWFJF/tYe+AImIhOPqMCfqyeFOgk0qUpDZyDOOW76A1rgdtWndR8UwsMPgV/uuTM8vZ7w==}
     dependencies:
-      '@types/react': 17.0.26
+      '@types/react': 17.0.27
     dev: true
-
-  /@types/react/17.0.26:
-    resolution: {integrity: sha512-MXxuXrH2xOcv5cp/su4oz69dNQnSA90JjFw5HBd5wifw6Ihi94j7dRJm7qNsB30tnruXSCPc9qmlhGop4nh9Hw==}
-    dependencies:
-      '@types/prop-types': 15.7.4
-      '@types/scheduler': 0.16.2
-      csstype: 3.0.9
 
   /@types/react/17.0.27:
     resolution: {integrity: sha512-zgiJwtsggVGtr53MndV7jfiUESTqrbxOcBvwfe6KS/9bzaVPCTDieTWnFNecVNx6EAaapg5xsLLWFfHHR437AA==}
@@ -2636,7 +2629,6 @@ packages:
       '@types/prop-types': 15.7.4
       '@types/scheduler': 0.16.2
       csstype: 3.0.9
-    dev: true
 
   /@types/scheduler/0.16.2:
     resolution: {integrity: sha512-hppQEBDmlwhFAXKJX2KnWLYu5yMfi91yazPb2l+lbJiwW+wdo1gNeRA+3RgNSO39WYX2euey41KEwnqesU2Jew==}
@@ -2865,7 +2857,7 @@ packages:
       postcss: ^8.1.0
     dependencies:
       browserslist: 4.17.2
-      caniuse-lite: 1.0.30001263
+      caniuse-lite: 1.0.30001264
       fraction.js: 4.1.1
       nanocolors: 0.2.12
       normalize-range: 0.1.2
@@ -3126,7 +3118,7 @@ packages:
     engines: {node: ^6 || ^7 || ^8 || ^9 || ^10 || ^11 || ^12 || >=13.7}
     hasBin: true
     dependencies:
-      caniuse-lite: 1.0.30001263
+      caniuse-lite: 1.0.30001264
       colorette: 1.4.0
       electron-to-chromium: 1.3.857
       escalade: 3.1.1
@@ -3137,7 +3129,7 @@ packages:
     engines: {node: ^6 || ^7 || ^8 || ^9 || ^10 || ^11 || ^12 || >=13.7}
     hasBin: true
     dependencies:
-      caniuse-lite: 1.0.30001263
+      caniuse-lite: 1.0.30001264
       electron-to-chromium: 1.3.857
       escalade: 3.1.1
       nanocolors: 0.2.12
@@ -3231,8 +3223,8 @@ packages:
     engines: {node: '>=10'}
     dev: true
 
-  /caniuse-lite/1.0.30001263:
-    resolution: {integrity: sha512-doiV5dft6yzWO1WwU19kt8Qz8R0/8DgEziz6/9n2FxUasteZNwNNYSmJO3GLBH8lCVE73AB1RPDPAeYbcO5Cvw==}
+  /caniuse-lite/1.0.30001264:
+    resolution: {integrity: sha512-Ftfqqfcs/ePiUmyaySsQ4PUsdcYyXG2rfoBVsk3iY1ahHaJEw65vfb7Suzqm+cEkwwPIv/XWkg27iCpRavH4zA==}
 
   /ccount/1.1.0:
     resolution: {integrity: sha512-vlNK021QdI7PNeiUh/lKkC/mNHHfV0m/Ad5JoI0TYtlBnJAslM/JIkm/tGC88bkLIwO6OQ5uV6ztS6kVAtCDlg==}
@@ -3672,7 +3664,7 @@ packages:
     peerDependencies:
       postcss: ^8.2.15
     dependencies:
-      caniuse-lite: 1.0.30001263
+      caniuse-lite: 1.0.30001264
       postcss: 8.2.15
 
   /cssnano-simple/3.0.0_postcss@8.2.15:
@@ -3974,8 +3966,8 @@ packages:
       stackframe: 1.2.0
     dev: false
 
-  /es-abstract/1.19.0:
-    resolution: {integrity: sha512-oWPrF+7P1nGv/rw9oIInwdkmI1qediEJSvVfHFryBd8mWllCKB5tke3aKyf51J6chgyKmi6mODqdnin2yb88Nw==}
+  /es-abstract/1.19.1:
+    resolution: {integrity: sha512-2vJ6tjA/UfqLm2MPs7jxVybLoB8i1t1Jd9R3kISld20sIxPcTbLuggQOUxeWeAvIUkduv/CfMjuh4WmiXr2v9w==}
     engines: {node: '>= 0.4'}
     dependencies:
       call-bind: 1.0.2
@@ -4909,8 +4901,8 @@ packages:
     dependencies:
       '@babel/runtime': 7.15.4
 
-  /i18next/21.2.3:
-    resolution: {integrity: sha512-aOYql7b9dvcSlkp9mDBFiLPv3+3TVAbXM06lgGL8xWCf5yd0QlgQvvvyCin24WR4EMl4eiu+vijKdblYKs3kfw==}
+  /i18next/21.2.4:
+    resolution: {integrity: sha512-+81XmiwJOLWJFjRZJK5ASFahAo5TXZGz5IrBT4CfLJ3CyXho61A1cj1Kmh8za8TYtGFou0cEkUSjEaqfya7Wfg==}
     dependencies:
       '@babel/runtime': 7.15.4
 
@@ -5250,7 +5242,7 @@ packages:
     dependencies:
       available-typed-arrays: 1.0.5
       call-bind: 1.0.2
-      es-abstract: 1.19.0
+      es-abstract: 1.19.1
       foreach: 2.0.5
       has-tostringtag: 1.0.0
 
@@ -5870,7 +5862,7 @@ packages:
       browserify-zlib: 0.2.0
       browserslist: 4.16.6
       buffer: 5.6.0
-      caniuse-lite: 1.0.30001263
+      caniuse-lite: 1.0.30001264
       chalk: 2.4.2
       chokidar: 3.5.1
       constants-browserify: 1.0.0
@@ -8482,7 +8474,7 @@ packages:
     dependencies:
       available-typed-arrays: 1.0.5
       call-bind: 1.0.2
-      es-abstract: 1.19.0
+      es-abstract: 1.19.1
       foreach: 2.0.5
       has-tostringtag: 1.0.0
       is-typed-array: 1.1.8
