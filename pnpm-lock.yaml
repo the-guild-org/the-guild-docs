@@ -83,7 +83,7 @@ importers:
       react-use: ^17.3.1
       remark-admonitions: ^1.2.1
       shiki: ^0.9.11
-      tsup: ^5.2.1
+      tsup: ^5.3.0
       typescript: ^4.4.3
       wait-on: ^6.0.0
     dependencies:
@@ -120,7 +120,7 @@ importers:
       esbuild-register: 3.0.0_esbuild@0.13.3
       next-remote-watch: 1.0.0
       open-cli: 7.0.1
-      tsup: 5.2.1_typescript@4.4.3
+      tsup: 5.3.0_typescript@4.4.3
       typescript: 4.4.3
       wait-on: 6.0.0
 
@@ -137,7 +137,7 @@ importers:
       mkdirp: ^1.0.4
       npm-api: ^1.0.1
       prettier: ^2.4.1
-      tsup: ^5.2.1
+      tsup: ^5.3.0
     devDependencies:
       '@types/edit-json-file': 1.6.0
       '@types/mkdirp': 1.0.2
@@ -150,7 +150,7 @@ importers:
       mkdirp: 1.0.4
       npm-api: 1.0.1
       prettier: 2.4.1
-      tsup: 5.2.1_typescript@4.4.3
+      tsup: 5.3.0_typescript@4.4.3
 
   packages/client:
     specifiers:
@@ -7969,8 +7969,8 @@ packages:
   /tslib/2.3.1:
     resolution: {integrity: sha512-77EbyPPpMz+FRFRuAFlWMtmgUWGe9UOG2Z25NqCwiIjRhOf5iKGuzSe5P2w1laq+FkRy4p+PCuVkJSGkzTEKVw==}
 
-  /tsup/5.2.1_typescript@4.4.3:
-    resolution: {integrity: sha512-eQmRfKoHIiTFg38Dh2MARCx3J0+P+wbwB5iSHcXTwsnVR9csGLpln5qqBjdgyAGV1VTbOmyU37veCi2eA+wuqA==}
+  /tsup/5.3.0_typescript@4.4.3:
+    resolution: {integrity: sha512-/LZTuAj1Lhh7iXBhtWTWjPodtmOkg6HnhdWo+sl4JftJTAJqnxnHerOiFYjPeA5RIhcaFc2w2Sho1rGLJ7rLhw==}
     hasBin: true
     peerDependencies:
       typescript: ^4.2.3
