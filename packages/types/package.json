@@ -18,7 +18,7 @@
     "postpublish": "gh-release"
   },
   "devDependencies": {
-    "@chakra-ui/react": "^1.6.8",
+    "@chakra-ui/react": "^1.6.9",
     "@types/node": "^16.10.2",
     "@types/react": "^17.0.27",
     "bob-esbuild-cli": "^2.0.0",
