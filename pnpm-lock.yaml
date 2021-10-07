@@ -14,7 +14,7 @@ importers:
       '@changesets/cli': ^2.17.0
       '@types/node': '>=16.10.3'
       '@types/react': ^17.0.27
-      '@types/react-instantsearch-core': ^6.10.4
+      '@types/react-instantsearch-core': ^6.10.5
       '@types/react-instantsearch-dom': ^6.12.0
       '@types/react-paginate': ^7.1.1
       bob-esbuild: ^2.0.0
@@ -33,7 +33,7 @@ importers:
       '@changesets/cli': 2.17.0
       '@types/node': 16.10.3
       '@types/react': 17.0.27
-      '@types/react-instantsearch-core': 6.10.4
+      '@types/react-instantsearch-core': 6.10.5
       '@types/react-instantsearch-dom': 6.12.0
       '@types/react-paginate': 7.1.1
       bob-esbuild: 2.0.0_9905779a54c66d2a56bb442712ca9ced
@@ -2606,6 +2606,14 @@ packages:
 
   /@types/react-instantsearch-core/6.10.4:
     resolution: {integrity: sha512-Qdc7h2bkXaVljbNL2wg0hRLN7FLTi7NeaD+VLvjF8A5M41olgEIIzdoDye+OfiB/COk4ynXbw0bqxhhNUA6gxw==}
+    dependencies:
+      '@types/react': 17.0.27
+      algoliasearch: 4.10.5
+      algoliasearch-helper: 3.5.5_algoliasearch@4.10.5
+    dev: true
+
+  /@types/react-instantsearch-core/6.10.5:
+    resolution: {integrity: sha512-VjXJFUfsPdWMSiugJiQc950G9ZRjCEIzqQ9/K915d1f1BsVE2TE57PcfHSxAy1pGDDR8FT5uAgAaOMyKJ66NJQ==}
     dependencies:
       '@types/react': 17.0.27
       algoliasearch: 4.10.5
