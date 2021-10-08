@@ -1,5 +1,6 @@
 import RouterImport from 'next/router';
 import React, { useRef, useState } from 'react';
+import ReactMarkdown from 'react-markdown';
 
 import { ChevronDownIcon } from '@chakra-ui/icons';
 import { chakra, Collapse, CSSObject, Text, useColorModeValue, useDisclosure, useSafeLayoutEffect } from '@chakra-ui/react';
@@ -148,7 +149,7 @@ function Item({
               {...styleProps.summaryIconProps?.(propsArgs)}
             />
             <Text as="span" {...styleProps.summaryLabelProps?.(propsArgs)}>
-              {label}
+              <ReactMarkdown>{label}</ReactMarkdown>
             </Text>
           </Summary>
 
@@ -187,7 +188,7 @@ function Item({
           {...hoverItemStyles}
           {...styleProps.linkProps?.(propsArgs)}
         >
-          {label}
+          <ReactMarkdown>{label}</ReactMarkdown>
         </Link>
       )}
     </>

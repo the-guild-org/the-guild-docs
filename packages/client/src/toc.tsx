@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { observe } from 'react-intersection-observer';
 import { useImmer } from 'use-immer';
+import ReactMarkdown from 'react-markdown';
 
 import { chakra, useSafeLayoutEffect, useUpdateEffect, useColorModeValue } from '@chakra-ui/react';
 
@@ -124,7 +125,7 @@ export function MDXTOC({ toc, wrapperProps, linkProps, titleProps }: MDXTOCProps
               isActive,
             })}
           >
-            {label.startsWith('`') ? <pre>{label.split('`')[1]}</pre> : label}
+            <ReactMarkdown>{label}</ReactMarkdown>
           </Link>
         );
       })}
