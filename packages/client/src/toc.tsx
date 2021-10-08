@@ -124,7 +124,7 @@ export function MDXTOC({ toc, wrapperProps, linkProps, titleProps }: MDXTOCProps
               isActive,
             })}
           >
-            {label}
+            {label.startsWith('`') ? <pre>{label.split('`')[1]}</pre> : label}
           </Link>
         );
       })}
