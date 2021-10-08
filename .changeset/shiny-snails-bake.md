@@ -3,4 +3,4 @@
 '@guild-docs/client': minor
 ---
 
-Allow using "`" in TOC
+Support markdown in TOC and navigation labels
