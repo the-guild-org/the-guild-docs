@@ -1,5 +1,11 @@
 # guild-docs
 
+## 1.0.1
+
+### Patch Changes
+
+- 94e9ec7: update esbuild resolutions version
+
 ## 1.0.0
 
 ### Major Changes

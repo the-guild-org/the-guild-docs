@@ -1,5 +1,11 @@
 # @guild-docs/types
 
+## 1.0.1
+
+### Patch Changes
+
+- b4feff4: Update next-mdx-remote with latest esbuild version
+
 ## 1.0.0
 
 ### Minor Changes
