@@ -1,6 +1,6 @@
 {
   "name": "@guild-docs/server",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/the-guild-org/the-guild-docs.git"
@@ -30,7 +30,7 @@
     "postpublish": "gh-release"
   },
   "dependencies": {
-    "@guild-docs/types": "workspace:^1.0.1",
+    "@guild-docs/types": "workspace:^1.0.2",
     "github-slugger": "^1.4.0",
     "globby": "^11.0.4",
     "gray-matter": "^4.0.3",

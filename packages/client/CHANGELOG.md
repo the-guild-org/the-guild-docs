@@ -1,5 +1,13 @@
 # @guild-docs/client
 
+## 1.1.1
+
+### Patch Changes
+
+- 5addeaa: Pin next-mdx-remote to 3.0.6
+- Updated dependencies [5addeaa]
+  - @guild-docs/types@1.0.2
+
 ## 1.1.0
 
 ### Minor Changes
