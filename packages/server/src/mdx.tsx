@@ -3,7 +3,6 @@ import globby from 'globby';
 import matter from 'gray-matter';
 import { appWithTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import { serialize } from 'next-mdx-remote/serialize';
 import { join, resolve } from 'path';
 import * as React from 'react';
 import shiki from 'shiki';
@@ -93,8 +92,8 @@ export interface CompiledMDX {
   frontMatter: Record<string, any>;
 }
 
-const RemarkDeps = LazyPromise(async () => {
-  const [remarkAdmonitions, remarkSlug, remarkEmoji, highlighter, withShiki] = await Promise.all([
+const MdxDeps = LazyPromise(async () => {
+  const [remarkAdmonitions, remarkSlug, remarkEmoji, highlighter, withShiki, { serialize }] = await Promise.all([
     import('remark-admonitions').then(v => v.default),
     import('remark-slug').then(v => v.default),
     import('remark-emoji').then(v => v.default),
@@ -118,6 +117,7 @@ const RemarkDeps = LazyPromise(async () => {
       ],
     }),
     import('./remarkShiki').then(v => v.withShiki()),
+    import('next-mdx-remote/serialize'),
   ]);
 
   return {
@@ -126,6 +126,7 @@ const RemarkDeps = LazyPromise(async () => {
     remarkEmoji,
     highlighter,
     withShiki,
+    serialize,
   };
 });
 
@@ -139,7 +140,7 @@ export async function buildMDX(
     content = '# ' + data.title + '\n\n' + content.trimStart();
   }
 
-  const { remarkAdmonitions, remarkEmoji, remarkSlug, highlighter, withShiki } = await RemarkDeps;
+  const { remarkAdmonitions, remarkEmoji, remarkSlug, highlighter, withShiki, serialize } = await MdxDeps;
 
   const mdx = await serialize(content, {
     mdxOptions: {
