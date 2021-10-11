@@ -1,5 +1,14 @@
 # @guild-docs/server
 
+## 1.0.6
+
+### Patch Changes
+
+- 268579c: Fix: specify next-mdx-remote/serialize .js extension
+- 5addeaa: Pin next-mdx-remote to 3.0.6
+- Updated dependencies [5addeaa]
+  - @guild-docs/types@1.0.2
+
 ## 1.0.5
 
 ### Patch Changes

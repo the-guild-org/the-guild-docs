@@ -1,5 +1,11 @@
 # @guild-docs/types
 
+## 1.0.2
+
+### Patch Changes
+
+- 5addeaa: Pin next-mdx-remote to 3.0.6
+
 ## 1.0.1
 
 ### Patch Changes
