@@ -1,5 +1,14 @@
 # @guild-docs/server
 
+## 1.0.5
+
+### Patch Changes
+
+- b4feff4: Update next-mdx-remote with latest esbuild version
+- 8741e40: Fix next-mdx-remote race condition
+- Updated dependencies [b4feff4]
+  - @guild-docs/types@1.0.1
+
 ## 1.0.4
 
 ### Patch Changes

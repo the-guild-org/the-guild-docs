@@ -1,5 +1,17 @@
 # @guild-docs/client
 
+## 1.1.0
+
+### Minor Changes
+
+- 86cdaee: Clean markdown from TOC & Navigation
+
+### Patch Changes
+
+- b4feff4: Update next-mdx-remote with latest esbuild version
+- Updated dependencies [b4feff4]
+  - @guild-docs/types@1.0.1
+
 ## 1.0.7
 
 ### Patch Changes
