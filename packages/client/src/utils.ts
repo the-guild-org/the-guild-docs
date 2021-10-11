@@ -1,4 +1,5 @@
 import { useRouter } from 'next/router';
+import RemoveMarkdown from 'remove-markdown';
 
 export function useIs404() {
   const router = useRouter();
@@ -8,4 +9,9 @@ export function useIs404() {
 
 export function getDefault<T>(module: T & { default?: T }): T {
   return module.default || module;
+}
+
+const CleanMarkdownCache: Record<string, string> = {};
+export function cleanMarkdown(str: string): string {
+  return (CleanMarkdownCache[str] ??= RemoveMarkdown(str));
 }
