@@ -7,6 +7,7 @@ import { components } from './components';
 import { MDXTOC } from './toc';
 
 import type { MdxPageProps, MdxInternalProps, IRoutes, BottomNavigationProps } from '@guild-docs/types';
+import { cleanMarkdown } from './utils';
 
 export interface MDXPageOptions {
   renderTitle?: (title?: string) => string;
@@ -21,7 +22,7 @@ export function MDXPage(
     const description: string | undefined = frontMatter.description;
 
     const MetaHead = useMemo(() => {
-      let titleString = typeof title === 'string' ? title : undefined;
+      let titleString = typeof title === 'string' ? cleanMarkdown(title) : undefined;
 
       if (renderTitle) titleString = renderTitle(titleString);
 

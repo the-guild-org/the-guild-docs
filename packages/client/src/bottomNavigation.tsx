@@ -6,7 +6,7 @@ import { ArrowBackIcon, ArrowForwardIcon } from '@chakra-ui/icons';
 import { useSafeLayoutEffect, chakra, useColorModeValue } from '@chakra-ui/react';
 
 import { arePathnamesEqual, concatHrefs, iterateRoutes, withoutTrailingSlash } from './routes';
-import { getDefault } from './utils';
+import { cleanMarkdown, getDefault } from './utils';
 
 import type { BottomNavigationProps, Paths } from '@guild-docs/types';
 
@@ -173,7 +173,7 @@ export function BottomNavigationComponent({ routes, wrapperProps, linkProps, tit
       )}
 
       <Title {...titleProps} {...titleThemedStyles}>
-        {currentTitle}
+        {cleanMarkdown(currentTitle)}
       </Title>
       {next && (
         <NextLink href={next.href} passHref>

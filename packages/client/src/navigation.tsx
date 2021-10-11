@@ -1,13 +1,10 @@
-import RouterImport from 'next/router';
-import React, { useRef, useState } from 'react';
-
 import { ChevronDownIcon } from '@chakra-ui/icons';
 import { chakra, Collapse, CSSObject, Text, useColorModeValue, useDisclosure, useSafeLayoutEffect } from '@chakra-ui/react';
-
-import { arePathnamesEqual, concatHrefs } from './routes';
-import { getDefault } from './utils';
-
 import type { MDXNavigationProps, Paths } from '@guild-docs/types';
+import RouterImport from 'next/router';
+import React, { useRef, useState } from 'react';
+import { arePathnamesEqual, concatHrefs } from './routes';
+import { cleanMarkdown, getDefault } from './utils';
 
 const Details = chakra('div', {
   baseStyle: {},
@@ -148,7 +145,7 @@ function Item({
               {...styleProps.summaryIconProps?.(propsArgs)}
             />
             <Text as="span" {...styleProps.summaryLabelProps?.(propsArgs)}>
-              {label}
+              {cleanMarkdown(label)}
             </Text>
           </Summary>
 
@@ -187,7 +184,7 @@ function Item({
           {...hoverItemStyles}
           {...styleProps.linkProps?.(propsArgs)}
         >
-          {label}
+          {cleanMarkdown(label)}
         </Link>
       )}
     </>

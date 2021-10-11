@@ -1,10 +1,9 @@
+import { chakra, useColorModeValue, useSafeLayoutEffect, useUpdateEffect } from '@chakra-ui/react';
+import type { MDXTOCProps } from '@guild-docs/types';
 import React, { useEffect, useState } from 'react';
 import { observe } from 'react-intersection-observer';
 import { useImmer } from 'use-immer';
-
-import { chakra, useSafeLayoutEffect, useUpdateEffect, useColorModeValue } from '@chakra-ui/react';
-
-import type { MDXTOCProps } from '@guild-docs/types';
+import { cleanMarkdown } from './utils';
 
 const Wrapper = chakra('div', {
   baseStyle: {
@@ -124,7 +123,7 @@ export function MDXTOC({ toc, wrapperProps, linkProps, titleProps }: MDXTOCProps
               isActive,
             })}
           >
-            {label}
+            {cleanMarkdown(label)}
           </Link>
         );
       })}
