@@ -117,7 +117,7 @@ const MdxDeps = LazyPromise(async () => {
       ],
     }),
     import('./remarkShiki').then(v => v.withShiki()),
-    import('next-mdx-remote/serialize'),
+    import('next-mdx-remote/serialize.js'),
   ]);
 
   return {
