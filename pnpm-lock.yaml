@@ -2,7 +2,7 @@ lockfileVersion: 5.3
 
 overrides:
   esbuild: '>=0.13.4'
-  '@types/node': '>=16.10.3'
+  '@types/node': '>=16.10.4'
   react: ^17.0.2
   react-dom: ^17.0.2
   trim@<0.0.3: '>=0.0.3'
@@ -12,12 +12,12 @@ importers:
   .:
     specifiers:
       '@changesets/cli': ^2.17.0
-      '@types/node': '>=16.10.3'
+      '@types/node': '>=16.10.4'
       '@types/react': ^17.0.29
       '@types/react-instantsearch-core': ^6.10.5
       '@types/react-instantsearch-dom': ^6.12.0
       '@types/react-paginate': ^7.1.1
-      bob-esbuild: ^2.0.0
+      bob-esbuild: ^2.0.1
       bob-esbuild-cli: ^2.0.0
       concurrently: ^6.3.0
       esbuild: '>=0.13.4'
@@ -28,26 +28,26 @@ importers:
       react: ^17.0.2
       react-dom: ^17.0.2
       rimraf: ^3.0.2
-      typescript: ^4.4.3
+      typescript: ^4.4.4
     devDependencies:
       '@changesets/cli': 2.17.0
-      '@types/node': 16.10.3
+      '@types/node': 16.10.4
       '@types/react': 17.0.29
       '@types/react-instantsearch-core': 6.10.5
       '@types/react-instantsearch-dom': 6.12.0
       '@types/react-paginate': 7.1.1
-      bob-esbuild: 2.0.0_9905779a54c66d2a56bb442712ca9ced
-      bob-esbuild-cli: 2.0.0_bob-esbuild@2.0.0
+      bob-esbuild: 2.0.1_170d455de807da45298c7110ca53949a
+      bob-esbuild-cli: 2.0.0_bob-esbuild@2.0.1
       concurrently: 6.3.0
       esbuild: 0.13.4
       husky: 7.0.2
-      next: 11.1.2_bd7797d63db473de6e2318609a63c933
+      next: 11.1.2_8e3522129ef2816b3c737f17aecb3a9d
       prettier: 2.4.1
       pretty-quick: 3.1.1_prettier@2.4.1
       react: 17.0.2
       react-dom: 17.0.2_react@17.0.2
       rimraf: 3.0.2
-      typescript: 4.4.3
+      typescript: 4.4.4
 
   examples/basic:
     specifiers:
@@ -64,7 +64,7 @@ importers:
       '@theguild/components': ^1.6.0
       '@types/concurrently': ^6.3.0
       '@types/mdx-js__react': ^1.5.4
-      '@types/node': '>=16.10.3'
+      '@types/node': '>=16.10.4'
       '@types/react': ^17.0.29
       '@types/react-dom': ^17.0.9
       concurrently: ^6.3.0
@@ -84,7 +84,7 @@ importers:
       remark-admonitions: ^1.2.1
       shiki: ^0.9.12
       tsup: ^5.4.0
-      typescript: ^4.4.3
+      typescript: ^4.4.4
       wait-on: ^6.0.0
     dependencies:
       '@chakra-ui/icons': 1.0.15_react@17.0.2
@@ -98,7 +98,7 @@ importers:
       '@mdx-js/react': 1.6.22_react@17.0.2
       '@theguild/components': 1.6.0_60ad107d375b752c0d389c3adcc0dc95
       framer-motion: 4.1.17_react-dom@17.0.2+react@17.0.2
-      next: 11.1.2_bd7797d63db473de6e2318609a63c933
+      next: 11.1.2_8e3522129ef2816b3c737f17aecb3a9d
       next-i18next: 8.9.0_next@11.1.2+react@17.0.2
       next-seo: 4.28.1_6fbf59523517da779df50d355b375324
       react: 17.0.2
@@ -111,7 +111,7 @@ importers:
       '@next/bundle-analyzer': 11.1.2
       '@types/concurrently': 6.3.0
       '@types/mdx-js__react': 1.5.4
-      '@types/node': 16.10.3
+      '@types/node': 16.10.4
       '@types/react': 17.0.29
       '@types/react-dom': 17.0.9
       concurrently: 6.3.0
@@ -120,15 +120,15 @@ importers:
       esbuild-register: 3.0.0_esbuild@0.13.4
       next-remote-watch: 1.0.0
       open-cli: 7.0.1
-      tsup: 5.4.0_typescript@4.4.3
-      typescript: 4.4.3
+      tsup: 5.4.0_typescript@4.4.4
+      typescript: 4.4.4
       wait-on: 6.0.0
 
   packages/cli:
     specifiers:
       '@types/edit-json-file': ^1.6.0
       '@types/mkdirp': ^1.0.2
-      '@types/node': '>=16.10.3'
+      '@types/node': '>=16.10.4'
       '@types/prettier': ^2.4.1
       changesets-github-release: ^0.0.4
       commander: ^8.2.0
@@ -141,7 +141,7 @@ importers:
     devDependencies:
       '@types/edit-json-file': 1.6.0
       '@types/mkdirp': 1.0.2
-      '@types/node': 16.10.3
+      '@types/node': 16.10.4
       '@types/prettier': 2.4.1
       changesets-github-release: 0.0.4
       commander: 8.2.0
@@ -150,7 +150,7 @@ importers:
       mkdirp: 1.0.4
       npm-api: 1.0.1
       prettier: 2.4.1
-      tsup: 5.4.0_typescript@4.4.3
+      tsup: 5.4.0_typescript@4.4.4
 
   packages/client:
     specifiers:
@@ -184,7 +184,7 @@ importers:
       react-intersection-observer: ^8.32.1
       react-use: ^17.3.1
       remove-markdown: ^0.3.0
-      typescript: ^4.4.3
+      typescript: ^4.4.4
       use-immer: ^0.6.0
       zustand: ^3.5.13
     dependencies:
@@ -213,15 +213,15 @@ importers:
       '@types/react': 17.0.29
       '@types/react-dom': 17.0.9
       '@types/remove-markdown': 0.3.1
-      bob-esbuild-cli: 2.0.0_bob-esbuild@2.0.0
+      bob-esbuild-cli: 2.0.0_bob-esbuild@2.0.1
       changesets-github-release: 0.0.4
       esbuild: 0.13.4
       framer-motion: 4.1.17_react-dom@17.0.2+react@17.0.2
-      next: 11.1.2_bd7797d63db473de6e2318609a63c933
+      next: 11.1.2_8e3522129ef2816b3c737f17aecb3a9d
       next-i18next: 8.9.0_next@11.1.2+react@17.0.2
       react: 17.0.2
       react-dom: 17.0.2_react@17.0.2
-      typescript: 4.4.3
+      typescript: 4.4.4
 
   packages/server:
     specifiers:
@@ -264,10 +264,10 @@ importers:
     devDependencies:
       '@types/github-slugger': 1.3.0
       '@types/node-fetch': 2.5.12
-      bob-esbuild-cli: 2.0.0_bob-esbuild@2.0.0
+      bob-esbuild-cli: 2.0.0_bob-esbuild@2.0.1
       changesets-github-release: 0.0.4
       esbuild: 0.13.4
-      next: 11.1.2_bd7797d63db473de6e2318609a63c933
+      next: 11.1.2_8e3522129ef2816b3c737f17aecb3a9d
       next-i18next: 8.9.0_next@11.1.2+react@17.0.2
       react: 17.0.2
       react-dom: 17.0.2_react@17.0.2
@@ -277,22 +277,22 @@ importers:
   packages/types:
     specifiers:
       '@chakra-ui/react': ^1.6.9
-      '@types/node': '>=16.10.3'
+      '@types/node': '>=16.10.4'
       '@types/react': ^17.0.29
       bob-esbuild-cli: ^2.0.0
       changesets-github-release: ^0.0.4
       next-i18next: ^8.9.0
       next-mdx-remote: 3.0.6
-      typescript: ^4.4.3
+      typescript: ^4.4.4
     devDependencies:
       '@chakra-ui/react': 1.6.9_60ad107d375b752c0d389c3adcc0dc95
-      '@types/node': 16.10.3
+      '@types/node': 16.10.4
       '@types/react': 17.0.29
-      bob-esbuild-cli: 2.0.0_bob-esbuild@2.0.0
+      bob-esbuild-cli: 2.0.0_bob-esbuild@2.0.1
       changesets-github-release: 0.0.4
       next-i18next: 8.9.0_next@11.1.2+react@17.0.2
       next-mdx-remote: 3.0.6_react-dom@17.0.2+react@17.0.2
-      typescript: 4.4.3
+      typescript: 4.4.4
 
 packages:
 
@@ -530,7 +530,7 @@ packages:
       '@babel/core': ^7.0.0-0
     dependencies:
       '@babel/core': 7.12.9
-      '@babel/helper-plugin-utils': 7.14.5
+      '@babel/helper-plugin-utils': 7.10.4
       '@babel/plugin-syntax-object-rest-spread': 7.8.3_@babel+core@7.12.9
       '@babel/plugin-transform-parameters': 7.15.4_@babel+core@7.12.9
 
@@ -886,7 +886,7 @@ packages:
     dependencies:
       '@chakra-ui/icon': 1.1.11_beb3eeb2d477ea47016f511436674e29
       '@chakra-ui/system': 1.7.3_a004d704e6197b43c0d970f424150c43
-      '@types/react': 17.0.27
+      '@types/react': 17.0.29
       react: 17.0.2
     dev: true
 
@@ -897,7 +897,7 @@ packages:
       react: '>=16.8.6'
     dependencies:
       '@chakra-ui/icon': 1.1.11_react@17.0.2
-      '@types/react': 17.0.27
+      '@types/react': 17.0.29
       react: 17.0.2
     dev: false
 
@@ -2088,7 +2088,7 @@ packages:
     resolution: {integrity: sha512-mki5uBvhHzO8kYYix/WRy2WX8S3B5wdVSc9D6KcU5lQNglP2yt58/VfLuAK49glRXChosY8ap2oJ1qgma3GUVA==}
     dependencies:
       '@babel/runtime': 7.15.4
-      '@types/node': 16.10.3
+      '@types/node': 16.10.4
       find-up: 4.1.0
       fs-extra: 8.1.0
     dev: true
@@ -2470,7 +2470,7 @@ packages:
       '@emotion/react': 11.4.1_26a96a4441ab225e0159f41c8a2ae043
       '@emotion/styled': 11.3.0_0b09be189ab5d1f3a2b319bc6fdfbe95
       algoliasearch: 4.10.5
-      core-js: 3.18.2
+      core-js: 3.18.3
       focus-trap-react: 8.7.1_react-dom@17.0.2+react@17.0.2
       polished: 4.1.3
       react: 17.0.2
@@ -2497,14 +2497,14 @@ packages:
   /@types/concurrently/6.3.0:
     resolution: {integrity: sha512-R0M9Dt330vtNgNlBYQYniDfI3I3Sk6cu27M1EKS5VFoio2rZqTMuOBGe9DX+ISM0B6y+RGrgtpWCv2k2VBLtbQ==}
     dependencies:
-      '@types/node': 16.10.3
+      '@types/node': 16.10.4
       chalk: 4.1.2
     dev: true
 
   /@types/edit-json-file/1.6.0:
     resolution: {integrity: sha512-UbxkTXHRQOJuATi+EwR3JlYcbeX14dLH7s1ax8bwucey1CwJ+sXOnkD8ZZXTXHanNvS4xC8DPGDtrDssCpGjNw==}
     dependencies:
-      '@types/node': 16.10.3
+      '@types/node': 16.10.4
     dev: true
 
   /@types/github-slugger/1.3.0:
@@ -2515,7 +2515,7 @@ packages:
     resolution: {integrity: sha512-w+LsMxKyYQm347Otw+IfBXOv9UWVjpHpCDdbBMt8Kz/xbvCYNjP+0qPh91Km3iKfSRLBB0P7fAMf0KHrPu+MyA==}
     dependencies:
       '@types/minimatch': 3.0.5
-      '@types/node': 16.10.3
+      '@types/node': 16.10.4
     dev: true
 
   /@types/hast/2.3.4:
@@ -2526,13 +2526,13 @@ packages:
   /@types/hoist-non-react-statics/3.3.1:
     resolution: {integrity: sha512-iMIqiko6ooLrTh1joXodJK5X9xeEALT1kM5G3ZLhD3hszxBdIEd5C75U834D9mLcINgD4OyZf5uQXjkuYydWvA==}
     dependencies:
-      '@types/react': 17.0.27
+      '@types/react': 17.0.29
       hoist-non-react-statics: 3.3.2
 
   /@types/i18next-fs-backend/1.1.2:
     resolution: {integrity: sha512-ZzTRXA5B0x0oGhzKNp08IsYjZpli4LjRZpg3q4j0XFxN5lKG2MVLnR4yHX8PPExBk4sj9Yfk1z9O6CjPrAlmIQ==}
     dependencies:
-      i18next: 21.2.6
+      i18next: 21.3.0
 
   /@types/js-cookie/2.2.7:
     resolution: {integrity: sha512-aLkWa0C0vO5b4Sr798E26QgOkss68Un0bLjs7u9qxzPT5CG+8DuNTffWES58YzJs3hrVAOs1wonycqEBqNJubA==}
@@ -2554,7 +2554,7 @@ packages:
   /@types/mdx-js__react/1.5.4:
     resolution: {integrity: sha512-hce+Hymj3cEMOma13eQRhpT3mhQrOkN4CAYEwKWB/qj2BiuUrrTpCkOShEERGmLVgDc3nxF4Dc0k7W999EQxnQ==}
     dependencies:
-      '@types/react': 17.0.27
+      '@types/react': 17.0.29
     dev: true
 
   /@types/minimatch/3.0.5:
@@ -2568,18 +2568,18 @@ packages:
   /@types/mkdirp/1.0.2:
     resolution: {integrity: sha512-o0K1tSO0Dx5X6xlU5F1D6625FawhC3dU3iqr25lluNv/+/QIVH8RLNEiVokgIZo+mz+87w/3Mkg/VvQS+J51fQ==}
     dependencies:
-      '@types/node': 16.10.3
+      '@types/node': 16.10.4
     dev: true
 
   /@types/node-fetch/2.5.12:
     resolution: {integrity: sha512-MKgC4dlq4kKNa/mYrwpKfzQMB5X3ee5U6fSprkKpToBqBmX4nFZL9cW5jl6sWn+xpRJ7ypWh2yyqqr8UUCstSw==}
     dependencies:
-      '@types/node': 16.10.3
+      '@types/node': 16.10.4
       form-data: 3.0.1
     dev: true
 
-  /@types/node/16.10.3:
-    resolution: {integrity: sha512-ho3Ruq+fFnBrZhUYI46n/bV2GjwzSkwuT4dTf0GkuNFmnb8nq4ny2z9JEVemFi6bdEJanHLlYfy9c6FN9B9McQ==}
+  /@types/node/16.10.4:
+    resolution: {integrity: sha512-EITwVTX5B4nDjXjGeQAfXOrm+Jn+qNjDmyDRtWoD+wZsl/RDPRTFRKivs4Mt74iOFlLOrE5+Kf+p5yjyhm3+cA==}
 
   /@types/normalize-package-data/2.4.1:
     resolution: {integrity: sha512-Gj7cI7z+98M282Tqmp2K5EIsoouUEzbBJhQQzDE3jSIRk6r9gsz0oUokqIUR4u1R3dMHo0pDHM7sNOHyhulypw==}
@@ -2605,13 +2605,13 @@ packages:
   /@types/react-dom/17.0.9:
     resolution: {integrity: sha512-wIvGxLfgpVDSAMH5utdL9Ngm5Owu0VsGmldro3ORLXV8CShrL8awVj06NuEXFQ5xyaYfdca7Sgbk/50Ri1GdPg==}
     dependencies:
-      '@types/react': 17.0.27
+      '@types/react': 17.0.29
     dev: true
 
   /@types/react-instantsearch-core/6.10.5:
     resolution: {integrity: sha512-VjXJFUfsPdWMSiugJiQc950G9ZRjCEIzqQ9/K915d1f1BsVE2TE57PcfHSxAy1pGDDR8FT5uAgAaOMyKJ66NJQ==}
     dependencies:
-      '@types/react': 17.0.27
+      '@types/react': 17.0.29
       algoliasearch: 4.10.5
       algoliasearch-helper: 3.6.0_algoliasearch@4.10.5
     dev: true
@@ -2619,22 +2619,15 @@ packages:
   /@types/react-instantsearch-dom/6.12.0:
     resolution: {integrity: sha512-O08H+ye4e4kEnYHmMrov9FPNRDJwfCWthNZf4aztqahpU8LSbAiuFQGVy84SHUvg/jfNcG4333SsVnAQLtbS7A==}
     dependencies:
-      '@types/react': 17.0.27
+      '@types/react': 17.0.29
       '@types/react-instantsearch-core': 6.10.5
     dev: true
 
   /@types/react-paginate/7.1.1:
     resolution: {integrity: sha512-94cEJHfBaINba2XGQOWFJF/tYe+AImIhOPqMCfqyeFOgk0qUpDZyDOOW76A1rgdtWndR8UwsMPgV/uuTM8vZ7w==}
     dependencies:
-      '@types/react': 17.0.27
+      '@types/react': 17.0.29
     dev: true
-
-  /@types/react/17.0.27:
-    resolution: {integrity: sha512-zgiJwtsggVGtr53MndV7jfiUESTqrbxOcBvwfe6KS/9bzaVPCTDieTWnFNecVNx6EAaapg5xsLLWFfHHR437AA==}
-    dependencies:
-      '@types/prop-types': 15.7.4
-      '@types/scheduler': 0.16.2
-      csstype: 3.0.9
 
   /@types/react/17.0.29:
     resolution: {integrity: sha512-HSenIfBEBZ70BLrrVhtEtHpqaP79waauPtA8XKlczTxL3hXrW/ElGNLTpD1TmqkykgGlOAK55+D3SmUHEirpFw==}
@@ -2642,7 +2635,6 @@ packages:
       '@types/prop-types': 15.7.4
       '@types/scheduler': 0.16.2
       csstype: 3.0.9
-    dev: true
 
   /@types/remove-markdown/0.3.1:
     resolution: {integrity: sha512-JpJNEJEsmmltyL2LdE8KRjJ0L2ad5vgLibqNj85clohT9AyTrfN6jvHxStPshDkmtcL/ShFu0p2tbY7DBS1mqQ==}
@@ -2975,18 +2967,18 @@ packages:
   /bn.js/5.2.0:
     resolution: {integrity: sha512-D7iWRBvnZE8ecXiLj/9wbxH7Tk79fAh8IHaTNq1RWRixsS02W+5qS+iE9yq6RYl0asXx5tw0bLhmT5pIfbSquw==}
 
-  /bob-esbuild-cli/2.0.0_bob-esbuild@2.0.0:
+  /bob-esbuild-cli/2.0.0_bob-esbuild@2.0.1:
     resolution: {integrity: sha512-PHnKbBizn11/zFNZF7R69WWB6VlqTsrZGwtFwvNiXTzPUT47ygxCm/AF4ynBn9KSFnuS1ueLA5OPzm1IN4FRNg==}
     engines: {node: '>=12.0.0'}
     hasBin: true
     peerDependencies:
       bob-esbuild: ^2.0.0
     dependencies:
-      bob-esbuild: 2.0.0_9905779a54c66d2a56bb442712ca9ced
+      bob-esbuild: 2.0.1_170d455de807da45298c7110ca53949a
       commander: 8.2.0
     dev: true
 
-  /bob-esbuild-plugin/2.0.0_c7e9429ae5ed78af5cf1b5f10f60a4da:
+  /bob-esbuild-plugin/2.0.0_b46c43651b38e1803640d7dc84ee18d1:
     resolution: {integrity: sha512-dUhZeis0XDmLbg6F7XoPqglbMiYSTtHqj1SN3/NkqLjys4R4bTueuVuU94Ew5F2bPBCO1e6XNwkqAU/wNdlvyQ==}
     peerDependencies:
       '@types/node': '*'
@@ -2994,21 +2986,21 @@ packages:
       rollup: '*'
     dependencies:
       '@rollup/pluginutils': 4.1.1
-      '@types/node': 16.10.3
+      '@types/node': 16.10.4
       esbuild: 0.13.4
       joycon: 3.0.1
       jsonc-parser: 3.0.0
       rollup: 2.58.0
     dev: true
 
-  /bob-esbuild/2.0.0_9905779a54c66d2a56bb442712ca9ced:
-    resolution: {integrity: sha512-K67PssziQ/OJdyBpby5q7dXcHD6WqM9WxCCroxFdnzuLgGiIVKm+QfQpp6QrgQ1xkcCKC/Ny/maqCwRQzvE0Ww==}
+  /bob-esbuild/2.0.1_170d455de807da45298c7110ca53949a:
+    resolution: {integrity: sha512-yYUk/eA/gUifaE8ca89PMd0dKQrEJb2DY5A1vEFTWOBqRoXvlCXGDSpR6cszsKemZmXRyYmFLS/q4iqfX1cyMA==}
     peerDependencies:
       esbuild: '*'
       typescript: '*'
     dependencies:
       '@pnpm/exportable-manifest': 2.1.6
-      bob-esbuild-plugin: 2.0.0_c7e9429ae5ed78af5cf1b5f10f60a4da
+      bob-esbuild-plugin: 2.0.0_b46c43651b38e1803640d7dc84ee18d1
       builtin-modules: 3.2.0
       chalk: 4.1.2
       cosmiconfig: 7.0.1
@@ -3026,7 +3018,7 @@ packages:
       sucrase: 3.20.2
       tree-kill: 1.2.2
       tsconfig: 7.0.0
-      typescript: 4.4.3
+      typescript: 4.4.4
     transitivePeerDependencies:
       - '@types/node'
       - supports-color
@@ -3138,7 +3130,7 @@ packages:
     dependencies:
       caniuse-lite: 1.0.30001265
       colorette: 1.4.0
-      electron-to-chromium: 1.3.864
+      electron-to-chromium: 1.3.867
       escalade: 3.1.1
       node-releases: 1.1.77
 
@@ -3148,7 +3140,7 @@ packages:
     hasBin: true
     dependencies:
       caniuse-lite: 1.0.30001265
-      electron-to-chromium: 1.3.864
+      electron-to-chromium: 1.3.867
       escalade: 3.1.1
       node-releases: 1.1.77
       picocolors: 0.2.1
@@ -3188,8 +3180,8 @@ packages:
     resolution: {integrity: sha512-zauLjrfCG+xvoyaqLoV8bLVXXNGC4JqlxFCutSDWA6fJrTo2ZuvLYTqZ7aHBLZSMOopbzwv8f+wZcVzfVTI2Dg==}
     engines: {node: '>= 0.8'}
 
-  /cac/6.7.8:
-    resolution: {integrity: sha512-EozC0vCN4aX3LbcVAzN0tW0qKeDFDXZ74xIAfCviLP2B6yzWPMaYLlMP0EHi2oZKvNqRgY35bOKQtWc5xQ0dDA==}
+  /cac/6.7.11:
+    resolution: {integrity: sha512-m4xrA2MKfid6uDV2j2+0mXrtPGxlvAW0y+7Gnn2P8WVMSG+4e4tcoYX++94ZPblPfpBccJ5e7HvKdghlX5yiDA==}
     engines: {node: '>=8'}
     dev: true
 
@@ -3546,8 +3538,8 @@ packages:
     requiresBuild: true
     dev: true
 
-  /core-js/3.18.2:
-    resolution: {integrity: sha512-zNhPOUoSgoizoSQFdX1MeZO16ORRb9FFQLts8gSYbZU5FcgXhp24iMWMxnOQo5uIaIG7/6FA/IqJPwev1o9ZXQ==}
+  /core-js/3.18.3:
+    resolution: {integrity: sha512-tReEhtMReZaPFVw7dajMx0vlsz3oOb8ajgPoHVYGxr8ErnZ6PcYEvvmjGmXlfpnxpkYSdOQttjB+MvVbCGfvLw==}
     requiresBuild: true
 
   /core-util-is/1.0.3:
@@ -3924,8 +3916,8 @@ packages:
     resolution: {integrity: sha1-WQxhFWsK4vTwJVcyoViyZrxWsh0=}
     dev: true
 
-  /electron-to-chromium/1.3.864:
-    resolution: {integrity: sha512-v4rbad8GO6/yVI92WOeU9Wgxc4NA0n4f6P1FvZTY+jyY7JHEhw3bduYu60v3Q1h81Cg6eo4ApZrFPuycwd5hGw==}
+  /electron-to-chromium/1.3.867:
+    resolution: {integrity: sha512-WbTXOv7hsLhjJyl7jBfDkioaY++iVVZomZ4dU6TMe/SzucV6mUAs2VZn/AehBwuZMiNEQDaPuTGn22YK5o+aDw==}
 
   /elliptic/6.5.4:
     resolution: {integrity: sha512-iLhC6ULemrljPZb+QutR5TQGB+pdW6KGD5RSegS+8sorOZT+rdQFbsQFJgvN3eRqNALqJer4oQ16YvJHlU8hzQ==}
@@ -4919,8 +4911,8 @@ packages:
     dependencies:
       '@babel/runtime': 7.15.4
 
-  /i18next/21.2.6:
-    resolution: {integrity: sha512-xnCodgPo1ASLfdPs2/GS8jQFqQsaWrQKdsqfYgf5juANavIos4kjahgBkrMU8SUCn2kv7TSssfnyVu5LZjBWXw==}
+  /i18next/21.3.0:
+    resolution: {integrity: sha512-MiarmWb/a+5z8C7QvihkcJf2YofuyhGvH28Wlip/c1YTSvHijYBFmc7dH6RrNkc2O44ApTdHnkK4FaM/S33C0w==}
     dependencies:
       '@babel/runtime': 7.15.4
 
@@ -5315,7 +5307,7 @@ packages:
     resolution: {integrity: sha512-mk0umAQ5lT+CaOJ+Qp01N6kz48sJG2kr2n1rX0koqKf6FIygQV0qLOdN9SCYID4IVeSigDOcPeGLozdMLYfb5g==}
     engines: {node: ^10.13.0 || ^12.13.0 || ^14.15.0 || >=15.0.0}
     dependencies:
-      '@types/node': 16.10.3
+      '@types/node': 16.10.4
       merge-stream: 2.0.0
       supports-color: 8.1.1
 
@@ -5801,11 +5793,11 @@ packages:
       '@babel/runtime': 7.15.4
       '@types/hoist-non-react-statics': 3.3.1
       '@types/i18next-fs-backend': 1.1.2
-      core-js: 3.18.2
+      core-js: 3.18.3
       hoist-non-react-statics: 3.3.2
       i18next: 20.6.1
       i18next-fs-backend: 1.1.1
-      next: 11.1.2_bd7797d63db473de6e2318609a63c933
+      next: 11.1.2_8e3522129ef2816b3c737f17aecb3a9d
       react: 17.0.2
       react-i18next: 11.12.0_i18next@20.6.1+react@17.0.2
 
@@ -5842,12 +5834,12 @@ packages:
       react: '>=16.0.0'
       react-dom: '>=16.0.0'
     dependencies:
-      next: 11.1.2_bd7797d63db473de6e2318609a63c933
+      next: 11.1.2_8e3522129ef2816b3c737f17aecb3a9d
       react: 17.0.2
       react-dom: 17.0.2_react@17.0.2
     dev: false
 
-  /next/11.1.2_bd7797d63db473de6e2318609a63c933:
+  /next/11.1.2_8e3522129ef2816b3c737f17aecb3a9d:
     resolution: {integrity: sha512-azEYL0L+wFjv8lstLru3bgvrzPvK0P7/bz6B/4EJ9sYkXeW8r5Bjh78D/Ol7VOg0EIPz0CXoe72hzAlSAXo9hw==}
     engines: {node: '>=12.0.0'}
     hasBin: true
@@ -5898,7 +5890,7 @@ packages:
       os-browserify: 0.3.0
       p-limit: 3.1.0
       path-browserify: 1.0.1
-      pnp-webpack-plugin: 1.6.4_typescript@4.4.3
+      pnp-webpack-plugin: 1.6.4_typescript@4.4.4
       postcss: 8.2.15
       process: 0.11.10
       querystring-es3: 0.2.1
@@ -6358,11 +6350,11 @@ packages:
   /platform/1.3.6:
     resolution: {integrity: sha512-fnWVljUchTro6RiCFvCXBbNhJc2NijN7oIQxbwsyL0buWJPG85v81ehlHI9fXrJsMNgTofEoWIQeClKpgxFLrg==}
 
-  /pnp-webpack-plugin/1.6.4_typescript@4.4.3:
+  /pnp-webpack-plugin/1.6.4_typescript@4.4.4:
     resolution: {integrity: sha512-7Wjy+9E3WwLOEL30D+m8TSTF7qJJUJLONBnwQp0518siuMxUQUbgZwssaFX+QKlZkjHZcw/IpZCt/H0srrntSg==}
     engines: {node: '>=6'}
     dependencies:
-      ts-pnp: 1.2.0_typescript@4.4.3
+      ts-pnp: 1.2.0_typescript@4.4.4
     transitivePeerDependencies:
       - typescript
 
@@ -7961,7 +7953,7 @@ packages:
     resolution: {integrity: sha512-Y/arvbn+rrz3JCKl9C4kVNfTfSm2/mEp5FSz5EsZSANGPSlQrpRI5M4PKF+mJnE52jOO90PnPSc3Ur3bTQw0gA==}
     dev: true
 
-  /ts-pnp/1.2.0_typescript@4.4.3:
+  /ts-pnp/1.2.0_typescript@4.4.4:
     resolution: {integrity: sha512-csd+vJOb/gkzvcCHgTGSChYpy5f1/XKNsmvBGO4JXS+z1v2HobugDz4s1IeFXM3wZB44uczs+eazB5Q/ccdhQw==}
     engines: {node: '>=6'}
     peerDependencies:
@@ -7970,7 +7962,7 @@ packages:
       typescript:
         optional: true
     dependencies:
-      typescript: 4.4.3
+      typescript: 4.4.4
 
   /tsconfig/7.0.0:
     resolution: {integrity: sha512-vZXmzPrL+EmC4T/4rVlT2jNVMWCi/O4DIiSj3UHg1OE5kCKbk4mfrXc6dZksLgRM/TZlKnousKH9bbTazUWRRw==}
@@ -7991,7 +7983,7 @@ packages:
   /tslib/2.3.1:
     resolution: {integrity: sha512-77EbyPPpMz+FRFRuAFlWMtmgUWGe9UOG2Z25NqCwiIjRhOf5iKGuzSe5P2w1laq+FkRy4p+PCuVkJSGkzTEKVw==}
 
-  /tsup/5.4.0_typescript@4.4.3:
+  /tsup/5.4.0_typescript@4.4.4:
     resolution: {integrity: sha512-wm52TUJzDCvF9dJ3TxYtoJg8L7EjSYsOsH+jZhMMXfk1qZn6CdxFStwzMnwhyducdMBXHQNl7wZn+ioIhJoCHA==}
     hasBin: true
     peerDependencies:
@@ -8000,7 +7992,7 @@ packages:
       typescript:
         optional: true
     dependencies:
-      cac: 6.7.8
+      cac: 6.7.11
       chalk: 4.1.2
       chokidar: 3.5.2
       debug: 4.3.2
@@ -8013,7 +8005,7 @@ packages:
       rollup: 2.58.0
       sucrase: 3.20.2
       tree-kill: 1.2.2
-      typescript: 4.4.3
+      typescript: 4.4.4
     transitivePeerDependencies:
       - supports-color
       - ts-node
@@ -8103,8 +8095,8 @@ packages:
       is-typedarray: 1.0.0
     dev: true
 
-  /typescript/4.4.3:
-    resolution: {integrity: sha512-4xfscpisVgqqDfPaJo5vkd+Qd/ItkoagnHpufr+i2QCHBsNYp+G7UAoyFl8aPtx879u38wPV65rZ8qbGZijalA==}
+  /typescript/4.4.4:
+    resolution: {integrity: sha512-DqGhF5IKoBl8WNf8C1gu8q0xZSInh9j1kJJMqT3a94w1JzVaBU4EXOSMrz9yDqMT0xt3selp83fuFMQ0uzv6qA==}
     engines: {node: '>=4.2.0'}
     hasBin: true
     dev: true
