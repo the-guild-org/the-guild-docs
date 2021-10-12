@@ -82,7 +82,7 @@ importers:
       react-icons: 4.3.1
       react-use: ^17.3.1
       remark-admonitions: ^1.2.1
-      shiki: ^0.9.11
+      shiki: ^0.9.12
       tsup: ^5.4.0
       typescript: ^4.4.3
       wait-on: ^6.0.0
@@ -106,7 +106,7 @@ importers:
       react-icons: 4.3.1_react@17.0.2
       react-use: 17.3.1_react-dom@17.0.2+react@17.0.2
       remark-admonitions: 1.2.1
-      shiki: 0.9.11
+      shiki: 0.9.12
     devDependencies:
       '@next/bundle-analyzer': 11.1.2
       '@types/concurrently': 6.3.0
@@ -244,7 +244,7 @@ importers:
       remark-admonitions: 1.2.1
       remark-emoji: ^3.0.1
       remark-slug: ^7.0.0
-      shiki: ^0.9.11
+      shiki: ^0.9.12
       tiny-lru: ^7.0.6
       unified: ^10.1.0
       unist-util-visit: ^4.1.0
@@ -272,7 +272,7 @@ importers:
       react: 17.0.2
       react-dom: 17.0.2_react@17.0.2
       remark-admonitions: 1.2.1
-      shiki: 0.9.11
+      shiki: 0.9.12
 
   packages/types:
     specifiers:
@@ -7303,8 +7303,8 @@ packages:
   /shell-quote/1.7.2:
     resolution: {integrity: sha512-mRz/m/JVscCrkMyPqHc/bczi3OQHkLTqXHEFu0zDhK/qfv3UcOA4SVmRCLmos4bhjr9ekVQubj/R7waKapmiQg==}
 
-  /shiki/0.9.11:
-    resolution: {integrity: sha512-tjruNTLFhU0hruCPoJP0y+B9LKOmcqUhTpxn7pcJB3fa+04gFChuEmxmrUfOJ7ZO6Jd+HwMnDHgY3lv3Tqonuw==}
+  /shiki/0.9.12:
+    resolution: {integrity: sha512-VXcROdldv0/Qu0w2XvzU4IrvTeBNs/Kj/FCmtcEXGz7Tic/veQzliJj6tEiAgoKianhQstpYmbPDStHU5Opqcw==}
     dependencies:
       jsonc-parser: 3.0.0
       onigasm: 2.2.5
