@@ -40,8 +40,8 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
   const data = await Promise.all(
     packagesData.map(async plugin => {
       const [description, content] = await buildMultipleMDX([
-        `${plugin.stats?.collected?.metadata?.version || ''}\n\n${plugin.stats?.collected?.metadata?.description || ''}`,
-        plugin.readme || plugin.stats?.collected?.metadata?.readme || '',
+        `${plugin.stats?.version || ''}\n\n${plugin.stats?.description || ''}`,
+        plugin.readme || plugin.stats?.readme || '',
       ]);
       return {
         ...plugin,
