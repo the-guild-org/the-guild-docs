@@ -20,6 +20,7 @@ export interface PackageInfo {
   license?: string;
   createdDate: string;
   modifiedDate: string;
+  weeklyNPMDownloads?: number;
 }
 
 export interface Package<Tags extends string = string> {
@@ -46,6 +47,7 @@ export const cleanGitRepoLink = (repo: string) => repo.replace(/^git\+/, '').rep
 
 export async function getPackageStats(name: string): Promise<PackageInfo | null> {
   try {
+    const encodedName = encodeURIComponent(name);
     const [
       {
         readme,
@@ -53,8 +55,9 @@ export async function getPackageStats(name: string): Promise<PackageInfo | null>
         repository,
       },
       latestVersion,
+      { downloads: weeklyNPMDownloads },
     ] = await Promise.all([
-      fetch(`https://registry.npmjs.org/${encodeURIComponent(name)}`).then(
+      fetch(`https://registry.npmjs.org/${encodedName}`).then(
         v =>
           v.json() as Promise<{
             repository?:
@@ -68,7 +71,7 @@ export async function getPackageStats(name: string): Promise<PackageInfo | null>
             time: { created: string; modified: string };
           }>
       ),
-      fetch(`https://registry.npmjs.org/${encodeURIComponent(name)}/latest`).then(
+      fetch(`https://registry.npmjs.org/${encodedName}/latest`).then(
         v =>
           v.json() as Promise<{
             name: string;
@@ -84,6 +87,23 @@ export async function getPackageStats(name: string): Promise<PackageInfo | null>
             license?: string;
           }>
       ),
+      fetch(`https://api.npmjs.org/downloads/point/last-week/${encodedName}`)
+        .then(
+          v =>
+            v.json() as Promise<
+              | {
+                  downloads: number;
+                  start: string;
+                  end: string;
+                  package: string;
+                }
+              | { error: string; downloads?: undefined }
+            >
+        )
+        .catch((err): { downloads?: undefined } => {
+          console.error(err);
+          return {};
+        }),
     ]);
 
     const repoString = repository ? (typeof repository === 'string' ? repository : repository?.url) : undefined;
@@ -98,6 +118,7 @@ export async function getPackageStats(name: string): Promise<PackageInfo | null>
       modifiedDate: modified,
       repositoryLink,
       repositoryDirectory,
+      weeklyNPMDownloads,
     });
   } catch (e) {
     console.error(e);
