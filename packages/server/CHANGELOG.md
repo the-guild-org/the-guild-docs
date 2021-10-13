@@ -1,5 +1,11 @@
 # @guild-docs/server
 
+## 2.0.1
+
+### Patch Changes
+
+- 1c85aa1: add weeklyNPMDownloads to PackageInfo
+
 ## 2.0.0
 
 ### Major Changes
