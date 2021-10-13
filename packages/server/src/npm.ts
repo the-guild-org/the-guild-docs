@@ -1,12 +1,26 @@
 import { promises } from 'fs';
 import fetch from 'node-fetch';
-import { NpmsIO, PackageInfo } from 'npms.io';
 import Lru from 'tiny-lru';
-
 import { withoutStartingSlash, withoutTrailingSlash, withStartingSlash } from './utils';
 
-const npmsIO = new NpmsIO();
-const cache = Lru<PackageInfo>(100, 3.6e6); // 1h
+export interface PackageInfo {
+  name: string;
+  version: string;
+  description?: string;
+  repository?:
+    | string
+    | {
+        type?: string;
+        url?: string;
+        directory?: string;
+      };
+  repositoryLink?: string;
+  repositoryDirectory?: string;
+  readme?: string;
+  license?: string;
+  createdDate: string;
+  modifiedDate: string;
+}
 
 export interface Package<Tags extends string = string> {
   identifier: string;
@@ -26,10 +40,67 @@ export interface PackageWithStats<Tags extends string = string> extends Package<
   stats: PackageInfo | undefined | null;
 }
 
+const cache = Lru<PackageInfo>(100, 3.6e6); // 1h
+
+export const cleanGitRepoLink = (repo: string) => repo.replace(/^git\+/, '').replace(/\.git$/, '');
+
 export async function getPackageStats(name: string): Promise<PackageInfo | null> {
   try {
-    return await npmsIO.api.package.packageInfo(name);
+    const [
+      {
+        readme,
+        time: { created, modified },
+        repository,
+      },
+      latestVersion,
+    ] = await Promise.all([
+      fetch(`https://registry.npmjs.org/${encodeURIComponent(name)}`).then(
+        v =>
+          v.json() as Promise<{
+            repository?:
+              | string
+              | {
+                  type?: string;
+                  url?: string;
+                  directory?: string;
+                };
+            readme?: string;
+            time: { created: string; modified: string };
+          }>
+      ),
+      fetch(`https://registry.npmjs.org/${encodeURIComponent(name)}/latest`).then(
+        v =>
+          v.json() as Promise<{
+            name: string;
+            version: string;
+            description?: string;
+            repository?:
+              | string
+              | {
+                  type?: string;
+                  url?: string;
+                  directory?: string;
+                };
+            license?: string;
+          }>
+      ),
+    ]);
+
+    const repoString = repository ? (typeof repository === 'string' ? repository : repository?.url) : undefined;
+
+    const repositoryLink = repoString ? cleanGitRepoLink(repoString) : undefined;
+    const repositoryDirectory = typeof repository === 'string' ? undefined : repository?.directory;
+
+    return removeUndefineds({
+      ...latestVersion,
+      readme,
+      createdDate: created,
+      modifiedDate: modified,
+      repositoryLink,
+      repositoryDirectory,
+    });
   } catch (e) {
+    console.error(e);
     return null;
   }
 }
@@ -87,13 +158,13 @@ export async function getPackagesData<Tags extends string = string>({
           }
         }
         const stats = await statsPromise;
-        if (stats?.collected.metadata.links.repository && stats.collected.metadata.repository?.directory) {
-          const path = withoutTrailingSlash(withStartingSlash(stats.collected.metadata.repository.directory));
+
+        if (stats?.repositoryDirectory && stats.repositoryLink) {
+          const path = withoutTrailingSlash(withStartingSlash(stats.repositoryDirectory));
 
           const fetchPath = `${
-            withoutTrailingSlash(
-              stats.collected.metadata.links.repository.replace('https://github.com', 'https://raw.githubusercontent.com')
-            ) + '/HEAD'
+            withoutTrailingSlash(stats.repositoryLink.replace('https://github.com', 'https://raw.githubusercontent.com')) +
+            '/HEAD'
           }${path}/README.md`;
 
           try {
@@ -115,6 +186,8 @@ export async function getPackagesData<Tags extends string = string>({
           }
         }
 
+        if (stats?.readme) return stats.readme;
+
         return undefined;
       })();
 
@@ -134,12 +207,15 @@ export async function getPackagesData<Tags extends string = string>({
         stats,
       };
 
-      //@ts-expect-error
-      for (const key in data) data[key] === undefined && delete data[key];
-
-      return data;
+      return removeUndefineds(data);
     })
   );
 
   return allPackages;
 }
+
+export const removeUndefineds = <T extends object>(v: T): T => {
+  for (const key in v) v[key] === undefined && delete v[key];
+
+  return v;
+};

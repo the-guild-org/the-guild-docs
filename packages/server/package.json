@@ -5,9 +5,9 @@
     "type": "git",
     "url": "git+https://github.com/the-guild-org/the-guild-docs.git"
   },
-  "sideEffects": false,
   "license": "MIT",
   "author": "PabloSzx <pablosaez1995@gmail.com>",
+  "sideEffects": false,
   "exports": {
     ".": {
       "require": "./lib/index.js",
@@ -27,7 +27,8 @@
   "scripts": {
     "dev": "bob-esbuild watch",
     "prepack": "bob-esbuild build",
-    "postpublish": "gh-release"
+    "postpublish": "gh-release",
+    "test:npm": "bob-tsm test-npm.ts"
   },
   "dependencies": {
     "@guild-docs/types": "workspace:^1.0.2",
@@ -36,7 +37,6 @@
     "gray-matter": "^4.0.3",
     "next-mdx-remote": "3.0.6",
     "node-fetch": "^2.6.5",
-    "npms.io": "^2.1.0",
     "remark-emoji": "^3.0.1",
     "remark-slug": "^7.0.0",
     "tiny-lru": "^7.0.6",
@@ -54,7 +54,8 @@
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "remark-admonitions": "1.2.1",
-    "shiki": "^0.9.12"
+    "shiki": "^0.9.12",
+    "undici": "^4.7.2"
   },
   "peerDependencies": {
     "next": "^11.1.2",
