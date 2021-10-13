@@ -22,7 +22,7 @@
     "test-new": "rimraf \"../../examples/new\" && tsup --silent && node lib/index.js init \"../../examples/new\""
   },
   "devDependencies": {
-    "@types/edit-json-file": "^1.6.0",
+    "@types/edit-json-file": "^1.6.1",
     "@types/mkdirp": "^1.0.2",
     "@types/node": "^16.10.4",
     "@types/prettier": "^2.4.1",
