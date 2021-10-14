@@ -58,7 +58,7 @@
     "@types/remove-markdown": "^0.3.1",
     "bob-esbuild-cli": "^2.0.0",
     "changesets-github-release": "^0.0.4",
-    "esbuild": "^0.13.5",
+    "esbuild": "^0.13.6",
     "framer-motion": "^4.1.17",
     "next": "^11.1.2",
     "next-i18next": "^8.9.0",
