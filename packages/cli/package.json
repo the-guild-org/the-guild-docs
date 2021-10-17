@@ -24,16 +24,16 @@
   "devDependencies": {
     "@types/edit-json-file": "^1.6.1",
     "@types/mkdirp": "^1.0.2",
-    "@types/node": "^16.10.4",
+    "@types/node": "^16.11.1",
     "@types/prettier": "^2.4.1",
     "changesets-github-release": "^0.0.4",
     "commander": "^8.2.0",
     "edit-json-file": "^1.6.0",
-    "esbuild": "^0.13.7",
+    "esbuild": "^0.13.8",
     "mkdirp": "^1.0.4",
     "npm-api": "^1.0.1",
     "prettier": "^2.4.1",
-    "tsup": "^5.4.0"
+    "tsup": "^5.4.1"
   },
   "tsup": {
     "splitting": false,
