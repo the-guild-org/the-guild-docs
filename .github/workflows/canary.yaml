@@ -22,6 +22,11 @@ jobs:
         with:
           node-version: 14.x
 
+      - name: Setup NPM credentials
+        run: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" >> ~/.npmrc
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
       - name: Cache pnpm modules
         uses: actions/cache@v2
         env:

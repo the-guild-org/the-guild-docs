@@ -6,8 +6,7 @@
     "url": "git+https://github.com/the-guild-org/the-guild-docs.git"
   },
   "publishConfig": {
-    "access": "public",
-    "directory": "lib"
+    "access": "public"
   },
   "license": "MIT",
   "main": "lib/index.js",
