@@ -93,7 +93,7 @@ export interface CompiledMDX {
 }
 
 const MdxDeps = LazyPromise(async () => {
-  const [remarkAdmonitions, remarkSlug, remarkEmoji, highlighter, withShiki, { serialize }] = await Promise.all([
+  const [remarkAdmonitions, remarkSlug, remarkEmoji, highlighter, withShiki, { serialize }, remarkImport] = await Promise.all([
     import('remark-admonitions').then(v => v.default),
     import('remark-slug').then(v => v.default),
     import('remark-emoji').then(v => v.default),
@@ -118,12 +118,14 @@ const MdxDeps = LazyPromise(async () => {
     }),
     import('./remarkShiki').then(v => v.withShiki()),
     import('next-mdx-remote/serialize.js'),
+    import('remark-import-partial').then(v => v.default),
   ]);
 
   return {
     remarkAdmonitions,
     remarkSlug,
     remarkEmoji,
+    remarkImport,
     highlighter,
     withShiki,
     serialize,
@@ -140,7 +142,7 @@ export async function buildMDX(
     content = '# ' + data.title + '\n\n' + content.trimStart();
   }
 
-  const { remarkAdmonitions, remarkEmoji, remarkSlug, highlighter, withShiki, serialize } = await MdxDeps;
+  const { remarkAdmonitions, remarkEmoji, remarkSlug, highlighter, withShiki, serialize, remarkImport } = await MdxDeps;
 
   const mdx = await serialize(content, {
     mdxOptions: {
@@ -164,6 +166,7 @@ export async function buildMDX(
         ],
         remarkSlug,
         remarkEmoji,
+        remarkImport,
         ...extraRemarkPlugins,
       ],
       rehypePlugins: extraRehypePlugins,
