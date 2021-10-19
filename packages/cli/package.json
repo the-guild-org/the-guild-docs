@@ -41,5 +41,9 @@
     "entryPoints": [
       "src/index.ts"
     ]
+  },
+  "publishConfig": {
+    "access": "public",
+    "directory": "lib"
   }
 }

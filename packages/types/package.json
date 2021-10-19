@@ -5,6 +5,10 @@
     "type": "git",
     "url": "git+https://github.com/the-guild-org/the-guild-docs.git"
   },
+  "publishConfig": {
+    "access": "public",
+    "directory": "lib"
+  },
   "license": "MIT",
   "main": "lib/index.js",
   "module": "lib/index.mjs",
