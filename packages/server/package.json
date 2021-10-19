@@ -66,6 +66,7 @@
     "shiki": "^0.9.12"
   },
   "publishConfig": {
+    "access": "public",
     "directory": "lib"
   },
   "typesVersions": {

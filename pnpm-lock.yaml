@@ -11,7 +11,12 @@ importers:
 
   .:
     specifiers:
-      '@changesets/cli': ^2.17.0
+      '@changesets/apply-release-plan': 5.0.1
+      '@changesets/assemble-release-plan': 5.0.1
+      '@changesets/cli': 2.17.0
+      '@changesets/config': 1.6.1
+      '@changesets/read': 0.5.0
+      '@manypkg/get-packages': 1.1.1
       '@types/node': '>=16.11.1'
       '@types/react': ^17.0.30
       '@types/react-instantsearch-core': ^6.10.5
@@ -29,9 +34,15 @@ importers:
       react: ^17.0.2
       react-dom: ^17.0.2
       rimraf: ^3.0.2
+      semver: 7.3.5
       typescript: ^4.4.4
     devDependencies:
+      '@changesets/apply-release-plan': 5.0.1
+      '@changesets/assemble-release-plan': 5.0.1
       '@changesets/cli': 2.17.0
+      '@changesets/config': 1.6.1
+      '@changesets/read': 0.5.0
+      '@manypkg/get-packages': 1.1.1
       '@types/node': 16.11.1
       '@types/react': 17.0.30
       '@types/react-instantsearch-core': 6.10.5
@@ -49,6 +60,7 @@ importers:
       react: 17.0.2
       react-dom: 17.0.2_react@17.0.2
       rimraf: 3.0.2
+      semver: 7.3.5
       typescript: 4.4.4
 
   examples/basic:
