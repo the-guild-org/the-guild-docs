@@ -39,6 +39,7 @@
     "node-fetch": "^2.6.5",
     "remark-emoji": "^3.0.1",
     "remark-slug": "^7.0.0",
+    "remark-import-partial": "^0.0.2",
     "tiny-lru": "^7.0.6",
     "unified": "^10.1.0",
     "unist-util-visit": "^4.1.0"

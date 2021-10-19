@@ -256,6 +256,7 @@ importers:
       react-dom: ^17.0.2
       remark-admonitions: 1.2.1
       remark-emoji: ^3.0.1
+      remark-import-partial: ^0.0.2
       remark-slug: ^7.0.0
       shiki: ^0.9.12
       tiny-lru: ^7.0.6
@@ -270,6 +271,7 @@ importers:
       next-mdx-remote: 3.0.6_react-dom@17.0.2+react@17.0.2
       node-fetch: 2.6.5
       remark-emoji: 3.0.1
+      remark-import-partial: 0.0.2
       remark-slug: 7.0.0
       tiny-lru: 7.0.6
       unified: 10.1.0
@@ -7017,6 +7019,12 @@ packages:
   /remark-footnotes/2.0.0:
     resolution: {integrity: sha512-3Clt8ZMH75Ayjp9q4CorNeyjwIxHFcTkaektplKGl2A1jNGEUey8cKL0ZC5vJwfcD5GFGsNLImLG/NGzWIzoMQ==}
 
+  /remark-import-partial/0.0.2:
+    resolution: {integrity: sha512-HuIcpGITU/PK+fZvYYamayCH/jlsoB2Uxj1QaGBgTYtcpozvJQth+PKp9NUZpksUldGAmJf59IyMJgczMpbhwg==}
+    dependencies:
+      unist-util-visit: 2.0.2
+    dev: false
+
   /remark-mdx/1.6.22:
     resolution: {integrity: sha512-phMHBJgeV76uyFkH4rvzCftLfKCr2RZuF+/gmVcaKrpsihyzmhXjA0BEMDaPTXG5y8qZOKPVo83NAOX01LPnOQ==}
     dependencies:
@@ -8231,6 +8239,14 @@ packages:
     dependencies:
       '@types/unist': 2.0.6
       unist-util-is: 5.1.1
+    dev: false
+
+  /unist-util-visit/2.0.2:
+    resolution: {integrity: sha512-HoHNhGnKj6y+Sq+7ASo2zpVdfdRifhTgX2KTU3B/sO/TTlZchp7E3S4vjRzDJ7L60KmrCPsQkVK3lEF3cz36XQ==}
+    dependencies:
+      '@types/unist': 2.0.6
+      unist-util-is: 4.1.0
+      unist-util-visit-parents: 3.1.1
     dev: false
 
   /unist-util-visit/2.0.3:
