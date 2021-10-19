@@ -5,3 +5,4 @@ dist
 lib
 .env
 lib-types
+/.idea/
