@@ -1,0 +1,70 @@
+name: Canary Release
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  publish-canary:
+    name: Publish Canary
+    runs-on: ubuntu-latest
+    if: github.event.pull_request.head.repo.full_name == github.repository
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@master
+        with:
+          # This makes Actions fetch all Git history so that Changesets can generate changelogs with the correct commits
+          fetch-depth: 0
+
+      - name: Setup Node.js 14.x
+        uses: actions/setup-node@master
+        with:
+          node-version: 14.x
+
+      - name: Cache pnpm modules
+        uses: actions/cache@v2
+        env:
+          cache-name: cache-pnpm-modules
+        with:
+          path: ~/.pnpm-store
+          key: ${{ runner.os }}-v2-${{ hashFiles('./pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-v2
+      - name: install pnpm
+        run: npm i pnpm@latest -g
+
+      - name: Install Dependencies
+        run: pnpm i
+
+      - name: Release Canary
+        id: canary
+        uses: 'kamilkisiela/release-canary@master'
+        with:
+          npm-token: ${{ secrets.NPM_TOKEN }}
+          npm-script: 'yarn release:canary'
+          changesets: true
+
+      - name: Publish a message
+        if: steps.canary.outputs.released
+        uses: 'kamilkisiela/pr-comment@master'
+        with:
+          message: |
+            The latest changes of this PR are available as alpha in npm (based on the declared `changesets`):
+
+            ```
+            ${{ steps.canary.outputs.changesetsPublishedPackages}}
+            ```
+          bot-token: ${{ secrets.GITHUB_TOKEN }}
+          bot: 'theguild-bot'
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Publish a empty message
+        if: steps.canary.outputs.released == 'false'
+        uses: 'kamilkisiela/pr-comment@master'
+        with:
+          message: |
+            The latest changes of this PR are not available as alpha, since there are no linked `changesets` for this PR.
+          bot-token: ${{ secrets.GITHUB_TOKEN }}
+          bot: 'theguild-bot'
+          github-token: ${{ secrets.GITHUB_TOKEN }}
