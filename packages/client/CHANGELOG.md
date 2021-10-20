@@ -1,5 +1,14 @@
 # @guild-docs/client
 
+## 1.1.2
+
+### Patch Changes
+
+- 24878ed: Use @guild-docs/mdx-remote with esbuild as peer dependency (no need for esbuild resolutions/overrides)
+- Updated dependencies [24878ed]
+  - @guild-docs/types@1.0.3
+  - @guild-docs/mdx-remote@1.0.0
+
 ## 1.1.1
 
 ### Patch Changes
