@@ -8,16 +8,16 @@
     "forceConsistentCasingInFileNames": true /* Disallow inconsistently-cased references to the same file. */,
     "lib": ["dom", "dom.iterable", "esnext"],
     "declaration": true,
-    "emitDeclarationOnly": true,
+    "emitDeclarationOnly": false,
     "allowJs": true,
+    "noEmit": true,
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
     "importsNotUsedAsValues": "error",
-    "rootDir": "src",
     "outDir": "lib",
     "alwaysStrict": true
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "build.ts"],
   "exclude": ["node_modules", "lib"]
 }

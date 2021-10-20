@@ -97,7 +97,6 @@ importers:
       react-use: ^17.3.1
       remark-admonitions: ^1.2.1
       shiki: ^0.9.12
-      tsup: ^5.4.2
       typescript: ^4.4.4
       wait-on: ^6.0.0
     dependencies:
@@ -134,7 +133,6 @@ importers:
       esbuild-register: 3.0.0_esbuild@0.13.8
       next-remote-watch: 1.0.0
       open-cli: 7.0.1
-      tsup: 5.4.2_typescript@4.4.4
       typescript: 4.4.4
       wait-on: 6.0.0
 
@@ -144,6 +142,8 @@ importers:
       '@types/mkdirp': ^1.0.2
       '@types/node': '>=16.11.1'
       '@types/prettier': ^2.4.1
+      bob-tsm: ^0.2.2
+      bob-watch: ^0.1.0
       changesets-github-release: ^0.0.4
       commander: ^8.2.0
       edit-json-file: ^1.6.0
@@ -151,12 +151,13 @@ importers:
       mkdirp: ^1.0.4
       npm-api: ^1.0.1
       prettier: ^2.4.1
-      tsup: ^5.4.2
     devDependencies:
       '@types/edit-json-file': 1.6.1
       '@types/mkdirp': 1.0.2
       '@types/node': 16.11.1
       '@types/prettier': 2.4.1
+      bob-tsm: 0.2.2_esbuild@0.13.8
+      bob-watch: 0.1.0
       changesets-github-release: 0.0.4
       commander: 8.2.0
       edit-json-file: 1.6.0
@@ -164,7 +165,6 @@ importers:
       mkdirp: 1.0.4
       npm-api: 1.0.1
       prettier: 2.4.1
-      tsup: 5.4.2_typescript@4.4.4
 
   packages/client:
     specifiers:
@@ -3043,6 +3043,16 @@ packages:
       tree-kill: 1.2.2
     dev: true
 
+  /bob-watch/0.1.0:
+    resolution: {integrity: sha512-EY26sc6yofC7eoJM22yO4TG49SKtYUl+RheDp5K1fdWVwgqYM5ydMaFBgQSM1qk6NtjqM+/uh8A/Vd3SS/2KPA==}
+    hasBin: true
+    dependencies:
+      chokidar: 3.5.2
+      commander: 8.2.0
+      execa: 5.1.1
+      tree-kill: 1.2.2
+    dev: true
+
   /body-parser/1.19.0:
     resolution: {integrity: sha512-dhEPs72UPbDnAQJ9ZKMNTP6ptJaionhP5cBb541nXPlW60Jepo9RV/a4fX4XWW9CuFNK22krhrj1+rgzifNCsw==}
     engines: {node: '>= 0.8'}
@@ -3198,11 +3208,6 @@ packages:
   /bytes/3.1.0:
     resolution: {integrity: sha512-zauLjrfCG+xvoyaqLoV8bLVXXNGC4JqlxFCutSDWA6fJrTo2ZuvLYTqZ7aHBLZSMOopbzwv8f+wZcVzfVTI2Dg==}
     engines: {node: '>= 0.8'}
-
-  /cac/6.7.11:
-    resolution: {integrity: sha512-m4xrA2MKfid6uDV2j2+0mXrtPGxlvAW0y+7Gnn2P8WVMSG+4e4tcoYX++94ZPblPfpBccJ5e7HvKdghlX5yiDA==}
-    engines: {node: '>=8'}
-    dev: true
 
   /call-bind/1.0.2:
     resolution: {integrity: sha512-7O+FbCihrB5WGbFYesctwmTKae6rOiIzmz1icreWJ+0aA7LJfuqhEso2T9ncpcFtzMQtzXf2QGGueWJGTYsqrA==}
@@ -8007,34 +8012,6 @@ packages:
 
   /tslib/2.3.1:
     resolution: {integrity: sha512-77EbyPPpMz+FRFRuAFlWMtmgUWGe9UOG2Z25NqCwiIjRhOf5iKGuzSe5P2w1laq+FkRy4p+PCuVkJSGkzTEKVw==}
-
-  /tsup/5.4.2_typescript@4.4.4:
-    resolution: {integrity: sha512-R6Vxq6lrxvKBc9ZbJShHqARlysCxcEAXss9iyLPbZZDIl3CSftrO2IN0Flgkt6hMt1sTwgsXL3v5Ot3l305W1Q==}
-    hasBin: true
-    peerDependencies:
-      typescript: ^4.2.3
-    peerDependenciesMeta:
-      typescript:
-        optional: true
-    dependencies:
-      cac: 6.7.11
-      chalk: 4.1.2
-      chokidar: 3.5.2
-      debug: 4.3.2
-      esbuild: 0.13.8
-      execa: 5.1.1
-      globby: 11.0.4
-      joycon: 3.0.1
-      postcss-load-config: 3.1.0
-      resolve-from: 5.0.0
-      rollup: 2.58.0
-      sucrase: 3.20.2
-      tree-kill: 1.2.2
-      typescript: 4.4.4
-    transitivePeerDependencies:
-      - supports-color
-      - ts-node
-    dev: true
 
   /tty-browserify/0.0.0:
     resolution: {integrity: sha1-oVe6QC2iTpv5V/mqadUk7tQpAaY=}
