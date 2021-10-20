@@ -13,7 +13,7 @@ import { IS_PRODUCTION } from './constants';
 import { getSlug } from './routes';
 import { SerializeTOC } from './toc';
 
-import type { SerializeOptions, MDXRemoteSerializeResult } from 'next-mdx-remote/dist/types';
+import type { SerializeOptions, MDXRemoteSerializeResult } from '@guild-docs/mdx-remote';
 import type { GetStaticPathsContext, GetStaticPropsContext, GetStaticPropsResult } from 'next';
 import type { IRoutes, MdxInternalProps, TOC, PossiblePromise } from '@guild-docs/types';
 
@@ -117,7 +117,7 @@ const MdxDeps = LazyPromise(async () => {
       ],
     }),
     import('./remarkShiki').then(v => v.withShiki()),
-    import('next-mdx-remote/serialize.js'),
+    import('@guild-docs/mdx-remote/serialize'),
   ]);
 
   return {

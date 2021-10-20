@@ -1,0 +1,56 @@
+{
+  "name": "@guild-docs/mdx-remote",
+  "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/the-guild-org/the-guild-docs.git"
+  },
+  "license": "MIT",
+  "author": "PabloSzx <pablosaez1995@gmail.com>",
+  "exports": {
+    ".": {
+      "require": "./lib/index.js",
+      "import": "./lib/index.mjs"
+    },
+    "./*": {
+      "require": "./lib/*.js",
+      "import": "./lib/*.mjs"
+    }
+  },
+  "main": "lib/index.js",
+  "module": "lib/index.mjs",
+  "types": "lib/index.d.ts",
+  "devDependencies": {
+    "esbuild": "^0.13.8",
+    "react": "^17.0.2"
+  },
+  "peerDependencies": {
+    "esbuild": "*",
+    "react": "*"
+  },
+  "dependencies": {
+    "@mdx-js/mdx": "^1.6.22",
+    "@mdx-js/react": "^1.6.22",
+    "unified": "^10.1.0",
+    "unist-util-remove": "^3.1.0"
+  },
+  "scripts": {
+    "dev": "bob-esbuild watch",
+    "prepack": "bob-esbuild build",
+    "postpublish": "gh-release"
+  },
+  "publishConfig": {
+    "directory": "lib"
+  },
+  "typesVersions": {
+    "*": {
+      "lib/index.d.ts": [
+        "lib/index.d.ts"
+      ],
+      "*": [
+        "lib/*",
+        "lib/*/index.d.ts"
+      ]
+    }
+  }
+}

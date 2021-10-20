@@ -1,9 +1,9 @@
-import { MDXRemote } from 'next-mdx-remote';
+import { MDXRemote } from '@guild-docs/mdx-remote';
 import React, { ComponentType } from 'react';
 
 import { components } from './components';
 
-import type { MDXRemoteSerializeResult } from 'next-mdx-remote';
+import type { MDXRemoteSerializeResult } from '@guild-docs/mdx-remote';
 
 export type ExtraMdxComponents<TComponents extends Record<string, ComponentType<any>> = {}> = Partial<
   Record<keyof typeof components, ComponentType<any>>

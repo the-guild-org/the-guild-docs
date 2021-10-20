@@ -3,9 +3,8 @@
 import { program } from 'commander';
 import mkdirp from 'mkdirp';
 import { dirname, resolve } from 'path';
-
 import { config, getPaths, setConfig } from './cliConfig';
-import { addDependency, addPackageResolutions, addPackageScripts } from './editPackageJson';
+import { addDependency, addPackageScripts } from './editPackageJson';
 import {
   writeApp,
   writeDocPages,
@@ -75,9 +74,6 @@ async function DepsAction(dir: string = process.cwd()) {
       next: 'next',
       start: 'next start',
       analyze: 'cross-env ANALYZE=true next build',
-    }),
-    addPackageResolutions({
-      esbuild: '>=0.13.4',
     }),
   ]);
 

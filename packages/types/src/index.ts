@@ -1,7 +1,7 @@
 import type { ComponentProps, ReactNode, VoidFunctionComponent } from 'react';
 import type { SSRConfig, useTranslation } from 'next-i18next';
 
-import type { MDXRemoteSerializeResult } from 'next-mdx-remote';
+import type { MDXRemoteSerializeResult } from '@guild-docs/mdx-remote';
 import type { BoxProps, TextProps, ChakraComponent, LinkProps, Collapse, ChakraProps, MergeWithAs } from '@chakra-ui/react';
 
 export type IRoutes = {

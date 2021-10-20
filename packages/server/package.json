@@ -31,11 +31,11 @@
     "test:npm": "bob-tsm test-npm.ts"
   },
   "dependencies": {
+    "@guild-docs/mdx-remote": "workspace:^1.0.0",
     "@guild-docs/types": "workspace:^1.0.2",
     "github-slugger": "^1.4.0",
     "globby": "^11.0.4",
     "gray-matter": "^4.0.3",
-    "next-mdx-remote": "3.0.6",
     "node-fetch": "^2.6.5",
     "remark-emoji": "^3.0.1",
     "remark-slug": "^7.0.0",

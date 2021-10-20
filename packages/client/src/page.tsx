@@ -1,5 +1,5 @@
 import { useTranslation } from 'next-i18next';
-import { MDXRemote } from 'next-mdx-remote';
+import { MDXRemote } from '@guild-docs/mdx-remote';
 import React, { PropsWithChildren, ReactElement, useCallback, useMemo } from 'react';
 
 import { BottomNavigationComponent } from './bottomNavigation';
