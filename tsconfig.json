@@ -20,7 +20,8 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
-    "noUnusedLocals": true
+    "noUnusedLocals": true,
+    "importsNotUsedAsValues": "error"
   },
   "include": ["**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules", "examples", "lib"]

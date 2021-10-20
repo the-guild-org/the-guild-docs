@@ -1,6 +1,6 @@
 import * as MDX from '@mdx-js/react';
 import React, { useEffect, useMemo, useState } from 'react';
-import { MDXRemoteSerializeResult } from './types';
+import type { MDXRemoteSerializeResult } from './types';
 
 // requestIdleCallback types found here: https://github.com/microsoft/TypeScript/issues/21309
 type RequestIdleCallbackHandle = number;

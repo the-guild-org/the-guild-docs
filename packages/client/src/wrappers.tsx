@@ -1,6 +1,3 @@
-import { DefaultSeo } from 'next-seo';
-import React, { ComponentProps, Dispatch, ReactNode, SetStateAction, useMemo } from 'react';
-
 import { HamburgerIcon } from '@chakra-ui/icons';
 import {
   ChakraProvider,
@@ -19,20 +16,19 @@ import {
   useColorModeValue,
   useDisclosure,
 } from '@chakra-ui/react';
-import { MdxInternalProps } from '@guild-docs/types';
-import { GlobalStyles, ThemeProvider as TGCThemeProvider } from '@theguild/components';
+import type { Dict } from '@chakra-ui/utils';
 import { Global } from '@emotion/react';
+import type { IRoutes, MdxInternalProps } from '@guild-docs/types';
+import { GlobalStyles, ThemeProvider as TGCThemeProvider } from '@theguild/components';
+import { DefaultSeo } from 'next-seo';
+import type { DefaultSeoProps, OpenGraphMedia } from 'next-seo/lib/types';
+import type { AppProps } from 'next/app';
+import React, { ComponentProps, Dispatch, ReactNode, SetStateAction, useMemo } from 'react';
 import { DocsContainer, DocsNavigation, DocsNavigationDesktop, DocsNavigationMobile, DocsTitle } from './docs/index';
 import { MDXNavigation, MDXNavigationProps } from './navigation';
 import { NextNProgress } from './NextNProgress';
 import { iterateRoutes } from './routes';
 import { useIs404 } from './utils';
-
-import type { OpenGraphMedia, DefaultSeoProps } from 'next-seo/lib/types';
-import type { AppProps } from 'next/app';
-
-import type { Dict } from '@chakra-ui/utils';
-import type { IRoutes } from '@guild-docs/types';
 
 export interface CombinedThemeProps {
   children: ReactNode;
