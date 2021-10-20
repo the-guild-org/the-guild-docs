@@ -93,7 +93,7 @@ export interface CompiledMDX {
 }
 
 const MdxDeps = LazyPromise(async () => {
-  const [remarkAdmonitions, remarkEmoji, highlighter, withShiki, { serialize }, rehypeSlug] = await Promise.all([
+  const [remarkAdmonitions, remarkEmoji, highlighter, withShiki, { serialize }, rehypeSlug, remarkImport] = await Promise.all([
     import('remark-admonitions').then(v => v.default),
     import('remark-emoji').then(v => v.default),
     shiki.getHighlighter({
@@ -118,6 +118,7 @@ const MdxDeps = LazyPromise(async () => {
     import('./remarkShiki').then(v => v.withShiki()),
     import('@guild-docs/mdx-remote/serialize'),
     import('rehype-slug').then(v => v.default),
+    import('./remarkImportPartial').then(v => v.remarkImportPartial),
   ]);
 
   return {
@@ -127,6 +128,7 @@ const MdxDeps = LazyPromise(async () => {
     withShiki,
     serialize,
     rehypeSlug,
+    remarkImport,
   };
 });
 
@@ -140,7 +142,7 @@ export async function buildMDX(
     content = '# ' + data.title + '\n\n' + content.trimStart();
   }
 
-  const { remarkAdmonitions, remarkEmoji, highlighter, withShiki, serialize, rehypeSlug } = await MdxDeps;
+  const { remarkAdmonitions, remarkEmoji, highlighter, withShiki, serialize, rehypeSlug, remarkImport } = await MdxDeps;
 
   const mdx = await serialize(content, {
     mdxOptions: {
@@ -163,6 +165,7 @@ export async function buildMDX(
           },
         ],
         remarkEmoji,
+        remarkImport,
         ...extraRemarkPlugins,
       ],
       rehypePlugins: [rehypeSlug, ...extraRehypePlugins],
