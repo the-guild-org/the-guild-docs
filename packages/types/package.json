@@ -19,7 +19,6 @@
   },
   "devDependencies": {
     "@chakra-ui/react": "^1.6.10",
-    "@guild-docs/mdx-remote": "workspace:^0.1.0",
     "@types/node": "^16.11.1",
     "@types/react": "^17.0.30",
     "bob-esbuild-cli": "^2.0.0",
@@ -29,8 +28,10 @@
   },
   "peerDependencies": {
     "@chakra-ui/react": "*",
-    "@guild-docs/mdx-remote": "workspace:^0.1.0",
     "@types/react": "*",
     "next-i18next": "*"
+  },
+  "dependencies": {
+    "unified": "^10.1.0"
   }
 }

@@ -1,5 +1,4 @@
 import type { Compiler, Pluggable } from 'unified';
-
 export interface SerializeOptions {
   /**
    * Pass-through variables for use in the MDX content
@@ -22,11 +21,10 @@ export interface SerializeOptions {
    */
   target?: string | string[];
 }
-
 /**
  * Represents the return value of a call to serialize()
  */
-export type MDXRemoteSerializeResult<TScope = Record<string, unknown>> = {
+export declare type MDXRemoteSerializeResult<TScope = Record<string, unknown>> = {
   /**
    * The compiledSource, generated from next-mdx-remote/serialize
    */

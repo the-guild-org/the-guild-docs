@@ -1,8 +1,8 @@
 import mdx from '@mdx-js/mdx';
 import { transform } from 'esbuild';
 import type { Plugin } from 'unified';
-import type { MDXRemoteSerializeResult, SerializeOptions } from './types';
-import { LazyPromise } from './utils';
+import type { MDXRemoteSerializeResult, SerializeOptions } from '@guild-docs/types';
+import { LazyPromise } from '@guild-docs/types';
 
 const deps = LazyPromise(async () => {
   return {

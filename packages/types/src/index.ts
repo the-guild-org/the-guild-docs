@@ -1,8 +1,8 @@
 import type { ComponentProps, ReactNode, VoidFunctionComponent } from 'react';
 import type { SSRConfig, useTranslation } from 'next-i18next';
 
-import type { MDXRemoteSerializeResult } from '@guild-docs/mdx-remote';
 import type { BoxProps, TextProps, ChakraComponent, LinkProps, Collapse, ChakraProps, MergeWithAs } from '@chakra-ui/react';
+import type { MDXRemoteSerializeResult } from './mdx';
 
 export type IRoutes = {
   $routes?: ([href: string, name: string, sidebar?: string] | string)[];
@@ -100,3 +100,4 @@ export interface MdxInternalProps {
 export type PossiblePromise<T> = T | Promise<T>;
 
 export * from './utils';
+export * from './mdx';

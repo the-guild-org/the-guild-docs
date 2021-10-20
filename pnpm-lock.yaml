@@ -238,6 +238,7 @@ importers:
 
   packages/mdx-remote:
     specifiers:
+      '@guild-docs/types': workspace:^1.0.2
       '@mdx-js/mdx': ^1.6.22
       '@mdx-js/react': ^1.6.22
       esbuild: ^0.13.8
@@ -245,6 +246,7 @@ importers:
       unified: ^10.1.0
       unist-util-remove: ^3.1.0
     dependencies:
+      '@guild-docs/types': link:../types
       '@mdx-js/mdx': 1.6.22
       '@mdx-js/react': 1.6.22_react@17.0.2
       unified: 10.1.0
@@ -307,16 +309,17 @@ importers:
   packages/types:
     specifiers:
       '@chakra-ui/react': ^1.6.10
-      '@guild-docs/mdx-remote': workspace:^0.1.0
       '@types/node': '>=16.11.1'
       '@types/react': ^17.0.30
       bob-esbuild-cli: ^2.0.0
       changesets-github-release: ^0.0.4
       next-i18next: ^8.9.0
       typescript: ^4.4.4
+      unified: ^10.1.0
+    dependencies:
+      unified: 10.1.0
     devDependencies:
       '@chakra-ui/react': 1.6.10_7510db4ec16e957d3f42221e7066b6f6
-      '@guild-docs/mdx-remote': link:../mdx-remote
       '@types/node': 16.11.1
       '@types/react': 17.0.30
       bob-esbuild-cli: 2.0.0_bob-esbuild@2.0.1
