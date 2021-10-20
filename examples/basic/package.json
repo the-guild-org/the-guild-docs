@@ -48,13 +48,5 @@
     "open-cli": "^7.0.1",
     "typescript": "^4.4.4",
     "wait-on": "^6.0.0"
-  },
-  "pnpm": {
-    "overrides": {
-      "esbuild": ">=0.13.4"
-    }
-  },
-  "resolutions": {
-    "esbuild": ">=0.13.4"
   }
 }

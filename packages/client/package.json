@@ -30,7 +30,7 @@
     "postpublish": "gh-release"
   },
   "dependencies": {
-    "@guild-docs/mdx-remote": "workspace:^1.0.0",
+    "@guild-docs/mdx-remote": "workspace:^0.1.0",
     "@guild-docs/types": "workspace:^1.0.2",
     "immer": "^9.0.6",
     "next-seo": "^4.28.1",

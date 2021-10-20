@@ -2,7 +2,7 @@
 '@guild-docs/client': patch
 '@guild-docs/server': patch
 '@guild-docs/types': patch
-'@guild-docs/mdx-remote': patch
+'@guild-docs/mdx-remote': major
 'guild-docs': patch
 ---
 

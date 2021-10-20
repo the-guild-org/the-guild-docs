@@ -16,7 +16,7 @@
     "release:canary": "(node scripts/canary-release.js && pnpm -r publish --access public --no-git-checks --tag alpha) || echo Skipping Canary...",
     "changeset": "changeset",
     "ci:release": "pnpm -r publish --access public --no-git-checks",
-    "ci:version": "changeset version && pnpm i --no-frozen-lockfile --lockfile-only --ignore-scripts",
+    "ci:version": "changeset version && pnpm i --no-frozen-lockfile --lockfile-only --ignore-scripts && pnpm update -r \"@guild-docs/*\"",
     "clean": "pnpm dlx rimraf \"**/{node_modules,lib}\"",
     "dev": "concurrently -r pnpm:dev:*",
     "dev:cli": "pnpm -r --filter guild-docs dev",
@@ -60,7 +60,6 @@
   },
   "pnpm": {
     "overrides": {
-      "esbuild": ">=0.13.8",
       "@types/node": ">=16.11.1",
       "react": "^17.0.2",
       "react-dom": "^17.0.2",
