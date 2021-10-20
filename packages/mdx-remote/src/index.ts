@@ -1,5 +1,5 @@
 import * as MDX from '@mdx-js/react';
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useEffect, useMemo, useState, createElement } from 'react';
 import type { MDXRemoteSerializeResult } from './types';
 
 // requestIdleCallback types found here: https://github.com/microsoft/TypeScript/issues/21309
@@ -76,19 +76,25 @@ export function MDXRemote({ compiledSource, scope, components = {}, lazy }: MDXR
 
   if (!isReadyToRender) {
     // If we're not ready to render, return an empty div to preserve SSR'd markup
-    return <div dangerouslySetInnerHTML={{ __html: '' }} suppressHydrationWarning />;
+    return createElement('div', {
+      dangerouslySetInnerHTML: { __html: '' },
+      suppressHydrationWarning: true,
+    });
   }
 
   // wrapping the content with MDXProvider will allow us to customize the standard
   // markdown components (such as "h1" or "a") with the "components" object
-  const content = (
-    <MDX.MDXProvider components={components}>
-      <Content />
-    </MDX.MDXProvider>
-  );
+  const content = createElement(MDX.MDXProvider, {
+    components,
+    children: createElement(Content),
+  });
 
   // If lazy = true, we need to render a wrapping div to preserve the same markup structure that was SSR'd
-  return lazy ? <div>{content}</div> : content;
+  return lazy
+    ? createElement('div', {
+        children: content,
+      })
+    : content;
 }
 
 if (typeof window !== 'undefined') {
