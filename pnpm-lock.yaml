@@ -199,7 +199,7 @@ importers:
       remove-markdown: ^0.3.0
       typescript: ^4.4.4
       use-immer: ^0.6.0
-      zustand: ^3.5.14
+      zustand: ^3.6.0
     dependencies:
       '@guild-docs/mdx-remote': link:../mdx-remote
       '@guild-docs/types': link:../types
@@ -211,7 +211,7 @@ importers:
       react-use: 17.3.1_react-dom@17.0.2+react@17.0.2
       remove-markdown: 0.3.0
       use-immer: 0.6.0_immer@9.0.6+react@17.0.2
-      zustand: 3.5.14_react@17.0.2
+      zustand: 3.6.0_react@17.0.2
     devDependencies:
       '@chakra-ui/icons': 1.0.16_abf521da32678fe96b8c3046cf20739f
       '@chakra-ui/layout': 1.4.10_abf521da32678fe96b8c3046cf20739f
@@ -8749,8 +8749,8 @@ packages:
     resolution: {integrity: sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==}
     engines: {node: '>=10'}
 
-  /zustand/3.5.14_react@17.0.2:
-    resolution: {integrity: sha512-Y5o/024/eBluNGLt1MYp9KTqCzbw/Cztvx8MVjtmMWHQPrgnKfOe0Wqu7j7JSl+KxfJMA0TxNz4RKSqDx0fbHQ==}
+  /zustand/3.6.0_react@17.0.2:
+    resolution: {integrity: sha512-kCzsXL0GaJrG/EluZJJEaUQrf0pAlAD4qcTp8DU96pdF03RAGcGzVGorpIvh4cyKYbxn3wJbR6Hac4j3SsAS1g==}
     engines: {node: '>=12.7.0'}
     peerDependencies:
       react: '>=16.8'
