@@ -17,7 +17,7 @@
     "changeset": "changeset",
     "ci:release": "pnpm -r publish --access public --no-git-checks",
     "ci:version": "changeset version && pnpm i --no-frozen-lockfile --lockfile-only --ignore-scripts && pnpm update -r \"@guild-docs/*\"",
-    "clean": "pnpm dlx rimraf \"**/{node_modules,lib}\"",
+    "clean": "pnpm dlx rimraf \"**/{node_modules,lib}\" pnpm-lock.yaml && pnpm i",
     "dev": "concurrently -r pnpm:dev:*",
     "dev:cli": "pnpm -r --filter guild-docs dev",
     "dev:client": "pnpm -r --filter @guild-docs/client dev",

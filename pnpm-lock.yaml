@@ -42,12 +42,12 @@ importers:
       '@changesets/config': 1.6.1
       '@changesets/read': 0.5.0
       '@manypkg/get-packages': 1.1.1
-      '@types/node': 16.11.1
+      '@types/node': 16.11.2
       '@types/react': 17.0.31
       '@types/react-instantsearch-core': 6.10.5
       '@types/react-instantsearch-dom': 6.12.0
       '@types/react-paginate': 7.1.1
-      bob-esbuild: 2.0.1_2b7fbc37552fdb6e56315702625ae84d
+      bob-esbuild: 2.0.1_1af904fee75dc9bbab50e03b83560a6d
       bob-esbuild-cli: 2.0.0_bob-esbuild@2.0.1
       bob-tsm: 0.2.3_esbuild@0.13.8
       concurrently: 6.3.0
@@ -123,7 +123,7 @@ importers:
       '@next/bundle-analyzer': 11.1.2
       '@types/concurrently': 6.3.0
       '@types/mdx-js__react': 1.5.4
-      '@types/node': 16.11.1
+      '@types/node': 16.11.2
       '@types/react': 17.0.31
       '@types/react-dom': 17.0.10
       concurrently: 6.3.0
@@ -153,7 +153,7 @@ importers:
     devDependencies:
       '@types/edit-json-file': 1.6.1
       '@types/mkdirp': 1.0.2
-      '@types/node': 16.11.1
+      '@types/node': 16.11.2
       '@types/prettier': 2.4.1
       bob-tsm: 0.2.3_esbuild@0.13.8
       bob-watch: 0.1.0
@@ -322,7 +322,7 @@ importers:
       unified: 10.1.0
     devDependencies:
       '@chakra-ui/react': 1.6.10_5e8f0eb23292d5ce2747471996c3c81c
-      '@types/node': 16.11.1
+      '@types/node': 16.11.2
       '@types/react': 17.0.31
       bob-esbuild-cli: 2.0.0_bob-esbuild@2.0.1
       changesets-github-release: 0.0.4
@@ -698,7 +698,7 @@ packages:
       '@chakra-ui/hooks': 1.6.1_react@17.0.2
       '@chakra-ui/icon': 1.1.12_abf521da32678fe96b8c3046cf20739f
       '@chakra-ui/react-utils': 1.1.2_react@17.0.2
-      '@chakra-ui/system': 1.7.4_5a47a31437ffba27a84f7efb2b21ce86
+      '@chakra-ui/system': 1.7.4_f400783037ccf00f9cadfddbfc36c9d5
       '@chakra-ui/transition': 1.3.6_6e811357ed36e65ef860931c3f3c4cd0
       '@chakra-ui/utils': 1.8.3
       react: 17.0.2
@@ -784,7 +784,7 @@ packages:
     dependencies:
       '@chakra-ui/hooks': 1.6.1_react@17.0.2
       '@chakra-ui/react-utils': 1.1.2_react@17.0.2
-      '@chakra-ui/system': 1.7.4_5a47a31437ffba27a84f7efb2b21ce86
+      '@chakra-ui/system': 1.7.4_f400783037ccf00f9cadfddbfc36c9d5
       '@chakra-ui/utils': 1.8.3
       '@chakra-ui/visually-hidden': 1.0.15_abf521da32678fe96b8c3046cf20739f
       framer-motion: 4.1.17_react-dom@17.0.2+react@17.0.2
@@ -1040,7 +1040,7 @@ packages:
       '@chakra-ui/hooks': 1.6.1_react@17.0.2
       '@chakra-ui/popper': 2.3.0_react@17.0.2
       '@chakra-ui/react-utils': 1.1.2_react@17.0.2
-      '@chakra-ui/system': 1.7.4_5a47a31437ffba27a84f7efb2b21ce86
+      '@chakra-ui/system': 1.7.4_f400783037ccf00f9cadfddbfc36c9d5
       '@chakra-ui/transition': 1.3.6_6e811357ed36e65ef860931c3f3c4cd0
       '@chakra-ui/utils': 1.8.3
       framer-motion: 4.1.17_react-dom@17.0.2+react@17.0.2
@@ -1059,7 +1059,7 @@ packages:
       '@chakra-ui/hooks': 1.6.1_react@17.0.2
       '@chakra-ui/portal': 1.2.10_react-dom@17.0.2+react@17.0.2
       '@chakra-ui/react-utils': 1.1.2_react@17.0.2
-      '@chakra-ui/system': 1.7.4_5a47a31437ffba27a84f7efb2b21ce86
+      '@chakra-ui/system': 1.7.4_f400783037ccf00f9cadfddbfc36c9d5
       '@chakra-ui/transition': 1.3.6_6e811357ed36e65ef860931c3f3c4cd0
       '@chakra-ui/utils': 1.8.3
       aria-hidden: 1.1.3
@@ -1149,7 +1149,7 @@ packages:
       '@chakra-ui/hooks': 1.6.1_react@17.0.2
       '@chakra-ui/popper': 2.3.0_react@17.0.2
       '@chakra-ui/react-utils': 1.1.2_react@17.0.2
-      '@chakra-ui/system': 1.7.4_5a47a31437ffba27a84f7efb2b21ce86
+      '@chakra-ui/system': 1.7.4_f400783037ccf00f9cadfddbfc36c9d5
       '@chakra-ui/utils': 1.8.3
       framer-motion: 4.1.17_react-dom@17.0.2+react@17.0.2
       react: 17.0.2
@@ -1585,7 +1585,7 @@ packages:
       react: '>=16.8.6'
     dependencies:
       '@chakra-ui/checkbox': 1.5.8_d271f19db16d06f6063d36368dff37a6
-      '@chakra-ui/system': 1.7.4_5a47a31437ffba27a84f7efb2b21ce86
+      '@chakra-ui/system': 1.7.4_f400783037ccf00f9cadfddbfc36c9d5
       '@chakra-ui/utils': 1.8.3
       react: 17.0.2
     transitivePeerDependencies:
@@ -1744,7 +1744,7 @@ packages:
       '@chakra-ui/alert': 1.2.8_abf521da32678fe96b8c3046cf20739f
       '@chakra-ui/close-button': 1.1.12_abf521da32678fe96b8c3046cf20739f
       '@chakra-ui/hooks': 1.6.1_react@17.0.2
-      '@chakra-ui/system': 1.7.4_5a47a31437ffba27a84f7efb2b21ce86
+      '@chakra-ui/system': 1.7.4_f400783037ccf00f9cadfddbfc36c9d5
       '@chakra-ui/theme': 1.10.4_@chakra-ui+system@1.7.4
       '@chakra-ui/transition': 1.3.6_6e811357ed36e65ef860931c3f3c4cd0
       '@chakra-ui/utils': 1.8.3
@@ -1784,7 +1784,7 @@ packages:
       '@chakra-ui/popper': 2.3.0_react@17.0.2
       '@chakra-ui/portal': 1.2.10_react-dom@17.0.2+react@17.0.2
       '@chakra-ui/react-utils': 1.1.2_react@17.0.2
-      '@chakra-ui/system': 1.7.4_5a47a31437ffba27a84f7efb2b21ce86
+      '@chakra-ui/system': 1.7.4_f400783037ccf00f9cadfddbfc36c9d5
       '@chakra-ui/utils': 1.8.3
       '@chakra-ui/visually-hidden': 1.0.15_abf521da32678fe96b8c3046cf20739f
       framer-motion: 4.1.17_react-dom@17.0.2+react@17.0.2
@@ -2141,7 +2141,7 @@ packages:
     resolution: {integrity: sha512-mki5uBvhHzO8kYYix/WRy2WX8S3B5wdVSc9D6KcU5lQNglP2yt58/VfLuAK49glRXChosY8ap2oJ1qgma3GUVA==}
     dependencies:
       '@babel/runtime': 7.15.4
-      '@types/node': 16.11.1
+      '@types/node': 16.11.2
       find-up: 4.1.0
       fs-extra: 8.1.0
     dev: true
@@ -2552,14 +2552,14 @@ packages:
   /@types/concurrently/6.3.0:
     resolution: {integrity: sha512-R0M9Dt330vtNgNlBYQYniDfI3I3Sk6cu27M1EKS5VFoio2rZqTMuOBGe9DX+ISM0B6y+RGrgtpWCv2k2VBLtbQ==}
     dependencies:
-      '@types/node': 16.11.1
+      '@types/node': 16.11.2
       chalk: 4.1.2
     dev: true
 
   /@types/edit-json-file/1.6.1:
     resolution: {integrity: sha512-3zWmE5D8sr1EKW4q4MH58o1Jn/1yOj/EpsU+6ZSw6KerqzQvc1UxERW2xkDTvvf5jDc7ABx+9JTCaW40X5lCIQ==}
     dependencies:
-      '@types/node': 16.11.1
+      '@types/node': 16.11.2
     dev: true
 
   /@types/github-slugger/1.3.0:
@@ -2570,7 +2570,7 @@ packages:
     resolution: {integrity: sha512-ZUxbzKl0IfJILTS6t7ip5fQQM/J3TJYubDm3nMbgubNNYS62eXeUpoLUC8/7fJNiFYHTrGPQn7hspDUzIHX3UA==}
     dependencies:
       '@types/minimatch': 3.0.5
-      '@types/node': 16.11.1
+      '@types/node': 16.11.2
     dev: true
 
   /@types/hast/2.3.4:
@@ -2597,10 +2597,10 @@ packages:
   /@types/lodash.mergewith/4.6.6:
     resolution: {integrity: sha512-RY/8IaVENjG19rxTZu9Nukqh0W2UrYgmBj5sdns4hWRZaV8PqR7wIKHFKzvOTjo4zVRV7sVI+yFhAJql12Kfqg==}
     dependencies:
-      '@types/lodash': 4.14.175
+      '@types/lodash': 4.14.176
 
-  /@types/lodash/4.14.175:
-    resolution: {integrity: sha512-XmdEOrKQ8a1Y/yxQFOMbC47G/V2VDO1GvMRnl4O75M4GW/abC5tnfzadQYkqEveqRM1dEJGFFegfPNA2vvx2iw==}
+  /@types/lodash/4.14.176:
+    resolution: {integrity: sha512-xZmuPTa3rlZoIbtDUyJKZQimJV3bxCmzMIO2c9Pz9afyDro6kr7R79GwcB6mRhuoPmV2p1Vb66WOJH7F886WKQ==}
 
   /@types/mdast/3.0.10:
     resolution: {integrity: sha512-W864tg/Osz1+9f4lrGTZpCSO5/z4608eUp19tbozkq2HJK6i3z1kT0H9tlADXuYIb1YYOBByU4Jsqkk75q48qA==}
@@ -2625,18 +2625,18 @@ packages:
   /@types/mkdirp/1.0.2:
     resolution: {integrity: sha512-o0K1tSO0Dx5X6xlU5F1D6625FawhC3dU3iqr25lluNv/+/QIVH8RLNEiVokgIZo+mz+87w/3Mkg/VvQS+J51fQ==}
     dependencies:
-      '@types/node': 16.11.1
+      '@types/node': 16.11.2
     dev: true
 
   /@types/node-fetch/2.5.12:
     resolution: {integrity: sha512-MKgC4dlq4kKNa/mYrwpKfzQMB5X3ee5U6fSprkKpToBqBmX4nFZL9cW5jl6sWn+xpRJ7ypWh2yyqqr8UUCstSw==}
     dependencies:
-      '@types/node': 16.11.1
+      '@types/node': 16.11.2
       form-data: 3.0.1
     dev: true
 
-  /@types/node/16.11.1:
-    resolution: {integrity: sha512-PYGcJHL9mwl1Ek3PLiYgyEKtwTMmkMw4vbiyz/ps3pfdRYLVv+SN7qHVAImrjdAXxgluDEw6Ph4lyv+m9UpRmA==}
+  /@types/node/16.11.2:
+    resolution: {integrity: sha512-w34LtBB0OkDTs19FQHXy4Ig/TOXI4zqvXS2Kk1PAsRKZ0I+nik7LlMYxckW0tSNGtvWmzB+mrCTbuEjuB9DVsw==}
 
   /@types/normalize-package-data/2.4.1:
     resolution: {integrity: sha512-Gj7cI7z+98M282Tqmp2K5EIsoouUEzbBJhQQzDE3jSIRk6r9gsz0oUokqIUR4u1R3dMHo0pDHM7sNOHyhulypw==}
@@ -2917,7 +2917,7 @@ packages:
     resolution: {integrity: sha1-x57Zf380y48robyXkLzDZkdLS3k=}
     dev: true
 
-  /autoprefixer/10.3.7_postcss@8.3.9:
+  /autoprefixer/10.3.7_postcss@8.3.11:
     resolution: {integrity: sha512-EmGpu0nnQVmMhX8ROoJ7Mx8mKYPlcUHuxkwrRYEYMz85lu7H09v8w6R1P0JPdn/hKU32GjpLBFEOuIlDWCRWvg==}
     engines: {node: ^10 || ^12 || >=14}
     hasBin: true
@@ -2929,7 +2929,7 @@ packages:
       fraction.js: 4.1.1
       normalize-range: 0.1.2
       picocolors: 0.2.1
-      postcss: 8.3.9
+      postcss: 8.3.11
       postcss-value-parser: 4.1.0
 
   /available-typed-arrays/1.0.5:
@@ -3026,11 +3026,11 @@ packages:
     peerDependencies:
       bob-esbuild: ^2.0.0
     dependencies:
-      bob-esbuild: 2.0.1_2b7fbc37552fdb6e56315702625ae84d
+      bob-esbuild: 2.0.1_1af904fee75dc9bbab50e03b83560a6d
       commander: 8.2.0
     dev: true
 
-  /bob-esbuild-plugin/2.0.0_5bc83ff69dcd8a441641c11d6143b81e:
+  /bob-esbuild-plugin/2.0.0_515c8397312fc1a4ac6af5703aa2a890:
     resolution: {integrity: sha512-dUhZeis0XDmLbg6F7XoPqglbMiYSTtHqj1SN3/NkqLjys4R4bTueuVuU94Ew5F2bPBCO1e6XNwkqAU/wNdlvyQ==}
     peerDependencies:
       '@types/node': '*'
@@ -3038,21 +3038,21 @@ packages:
       rollup: '*'
     dependencies:
       '@rollup/pluginutils': 4.1.1
-      '@types/node': 16.11.1
+      '@types/node': 16.11.2
       esbuild: 0.13.8
       joycon: 3.0.1
       jsonc-parser: 3.0.0
       rollup: 2.58.0
     dev: true
 
-  /bob-esbuild/2.0.1_2b7fbc37552fdb6e56315702625ae84d:
+  /bob-esbuild/2.0.1_1af904fee75dc9bbab50e03b83560a6d:
     resolution: {integrity: sha512-yYUk/eA/gUifaE8ca89PMd0dKQrEJb2DY5A1vEFTWOBqRoXvlCXGDSpR6cszsKemZmXRyYmFLS/q4iqfX1cyMA==}
     peerDependencies:
       esbuild: '*'
       typescript: '*'
     dependencies:
       '@pnpm/exportable-manifest': 2.1.6
-      bob-esbuild-plugin: 2.0.0_5bc83ff69dcd8a441641c11d6143b81e
+      bob-esbuild-plugin: 2.0.0_515c8397312fc1a4ac6af5703aa2a890
       builtin-modules: 3.2.0
       chalk: 4.1.2
       cosmiconfig: 7.0.1
@@ -3206,7 +3206,7 @@ packages:
     dependencies:
       caniuse-lite: 1.0.30001270
       colorette: 1.4.0
-      electron-to-chromium: 1.3.873
+      electron-to-chromium: 1.3.876
       escalade: 3.1.1
       node-releases: 1.1.77
 
@@ -3216,9 +3216,9 @@ packages:
     hasBin: true
     dependencies:
       caniuse-lite: 1.0.30001270
-      electron-to-chromium: 1.3.873
+      electron-to-chromium: 1.3.876
       escalade: 3.1.1
-      node-releases: 2.0.0
+      node-releases: 2.0.1
       picocolors: 1.0.0
 
   /buffer-xor/1.0.3:
@@ -3992,8 +3992,8 @@ packages:
     resolution: {integrity: sha1-WQxhFWsK4vTwJVcyoViyZrxWsh0=}
     dev: true
 
-  /electron-to-chromium/1.3.873:
-    resolution: {integrity: sha512-TiHlCgl2uP26Z0c67u442c0a2MZCWZNCRnPTQDPhVJ4h9G6z2zU0lApD9H0K9R5yFL5SfdaiVsVD2izOY24xBQ==}
+  /electron-to-chromium/1.3.876:
+    resolution: {integrity: sha512-a6LR4738psrubCtGx5HxM/gNlrIsh4eFTNnokgOqvQo81GWd07lLcOjITkAXn2y4lIp18vgS+DGnehj+/oEAxQ==}
 
   /elliptic/6.5.4:
     resolution: {integrity: sha512-iLhC6ULemrljPZb+QutR5TQGB+pdW6KGD5RSegS+8sorOZT+rdQFbsQFJgvN3eRqNALqJer4oQ16YvJHlU8hzQ==}
@@ -5426,7 +5426,7 @@ packages:
     resolution: {integrity: sha512-mk0umAQ5lT+CaOJ+Qp01N6kz48sJG2kr2n1rX0koqKf6FIygQV0qLOdN9SCYID4IVeSigDOcPeGLozdMLYfb5g==}
     engines: {node: ^10.13.0 || ^12.13.0 || ^14.15.0 || >=15.0.0}
     dependencies:
-      '@types/node': 16.11.1
+      '@types/node': 16.11.2
       merge-stream: 2.0.0
       supports-color: 8.1.1
 
@@ -6086,8 +6086,8 @@ packages:
   /node-releases/1.1.77:
     resolution: {integrity: sha512-rB1DUFUNAN4Gn9keO2K1efO35IDK7yKHCdCaIMvFO7yUYmmZYeDjnGKle26G4rwj+LKRQpjyUUvMkPglwGCYNQ==}
 
-  /node-releases/2.0.0:
-    resolution: {integrity: sha512-aA87l0flFYMzCHpTM3DERFSYxc6lv/BltdbRTOMZuxZ0cwZCD3mejE5n9vLhSJCN++/eOqr77G1IO5uXxlQYWA==}
+  /node-releases/2.0.1:
+    resolution: {integrity: sha512-CqyzN6z7Q6aMeF/ktcMVTzhAHCEpf8SOarwpzpf8pNBY2k5/oM34UHldUwp8VKI7uxct2HxSRdJjBaZeESzcxA==}
 
   /normalize-package-data/2.5.0:
     resolution: {integrity: sha512-/5CMN3T0R4XTj4DcGaexo+roZSdSFW/0AOOTROrjxzCG1wrWXEsGbRKevjlIL+ZDE4sZlJr5ED4YW0yqmkK+eA==}
@@ -6483,7 +6483,7 @@ packages:
     engines: {node: '>=10.0'}
     dependencies:
       camelcase-css: 2.0.1
-      postcss: 8.3.9
+      postcss: 8.3.11
 
   /postcss-load-config/3.1.0:
     resolution: {integrity: sha512-ipM8Ds01ZUophjDTQYSVP70slFSYg3T0/zyfII5vzhN6V57YSxMgG5syXuwi5VtS8wSf3iL30v0uBdoIVx4Q0g==}
@@ -6506,13 +6506,13 @@ packages:
     dependencies:
       postcss-selector-parser: 6.0.6
 
-  /postcss-nested/5.0.6_postcss@8.3.9:
+  /postcss-nested/5.0.6_postcss@8.3.11:
     resolution: {integrity: sha512-rKqm2Fk0KbA8Vt3AdGN0FB9OBOMDVajMG6ZCf/GoHgdxUJ4sBFp0A/uMIRm+MJUdo33YXEtjqIz8u7DAp8B7DA==}
     engines: {node: '>=12.0'}
     peerDependencies:
       postcss: ^8.2.14
     dependencies:
-      postcss: 8.3.9
+      postcss: 8.3.11
       postcss-selector-parser: 6.0.6
 
   /postcss-selector-parser/6.0.6:
@@ -6536,12 +6536,12 @@ packages:
       nanoid: 3.1.30
       source-map: 0.6.1
 
-  /postcss/8.3.9:
-    resolution: {integrity: sha512-f/ZFyAKh9Dnqytx5X62jgjhhzttjZS7hMsohcI7HEI5tjELX/HxCy3EFhsRxyzGvrzFF+82XPvCS8T9TFleVJw==}
+  /postcss/8.3.11:
+    resolution: {integrity: sha512-hCmlUAIlUiav8Xdqw3Io4LcpA1DOt7h3LSTAC4G6JGHFFaWzI6qvFt9oilvl8BmkbBRX1IhM90ZAmpk68zccQA==}
     engines: {node: ^10 || ^12 || >=14}
     dependencies:
       nanoid: 3.1.30
-      picocolors: 0.2.1
+      picocolors: 1.0.0
       source-map-js: 0.6.2
 
   /preferred-pm/3.0.3:
@@ -6650,7 +6650,7 @@ packages:
     dependencies:
       commander: 6.2.1
       glob: 7.2.0
-      postcss: 8.3.9
+      postcss: 8.3.11
       postcss-selector-parser: 6.0.6
 
   /qs/6.7.0:
@@ -7857,7 +7857,7 @@ packages:
     transitivePeerDependencies:
       - ts-node
 
-  /tailwindcss/2.2.17_96f83969316717847b3edf58a3f353f3:
+  /tailwindcss/2.2.17_fa866e6aa6eb85ed70431566fb699b34:
     resolution: {integrity: sha512-WgRpn+Pxn7eWqlruxnxEbL9ByVRWi3iC10z4b6dW0zSdnkPVC4hPMSWLQkkW8GCyBIv/vbJ0bxIi9dVrl4CfoA==}
     engines: {node: '>=12.13.0'}
     hasBin: true
@@ -7866,7 +7866,7 @@ packages:
       postcss: ^8.0.9
     dependencies:
       arg: 5.0.1
-      autoprefixer: 10.3.7_postcss@8.3.9
+      autoprefixer: 10.3.7_postcss@8.3.11
       bytes: 3.1.0
       chalk: 4.1.2
       chokidar: 3.5.2
@@ -7887,10 +7887,10 @@ packages:
       node-emoji: 1.11.0
       normalize-path: 3.0.0
       object-hash: 2.2.0
-      postcss: 8.3.9
+      postcss: 8.3.11
       postcss-js: 3.0.3
       postcss-load-config: 3.1.0
-      postcss-nested: 5.0.6_postcss@8.3.9
+      postcss-nested: 5.0.6_postcss@8.3.11
       postcss-selector-parser: 6.0.6
       postcss-value-parser: 4.1.0
       pretty-hrtime: 1.0.3
@@ -8123,7 +8123,7 @@ packages:
     dependencies:
       '@babel/parser': 7.15.8
       '@babel/template': 7.15.4
-      autoprefixer: 10.3.7_postcss@8.3.9
+      autoprefixer: 10.3.7_postcss@8.3.11
       babel-plugin-macros: 2.8.0
       chalk: 4.1.2
       clean-set: 1.1.2
@@ -8132,9 +8132,9 @@ packages:
       lodash.flatmap: 4.5.0
       lodash.get: 4.4.2
       lodash.merge: 4.6.2
-      postcss: 8.3.9
+      postcss: 8.3.11
       string-similarity: 4.0.4
-      tailwindcss: 2.2.17_96f83969316717847b3edf58a3f353f3
+      tailwindcss: 2.2.17_fa866e6aa6eb85ed70431566fb699b34
       timsort: 0.3.0
     transitivePeerDependencies:
       - ts-node
