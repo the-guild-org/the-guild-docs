@@ -29,7 +29,7 @@
     "bob-tsm": "^0.3.0",
     "bob-watch": "^0.1.0",
     "changesets-github-release": "^0.0.4",
-    "commander": "^8.2.0",
+    "commander": "^8.3.0",
     "edit-json-file": "^1.6.0",
     "esbuild": "^0.13.8",
     "mkdirp": "^1.0.4",
