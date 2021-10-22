@@ -144,7 +144,7 @@ importers:
       bob-tsm: ^0.2.3
       bob-watch: ^0.1.0
       changesets-github-release: ^0.0.4
-      commander: ^8.2.0
+      commander: ^8.3.0
       edit-json-file: ^1.6.0
       esbuild: ^0.13.8
       mkdirp: ^1.0.4
@@ -158,7 +158,7 @@ importers:
       bob-tsm: 0.2.3_esbuild@0.13.8
       bob-watch: 0.1.0
       changesets-github-release: 0.0.4
-      commander: 8.2.0
+      commander: 8.3.0
       edit-json-file: 1.6.0
       esbuild: 0.13.8
       mkdirp: 1.0.4
@@ -3084,7 +3084,7 @@ packages:
       esbuild: '*'
     dependencies:
       chokidar: 3.5.2
-      commander: 8.2.0
+      commander: 8.3.0
       esbuild: 0.13.8
       semver: 7.3.5
       tree-kill: 1.2.2
@@ -3095,7 +3095,7 @@ packages:
     hasBin: true
     dependencies:
       chokidar: 3.5.2
-      commander: 8.2.0
+      commander: 8.3.0
       execa: 5.1.1
       tree-kill: 1.2.2
     dev: true
@@ -3538,6 +3538,11 @@ packages:
 
   /commander/8.2.0:
     resolution: {integrity: sha512-LLKxDvHeL91/8MIyTAD5BFMNtoIwztGPMiM/7Bl8rIPmHCZXRxmSWr91h57dpOpnQ6jIUqEWdXE/uBYMfiVZDA==}
+    engines: {node: '>= 12'}
+    dev: true
+
+  /commander/8.3.0:
+    resolution: {integrity: sha512-OkTL9umf+He2DZkUq8f8J9of7yL6RJKI24dVITBmNfZBmri9zYZQrKkuXiKhyfPSu8tUhnVBB1iKXevvnlR4Ww==}
     engines: {node: '>= 12'}
     dev: true
 
