@@ -276,7 +276,7 @@ importers:
       react-dom: ^17.0.2
       remark-admonitions: 1.2.1
       remark-emoji: ^3.0.1
-      remark-slug: ^7.0.0
+      remark-slug: ^7.0.1
       shiki: ^0.9.12
       tiny-lru: ^7.0.6
       undici: ^4.8.1
@@ -290,7 +290,7 @@ importers:
       gray-matter: 4.0.3
       node-fetch: 2.6.5
       remark-emoji: 3.0.1
-      remark-slug: 7.0.0
+      remark-slug: 7.0.1
       tiny-lru: 7.0.6
       unified: 10.1.0
       unist-util-visit: 4.1.0
@@ -7123,8 +7123,8 @@ packages:
       xtend: 4.0.2
     dev: false
 
-  /remark-slug/7.0.0:
-    resolution: {integrity: sha512-ZUb1t/o2TxhdHidOsN6DVq8zVO/RiX2zBz/zXnW9cY6U7lLxcAMCxVf5DIoPToIZCGpJIE/g/vUbghlPKaDXMg==}
+  /remark-slug/7.0.1:
+    resolution: {integrity: sha512-NRvYePr69LdeCkEGwL4KYAmq7kdWG5rEavCXMzUR4qndLoXHJAOLSUmPY6Qm4NJfKix7/EmgObyVaYivONAFhg==}
     dependencies:
       '@types/hast': 2.3.4
       '@types/mdast': 3.0.10
