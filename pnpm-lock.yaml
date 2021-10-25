@@ -23,7 +23,7 @@ importers:
       '@types/react-paginate': ^7.1.1
       bob-esbuild: ^2.1.0
       bob-esbuild-cli: ^2.0.0
-      bob-tsm: ^0.3.1
+      bob-tsm: ^0.3.2
       concurrently: ^6.3.0
       esbuild: ^0.13.9
       husky: 7.0.4
@@ -49,7 +49,7 @@ importers:
       '@types/react-paginate': 7.1.1
       bob-esbuild: 2.1.0_c2c2d7d67df5656a0dca84262998655f
       bob-esbuild-cli: 2.0.0_bob-esbuild@2.1.0
-      bob-tsm: 0.3.1_esbuild@0.13.9
+      bob-tsm: 0.3.2_esbuild@0.13.9
       concurrently: 6.3.0
       esbuild: 0.13.9
       husky: 7.0.4
@@ -141,7 +141,7 @@ importers:
       '@types/mkdirp': ^1.0.2
       '@types/node': '>=16.11.1'
       '@types/prettier': ^2.4.1
-      bob-tsm: ^0.3.1
+      bob-tsm: ^0.3.2
       bob-watch: ^0.1.0
       changesets-github-release: ^0.0.4
       commander: ^8.3.0
@@ -155,7 +155,7 @@ importers:
       '@types/mkdirp': 1.0.2
       '@types/node': 16.11.4
       '@types/prettier': 2.4.1
-      bob-tsm: 0.3.1_esbuild@0.13.9
+      bob-tsm: 0.3.2_esbuild@0.13.9
       bob-watch: 0.1.0
       changesets-github-release: 0.0.4
       commander: 8.3.0
@@ -3069,8 +3069,8 @@ packages:
       - supports-color
     dev: true
 
-  /bob-tsm/0.3.1_esbuild@0.13.9:
-    resolution: {integrity: sha512-JGbPnO2Hcv00e0ZHIzQCEjBl1auSHgna5m8nXW9x8PHtPMuME7CEHI3xjeXd37wu42Z1lU0BhyE55fzgHhh7SQ==}
+  /bob-tsm/0.3.2_esbuild@0.13.9:
+    resolution: {integrity: sha512-2v/N/MPVEAXbZ+mX/VO+lTpNODfPY44KM5dNKqSN8WtV0JVqkrMfLAIyHBGasjEfPETSS0mEBYGrdHa4WiAVNQ==}
     engines: {node: ^12.20.0 || >=14.13.0}
     hasBin: true
     peerDependencies:
