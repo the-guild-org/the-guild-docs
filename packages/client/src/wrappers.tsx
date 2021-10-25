@@ -77,6 +77,14 @@ export function CombinedThemeProvider({ children, theme, accentColor, defaultSeo
               '.shiki': {
                 whiteSpace: 'pre-wrap',
               },
+              '#__next': {
+                display: 'flex',
+                minHeight: '100vh',
+                flexDirection: 'column',
+                '& > footer': {
+                  marginTop: 'auto',
+                },
+              },
             },
             includeFonts && {
               '#__next': {
