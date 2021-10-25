@@ -1,5 +1,11 @@
 # @guild-docs/client
 
+## 1.1.3
+
+### Patch Changes
+
+- f3ab2a8: Stick footer to end of page
+
 ## 1.1.2
 
 ### Patch Changes
