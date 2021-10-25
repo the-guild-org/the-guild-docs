@@ -1,5 +1,11 @@
 # @guild-docs/server
 
+## 2.0.3
+
+### Patch Changes
+
+- b263fdc: Change from remark-slug to rehype-slug, ref https://github.com/remarkjs/remark-slug/releases/tag/7.0.1
+
 ## 2.0.2
 
 ### Patch Changes
