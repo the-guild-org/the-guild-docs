@@ -194,7 +194,7 @@ importers:
       react: ^17.0.2
       react-dom: ^17.0.2
       react-icons: 4.3.1
-      react-intersection-observer: ^8.32.1
+      react-intersection-observer: ^8.32.2
       react-use: ^17.3.1
       remove-markdown: ^0.3.0
       typescript: ^4.4.4
@@ -207,7 +207,7 @@ importers:
       next-seo: 4.28.1_6fbf59523517da779df50d355b375324
       nprogress: 0.2.0
       react-icons: 4.3.1_react@17.0.2
-      react-intersection-observer: 8.32.1_react@17.0.2
+      react-intersection-observer: 8.32.2_react@17.0.2
       react-use: 17.3.1_react-dom@17.0.2+react@17.0.2
       remove-markdown: 0.3.0
       use-immer: 0.6.0_immer@9.0.6+react@17.0.2
@@ -6809,8 +6809,8 @@ packages:
     transitivePeerDependencies:
       - algoliasearch
 
-  /react-intersection-observer/8.32.1_react@17.0.2:
-    resolution: {integrity: sha512-FOmMkMw7MeJ8FkuADpU8TRcvGuTvPB+DRkaikS1QXcWArYLCWC3mjRorq2XeRGBuqmaueOBd27PUazTu9AgInw==}
+  /react-intersection-observer/8.32.2_react@17.0.2:
+    resolution: {integrity: sha512-QTcea+n28AvOHbTku+jErfQqknbc4Nuh7EUNik8p/JMN56W2Jhjs+qcYZzQhAoyLX8pZD0QXpYX0lW87faackQ==}
     peerDependencies:
       react: ^15.0.0 || ^16.0.0 || ^17.0.0|| ^18.0.0
     dependencies:

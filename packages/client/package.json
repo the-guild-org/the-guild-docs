@@ -36,7 +36,7 @@
     "next-seo": "^4.28.1",
     "nprogress": "^0.2.0",
     "react-icons": "4.3.1",
-    "react-intersection-observer": "^8.32.1",
+    "react-intersection-observer": "^8.32.2",
     "react-use": "^17.3.1",
     "remove-markdown": "^0.3.0",
     "use-immer": "^0.6.0",
