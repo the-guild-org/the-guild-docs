@@ -71,7 +71,7 @@ importers:
       '@emotion/react': ^11.5.0
       '@emotion/styled': ^11.3.0
       '@guild-docs/client': workspace:^1.1.3
-      '@guild-docs/server': workspace:^2.0.3
+      '@guild-docs/server': workspace:^2.0.4
       '@mdx-js/react': ^1.6.22
       '@next/bundle-analyzer': ^11.1.2
       '@theguild/components': ^1.7.0

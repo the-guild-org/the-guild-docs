@@ -1,5 +1,11 @@
 # @guild-docs/server
 
+## 2.0.4
+
+### Patch Changes
+
+- e8a4742: Fix rehype-slug as dep
+
 ## 2.0.3
 
 ### Patch Changes
