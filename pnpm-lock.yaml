@@ -42,12 +42,12 @@ importers:
       '@changesets/config': 1.6.1
       '@changesets/read': 0.5.0
       '@manypkg/get-packages': 1.1.1
-      '@types/node': 16.11.5
+      '@types/node': 16.11.6
       '@types/react': 17.0.33
       '@types/react-instantsearch-core': 6.10.5
       '@types/react-instantsearch-dom': 6.12.0
       '@types/react-paginate': 7.1.1
-      bob-esbuild: 2.1.1_f5e470642e5471e8e49d87d587351d2e
+      bob-esbuild: 2.1.1_46147cc431ea39a68ead1f5a56fbdbc0
       bob-esbuild-cli: 2.0.0_bob-esbuild@2.1.1
       bob-tsm: 0.3.2_esbuild@0.13.9
       concurrently: 6.3.0
@@ -123,7 +123,7 @@ importers:
       '@next/bundle-analyzer': 11.1.2
       '@types/concurrently': 6.3.0
       '@types/mdx-js__react': 1.5.5
-      '@types/node': 16.11.5
+      '@types/node': 16.11.6
       '@types/react': 17.0.33
       '@types/react-dom': 17.0.10
       concurrently: 6.3.0
@@ -153,7 +153,7 @@ importers:
     devDependencies:
       '@types/edit-json-file': 1.6.1
       '@types/mkdirp': 1.0.2
-      '@types/node': 16.11.5
+      '@types/node': 16.11.6
       '@types/prettier': 2.4.1
       bob-tsm: 0.3.2_esbuild@0.13.9
       bob-watch: 0.1.0
@@ -322,7 +322,7 @@ importers:
       unified: 10.1.0
     devDependencies:
       '@chakra-ui/react': 1.6.10_14fc3c4d570feae7d722fbbd1b906730
-      '@types/node': 16.11.5
+      '@types/node': 16.11.6
       '@types/react': 17.0.33
       bob-esbuild-cli: 2.0.0_bob-esbuild@2.1.1
       changesets-github-release: 0.0.4
@@ -2141,7 +2141,7 @@ packages:
     resolution: {integrity: sha512-mki5uBvhHzO8kYYix/WRy2WX8S3B5wdVSc9D6KcU5lQNglP2yt58/VfLuAK49glRXChosY8ap2oJ1qgma3GUVA==}
     dependencies:
       '@babel/runtime': 7.15.4
-      '@types/node': 16.11.5
+      '@types/node': 16.11.6
       find-up: 4.1.0
       fs-extra: 8.1.0
     dev: true
@@ -2552,14 +2552,14 @@ packages:
   /@types/concurrently/6.3.0:
     resolution: {integrity: sha512-R0M9Dt330vtNgNlBYQYniDfI3I3Sk6cu27M1EKS5VFoio2rZqTMuOBGe9DX+ISM0B6y+RGrgtpWCv2k2VBLtbQ==}
     dependencies:
-      '@types/node': 16.11.5
+      '@types/node': 16.11.6
       chalk: 4.1.2
     dev: true
 
   /@types/edit-json-file/1.6.1:
     resolution: {integrity: sha512-3zWmE5D8sr1EKW4q4MH58o1Jn/1yOj/EpsU+6ZSw6KerqzQvc1UxERW2xkDTvvf5jDc7ABx+9JTCaW40X5lCIQ==}
     dependencies:
-      '@types/node': 16.11.5
+      '@types/node': 16.11.6
     dev: true
 
   /@types/github-slugger/1.3.0:
@@ -2570,7 +2570,7 @@ packages:
     resolution: {integrity: sha512-ZUxbzKl0IfJILTS6t7ip5fQQM/J3TJYubDm3nMbgubNNYS62eXeUpoLUC8/7fJNiFYHTrGPQn7hspDUzIHX3UA==}
     dependencies:
       '@types/minimatch': 3.0.5
-      '@types/node': 16.11.5
+      '@types/node': 16.11.6
     dev: true
 
   /@types/hast/2.3.4:
@@ -2624,18 +2624,18 @@ packages:
   /@types/mkdirp/1.0.2:
     resolution: {integrity: sha512-o0K1tSO0Dx5X6xlU5F1D6625FawhC3dU3iqr25lluNv/+/QIVH8RLNEiVokgIZo+mz+87w/3Mkg/VvQS+J51fQ==}
     dependencies:
-      '@types/node': 16.11.5
+      '@types/node': 16.11.6
     dev: true
 
   /@types/node-fetch/2.5.12:
     resolution: {integrity: sha512-MKgC4dlq4kKNa/mYrwpKfzQMB5X3ee5U6fSprkKpToBqBmX4nFZL9cW5jl6sWn+xpRJ7ypWh2yyqqr8UUCstSw==}
     dependencies:
-      '@types/node': 16.11.5
+      '@types/node': 16.11.6
       form-data: 3.0.1
     dev: true
 
-  /@types/node/16.11.5:
-    resolution: {integrity: sha512-NyUV2DGcqYIx9op++MG2+Z4Nhw1tPhi0Wfs81TgncuX1aJC4zf2fgCJlJhl4BW9bCSS04e34VkqmOS96w0XQdg==}
+  /@types/node/16.11.6:
+    resolution: {integrity: sha512-ua7PgUoeQFjmWPcoo9khiPum3Pd60k4/2ZGXt18sm2Slk0W0xZTqt5Y0Ny1NyBiN1EVQ/+FaF9NcY4Qe6rwk5w==}
 
   /@types/normalize-package-data/2.4.1:
     resolution: {integrity: sha512-Gj7cI7z+98M282Tqmp2K5EIsoouUEzbBJhQQzDE3jSIRk6r9gsz0oUokqIUR4u1R3dMHo0pDHM7sNOHyhulypw==}
@@ -3016,11 +3016,11 @@ packages:
     peerDependencies:
       bob-esbuild: ^2.0.0
     dependencies:
-      bob-esbuild: 2.1.1_f5e470642e5471e8e49d87d587351d2e
+      bob-esbuild: 2.1.1_46147cc431ea39a68ead1f5a56fbdbc0
       commander: 8.3.0
     dev: true
 
-  /bob-esbuild-plugin/2.1.0_6272b6c18a3443df5517cd4c708aafb7:
+  /bob-esbuild-plugin/2.1.0_2775ea733b1e600257e2e26852cef2e5:
     resolution: {integrity: sha512-UkM0OZDU4SLkTTlqMh/0gqokfZlryO+IW5XD5YqcOBChXLNNm18wud6gXsAQm3U9Hf0UgBOmwf/7G4Xu98NXxw==}
     peerDependencies:
       '@types/node': '*'
@@ -3028,7 +3028,7 @@ packages:
       rollup: '*'
     dependencies:
       '@rollup/pluginutils': 4.1.1
-      '@types/node': 16.11.5
+      '@types/node': 16.11.6
       esbuild: 0.13.9
       rollup: 2.58.3
       tsconfck: 1.1.0_typescript@4.4.4
@@ -3036,14 +3036,14 @@ packages:
       - typescript
     dev: true
 
-  /bob-esbuild/2.1.1_f5e470642e5471e8e49d87d587351d2e:
+  /bob-esbuild/2.1.1_46147cc431ea39a68ead1f5a56fbdbc0:
     resolution: {integrity: sha512-xD8ont8esGIeWpEv7xmc3GyPZDpjh1pUBYuS5/wLSw9VUUuPk57nTEXawjOhjDAK4g9Bi4wjdWq9qUO0ufrNvA==}
     peerDependencies:
       esbuild: '*'
       typescript: '*'
     dependencies:
       '@pnpm/exportable-manifest': 2.1.6
-      bob-esbuild-plugin: 2.1.0_6272b6c18a3443df5517cd4c708aafb7
+      bob-esbuild-plugin: 2.1.0_2775ea733b1e600257e2e26852cef2e5
       builtin-modules: 3.2.0
       chalk: 4.1.2
       cosmiconfig: 7.0.1
@@ -3197,7 +3197,7 @@ packages:
     dependencies:
       caniuse-lite: 1.0.30001271
       colorette: 1.4.0
-      electron-to-chromium: 1.3.878
+      electron-to-chromium: 1.3.879
       escalade: 3.1.1
       node-releases: 1.1.77
 
@@ -3207,7 +3207,7 @@ packages:
     hasBin: true
     dependencies:
       caniuse-lite: 1.0.30001271
-      electron-to-chromium: 1.3.878
+      electron-to-chromium: 1.3.879
       escalade: 3.1.1
       node-releases: 2.0.1
       picocolors: 1.0.0
@@ -3983,8 +3983,8 @@ packages:
     resolution: {integrity: sha1-WQxhFWsK4vTwJVcyoViyZrxWsh0=}
     dev: true
 
-  /electron-to-chromium/1.3.878:
-    resolution: {integrity: sha512-O6yxWCN9ph2AdspAIszBnd9v8s11hQx8ub9w4UGApzmNRnoKhbulOWqbO8THEQec/aEHtvy+donHZMlh6l1rbA==}
+  /electron-to-chromium/1.3.879:
+    resolution: {integrity: sha512-zJo+D9GwbJvM31IdFmwcGvychhk4KKbKYo2GWlsn+C/dxz2NwmbhGJjWwTfFSF2+eFH7VvfA8MCZ8SOqTrlnpw==}
 
   /elliptic/6.5.4:
     resolution: {integrity: sha512-iLhC6ULemrljPZb+QutR5TQGB+pdW6KGD5RSegS+8sorOZT+rdQFbsQFJgvN3eRqNALqJer4oQ16YvJHlU8hzQ==}
@@ -5431,7 +5431,7 @@ packages:
     resolution: {integrity: sha512-mk0umAQ5lT+CaOJ+Qp01N6kz48sJG2kr2n1rX0koqKf6FIygQV0qLOdN9SCYID4IVeSigDOcPeGLozdMLYfb5g==}
     engines: {node: ^10.13.0 || ^12.13.0 || ^14.15.0 || >=15.0.0}
     dependencies:
-      '@types/node': 16.11.5
+      '@types/node': 16.11.6
       merge-stream: 2.0.0
       supports-color: 8.1.1
 
