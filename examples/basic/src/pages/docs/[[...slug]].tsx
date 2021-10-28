@@ -23,7 +23,7 @@ export default MDXPage(function PostPage({ content, TOC, MetaHead, BottomNavigat
 export const getStaticProps: GetStaticProps = ctx => {
   return MDXProps(
     ({ readMarkdownFile, getArrayParam }) => {
-      return readMarkdownFile('docs/', getArrayParam('slug'));
+      return readMarkdownFile('docs/', getArrayParam('slug'), { importPartialMarkdown: true });
     },
     ctx,
     {

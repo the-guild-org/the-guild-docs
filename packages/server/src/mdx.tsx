@@ -1,21 +1,18 @@
+import type { MDXRemoteSerializeResult, SerializeOptions } from '@guild-docs/mdx-remote';
+import type { IRoutes, MdxInternalProps, PossiblePromise, TOC } from '@guild-docs/types';
+import { LazyPromise } from '@guild-docs/types';
 import { promises } from 'fs';
 import globby from 'globby';
 import matter from 'gray-matter';
+import type { GetStaticPathsContext, GetStaticPropsContext, GetStaticPropsResult } from 'next';
 import { appWithTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import { join, resolve } from 'path';
+import { dirname, join, resolve } from 'path';
 import * as React from 'react';
 import shiki from 'shiki';
-
-import { LazyPromise } from '@guild-docs/types';
-
 import { IS_PRODUCTION } from './constants';
 import { getSlug } from './routes';
 import { SerializeTOC } from './toc';
-
-import type { SerializeOptions, MDXRemoteSerializeResult } from '@guild-docs/mdx-remote';
-import type { GetStaticPathsContext, GetStaticPropsContext, GetStaticPropsResult } from 'next';
-import type { IRoutes, MdxInternalProps, TOC, PossiblePromise } from '@guild-docs/types';
 
 export const { access, readFile } = promises;
 const Provideri18n = appWithTranslation(({ children }) => <React.Fragment children={children} />);
@@ -41,17 +38,30 @@ function fileExists(path: string) {
   );
 }
 
-async function readMarkdownFile(basePath: string, slugPath: string[]) {
-  const sharedStartPath = [basePath, slugPath.join('/')];
-  const mdxPath = [...sharedStartPath, '.mdx'].join('');
-  const mdPath = [...sharedStartPath, '.md'].join('');
-  const indexMdPath = [...sharedStartPath, '/index.md'].join('');
-  const indexMdxPath = [...sharedStartPath, '/index.mdx'].join('');
-  const indexReadmeMdPath = [...sharedStartPath, '/README.md'].join('');
-  const indexReadmeMdxPath = [...sharedStartPath, '/README.mdx'].join('');
+const PartialMDRegex = /{@import (.*?)}/;
 
-  const [mdPathExists, mdxPathExists, indexMdPathExists, indexMdxPathExists, indexReadmeMdPathExists, indexReadmeMdxPathExists] =
-    await Promise.all([
+export interface ReadMarkdownFileOptions {
+  importPartialMarkdown?: boolean;
+}
+
+async function readMarkdownFile(basePath: string, slugPath: string[], options?: ReadMarkdownFileOptions) {
+  const { content, path } = await (async () => {
+    const sharedStartPath = [basePath, slugPath.join('/')];
+    const mdxPath = [...sharedStartPath, '.mdx'].join('');
+    const mdPath = [...sharedStartPath, '.md'].join('');
+    const indexMdPath = [...sharedStartPath, '/index.md'].join('');
+    const indexMdxPath = [...sharedStartPath, '/index.mdx'].join('');
+    const indexReadmeMdPath = [...sharedStartPath, '/README.md'].join('');
+    const indexReadmeMdxPath = [...sharedStartPath, '/README.mdx'].join('');
+
+    const [
+      mdPathExists,
+      mdxPathExists,
+      indexMdPathExists,
+      indexMdxPathExists,
+      indexReadmeMdPathExists,
+      indexReadmeMdxPathExists,
+    ] = await Promise.all([
       fileExists(mdPath),
       fileExists(mdxPath),
       fileExists(indexMdPath),
@@ -60,20 +70,71 @@ async function readMarkdownFile(basePath: string, slugPath: string[]) {
       fileExists(indexReadmeMdxPath),
     ]);
 
-  if (mdPathExists) {
-    return readFile(mdPath);
-  } else if (mdxPathExists) {
-    return readFile(mdxPath);
-  } else if (indexMdPathExists) {
-    return readFile(indexMdPath);
-  } else if (indexMdxPathExists) {
-    return readFile(indexMdxPath);
-  } else if (indexReadmeMdPathExists) {
-    return readFile(indexReadmeMdPath);
-  } else if (indexReadmeMdxPathExists) {
-    return readFile(indexReadmeMdxPath);
+    if (mdPathExists) {
+      return {
+        path: mdPath,
+        content: await readFile(mdPath, 'utf-8'),
+      };
+    } else if (mdxPathExists) {
+      return {
+        path: mdxPath,
+        content: await readFile(mdxPath, 'utf-8'),
+      };
+    } else if (indexMdPathExists) {
+      return {
+        path: indexMdPath,
+        content: await readFile(indexMdPath, 'utf-8'),
+      };
+    } else if (indexMdxPathExists) {
+      return {
+        path: indexMdxPath,
+        content: await readFile(indexMdxPath, 'utf-8'),
+      };
+    } else if (indexReadmeMdPathExists) {
+      return {
+        path: indexReadmeMdPath,
+        content: await readFile(indexReadmeMdPath, 'utf-8'),
+      };
+    } else if (indexReadmeMdxPathExists) {
+      return {
+        path: indexReadmeMdxPath,
+        content: await readFile(indexReadmeMdxPath, 'utf-8'),
+      };
+    }
+    throw Error("Markdown File Couldn't be found!");
+  })();
+
+  if (options?.importPartialMarkdown) {
+    return parsePartialMarkdown(content, dirname(path));
   }
-  throw Error("Markdown File Couldn't be found!");
+
+  return content;
+}
+
+async function parsePartialMarkdown(content: string, basePath: string): Promise<string> {
+  const splitContentLines = content.split(/\r\n|\n/g);
+
+  const parsedContent = await Promise.all(
+    splitContentLines.map(async contentLine => {
+      const matches = contentLine.match(PartialMDRegex);
+
+      if (matches && matches[1]) {
+        const fileAbsPath = resolve(basePath, matches[1]);
+
+        if (await fileExists(fileAbsPath)) {
+          const partialMarkdown = await readFile(fileAbsPath, 'utf-8');
+
+          return parsePartialMarkdown(partialMarkdown, basePath);
+        }
+
+        throw Error(`Unable to locate @import file in path ${fileAbsPath}!`);
+      }
+
+      return contentLine;
+    })
+  );
+
+  return parsedContent.join('\n');
 }
 
 export interface BuildMDXOptions {
@@ -93,7 +154,7 @@ export interface CompiledMDX {
 }
 
 const MdxDeps = LazyPromise(async () => {
-  const [remarkAdmonitions, remarkEmoji, highlighter, withShiki, { serialize }, rehypeSlug, remarkImport] = await Promise.all([
+  const [remarkAdmonitions, remarkEmoji, highlighter, withShiki, { serialize }, rehypeSlug] = await Promise.all([
     import('remark-admonitions').then(v => v.default),
     import('remark-emoji').then(v => v.default),
     shiki.getHighlighter({
@@ -118,7 +179,6 @@ const MdxDeps = LazyPromise(async () => {
     import('./remarkShiki').then(v => v.withShiki()),
     import('@guild-docs/mdx-remote/serialize'),
     import('rehype-slug').then(v => v.default),
-    import('./remarkImportPartial').then(v => v.remarkImportPartial),
   ]);
 
   return {
@@ -128,7 +188,6 @@ const MdxDeps = LazyPromise(async () => {
     withShiki,
     serialize,
     rehypeSlug,
-    remarkImport,
   };
 });
 
@@ -142,7 +201,7 @@ export async function buildMDX(
     content = '# ' + data.title + '\n\n' + content.trimStart();
   }
 
-  const { remarkAdmonitions, remarkEmoji, highlighter, withShiki, serialize, rehypeSlug, remarkImport } = await MdxDeps;
+  const { remarkAdmonitions, remarkEmoji, highlighter, withShiki, serialize, rehypeSlug } = await MdxDeps;
 
   const mdx = await serialize(content, {
     mdxOptions: {
@@ -165,7 +224,6 @@ export async function buildMDX(
           },
         ],
         remarkEmoji,
-        remarkImport,
         ...extraRemarkPlugins,
       ],
       rehypePlugins: [rehypeSlug, ...extraRehypePlugins],
