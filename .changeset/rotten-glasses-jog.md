@@ -1,5 +1,5 @@
 ---
-'@guild-docs/server': patch
+'@guild-docs/server': minor
 ---
 
 Add support for `@import` in markdown files via `readMarkdownFile` function behind `importPartialMarkdown` configuration flag.
