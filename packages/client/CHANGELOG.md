@@ -1,5 +1,11 @@
 # @guild-docs/client
 
+## 1.2.0
+
+### Minor Changes
+
+- 3115500: Update Next.js peer dependency to v12
+
 ## 1.1.3
 
 ### Patch Changes

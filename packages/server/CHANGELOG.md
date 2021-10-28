@@ -1,5 +1,27 @@
 # @guild-docs/server
 
+## 2.1.0
+
+### Minor Changes
+
+- 77d6367: Add support for `@import` in markdown files via `readMarkdownFile` function behind `importPartialMarkdown` configuration flag.
+
+  ```ts
+  export const getStaticProps: GetStaticProps = ctx => {
+    return MDXProps(
+      ({ readMarkdownFile, getArrayParam }) => {
+        return readMarkdownFile('docs/', getArrayParam('slug'), { importPartialMarkdown: true });
+      },
+      ctx,
+      {
+        getRoutes,
+      }
+    );
+  };
+  ```
+
+- 3115500: Update Next.js peer dependency to v12
+
 ## 2.0.4
 
 ### Patch Changes
