@@ -84,8 +84,7 @@
     }
   },
   "publishConfig": {
-    "access": "public",
-    "directory": "lib"
+    "access": "public"
   },
   "typesVersions": {
     "*": {
