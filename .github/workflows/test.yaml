@@ -33,3 +33,6 @@ jobs:
 
       - name: Build
         run: pnpm -r build
+
+      - name: Test ESM
+        run: node scripts/test-esm.mjs
