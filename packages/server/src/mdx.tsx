@@ -6,7 +6,7 @@ import globby from 'globby';
 import matter from 'gray-matter';
 import type { GetStaticPathsContext, GetStaticPropsContext, GetStaticPropsResult } from 'next';
 import { appWithTranslation } from 'next-i18next';
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations.js';
 import { dirname, join, resolve } from 'path';
 import * as React from 'react';
 import shiki from 'shiki';
