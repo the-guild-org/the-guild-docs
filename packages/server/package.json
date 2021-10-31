@@ -36,7 +36,7 @@
     "github-slugger": "^1.4.0",
     "globby": "^11.0.4",
     "gray-matter": "^4.0.3",
-    "node-fetch": "^2.6.5",
+    "node-fetch": "^2.6.6",
     "rehype-slug": "^5.0.0",
     "remark-emoji": "^3.0.1",
     "tiny-lru": "^7.0.6",
