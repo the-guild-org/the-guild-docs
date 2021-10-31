@@ -11,11 +11,11 @@
   "exports": {
     ".": {
       "require": "./lib/index.js",
-      "import": "./lib/index.mjs"
+      "types": "./lib/index.d.ts"
     },
     "./*": {
       "require": "./lib/*.js",
-      "import": "./lib/*.mjs"
+      "types": "./lib/*.d.ts"
     }
   },
   "main": "lib/index.js",
@@ -25,8 +25,8 @@
     "lib"
   ],
   "scripts": {
-    "dev": "bob-esbuild watch",
-    "prepack": "bob-esbuild build",
+    "dev": "bob-ts-watch -d lib -i src -f cjs -t es2019 --no-sourcemap",
+    "prepack": "bob-ts -d lib -i src -f cjs -t es2019 --no-sourcemap && bob-esbuild tsc",
     "postpublish": "gh-release"
   },
   "dependencies": {
@@ -57,6 +57,8 @@
     "@types/react-dom": "^17.0.10",
     "@types/remove-markdown": "^0.3.1",
     "bob-esbuild-cli": "^2.0.0",
+    "bob-ts": "^1.1.6",
+    "bob-tsm": "^0.3.3",
     "changesets-github-release": "^0.0.4",
     "esbuild": "^0.13.12",
     "framer-motion": "^5.0.0",

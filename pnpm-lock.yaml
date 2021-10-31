@@ -25,8 +25,10 @@ importers:
       bob-esbuild: ^2.1.1
       bob-esbuild-cli: ^2.0.0
       bob-tsm: ^0.3.3
+      chalk: ^4.1.2
       concurrently: ^6.3.0
       esbuild: ^0.13.12
+      globby: ^11.0.4
       husky: 7.0.4
       next: ^12.0.2
       prettier: ^2.4.1
@@ -51,8 +53,10 @@ importers:
       bob-esbuild: 2.1.1_2db0ad0fd7168665bbfcb7e81ab3cd27
       bob-esbuild-cli: 2.0.0_bob-esbuild@2.1.1
       bob-tsm: 0.3.3_esbuild@0.13.12
+      chalk: 4.1.2
       concurrently: 6.3.0
       esbuild: 0.13.12
+      globby: 11.0.4
       husky: 7.0.4
       next: 12.0.2_react-dom@17.0.2+react@17.0.2
       prettier: 2.4.1
@@ -184,6 +188,8 @@ importers:
       '@types/react-dom': ^17.0.10
       '@types/remove-markdown': ^0.3.1
       bob-esbuild-cli: ^2.0.0
+      bob-ts: ^1.1.6
+      bob-tsm: ^0.3.3
       changesets-github-release: ^0.0.4
       esbuild: ^0.13.12
       framer-motion: ^5.0.0
@@ -228,6 +234,8 @@ importers:
       '@types/react-dom': 17.0.10
       '@types/remove-markdown': 0.3.1
       bob-esbuild-cli: 2.0.0_bob-esbuild@2.1.1
+      bob-ts: 1.1.6_2db0ad0fd7168665bbfcb7e81ab3cd27
+      bob-tsm: 0.3.3_esbuild@0.13.12
       changesets-github-release: 0.0.4
       esbuild: 0.13.12
       framer-motion: 5.0.0_react-dom@17.0.2+react@17.0.2
@@ -2933,6 +2941,11 @@ packages:
     resolution: {integrity: sha512-HGyxoOTYUyCM6stUe6EJgnd4EoewAI7zMdfqO+kGjnlZmBDz/cR5pf8r/cR4Wq60sL/p0IkcjUEEPwS3GFrIyw==}
     engines: {node: '>=8'}
 
+  /array-union/3.0.1:
+    resolution: {integrity: sha512-1OvF9IbWwaeiM9VhzYXVQacMibxpXOMYVNIvMtKRyX9SImBXpKcFr8XvFDeEslCyuH/t6KRt7HEO94AlP8Iatw==}
+    engines: {node: '>=12'}
+    dev: true
+
   /arrify/1.0.1:
     resolution: {integrity: sha1-iYUI2iIm84DfkEcoRWhJwVAaSw0=}
     engines: {node: '>=0.10.0'}
@@ -3121,6 +3134,27 @@ packages:
     transitivePeerDependencies:
       - '@types/node'
       - supports-color
+    dev: true
+
+  /bob-ts/1.1.6_2db0ad0fd7168665bbfcb7e81ab3cd27:
+    resolution: {integrity: sha512-oPoFmTzbLT5UBhTCfyZA9wlax6fNQeor+em3tXYEPyJ80nRutINjqPstcCcYmUXp0FKZ8IUC6K3E21Bh8kodzg==}
+    engines: {node: ^12.20.0 || >=14.13.0}
+    hasBin: true
+    peerDependencies:
+      '@types/node': '*'
+      esbuild: '*'
+    dependencies:
+      '@types/node': 16.11.6
+      bob-esbuild-plugin: 2.1.0_eedcc996687b2823bdec3128decbe4c8
+      commander: 8.3.0
+      esbuild: 0.13.12
+      execa: 5.1.1
+      globby: 12.0.2
+      rollup: 2.58.3
+      rollup-plugin-delete: 2.0.0
+      tree-kill: 1.2.2
+    transitivePeerDependencies:
+      - typescript
     dev: true
 
   /bob-tsm/0.3.3_esbuild@0.13.12:
@@ -4796,6 +4830,18 @@ packages:
       ignore: 5.1.8
       merge2: 1.4.1
       slash: 3.0.0
+
+  /globby/12.0.2:
+    resolution: {integrity: sha512-lAsmb/5Lww4r7MM9nCCliDZVIKbZTavrsunAsHLr9oHthrZP1qi7/gAnHOsUs9bLvEt2vKVJhHmxuL7QbDuPdQ==}
+    engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
+    dependencies:
+      array-union: 3.0.1
+      dir-glob: 3.0.1
+      fast-glob: 3.2.7
+      ignore: 5.1.8
+      merge2: 1.4.1
+      slash: 4.0.0
+    dev: true
 
   /graceful-fs/4.2.8:
     resolution: {integrity: sha512-qkIilPUYcNhJpd33n0GBXTB1MMPp14TxEsEs0pTrsSVucApsYzW5V+Q8Qxhik6KU3evy+qkAAowTByymK0avdg==}
@@ -7419,6 +7465,11 @@ packages:
   /slash/3.0.0:
     resolution: {integrity: sha512-g9Q1haeby36OSStwb4ntCGGGaKsaVSjQ68fBxoQcutl5fS1vuY18H3wSt3jFyFtrkx+Kz0V1G85A4MyAdDMi2Q==}
     engines: {node: '>=8'}
+
+  /slash/4.0.0:
+    resolution: {integrity: sha512-3dOsAHXXUkQTpOYcoAxLIorMTp4gIQr5IW3iVb7A7lFIp0VHhnynm9izx6TssdrIcVIESAlVjtnO2K8bg+Coew==}
+    engines: {node: '>=12'}
+    dev: true
 
   /smartwrap/1.2.5:
     resolution: {integrity: sha512-bzWRwHwu0RnWjwU7dFy7tF68pDAx/zMSu3g7xr9Nx5J0iSImYInglwEVExyHLxXljy6PWMjkSAbwF7t2mPnRmg==}
