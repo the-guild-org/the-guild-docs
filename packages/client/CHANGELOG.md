@@ -1,5 +1,11 @@
 # @guild-docs/client
 
+## 1.2.1
+
+### Patch Changes
+
+- f39795a: Don't ship ESM until ChakraUI fixes ESM, see https://github.com/chakra-ui/chakra-ui/issues/4937
+
 ## 1.2.0
 
 ### Minor Changes

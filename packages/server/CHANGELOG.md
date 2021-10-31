@@ -1,5 +1,11 @@
 # @guild-docs/server
 
+## 2.1.1
+
+### Patch Changes
+
+- f39795a: Fix ESM import
+
 ## 2.1.0
 
 ### Minor Changes
