@@ -9,17 +9,10 @@
   "author": "PabloSzx <pablosaez1995@gmail.com>",
   "sideEffects": false,
   "exports": {
-    ".": {
-      "require": "./lib/index.js",
-      "types": "./lib/index.d.ts"
-    },
-    "./*": {
-      "require": "./lib/*.js",
-      "types": "./lib/*.d.ts"
-    }
+    ".": "./lib/index.js",
+    "./*": "./lib/*.js"
   },
   "main": "lib/index.js",
-  "module": "lib/index.mjs",
   "types": "lib/index.d.ts",
   "files": [
     "lib"
