@@ -91,7 +91,7 @@ importers:
       esbuild-register: ^3.0.0
       framer-motion: ^5.0.0
       next: ^12.0.2
-      next-i18next: ^8.9.0
+      next-i18next: ^8.10.0
       next-remote-watch: ^1.0.0
       next-seo: ^4.28.1
       open-cli: ^7.0.1
@@ -116,7 +116,7 @@ importers:
       '@theguild/components': 1.7.0_14fc3c4d570feae7d722fbbd1b906730
       framer-motion: 5.0.0_react-dom@17.0.2+react@17.0.2
       next: 12.0.2_react-dom@17.0.2+react@17.0.2
-      next-i18next: 8.9.0_next@12.0.2+react@17.0.2
+      next-i18next: 8.10.0_next@12.0.2+react@17.0.2
       next-seo: 4.28.1_c26ef06698b9ab1b17bf6451df0179c6
       react: 17.0.2
       react-dom: 17.0.2_react@17.0.2
@@ -195,7 +195,7 @@ importers:
       framer-motion: ^5.0.0
       immer: ^9.0.6
       next: ^12.0.2
-      next-i18next: ^8.9.0
+      next-i18next: ^8.10.0
       next-seo: ^4.28.1
       nprogress: ^0.2.0
       react: ^17.0.2
@@ -240,7 +240,7 @@ importers:
       esbuild: 0.13.12
       framer-motion: 5.0.0_react-dom@17.0.2+react@17.0.2
       next: 12.0.2_react-dom@17.0.2+react@17.0.2
-      next-i18next: 8.9.0_next@12.0.2+react@17.0.2
+      next-i18next: 8.10.0_next@12.0.2+react@17.0.2
       react: 17.0.2
       react-dom: 17.0.2_react@17.0.2
       typescript: 4.4.4
@@ -279,7 +279,7 @@ importers:
       globby: ^11.0.4
       gray-matter: ^4.0.3
       next: ^12.0.2
-      next-i18next: 8.9.0
+      next-i18next: 8.10.0
       node-fetch: ^2.6.6
       react: ^17.0.2
       react-dom: ^17.0.2
@@ -310,7 +310,7 @@ importers:
       changesets-github-release: 0.0.4
       esbuild: 0.13.12
       next: 12.0.2_react-dom@17.0.2+react@17.0.2
-      next-i18next: 8.9.0_next@12.0.2+react@17.0.2
+      next-i18next: 8.10.0_next@12.0.2+react@17.0.2
       react: 17.0.2
       react-dom: 17.0.2_react@17.0.2
       remark-admonitions: 1.2.1
@@ -324,7 +324,7 @@ importers:
       '@types/react': ^17.0.33
       bob-esbuild-cli: ^2.0.0
       changesets-github-release: ^0.0.4
-      next-i18next: ^8.9.0
+      next-i18next: ^8.10.0
       typescript: ^4.4.4
       unified: ^10.1.0
     dependencies:
@@ -335,7 +335,7 @@ importers:
       '@types/react': 17.0.33
       bob-esbuild-cli: 2.0.0_bob-esbuild@2.1.1
       changesets-github-release: 0.0.4
-      next-i18next: 8.9.0_next@12.0.2+react@17.0.2
+      next-i18next: 8.10.0_next@12.0.2+react@17.0.2
       typescript: 4.4.4
 
 packages:
@@ -2657,11 +2657,6 @@ packages:
     dependencies:
       '@types/react': 17.0.33
       hoist-non-react-statics: 3.3.2
-
-  /@types/i18next-fs-backend/1.1.2:
-    resolution: {integrity: sha512-ZzTRXA5B0x0oGhzKNp08IsYjZpli4LjRZpg3q4j0XFxN5lKG2MVLnR4yHX8PPExBk4sj9Yfk1z9O6CjPrAlmIQ==}
-    dependencies:
-      i18next: 21.3.3
 
   /@types/js-cookie/2.2.7:
     resolution: {integrity: sha512-aLkWa0C0vO5b4Sr798E26QgOkss68Un0bLjs7u9qxzPT5CG+8DuNTffWES58YzJs3hrVAOs1wonycqEBqNJubA==}
@@ -5120,11 +5115,6 @@ packages:
     dependencies:
       '@babel/runtime': 7.16.0
 
-  /i18next/21.3.3:
-    resolution: {integrity: sha512-Wv5arCT9pK35nfhOzTdS64T7JpPcoqnkOEidxc4zF0DZ8KetpvmnkO+uWkXy+DFz6zWzPX7U9bIemwBqpFRprw==}
-    dependencies:
-      '@babel/runtime': 7.16.0
-
   /iconv-lite/0.4.24:
     resolution: {integrity: sha512-v3MXnZAcvnywkTUEZomIActle7RXXeedOR31wwl7VlyoXO4Qi9arvSenNQWne1TcRwhCL1HwLI21bEqdpj8/rA==}
     engines: {node: '>=0.10.0'}
@@ -5988,8 +5978,8 @@ packages:
     engines: {node: '>= 0.6'}
     dev: true
 
-  /next-i18next/8.9.0_next@12.0.2+react@17.0.2:
-    resolution: {integrity: sha512-A0j1Tw5/bT7C9rWmnu9oFNRtRHVqssPky7XQy4b/CAVT6Z8cy+eJUZ/az6AjR45Z6elFENk+CwNz7USLffITqg==}
+  /next-i18next/8.10.0_next@12.0.2+react@17.0.2:
+    resolution: {integrity: sha512-nY3tw+uU6lzZq7YfqRr0lFBiz15txIeYBX5R6rVeAK8wWFsCRJpZ6lTm02DMC+MfD1G6LmtpR6bmOOaBD3TR9A==}
     engines: {node: '>=10'}
     peerDependencies:
       next: '>= 10.0.0'
@@ -5997,7 +5987,6 @@ packages:
     dependencies:
       '@babel/runtime': 7.16.0
       '@types/hoist-non-react-statics': 3.3.1
-      '@types/i18next-fs-backend': 1.1.2
       core-js: 3.19.0
       hoist-non-react-statics: 3.3.2
       i18next: 20.6.1
