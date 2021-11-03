@@ -84,7 +84,7 @@ importers:
       '@types/mdx-js__react': ^1.5.5
       '@types/node': '>=16.11.1'
       '@types/react': ^17.0.33
-      '@types/react-dom': ^17.0.10
+      '@types/react-dom': ^17.0.11
       concurrently: ^6.3.0
       cross-env: ^7.0.3
       esbuild: ^0.13.12
@@ -130,7 +130,7 @@ importers:
       '@types/mdx-js__react': 1.5.5
       '@types/node': 16.11.6
       '@types/react': 17.0.33
-      '@types/react-dom': 17.0.10
+      '@types/react-dom': 17.0.11
       concurrently: 6.3.0
       cross-env: 7.0.3
       esbuild: 0.13.12
@@ -185,7 +185,7 @@ importers:
       '@types/mdx-js__react': ^1.5.5
       '@types/nprogress': ^0.2.0
       '@types/react': ^17.0.33
-      '@types/react-dom': ^17.0.10
+      '@types/react-dom': ^17.0.11
       '@types/remove-markdown': ^0.3.1
       bob-esbuild-cli: ^2.0.0
       bob-ts: ^1.1.6
@@ -231,7 +231,7 @@ importers:
       '@types/mdx-js__react': 1.5.5
       '@types/nprogress': 0.2.0
       '@types/react': 17.0.33
-      '@types/react-dom': 17.0.10
+      '@types/react-dom': 17.0.11
       '@types/remove-markdown': 0.3.1
       bob-esbuild-cli: 2.0.0_bob-esbuild@2.1.1
       bob-ts: 1.1.6_2db0ad0fd7168665bbfcb7e81ab3cd27
@@ -2728,8 +2728,8 @@ packages:
   /@types/prop-types/15.7.4:
     resolution: {integrity: sha512-rZ5drC/jWjrArrS8BR6SIr4cWpW09RNTYt9AMZo3Jwwif+iacXAqgVjm0B0Bv/S1jhDXKHqRVNCbACkJ89RAnQ==}
 
-  /@types/react-dom/17.0.10:
-    resolution: {integrity: sha512-8oz3NAUId2z/zQdFI09IMhQPNgIbiP8Lslhv39DIDamr846/0spjZK0vnrMak0iB8EKb9QFTTIdg2Wj2zH5a3g==}
+  /@types/react-dom/17.0.11:
+    resolution: {integrity: sha512-f96K3k+24RaLGVu/Y2Ng3e1EbZ8/cVJvypZWd7cy0ofCBaf2lcM46xNhycMZ2xGwbBjRql7hOlZ+e2WlJ5MH3Q==}
     dependencies:
       '@types/react': 17.0.33
     dev: true
