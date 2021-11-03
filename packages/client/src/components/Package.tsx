@@ -15,12 +15,7 @@ enum PackageManagerType {
 
 const createZustand = getDefault(createZustandImport);
 
-const useCurrentInstaller = createZustand<{
-  current: PackageManagerType;
-  setPNPM: () => void;
-  setYarn: () => void;
-  setNPM: () => void;
-}>(
+const useCurrentInstaller = createZustand(
   persist(
     set => {
       return {
