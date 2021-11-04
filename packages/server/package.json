@@ -38,7 +38,7 @@
     "gray-matter": "^4.0.3",
     "node-fetch": "^2.6.6",
     "rehype-slug": "^5.0.0",
-    "remark-emoji": "^3.0.1",
+    "remark-emoji": "^3.0.2",
     "tiny-lru": "^7.0.6",
     "unified": "^10.1.0",
     "unist-util-visit": "^4.1.0"
