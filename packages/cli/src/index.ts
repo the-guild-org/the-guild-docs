@@ -50,7 +50,7 @@ async function DepsAction(dir: string = process.cwd()) {
     addDependency(
       [
         'esbuild',
-        'esbuild-register',
+        'bob-tsm',
         '@types/node',
         '@types/react',
         '@types/react-dom',
@@ -70,7 +70,7 @@ async function DepsAction(dir: string = process.cwd()) {
     ),
     addPackageScripts({
       build: 'next build',
-      dev: 'concurrently -r "next-remote-watch ./docs ./src/pages/_app.tsx ./src/pages/_document.tsx" "wait-on -s 1 http://localhost:3000 && open-cli http://localhost:3000"',
+      dev: 'concurrently -r "next-remote-watch ./docs ./routes.ts ./src/pages/_app.tsx ./src/pages/_document.tsx" "wait-on -s 1 http://localhost:3000 && open-cli http://localhost:3000"',
       next: 'next',
       start: 'next start',
       analyze: 'cross-env ANALYZE=true next build',

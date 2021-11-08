@@ -5,13 +5,9 @@ export async function writeNextConfig() {
   await writeFileFormatIfNotExists(
     [config.cwd, 'next.config.js'],
     `
-  const { register } = require('esbuild-register/dist/node');
-
-  register({
-    extensions: ['.ts', '.tsx'],
-  });
+  require('bob-tsm');
   
-  const { i18n } = require('./next-i18next.config');
+  const { i18n } = require('./next-i18next.config.js');
   
   const { withGuildDocs } = require('@guild-docs/server');
   

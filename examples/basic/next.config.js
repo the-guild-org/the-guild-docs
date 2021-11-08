@@ -1,10 +1,6 @@
-const { register } = require('esbuild-register/dist/node');
+require('bob-tsm');
 
-register({
-  extensions: ['.ts', '.tsx'],
-});
-
-const { i18n } = require('./next-i18next.config');
+const { i18n } = require('./next-i18next.config.js');
 
 const { withGuildDocs } = require('@guild-docs/server');
 
