@@ -25,7 +25,9 @@ export async function serialize(
    */
   const removeImportsExportsPlugin: Plugin = () => tree => remove(tree, ['import', 'export']) || undefined;
 
-  mdxOptions.remarkPlugins = [...(mdxOptions.remarkPlugins || []), removeImportsExportsPlugin];
+  const remarkPlugins = [...(mdxOptions.remarkPlugins || []), removeImportsExportsPlugin];
+
+  mdxOptions = { ...mdxOptions, remarkPlugins };
 
   const compiledMdx = await mdx(source, { ...mdxOptions, skipExport: true });
   const transformResult = await transform(compiledMdx, {
