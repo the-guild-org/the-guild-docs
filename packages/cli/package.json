@@ -24,7 +24,7 @@
   "devDependencies": {
     "@types/edit-json-file": "^1.6.1",
     "@types/mkdirp": "^1.0.2",
-    "@types/node": "^16.11.6",
+    "@types/node": "^16.11.7",
     "@types/prettier": "^2.4.1",
     "bob-tsm": "^0.3.3",
     "bob-watch": "^0.1.0",

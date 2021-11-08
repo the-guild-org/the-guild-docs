@@ -35,7 +35,7 @@
     "@changesets/config": "1.6.2",
     "@changesets/read": "0.5.1",
     "@manypkg/get-packages": "1.1.2",
-    "@types/node": "^16.11.6",
+    "@types/node": "^16.11.7",
     "@types/react": "^17.0.34",
     "@types/react-instantsearch-core": "^6.10.5",
     "@types/react-instantsearch-dom": "^6.12.0",
