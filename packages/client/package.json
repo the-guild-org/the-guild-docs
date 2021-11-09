@@ -33,7 +33,7 @@
     "react-use": "^17.3.1",
     "remove-markdown": "^0.3.0",
     "use-immer": "^0.6.0",
-    "zustand": "^3.6.4"
+    "zustand": "^3.6.5"
   },
   "devDependencies": {
     "@chakra-ui/icons": "^1.0.17",
