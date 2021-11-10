@@ -34,18 +34,18 @@
     "@changesets/cli": "2.18.0",
     "@changesets/config": "1.6.2",
     "@changesets/read": "0.5.1",
-    "@manypkg/get-packages": "1.1.2",
-    "@types/node": "^16.11.6",
+    "@manypkg/get-packages": "1.1.3",
+    "@types/node": "^16.11.7",
     "@types/react": "^17.0.34",
     "@types/react-instantsearch-core": "^6.10.5",
     "@types/react-instantsearch-dom": "^6.12.0",
     "@types/react-paginate": "^7.1.1",
-    "bob-esbuild": "^3.0.1",
+    "bob-esbuild": "^3.0.2",
     "bob-esbuild-cli": "^3.0.0",
-    "bob-tsm": "^0.3.3",
+    "bob-tsm": "^0.3.4",
     "chalk": "^4.1.2",
     "concurrently": "^6.3.0",
-    "esbuild": "^0.13.12",
+    "esbuild": "^0.13.13",
     "globby": "^11.0.4",
     "husky": "7.0.4",
     "next": "^12.0.3",
@@ -58,7 +58,7 @@
     "typescript": "^4.4.4"
   },
   "engines": {
-    "pnpm": ">=6.20.4"
+    "pnpm": ">=6.21.0"
   },
   "pnpm": {
     "overrides": {
