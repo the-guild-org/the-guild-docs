@@ -1,6 +1,6 @@
 {
   "name": "@guild-docs/mdx-remote",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/the-guild-org/the-guild-docs.git"

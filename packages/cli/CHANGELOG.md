@@ -1,5 +1,11 @@
 # guild-docs
 
+## 1.0.3
+
+### Patch Changes
+
+- de0a35e: Use `bob-tsm` instead of `esbuild-register`
+
 ## 1.0.2
 
 ### Patch Changes

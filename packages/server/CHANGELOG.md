@@ -1,5 +1,13 @@
 # @guild-docs/server
 
+## 2.1.2
+
+### Patch Changes
+
+- 4554abb: feat(server): add more language - yml,gql,c#,jsonc,java
+- Updated dependencies [a72fdb4]
+  - @guild-docs/mdx-remote@1.0.1
+
 ## 2.1.1
 
 ### Patch Changes
