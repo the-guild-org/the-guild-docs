@@ -9,6 +9,11 @@ export interface Options {
   ignoreUnknownLanguage?: boolean;
 }
 
+const LANGUAGE_ALIASES: Record<string, string> = {
+  'gql': 'graphql',
+  'yml': 'yaml',
+};
+
 export async function withShiki(): Promise<(options: Options) => Transformer> {
   const { visit } = await import('unist-util-visit');
 
@@ -22,7 +27,7 @@ export async function withShiki(): Promise<(options: Options) => Transformer> {
         const node: { value: string; lang: Lang; type: string } = nodeArg;
         const lang = ignoreUnknownLanguage && !loadedLanguages.includes(node.lang) ? undefined : node.lang;
 
-        const highlighted = highlighter.codeToHtml(node.value, lang);
+        const highlighted = highlighter.codeToHtml(node.value, lang || LANGUAGE_ALIASES[node.lang]);
         node.type = 'html';
         node.value = highlighted;
       };
