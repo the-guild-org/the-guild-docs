@@ -27,7 +27,7 @@
     "@types/node": "^16.11.7",
     "@types/prettier": "^2.4.1",
     "bob-tsm": "^0.3.4",
-    "bob-watch": "^0.1.0",
+    "bob-watch": "^0.1.1",
     "changesets-github-release": "^0.0.4",
     "commander": "^8.3.0",
     "edit-json-file": "^1.6.2",

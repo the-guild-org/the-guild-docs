@@ -147,7 +147,7 @@ importers:
       '@types/node': '>=16.11.1'
       '@types/prettier': ^2.4.1
       bob-tsm: ^0.3.4
-      bob-watch: ^0.1.0
+      bob-watch: ^0.1.1
       changesets-github-release: ^0.0.4
       commander: ^8.3.0
       edit-json-file: ^1.6.2
@@ -161,7 +161,7 @@ importers:
       '@types/node': 16.11.7
       '@types/prettier': 2.4.1
       bob-tsm: 0.3.4_esbuild@0.13.13
-      bob-watch: 0.1.0
+      bob-watch: 0.1.1
       changesets-github-release: 0.0.4
       commander: 8.3.0
       edit-json-file: 1.6.2
@@ -3126,14 +3126,11 @@ packages:
       fsevents: 2.3.2
     dev: true
 
-  /bob-watch/0.1.0:
-    resolution: {integrity: sha512-EY26sc6yofC7eoJM22yO4TG49SKtYUl+RheDp5K1fdWVwgqYM5ydMaFBgQSM1qk6NtjqM+/uh8A/Vd3SS/2KPA==}
+  /bob-watch/0.1.1:
+    resolution: {integrity: sha512-FnmJjv8pkZwrC+SeLXvhX+RIdU5ekCm59WZDSUKwumSWWP44jNMaiBTTCeekhrb62fwo4URjjKXPkbIc7EBbPA==}
     hasBin: true
-    dependencies:
-      chokidar: 3.5.2
-      commander: 8.3.0
-      execa: 5.1.1
-      tree-kill: 1.2.2
+    optionalDependencies:
+      fsevents: 2.3.2
     dev: true
 
   /body-parser/1.19.0:
