@@ -1,5 +1,13 @@
 # @guild-docs/client
 
+## 1.2.2
+
+### Patch Changes
+
+- 7f1d974: Improve released package
+- Updated dependencies [a72fdb4]
+  - @guild-docs/mdx-remote@1.0.1
+
 ## 1.2.1
 
 ### Patch Changes

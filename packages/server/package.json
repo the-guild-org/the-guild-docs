@@ -1,6 +1,6 @@
 {
   "name": "@guild-docs/server",
-  "version": "2.1.1",
+  "version": "2.1.2",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/the-guild-org/the-guild-docs.git"
@@ -31,7 +31,7 @@
     "test:npm": "bob-tsm test-npm.ts"
   },
   "dependencies": {
-    "@guild-docs/mdx-remote": "workspace:^1.0.0",
+    "@guild-docs/mdx-remote": "workspace:^1.0.1",
     "@guild-docs/types": "workspace:^1.0.3",
     "github-slugger": "^1.4.0",
     "globby": "^11.0.4",
