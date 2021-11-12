@@ -91,7 +91,7 @@ importers:
       esbuild: ^0.13.13
       framer-motion: ^5.3.0
       next: ^12.0.3
-      next-i18next: ^8.10.0
+      next-i18next: ^9.0.0
       next-remote-watch: ^1.0.0
       next-seo: ^4.28.1
       open-cli: ^7.0.1
@@ -116,7 +116,7 @@ importers:
       '@theguild/components': 1.7.1_c8c53a2a5a2c84791ce34d6dbdd05753
       framer-motion: 5.3.0_react-dom@17.0.2+react@17.0.2
       next: 12.0.3_react-dom@17.0.2+react@17.0.2
-      next-i18next: 8.10.0_next@12.0.3+react@17.0.2
+      next-i18next: 9.0.0_next@12.0.3+react@17.0.2
       next-seo: 4.28.1_72b2f1fb664d51f286fb64a58e104b48
       react: 17.0.2
       react-dom: 17.0.2_react@17.0.2
@@ -194,7 +194,7 @@ importers:
       framer-motion: ^5.3.0
       immer: ^9.0.6
       next: ^12.0.3
-      next-i18next: ^8.10.0
+      next-i18next: ^9.0.0
       next-seo: ^4.28.1
       nprogress: ^0.2.0
       react: ^17.0.2
@@ -238,7 +238,7 @@ importers:
       esbuild: 0.13.13
       framer-motion: 5.3.0_react-dom@17.0.2+react@17.0.2
       next: 12.0.3_react-dom@17.0.2+react@17.0.2
-      next-i18next: 8.10.0_next@12.0.3+react@17.0.2
+      next-i18next: 9.0.0_next@12.0.3+react@17.0.2
       react: 17.0.2
       react-dom: 17.0.2_react@17.0.2
       typescript: 4.4.4
@@ -277,7 +277,7 @@ importers:
       globby: ^11.0.4
       gray-matter: ^4.0.3
       next: ^12.0.3
-      next-i18next: ^8.10.0
+      next-i18next: ^9.0.0
       node-fetch: ^2.6.6
       react: ^17.0.2
       react-dom: ^17.0.2
@@ -308,7 +308,7 @@ importers:
       changesets-github-release: 0.0.4
       esbuild: 0.13.13
       next: 12.0.3_react-dom@17.0.2+react@17.0.2
-      next-i18next: 8.10.0_next@12.0.3+react@17.0.2
+      next-i18next: 9.0.0_next@12.0.3+react@17.0.2
       react: 17.0.2
       react-dom: 17.0.2_react@17.0.2
       remark-admonitions: 1.2.1
@@ -322,7 +322,7 @@ importers:
       '@types/react': ^17.0.34
       bob-esbuild-cli: ^3.0.1
       changesets-github-release: ^0.0.4
-      next-i18next: ^8.10.0
+      next-i18next: ^9.0.0
       typescript: ^4.4.4
       unified: ^10.1.0
     dependencies:
@@ -333,7 +333,7 @@ importers:
       '@types/react': 17.0.34
       bob-esbuild-cli: 3.0.1_bob-esbuild@3.1.1
       changesets-github-release: 0.0.4
-      next-i18next: 8.10.0_next@12.0.3+react@17.0.2
+      next-i18next: 9.0.0_next@12.0.3+react@17.0.2
       typescript: 4.4.4
 
 packages:
@@ -4866,8 +4866,8 @@ packages:
   /i18next-fs-backend/1.1.1:
     resolution: {integrity: sha512-RFkfy10hNxJqc7MVAp5iAZq0Tum6msBCNebEe3OelOBvrROvzHUPaR8Qe10RQrOGokTm0W4vJGEJzruFkEt+hQ==}
 
-  /i18next/20.6.1:
-    resolution: {integrity: sha512-yCMYTMEJ9ihCwEQQ3phLo7I/Pwycf8uAx+sRHwwk5U9Aui/IZYgQRyMqXafQOw5QQ7DM1Z+WyEXWIqSuJHhG2A==}
+  /i18next/21.4.2:
+    resolution: {integrity: sha512-vVWsmTnZNdYHPLt01MvT5YNM2lxec2R6r5T72J89eaazp8XQnGSqA66O+a918qqmjHZGB6HHRSs02xp753he9g==}
     dependencies:
       '@babel/runtime': 7.16.3
 
@@ -5717,9 +5717,9 @@ packages:
     engines: {node: '>= 0.6'}
     dev: true
 
-  /next-i18next/8.10.0_next@12.0.3+react@17.0.2:
-    resolution: {integrity: sha512-nY3tw+uU6lzZq7YfqRr0lFBiz15txIeYBX5R6rVeAK8wWFsCRJpZ6lTm02DMC+MfD1G6LmtpR6bmOOaBD3TR9A==}
-    engines: {node: '>=10'}
+  /next-i18next/9.0.0_next@12.0.3+react@17.0.2:
+    resolution: {integrity: sha512-SHv+IcrT01OAlx5ObXciVkprcy0E0SH0Pzi3x9zpJ/DpVZdH+B62gS5gEYiaBbvfywoDcsKA62lb72noUORVlg==}
+    engines: {node: '>=12'}
     peerDependencies:
       next: '>= 10.0.0'
       react: '>= 16.8.0'
@@ -5728,11 +5728,11 @@ packages:
       '@types/hoist-non-react-statics': 3.3.1
       core-js: 3.19.1
       hoist-non-react-statics: 3.3.2
-      i18next: 20.6.1
+      i18next: 21.4.2
       i18next-fs-backend: 1.1.1
       next: 12.0.3_react-dom@17.0.2+react@17.0.2
       react: 17.0.2
-      react-i18next: 11.14.0_i18next@20.6.1+react@17.0.2
+      react-i18next: 11.14.0_i18next@21.4.2+react@17.0.2
 
   /next-remote-watch/1.0.0:
     resolution: {integrity: sha512-kV+pglCwcnKyqJIXPHUUrnZr9d3rCqCIEQWBkFYC02GDXHyKVmcFytoY6q0+wMIQqh/izIAQL1x6OKXZhksjLA==}
@@ -6500,7 +6500,7 @@ packages:
     transitivePeerDependencies:
       - '@types/react'
 
-  /react-i18next/11.14.0_i18next@20.6.1+react@17.0.2:
+  /react-i18next/11.14.0_i18next@21.4.2+react@17.0.2:
     resolution: {integrity: sha512-2xuQgd+Arzl3uZKkcKVk1V3rdiyXJrDkVAMxVtX2i3o+sDc+g+YjWoHh7Hw336wd+UGTI+F30ZCkb3X2VCixEQ==}
     peerDependencies:
       i18next: '>= 19.0.0'
@@ -6508,7 +6508,7 @@ packages:
     dependencies:
       '@babel/runtime': 7.16.3
       html-parse-stringify: 3.0.1
-      i18next: 20.6.1
+      i18next: 21.4.2
       react: 17.0.2
 
   /react-icons/4.3.1_react@17.0.2:
