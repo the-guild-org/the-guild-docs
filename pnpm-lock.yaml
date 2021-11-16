@@ -32,7 +32,7 @@ importers:
       husky: 7.0.4
       next: ^12.0.3
       prettier: ^2.4.1
-      pretty-quick: ^3.1.1
+      pretty-quick: ^3.1.2
       react: ^17.0.2
       react-dom: ^17.0.2
       rimraf: ^3.0.2
@@ -60,7 +60,7 @@ importers:
       husky: 7.0.4
       next: 12.0.3_react-dom@17.0.2+react@17.0.2
       prettier: 2.4.1
-      pretty-quick: 3.1.1_prettier@2.4.1
+      pretty-quick: 3.1.2_prettier@2.4.1
       react: 17.0.2
       react-dom: 17.0.2_react@17.0.2
       rimraf: 3.0.2
@@ -6321,8 +6321,8 @@ packages:
     resolution: {integrity: sha1-t+PqQkNaTJsnWdmeDyAesZWALuE=}
     engines: {node: '>= 0.8'}
 
-  /pretty-quick/3.1.1_prettier@2.4.1:
-    resolution: {integrity: sha512-ZYLGiMoV2jcaas3vTJrLvKAYsxDoXQBUn8OSTxkl67Fyov9lyXivJTl0+2WVh+y6EovGcw7Lm5ThYpH+Sh3XxQ==}
+  /pretty-quick/3.1.2_prettier@2.4.1:
+    resolution: {integrity: sha512-T+fpTJrDjTzewql4p3lKrRA7z3MrNyjBK1MKeaBm5PpKwATgVm885TpY7TgY8KFt5Q1Qn3QDseRQcyX9AKTKkA==}
     engines: {node: '>=10.13'}
     hasBin: true
     peerDependencies:
