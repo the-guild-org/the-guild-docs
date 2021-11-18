@@ -32,6 +32,6 @@
     "next-i18next": "*"
   },
   "dependencies": {
-    "unified": "^10.1.0"
+    "unified": "^10.1.1"
   }
 }
