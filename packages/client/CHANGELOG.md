@@ -1,5 +1,12 @@
 # @guild-docs/client
 
+## 1.2.3
+
+### Patch Changes
+
+- b5f02f6: Update next-i18next peer dependency version
+- 8f0e267: Flexible peer dependencies
+
 ## 1.2.2
 
 ### Patch Changes

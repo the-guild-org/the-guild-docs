@@ -1,5 +1,13 @@
 # @guild-docs/server
 
+## 2.1.3
+
+### Patch Changes
+
+- 9f58d44: fix ignorePaths in GenerateRoutes
+- b5f02f6: Update next-i18next peer dependency version
+- 8f0e267: Optional admonitions
+
 ## 2.1.2
 
 ### Patch Changes
