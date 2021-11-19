@@ -62,7 +62,7 @@ export function GenerateRoutes(config: AddRoutesConfig) {
     let acumSlug = '';
     for (const [index, slug] of slugList.entries()) {
       acumSlug += slug;
-      if (ignorePaths?.includes(acumSlug)) continue;
+      if (ignorePaths?.some(path => acumSlug.startsWith(path))) continue;
 
       if (index === slugList.length - 1) {
         const currentRouteRoutes = (currentRoute.$routes ||= []);
