@@ -18,13 +18,13 @@
     "postpublish": "gh-release"
   },
   "devDependencies": {
-    "@chakra-ui/react": "^1.7.0",
-    "@types/node": "^16.11.7",
-    "@types/react": "^17.0.34",
+    "@chakra-ui/react": "^1.7.2",
+    "@types/node": "^16.11.9",
+    "@types/react": "^17.0.35",
     "bob-esbuild-cli": "^3.0.1",
     "changesets-github-release": "^0.0.4",
-    "next-i18next": "^9.0.0",
-    "typescript": "^4.4.4"
+    "next-i18next": "^9.1.0",
+    "typescript": "~4.4.4"
   },
   "peerDependencies": {
     "@chakra-ui/react": "*",
@@ -32,6 +32,6 @@
     "next-i18next": "*"
   },
   "dependencies": {
-    "unified": "^10.1.0"
+    "unified": "^10.1.1"
   }
 }
