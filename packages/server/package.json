@@ -58,7 +58,7 @@
     "undici": "^4.10.2"
   },
   "peerDependencies": {
-    "next": ">=11",
+    "next": ">=11.1.2",
     "next-i18next": "*",
     "react": "*",
     "react-dom": "*",
