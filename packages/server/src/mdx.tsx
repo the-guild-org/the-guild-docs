@@ -1,7 +1,7 @@
 import type { MDXRemoteSerializeResult, SerializeOptions } from '@guild-docs/mdx-remote';
 import type { IRoutes, MdxInternalProps, PossiblePromise, TOC } from '@guild-docs/types';
 import { LazyPromise } from '@guild-docs/types';
-import { promises } from 'fs';
+import { access, readFile } from 'fs/promises';
 import globby from 'globby';
 import matter from 'gray-matter';
 import type { GetStaticPathsContext, GetStaticPropsContext, GetStaticPropsResult } from 'next';
@@ -14,7 +14,6 @@ import { IS_PRODUCTION } from './constants';
 import { getSlug } from './routes';
 import { SerializeTOC } from './toc';
 
-export const { access, readFile } = promises;
 const Provideri18n = appWithTranslation(({ children }) => <React.Fragment children={children} />);
 
 async function prepareMDXRenderWithTranslations(locale: string | undefined) {
@@ -75,27 +74,32 @@ async function readMarkdownFile(basePath: string, slugPath: string[], options?: 
         path: mdPath,
         content: await readFile(mdPath, 'utf-8'),
       };
-    } else if (mdxPathExists) {
+    }
+    if (mdxPathExists) {
       return {
         path: mdxPath,
         content: await readFile(mdxPath, 'utf-8'),
       };
-    } else if (indexMdPathExists) {
+    }
+    if (indexMdPathExists) {
       return {
         path: indexMdPath,
         content: await readFile(indexMdPath, 'utf-8'),
       };
-    } else if (indexMdxPathExists) {
+    }
+    if (indexMdxPathExists) {
       return {
         path: indexMdxPath,
         content: await readFile(indexMdxPath, 'utf-8'),
       };
-    } else if (indexReadmeMdPathExists) {
+    }
+    if (indexReadmeMdPathExists) {
       return {
         path: indexReadmeMdPath,
         content: await readFile(indexReadmeMdPath, 'utf-8'),
       };
-    } else if (indexReadmeMdxPathExists) {
+    }
+    if (indexReadmeMdxPathExists) {
       return {
         path: indexReadmeMdxPath,
         content: await readFile(indexReadmeMdxPath, 'utf-8'),
