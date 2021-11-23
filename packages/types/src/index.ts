@@ -56,12 +56,14 @@ export interface MDXNavigationProps {
   accentColor?: string;
   handleLinkClick?: () => void;
   wrapperProps?: ChakraComponentProps<'nav'> | ((args: { depth: number; acumHref: string }) => ChakraComponentProps<'nav'>);
-  detailsProps?: (args: MDXNavigationAccordionArgs) => ChakraComponentProps<'div'>;
-  summaryProps?: (args: MDXNavigationAccordionArgs) => ChakraComponentProps<'div'>;
-  summaryLabelProps?: (args: MDXNavigationAccordionArgs) => ChakraComponentProps<'p'>;
-  summaryIconProps?: (args: MDXNavigationAccordionArgs) => ChakraComponentProps<'svg'>;
-  collapseProps?: (args: MDXNavigationAccordionArgs) => Omit<ComponentProps<typeof Collapse>, 'children'>;
-  linkProps?: (args: MDXNavigationAccordionArgs) => ChakraComponentProps<'a'>;
+  detailsProps?: ChakraComponentProps<'div'> | ((args: MDXNavigationAccordionArgs) => ChakraComponentProps<'div'>);
+  summaryProps?: ChakraComponentProps<'div'> | ((args: MDXNavigationAccordionArgs) => ChakraComponentProps<'div'>);
+  summaryLabelProps?: ChakraComponentProps<'p'> | ((args: MDXNavigationAccordionArgs) => ChakraComponentProps<'p'>);
+  summaryIconProps?: ChakraComponentProps<'svg'> | ((args: MDXNavigationAccordionArgs) => ChakraComponentProps<'svg'>);
+  collapseProps?:
+    | Omit<ComponentProps<typeof Collapse>, 'children'>
+    | ((args: MDXNavigationAccordionArgs) => Omit<ComponentProps<typeof Collapse>, 'children'>);
+  linkProps?: ChakraComponentProps<'a'> | ((args: MDXNavigationAccordionArgs) => ChakraComponentProps<'a'>);
   /**
    * @default 1
    */

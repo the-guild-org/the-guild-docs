@@ -38,6 +38,10 @@ const Link = chakra('a', {
 
 const Router = getDefault(RouterImport);
 
+function callIfFunction<T extends (args: Args) => U, U extends object | undefined, Args>(target: T | U, args: Args): U {
+  return typeof target === 'function' ? target(args) : target;
+}
+
 function Item({
   item: { href, name, sidebar, paths, isPage },
   acumHref,
@@ -132,24 +136,24 @@ function Item({
   return (
     <>
       {pathsData ? (
-        <Details {...(depth !== 0 && innerItemStyles)} {...styleProps.detailsProps?.(propsArgs)}>
+        <Details {...(depth !== 0 && innerItemStyles)} {...callIfFunction(styleProps.detailsProps, propsArgs)}>
           <Summary
             onClick={onToggle}
             color={isOpen ? summaryOpenColor : summaryClosedColor}
             {...hoverItemStyles}
-            {...styleProps.summaryProps?.(propsArgs)}
+            {...callIfFunction(styleProps.summaryProps, propsArgs)}
           >
             <ChevronDownIcon
               transition="transform 0.3s"
               transform={isOpen ? undefined : 'rotate(-90deg)'}
-              {...styleProps.summaryIconProps?.(propsArgs)}
+              {...callIfFunction(styleProps.summaryIconProps, propsArgs)}
             />
-            <Text as="span" {...styleProps.summaryLabelProps?.(propsArgs)}>
+            <Text as="span" {...callIfFunction(styleProps.summaryLabelProps, propsArgs)}>
               {cleanMarkdown(label)}
             </Text>
           </Summary>
 
-          <Collapse in={isOpen} unmountOnExit {...styleProps.collapseProps?.(propsArgs)}>
+          <Collapse in={isOpen} unmountOnExit {...callIfFunction(styleProps.collapseProps, propsArgs)}>
             <MDXNavigation
               paths={pathsData}
               acumHref={finalHref}
@@ -182,7 +186,7 @@ function Item({
           color={isActive ? accentColor : inactiveLinkColor}
           {...(depth !== 0 && innerItemStyles)}
           {...hoverItemStyles}
-          {...styleProps.linkProps?.(propsArgs)}
+          {...callIfFunction(styleProps.linkProps, propsArgs)}
         >
           {cleanMarkdown(label)}
         </Link>
@@ -208,9 +212,10 @@ export function MDXNavigation({
   return (
     <MdxNavWrapper
       ml={depth !== 0 ? '1rem' : 0}
-      {...(typeof styleProps.wrapperProps === 'function'
-        ? styleProps.wrapperProps({ depth, acumHref })
-        : styleProps.wrapperProps)}
+      {...callIfFunction(styleProps.wrapperProps, {
+        depth,
+        acumHref,
+      })}
     >
       {paths.map((item, index) => {
         return (
