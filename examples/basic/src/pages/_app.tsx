@@ -100,7 +100,20 @@ function AppContent(appProps: AppProps) {
           rel: 'noopener noreferrer',
         }}
       />
-      {isDocs ? <DocsPage appProps={appProps} accentColor={accentColor} mdxRoutes={mdxRoutes} /> : <Component {...pageProps} />}
+      {isDocs ? (
+        <DocsPage
+          appProps={appProps}
+          accentColor={accentColor}
+          mdxRoutes={mdxRoutes}
+          mdxNavigationProps={{
+            summaryLabelProps: {
+              textTransform: 'capitalize',
+            },
+          }}
+        />
+      ) : (
+        <Component {...pageProps} />
+      )}
       <Footer />
     </>
   );
