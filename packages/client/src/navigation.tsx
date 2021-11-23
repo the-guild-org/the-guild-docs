@@ -15,7 +15,6 @@ const itemStyles: CSSObject = {
   pl: '0.75rem',
   fontSize: '0.875rem',
   fontWeight: 'medium',
-  textTransform: 'capitalize',
   cursor: 'pointer',
   userSelect: 'none',
   transition: '0.1s',
