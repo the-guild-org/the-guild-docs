@@ -1,5 +1,11 @@
 # @guild-docs/types
 
+## 1.1.0
+
+### Minor Changes
+
+- 002534a: Allow static object mdx navigation props
+
 ## 1.0.3
 
 ### Patch Changes

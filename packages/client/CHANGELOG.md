@@ -1,5 +1,20 @@
 # @guild-docs/client
 
+## 1.3.0
+
+### Minor Changes
+
+- 002534a: Allow static object mdx navigation props
+- 3a56509: Remove default "text-transform: capitalize" in mdx navigation
+
+  closes #375
+
+### Patch Changes
+
+- 421d733: link color should be as `accentColor`
+- Updated dependencies [002534a]
+  - @guild-docs/types@1.1.0
+
 ## 1.2.3
 
 ### Patch Changes

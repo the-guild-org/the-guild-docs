@@ -30,7 +30,7 @@
     "react": "*"
   },
   "dependencies": {
-    "@guild-docs/types": "workspace:^1.0.3",
+    "@guild-docs/types": "workspace:^1.1.0",
     "@mdx-js/mdx": "^1.6.22",
     "@mdx-js/react": "^1.6.22",
     "unified": "^10.1.1",
