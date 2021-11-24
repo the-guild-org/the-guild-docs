@@ -42,7 +42,7 @@ But you can define _Custom Components_ to be used inside the MDX in the **app.ts
 >
 > const SomeHeavyComponent = dynamic(() => import('./SomeHeavyComponent'));
 
-```ts
+```tsx
 import { ExtendComponents } from '@guild-docs/client';
 
 // ...

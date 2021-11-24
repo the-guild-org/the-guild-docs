@@ -1,9 +1,9 @@
-import githubSlugger from 'github-slugger';
+import GithubSlugger from 'github-slugger';
 
 import type { TOC } from '@guild-docs/types';
 
 export function SerializeTOC(content: string): TOC {
-  const slugger = new githubSlugger();
+  const slugger = new GithubSlugger();
 
   const lines = content.split('\n');
 
@@ -21,7 +21,7 @@ export function SerializeTOC(content: string): TOC {
       return acum;
     }
 
-    const result = value.match(/(\#\#+ )(.+)/);
+    const result = value.match(/(##+ )(.+)/);
 
     if (!result) return acum;
 
