@@ -76,7 +76,7 @@ importers:
       '@chakra-ui/utils': ^1.9.1
       '@emotion/react': ^11.6.0
       '@emotion/styled': ^11.6.0
-      '@guild-docs/client': workspace:^1.2.3
+      '@guild-docs/client': workspace:^1.3.0
       '@guild-docs/server': workspace:^2.1.3
       '@mdx-js/react': ^1.6.22
       '@next/bundle-analyzer': ^12.0.4
@@ -111,8 +111,8 @@ importers:
       '@chakra-ui/utils': 1.9.1
       '@emotion/react': 11.6.0_bb8e79a4a12a744c3dc48cdef194d579
       '@emotion/styled': 11.6.0_46e9d276190d534487bb934311d09b96
-      '@guild-docs/client': file:packages/client_8a8c4611baf0edab1e8077d0a5466d6f
-      '@guild-docs/server': file:packages/server_79d61e7d03125e499c11ec399cb4d795
+      '@guild-docs/client': link:../../packages/client
+      '@guild-docs/server': link:../../packages/server
       '@mdx-js/react': 1.6.22_react@17.0.2
       '@theguild/components': 1.8.0_597cb904b9c9ac48becb27bac7a6c943
       framer-motion: 5.3.2_react-dom@17.0.2+react@17.0.2
@@ -185,7 +185,7 @@ importers:
       '@chakra-ui/utils': ^1.9.1
       '@emotion/react': ^11.6.0
       '@guild-docs/mdx-remote': workspace:^1.0.1
-      '@guild-docs/types': workspace:^1.0.3
+      '@guild-docs/types': workspace:^1.1.0
       '@mdx-js/react': ^1.6.22
       '@theguild/components': ^1.8.0
       '@types/mdx-js__react': ^1.5.5
@@ -251,7 +251,7 @@ importers:
 
   packages/mdx-remote:
     specifiers:
-      '@guild-docs/types': workspace:^1.0.3
+      '@guild-docs/types': workspace:^1.1.0
       '@mdx-js/mdx': ^1.6.22
       '@mdx-js/react': ^1.6.22
       changesets-github-release: ^0.0.4
@@ -273,7 +273,7 @@ importers:
   packages/server:
     specifiers:
       '@guild-docs/mdx-remote': workspace:^1.0.1
-      '@guild-docs/types': workspace:^1.0.3
+      '@guild-docs/types': workspace:^1.1.0
       '@types/github-slugger': 1.3.0
       '@types/node-fetch': ^2.5.12
       bob-esbuild-cli: ^3.0.1
@@ -8333,88 +8333,4 @@ packages:
 
   /zwitch/1.0.5:
     resolution: {integrity: sha512-V50KMwwzqJV0NpZIZFwfOD5/lyny3WlSzRiXgA0G7VUnRlqttta1L6UQIHzd6EuBY/cHGfwTIck7w1yH6Q5zUw==}
-    dev: false
-
-  file:packages/client_8a8c4611baf0edab1e8077d0a5466d6f:
-    resolution: {directory: packages/client, type: directory}
-    id: file:packages/client
-    name: '@guild-docs/client'
-    version: 1.2.3
-    peerDependencies:
-      '@chakra-ui/icons': '*'
-      '@chakra-ui/react': '*'
-      '@chakra-ui/utils': '*'
-      '@emotion/react': '*'
-      '@mdx-js/react': ^1.6.22
-      '@theguild/components': ^1.8.0
-      '@types/mdx-js__react': '*'
-      framer-motion: '*'
-      next: '>=11.1.2'
-      next-i18next: '*'
-      react: '*'
-      react-dom: '*'
-    peerDependenciesMeta:
-      react:
-        optional: true
-      react-dom:
-        optional: true
-    dependencies:
-      '@chakra-ui/icons': 1.1.1_react@17.0.2
-      '@chakra-ui/react': 1.7.2_74f6d730d15dd8bbe3ea2c976d28451b
-      '@chakra-ui/utils': 1.9.1
-      '@emotion/react': 11.6.0_bb8e79a4a12a744c3dc48cdef194d579
-      '@guild-docs/mdx-remote': link:packages/mdx-remote
-      '@guild-docs/types': link:packages/types
-      '@mdx-js/react': 1.6.22_react@17.0.2
-      '@theguild/components': 1.8.0_597cb904b9c9ac48becb27bac7a6c943
-      '@types/mdx-js__react': 1.5.5
-      framer-motion: 5.3.2_react-dom@17.0.2+react@17.0.2
-      immer: 9.0.6
-      next: 12.0.4_react-dom@17.0.2+react@17.0.2
-      next-i18next: 9.2.0_next@12.0.4+react@17.0.2
-      next-seo: 4.28.1_f195614718841b3c14a81ac95268ce58
-      nprogress: 0.2.0
-      react: 17.0.2
-      react-dom: 17.0.2_react@17.0.2
-      react-icons: 4.3.1_react@17.0.2
-      react-intersection-observer: 8.32.4_react@17.0.2
-      react-use: 17.3.1_react-dom@17.0.2+react@17.0.2
-      remove-markdown: 0.3.0
-      use-immer: 0.6.0_immer@9.0.6+react@17.0.2
-      zustand: 3.6.5_react@17.0.2
-    dev: false
-
-  file:packages/server_79d61e7d03125e499c11ec399cb4d795:
-    resolution: {directory: packages/server, type: directory}
-    id: file:packages/server
-    name: '@guild-docs/server'
-    version: 2.1.3
-    peerDependencies:
-      next: '>=11.1.2'
-      next-i18next: '*'
-      react: '*'
-      react-dom: '*'
-      remark-admonitions: '*'
-      shiki: '*'
-    peerDependenciesMeta:
-      remark-admonitions:
-        optional: true
-    dependencies:
-      '@guild-docs/mdx-remote': link:packages/mdx-remote
-      '@guild-docs/types': link:packages/types
-      github-slugger: 1.4.0
-      globby: 11.0.4
-      gray-matter: 4.0.3
-      next: 12.0.4_react-dom@17.0.2+react@17.0.2
-      next-i18next: 9.2.0_next@12.0.4+react@17.0.2
-      node-fetch: 2.6.6
-      react: 17.0.2
-      react-dom: 17.0.2_react@17.0.2
-      rehype-slug: 5.0.0
-      remark-admonitions: 1.2.1
-      remark-emoji: 3.0.2
-      shiki: 0.9.12
-      tiny-lru: 7.0.6
-      unified: 10.1.1
-      unist-util-visit: 4.1.0
     dev: false
