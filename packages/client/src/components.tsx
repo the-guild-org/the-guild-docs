@@ -259,7 +259,7 @@ export const td = (props: BoxProps) => (
 
 export const originalComponents = {
   a(props: LinkProps) {
-    return <ChakraLink color="accentColor" {...props} />;
+    return <ChakraLink color="accentColor" sx={{ '&:hover': { textDecoration: 'none' } }} {...props} />;
   },
   Image,
   h1,
