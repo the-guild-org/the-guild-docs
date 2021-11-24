@@ -292,7 +292,7 @@ importers:
       remark-emoji: ^3.0.2
       shiki: ^0.9.12
       tiny-lru: ^7.0.6
-      undici: ^4.10.2
+      undici: ^4.10.3
       unified: ^10.1.1
       unist-util-visit: ^4.1.0
     dependencies:
@@ -319,7 +319,7 @@ importers:
       react-dom: 17.0.2_react@17.0.2
       remark-admonitions: 1.2.1
       shiki: 0.9.12
-      undici: 4.10.2
+      undici: 4.10.3
 
   packages/types:
     specifiers:
@@ -7799,8 +7799,8 @@ packages:
       has-symbols: 1.0.2
       which-boxed-primitive: 1.0.2
 
-  /undici/4.10.2:
-    resolution: {integrity: sha512-QoQH4PpV3dqJwr4h1HazggbB4f5CBknvYANjI9hxXCml+AAzLoh4HBkce0Jc0wW/pmVbrus8Gfeo8QounE+/9g==}
+  /undici/4.10.3:
+    resolution: {integrity: sha512-oMfhoSsFdu7ft+10gBpQ98gfIGT6qovXXRxYPOe07xfUJwpVTcFs0xvuAEpNqtObhf4HQWuMW5kWzaD768YS4Q==}
     engines: {node: '>=12.18'}
     dev: true
 
