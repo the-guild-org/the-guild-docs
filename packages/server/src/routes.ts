@@ -16,7 +16,7 @@ export function getSlug({ path, replaceBasePath }: { path: string; replaceBasePa
 
 export interface AddRoutesConfig {
   Routes?: IRoutes;
-  folderPattern: string;
+  folderPattern?: string;
   basePath?: string;
   basePathLabel?: string;
   replaceBasePath?: string;
@@ -45,79 +45,81 @@ export function GenerateRoutes(config: AddRoutesConfig) {
 
   const baseRoutes: IRoutes = basePathLabel ? ({ $name: basePathLabel } as IRoutes) : {};
 
-  for (const path of globby.sync(folderPattern)) {
-    if (!/\.mdx?$/.test(path)) continue;
+  if (folderPattern) {
+    for (const path of globby.sync(folderPattern)) {
+      if (!/\.mdx?$/.test(path)) continue;
 
-    const md = readFileSync(path);
+      const md = readFileSync(path);
 
-    const data: { [P in 'sidebar_label' | 'title']?: string } = matter(md).data;
+      const data: { [P in 'sidebar_label' | 'title']?: string } = matter(md).data;
 
-    const slugList = getSlug({
-      path,
-      replaceBasePath,
-    });
+      const slugList = getSlug({
+        path,
+        replaceBasePath,
+      });
 
-    let currentRoute = basePath ? ((Routes._ ||= {})[basePath] ||= baseRoutes) : Routes;
+      let currentRoute = basePath ? ((Routes._ ||= {})[basePath] ||= baseRoutes) : Routes;
 
-    let acumSlug = '';
-    for (const [index, slug] of slugList.entries()) {
-      acumSlug += slug;
-      if (ignorePaths?.some(path => acumSlug.startsWith(path))) continue;
+      let acumSlug = '';
+      for (const [index, slug] of slugList.entries()) {
+        acumSlug += slug;
+        if (ignorePaths?.some(path => acumSlug.startsWith(path))) continue;
 
-      if (index === slugList.length - 1) {
-        const currentRouteRoutes = (currentRoute.$routes ||= []);
-        const existingRouteIndex = currentRouteRoutes.findIndex(v => (Array.isArray(v) ? v[0] : v) === slug);
-        const existingRoute = currentRouteRoutes[existingRouteIndex];
+        if (index === slugList.length - 1) {
+          const currentRouteRoutes = (currentRoute.$routes ||= []);
+          const existingRouteIndex = currentRouteRoutes.findIndex(v => (Array.isArray(v) ? v[0] : v) === slug);
+          const existingRoute = currentRouteRoutes[existingRouteIndex];
 
-        const sidebar = data.sidebar_label || labels[acumSlug];
+          const sidebar = data.sidebar_label || labels[acumSlug];
 
-        const sidebarRest = sidebar ? ([getSidebarLabel(sidebar)] as const) : ([] as const);
+          const sidebarRest = sidebar ? ([getSidebarLabel(sidebar)] as const) : ([] as const);
 
-        // Only overwrite the titles and prevent duplication of routes
-        if (existingRoute) {
-          const title = data.title || labels[acumSlug];
-          // We ignore the case where title is not specified, but yes sidebar label
-          if (title) {
-            currentRouteRoutes[existingRouteIndex] = [
-              Array.isArray(existingRoute) ? existingRoute[0] : existingRoute,
-              getTitle(title),
-              ...sidebarRest,
-            ];
+          // Only overwrite the titles and prevent duplication of routes
+          if (existingRoute) {
+            const title = data.title || labels[acumSlug];
+            // We ignore the case where title is not specified, but yes sidebar label
+            if (title) {
+              currentRouteRoutes[existingRouteIndex] = [
+                Array.isArray(existingRoute) ? existingRoute[0] : existingRoute,
+                getTitle(title),
+                ...sidebarRest,
+              ];
+            }
+          } else {
+            const title = data.title || labels[acumSlug];
+
+            currentRouteRoutes.push([slug, title ? getTitle(title) : slug, ...sidebarRest]);
+          }
+
+          const readmeIndex = currentRouteRoutes.findIndex(value => {
+            if (Array.isArray(value)) {
+              const href = value[0];
+              return href === 'README' || href === 'index';
+            }
+            return value === 'README' || value === 'index';
+          });
+
+          // Always put Index at the beggining
+          if (readmeIndex !== -1 && readmeIndex !== 0) {
+            const readmeRoute = currentRouteRoutes[readmeIndex];
+
+            if (readmeRoute) {
+              currentRouteRoutes.splice(readmeIndex, 1);
+              currentRouteRoutes.unshift(readmeRoute);
+            }
           }
         } else {
-          const title = data.title || labels[acumSlug];
+          currentRoute = (currentRoute._ ||= {})[slug] ||= {};
 
-          currentRouteRoutes.push([slug, title ? getTitle(title) : slug, ...sidebarRest]);
+          const labelValue = labels[acumSlug];
+
+          labelValue && (currentRoute.$name = getTitle(labelValue));
+
+          Array.isArray(labelValue) && (currentRoute.$sidebar = getSidebarLabel(labelValue));
         }
 
-        const readmeIndex = currentRouteRoutes.findIndex(value => {
-          if (Array.isArray(value)) {
-            const href = value[0];
-            return href === 'README' || href === 'index';
-          }
-          return value === 'README' || value === 'index';
-        });
-
-        // Always put Index at the beggining
-        if (readmeIndex !== -1 && readmeIndex !== 0) {
-          const readmeRoute = currentRouteRoutes[readmeIndex];
-
-          if (readmeRoute) {
-            currentRouteRoutes.splice(readmeIndex, 1);
-            currentRouteRoutes.unshift(readmeRoute);
-          }
-        }
-      } else {
-        currentRoute = (currentRoute._ ||= {})[slug] ||= {};
-
-        const labelValue = labels[acumSlug];
-
-        labelValue && (currentRoute.$name = getTitle(labelValue));
-
-        Array.isArray(labelValue) && (currentRoute.$sidebar = getSidebarLabel(labelValue));
+        acumSlug += '.';
       }
-
-      acumSlug += '.';
     }
   }
 
