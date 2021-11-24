@@ -1,5 +1,11 @@
 # @guild-docs/server
 
+## 2.1.4
+
+### Patch Changes
+
+- d84b603: allow to pass undefined in folderPattern to disabled "discovery"
+
 ## 2.1.3
 
 ### Patch Changes
