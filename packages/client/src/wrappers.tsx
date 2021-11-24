@@ -24,7 +24,8 @@ import { DefaultSeo } from 'next-seo';
 import type { DefaultSeoProps, OpenGraphMedia } from 'next-seo/lib/types';
 import type { AppProps } from 'next/app';
 import React, { ComponentProps, Dispatch, ReactNode, SetStateAction, useMemo } from 'react';
-import { DocsContainer, DocsNavigation, DocsNavigationDesktop, DocsNavigationMobile, DocsTitle } from './docs/index';
+import { DocsContainer, DocsNavigation, DocsNavigationDesktop, DocsNavigationMobile, DocsTitle } from './docs';
+import StickyBox from 'react-sticky-box';
 import { MDXNavigation, MDXNavigationProps } from './navigation';
 import { NextNProgress } from './NextNProgress';
 import { iterateRoutes } from './routes';
@@ -155,7 +156,7 @@ export function DocsPage({
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   const mdxRoutes: MdxInternalProps['mdxRoutes'] = pageProps.mdxRoutes;
-  const Navigation = useMemo(() => {
+  const navigation = useMemo(() => {
     const paths: IRoutes =
       mdxRoutes === 1 ? restProps.mdxRoutes.data : (restProps.mdxRoutes.data = mdxRoutes || restProps.mdxRoutes.data);
     if (!paths) throw Error('No MDX Navigation routes data!');
@@ -180,7 +181,11 @@ export function DocsPage({
 
   return (
     <DocsContainer {...restProps.docsContainerProps}>
-      <DocsNavigationDesktop {...restProps.docsNavigationDesktopProps} children={Navigation} />
+      <DocsNavigationDesktop {...restProps.docsNavigationDesktopProps}>
+        <StickyBox offsetTop={100} offsetBottom={20}>
+          {navigation}
+        </StickyBox>
+      </DocsNavigationDesktop>
       <DocsNavigationMobile {...restProps.docsNavigationMobileProps}>
         <IconButton
           onClick={onOpen}
@@ -214,7 +219,7 @@ export function DocsPage({
               }}
               {...restProps.drawerCloseButtonProps}
             />
-            <DrawerBody {...restProps.drawerBodyProps} children={Navigation} />
+            <DrawerBody {...restProps.drawerBodyProps}>{navigation}</DrawerBody>
           </DrawerContent>
         </Drawer>
       </DocsNavigationMobile>

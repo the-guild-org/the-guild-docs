@@ -1,3 +1,6 @@
+import type { FC } from 'react';
+import React from 'react';
+import StickyBox from 'react-sticky-box';
 import { chakra } from '@chakra-ui/react';
 
 export const DocsContainer = chakra('section', {
@@ -21,15 +24,6 @@ export const DocsContainer = chakra('section', {
 
 export const DocsNavigation = chakra('aside', {
   baseStyle: {
-    position: {
-      lg: 'sticky',
-    },
-    top: {
-      lg: '7rem',
-    },
-    zIndex: '0',
-    display: 'block',
-    height: 'fit-content',
     width: {
       base: '100%',
       lg: '16rem',
@@ -70,18 +64,24 @@ export const DocsTitle = chakra('h2', {
   },
 });
 
-export const DocsTOC = chakra('aside', {
+const TOC = chakra('aside', {
   baseStyle: {
-    position: 'sticky',
-    top: '7rem',
-    justifySelf: 'start',
-    height: 'fit-content',
     width: {
       base: '100%',
       lg: '15rem',
     },
   },
 });
+
+export const DocsTOC: FC = props => {
+  return (
+    <div>
+      <StickyBox offsetTop={100} offsetBottom={20}>
+        <TOC {...props} />
+      </StickyBox>
+    </div>
+  );
+};
 
 export const DocsContent = chakra('article', {
   baseStyle: {
