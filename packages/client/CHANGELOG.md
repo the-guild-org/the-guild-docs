@@ -1,5 +1,12 @@
 # @guild-docs/client
 
+## 1.3.1
+
+### Patch Changes
+
+- 212aab1: fix: remove underline on links when hover
+- 7c8dea0: fix scroll on navbar and toc
+
 ## 1.3.0
 
 ### Minor Changes
