@@ -34,6 +34,6 @@
     "esbuild": "^0.13.15",
     "mkdirp": "^1.0.4",
     "npm-api": "^1.0.1",
-    "prettier": "^2.4.1"
+    "prettier": "^2.5.0"
   }
 }
