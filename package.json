@@ -43,7 +43,7 @@
     "bob-esbuild": "^3.1.1",
     "bob-esbuild-cli": "^3.0.1",
     "bob-tsm": "^0.3.6",
-    "chalk": "^4.1.2",
+    "chalk": "^5.0.0",
     "concurrently": "^6.4.0",
     "esbuild": "^0.14.0",
     "globby": "^11.0.4",

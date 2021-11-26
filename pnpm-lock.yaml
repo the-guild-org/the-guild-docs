@@ -26,7 +26,7 @@ importers:
       bob-esbuild: ^3.1.1
       bob-esbuild-cli: ^3.0.1
       bob-tsm: ^0.3.6
-      chalk: ^4.1.2
+      chalk: ^5.0.0
       concurrently: ^6.4.0
       esbuild: ^0.14.0
       globby: ^11.0.4
@@ -54,7 +54,7 @@ importers:
       bob-esbuild: 3.1.1_esbuild@0.14.0+typescript@4.4.4
       bob-esbuild-cli: 3.0.1_bob-esbuild@3.1.1
       bob-tsm: 0.3.6_esbuild@0.14.0
-      chalk: 4.1.2
+      chalk: 5.0.0
       concurrently: 6.4.0
       esbuild: 0.14.0
       globby: 11.0.4
@@ -3288,6 +3288,11 @@ packages:
     dependencies:
       ansi-styles: 4.3.0
       supports-color: 7.2.0
+
+  /chalk/5.0.0:
+    resolution: {integrity: sha512-/duVOqst+luxCQRKEo4bNxinsOQtMP80ZYm7mMqzuh5PociNL0PvmHFvREJ9ueYL2TxlHjBcmLCdmocx9Vg+IQ==}
+    engines: {node: ^12.17.0 || ^14.13 || >=16.0.0}
+    dev: true
 
   /changesets-github-release/0.0.4:
     resolution: {integrity: sha512-wddC8bZRK1JE2m33SA1sME2Jlw+mDd85nq7Ggl7IeMfXZPzHoLvR01ePxnzrb6/ALuYIEzOm7kcV8v6kV6e29g==}
@@ -8349,7 +8354,7 @@ packages:
       '@chakra-ui/utils': '*'
       '@emotion/react': '*'
       '@mdx-js/react': ^1.6.22
-      '@theguild/components': ^1.8.0
+      '@theguild/components': ^1.8.2
       '@types/mdx-js__react': '*'
       framer-motion: '*'
       next: '>=11.1.2'
