@@ -80,7 +80,7 @@ importers:
       '@guild-docs/server': workspace:^2.1.4
       '@mdx-js/react': ^1.6.22
       '@next/bundle-analyzer': ^12.0.4
-      '@theguild/components': ^1.8.1
+      '@theguild/components': ^1.8.2
       '@types/concurrently': ^6.4.0
       '@types/mdx-js__react': ^1.5.5
       '@types/node': '>=16.11.1'
@@ -111,10 +111,10 @@ importers:
       '@chakra-ui/utils': 1.9.1
       '@emotion/react': 11.6.0_cfedea9b3ed0faf0dded75c187406c5e
       '@emotion/styled': 11.6.0_a522e2b76991e59b041b46dae6112478
-      '@guild-docs/client': file:packages/client_023bcfec3047a822e633d998c84b21cf
+      '@guild-docs/client': file:packages/client_132f6a1e1dacdf8098852d8c444f6e45
       '@guild-docs/server': file:packages/server_79d61e7d03125e499c11ec399cb4d795
       '@mdx-js/react': 1.6.22_react@17.0.2
-      '@theguild/components': 1.8.1_5539cae010396b202b015f3568914e95
+      '@theguild/components': 1.8.2_5539cae010396b202b015f3568914e95
       framer-motion: 5.3.3_react-dom@17.0.2+react@17.0.2
       next: 12.0.4_react-dom@17.0.2+react@17.0.2
       next-i18next: 9.2.0_next@12.0.4+react@17.0.2
@@ -187,7 +187,7 @@ importers:
       '@guild-docs/mdx-remote': workspace:^1.0.1
       '@guild-docs/types': workspace:^1.1.0
       '@mdx-js/react': ^1.6.22
-      '@theguild/components': ^1.8.1
+      '@theguild/components': ^1.8.2
       '@types/mdx-js__react': ^1.5.5
       '@types/nprogress': ^0.2.0
       '@types/react': ^17.0.37
@@ -234,7 +234,7 @@ importers:
       '@chakra-ui/utils': 1.9.1
       '@emotion/react': 11.6.0_cfedea9b3ed0faf0dded75c187406c5e
       '@mdx-js/react': 1.6.22_react@17.0.2
-      '@theguild/components': 1.8.1_5539cae010396b202b015f3568914e95
+      '@theguild/components': 1.8.2_5539cae010396b202b015f3568914e95
       '@types/mdx-js__react': 1.5.5
       '@types/nprogress': 0.2.0
       '@types/react': 17.0.37
@@ -2541,8 +2541,8 @@ packages:
     resolution: {integrity: sha512-RNiOoTPkptFtSVzQevY/yWtZwf/RxyVnPy/OcA9HBM3MlGDnBEYL5B41H0MTn0Uec8Hi+2qUtTfG2WWZBmMejQ==}
     dev: true
 
-  /@theguild/components/1.8.1_5539cae010396b202b015f3568914e95:
-    resolution: {integrity: sha512-+aqFuHMFl6LotXDfMsqVjydY4JPVL6FFudDYJr99p8LjbgTRZYC6blmj56g2QEZO+03Xtm09m1WI949NckpeWw==}
+  /@theguild/components/1.8.2_5539cae010396b202b015f3568914e95:
+    resolution: {integrity: sha512-XUVrR+/fQ80mV8HM+2ApYsU6dDcJBzu1Uz4FbXOBDqJRvRIR2dbLhsndKk+FRS70YaW5SWbVGnwHBYDTSteuGw==}
     peerDependencies:
       react: ^17.0.2
       react-dom: ^17.0.2
@@ -8348,7 +8348,7 @@ packages:
     resolution: {integrity: sha512-V50KMwwzqJV0NpZIZFwfOD5/lyny3WlSzRiXgA0G7VUnRlqttta1L6UQIHzd6EuBY/cHGfwTIck7w1yH6Q5zUw==}
     dev: false
 
-  file:packages/client_023bcfec3047a822e633d998c84b21cf:
+  file:packages/client_132f6a1e1dacdf8098852d8c444f6e45:
     resolution: {directory: packages/client, type: directory}
     id: file:packages/client
     name: '@guild-docs/client'
@@ -8359,7 +8359,7 @@ packages:
       '@chakra-ui/utils': '*'
       '@emotion/react': '*'
       '@mdx-js/react': ^1.6.22
-      '@theguild/components': ^1.8.0
+      '@theguild/components': ^1.8.2
       '@types/mdx-js__react': '*'
       framer-motion: '*'
       next: '>=11.1.2'
@@ -8379,7 +8379,7 @@ packages:
       '@guild-docs/mdx-remote': link:packages/mdx-remote
       '@guild-docs/types': link:packages/types
       '@mdx-js/react': 1.6.22_react@17.0.2
-      '@theguild/components': 1.8.1_5539cae010396b202b015f3568914e95
+      '@theguild/components': 1.8.2_5539cae010396b202b015f3568914e95
       '@types/mdx-js__react': 1.5.5
       framer-motion: 5.3.3_react-dom@17.0.2+react@17.0.2
       immer: 9.0.7
