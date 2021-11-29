@@ -1,5 +1,13 @@
 # @guild-docs/client
 
+## 1.3.2
+
+### Patch Changes
+
+- 8015bda: Add "global" prop to "PackageInstall" component
+
+  closes #395
+
 ## 1.3.1
 
 ### Patch Changes
