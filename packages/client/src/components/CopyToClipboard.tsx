@@ -15,7 +15,6 @@ export const CopyToClipboard = memo(
     buttonProps,
   }: {
     value: string;
-
     buttonProps?: IconButtonProps;
   }) => {
     const [, copy] = useCopyToClipboard();

@@ -14,7 +14,7 @@ import { IS_PRODUCTION } from './constants';
 import { getSlug } from './routes';
 import { SerializeTOC } from './toc';
 
-const Provideri18n = appWithTranslation(({ children }) => <React.Fragment children={children} />);
+const Provideri18n = appWithTranslation(({ children }) => <React.Fragment>{children}</React.Fragment>);
 
 async function prepareMDXRenderWithTranslations(locale: string | undefined) {
   const translations = await serverSideTranslations(locale!, ['common']);
@@ -146,7 +146,6 @@ export interface BuildMDXOptions {
    * @default true
    */
   buildTOC?: boolean;
-
   extraRemarkPlugins?: NonNullable<SerializeOptions['mdxOptions']>['remarkPlugins'];
   extraRehypePlugins?: NonNullable<SerializeOptions['mdxOptions']>['rehypePlugins'];
 }

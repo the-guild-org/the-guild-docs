@@ -122,7 +122,7 @@ function TGCThemeProviderComponent({ children }: { children: ReactNode }) {
     };
   }, [colorMode, setColorMode]);
 
-  return <TGCThemeProvider {...darkThemeProps} children={children} />;
+  return <TGCThemeProvider {...darkThemeProps}>{children}</TGCThemeProvider>;
 }
 
 export interface DocsPageProps {
@@ -162,7 +162,9 @@ export function DocsPage({
     if (!paths) throw Error('No MDX Navigation routes data!');
     return (
       <DocsNavigation {...restProps.docsNavigationProps}>
-        <DocsTitle children="Documentation" {...restProps.docsTitleProps} />
+        <DocsTitle {...restProps.docsTitleProps}>
+          Documentation
+        </DocsTitle>
         <MDXNavigation
           paths={iterateRoutes(paths)}
           accentColor={accentColor}

@@ -112,7 +112,7 @@ async function InitAction(dir: string = process.cwd()) {
   await Promise.all([DepsAction(dir), ConfigAction(dir)]);
 
   console.log(
-    `\n\nNow you can install dependencies: \"pnpm i\", \"yarn\" or \"npm i\"; and then run the "dev" script, either \"pnpm dev\", \"yarn dev\" or \"npm run dev\"`
+    `\n\nNow you can install dependencies: "pnpm i", "yarn" or "npm i"; and then run the "dev" script, either "pnpm dev", "yarn dev" or "npm run dev"`
   );
 }
 

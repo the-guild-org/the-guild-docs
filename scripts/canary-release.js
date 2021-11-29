@@ -1,4 +1,4 @@
-/* eslint-disable no-console */
+/* eslint-disable @typescript-eslint/no-var-requires */
 const semver = require('semver');
 const cp = require('child_process');
 const { basename } = require('path');

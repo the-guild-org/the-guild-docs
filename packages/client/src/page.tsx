@@ -28,7 +28,7 @@ export function MDXPage(
 
       return (
         <>
-          {titleString ? <title key="title" children={titleString} /> : null}
+          {titleString ? <title key="title">{titleString}</title> : null}
           {titleString ? <meta key="og:title" property="og:title" content={titleString} /> : null}
           {description ? <meta key="og:description" property="og:description" content={description} /> : null}
           {description ? <meta key="description" name="description" content={description} /> : null}
@@ -55,7 +55,7 @@ export function MDXPage(
 
         const serializedMdx = process.env.SERIALIZED_MDX_ROUTES;
 
-        let mdxRoutesData = mdxRoutes === 1 ? (serializedMdx ? (JSON.parse(serializedMdx) as IRoutes) : null) : mdxRoutes;
+        const mdxRoutesData = mdxRoutes === 1 ? (serializedMdx ? (JSON.parse(serializedMdx) as IRoutes) : null) : mdxRoutes;
 
         if (!mdxRoutesData) return null;
 
@@ -72,8 +72,9 @@ export function MDXPage(
         TOC={TOC}
         MetaHead={MetaHead}
         BottomNavigation={BottomNavigation}
-        children={children}
-      />
+      >
+        {children}
+      </Component>
     );
   };
 }
