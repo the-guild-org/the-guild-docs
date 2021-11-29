@@ -40,15 +40,23 @@ const useCurrentInstaller = createZustand(
   )
 );
 
-function AddPackagesContent(type: PackageManagerType, packages: string | string[]) {
+function AddPackagesContent(
+  type: PackageManagerType,
+  packages: string | string[],
+  {
+    isGlobal,
+  }: {
+    isGlobal: boolean;
+  }
+) {
   const packagesLines = Array.isArray(packages) ? packages : [packages];
   switch (type) {
     case PackageManagerType.pnpm:
-      return packagesLines.map(names => `pnpm add ${names}`).join('\n');
+      return packagesLines.map(names => `pnpm add${isGlobal ? ' --global' : ''} ${names}`).join('\n');
     case PackageManagerType.yarn:
-      return packagesLines.map(names => `yarn add ${names}`).join('\n');
+      return packagesLines.map(names => `yarn${isGlobal ? ' global' : ''} add ${names}`).join('\n');
     case PackageManagerType.npm:
-      return packagesLines.map(names => `npm install ${names}`).join('\n');
+      return packagesLines.map(names => `npm install${isGlobal ? ' --global' : ''} ${names}`).join('\n');
     default:
       return '';
   }
@@ -70,9 +78,10 @@ function RunPackagesContent(type: PackageManagerType, packages: string | string[
 
 export interface PackageInstallProps extends Omit<TabsProps, 'children'> {
   packages: string | string[];
+  global?: boolean;
 }
 
-export function PackageInstall({ packages, ...props }: PackageInstallProps) {
+export function PackageInstall({ packages, global: isGlobal = false, ...props }: PackageInstallProps) {
   const { current, setNPM, setPNPM, setYarn } = useCurrentInstaller();
 
   const [index, setIndex] = useState(0);
@@ -82,8 +91,8 @@ export function PackageInstall({ packages, ...props }: PackageInstallProps) {
   }, [current]);
 
   const currentContent = useMemo(() => {
-    return AddPackagesContent(current, packages);
-  }, [current, packages]);
+    return AddPackagesContent(current, packages, { isGlobal });
+  }, [current, packages, isGlobal]);
 
   const panelBgColor = useColorModeValue('gray.100', undefined);
 
@@ -116,13 +125,13 @@ export function PackageInstall({ packages, ...props }: PackageInstallProps) {
       </TabList>
       <TabPanels>
         <TabPanel backgroundColor={panelBgColor}>
-          <Code>{AddPackagesContent(PackageManagerType.yarn, packages)}</Code>
+          <Code>{AddPackagesContent(PackageManagerType.yarn, packages, { isGlobal })}</Code>
         </TabPanel>
         <TabPanel backgroundColor={panelBgColor}>
-          <Code>{AddPackagesContent(PackageManagerType.pnpm, packages)}</Code>
+          <Code>{AddPackagesContent(PackageManagerType.pnpm, packages, { isGlobal })}</Code>
         </TabPanel>
         <TabPanel backgroundColor={panelBgColor}>
-          <Code>{AddPackagesContent(PackageManagerType.npm, packages)}</Code>
+          <Code>{AddPackagesContent(PackageManagerType.npm, packages, { isGlobal })}</Code>
         </TabPanel>
       </TabPanels>
       <CopyToClipboard value={currentContent} />
