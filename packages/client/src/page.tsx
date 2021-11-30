@@ -28,17 +28,17 @@ export function MDXPage(
 
       return (
         <>
-          {titleString ? <title key="title">{titleString}</title> : null}
+          {titleString ? <title key="title" children={titleString} /> : null}
           {titleString ? <meta key="og:title" property="og:title" content={titleString} /> : null}
           {description ? <meta key="og:description" property="og:description" content={description} /> : null}
           {description ? <meta key="description" name="description" content={description} /> : null}
         </>
       );
-    }, [title]);
+    }, [title, description]);
 
     const content = useMemo(() => {
       return <MDXRemote {...source} components={components} />;
-    }, [title, source]);
+    }, [source]);
 
     const TOC = useCallback<MdxPageProps['TOC']>(
       function TOC(props) {
@@ -72,9 +72,8 @@ export function MDXPage(
         TOC={TOC}
         MetaHead={MetaHead}
         BottomNavigation={BottomNavigation}
-      >
-        {children}
-      </Component>
+        children={children}
+      />
     );
   };
 }

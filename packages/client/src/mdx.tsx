@@ -5,12 +5,12 @@ import { components } from './components';
 
 import type { MDXRemoteSerializeResult } from '@guild-docs/mdx-remote';
 
-export type ExtraMdxComponents<TComponents extends Record<string, ComponentType<any>> = {}> = Partial<
+export type ExtraMdxComponents<TComponents extends Record<string, ComponentType<any>> = Record<string, never>> = Partial<
   Record<keyof typeof components, ComponentType<any>>
 > &
   Partial<TComponents>;
 
-export function MDX<TComponents extends Record<string, ComponentType<any>> = {}>({
+export function MDX<TComponents extends Record<string, ComponentType<any>> = Record<string, never>>({
   mdx,
   extraComponents,
 }: {
@@ -61,7 +61,7 @@ function uriTransformer(uri?: string) {
   return 'javascript:void(0)';
 }
 
-export const RemoteGHMarkdown = <TComponents extends Record<string, ComponentType<any>> = {}>({
+export const RemoteGHMarkdown = <TComponents extends Record<string, ComponentType<any>> = Record<string, never>>({
   content,
   repo,
   directory,
@@ -90,7 +90,7 @@ export const RemoteGHMarkdown = <TComponents extends Record<string, ComponentTyp
             src = modified + (src.startsWith('.') ? src.substr(1) : src);
           }
 
-          return <img {...props} src={src} />;
+          return <img {...props} alt={props.alt} src={src} />;
         },
       }}
     />

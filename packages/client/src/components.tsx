@@ -1,3 +1,5 @@
+/* eslint-disable react-hooks/rules-of-hooks */
+
 import { useTranslation } from 'next-i18next';
 import ImageImport from 'next/image';
 import NextLinkImport from 'next/link';

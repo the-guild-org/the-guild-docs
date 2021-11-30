@@ -8,7 +8,7 @@ export function arePathnamesEqual(a: string, b: string): boolean {
 }
 
 export function withoutUrlQuery(v: string): string {
-  return v.split('#')[0]!;
+  return v.split('#')[0] as string;
 }
 
 export function withTrailingSlash(v: string) {
