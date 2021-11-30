@@ -2,7 +2,5 @@ node_modules
 *.log
 .next
 dist
-lib
 .env
-lib-types
 /.idea/

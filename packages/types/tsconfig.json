@@ -14,9 +14,9 @@
     "isolatedModules": true,
     "importsNotUsedAsValues": "error",
     "rootDir": "src",
-    "outDir": "lib",
+    "outDir": "dist",
     "alwaysStrict": true
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
-  "exclude": ["node_modules", "lib"]
+  "exclude": ["node_modules", "dist"]
 }

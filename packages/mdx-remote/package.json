@@ -9,17 +9,17 @@
   "author": "PabloSzx <pablosaez1995@gmail.com>",
   "exports": {
     ".": {
-      "require": "./lib/index.js",
-      "import": "./lib/index.mjs"
+      "require": "./dist/index.js",
+      "import": "./dist/index.mjs"
     },
     "./*": {
-      "require": "./lib/*.js",
-      "import": "./lib/*.mjs"
+      "require": "./dist/*.js",
+      "import": "./dist/*.mjs"
     }
   },
-  "main": "lib/index.js",
-  "module": "lib/index.mjs",
-  "types": "lib/index.d.ts",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
   "devDependencies": {
     "changesets-github-release": "^0.0.4",
     "esbuild": "^0.14.1",
@@ -42,16 +42,16 @@
     "postpublish": "gh-release"
   },
   "publishConfig": {
-    "directory": "lib"
+    "directory": "dist"
   },
   "typesVersions": {
     "*": {
-      "lib/index.d.ts": [
-        "lib/index.d.ts"
+      "dist/index.d.ts": [
+        "dist/index.d.ts"
       ],
       "*": [
-        "lib/*",
-        "lib/*/index.d.ts"
+        "dist/*",
+        "dist/*/index.d.ts"
       ]
     }
   }

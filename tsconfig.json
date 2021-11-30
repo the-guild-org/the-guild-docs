@@ -2,7 +2,7 @@
   "compilerOptions": {
     "rootDir": ".",
     "baseUrl": ".",
-    "outDir": "lib",
+    "outDir": "dist",
     "paths": {
       "@guild-docs/*": ["packages/*/src/index.ts"],
       "@guild-docs/mdx-remote/*": ["packages/mdx-remote/src/*.ts"]
@@ -25,5 +25,5 @@
     "importsNotUsedAsValues": "error"
   },
   "include": ["**/*.ts", "**/*.tsx"],
-  "exclude": ["node_modules", "examples", "lib"]
+  "exclude": ["node_modules", "examples", "dist"]
 }

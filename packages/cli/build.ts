@@ -8,7 +8,7 @@ async function main() {
     bundle: true,
     target: 'node13.2',
     format: 'cjs',
-    outfile: join(__dirname, './lib/index.js'),
+    outfile: join(__dirname, './dist/index.js'),
     minify: true,
   });
 }

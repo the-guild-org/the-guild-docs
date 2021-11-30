@@ -8,18 +8,18 @@
   "license": "MIT",
   "author": "PabloSzx <pablosaez1995@gmail.com>",
   "bin": {
-    "guild-docs": "lib/index.js"
+    "guild-docs": "dist/index.js"
   },
   "files": [
-    "lib"
+    "dist"
   ],
   "scripts": {
     "build": "bob-tsm --cjs build.ts",
     "dev": "bob-watch --watch=src -c \"pnpm dev-start\"",
-    "dev-start": "pnpm build && node lib/index.js init ../../examples/basic && pnpm -w pretty",
+    "dev-start": "pnpm build && node dist/index.js init ../../examples/basic && pnpm -w pretty",
     "prepack": "pnpm build",
     "postpublish": "gh-release",
-    "test-new": "rimraf \"../../examples/new\" && node lib/index.js init \"../../examples/new\""
+    "test-new": "rimraf \"../../examples/new\" && node dist/index.js init \"../../examples/new\""
   },
   "devDependencies": {
     "@types/edit-json-file": "^1.6.1",

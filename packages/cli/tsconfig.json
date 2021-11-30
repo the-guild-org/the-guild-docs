@@ -15,9 +15,9 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "importsNotUsedAsValues": "error",
-    "outDir": "lib",
+    "outDir": "dist",
     "alwaysStrict": true
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "build.ts"],
-  "exclude": ["node_modules", "lib"]
+  "exclude": ["node_modules", "dist"]
 }
