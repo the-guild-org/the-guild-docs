@@ -19,7 +19,7 @@ module.exports = {
         'no-else-return': ['error', { allowElseIf: false }],
         'react/jsx-curly-brace-presence': ['error', 'never'],
         'react/jsx-filename-extension': ['error', { extensions: ['.tsx'] }],
-        // Eslint has wrong import path resolution and also doesn't seem to find to regular dependencies
+        // eslint has wrong import path resolution and also doesn't seem to find regular dependencies
         'import/no-unresolved': 'off',
         // There are legitimate reasons some types are set as "any" for easier usage
         '@typescript-eslint/no-explicit-any': 'off',
