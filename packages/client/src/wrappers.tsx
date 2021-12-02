@@ -15,6 +15,7 @@ import {
   useColorMode,
   useColorModeValue,
   useDisclosure,
+  useLatestRef,
 } from '@chakra-ui/react';
 import type { Dict } from '@chakra-ui/utils';
 import { Global } from '@emotion/react';
@@ -24,8 +25,8 @@ import { DefaultSeo } from 'next-seo';
 import type { DefaultSeoProps, OpenGraphMedia } from 'next-seo/lib/types';
 import type { AppProps } from 'next/app';
 import React, { ComponentProps, Dispatch, ReactNode, SetStateAction, useMemo } from 'react';
-import { DocsContainer, DocsNavigation, DocsNavigationDesktop, DocsNavigationMobile, DocsTitle } from './docs';
 import StickyBox from 'react-sticky-box';
+import { DocsContainer, DocsNavigation, DocsNavigationDesktop, DocsNavigationMobile, DocsTitle } from './docs';
 import { MDXNavigation, MDXNavigationProps } from './navigation';
 import { NextNProgress } from './NextNProgress';
 import { iterateRoutes } from './routes';
@@ -156,22 +157,27 @@ export function DocsPage({
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   const mdxRoutes: MdxInternalProps['mdxRoutes'] = pageProps.mdxRoutes;
+
+  const restPropsRef = useLatestRef(restProps);
+
   const navigation = useMemo(() => {
     const paths: IRoutes =
-      mdxRoutes === 1 ? restProps.mdxRoutes.data : (restProps.mdxRoutes.data = mdxRoutes || restProps.mdxRoutes.data);
+      mdxRoutes === 1
+        ? restPropsRef.current.mdxRoutes.data
+        : (restPropsRef.current.mdxRoutes.data = mdxRoutes || restPropsRef.current.mdxRoutes.data);
     if (!paths) throw Error('No MDX Navigation routes data!');
     return (
-      <DocsNavigation {...restProps.docsNavigationProps}>
-        <DocsTitle children="Documentation" {...restProps.docsTitleProps} />
+      <DocsNavigation {...restPropsRef.current.docsNavigationProps}>
+        <DocsTitle children="Documentation" {...restPropsRef.current.docsTitleProps} />
         <MDXNavigation
           paths={iterateRoutes(paths)}
           accentColor={accentColor}
           handleLinkClick={onClose}
-          {...restProps.mdxNavigationProps}
+          {...restPropsRef.current.mdxNavigationProps}
         />
       </DocsNavigation>
     );
-  }, [mdxRoutes]);
+  }, [mdxRoutes, accentColor, onClose, restPropsRef]);
 
   const drawerBgContent = useColorModeValue('white', 'gray.850');
   const drawerBgButton = useColorModeValue('gray.200', 'gray.700');

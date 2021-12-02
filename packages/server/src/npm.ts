@@ -152,11 +152,13 @@ export async function getPackagesData<Tags extends string = string>({
       const readmePromise = (async () => {
         if (rawData.readme) {
           return rawData.readme;
-        } else if (rawData.devFilePath && process.env.NODE_ENV === 'development') {
+        }
+        if (rawData.devFilePath && process.env.NODE_ENV === 'development') {
           return promises.readFile(rawData.devFilePath, {
             encoding: 'utf-8',
           });
-        } else if (rawData.githubReadme) {
+        }
+        if (rawData.githubReadme) {
           const fetchPath = `https://raw.githubusercontent.com/${withoutStartingSlash(
             withoutTrailingSlash(rawData.githubReadme.repo)
           )}/HEAD${withStartingSlash(rawData.githubReadme.path)}`;
@@ -209,7 +211,7 @@ export async function getPackagesData<Tags extends string = string>({
 
         if (stats?.readme) return stats.readme;
 
-        return undefined;
+        return;
       })();
 
       const [stats, readme] = await Promise.all([statsPromise, readmePromise]);

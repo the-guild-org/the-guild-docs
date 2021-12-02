@@ -9,13 +9,13 @@
   "author": "PabloSzx <pablosaez1995@gmail.com>",
   "sideEffects": false,
   "exports": {
-    ".": "./lib/index.js",
-    "./*": "./lib/*.js"
+    ".": "./dist/index.js",
+    "./*": "./dist/*.js"
   },
-  "main": "lib/index.js",
-  "types": "lib/index.d.ts",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "files": [
-    "lib"
+    "dist"
   ],
   "scripts": {
     "dev": "bob-esbuild watch --onlyCJS --skipValidate",
@@ -85,16 +85,16 @@
   },
   "publishConfig": {
     "access": "public",
-    "directory": "lib"
+    "directory": "dist"
   },
   "typesVersions": {
     "*": {
-      "lib/index.d.ts": [
-        "lib/index.d.ts"
+      "dist/index.d.ts": [
+        "dist/index.d.ts"
       ],
       "*": [
-        "lib/*",
-        "lib/*/index.d.ts"
+        "dist/*",
+        "dist/*/index.d.ts"
       ]
     }
   }

@@ -10,19 +10,19 @@
   "sideEffects": false,
   "exports": {
     ".": {
-      "require": "./lib/index.js",
-      "import": "./lib/index.mjs"
+      "require": "./dist/index.js",
+      "import": "./dist/index.mjs"
     },
     "./*": {
-      "require": "./lib/*.js",
-      "import": "./lib/*.mjs"
+      "require": "./dist/*.js",
+      "import": "./dist/*.mjs"
     }
   },
-  "main": "lib/index.js",
-  "module": "lib/index.mjs",
-  "types": "lib/index.d.ts",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
   "files": [
-    "lib"
+    "dist"
   ],
   "scripts": {
     "dev": "bob-esbuild watch",
@@ -72,16 +72,16 @@
   },
   "publishConfig": {
     "access": "public",
-    "directory": "lib"
+    "directory": "dist"
   },
   "typesVersions": {
     "*": {
-      "lib/index.d.ts": [
-        "lib/index.d.ts"
+      "dist/index.d.ts": [
+        "dist/index.d.ts"
       ],
       "*": [
-        "lib/*",
-        "lib/*/index.d.ts"
+        "dist/*",
+        "dist/*/index.d.ts"
       ]
     }
   }

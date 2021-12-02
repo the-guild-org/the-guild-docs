@@ -54,7 +54,7 @@ export function MDXRemote({ compiledSource, scope, components = {}, lazy }: MDXR
       });
       return () => window.cancelIdleCallback(handle);
     }
-  }, []);
+  }, [lazy]);
 
   const Content = useMemo(() => {
     // if we're ready to render, we can assemble the component tree and let React do its thing
@@ -101,11 +101,11 @@ if (typeof window !== 'undefined') {
   window.requestIdleCallback =
     window.requestIdleCallback ||
     function (cb) {
-      var start = Date.now();
+      const start = Date.now();
       return setTimeout(function () {
         cb({
           didTimeout: false,
-          timeRemaining: function () {
+          timeRemaining() {
             return Math.max(0, 50 - (Date.now() - start));
           },
         });

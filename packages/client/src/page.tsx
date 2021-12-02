@@ -34,11 +34,11 @@ export function MDXPage(
           {description ? <meta key="description" name="description" content={description} /> : null}
         </>
       );
-    }, [title]);
+    }, [title, description]);
 
     const content = useMemo(() => {
       return <MDXRemote {...source} components={components} />;
-    }, [title, source]);
+    }, [source]);
 
     const TOC = useCallback<MdxPageProps['TOC']>(
       function TOC(props) {
@@ -55,7 +55,7 @@ export function MDXPage(
 
         const serializedMdx = process.env.SERIALIZED_MDX_ROUTES;
 
-        let mdxRoutesData = mdxRoutes === 1 ? (serializedMdx ? (JSON.parse(serializedMdx) as IRoutes) : null) : mdxRoutes;
+        const mdxRoutesData = mdxRoutes === 1 ? (serializedMdx ? (JSON.parse(serializedMdx) as IRoutes) : null) : mdxRoutes;
 
         if (!mdxRoutesData) return null;
 

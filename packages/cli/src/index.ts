@@ -2,7 +2,7 @@
 
 import { program } from 'commander';
 import mkdirp from 'mkdirp';
-import { dirname, resolve } from 'path';
+import { dirname } from 'path';
 import { config, getPaths, setConfig } from './cliConfig';
 import { addDependency, addPackageScripts } from './editPackageJson';
 import {
@@ -17,7 +17,9 @@ import {
   writeTSConfig,
 } from './nextConfig';
 
-program.version(require(resolve(__dirname, '../package.json')).version).description('Guild Docs CLI');
+import pkg from '../package.json';
+
+program.version(pkg.version).description('Guild Docs CLI');
 
 async function DepsAction(dir: string = process.cwd()) {
   setConfig(getPaths(dir));
@@ -112,7 +114,7 @@ async function InitAction(dir: string = process.cwd()) {
   await Promise.all([DepsAction(dir), ConfigAction(dir)]);
 
   console.log(
-    `\n\nNow you can install dependencies: \"pnpm i\", \"yarn\" or \"npm i\"; and then run the "dev" script, either \"pnpm dev\", \"yarn dev\" or \"npm run dev\"`
+    `\n\nNow you can install dependencies: "pnpm i", "yarn" or "npm i"; and then run the "dev" script, either "pnpm dev", "yarn dev" or "npm run dev"`
   );
 }
 

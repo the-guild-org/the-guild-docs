@@ -9,7 +9,7 @@ import { appWithTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations.js';
 import { dirname, join, resolve } from 'path';
 import * as React from 'react';
-import shiki from 'shiki';
+import { getHighlighter } from 'shiki';
 import { IS_PRODUCTION } from './constants';
 import { getSlug } from './routes';
 import { SerializeTOC } from './toc';
@@ -17,7 +17,7 @@ import { SerializeTOC } from './toc';
 const Provideri18n = appWithTranslation(({ children }) => <React.Fragment children={children} />);
 
 async function prepareMDXRenderWithTranslations(locale: string | undefined) {
-  const translations = await serverSideTranslations(locale!, ['common']);
+  const translations = await serverSideTranslations(locale || 'en', ['common']);
 
   return {
     provider: {
@@ -146,7 +146,6 @@ export interface BuildMDXOptions {
    * @default true
    */
   buildTOC?: boolean;
-
   extraRemarkPlugins?: NonNullable<SerializeOptions['mdxOptions']>['remarkPlugins'];
   extraRehypePlugins?: NonNullable<SerializeOptions['mdxOptions']>['rehypePlugins'];
 }
@@ -161,7 +160,7 @@ const MdxDeps = LazyPromise(async () => {
   const [remarkAdmonitions, remarkEmoji, highlighter, withShiki, { serialize }, rehypeSlug] = await Promise.all([
     import('remark-admonitions').then(v => v.default).catch(() => void 0),
     import('remark-emoji').then(v => v.default),
-    shiki.getHighlighter({
+    getHighlighter({
       theme: 'dark-plus',
       langs: [
         'javascript',
@@ -207,7 +206,10 @@ export async function buildMDX(
   source: PossiblePromise<string | Buffer>,
   { buildTOC = true, extraRemarkPlugins = [], extraRehypePlugins = [] }: BuildMDXOptions = {}
 ): Promise<CompiledMDX> {
-  let { content, data } = matter(await source);
+  const matterData = matter(await source);
+
+  let content = matterData.content;
+  const data = matterData.data;
 
   if (data.title && !content.trimStart().startsWith('# ') && data.add_heading !== false) {
     content = '# ' + data.title + '\n\n' + content.trimStart();

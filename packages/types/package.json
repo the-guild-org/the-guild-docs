@@ -6,11 +6,11 @@
     "url": "git+https://github.com/the-guild-org/the-guild-docs.git"
   },
   "license": "MIT",
-  "main": "lib/index.js",
-  "module": "lib/index.mjs",
-  "types": "lib/index.d.ts",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
   "files": [
-    "lib"
+    "dist"
   ],
   "scripts": {
     "dev": "bob-esbuild watch",

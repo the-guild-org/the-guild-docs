@@ -1,6 +1,4 @@
 declare module 'npm-api' {
-  import * as request from 'request';
-  import * as through from 'through';
   import * as url from 'url';
 
   // TODO: Should we use types from existing package like `package-json`?
@@ -15,7 +13,6 @@ declare module 'npm-api' {
   class List {
     constructor(name: string, view: View);
 
-    query(params?: url.URLFormatOptions): Promise<request.Response>;
     url(query?: url.URLFormatOptions): string;
   }
 
@@ -23,7 +20,6 @@ declare module 'npm-api' {
     constructor(name: string);
 
     query(params?: url.URLFormatOptions): Promise<(Buffer | string)[]>;
-    stream(params?: url.URLFormatOptions): through.ThroughStream;
     url(query?: url.URLFormatOptions): string;
   }
 
