@@ -1,36 +1,66 @@
-import editJsonFile from 'edit-json-file';
+import { promises, readFileSync } from 'fs';
+import get from 'lodash/get.js';
+import set from 'lodash/set.js';
 import NpmApi from 'npm-api';
-
 import { config } from './cliConfig';
 import { formatPrettier } from './prettier';
 
 const api = new NpmApi();
 
-const jsonConfigs: Record<string, editJsonFile.JsonEditor> = {};
+export type PackageJson = Record<
+  string,
+  {
+    scripts?: Record<string, string>;
+    dependencies?: Record<string, string>;
+    devDependencies?: Record<string, string>;
+    pnpm?: {
+      overrides?: Record<string, string>;
+    };
+    resolutions?: Record<string, string>;
+  }
+>;
+
+const jsonConfigs: Record<string, PackageJson> = {};
+
+function readPackageJson(packageJsonPath: string): PackageJson {
+  try {
+    return JSON.parse(readFileSync(packageJsonPath, 'utf-8'));
+  } catch (err) {
+    return {
+      scripts: {},
+      dependencies: {},
+      devDependencies: {},
+    };
+  }
+}
+
+export async function savePackageJson() {
+  await Promise.all(
+    Object.entries(jsonConfigs).map(async ([packageJsonPath, obj]) => {
+      await promises.writeFile(packageJsonPath, await formatPrettier(JSON.stringify(obj), 'json'));
+    })
+  );
+}
 
 export function addPackageScripts(scripts: Record<string, string>) {
-  const json = (jsonConfigs[config.packageJsonPath] ||= editJsonFile(config.packageJsonPath));
+  const json = (jsonConfigs[config.packageJsonPath] ||= readPackageJson(config.packageJsonPath));
 
   Object.entries(scripts).forEach(([name, content]) => {
-    if (json.get(`scripts.${name}`)) {
+    if (get(json, `scripts.${name}`)) {
       return;
     }
 
-    json.set(`scripts.${name}`, content);
+    set(json, `scripts.${name}`, content);
   });
-
-  json.save();
 }
 
 export function addPackageResolutions(resolutions: Record<string, string>) {
-  const json = (jsonConfigs[config.packageJsonPath] ||= editJsonFile(config.packageJsonPath));
+  const json = (jsonConfigs[config.packageJsonPath] ||= readPackageJson(config.packageJsonPath));
 
   Object.entries(resolutions).forEach(([name, content]) => {
-    json.set(`pnpm.overrides.${name}`, content);
-    json.set(`resolutions.${name}`, content);
+    set(json, `pnpm.overrides.${name}`, content);
+    set(json, `resolutions.${name}`, content);
   });
-
-  json.save();
 }
 
 export async function addDependency(
@@ -50,8 +80,8 @@ export async function addDependency(
 
   await Promise.all(
     dependencies.map(async depName => {
-      const json = (jsonConfigs[config.packageJsonPath] ||= editJsonFile(config.packageJsonPath));
-      if (json.get(`dependencies.${depName}`) || json.get(`devDependencies.${depName}`)) {
+      const json = (jsonConfigs[config.packageJsonPath] ||= readPackageJson(config.packageJsonPath));
+      if (get(json, `dependencies.${depName}`) || get(json, `devDependencies.${depName}`)) {
         return;
       }
 
@@ -68,20 +98,16 @@ export async function addDependency(
             })
           ).version;
 
-      json.set(`${isDev ? 'devDependencies' : 'dependencies'}.${depName}`, depPackageVersion);
+      set(json, `${isDev ? 'devDependencies' : 'dependencies'}.${depName}`, depPackageVersion);
     })
   ).finally(async () => {
     await Promise.all(
       Object.values(jsonConfigs).map(async v => {
-        const deps = v.get('dependencies');
-        deps && v.set('dependencies', sortObject(deps));
+        const deps = get(v, 'dependencies');
+        deps && set(v, 'dependencies', sortObject(deps));
 
-        const devDeps = v.get('devDependencies');
-        devDeps && v.set('devDependencies', sortObject(devDeps));
-
-        v.save();
-
-        v.write(await formatPrettier(JSON.stringify(v.read()), 'json'));
+        const devDeps = get(v, 'devDependencies');
+        devDeps && set(v, 'devDependencies', sortObject(devDeps));
       })
     );
   });

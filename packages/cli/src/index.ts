@@ -4,7 +4,7 @@ import { program } from 'commander';
 import mkdirp from 'mkdirp';
 import { dirname } from 'path';
 import { config, getPaths, setConfig } from './cliConfig';
-import { addDependency, addPackageScripts } from './editPackageJson';
+import { addDependency, addPackageScripts, savePackageJson } from './editPackageJson';
 import {
   writeApp,
   writeDocPages,
@@ -78,6 +78,8 @@ async function DepsAction(dir: string = process.cwd()) {
       analyze: 'cross-env ANALYZE=true next build',
     }),
   ]);
+
+  await savePackageJson();
 
   console.log('Dependencies added!');
 

@@ -22,7 +22,7 @@
     "test-new": "rimraf \"../../examples/new\" && node dist/index.js init \"../../examples/new\""
   },
   "devDependencies": {
-    "@types/edit-json-file": "^1.6.1",
+    "@types/lodash": "^4.14.177",
     "@types/mkdirp": "^1.0.2",
     "@types/node": "^16.11.11",
     "@types/prettier": "^2.4.2",
@@ -30,8 +30,8 @@
     "bob-watch": "^0.1.1",
     "changesets-github-release": "^0.0.4",
     "commander": "^8.3.0",
-    "edit-json-file": "^1.6.2",
     "esbuild": "^0.14.2",
+    "lodash": "^4.17.21",
     "mkdirp": "^1.0.4",
     "npm-api": "^1.0.1",
     "prettier": "^2.5.1"
