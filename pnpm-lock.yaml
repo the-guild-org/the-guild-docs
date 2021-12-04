@@ -40,7 +40,7 @@ importers:
       globby: ^11.0.4
       husky: 7.0.4
       next: ^12.0.4
-      prettier: ^2.5.0
+      prettier: ^2.5.1
       pretty-quick: ^3.1.2
       react: ^17.0.2
       react-dom: ^17.0.2
@@ -76,8 +76,8 @@ importers:
       globby: 11.0.4
       husky: 7.0.4
       next: 12.0.4_react-dom@17.0.2+react@17.0.2
-      prettier: 2.5.0
-      pretty-quick: 3.1.2_prettier@2.5.0
+      prettier: 2.5.1
+      pretty-quick: 3.1.2_prettier@2.5.1
       react: 17.0.2
       react-dom: 17.0.2_react@17.0.2
       rimraf: 3.0.2
@@ -176,7 +176,7 @@ importers:
       esbuild: ^0.14.1
       mkdirp: ^1.0.4
       npm-api: ^1.0.1
-      prettier: ^2.5.0
+      prettier: ^2.5.1
     devDependencies:
       '@types/edit-json-file': 1.6.1
       '@types/mkdirp': 1.0.2
@@ -190,7 +190,7 @@ importers:
       esbuild: 0.14.1
       mkdirp: 1.0.4
       npm-api: 1.0.1
-      prettier: 2.5.0
+      prettier: 2.5.1
 
   packages/client:
     specifiers:
@@ -7013,8 +7013,8 @@ packages:
     hasBin: true
     dev: true
 
-  /prettier/2.5.0:
-    resolution: {integrity: sha512-FM/zAKgWTxj40rH03VxzIPdXmj39SwSjwG0heUcNFwI+EMZJnY93yAiKXM3dObIKAM5TA88werc8T/EwhB45eg==}
+  /prettier/2.5.1:
+    resolution: {integrity: sha512-vBZcPRUR5MZJwoyi3ZoyQlc1rXeEck8KgeC9AwwOn+exuxLxq5toTRDTSaVrXHxelDMHy9zlicw8u66yxoSUFg==}
     engines: {node: '>=10.13.0'}
     hasBin: true
     dev: true
@@ -7023,7 +7023,7 @@ packages:
     resolution: {integrity: sha1-t+PqQkNaTJsnWdmeDyAesZWALuE=}
     engines: {node: '>= 0.8'}
 
-  /pretty-quick/3.1.2_prettier@2.5.0:
+  /pretty-quick/3.1.2_prettier@2.5.1:
     resolution: {integrity: sha512-T+fpTJrDjTzewql4p3lKrRA7z3MrNyjBK1MKeaBm5PpKwATgVm885TpY7TgY8KFt5Q1Qn3QDseRQcyX9AKTKkA==}
     engines: {node: '>=10.13'}
     hasBin: true
@@ -7036,7 +7036,7 @@ packages:
       ignore: 5.1.9
       mri: 1.2.0
       multimatch: 4.0.0
-      prettier: 2.5.0
+      prettier: 2.5.1
     dev: true
 
   /process/0.11.10:
