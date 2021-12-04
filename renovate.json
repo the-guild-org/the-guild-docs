@@ -2,6 +2,6 @@
   "extends": ["config:base"],
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "rangeStrategy": "bump",
-  "ignoreDeps": [],
+  "ignoreDeps": ["pnpm"],
   "ignorePaths": ["**/node_modules/**"]
 }
