@@ -108,7 +108,7 @@ importers:
       esbuild: ^0.14.1
       framer-motion: ^5.3.3
       next: ^12.0.4
-      next-i18next: ^9.2.0
+      next-i18next: ^10.0.1
       next-remote-watch: ^1.0.0
       next-seo: ^4.28.1
       open-cli: ^7.0.1
@@ -127,13 +127,13 @@ importers:
       '@chakra-ui/utils': 1.9.1
       '@emotion/react': 11.7.0_cfedea9b3ed0faf0dded75c187406c5e
       '@emotion/styled': 11.6.0_49e498e16442da1a9ae75db6f4430d97
-      '@guild-docs/client': file:packages/client_a064f4a1cee47bbfa5bba5dfba6daffb
-      '@guild-docs/server': file:packages/server_590cc417f8e8c91d4926555019f10e63
+      '@guild-docs/client': file:packages/client_fabacb595a67d746d3438acb5c767a18
+      '@guild-docs/server': file:packages/server_2c4ecdb2c4fa8dca118dead3a3f516b0
       '@mdx-js/react': 1.6.22_react@17.0.2
       '@theguild/components': 1.8.2_5539cae010396b202b015f3568914e95
       framer-motion: 5.3.3_react-dom@17.0.2+react@17.0.2
       next: 12.0.4_react-dom@17.0.2+react@17.0.2
-      next-i18next: 9.2.0_next@12.0.4+react@17.0.2
+      next-i18next: 10.0.1_next@12.0.4+react@17.0.2
       next-seo: 4.28.1_f195614718841b3c14a81ac95268ce58
       react: 17.0.2
       react-dom: 17.0.2_react@17.0.2
@@ -216,7 +216,7 @@ importers:
       framer-motion: ^5.3.3
       immer: ^9.0.7
       next: ^12.0.4
-      next-i18next: ^9.2.0
+      next-i18next: ^10.0.1
       next-seo: ^4.28.1
       nprogress: ^0.2.0
       react: ^17.0.2
@@ -262,7 +262,7 @@ importers:
       esbuild: 0.14.1
       framer-motion: 5.3.3_react-dom@17.0.2+react@17.0.2
       next: 12.0.4_react-dom@17.0.2+react@17.0.2
-      next-i18next: 9.2.0_next@12.0.4+react@17.0.2
+      next-i18next: 10.0.1_next@12.0.4+react@17.0.2
       react: 17.0.2
       react-dom: 17.0.2_react@17.0.2
       typescript: 4.4.4
@@ -301,7 +301,7 @@ importers:
       globby: ^11.0.4
       gray-matter: ^4.0.3
       next: ^12.0.4
-      next-i18next: ^9.2.0
+      next-i18next: ^10.0.1
       node-fetch: ^2.6.6
       react: ^17.0.2
       react-dom: ^17.0.2
@@ -332,7 +332,7 @@ importers:
       changesets-github-release: 0.0.4
       esbuild: 0.14.1
       next: 12.0.4_react-dom@17.0.2+react@17.0.2
-      next-i18next: 9.2.0_next@12.0.4+react@17.0.2
+      next-i18next: 10.0.1_next@12.0.4+react@17.0.2
       react: 17.0.2
       react-dom: 17.0.2_react@17.0.2
       remark-admonitions: 1.2.1
@@ -346,7 +346,7 @@ importers:
       '@types/react': ^17.0.37
       bob-esbuild-cli: ^3.0.1
       changesets-github-release: ^0.0.4
-      next-i18next: ^9.2.0
+      next-i18next: ^10.0.1
       typescript: 4.4.4
       unified: ^10.1.1
     dependencies:
@@ -357,7 +357,7 @@ importers:
       '@types/react': 17.0.37
       bob-esbuild-cli: 3.0.1_bob-esbuild@3.1.1
       changesets-github-release: 0.0.4
-      next-i18next: 9.2.0_next@12.0.4+react@17.0.2
+      next-i18next: 10.0.1_next@12.0.4+react@17.0.2
       typescript: 4.4.4
 
 packages:
@@ -6342,8 +6342,8 @@ packages:
     engines: {node: '>= 0.6'}
     dev: true
 
-  /next-i18next/9.2.0_next@12.0.4+react@17.0.2:
-    resolution: {integrity: sha512-cWhrgxYz9IZZQ81Vc4NgogaKSANN827qHRkyVuoscOerJBHNMr7t3vO1szj/M1qnyE7yIV0NHczCS4VyqWbQAg==}
+  /next-i18next/10.0.1_next@12.0.4+react@17.0.2:
+    resolution: {integrity: sha512-wcpZDip4Vt89dCHgN2EKeNyA5Ckz6NenPUVpzQMphmuXyTPMqmFkWyWbpMDdg4QuMiYiX98eTeY4RLGhUXzHmQ==}
     engines: {node: '>=12'}
     peerDependencies:
       next: '>= 10.0.0'
@@ -9125,7 +9125,7 @@ packages:
     resolution: {integrity: sha512-V50KMwwzqJV0NpZIZFwfOD5/lyny3WlSzRiXgA0G7VUnRlqttta1L6UQIHzd6EuBY/cHGfwTIck7w1yH6Q5zUw==}
     dev: false
 
-  file:packages/client_a064f4a1cee47bbfa5bba5dfba6daffb:
+  file:packages/client_fabacb595a67d746d3438acb5c767a18:
     resolution: {directory: packages/client, type: directory}
     id: file:packages/client
     name: '@guild-docs/client'
@@ -9161,7 +9161,7 @@ packages:
       framer-motion: 5.3.3_react-dom@17.0.2+react@17.0.2
       immer: 9.0.7
       next: 12.0.4_react-dom@17.0.2+react@17.0.2
-      next-i18next: 9.2.0_next@12.0.4+react@17.0.2
+      next-i18next: 10.0.1_next@12.0.4+react@17.0.2
       next-seo: 4.28.1_f195614718841b3c14a81ac95268ce58
       nprogress: 0.2.0
       react: 17.0.2
@@ -9177,7 +9177,7 @@ packages:
       - prop-types
     dev: false
 
-  file:packages/server_590cc417f8e8c91d4926555019f10e63:
+  file:packages/server_2c4ecdb2c4fa8dca118dead3a3f516b0:
     resolution: {directory: packages/server, type: directory}
     id: file:packages/server
     name: '@guild-docs/server'
@@ -9199,7 +9199,7 @@ packages:
       globby: 11.0.4
       gray-matter: 4.0.3
       next: 12.0.4_react-dom@17.0.2+react@17.0.2
-      next-i18next: 9.2.0_next@12.0.4+react@17.0.2
+      next-i18next: 10.0.1_next@12.0.4+react@17.0.2
       node-fetch: 2.6.6
       react: 17.0.2
       react-dom: 17.0.2_react@17.0.2
