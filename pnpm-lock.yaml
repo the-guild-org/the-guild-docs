@@ -670,7 +670,7 @@ packages:
     resolution: {integrity: sha512-99catp6bHCaxr4sJ/DbTGgHS4+Rs2RVd2g7iOap6SLGPDknRK9ztKNsE/Fg6QhSeh1FGE5f6gHGQmvvn3I3xhw==}
     engines: {node: '>=6.9.0'}
     dependencies:
-      regenerator-runtime: 0.13.4
+      regenerator-runtime: 0.13.9
 
   /@babel/runtime/7.16.3:
     resolution: {integrity: sha512-WBwekcqacdY2e9AF/Q7WLFUWmdJGJTkbjqTjoMDgXkVZ3ZRUvOPsLb5KdwISoQVsbP+DQzVZW4Zhci0DvpbNTQ==}
@@ -9101,7 +9101,7 @@ packages:
       '@theguild/components': ^1.8.2
       '@types/mdx-js__react': '*'
       framer-motion: '*'
-      next: '>=11.1.2'
+      next: '>=11.1.3'
       next-i18next: '*'
       react: '*'
       react-dom: '*'
@@ -9145,7 +9145,7 @@ packages:
     name: '@guild-docs/server'
     version: 2.1.4
     peerDependencies:
-      next: '>=11.1.2'
+      next: '>=11.1.3'
       next-i18next: '*'
       react: '*'
       react-dom: '*'
