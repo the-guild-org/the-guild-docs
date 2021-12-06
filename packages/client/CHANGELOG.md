@@ -1,5 +1,13 @@
 # @guild-docs/client
 
+## 1.3.3
+
+### Patch Changes
+
+- 6d89612: Lint fixes
+- Updated dependencies [6d89612]
+  - @guild-docs/mdx-remote@1.0.2
+
 ## 1.3.2
 
 ### Patch Changes

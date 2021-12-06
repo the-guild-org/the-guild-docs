@@ -1,5 +1,12 @@
 # guild-docs
 
+## 1.0.4
+
+### Patch Changes
+
+- 54ede1c: Fix package json edit logic
+- 6d89612: Lint fixes
+
 ## 1.0.3
 
 ### Patch Changes
