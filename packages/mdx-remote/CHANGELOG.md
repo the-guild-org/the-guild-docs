@@ -1,5 +1,11 @@
 # @guild-docs/mdx-remote
 
+## 1.0.2
+
+### Patch Changes
+
+- 6d89612: Lint fixes
+
 ## 1.0.1
 
 ### Patch Changes

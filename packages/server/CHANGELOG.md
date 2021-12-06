@@ -1,5 +1,13 @@
 # @guild-docs/server
 
+## 2.1.5
+
+### Patch Changes
+
+- 6d89612: Lint fixes
+- Updated dependencies [6d89612]
+  - @guild-docs/mdx-remote@1.0.2
+
 ## 2.1.4
 
 ### Patch Changes
