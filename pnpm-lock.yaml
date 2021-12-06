@@ -21,7 +21,7 @@ importers:
       '@types/node': '>=16.11.1'
       '@types/react': ^17.0.37
       '@types/react-instantsearch-core': ^6.10.5
-      '@types/react-instantsearch-dom': ^6.12.0
+      '@types/react-instantsearch-dom': ^6.12.1
       '@types/react-paginate': ^7.1.1
       '@typescript-eslint/eslint-plugin': 5.5.0
       '@typescript-eslint/parser': 5.5.0
@@ -57,7 +57,7 @@ importers:
       '@types/node': 16.11.11
       '@types/react': 17.0.37
       '@types/react-instantsearch-core': 6.10.5
-      '@types/react-instantsearch-dom': 6.12.0
+      '@types/react-instantsearch-dom': 6.12.1
       '@types/react-paginate': 7.1.1
       '@typescript-eslint/eslint-plugin': 5.5.0_85a2676f00816390d089c5fff3a9a05a
       '@typescript-eslint/parser': 5.5.0_eslint@8.4.0+typescript@4.4.4
@@ -2745,8 +2745,8 @@ packages:
       algoliasearch-helper: 3.6.2_algoliasearch@4.11.0
     dev: true
 
-  /@types/react-instantsearch-dom/6.12.0:
-    resolution: {integrity: sha512-O08H+ye4e4kEnYHmMrov9FPNRDJwfCWthNZf4aztqahpU8LSbAiuFQGVy84SHUvg/jfNcG4333SsVnAQLtbS7A==}
+  /@types/react-instantsearch-dom/6.12.1:
+    resolution: {integrity: sha512-0crWjo6w6SHPZY5XWVUVkH3exVRGjyNJXtVYXRD7s6u8CiSIhONO82cCsxSCsdyGeK2yenPZNxFuZ1KXnoWKOg==}
     dependencies:
       '@types/react': 17.0.37
       '@types/react-instantsearch-core': 6.10.5
