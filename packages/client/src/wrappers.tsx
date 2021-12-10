@@ -25,7 +25,6 @@ import { DefaultSeo } from 'next-seo';
 import type { DefaultSeoProps, OpenGraphMedia } from 'next-seo/lib/types';
 import type { AppProps } from 'next/app';
 import React, { ComponentProps, Dispatch, ReactNode, SetStateAction, useMemo } from 'react';
-import StickyBox from 'react-sticky-box';
 import { DocsContainer, DocsNavigation, DocsNavigationDesktop, DocsNavigationMobile, DocsTitle } from './docs';
 import { MDXNavigation, MDXNavigationProps } from './navigation';
 import { NextNProgress } from './NextNProgress';
@@ -187,11 +186,7 @@ export function DocsPage({
 
   return (
     <DocsContainer {...restProps.docsContainerProps}>
-      <DocsNavigationDesktop {...restProps.docsNavigationDesktopProps}>
-        <StickyBox offsetTop={100} offsetBottom={20}>
-          {navigation}
-        </StickyBox>
-      </DocsNavigationDesktop>
+      <DocsNavigationDesktop {...restProps.docsNavigationDesktopProps}>{navigation}</DocsNavigationDesktop>
       <DocsNavigationMobile {...restProps.docsNavigationMobileProps}>
         <IconButton
           onClick={onOpen}

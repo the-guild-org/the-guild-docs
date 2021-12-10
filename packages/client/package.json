@@ -30,7 +30,6 @@
     "nprogress": "^0.2.0",
     "react-icons": "4.3.1",
     "react-intersection-observer": "^8.33.0",
-    "react-sticky-box": "0.9.3",
     "react-use": "^17.3.1",
     "remove-markdown": "^0.3.0",
     "use-immer": "^0.6.0",

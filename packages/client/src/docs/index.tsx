@@ -1,6 +1,5 @@
 import type { FC } from 'react';
 import React from 'react';
-import StickyBox from 'react-sticky-box';
 import { chakra } from '@chakra-ui/react';
 
 export const DocsContainer = chakra('section', {
@@ -76,9 +75,7 @@ const TOC = chakra('aside', {
 export const DocsTOC: FC = props => {
   return (
     <div>
-      <StickyBox offsetTop={100} offsetBottom={20}>
-        <TOC {...props} />
-      </StickyBox>
+      <TOC {...props} />
     </div>
   );
 };
