@@ -2,7 +2,19 @@ import React, { useEffect, useMemo, useState } from 'react';
 import createZustandImport from 'zustand';
 import { persist } from 'zustand/middleware';
 
-import { Code, Tab, TabList, TabPanel, TabPanels, Tabs, TabsProps, useColorModeValue } from '@chakra-ui/react';
+import {
+  Code,
+  Tab,
+  TabList,
+  TabPanel,
+  TabPanels,
+  Tabs,
+  TabsProps,
+  useColorModeValue,
+  TabPanelsProps,
+  TabPanelProps,
+  TabListProps,
+} from '@chakra-ui/react';
 
 import { CopyToClipboard } from './CopyToClipboard';
 import { getDefault } from '../utils';
@@ -79,9 +91,19 @@ function RunPackagesContent(type: PackageManagerType, packages: string | string[
 export interface PackageInstallProps extends Omit<TabsProps, 'children'> {
   packages: string | string[];
   global?: boolean;
+  tabPanelsProps?: TabPanelsProps;
+  singleTabPanelProps?: TabPanelProps;
+  tabListProps?: TabListProps;
 }
 
-export function PackageInstall({ packages, global: isGlobal = false, ...props }: PackageInstallProps) {
+export function PackageInstall({
+  packages,
+  global: isGlobal = false,
+  tabPanelsProps,
+  singleTabPanelProps,
+  tabListProps,
+  ...props
+}: PackageInstallProps) {
   const { current, setNPM, setPNPM, setYarn } = useCurrentInstaller();
 
   const [index, setIndex] = useState(0);
@@ -118,7 +140,7 @@ export function PackageInstall({ packages, global: isGlobal = false, ...props }:
       whiteSpace="pre-wrap"
       {...props}
     >
-      <TabList>
+      <TabList {...tabListProps}>
         <Tab>yarn</Tab>
         <Tab>pnpm</Tab>
         <Tab>npm</Tab>
@@ -132,14 +154,15 @@ export function PackageInstall({ packages, global: isGlobal = false, ...props }:
             margin: '0px !important',
           },
         }}
+        {...tabPanelsProps}
       >
-        <TabPanel backgroundColor={panelBgColor}>
+        <TabPanel backgroundColor={panelBgColor} {...singleTabPanelProps}>
           <Code>{AddPackagesContent(PackageManagerType.yarn, packages, { isGlobal })}</Code>
         </TabPanel>
-        <TabPanel backgroundColor={panelBgColor}>
+        <TabPanel backgroundColor={panelBgColor} {...singleTabPanelProps}>
           <Code>{AddPackagesContent(PackageManagerType.pnpm, packages, { isGlobal })}</Code>
         </TabPanel>
-        <TabPanel backgroundColor={panelBgColor}>
+        <TabPanel backgroundColor={panelBgColor} {...singleTabPanelProps}>
           <Code>{AddPackagesContent(PackageManagerType.npm, packages, { isGlobal })}</Code>
         </TabPanel>
       </TabPanels>
