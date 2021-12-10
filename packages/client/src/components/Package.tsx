@@ -123,7 +123,16 @@ export function PackageInstall({ packages, global: isGlobal = false, ...props }:
         <Tab>pnpm</Tab>
         <Tab>npm</Tab>
       </TabList>
-      <TabPanels>
+      <TabPanels
+        sx={{
+          '> div': {
+            padding: '0.7em',
+          },
+          code: {
+            margin: '0px !important',
+          },
+        }}
+      >
         <TabPanel backgroundColor={panelBgColor}>
           <Code>{AddPackagesContent(PackageManagerType.yarn, packages, { isGlobal })}</Code>
         </TabPanel>
