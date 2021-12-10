@@ -22,9 +22,9 @@
     "test-new": "rimraf \"../../examples/new\" && node dist/index.js init \"../../examples/new\""
   },
   "devDependencies": {
-    "@types/lodash": "^4.14.177",
+    "@types/lodash": "^4.14.178",
     "@types/mkdirp": "^1.0.2",
-    "@types/node": "^16.11.11",
+    "@types/node": "^16.11.12",
     "@types/prettier": "^2.4.2",
     "bob-tsm": "^0.3.6",
     "bob-watch": "^0.1.1",
