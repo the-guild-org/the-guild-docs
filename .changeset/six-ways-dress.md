@@ -2,6 +2,6 @@
 '@guild-docs/client': patch
 ---
 
-Improve `PackageInstall` spacing
+Improve `PackageInstall`
 
 closes #400
