@@ -1,12 +1,8 @@
 import type { IRoutes } from '@guild-docs/types';
+import type { NextConfig } from 'next';
 
-export interface WithGuildDocsOptions extends Record<string, unknown> {
-  env?: Record<string, string>;
+export interface WithGuildDocsOptions extends NextConfig {
   getRoutes: () => IRoutes;
-  i18n: {
-    defaultLocale: string;
-    locales: string[];
-  };
 }
 
 export * from '@guild-docs/types';
