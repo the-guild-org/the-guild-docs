@@ -24,7 +24,7 @@
   "devDependencies": {
     "@types/lodash": "^4.14.178",
     "@types/mkdirp": "^1.0.2",
-    "@types/node": "^16.11.12",
+    "@types/node": "^16.11.14",
     "@types/prettier": "^2.4.2",
     "bob-tsm": "^0.3.7",
     "bob-watch": "^0.1.1",
