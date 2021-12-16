@@ -67,7 +67,7 @@
     "@chakra-ui/utils": "*",
     "@emotion/react": "*",
     "@mdx-js/react": "^1.6.22",
-    "@theguild/components": "^1.8.2",
+    "@theguild/components": "^1.8.6",
     "@types/mdx-js__react": "*",
     "framer-motion": "*",
     "next": ">=11.1.3",
