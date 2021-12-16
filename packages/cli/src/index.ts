@@ -82,10 +82,6 @@ async function DepsAction(dir: string = process.cwd()) {
   await savePackageJson();
 
   console.log('Dependencies added!');
-
-  console.log(
-    `If this docs website is in a monorepo, please copy the "pnpm.overrides" or "resolutions" fields in your root package.json`
-  );
 }
 
 program.command('deps [dir]').description('Add deps to specified directory (default: process.cwd())').action(DepsAction);
