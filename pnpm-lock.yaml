@@ -213,7 +213,7 @@ importers:
       react: ^17.0.2
       react-dom: ^17.0.2
       react-icons: 4.3.1
-      react-intersection-observer: ^8.33.0
+      react-intersection-observer: ^8.33.1
       react-sticky-box: 0.9.3
       react-use: ^17.3.1
       remove-markdown: ^0.3.0
@@ -227,7 +227,7 @@ importers:
       next-seo: 4.28.1_d837ce8f3acb2f60f8b7454672a9bcea
       nprogress: 0.2.0
       react-icons: 4.3.1_react@17.0.2
-      react-intersection-observer: 8.33.0_react@17.0.2
+      react-intersection-observer: 8.33.1_react@17.0.2
       react-sticky-box: 0.9.3_react@17.0.2
       react-use: 17.3.1_react-dom@17.0.2+react@17.0.2
       remove-markdown: 0.3.0
@@ -7330,8 +7330,8 @@ packages:
     transitivePeerDependencies:
       - algoliasearch
 
-  /react-intersection-observer/8.33.0_react@17.0.2:
-    resolution: {integrity: sha512-slsqrtsUhHT01aySxAcY0JcjLRdVJOwatKeyk5r4IQ9c8SU+x1mKr1kPxwElYHRCIbHS7t2KD15/4/FzNJGUNg==}
+  /react-intersection-observer/8.33.1_react@17.0.2:
+    resolution: {integrity: sha512-3v+qaJvp3D1MlGHyM+KISVg/CMhPiOlO6FgPHcluqHkx4YFCLuyXNlQ/LE6UkbODXlQcLOppfX6UMxCEkUhDLw==}
     peerDependencies:
       react: ^15.0.0 || ^16.0.0 || ^17.0.0|| ^18.0.0
     dependencies:
