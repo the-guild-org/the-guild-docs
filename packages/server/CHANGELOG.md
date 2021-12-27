@@ -1,5 +1,11 @@
 # @guild-docs/server
 
+## 2.1.6
+
+### Patch Changes
+
+- cee86b9: Re-use NextConfig type
+
 ## 2.1.5
 
 ### Patch Changes
