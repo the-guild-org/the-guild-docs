@@ -1,5 +1,13 @@
 # @guild-docs/client
 
+## 1.3.4
+
+### Patch Changes
+
+- 05d93fb: Improve `PackageInstall`
+
+  closes #400
+
 ## 1.3.3
 
 ### Patch Changes
