@@ -34,7 +34,7 @@
     "react-use": "^17.3.1",
     "remove-markdown": "^0.3.0",
     "use-immer": "^0.6.0",
-    "zustand": "^3.6.7"
+    "zustand": "^3.6.8"
   },
   "devDependencies": {
     "@chakra-ui/icons": "^1.1.1",
@@ -47,14 +47,14 @@
     "@theguild/components": "^1.8.6",
     "@types/mdx-js__react": "^1.5.5",
     "@types/nprogress": "^0.2.0",
-    "@types/react": "^17.0.37",
+    "@types/react": "^17.0.38",
     "@types/react-dom": "^17.0.11",
     "@types/remove-markdown": "^0.3.1",
     "bob-esbuild-cli": "^3.0.1",
-    "bob-tsm": "^0.3.8",
+    "bob-tsm": "^0.4.1",
     "changesets-github-release": "^0.0.4",
-    "esbuild": "^0.14.5",
-    "framer-motion": "^5.5.4",
+    "esbuild": "^0.14.8",
+    "framer-motion": "^5.5.5",
     "next": "^12.0.7",
     "next-i18next": "^10.0.1",
     "react": "^17.0.2",
