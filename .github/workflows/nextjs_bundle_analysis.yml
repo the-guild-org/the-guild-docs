@@ -87,7 +87,7 @@ jobs:
       # entry in your package.json file.
       - name: Compare with base branch bundle
         if: success() && github.event.number
-        run: ls -laR .next/analyze/base && cd examples/basic && npx -p nextjs-bundle-analysis compare
+        run: ls -laR examples/basic/.next/analyze/base && cd examples/basic && npx -p nextjs-bundle-analysis compare
 
       - name: Get comment body
         id: get-comment-body
