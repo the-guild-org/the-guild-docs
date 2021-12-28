@@ -1,0 +1,13 @@
+{
+  "presets": ["next/babel"],
+  "plugins": [
+    [
+      "import",
+      {
+        "libraryName": "@chakra-ui/core",
+        "libraryDirectory": "dist",
+        "camel2DashComponentName": false
+      }
+    ]
+  ]
+}
