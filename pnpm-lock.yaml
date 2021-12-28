@@ -214,7 +214,6 @@ importers:
       nprogress: ^0.2.0
       react: ^17.0.2
       react-dom: ^17.0.2
-      react-icons: 4.3.1
       react-intersection-observer: ^8.33.1
       react-sticky-box: 0.9.3
       react-use: ^17.3.1
@@ -228,7 +227,6 @@ importers:
       immer: 9.0.7
       next-seo: 4.28.1_d837ce8f3acb2f60f8b7454672a9bcea
       nprogress: 0.2.0
-      react-icons: 4.3.1_react@17.0.2
       react-intersection-observer: 8.33.1_react@17.0.2
       react-sticky-box: 0.9.3_react@17.0.2
       react-use: 17.3.1_react-dom@17.0.2+react@17.0.2
@@ -986,7 +984,7 @@ packages:
     dependencies:
       '@chakra-ui/icon': 2.0.0_8564e777eaca1f4df605c1e437dcb00c
       '@chakra-ui/react-utils': 1.2.1_react@17.0.2
-      '@chakra-ui/system': 1.8.3_922a85da57e3646a57465b7970b0de85
+      '@chakra-ui/system': 1.8.3_79c1490562c3c65ef55eb132a37e39b4
       '@chakra-ui/utils': 1.9.1
       react: 17.0.2
 
@@ -4885,7 +4883,7 @@ packages:
       mime-types: 2.1.34
       minimatch: 3.0.4
       ora: 5.4.1
-      url-parse: 1.5.3
+      url-parse: 1.5.4
     dev: true
 
   /github-slugger/1.4.0:
@@ -7467,10 +7465,10 @@ packages:
       tslib: 1.14.1
     dev: true
 
-  /rxjs/7.4.0:
-    resolution: {integrity: sha512-7SQDi7xeTMCJpqViXh8gL/lebcwlp3d831F05+9B44A4B0WfsEwUQHR64gsH1kvJ+Ep/J9K2+n1hVl1CsGN23w==}
+  /rxjs/7.5.1:
+    resolution: {integrity: sha512-KExVEeZWxMZnZhUZtsJcFwz8IvPvgu4G2Z2QyqjZQzUGr32KDYuSxrEYO4w3tFFNbfLozcrKUTvTPi+E9ywJkQ==}
     dependencies:
-      tslib: 2.1.0
+      tslib: 2.3.1
     dev: true
 
   /safe-buffer/5.1.2:
@@ -8229,10 +8227,6 @@ packages:
   /tslib/1.14.1:
     resolution: {integrity: sha512-Xni35NKzjgMrwevysHTCArtLDpPvye8zV/0E4EyYn43P7/7qvQwPh9BGkHewbMulVntbigmcT7rdX3BNo9wRJg==}
 
-  /tslib/2.1.0:
-    resolution: {integrity: sha512-hcVC3wYEziELGGmEEXue7D75zbwIIVUMWAVbHItGPx0ziyXxrOMQx4rQEVEV45Ut/1IotuEvwqPopzIOkDMf0A==}
-    dev: true
-
   /tslib/2.3.1:
     resolution: {integrity: sha512-77EbyPPpMz+FRFRuAFlWMtmgUWGe9UOG2Z25NqCwiIjRhOf5iKGuzSe5P2w1laq+FkRy4p+PCuVkJSGkzTEKVw==}
 
@@ -8499,8 +8493,8 @@ packages:
       punycode: 2.1.1
     dev: true
 
-  /url-parse/1.5.3:
-    resolution: {integrity: sha512-IIORyIQD9rvj0A4CLWsHkBBJuNqWpFQe224b6j9t/ABmquIS0qDU2pY6kl6AuOrL5OkCXHMCFNe1jBcuAggjvQ==}
+  /url-parse/1.5.4:
+    resolution: {integrity: sha512-ITeAByWWoqutFClc/lRZnFplgXgEZr3WJ6XngMM/N9DMIm4K8zXPCZ1Jdu0rERwO84w1WC5wkle2ubwTA4NTBg==}
     dependencies:
       querystringify: 2.2.0
       requires-port: 1.0.0
@@ -8599,8 +8593,8 @@ packages:
       '@types/unist': 2.0.6
       unist-util-stringify-position: 2.0.3
 
-  /vfile-message/3.0.2:
-    resolution: {integrity: sha512-UUjZYIOg9lDRwwiBAuezLIsu9KlXntdxwG+nXnjuQAHvBpcX3x0eN8h+I7TkY5nkCXj+cWVp4ZqebtGBvok8ww==}
+  /vfile-message/3.1.0:
+    resolution: {integrity: sha512-4QJbBk+DkPEhBXq3f260xSaWtjE4gPKOfulzfMFF8ZNwaPZieWsg3iVlcmF04+eebzpcpeXOOFMfrYzJHVYg+g==}
     dependencies:
       '@types/unist': 2.0.6
       unist-util-stringify-position: 3.0.0
@@ -8620,7 +8614,7 @@ packages:
       '@types/unist': 2.0.6
       is-buffer: 2.0.5
       unist-util-stringify-position: 3.0.0
-      vfile-message: 3.0.2
+      vfile-message: 3.1.0
     dev: false
 
   /vm-browserify/1.1.2:
@@ -8645,7 +8639,7 @@ packages:
       joi: 17.5.0
       lodash: 4.17.21
       minimist: 1.2.5
-      rxjs: 7.4.0
+      rxjs: 7.5.1
     transitivePeerDependencies:
       - debug
     dev: true
