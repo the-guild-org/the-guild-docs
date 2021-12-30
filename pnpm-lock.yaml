@@ -296,7 +296,7 @@ importers:
       node-fetch: ^2.6.6
       react: ^17.0.2
       react-dom: ^17.0.2
-      rehype-slug: ^5.0.0
+      rehype-slug: ^5.0.1
       remark-admonitions: 1.2.1
       remark-emoji: ^3.0.2
       shiki: ^0.10.0
@@ -311,7 +311,7 @@ importers:
       globby: 11.0.4
       gray-matter: 4.0.3
       node-fetch: 2.6.6
-      rehype-slug: 5.0.0
+      rehype-slug: 5.0.1
       remark-emoji: 3.0.2
       tiny-lru: 7.0.6
       unified: 10.1.1
@@ -7292,8 +7292,8 @@ packages:
       parse5: 5.1.1
       xtend: 4.0.2
 
-  /rehype-slug/5.0.0:
-    resolution: {integrity: sha512-jnYsFKxRh+/tQa1L+SU/ykAPGOSVCqd0BwaOBPUANcvCu8d0/SZB4IalJkdJ+n6d1eAAS2YkvjUPi+2EGYtfCQ==}
+  /rehype-slug/5.0.1:
+    resolution: {integrity: sha512-X5v3wV/meuOX9NFcGhJvUpEjIvQl2gDvjg3z40RVprYFt7q3th4qMmYLULiu3gXvbNX1ppx+oaa6JyY1W67pTA==}
     dependencies:
       '@types/hast': 2.3.4
       github-slugger: 1.4.0
