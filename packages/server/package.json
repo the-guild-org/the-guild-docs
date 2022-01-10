@@ -34,7 +34,7 @@
     "@guild-docs/mdx-remote": "workspace:^1.0.2",
     "@guild-docs/types": "workspace:^1.1.0",
     "github-slugger": "^1.4.0",
-    "globby": "^11.0.4",
+    "globby": "^12.0.2",
     "gray-matter": "^4.0.3",
     "rehype-slug": "^5.0.1",
     "remark-emoji": "^3.0.2",
