@@ -1,5 +1,5 @@
 import { promises } from 'fs';
-import fetch from 'node-fetch';
+import { request } from 'undici';
 import Lru from 'tiny-lru';
 import { withoutStartingSlash, withoutTrailingSlash, withStartingSlash } from './utils';
 
@@ -57,9 +57,9 @@ export async function getPackageStats(name: string): Promise<PackageInfo | null>
       latestVersion,
       { downloads: weeklyNPMDownloads },
     ] = await Promise.all([
-      fetch(`https://registry.npmjs.org/${encodedName}`).then(
+      request(`https://registry.npmjs.org/${encodedName}`).then(
         v =>
-          v.json() as Promise<{
+          v.body.json() as Promise<{
             repository?:
               | string
               | {
@@ -71,9 +71,9 @@ export async function getPackageStats(name: string): Promise<PackageInfo | null>
             time: { created: string; modified: string };
           }>
       ),
-      fetch(`https://registry.npmjs.org/${encodedName}/latest`).then(
+      request(`https://registry.npmjs.org/${encodedName}/latest`).then(
         v =>
-          v.json() as Promise<{
+          v.body.json() as Promise<{
             name: string;
             version: string;
             description?: string;
@@ -87,10 +87,10 @@ export async function getPackageStats(name: string): Promise<PackageInfo | null>
             license?: string;
           }>
       ),
-      fetch(`https://api.npmjs.org/downloads/point/last-week/${encodedName}`)
+      request(`https://api.npmjs.org/downloads/point/last-week/${encodedName}`)
         .then(
           v =>
-            v.json() as Promise<
+            v.body.json() as Promise<
               | {
                   downloads: number;
                   start: string;
@@ -163,16 +163,16 @@ export async function getPackagesData<Tags extends string = string>({
             withoutTrailingSlash(rawData.githubReadme.repo)
           )}/HEAD${withStartingSlash(rawData.githubReadme.path)}`;
           try {
-            const response = await fetch(fetchPath, {
+            const response = await request(fetchPath, {
               method: 'GET',
             });
 
-            if (response.status === 404) {
+            if (response.statusCode === 404) {
               console.error(`[GUILD-DOCS] ERROR | ${fetchPath} Not Found`);
               return;
             }
 
-            const text = await response.text();
+            const text = await response.body.text();
 
             return text;
           } catch (err) {
@@ -191,16 +191,16 @@ export async function getPackagesData<Tags extends string = string>({
           }${path}/README.md`;
 
           try {
-            const response = await fetch(fetchPath, {
+            const response = await request(fetchPath, {
               method: 'GET',
             });
 
-            if (response.status === 404) {
+            if (response.statusCode === 404) {
               console.error(`[GUILD-DOCS] ERROR | ${fetchPath} Not Found`);
               return;
             }
 
-            const text = await response.text();
+            const text = await response.body.text();
 
             return text;
           } catch (err) {
