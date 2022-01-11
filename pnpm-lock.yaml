@@ -205,7 +205,7 @@ importers:
       changesets-github-release: ^0.0.4
       esbuild: ^0.14.11
       framer-motion: ^5.5.6
-      immer: ^9.0.7
+      immer: ^9.0.12
       next: ^12.0.7
       next-i18next: ^10.1.0
       next-seo: ^4.28.1
@@ -223,7 +223,7 @@ importers:
     dependencies:
       '@guild-docs/mdx-remote': link:../mdx-remote
       '@guild-docs/types': link:../types
-      immer: 9.0.7
+      immer: 9.0.12
       next-seo: 4.28.1_d837ce8f3acb2f60f8b7454672a9bcea
       nprogress: 0.2.0
       react-icons: 4.3.1_react@17.0.2
@@ -231,7 +231,7 @@ importers:
       react-sticky-box: 0.9.3_react@17.0.2
       react-use: 17.3.2_react-dom@17.0.2+react@17.0.2
       remove-markdown: 0.3.0
-      use-immer: 0.6.0_immer@9.0.7+react@17.0.2
+      use-immer: 0.6.0_immer@9.0.12+react@17.0.2
       zustand: 3.6.9_react@17.0.2
     devDependencies:
       '@chakra-ui/icons': 1.1.1_1fcc522e3e43bf881c16f308b3e9b461
@@ -5378,8 +5378,8 @@ packages:
     dependencies:
       queue: 6.0.2
 
-  /immer/9.0.7:
-    resolution: {integrity: sha512-KGllzpbamZDvOIxnmJ0jI840g7Oikx58lBPWV0hUh7dtAyZpFqqrBZdKka5GlTwMTZ1Tjc/bKKW4VSFAt6BqMA==}
+  /immer/9.0.12:
+    resolution: {integrity: sha512-lk7UNmSbAukB5B6dh9fnh5D0bJTOFKxVg2cyJWTYrWRfhLrLMBquONcUs3aFq507hNoIZEDDh8lb8UtOizSMhA==}
     dev: false
 
   /import-fresh/3.3.0:
@@ -8655,13 +8655,13 @@ packages:
     dependencies:
       react: 17.0.2
 
-  /use-immer/0.6.0_immer@9.0.7+react@17.0.2:
+  /use-immer/0.6.0_immer@9.0.12+react@17.0.2:
     resolution: {integrity: sha512-dFGRfvWCqPDTOt/S431ETYTg6+uxbpb7A1pptufwXVzGJY3RlXr38+3wyLNpc6SbbmAKjWl6+EP6uW74fkEsXQ==}
     peerDependencies:
       immer: '>=2.0.0'
       react: ^16.8.0 || ^17.0.1
     dependencies:
-      immer: 9.0.7
+      immer: 9.0.12
       react: 17.0.2
     dev: false
 
