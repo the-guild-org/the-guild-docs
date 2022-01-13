@@ -39,7 +39,7 @@
     "rehype-slug": "^5.0.1",
     "remark-emoji": "^3.0.2",
     "tiny-lru": "^7.0.6",
-    "undici": "^4.12.1",
+    "undici": "^4.12.2",
     "unified": "^10.1.1",
     "unist-util-visit": "^4.1.0"
   },
