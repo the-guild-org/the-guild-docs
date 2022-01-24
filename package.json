@@ -45,7 +45,7 @@
     "@typescript-eslint/parser": "5.10.0",
     "bob-esbuild": "^3.2.3",
     "bob-esbuild-cli": "^3.0.1",
-    "bob-tsm": "^0.4.5",
+    "bob-tsm": "^0.4.6",
     "chalk": "^5.0.0",
     "concurrently": "^7.0.0",
     "esbuild": "^0.14.11",

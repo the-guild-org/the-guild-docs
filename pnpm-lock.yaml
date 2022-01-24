@@ -23,7 +23,7 @@ importers:
       '@typescript-eslint/parser': 5.10.0
       bob-esbuild: ^3.2.3
       bob-esbuild-cli: ^3.0.1
-      bob-tsm: ^0.4.5
+      bob-tsm: ^0.4.6
       chalk: ^5.0.0
       concurrently: ^7.0.0
       esbuild: ^0.14.11
@@ -59,7 +59,7 @@ importers:
       '@typescript-eslint/parser': 5.10.0_eslint@8.7.0+typescript@4.4.4
       bob-esbuild: 3.2.3_esbuild@0.14.11+typescript@4.4.4
       bob-esbuild-cli: 3.0.1_bob-esbuild@3.2.3
-      bob-tsm: 0.4.5_esbuild@0.14.11+typescript@4.4.4
+      bob-tsm: 0.4.6_esbuild@0.14.11+typescript@4.4.4
       chalk: 5.0.0
       concurrently: 7.0.0
       esbuild: 0.14.11
@@ -97,7 +97,7 @@ importers:
       '@types/node': ^17.0.10
       '@types/react': ^17.0.38
       '@types/react-dom': ^17.0.11
-      bob-tsm: ^0.4.5
+      bob-tsm: ^0.4.6
       concurrently: ^7.0.0
       cross-env: ^7.0.3
       esbuild: ^0.14.11
@@ -142,7 +142,7 @@ importers:
       '@types/node': 17.0.10
       '@types/react': 17.0.38
       '@types/react-dom': 17.0.11
-      bob-tsm: 0.4.5_esbuild@0.14.11+typescript@4.4.4
+      bob-tsm: 0.4.6_esbuild@0.14.11+typescript@4.4.4
       concurrently: 7.0.0
       cross-env: 7.0.3
       esbuild: 0.14.11
@@ -157,7 +157,7 @@ importers:
       '@types/mkdirp': ^1.0.2
       '@types/node': ^17.0.10
       '@types/prettier': ^2.4.3
-      bob-tsm: ^0.4.5
+      bob-tsm: ^0.4.6
       bob-watch: ^0.1.1
       changesets-github-release: ^0.0.4
       commander: ^8.3.0
@@ -171,7 +171,7 @@ importers:
       '@types/mkdirp': 1.0.2
       '@types/node': 17.0.10
       '@types/prettier': 2.4.3
-      bob-tsm: 0.4.5_esbuild@0.14.11+typescript@4.4.4
+      bob-tsm: 0.4.6_esbuild@0.14.11+typescript@4.4.4
       bob-watch: 0.1.1
       changesets-github-release: 0.0.4
       commander: 8.3.0
@@ -199,7 +199,7 @@ importers:
       '@types/react-dom': ^17.0.11
       '@types/remove-markdown': ^0.3.1
       bob-esbuild-cli: ^3.0.1
-      bob-tsm: ^0.4.5
+      bob-tsm: ^0.4.6
       changesets-github-release: ^0.0.4
       esbuild: ^0.14.11
       framer-motion: ^6.0.0
@@ -246,7 +246,7 @@ importers:
       '@types/react-dom': 17.0.11
       '@types/remove-markdown': 0.3.1
       bob-esbuild-cli: 3.0.1_bob-esbuild@3.2.3
-      bob-tsm: 0.4.5_esbuild@0.14.11+typescript@4.4.4
+      bob-tsm: 0.4.6_esbuild@0.14.11+typescript@4.4.4
       changesets-github-release: 0.0.4
       esbuild: 0.14.11
       framer-motion: 6.0.0_react-dom@17.0.2+react@17.0.2
@@ -3126,12 +3126,12 @@ packages:
       typescript: 4.4.4
     dev: true
 
-  /bob-tsm/0.4.5_esbuild@0.14.11+typescript@4.4.4:
-    resolution: {integrity: sha512-Va1UR5rsZa3zeK68J8WOXMe+bT7gp8J0GDUj87rt78p8Z9Gv/8YSp9YSL9+zu7gKGOUFEr3QC4AVKK6qISFexQ==}
+  /bob-tsm/0.4.6_esbuild@0.14.11+typescript@4.4.4:
+    resolution: {integrity: sha512-CrNjbphPfTiK73CFczwGpF15THOe7/glwF9Yu+24yy1dsZyB803LBzJ26MEAXFGy0x7ni1OqpogVB8LYDmZQaA==}
     engines: {node: ^12.20.0 || >=14.13.0}
     hasBin: true
     peerDependencies:
-      esbuild: '>=0.14.11'
+      esbuild: '>=0.14.13'
       typescript: '>=4.1.2'
     peerDependenciesMeta:
       typescript:
