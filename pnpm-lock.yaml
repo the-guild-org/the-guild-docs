@@ -9,7 +9,7 @@ importers:
   .:
     specifiers:
       '@changesets/apply-release-plan': 5.0.3
-      '@changesets/assemble-release-plan': 5.0.4
+      '@changesets/assemble-release-plan': 5.0.5
       '@changesets/cli': 2.19.0
       '@changesets/config': 1.6.3
       '@changesets/read': 0.5.2
@@ -45,7 +45,7 @@ importers:
       typescript: 4.4.4
     devDependencies:
       '@changesets/apply-release-plan': 5.0.3
-      '@changesets/assemble-release-plan': 5.0.4
+      '@changesets/assemble-release-plan': 5.0.5
       '@changesets/cli': 2.19.0
       '@changesets/config': 1.6.3
       '@changesets/read': 0.5.2
@@ -1723,12 +1723,12 @@ packages:
       semver: 5.7.1
     dev: true
 
-  /@changesets/assemble-release-plan/5.0.4:
-    resolution: {integrity: sha512-kn0UecLXiif6DzB2EBEOrS54BWSo2nPC4111I4a42ut0Tpeu5z4dEOGmREMd2lMQjx9EE/q9VudkfFa12SFdwA==}
+  /@changesets/assemble-release-plan/5.0.5:
+    resolution: {integrity: sha512-ejCVSM4I1jgaNi30we3/qltj2NQtS68w7C3H8Gvb6ZOvbIpAW/Tr0uMmPgRj4Vzkez5+fx0If02AvOdssz1btA==}
     dependencies:
       '@babel/runtime': 7.16.7
       '@changesets/errors': 0.1.4
-      '@changesets/get-dependents-graph': 1.2.4
+      '@changesets/get-dependents-graph': 1.3.0
       '@changesets/types': 4.0.2
       '@manypkg/get-packages': 1.1.3
       semver: 5.7.1
@@ -1740,7 +1740,7 @@ packages:
     dependencies:
       '@babel/runtime': 7.16.7
       '@changesets/apply-release-plan': 5.0.3
-      '@changesets/assemble-release-plan': 5.0.4
+      '@changesets/assemble-release-plan': 5.0.5
       '@changesets/config': 1.6.3
       '@changesets/errors': 0.1.4
       '@changesets/get-dependents-graph': 1.2.4
@@ -1799,11 +1799,21 @@ packages:
       semver: 5.7.1
     dev: true
 
+  /@changesets/get-dependents-graph/1.3.0:
+    resolution: {integrity: sha512-4VHQWEluWySPgDdkL94YNxrEjDb9nwNFw515sWDmVrlfpQN5qaP1hdaotrp4mJm4ky85t4cTlrWSP+CTY7IDbw==}
+    dependencies:
+      '@changesets/types': 4.0.2
+      '@manypkg/get-packages': 1.1.3
+      chalk: 2.4.2
+      fs-extra: 7.0.1
+      semver: 5.7.1
+    dev: true
+
   /@changesets/get-release-plan/3.0.4:
     resolution: {integrity: sha512-XEMI1WlB2crtXHLrpF8qLteZDe6ZIvuj9J3Pc9EkCo1QbVonx74zOC65KFPqNJOTpcYrex6MzOueUn2Vp32gwA==}
     dependencies:
       '@babel/runtime': 7.16.7
-      '@changesets/assemble-release-plan': 5.0.4
+      '@changesets/assemble-release-plan': 5.0.5
       '@changesets/config': 1.6.3
       '@changesets/pre': 1.0.9
       '@changesets/read': 0.5.2
