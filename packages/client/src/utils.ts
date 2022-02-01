@@ -24,7 +24,7 @@ export function useIsBrowserSSRSafe() {
 
   useEffect(() => {
     if (!isBrowser) setIsBrowser((isBrowserGlobal = true));
-  }, [setIsBrowser]);
+  }, [setIsBrowser, isBrowser]);
 
   return isBrowser;
 }
