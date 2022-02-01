@@ -1,5 +1,11 @@
 # @guild-docs/server
 
+## 2.2.0
+
+### Minor Changes
+
+- 8608b1c: Use "undici" instead of "node-fetch"
+
 ## 2.1.6
 
 ### Patch Changes
