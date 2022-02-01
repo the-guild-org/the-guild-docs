@@ -1,21 +1,26 @@
-import { useTranslation } from 'next-i18next';
 import { MDXRemote } from '@guild-docs/mdx-remote';
+import type { BottomNavigationProps, IRoutes, MdxInternalProps, MdxPageProps } from '@guild-docs/types';
+import { useTranslation } from 'next-i18next';
+import DynamicPkg from 'next/dynamic';
 import React, { PropsWithChildren, ReactElement, useCallback, useMemo } from 'react';
-
 import { BottomNavigationComponent } from './bottomNavigation';
 import { components } from './components';
+import type { GiscusProps } from './giscus';
 import { MDXTOC } from './toc';
+import { cleanMarkdown, getDefault } from './utils';
 
-import type { MdxPageProps, MdxInternalProps, IRoutes, BottomNavigationProps } from '@guild-docs/types';
-import { cleanMarkdown } from './utils';
+const Dynamic = getDefault(DynamicPkg);
+
+const GiscusDynamic = Dynamic<GiscusProps>(() => import('./giscus').then(v => v.Giscus));
 
 export interface MDXPageOptions {
   renderTitle?: (title?: string) => string;
+  giscus?: GiscusProps;
 }
 
 export function MDXPage(
   Component: (props: PropsWithChildren<MdxPageProps>) => ReactElement,
-  { renderTitle }: MDXPageOptions = {}
+  { renderTitle, giscus }: MDXPageOptions = {}
 ) {
   return function MDXPage({ children, source, frontMatter, toc, mdxRoutes }: MdxInternalProps) {
     const title: string | undefined = frontMatter.title;
@@ -37,7 +42,12 @@ export function MDXPage(
     }, [title, description]);
 
     const content = useMemo(() => {
-      return <MDXRemote {...source} components={components} />;
+      return (
+        <>
+          <MDXRemote {...source} components={components} />
+          {giscus ? <GiscusDynamic {...giscus} /> : null}
+        </>
+      );
     }, [source]);
 
     const TOC = useCallback<MdxPageProps['TOC']>(

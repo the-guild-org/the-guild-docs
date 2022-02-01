@@ -1,3 +1,10 @@
+---
+'@guild-docs/client': minor
+---
+
+New ["giscus"](https://github.com/giscus/giscus) integration, a comments system powered by GitHub Discussions.
+
+```tsx
 import Head from 'next/head';
 
 import { DocsContent, DocsTOC, MDXPage } from '@guild-docs/client';
@@ -22,26 +29,15 @@ export default MDXPage(
   },
   {
     giscus: {
-      repo: 'pabloszx/the-guild-docs',
-      repoId: 'R_kgDOGqmArg',
-      category: 'Q&A',
-      categoryId: 'DIC_kwDOGqmArs4CA9N3',
+      repo: '[ENTER_REPO_HERE]',
+      repoId: '[ENTER REPO ID HERE]',
+      category: '[ENTER CATEGORY NAME HERE]',
+      categoryId: '[ENTER CATEGORY ID HERE]',
     },
   }
 );
+```
 
-export const getStaticProps: GetStaticProps = ctx => {
-  return MDXProps(
-    ({ readMarkdownFile, getArrayParam }) => {
-      return readMarkdownFile('docs/', getArrayParam('slug'), { importPartialMarkdown: true });
-    },
-    ctx,
-    {
-      getRoutes,
-    }
-  );
-};
+The configuration of Giscus has to be made following the https://giscus.app instructions:
 
-export const getStaticPaths: GetStaticPaths = ctx => {
-  return MDXPaths('docs', { ctx });
-};
+![Giscus Configuration](https://i.imgur.com/TA0AbKd.png)!
