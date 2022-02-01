@@ -847,10 +847,7 @@ packages:
   /@chakra-ui/clickable/1.2.2_react@17.0.2:
     resolution: {integrity: sha512-SlWrCgILKlxaJKzzOqIdCQdbff0HVlce3oHqOGHO/kxm/P1buG04fUzKie0Zegdp0gQXdk+/+1Emzl2tZTg/Bg==}
     peerDependencies:
-      react: '>=16.8.6 || * || *'
-    peerDependenciesMeta:
-      react:
-        optional: true
+      react: '>=16.8.6'
     dependencies:
       '@chakra-ui/react-utils': 1.2.1_react@17.0.2
       '@chakra-ui/utils': 1.10.0
