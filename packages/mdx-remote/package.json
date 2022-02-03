@@ -7,39 +7,36 @@
   },
   "license": "MIT",
   "author": "PabloSzx <pablosaez1995@gmail.com>",
+  "type": "module",
   "exports": {
-    ".": {
-      "require": "./dist/index.js",
-      "import": "./dist/index.mjs"
-    },
-    "./*": {
-      "require": "./dist/*.js",
-      "import": "./dist/*.mjs"
-    }
+    ".": "./dist/index.js",
+    "./*": "./dist/*.js"
   },
   "main": "dist/index.js",
-  "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
-  "devDependencies": {
-    "changesets-github-release": "^0.1.0",
-    "esbuild": "^0.14.21",
-    "react": "^17.0.2"
-  },
-  "peerDependencies": {
-    "esbuild": "*",
-    "react": "*"
-  },
-  "dependencies": {
-    "@guild-docs/types": "workspace:^1.1.0",
-    "@mdx-js/mdx": "^1.6.22",
-    "@mdx-js/react": "^1.6.22",
-    "unified": "^10.1.1",
-    "unist-util-remove": "^3.1.0"
-  },
   "scripts": {
     "dev": "bob-esbuild watch",
     "prepack": "bob-esbuild build",
     "postpublish": "gh-release"
+  },
+  "dependencies": {
+    "@babel/code-frame": "^7.16.7",
+    "@guild-docs/types": "workspace:^1.1.0",
+    "@mdx-js/mdx": "^2.0.0",
+    "unified": "^10.1.1",
+    "unist-util-remove": "^3.1.0",
+    "vfile": "^5.3.0",
+    "vfile-matter": "^3.0.1"
+  },
+  "devDependencies": {
+    "@mdx-js/react": "^2.0.0",
+    "@types/babel__code-frame": "^7.0.3",
+    "changesets-github-release": "^0.1.0",
+    "react": "^17.0.2"
+  },
+  "peerDependencies": {
+    "@mdx-js/react": "^2.0.0",
+    "react": "*"
   },
   "publishConfig": {
     "directory": "dist"

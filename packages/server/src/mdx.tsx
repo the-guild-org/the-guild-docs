@@ -228,7 +228,7 @@ export async function buildMDX(
     ...extraRemarkPlugins,
   ];
 
-  if (remarkAdmonitions) {
+  if (remarkAdmonitions && !!false) {
     remarkPlugins.push([
       remarkAdmonitions,
       {

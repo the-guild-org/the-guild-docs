@@ -8,6 +8,7 @@
   "license": "MIT",
   "author": "PabloSzx <pablosaez1995@gmail.com>",
   "sideEffects": false,
+  "type": "module",
   "exports": {
     ".": "./dist/index.js",
     "./*": "./dist/*.js"
@@ -18,8 +19,8 @@
     "dist"
   ],
   "scripts": {
-    "dev": "bob-esbuild watch --onlyCJS --skipValidate",
-    "prepack": "bob-esbuild build --onlyCJS --skipValidate",
+    "dev": "bob-esbuild watch",
+    "prepack": "bob-esbuild build",
     "postpublish": "gh-release"
   },
   "dependencies": {
@@ -43,7 +44,7 @@
     "@chakra-ui/system": "^1.10.3",
     "@chakra-ui/utils": "^1.10.2",
     "@emotion/react": "^11.7.1",
-    "@mdx-js/react": "^1.6.22",
+    "@mdx-js/react": "^2.0.0",
     "@theguild/components": "^1.9.0",
     "@types/mdx-js__react": "^1.5.5",
     "@types/nprogress": "^0.2.0",
@@ -66,9 +67,8 @@
     "@chakra-ui/react": "*",
     "@chakra-ui/utils": "*",
     "@emotion/react": "*",
-    "@mdx-js/react": "^1.6.22",
+    "@mdx-js/react": "^2.0.0",
     "@theguild/components": "^1.9.0",
-    "@types/mdx-js__react": "*",
     "framer-motion": "*",
     "next": ">=11.1.4",
     "next-i18next": "*",

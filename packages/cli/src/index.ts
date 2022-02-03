@@ -56,7 +56,6 @@ async function DepsAction(dir: string = process.cwd()) {
         '@types/node',
         '@types/react',
         '@types/react-dom',
-        '@types/mdx-js__react',
         'typescript',
         'concurrently',
         '@types/concurrently',
