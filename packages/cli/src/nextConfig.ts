@@ -95,7 +95,6 @@ export async function writeApp() {
     writeFileFormatIfNotExists(
       [config.cwd, 'src/pages/_app.tsx'],
       `
-    import 'remark-admonitions/styles/infima.css';
     import '../../public/style.css';
     
     import { appWithTranslation } from 'next-i18next';
