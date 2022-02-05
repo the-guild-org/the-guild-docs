@@ -1,7 +1,7 @@
 import { MDXRemote } from '@guild-docs/mdx-remote';
 import type { BottomNavigationProps, IRoutes, MdxInternalProps, MdxPageProps } from '@guild-docs/types';
 import { useTranslation } from 'next-i18next';
-import DynamicPkg from 'next/dynamic';
+import DynamicPkg from 'next/dynamic.js';
 import React, { PropsWithChildren, ReactElement, useCallback, useMemo } from 'react';
 import { BottomNavigationComponent } from './bottomNavigation';
 import { components } from './components';

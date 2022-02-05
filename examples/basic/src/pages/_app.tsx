@@ -96,7 +96,8 @@ function AppContent(appProps: AppProps) {
         cta={{
           children: 'Get Started',
           title: 'Start using The Guild Docs',
-          href: 'https://github.com/the-guild-org/the-guild-docs',
+          href: '/',
+          onClick: e => handlePushRoute('/docs', e),
           target: '_blank',
           rel: 'noopener noreferrer',
         }}

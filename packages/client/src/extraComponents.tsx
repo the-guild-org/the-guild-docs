@@ -1,6 +1,6 @@
 import { IconButton, IconButtonProps } from '@chakra-ui/react';
 import { useThemeContext } from '@theguild/components';
-import { BsMoonFill, BsSun } from 'react-icons/bs';
+import { BsMoonFill, BsSun } from 'react-icons/bs/index.js';
 import React from 'react';
 
 export function ThemeSwitch({

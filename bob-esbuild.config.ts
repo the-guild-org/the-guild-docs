@@ -13,5 +13,8 @@ export const config: import('bob-esbuild').BobConfig = {
     '@guild-docs/client': {
       onlyESM: true,
     },
+    '@guild-docs/server': {
+      onlyESM: true,
+    },
   },
 };

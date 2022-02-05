@@ -1,7 +1,7 @@
 import { ChevronDownIcon } from '@chakra-ui/icons';
 import { chakra, Collapse, CSSObject, Text, useColorModeValue, useDisclosure, useSafeLayoutEffect } from '@chakra-ui/react';
 import type { MDXNavigationProps, Paths } from '@guild-docs/types';
-import RouterImport from 'next/router';
+import RouterImport from 'next/router.js';
 import React, { useRef, useState } from 'react';
 import { arePathnamesEqual, concatHrefs } from './routes';
 import { cleanMarkdown, getDefault } from './utils';

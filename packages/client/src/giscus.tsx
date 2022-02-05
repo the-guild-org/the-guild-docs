@@ -1,6 +1,6 @@
 import { useColorModeValue } from '@chakra-ui/react';
-import { useRouter } from 'next/router';
-import ScriptPkg from 'next/script';
+import { useRouter } from 'next/router.js';
+import ScriptPkg from 'next/script.js';
 import React, { useEffect, useMemo, useState } from 'react';
 import { getDefault, useIsBrowserSSRSafe } from './utils';
 

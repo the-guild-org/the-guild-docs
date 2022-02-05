@@ -8,18 +8,12 @@
   "license": "MIT",
   "author": "PabloSzx <pablosaez1995@gmail.com>",
   "sideEffects": false,
+  "type": "module",
   "exports": {
-    ".": {
-      "require": "./dist/index.js",
-      "import": "./dist/index.mjs"
-    },
-    "./*": {
-      "require": "./dist/*.js",
-      "import": "./dist/*.mjs"
-    }
+    ".": "./dist/index.js",
+    "./*": "./dist/*.js"
   },
   "main": "dist/index.js",
-  "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
   "files": [
     "dist"
@@ -35,7 +29,7 @@
     "@guild-docs/types": "workspace:^1.1.0",
     "@stefanprobst/remark-shiki": "^2.1.0",
     "github-slugger": "^1.4.0",
-    "globby": "^11.1.0",
+    "globby": "^13.1.1",
     "gray-matter": "^4.0.3",
     "rehype-slug": "^5.0.1",
     "remark-emoji": "^3.0.2",

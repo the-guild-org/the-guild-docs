@@ -2,7 +2,7 @@ import type { MDXRemoteSerializeResult, SerializeOptions } from '@guild-docs/mdx
 import type { IRoutes, MdxInternalProps, PossiblePromise, TOC } from '@guild-docs/types';
 import { LazyPromise } from '@guild-docs/types';
 import { access, readFile } from 'fs/promises';
-import globby from 'globby';
+import { globby } from 'globby';
 import matter from 'gray-matter';
 import type { GetStaticPathsContext, GetStaticPropsContext, GetStaticPropsResult } from 'next';
 import { appWithTranslation } from 'next-i18next';
