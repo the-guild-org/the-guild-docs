@@ -187,7 +187,7 @@ const MdxDeps = LazyPromise(async () => {
         'svelte',
       ],
     }),
-    import('./remarkShiki').then(v => v.withShiki()),
+    import('@stefanprobst/rehype-shiki').then(v => v.default),
     import('@guild-docs/mdx-remote/serialize'),
     import('rehype-slug').then(v => v.default),
   ]);
@@ -217,17 +217,9 @@ export async function buildMDX(
 
   const { remarkAdmonitions, remarkEmoji, highlighter, withShiki, serialize, rehypeSlug } = await MdxDeps;
 
-  const remarkPlugins: NonNullable<SerializeOptions['mdxOptions']>['remarkPlugins'] = [
-    [
-      withShiki,
-      {
-        highlighter,
-      },
-    ],
-    remarkEmoji,
-    ...extraRemarkPlugins,
-  ];
+  const remarkPlugins: NonNullable<SerializeOptions['mdxOptions']>['remarkPlugins'] = [remarkEmoji, ...extraRemarkPlugins];
 
+  // TODO: Remove or look for a replacement
   if (remarkAdmonitions && !!false) {
     remarkPlugins.push([
       remarkAdmonitions,
@@ -245,7 +237,16 @@ export async function buildMDX(
   const mdx = await serialize(content, {
     mdxOptions: {
       remarkPlugins,
-      rehypePlugins: [rehypeSlug, ...extraRehypePlugins],
+      rehypePlugins: [
+        rehypeSlug,
+        [
+          withShiki,
+          {
+            highlighter,
+          },
+        ],
+        ...extraRehypePlugins,
+      ],
     },
   });
 

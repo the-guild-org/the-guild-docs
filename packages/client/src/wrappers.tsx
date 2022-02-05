@@ -25,12 +25,14 @@ import { DefaultSeo } from 'next-seo';
 import type { DefaultSeoProps, OpenGraphMedia } from 'next-seo/lib/types';
 import type { AppProps } from 'next/app';
 import React, { ComponentProps, Dispatch, ReactNode, SetStateAction, useMemo } from 'react';
-import StickyBox from 'react-sticky-box';
+import StickyBoxPkg from 'react-sticky-box';
 import { DocsContainer, DocsNavigation, DocsNavigationDesktop, DocsNavigationMobile, DocsTitle } from './docs';
 import { MDXNavigation, MDXNavigationProps } from './navigation';
 import { NextNProgress } from './NextNProgress';
 import { iterateRoutes } from './routes';
-import { useIs404 } from './utils';
+import { useIs404, getDefault } from './utils';
+
+const StickyBox = getDefault(StickyBoxPkg);
 
 export interface CombinedThemeProps {
   children: ReactNode;
