@@ -11,7 +11,7 @@ function parsePositionInformationFromErrorMessage(message: string): { start: { l
 
   if (match) {
     // take the last match, that seems to be the most reliable source of the error.
-    const lastMatch = match.slice(-1)[0];
+    const lastMatch = match[match.length - 1];
 
     const [line, column] = lastMatch.split('-')[0].split(':');
 
