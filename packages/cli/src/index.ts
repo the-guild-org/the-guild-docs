@@ -68,11 +68,13 @@ async function DepsAction(dir: string = process.cwd()) {
       }
     ),
     addPackageScripts({
+      analyze: 'cross-env ANALYZE=true next build',
       build: 'next build',
-      dev: 'concurrently -r "next-remote-watch ./docs ./routes.ts ./src/pages/_app.tsx ./src/pages/_document.tsx" "wait-on -s 1 http://localhost:3000 && open-cli http://localhost:3000"',
+      dev: 'concurrently -r pnpm:dev:*',
+      'dev:open': 'wait-on http://localhost:3000 && open-cli http://localhost:3000',
+      'dev:watch': 'next-remote-watch ./docs ./src/pages/_app.tsx ./src/pages/_document.tsx',
       next: 'next',
       start: 'next start',
-      analyze: 'cross-env ANALYZE=true next build',
     }),
   ]);
 
