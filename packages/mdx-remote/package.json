@@ -22,7 +22,7 @@
   "types": "dist/index.d.ts",
   "devDependencies": {
     "changesets-github-release": "^0.1.0",
-    "esbuild": "^0.14.18",
+    "esbuild": "^0.14.20",
     "react": "^17.0.2"
   },
   "peerDependencies": {
