@@ -21,6 +21,7 @@
     "dev:cli": "pnpm -r --filter guild-docs dev",
     "dev:client": "pnpm -r --filter @guild-docs/client dev",
     "dev:example": "pnpm -r --filter basic dev",
+    "dev:mdx-remote": "pnpm -r --filter @guild-docs/mdx-remote dev",
     "dev:server": "pnpm -r --filter @guild-docs/server dev",
     "dev:types": "pnpm -r --filter @guild-docs/types dev",
     "lint": "eslint .",
