@@ -299,7 +299,7 @@ importers:
       remark-emoji: ^3.0.2
       shiki: ^0.10.0
       tiny-lru: ^7.0.6
-      undici: ^4.13.0
+      undici: ^4.14.1
       unified: ^10.1.1
       unist-util-visit: ^4.1.0
     dependencies:
@@ -311,7 +311,7 @@ importers:
       rehype-slug: 5.0.1
       remark-emoji: 3.0.2
       tiny-lru: 7.0.6
-      undici: 4.13.0
+      undici: 4.14.1
       unified: 10.1.1
       unist-util-visit: 4.1.0
     devDependencies:
@@ -7370,8 +7370,8 @@ packages:
       which-boxed-primitive: 1.0.2
     dev: true
 
-  /undici/4.13.0:
-    resolution: {integrity: sha512-8lk8S/f2V0VUNGf2scU2b+KI2JSzEQLdCyRNRF3XmHu+5jectlSDaPSBCXAHFaUlt1rzngzOBVDgJS9/Gue/KA==}
+  /undici/4.14.1:
+    resolution: {integrity: sha512-WJ+g+XqiZcATcBaUeluCajqy4pEDcQfK1vy+Fo+bC4/mqXI9IIQD/XWHLS70fkGUT6P52Drm7IFslO651OdLPQ==}
     engines: {node: '>=12.18'}
     dev: false
 
