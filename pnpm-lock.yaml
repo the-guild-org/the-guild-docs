@@ -115,7 +115,7 @@ importers:
       remark-admonitions: ^1.2.1
       shiki: ^0.10.0
       typescript: 4.4.4
-      wait-on: ^6.0.0
+      wait-on: ^6.0.1
     dependencies:
       '@chakra-ui/icons': 1.1.5_react@17.0.2
       '@chakra-ui/react': 1.8.3_db0d5dc181a8aadc4486fc4ebfdbba43
@@ -151,7 +151,7 @@ importers:
       next-remote-watch: 1.0.0
       open-cli: 7.0.1
       typescript: 4.4.4
-      wait-on: 6.0.0
+      wait-on: 6.0.1
 
   packages/cli:
     specifiers:
@@ -2792,6 +2792,14 @@ packages:
 
   /axios/0.21.4:
     resolution: {integrity: sha512-ut5vewkiu8jjGBdqpM44XxjuCjq9LAKeHVmoVfHVzy8eHgxxq8SbAVQNovDA8mVi05kP0Ea/n/UzcSHcTJQfNg==}
+    dependencies:
+      follow-redirects: 1.14.7
+    transitivePeerDependencies:
+      - debug
+    dev: true
+
+  /axios/0.25.0:
+    resolution: {integrity: sha512-cD8FOb0tRH3uuEe6+evtAbgJtfxr7ly3fQjYcMcuPlgkwVS9xboaVIpcDV+cYQe+yGykgwZCs1pzjntcGa6l5g==}
     dependencies:
       follow-redirects: 1.14.7
     transitivePeerDependencies:
@@ -6595,8 +6603,8 @@ packages:
       tslib: 1.14.1
     dev: true
 
-  /rxjs/7.5.2:
-    resolution: {integrity: sha512-PwDt186XaL3QN5qXj/H9DGyHhP3/RYYgZZwqBv9Tv8rsAaiwFH1IsJJlcgD37J7UW5a6O67qX0KWKS3/pu0m4w==}
+  /rxjs/7.5.4:
+    resolution: {integrity: sha512-h5M3Hk78r6wAheJF0a5YahB1yRQKCsZ4MsGdZ5O9ETbVtjPcScGfrMmoOq7EBsCRzd4BDkvDJ7ogP8Sz5tTFiQ==}
     dependencies:
       tslib: 2.3.1
     dev: true
@@ -7636,16 +7644,16 @@ packages:
   /vscode-textmate/5.2.0:
     resolution: {integrity: sha512-Uw5ooOQxRASHgu6C7GVvUxisKXfSgW4oFlO+aa+PAkgmH89O3CXxEEzNRNtHSqtXFTl0nAC1uYj0GMSH27uwtQ==}
 
-  /wait-on/6.0.0:
-    resolution: {integrity: sha512-tnUJr9p5r+bEYXPUdRseolmz5XqJTTj98JgOsfBn7Oz2dxfE2g3zw1jE+Mo8lopM3j3et/Mq1yW7kKX6qw7RVw==}
+  /wait-on/6.0.1:
+    resolution: {integrity: sha512-zht+KASY3usTY5u2LgaNqn/Cd8MukxLGjdcZxT2ns5QzDmTFc4XoWBgC+C/na+sMRZTuVygQoMYwdcVjHnYIVw==}
     engines: {node: '>=10.0.0'}
     hasBin: true
     dependencies:
-      axios: 0.21.4
+      axios: 0.25.0
       joi: 17.6.0
       lodash: 4.17.21
       minimist: 1.2.5
-      rxjs: 7.5.2
+      rxjs: 7.5.4
     transitivePeerDependencies:
       - debug
     dev: true
