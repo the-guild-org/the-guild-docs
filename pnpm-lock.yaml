@@ -298,7 +298,7 @@ importers:
       remark-admonitions: 1.2.1
       remark-emoji: ^3.0.2
       shiki: ^0.10.0
-      tiny-lru: ^7.0.6
+      tiny-lru: ^8.0.1
       undici: ^4.13.0
       unified: ^10.1.1
       unist-util-visit: ^4.1.0
@@ -310,7 +310,7 @@ importers:
       gray-matter: 4.0.3
       rehype-slug: 5.0.1
       remark-emoji: 3.0.2
-      tiny-lru: 7.0.6
+      tiny-lru: 8.0.1
       undici: 4.13.0
       unified: 10.1.1
       unist-util-visit: 4.1.0
@@ -7156,8 +7156,8 @@ packages:
   /tiny-invariant/1.2.0:
     resolution: {integrity: sha512-1Uhn/aqw5C6RI4KejVeTg6mIS7IqxnLJ8Mv2tV5rTc0qWobay7pDUz6Wi392Cnc8ak1H0F2cjoRzb2/AW4+Fvg==}
 
-  /tiny-lru/7.0.6:
-    resolution: {integrity: sha512-zNYO0Kvgn5rXzWpL0y3RS09sMK67eGaQj9805jlK9G6pSadfriTczzLHFXa/xcW4mIRfmlB9HyQ/+SgL0V1uow==}
+  /tiny-lru/8.0.1:
+    resolution: {integrity: sha512-eBIAYA0BzSjxBedCaO0CSjertD+u+IvNuFkyD7ESf+qjqHKBr5wFqvEYl91+ZQd7jjq2pO6/fBVwFgb6bxvorw==}
     engines: {node: '>=6'}
     dev: false
 
