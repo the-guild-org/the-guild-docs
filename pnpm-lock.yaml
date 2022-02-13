@@ -104,7 +104,7 @@ importers:
       esbuild: ^0.14.20
       framer-motion: ^6.2.4
       next: ^12.0.10
-      next-i18next: ^10.2.0
+      next-i18next: ^10.3.0
       next-remote-watch: ^1.0.0
       next-seo: ^5.1.0
       open-cli: ^7.0.1
@@ -129,7 +129,7 @@ importers:
       '@theguild/components': 1.9.0_b8fdba992ce7d797017dc07106486496
       framer-motion: 6.2.4_react-dom@17.0.2+react@17.0.2
       next: 12.0.10_react-dom@17.0.2+react@17.0.2
-      next-i18next: 10.2.0_61390be992b634a688f7c2555547b55b
+      next-i18next: 10.3.0_61390be992b634a688f7c2555547b55b
       next-seo: 5.1.0_61390be992b634a688f7c2555547b55b
       react: 17.0.2
       react-dom: 17.0.2_react@17.0.2
@@ -207,7 +207,7 @@ importers:
       framer-motion: ^6.2.4
       immer: ^9.0.12
       next: ^12.0.10
-      next-i18next: ^10.2.0
+      next-i18next: ^10.3.0
       next-seo: ^5.1.0
       nprogress: ^0.2.0
       react: ^17.0.2
@@ -253,7 +253,7 @@ importers:
       esbuild: 0.14.20
       framer-motion: 6.2.4_react-dom@17.0.2+react@17.0.2
       next: 12.0.10_react-dom@17.0.2+react@17.0.2
-      next-i18next: 10.2.0_61390be992b634a688f7c2555547b55b
+      next-i18next: 10.3.0_61390be992b634a688f7c2555547b55b
       react: 17.0.2
       react-dom: 17.0.2_react@17.0.2
       typescript: 4.4.4
@@ -291,7 +291,7 @@ importers:
       globby: ^11.1.0
       gray-matter: ^4.0.3
       next: ^12.0.10
-      next-i18next: ^10.2.0
+      next-i18next: ^10.3.0
       react: ^17.0.2
       react-dom: ^17.0.2
       rehype-slug: ^5.0.1
@@ -320,7 +320,7 @@ importers:
       changesets-github-release: 0.1.0
       esbuild: 0.14.20
       next: 12.0.10_react-dom@17.0.2+react@17.0.2
-      next-i18next: 10.2.0_61390be992b634a688f7c2555547b55b
+      next-i18next: 10.3.0_61390be992b634a688f7c2555547b55b
       react: 17.0.2
       react-dom: 17.0.2_react@17.0.2
       remark-admonitions: 1.2.1
@@ -336,7 +336,7 @@ importers:
       bob-esbuild-cli: ^3.0.1
       changesets-github-release: ^0.1.0
       framer-motion: ^6.2.4
-      next-i18next: ^10.2.0
+      next-i18next: ^10.3.0
       typescript: 4.4.4
       unified: ^10.1.1
     dependencies:
@@ -350,7 +350,7 @@ importers:
       bob-esbuild-cli: 3.0.1_bob-esbuild@3.2.4
       changesets-github-release: 0.1.0
       framer-motion: 6.2.4_react-dom@17.0.2+react@17.0.2
-      next-i18next: 10.2.0_61390be992b634a688f7c2555547b55b
+      next-i18next: 10.3.0_61390be992b634a688f7c2555547b55b
       typescript: 4.4.4
 
 packages:
@@ -5433,8 +5433,8 @@ packages:
     engines: {node: '>= 0.6'}
     dev: true
 
-  /next-i18next/10.2.0_61390be992b634a688f7c2555547b55b:
-    resolution: {integrity: sha512-HTdXy8U8Ko8oxs+VAog0CQC7Ap/XyvRzwm/g5tF/CzqJ4dSCyWuLmvPjA9BpQ3VEIkxzCA43w1W75CnARRn1lw==}
+  /next-i18next/10.3.0_61390be992b634a688f7c2555547b55b:
+    resolution: {integrity: sha512-glVigyij3wivFAqGYxgW0w6rQHETpAAKnN5p2Lc//XiSENCbkDRW9a8ApA/c5msAnThzrYXNVu4XcKRfSCWQzA==}
     engines: {node: '>=12'}
     peerDependencies:
       next: '>= 10.0.0'
