@@ -34,7 +34,7 @@
     "react-use": "^17.3.2",
     "remove-markdown": "^0.3.0",
     "use-immer": "^0.6.0",
-    "zustand": "^3.6.9"
+    "zustand": "^3.7.0"
   },
   "devDependencies": {
     "@chakra-ui/icons": "^1.1.5",
@@ -53,10 +53,10 @@
     "bob-esbuild-cli": "^3.0.1",
     "bob-tsm": "^0.4.6",
     "changesets-github-release": "^0.1.0",
-    "esbuild": "^0.14.20",
-    "framer-motion": "^6.2.4",
+    "esbuild": "^0.14.21",
+    "framer-motion": "^6.2.6",
     "next": "^12.0.10",
-    "next-i18next": "^10.2.0",
+    "next-i18next": "^10.3.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "typescript": "4.4.4"
