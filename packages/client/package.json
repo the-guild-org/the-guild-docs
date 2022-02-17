@@ -53,7 +53,7 @@
     "bob-esbuild-cli": "^3.0.1",
     "bob-tsm": "^0.4.6",
     "changesets-github-release": "^0.1.0",
-    "esbuild": "^0.14.21",
+    "esbuild": "^0.14.22",
     "framer-motion": "^6.2.6",
     "next": "^12.0.10",
     "next-i18next": "^10.3.0",
