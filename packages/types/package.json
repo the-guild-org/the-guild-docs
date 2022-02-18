@@ -27,7 +27,7 @@
     "changesets-github-release": "^0.1.0",
     "framer-motion": "^6.2.6",
     "next-i18next": "^10.3.0",
-    "typescript": "4.4.4"
+    "typescript": "4.5.5"
   },
   "peerDependencies": {
     "@chakra-ui/react": "*",
