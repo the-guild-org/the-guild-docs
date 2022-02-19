@@ -21,7 +21,6 @@ import type { Dict } from '@chakra-ui/utils';
 import { Global } from '@emotion/react';
 import type { IRoutes, MdxInternalProps } from '@guild-docs/types';
 import { GlobalStyles, ThemeProvider as TGCThemeProvider } from '@theguild/components';
-import { DefaultSeo } from 'next-seo';
 import type { DefaultSeoProps, OpenGraphMedia } from 'next-seo/lib/types';
 import type { AppProps } from 'next/app';
 import React, { ComponentProps, Dispatch, ReactNode, SetStateAction, useMemo } from 'react';
@@ -31,6 +30,7 @@ import { MDXNavigation, MDXNavigationProps } from './navigation';
 import { NextNProgress } from './NextNProgress';
 import { iterateRoutes } from './routes';
 import { useIs404 } from './utils';
+import { Seo } from './Seo';
 
 export interface CombinedThemeProps {
   children: ReactNode;
@@ -50,28 +50,10 @@ export interface AppSeoProps extends DefaultSeoProps {
 }
 
 export function CombinedThemeProvider({ children, theme, accentColor, defaultSeo, globalStyleProps = {} }: CombinedThemeProps) {
-  const DefaultSEO = useMemo(() => {
-    if (!defaultSeo) throw Error('No `defaultSeo` specified in CombinedThemeProvider');
-    const { logo, ...props } = defaultSeo;
-
-    if (!props?.title) throw Error(`No defaultSeo.title specified!`);
-
-    if (!props.description) throw Error(`No defaultSeo.description specified!`);
-
-    (props.openGraph ||= {}).type ||= 'website';
-
-    if (!logo?.url?.startsWith('https://')) throw Error(`No defaultSeo.logo.url specified with absolute https url!`);
-
-    props.openGraph.images ||= [logo];
-
-    return <DefaultSeo {...props} />;
-  }, [defaultSeo]);
-
   const includeFonts = globalStyleProps.includeFonts ?? true;
 
   return (
-    <>
-      {DefaultSEO}
+    <Seo value={defaultSeo}>
       <ChakraProvider theme={theme}>
         <Global
           styles={[
@@ -101,7 +83,7 @@ export function CombinedThemeProvider({ children, theme, accentColor, defaultSeo
         </TGCThemeProviderComponent>
         <NextNProgress color={accentColor} />
       </ChakraProvider>
-    </>
+    </Seo>
   );
 }
 
