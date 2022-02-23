@@ -54,9 +54,9 @@
     "bob-tsm": "^0.4.6",
     "changesets-github-release": "^0.1.0",
     "esbuild": "^0.14.23",
-    "framer-motion": "^6.2.7",
+    "framer-motion": "^6.2.8",
     "next": "^12.1.0",
-    "next-i18next": "^10.3.0",
+    "next-i18next": "^10.4.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "typescript": "4.5.5"
