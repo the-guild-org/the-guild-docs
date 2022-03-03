@@ -59,7 +59,7 @@ jobs:
         run: cd examples/basic && npx -p nextjs-bundle-analysis report
 
       - name: Upload bundle
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: bundle
           path: examples/basic/.next/analyze/__bundle_analysis.json
