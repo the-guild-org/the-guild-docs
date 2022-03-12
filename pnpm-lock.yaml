@@ -33,7 +33,7 @@ importers:
       eslint-plugin-jsx-a11y: 6.5.1
       eslint-plugin-react: 7.28.0
       eslint-plugin-react-hooks: 4.3.0
-      globby: ^11.1.0
+      globby: ^13.1.1
       husky: 7.0.4
       next: ^12.1.0
       prettier: ^2.5.1
@@ -69,7 +69,7 @@ importers:
       eslint-plugin-jsx-a11y: 6.5.1_eslint@8.9.0
       eslint-plugin-react: 7.28.0_eslint@8.9.0
       eslint-plugin-react-hooks: 4.3.0_eslint@8.9.0
-      globby: 11.1.0
+      globby: 13.1.1
       husky: 7.0.4
       next: 12.1.0_react-dom@17.0.2+react@17.0.2
       prettier: 2.5.1
@@ -286,7 +286,7 @@ importers:
       changesets-github-release: 0.1.0
       esbuild: ^0.14.23
       github-slugger: ^1.4.0
-      globby: ^11.1.0
+      globby: ^13.1.1
       gray-matter: ^4.0.3
       next: ^12.1.0
       next-i18next: ^10.4.0
@@ -304,7 +304,7 @@ importers:
       '@guild-docs/mdx-remote': link:../mdx-remote
       '@guild-docs/types': link:../types
       github-slugger: 1.4.0
-      globby: 11.1.0
+      globby: 13.1.1
       gray-matter: 4.0.3
       rehype-slug: 5.0.1
       remark-emoji: 3.0.2
@@ -2784,6 +2784,7 @@ packages:
   /array-union/2.1.0:
     resolution: {integrity: sha512-HGyxoOTYUyCM6stUe6EJgnd4EoewAI7zMdfqO+kGjnlZmBDz/cR5pf8r/cR4Wq60sL/p0IkcjUEEPwS3GFrIyw==}
     engines: {node: '>=8'}
+    dev: true
 
   /array.prototype.flat/1.2.5:
     resolution: {integrity: sha512-KaYU+S+ndVqyUnignHftkwc58o3uVU1jzczILJ1tN2YaIZpFIKBiP/x/j97E5MVPsaCloPbqWLB/8qCTVvT2qg==}
@@ -4489,6 +4490,17 @@ packages:
       ignore: 5.2.0
       merge2: 1.4.1
       slash: 3.0.0
+    dev: true
+
+  /globby/13.1.1:
+    resolution: {integrity: sha512-XMzoDZbGZ37tufiv7g0N4F/zp3zkwdFtVbV3EHsVl1KQr4RPLfNoT068/97RPshz2J5xYNEjLKKBKaGHifBd3Q==}
+    engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
+    dependencies:
+      dir-glob: 3.0.1
+      fast-glob: 3.2.11
+      ignore: 5.2.0
+      merge2: 1.4.1
+      slash: 4.0.0
 
   /graceful-fs/4.2.9:
     resolution: {integrity: sha512-NtNxqUcXgpW2iMrfqSfR73Glt39K+BLwWsPs94yR63v45T0Wbej7eRmL5cWfwEgqXnmjQp3zaJTshdRW/qC2ZQ==}
@@ -6831,6 +6843,11 @@ packages:
   /slash/3.0.0:
     resolution: {integrity: sha512-g9Q1haeby36OSStwb4ntCGGGaKsaVSjQ68fBxoQcutl5fS1vuY18H3wSt3jFyFtrkx+Kz0V1G85A4MyAdDMi2Q==}
     engines: {node: '>=8'}
+    dev: true
+
+  /slash/4.0.0:
+    resolution: {integrity: sha512-3dOsAHXXUkQTpOYcoAxLIorMTp4gIQr5IW3iVb7A7lFIp0VHhnynm9izx6TssdrIcVIESAlVjtnO2K8bg+Coew==}
+    engines: {node: '>=12'}
 
   /smartwrap/1.2.5:
     resolution: {integrity: sha512-bzWRwHwu0RnWjwU7dFy7tF68pDAx/zMSu3g7xr9Nx5J0iSImYInglwEVExyHLxXljy6PWMjkSAbwF7t2mPnRmg==}
