@@ -56,7 +56,7 @@
     "shiki": "^0.10.1"
   },
   "peerDependencies": {
-    "next": ">=11.1.4",
+    "next": ">=12.1.0",
     "next-i18next": "*",
     "react": "*",
     "react-dom": "*",

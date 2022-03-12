@@ -70,7 +70,7 @@
     "@theguild/components": "^1.10.0",
     "@types/mdx-js__react": "*",
     "framer-motion": "*",
-    "next": ">=11.1.4",
+    "next": ">=12.1.0",
     "next-i18next": "*",
     "react": "*",
     "react-dom": "*"
