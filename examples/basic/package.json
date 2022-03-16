@@ -20,7 +20,7 @@
     "@emotion/styled": "^11.8.1",
     "@guild-docs/client": "workspace:^1.4.0",
     "@guild-docs/server": "workspace:^2.2.0",
-    "@mdx-js/react": "^1.6.22",
+    "@mdx-js/react": "^2.1.0",
     "@theguild/components": "^1.10.0",
     "framer-motion": "^6.2.8",
     "next": "^12.1.0",
