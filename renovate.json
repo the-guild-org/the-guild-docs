@@ -1,6 +1,6 @@
 {
+  "extends": ["config:base"],
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["github>the-guild-org/shared-config:renovate"],
   "rangeStrategy": "bump",
   "ignoreDeps": ["pnpm"],
   "ignorePaths": ["**/node_modules/**"]
