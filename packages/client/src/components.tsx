@@ -3,7 +3,10 @@
 import { useTranslation } from 'next-i18next';
 import ImageImport from 'next/image.js';
 import NextLinkImport from 'next/link.js';
-import React, { ComponentType, ReactNode } from 'react';
+import React, { Children, ComponentType, ReactNode } from 'react';
+import { onlyText } from 'react-children-utilities';
+
+import { Mermaid } from 'mdx-mermaid/Mermaid';
 
 import {
   Box,
@@ -29,6 +32,7 @@ import {
   Tooltip,
   TooltipProps,
   UnorderedList,
+  useColorMode,
   useColorModeValue,
 } from '@chakra-ui/react';
 
@@ -285,6 +289,13 @@ export const originalComponents = {
   Button,
   Translated,
   Stack,
+  Graph: ({ children }: { children: ReactNode }) => {
+    const { colorMode } = useColorMode();
+    if (Children.toArray(children).length > 1) {
+      console.error('BEWARE: the mermaid content should not contain any empty line!');
+    }
+    return <Mermaid chart={onlyText(children) as unknown as string} config={{ theme: colorMode }} />;
+  },
   inlineCode: (props: CodeProps) => {
     const colorScheme = useColorModeValue('blackAlpha', undefined);
 
