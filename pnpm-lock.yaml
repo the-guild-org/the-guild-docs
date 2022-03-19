@@ -212,7 +212,7 @@ importers:
       react-dom: ^17.0.2
       react-icons: 4.3.1
       react-intersection-observer: ^8.33.1
-      react-sticky-box: 0.9.3
+      react-sticky-box: 1.0.1
       react-use: ^17.3.2
       remove-markdown: ^0.3.0
       typescript: 4.4.4
@@ -226,7 +226,7 @@ importers:
       nprogress: 0.2.0
       react-icons: 4.3.1_react@17.0.2
       react-intersection-observer: 8.33.1_react@17.0.2
-      react-sticky-box: 0.9.3_react@17.0.2
+      react-sticky-box: 1.0.1_react@17.0.2
       react-use: 17.3.2_react-dom@17.0.2+react@17.0.2
       remove-markdown: 0.3.0
       use-immer: 0.6.0_immer@9.0.12+react@17.0.2
@@ -6317,13 +6317,11 @@ packages:
       use-callback-ref: 1.2.5_a0c521d4794c7ad97f5f4c1c4a7d5818
       use-sidecar: 1.0.5_react@17.0.2
 
-  /react-sticky-box/0.9.3_react@17.0.2:
-    resolution: {integrity: sha512-Y/qO7vTqAvXuRR6G6ZCW4fX2Bz0GZRwiiLTVeZN5CVz9wzs37ev0Xj3KSKF/PzF0jifwATivI4t24qXG8rSz4Q==}
+  /react-sticky-box/1.0.1_react@17.0.2:
+    resolution: {integrity: sha512-CmxcLnMLXvNgslf70SXAduh/4Be8xiB6znW4aUCWv8qNbZjDlFjC5WptbyiKT6465AYuNCg6NGapWlyoN/o7Ew==}
     peerDependencies:
-      prop-types: ^15.6.2
-      react: ^0.14.0 || ^15.0.0 || ^16.0.0
+      react: '>=16.8.0'
     dependencies:
-      '@babel/runtime': 7.17.2
       react: 17.0.2
       resize-observer-polyfill: 1.5.1
     dev: false
