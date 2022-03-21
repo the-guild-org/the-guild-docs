@@ -24,7 +24,7 @@ jobs:
           node-version: '14.x'
 
       - name: Cache pnpm modules
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         env:
           cache-name: cache-pnpm-modules
         with:
@@ -40,7 +40,7 @@ jobs:
         run: pnpm i
 
       - name: Restore next build
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         id: restore-build-cache
         env:
           cache-name: cache-next-build
