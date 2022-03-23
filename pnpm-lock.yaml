@@ -87,8 +87,8 @@ importers:
       '@chakra-ui/utils': 1.10.4
       '@emotion/react': 11.8.2
       '@emotion/styled': 11.8.1
-      '@guild-docs/client': workspace:^1.4.0
-      '@guild-docs/server': workspace:^2.2.0
+      '@guild-docs/client': workspace:^2.0.0
+      '@guild-docs/server': workspace:^3.0.0
       '@mdx-js/react': 2.1.0
       '@next/bundle-analyzer': ^12.1.0
       '@theguild/components': 1.10.2
@@ -184,8 +184,8 @@ importers:
       '@chakra-ui/system': 1.11.2
       '@chakra-ui/utils': 1.10.4
       '@emotion/react': 11.8.2
-      '@guild-docs/mdx-remote': workspace:^1.0.2
-      '@guild-docs/types': workspace:^1.1.0
+      '@guild-docs/mdx-remote': workspace:^2.0.0
+      '@guild-docs/types': workspace:^2.0.0
       '@mdx-js/react': 2.1.0
       '@theguild/components': 1.10.2
       '@types/mdx-js__react': 1.5.5
@@ -260,7 +260,7 @@ importers:
   packages/mdx-remote:
     specifiers:
       '@babel/code-frame': 7.16.7
-      '@guild-docs/types': workspace:^1.1.0
+      '@guild-docs/types': workspace:^2.0.0
       '@mdx-js/mdx': 2.1.0
       '@mdx-js/react': 2.1.0
       '@stefanprobst/rehype-shiki': 2.2.0
@@ -288,8 +288,8 @@ importers:
 
   packages/server:
     specifiers:
-      '@guild-docs/mdx-remote': workspace:^1.0.2
-      '@guild-docs/types': workspace:^1.1.0
+      '@guild-docs/mdx-remote': workspace:^2.0.0
+      '@guild-docs/types': workspace:^2.0.0
       '@stefanprobst/remark-shiki': 2.1.0
       '@types/github-slugger': 1.3.0
       bob-esbuild-cli: 3.0.2
