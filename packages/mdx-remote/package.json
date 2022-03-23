@@ -1,6 +1,6 @@
 {
   "name": "@guild-docs/mdx-remote",
-  "version": "1.0.2",
+  "version": "2.0.0",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/the-guild-org/the-guild-docs.git"
@@ -21,7 +21,7 @@
   },
   "dependencies": {
     "@babel/code-frame": "7.16.7",
-    "@guild-docs/types": "workspace:^1.1.0",
+    "@guild-docs/types": "workspace:^2.0.0",
     "@mdx-js/mdx": "2.1.0",
     "@stefanprobst/rehype-shiki": "2.2.0",
     "unified": "10.1.2",

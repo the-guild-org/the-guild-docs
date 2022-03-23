@@ -1,5 +1,15 @@
 # @guild-docs/types
 
+## 2.0.0
+
+### Major Changes
+
+- 228b9cf: Use [MDX 2](https://mdxjs.com/blog/v2/) 🎉
+
+  - Requires `Next.js v12`
+  - Requires `"@mdx-js/react": "^2.0.0"`
+  - Removed support for [remark-admonitions](https://github.com/elviswolcott/remark-admonitions) due to compatibility issues (and it stopped being maintained at April 28th, 2020)
+
 ## 1.1.0
 
 ### Minor Changes
