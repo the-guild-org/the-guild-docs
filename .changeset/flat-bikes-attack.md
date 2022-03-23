@@ -1,5 +1,4 @@
 ---
-"guild-docs": patch
 "@guild-docs/client": minor
 ---
 

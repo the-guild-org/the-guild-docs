@@ -1,13 +1,10 @@
 /* eslint-disable react-hooks/rules-of-hooks */
-
 import { useTranslation } from 'next-i18next';
 import ImageImport from 'next/image.js';
 import NextLinkImport from 'next/link.js';
 import React, { Children, ComponentType, ReactNode } from 'react';
 import { onlyText } from 'react-children-utilities';
-
 import { Mermaid } from 'mdx-mermaid/Mermaid';
-
 import {
   Box,
   BoxProps,
@@ -294,7 +291,7 @@ export const originalComponents = {
     if (Children.toArray(children).length > 1) {
       console.error('BEWARE: the mermaid content should not contain any empty line!');
     }
-    return <Mermaid chart={onlyText(children) as unknown as string} config={{ theme: colorMode }} />;
+    return <Mermaid chart={onlyText(children)} config={{ theme: colorMode }} />;
   },
   inlineCode: (props: CodeProps) => {
     const colorScheme = useColorModeValue('blackAlpha', undefined);
