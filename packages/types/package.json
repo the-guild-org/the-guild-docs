@@ -18,14 +18,14 @@
     "postpublish": "gh-release"
   },
   "dependencies": {
-    "@mdx-js/mdx": "^2.0.0",
-    "unified": "^10.1.1"
+    "@mdx-js/mdx": "^2.1.0",
+    "unified": "^10.1.2"
   },
   "devDependencies": {
     "@chakra-ui/react": "1.8.6",
     "@emotion/react": "11.8.2",
     "@emotion/styled": "11.8.1",
-    "@types/node": "16.11.7",
+    "@types/node": "16.11.26",
     "@types/react": "17.0.42",
     "bob-esbuild-cli": "3.0.2",
     "changesets-github-release": "0.1.0",
