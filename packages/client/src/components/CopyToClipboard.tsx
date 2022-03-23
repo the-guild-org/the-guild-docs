@@ -17,7 +17,7 @@ export const CopyToClipboard = memo(function CopyToClipboard({
   buttonProps?: IconButtonProps;
 }) {
   const [, copy] = useCopyToClipboard();
-  const [copied, setCopied] = useState<string | undefined>();
+  const [copied, setCopied] = useState('');
   const toast = useToast();
 
   return (
@@ -40,7 +40,7 @@ export const CopyToClipboard = memo(function CopyToClipboard({
         });
 
         setTimeout(() => {
-          setCopied(undefined);
+          setCopied('');
         }, 1000);
       }}
       {...buttonProps}
