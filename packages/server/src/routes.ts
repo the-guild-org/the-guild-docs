@@ -1,5 +1,5 @@
 import { readFileSync } from 'fs';
-import globby from 'globby';
+import { globbySync } from 'globby';
 import matter from 'gray-matter';
 
 import type { IRoutes } from '@guild-docs/types';
@@ -46,7 +46,7 @@ export function GenerateRoutes(config: AddRoutesConfig) {
   const baseRoutes: IRoutes = basePathLabel ? ({ $name: basePathLabel } as IRoutes) : {};
 
   if (folderPattern) {
-    for (const path of globby.sync(folderPattern)) {
+    for (const path of globbySync(folderPattern)) {
       if (!/\.mdx?$/.test(path)) continue;
 
       const md = readFileSync(path);

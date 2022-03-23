@@ -1,12 +1,20 @@
-import globby from 'globby';
+import { globby } from 'globby';
 import { dirname } from 'path';
 import { fileURLToPath } from 'url';
 import chalk from 'chalk';
 
 async function main() {
-  const mjsFiles = await globby(['../packages/*/dist/*.mjs'], {
-    cwd: dirname(fileURLToPath(import.meta.url)),
-  });
+  const mjsFiles = await globby(
+    [
+      '../packages/*/dist/**/*.mjs',
+      '../packages/client/dist/**/*.js',
+      '../packages/server/dist/**/*.js',
+      '../packages/mdx-remote/dist/**/*.js',
+    ],
+    {
+      cwd: dirname(fileURLToPath(import.meta.url)),
+    }
+  );
 
   const ok = [];
   const fail = [];

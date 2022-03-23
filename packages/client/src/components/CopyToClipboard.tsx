@@ -1,7 +1,7 @@
 import React, { memo, useState } from 'react';
-import { MdContentCopy } from 'react-icons/md';
-import { TiTickOutline } from 'react-icons/ti';
-import useCopyToClipboardImport from 'react-use/lib/useCopyToClipboard';
+import { MdContentCopy } from 'react-icons/md/index.js';
+import { TiTickOutline } from 'react-icons/ti/index.js';
+import useCopyToClipboardImport from 'react-use/lib/useCopyToClipboard.js';
 
 import { IconButton, useToast, IconButtonProps } from '@chakra-ui/react';
 

@@ -24,7 +24,7 @@ import { GlobalStyles, ThemeProvider as TGCThemeProvider } from '@theguild/compo
 import { DefaultSeo } from 'next-seo';
 import type { DefaultSeoProps, OpenGraphMedia } from 'next-seo/lib/types';
 import type { AppProps } from 'next/app';
-import React, { ComponentProps, Dispatch, ReactNode, SetStateAction, useMemo } from 'react';
+import React, { ComponentProps, Dispatch, ReactNode, SetStateAction, useMemo, FC } from 'react';
 import StickyBox from 'react-sticky-box';
 import { DocsContainer, DocsNavigation, DocsNavigationDesktop, DocsNavigationMobile, DocsTitle } from './docs';
 import { MDXNavigation, MDXNavigationProps } from './navigation';
@@ -49,22 +49,27 @@ export interface AppSeoProps extends DefaultSeoProps {
   logo: OpenGraphMedia;
 }
 
-export function CombinedThemeProvider({ children, theme, accentColor, defaultSeo, globalStyleProps = {} }: CombinedThemeProps) {
+export const CombinedThemeProvider: FC<CombinedThemeProps> = ({
+  children,
+  theme,
+  accentColor,
+  defaultSeo,
+  globalStyleProps = {},
+}) => {
   const DefaultSEO = useMemo(() => {
     if (!defaultSeo) throw Error('No `defaultSeo` specified in CombinedThemeProvider');
-    const { logo, ...props } = defaultSeo;
+    if (!defaultSeo.title) throw Error(`No defaultSeo.title specified!`);
+    if (!defaultSeo.description) throw Error(`No defaultSeo.description specified!`);
 
-    if (!props?.title) throw Error(`No defaultSeo.title specified!`);
-
-    if (!props.description) throw Error(`No defaultSeo.description specified!`);
-
-    (props.openGraph ||= {}).type ||= 'website';
+    const { logo, ...rest } = defaultSeo;
 
     if (!logo?.url?.startsWith('https://')) throw Error(`No defaultSeo.logo.url specified with absolute https url!`);
 
-    props.openGraph.images ||= [logo];
+    rest.openGraph ||= {};
+    rest.openGraph.type ||= 'website';
+    rest.openGraph.images ||= [logo];
 
-    return <DefaultSeo {...props} />;
+    return <DefaultSeo {...rest} />;
   }, [defaultSeo]);
 
   const includeFonts = globalStyleProps.includeFonts ?? true;
@@ -103,7 +108,7 @@ export function CombinedThemeProvider({ children, theme, accentColor, defaultSeo
       </ChakraProvider>
     </>
   );
-}
+};
 
 function TGCThemeProviderComponent({ children }: { children: ReactNode }) {
   const { colorMode, setColorMode } = useColorMode();

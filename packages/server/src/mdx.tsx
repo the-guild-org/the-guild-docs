@@ -2,7 +2,7 @@ import type { MDXRemoteSerializeResult, SerializeOptions } from '@guild-docs/mdx
 import type { IRoutes, MdxInternalProps, PossiblePromise, TOC } from '@guild-docs/types';
 import { LazyPromise } from '@guild-docs/types';
 import { access, readFile } from 'fs/promises';
-import globby from 'globby';
+import { globby } from 'globby';
 import matter from 'gray-matter';
 import type { GetStaticPathsContext, GetStaticPropsContext, GetStaticPropsResult } from 'next';
 import { appWithTranslation } from 'next-i18next';
@@ -157,8 +157,7 @@ export interface CompiledMDX {
 }
 
 const MdxDeps = LazyPromise(async () => {
-  const [remarkAdmonitions, remarkEmoji, highlighter, withShiki, { serialize }, rehypeSlug] = await Promise.all([
-    import('remark-admonitions').then(v => v.default).catch(() => void 0),
+  const [remarkEmoji, highlighter, withShiki, { serialize }, rehypeSlug] = await Promise.all([
     import('remark-emoji').then(v => v.default),
     getHighlighter({
       theme: 'dark-plus',
@@ -187,13 +186,12 @@ const MdxDeps = LazyPromise(async () => {
         'svelte',
       ],
     }),
-    import('./remarkShiki').then(v => v.withShiki()),
+    import('@stefanprobst/rehype-shiki').then(v => v.default),
     import('@guild-docs/mdx-remote/serialize'),
     import('rehype-slug').then(v => v.default),
   ]);
 
   return {
-    remarkAdmonitions,
     remarkEmoji,
     highlighter,
     withShiki,
@@ -215,37 +213,23 @@ export async function buildMDX(
     content = '# ' + data.title + '\n\n' + content.trimStart();
   }
 
-  const { remarkAdmonitions, remarkEmoji, highlighter, withShiki, serialize, rehypeSlug } = await MdxDeps;
+  const { remarkEmoji, highlighter, withShiki, serialize, rehypeSlug } = await MdxDeps;
 
-  const remarkPlugins: NonNullable<SerializeOptions['mdxOptions']>['remarkPlugins'] = [
-    [
-      withShiki,
-      {
-        highlighter,
-      },
-    ],
-    remarkEmoji,
-    ...extraRemarkPlugins,
-  ];
-
-  if (remarkAdmonitions) {
-    remarkPlugins.push([
-      remarkAdmonitions,
-      {
-        customTypes: {
-          shell: {
-            keyword: 'shell',
-            svg: '<svg xmlns="http://www.w3.org/2000/svg" width="16pt" height="16pt" viewBox="0 0 16 16"><path d="M0 0v16h16V0zm15.063 15.063H.937v-11h14.126zm0-11.938H.937V.937h14.126zm0 0"/><path d="M1.875 1.563h.938V2.5h-.938zm0 0M3.438 1.563h.937V2.5h-.938zm0 0M5 1.563h.938V2.5H5zm0 0M1.875 5.074v1.348l.988.637-.988.578V9.05l2.828-1.668v-.586zm0 0M5.34 7.559h1.027v1.226H5.34zm0 0M5.34 5.32h1.027v1.23H5.34zm0 0M6.8 8.785h2.356v1.137H6.801zm0 0"/></svg>',
-          },
-        },
-      },
-    ]);
-  }
+  const remarkPlugins: NonNullable<SerializeOptions['mdxOptions']>['remarkPlugins'] = [remarkEmoji, ...extraRemarkPlugins];
 
   const mdx = await serialize(content, {
     mdxOptions: {
       remarkPlugins,
-      rehypePlugins: [rehypeSlug, ...extraRehypePlugins],
+      rehypePlugins: [
+        rehypeSlug,
+        [
+          withShiki,
+          {
+            highlighter,
+          },
+        ],
+        ...extraRehypePlugins,
+      ],
     },
   });
 

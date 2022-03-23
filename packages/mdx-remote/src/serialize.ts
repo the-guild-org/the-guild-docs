@@ -1,14 +1,26 @@
-import mdx from '@mdx-js/mdx';
-import { transform } from 'esbuild';
-import type { Plugin } from 'unified';
-import type { MDXRemoteSerializeResult, SerializeOptions } from '@guild-docs/types';
-import { LazyPromise } from '@guild-docs/types';
+import { compile, CompileOptions } from '@mdx-js/mdx';
+import { VFile } from 'vfile';
+import { matter } from 'vfile-matter';
 
-const deps = LazyPromise(async () => {
+import { createFormattedMDXError } from './format-mdx-error';
+import { removeImportsExportsPlugin } from './plugins/remove-imports-exports';
+
+import type { MDXRemoteSerializeResult, SerializeOptions } from '@guild-docs/types';
+
+function getCompileOptions(mdxOptions: SerializeOptions['mdxOptions'] = {}): CompileOptions {
+  const areImportsEnabled = mdxOptions?.useDynamicImport;
+
+  // don't modify the original object when adding our own plugin
+  // this allows code to reuse the same options object
+  const remarkPlugins = [...(mdxOptions.remarkPlugins || []), ...(areImportsEnabled ? [] : [removeImportsExportsPlugin])];
+
   return {
-    remove: (await import('unist-util-remove')).remove,
+    ...mdxOptions,
+    remarkPlugins,
+    outputFormat: 'function-body',
+    providerImportSource: '@mdx-js/react',
   };
-});
+}
 
 /**
  * Parses and compiles the provided MDX string. Returns a result which can be passed into <MDXRemote /> to be rendered.
@@ -16,29 +28,28 @@ const deps = LazyPromise(async () => {
 export async function serialize(
   /** Raw MDX contents as a string. */
   source: string,
-  { scope = {}, mdxOptions = {}, target = ['es2020', 'node12'] }: SerializeOptions = {}
+  { scope = {}, mdxOptions = {}, parseFrontmatter = false }: SerializeOptions = {}
 ): Promise<MDXRemoteSerializeResult> {
-  const { remove } = await deps;
+  const vfile = new VFile({ value: source });
 
-  /**
-   * remark plugin which removes all import and export statements
-   */
-  const removeImportsExportsPlugin: Plugin = () => tree => remove(tree, ['import', 'export']) || undefined;
+  // makes frontmatter available via vfile.data.matter
+  if (parseFrontmatter) {
+    matter(vfile, { strip: true });
+  }
 
-  const remarkPlugins = [...(mdxOptions.remarkPlugins || []), removeImportsExportsPlugin];
+  let compiledMdx: VFile;
 
-  mdxOptions = { ...mdxOptions, remarkPlugins };
+  try {
+    compiledMdx = await compile(vfile, getCompileOptions(mdxOptions));
+  } catch (error: any) {
+    throw createFormattedMDXError(error, String(vfile));
+  }
 
-  const compiledMdx = await mdx(source, { ...mdxOptions, skipExport: true });
-  const transformResult = await transform(compiledMdx, {
-    loader: 'jsx',
-    jsxFactory: 'mdx',
-    minify: true,
-    target,
-  });
+  const compiledSource = String(compiledMdx);
 
   return {
-    compiledSource: transformResult.code,
+    compiledSource,
+    frontmatter: (vfile.data.matter as Record<string, string> | undefined) ?? {},
     scope,
   };
 }

@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
 
 import { css, Global } from '@emotion/react';
-import RouterImport from 'next/router';
+import RouterImport from 'next/router.js';
 import NProgress from 'nprogress';
 import React, { memo, useEffect, useMemo } from 'react';
 import { getDefault } from './utils';

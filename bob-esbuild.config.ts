@@ -6,4 +6,15 @@ export const config: import('bob-esbuild').BobConfig = {
   clean: false,
   distDir: 'dist',
   keepDynamicImport: true,
+  packageConfigs: {
+    '@guild-docs/mdx-remote': {
+      onlyESM: true,
+    },
+    '@guild-docs/client': {
+      onlyESM: true,
+    },
+    '@guild-docs/server': {
+      onlyESM: true,
+    },
+  },
 };

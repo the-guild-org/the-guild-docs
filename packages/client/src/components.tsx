@@ -1,10 +1,10 @@
 /* eslint-disable react-hooks/rules-of-hooks */
-
 import { useTranslation } from 'next-i18next';
-import ImageImport from 'next/image';
-import NextLinkImport from 'next/link';
-import React, { ComponentType, ReactNode } from 'react';
-
+import ImageImport from 'next/image.js';
+import NextLinkImport from 'next/link.js';
+import React, { Children, ComponentType, ReactNode } from 'react';
+import { onlyText } from 'react-children-utilities';
+import { Mermaid } from 'mdx-mermaid/Mermaid';
 import {
   Box,
   BoxProps,
@@ -29,13 +29,14 @@ import {
   Tooltip,
   TooltipProps,
   UnorderedList,
+  useColorMode,
   useColorModeValue,
 } from '@chakra-ui/react';
 
 import { PackageInstall, PackageRun } from './components/Package';
 import { getDefault } from './utils';
 
-import type { LinkProps as NextLinkProps } from 'next/link';
+import type { LinkProps as NextLinkProps } from 'next/link.js';
 
 export { CopyToClipboard } from './components/CopyToClipboard';
 export { PackageInstall, PackageRun };
@@ -285,6 +286,13 @@ export const originalComponents = {
   Button,
   Translated,
   Stack,
+  Graph: ({ children }: { children: ReactNode }) => {
+    const { colorMode } = useColorMode();
+    if (Children.toArray(children).length > 1) {
+      console.error('BEWARE: the mermaid content should not contain any empty line!');
+    }
+    return <Mermaid chart={onlyText(children)} config={{ theme: colorMode }} />;
+  },
   inlineCode: (props: CodeProps) => {
     const colorScheme = useColorModeValue('blackAlpha', undefined);
 

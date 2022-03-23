@@ -1,5 +1,5 @@
-import NextLinkImport from 'next/link';
-import { useRouter } from 'next/router';
+import NextLinkImport from 'next/link.js';
+import { useRouter } from 'next/router.js';
 import React, { FC, useMemo, useState } from 'react';
 
 import { ArrowBackIcon, ArrowForwardIcon } from '@chakra-ui/icons';
