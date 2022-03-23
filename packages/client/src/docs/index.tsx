@@ -1,10 +1,7 @@
 import type { FC } from 'react';
 import React from 'react';
-import StickyBoxPkg from 'react-sticky-box';
+import StickyBox from 'react-sticky-box';
 import { chakra } from '@chakra-ui/react';
-import { getDefault } from '../utils';
-
-const StickyBox = getDefault(StickyBoxPkg);
 
 export const DocsContainer = chakra('section', {
   baseStyle: {

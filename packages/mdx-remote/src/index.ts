@@ -75,7 +75,7 @@ export function MDXRemote({ compiledSource, scope, components = {}, lazy, frontm
     const hydrateFn = Reflect.construct(Function, keys.concat(compiledSource));
 
     return hydrateFn.apply(hydrateFn, values).default;
-  }, [scope, compiledSource]);
+  }, [scope, compiledSource, frontmatter]);
 
   if (!isReadyToRender) {
     // If we're not ready to render, return an empty div to preserve SSR'd markup
