@@ -3,55 +3,54 @@ import { dirname } from 'path';
 import { fileURLToPath } from 'url';
 import chalk from 'chalk';
 
-async function main() {
-  const mjsFiles = await globby(
-    [
-      '../packages/*/dist/**/*.mjs',
-      '../packages/client/dist/**/*.js',
-      '../packages/server/dist/**/*.js',
-      '../packages/mdx-remote/dist/**/*.js',
-    ],
-    {
-      cwd: dirname(fileURLToPath(import.meta.url)),
+const mjsFiles = await globby(
+  [
+    '../packages/*/dist/**/*.mjs',
+    '../packages/client/dist/**/*.js',
+    '../packages/server/dist/**/*.js',
+    '../packages/mdx-remote/dist/**/*.js',
+  ],
+  {
+    cwd: dirname(fileURLToPath(import.meta.url)),
+  },
+);
+
+const ok = [];
+const fail = [];
+let i = 0;
+
+await Promise.all(
+  mjsFiles.map(async filepath => {
+    const mjsPath = `./${filepath}`;
+    try {
+      await import(mjsPath);
+      ok.push(mjsPath);
+    } catch (err) {
+      fail.push(mjsPath);
+
+      console.error(
+        chalk.red(`\n${i += 1} ${'-'.repeat(100)}\n`),
+        mjsPath,
+        err,
+      );
     }
-  );
+  }),
+);
 
-  const ok = [];
-  const fail = [];
-
-  let i = 0;
-  await Promise.all(
-    mjsFiles.map(mjsFile => {
-      const mjsPath = `./${mjsFile}`;
-      return import(mjsPath)
-        .then(() => {
-          ok.push(mjsPath);
-        })
-        .catch(err => {
-          const color = i++ % 2 === 0 ? chalk.magenta : chalk.red;
-          console.error(color('\n\n-----\n' + i + '\n'));
-          console.error(mjsPath, err);
-          console.error(color('\n-----\n\n'));
-          fail.push(mjsPath);
-        });
-    })
-  );
-  ok.length && console.log(chalk.blue(`${ok.length} OK: ${ok.join(' | ')}`));
-  fail.length && console.error(chalk.red(`${fail.length} Fail: ${fail.join(' | ')}`));
-
-  if (fail.length) {
-    console.error('\nFAILED');
-    process.exit(1);
-  } else if (ok.length) {
-    console.error('\nOK');
-    process.exit(0);
-  } else {
-    console.error('No files analyzed!');
-    process.exit(1);
-  }
+if (ok.length > 0) {
+  console.log(chalk.green(`${ok.length} OK\n${ok.join('\n')}`));
 }
 
-main().catch(err => {
-  console.error(err);
+if (fail.length > 0) {
+  console.error(chalk.red(`${fail.length} Fail\n${fail.join('\n')}`));
+  console.error('❌  FAILED');
   process.exit(1);
-});
+}
+
+if (ok.length > 0) {
+  console.log('✅  OK');
+  process.exit(0);
+}
+
+console.error('No files analyzed!');
+process.exit(1);
