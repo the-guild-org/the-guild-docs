@@ -1,18 +1,20 @@
 import { compile, CompileOptions } from '@mdx-js/mdx';
+import remarkGfm from 'remark-gfm';
 import { VFile } from 'vfile';
 import { matter } from 'vfile-matter';
+import type { MDXRemoteSerializeResult, SerializeOptions } from '@guild-docs/types';
 
 import { createFormattedMDXError } from './format-mdx-error';
 import { removeImportsExportsPlugin } from './plugins/remove-imports-exports';
 
-import type { MDXRemoteSerializeResult, SerializeOptions } from '@guild-docs/types';
-
 function getCompileOptions(mdxOptions: SerializeOptions['mdxOptions'] = {}): CompileOptions {
-  const areImportsEnabled = mdxOptions?.useDynamicImport;
-
   // don't modify the original object when adding our own plugin
   // this allows code to reuse the same options object
-  const remarkPlugins = [...(mdxOptions.remarkPlugins || []), ...(areImportsEnabled ? [] : [removeImportsExportsPlugin])];
+  const remarkPlugins = [
+    ...(mdxOptions.remarkPlugins || []),
+    ...(mdxOptions.useDynamicImport ? [] : [removeImportsExportsPlugin]),
+    remarkGfm, // Support GFM (tables, autolinks, tasklists, strikethrough)
+  ];
 
   return {
     ...mdxOptions,
@@ -41,7 +43,7 @@ export async function serialize(
 
   try {
     compiledMdx = await compile(vfile, getCompileOptions(mdxOptions));
-  } catch (error: any) {
+  } catch (error) {
     throw createFormattedMDXError(error, String(vfile));
   }
 
