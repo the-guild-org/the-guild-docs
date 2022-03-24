@@ -1,5 +1,11 @@
 # @guild-docs/mdx-remote
 
+## 2.0.1
+
+### Patch Changes
+
+- 725b49b: add `remark-gfm` to display markdown tables
+
 ## 2.0.0
 
 ### Major Changes
