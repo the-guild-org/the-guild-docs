@@ -131,7 +131,7 @@ async function parsePartialMarkdown(content: string, basePath: string): Promise<
           return parsePartialMarkdown(partialMarkdown, basePath);
         }
 
-        throw Error(`Unable to locate @import file in path ${fileAbsPath}!`);
+        throw Error(`Unable to locate @import file in path ${fileAbsPath}`);
       }
 
       return contentLine;

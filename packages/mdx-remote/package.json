@@ -24,6 +24,7 @@
     "@guild-docs/types": "workspace:^2.0.0",
     "@mdx-js/mdx": "2.1.0",
     "@stefanprobst/rehype-shiki": "2.2.0",
+    "remark-gfm": "3.0.1",
     "unified": "10.1.2",
     "unist-util-remove": "3.1.0",
     "vfile": "5.3.2",
