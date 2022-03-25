@@ -14,7 +14,7 @@ importers:
       '@changesets/read': 0.5.4
       '@manypkg/get-packages': 1.1.3
       '@types/node': 16.11.26
-      '@types/react': 17.0.42
+      '@types/react': 17.0.43
       '@types/react-instantsearch-core': 6.10.7
       '@types/react-instantsearch-dom': 6.12.2
       '@types/react-paginate': 7.1.1
@@ -41,7 +41,7 @@ importers:
       react-dom: 17.0.2
       rimraf: 3.0.2
       semver: 7.3.5
-      typescript: 4.6.2
+      typescript: 4.6.3
     devDependencies:
       '@changesets/apply-release-plan': 5.0.5
       '@changesets/assemble-release-plan': 5.1.1
@@ -50,15 +50,15 @@ importers:
       '@changesets/read': 0.5.4
       '@manypkg/get-packages': 1.1.3
       '@types/node': 16.11.26
-      '@types/react': 17.0.42
+      '@types/react': 17.0.43
       '@types/react-instantsearch-core': 6.10.7
       '@types/react-instantsearch-dom': 6.12.2
       '@types/react-paginate': 7.1.1
-      '@typescript-eslint/eslint-plugin': 5.16.0_3fed250b11519414a4c7d52468dd6bf5
-      '@typescript-eslint/parser': 5.16.0_eslint@8.11.0+typescript@4.6.2
-      bob-esbuild: 3.2.5_esbuild@0.14.27+typescript@4.6.2
+      '@typescript-eslint/eslint-plugin': 5.16.0_bc68a9cd5bf604202498b1a9faaf9387
+      '@typescript-eslint/parser': 5.16.0_eslint@8.11.0+typescript@4.6.3
+      bob-esbuild: 3.2.5_esbuild@0.14.27+typescript@4.6.3
       bob-esbuild-cli: 3.0.2_bob-esbuild@3.2.5
-      bob-tsm: 0.4.7_esbuild@0.14.27+typescript@4.6.2
+      bob-tsm: 0.4.7_esbuild@0.14.27+typescript@4.6.3
       chalk: 5.0.1
       concurrently: 7.0.0
       esbuild: 0.14.27
@@ -77,7 +77,7 @@ importers:
       react-dom: 17.0.2_react@17.0.2
       rimraf: 3.0.2
       semver: 7.3.5
-      typescript: 4.6.2
+      typescript: 4.6.3
 
   examples/basic:
     specifiers:
@@ -93,7 +93,7 @@ importers:
       '@next/bundle-analyzer': ^12.1.0
       '@theguild/components': 1.10.2
       '@types/node': 16.11.26
-      '@types/react': 17.0.42
+      '@types/react': 17.0.43
       '@types/react-dom': 17.0.14
       bob-tsm: 0.4.7
       concurrently: 7.0.0
@@ -110,19 +110,19 @@ importers:
       react-icons: 4.3.1
       react-use: 17.3.2
       shiki: 0.10.1
-      typescript: 4.6.2
+      typescript: 4.6.3
       wait-on: ^6.0.1
     dependencies:
       '@chakra-ui/icons': 1.1.7_react@17.0.2
-      '@chakra-ui/react': 1.8.6_6f508fb5c6fe1e9da8ffd868e8b2417f
+      '@chakra-ui/react': 1.8.6_50278d5156da8d43d5fff90829dc3133
       '@chakra-ui/theme-tools': 1.3.6
       '@chakra-ui/utils': 1.10.4
-      '@emotion/react': 11.8.2_e172d252c66b8263a0fc6c22242511b8
-      '@emotion/styled': 11.8.1_a08c0cdde42e73513cd4c3382592b31e
+      '@emotion/react': 11.8.2_03a98942b76c57740a9573edba2d1cc1
+      '@emotion/styled': 11.8.1_ab60dc3cf3b46d6599c9cb98d57741dd
       '@guild-docs/client': link:../../packages/client
       '@guild-docs/server': link:../../packages/server
       '@mdx-js/react': 2.1.0_react@17.0.2
-      '@theguild/components': 1.10.2_b236a318752056aac88306873bc2bcc1
+      '@theguild/components': 1.10.2_b5d7bf22a7b46dd4876f0e926ab0c987
       framer-motion: 6.2.8_react-dom@17.0.2+react@17.0.2
       next: 12.1.0_react-dom@17.0.2+react@17.0.2
       next-i18next: 10.5.0_caa633a00319350dbda42996613fe26c
@@ -135,15 +135,15 @@ importers:
     devDependencies:
       '@next/bundle-analyzer': 12.1.0
       '@types/node': 16.11.26
-      '@types/react': 17.0.42
+      '@types/react': 17.0.43
       '@types/react-dom': 17.0.14
-      bob-tsm: 0.4.7_esbuild@0.14.27+typescript@4.6.2
+      bob-tsm: 0.4.7_esbuild@0.14.27+typescript@4.6.3
       concurrently: 7.0.0
       cross-env: 7.0.3
       esbuild: 0.14.27
       next-remote-watch: 1.0.0
       open-cli: 7.0.1
-      typescript: 4.6.2
+      typescript: 4.6.3
       wait-on: 6.0.1
 
   packages/cli:
@@ -166,7 +166,7 @@ importers:
       '@types/mkdirp': 1.0.2
       '@types/node': 16.11.26
       '@types/prettier': 2.4.4
-      bob-tsm: 0.4.7_esbuild@0.14.27+typescript@4.6.2
+      bob-tsm: 0.4.7_esbuild@0.14.27+typescript@4.6.3
       bob-watch: 0.1.1
       changesets-github-release: 0.1.0
       commander: 9.1.0
@@ -190,7 +190,7 @@ importers:
       '@theguild/components': 1.10.2
       '@types/mdx-js__react': 1.5.5
       '@types/nprogress': 0.2.0
-      '@types/react': 17.0.42
+      '@types/react': 17.0.43
       '@types/react-dom': 17.0.14
       '@types/remove-markdown': 0.3.1
       bob-esbuild-cli: 3.0.2
@@ -213,7 +213,7 @@ importers:
       react-sticky-box: 1.0.1
       react-use: 17.3.2
       remove-markdown: 0.3.0
-      typescript: 4.6.2
+      typescript: 4.6.3
       use-immer: 0.6.0
       zustand: 3.7.1
     dependencies:
@@ -232,19 +232,19 @@ importers:
     devDependencies:
       '@chakra-ui/icons': 1.1.7_cf1afb73b983ccab5207fbc7b13f7809
       '@chakra-ui/layout': 1.7.7_cf1afb73b983ccab5207fbc7b13f7809
-      '@chakra-ui/react': 1.8.6_ccb3f14266b679a533a7117c04c38db0
+      '@chakra-ui/react': 1.8.6_7c7da64ac3f5a5b7399a238998a8a7a5
       '@chakra-ui/system': 1.11.2_fa30c4a31333a43d23a4fe708e0dc178
       '@chakra-ui/utils': 1.10.4
-      '@emotion/react': 11.8.2_e172d252c66b8263a0fc6c22242511b8
+      '@emotion/react': 11.8.2_03a98942b76c57740a9573edba2d1cc1
       '@mdx-js/react': 2.1.0_react@17.0.2
-      '@theguild/components': 1.10.2_b236a318752056aac88306873bc2bcc1
+      '@theguild/components': 1.10.2_b5d7bf22a7b46dd4876f0e926ab0c987
       '@types/mdx-js__react': 1.5.5
       '@types/nprogress': 0.2.0
-      '@types/react': 17.0.42
+      '@types/react': 17.0.43
       '@types/react-dom': 17.0.14
       '@types/remove-markdown': 0.3.1
       bob-esbuild-cli: 3.0.2_bob-esbuild@3.2.5
-      bob-tsm: 0.4.7_esbuild@0.14.27+typescript@4.6.2
+      bob-tsm: 0.4.7_esbuild@0.14.27+typescript@4.6.3
       changesets-github-release: 0.1.0
       esbuild: 0.14.27
       framer-motion: 6.2.8_react-dom@17.0.2+react@17.0.2
@@ -255,7 +255,7 @@ importers:
       react-dom: 17.0.2_react@17.0.2
       react-icons: 4.3.1_react@17.0.2
       react-use: 17.3.2_react-dom@17.0.2+react@17.0.2
-      typescript: 4.6.2
+      typescript: 4.6.3
 
   packages/mdx-remote:
     specifiers:
@@ -338,27 +338,27 @@ importers:
       '@emotion/styled': 11.8.1
       '@mdx-js/mdx': ^2.1.0
       '@types/node': 16.11.26
-      '@types/react': 17.0.42
+      '@types/react': 17.0.43
       bob-esbuild-cli: 3.0.2
       changesets-github-release: 0.1.0
       framer-motion: 6.2.8
       next-i18next: 10.5.0
-      typescript: 4.6.2
+      typescript: 4.6.3
       unified: ^10.1.2
     dependencies:
       '@mdx-js/mdx': 2.1.0
       unified: 10.1.2
     devDependencies:
-      '@chakra-ui/react': 1.8.6_6f508fb5c6fe1e9da8ffd868e8b2417f
-      '@emotion/react': 11.8.2_e172d252c66b8263a0fc6c22242511b8
-      '@emotion/styled': 11.8.1_a08c0cdde42e73513cd4c3382592b31e
+      '@chakra-ui/react': 1.8.6_50278d5156da8d43d5fff90829dc3133
+      '@emotion/react': 11.8.2_03a98942b76c57740a9573edba2d1cc1
+      '@emotion/styled': 11.8.1_ab60dc3cf3b46d6599c9cb98d57741dd
       '@types/node': 16.11.26
-      '@types/react': 17.0.42
+      '@types/react': 17.0.43
       bob-esbuild-cli: 3.0.2_bob-esbuild@3.2.5
       changesets-github-release: 0.1.0
       framer-motion: 6.2.8_react-dom@17.0.2+react@17.0.2
       next-i18next: 10.5.0_caa633a00319350dbda42996613fe26c
-      typescript: 4.6.2
+      typescript: 4.6.3
 
 packages:
 
@@ -1114,7 +1114,7 @@ packages:
       '@emotion/react': '>=10.0.35'
       react: '>=16.8.6'
     dependencies:
-      '@emotion/react': 11.8.2_e172d252c66b8263a0fc6c22242511b8
+      '@emotion/react': 11.8.2_03a98942b76c57740a9573edba2d1cc1
       react: 17.0.2
 
   /@chakra-ui/descendant/2.1.3_react@17.0.2:
@@ -1137,14 +1137,14 @@ packages:
       '@chakra-ui/utils': 1.10.4
       react: 17.0.2
 
-  /@chakra-ui/focus-lock/1.2.6_e172d252c66b8263a0fc6c22242511b8:
+  /@chakra-ui/focus-lock/1.2.6_03a98942b76c57740a9573edba2d1cc1:
     resolution: {integrity: sha512-ZJNE1oNdUM1aGWuCJ+bxFa/d3EwxzfMWzTKzSvKDK50GWoUQQ10xFTT9nY/yFpkcwhBvx1KavxKf44mIhIbSog==, registry: https://registry.yarnpkg.com/, tarball: https://registry.yarnpkg.com/@chakra-ui/focus-lock/-/focus-lock-1.2.6.tgz}
     peerDependencies:
       react: '>=16.8.6'
     dependencies:
       '@chakra-ui/utils': 1.10.4
       react: 17.0.2
-      react-focus-lock: 2.5.2_e172d252c66b8263a0fc6c22242511b8
+      react-focus-lock: 2.5.2_03a98942b76c57740a9573edba2d1cc1
     transitivePeerDependencies:
       - '@types/react'
 
@@ -1200,7 +1200,7 @@ packages:
     dependencies:
       '@chakra-ui/icon': 2.0.5_cf1afb73b983ccab5207fbc7b13f7809
       '@chakra-ui/system': 1.11.2_fa30c4a31333a43d23a4fe708e0dc178
-      '@types/react': 17.0.42
+      '@types/react': 17.0.43
       react: 17.0.2
     dev: true
 
@@ -1211,7 +1211,7 @@ packages:
       react: '>=16.8.6'
     dependencies:
       '@chakra-ui/icon': 2.0.5_react@17.0.2
-      '@types/react': 17.0.42
+      '@types/react': 17.0.43
       react: 17.0.2
     dev: false
 
@@ -1289,7 +1289,7 @@ packages:
       framer-motion: 6.2.8_react-dom@17.0.2+react@17.0.2
       react: 17.0.2
 
-  /@chakra-ui/modal/1.10.10_049ca9a0b465f7c393765d3f28a05242:
+  /@chakra-ui/modal/1.10.10_a32612e1cd2c0f3ee18fa861bb5580a4:
     resolution: {integrity: sha512-/OLnZhhGXQEaCqtrCCf2nu27mVxT/3Kd+NBNMKGZ4X70Dm6HD3x1Zrsto2hVo8l3kLEPRpkfpXhKu61doMc8zw==, registry: https://registry.yarnpkg.com/, tarball: https://registry.yarnpkg.com/@chakra-ui/modal/-/modal-1.10.10.tgz}
     peerDependencies:
       '@chakra-ui/system': '>=1.0.0'
@@ -1298,7 +1298,7 @@ packages:
       react-dom: '>=16.8.6'
     dependencies:
       '@chakra-ui/close-button': 1.2.7_cf1afb73b983ccab5207fbc7b13f7809
-      '@chakra-ui/focus-lock': 1.2.6_e172d252c66b8263a0fc6c22242511b8
+      '@chakra-ui/focus-lock': 1.2.6_03a98942b76c57740a9573edba2d1cc1
       '@chakra-ui/hooks': 1.8.5_react@17.0.2
       '@chakra-ui/portal': 1.3.8_react-dom@17.0.2+react@17.0.2
       '@chakra-ui/react-utils': 1.2.3_react@17.0.2
@@ -1309,7 +1309,7 @@ packages:
       framer-motion: 6.2.8_react-dom@17.0.2+react@17.0.2
       react: 17.0.2
       react-dom: 17.0.2_react@17.0.2
-      react-remove-scroll: 2.4.1_e172d252c66b8263a0fc6c22242511b8
+      react-remove-scroll: 2.4.1_03a98942b76c57740a9573edba2d1cc1
     transitivePeerDependencies:
       - '@types/react'
 
@@ -1403,7 +1403,7 @@ packages:
       '@chakra-ui/react-env': 1.1.6_react@17.0.2
       '@chakra-ui/system': 1.11.2_fa30c4a31333a43d23a4fe708e0dc178
       '@chakra-ui/utils': 1.10.4
-      '@emotion/react': 11.8.2_e172d252c66b8263a0fc6c22242511b8
+      '@emotion/react': 11.8.2_03a98942b76c57740a9573edba2d1cc1
       react: 17.0.2
       react-dom: 17.0.2_react@17.0.2
     dev: true
@@ -1422,8 +1422,8 @@ packages:
       '@chakra-ui/react-env': 1.1.6_react@17.0.2
       '@chakra-ui/system': 1.11.2_dc240608ee0d50d8faddd7dd724375c2
       '@chakra-ui/utils': 1.10.4
-      '@emotion/react': 11.8.2_e172d252c66b8263a0fc6c22242511b8
-      '@emotion/styled': 11.8.1_a08c0cdde42e73513cd4c3382592b31e
+      '@emotion/react': 11.8.2_03a98942b76c57740a9573edba2d1cc1
+      '@emotion/styled': 11.8.1_ab60dc3cf3b46d6599c9cb98d57741dd
       react: 17.0.2
       react-dom: 17.0.2_react@17.0.2
 
@@ -1457,7 +1457,7 @@ packages:
       '@chakra-ui/utils': 1.10.4
       react: 17.0.2
 
-  /@chakra-ui/react/1.8.6_6f508fb5c6fe1e9da8ffd868e8b2417f:
+  /@chakra-ui/react/1.8.6_50278d5156da8d43d5fff90829dc3133:
     resolution: {integrity: sha512-FEh/KG0uPeNOMQuIlyPfGjHvGB7LN1AAhkdFefqzNt0zNy8Giv4p1PKY7wdCh5QEFor++A83L1wIWvTGQVJ2vQ==, registry: https://registry.yarnpkg.com/, tarball: https://registry.yarnpkg.com/@chakra-ui/react/-/react-1.8.6.tgz}
     peerDependencies:
       '@emotion/react': ^11.0.0
@@ -1486,7 +1486,7 @@ packages:
       '@chakra-ui/live-region': 1.1.6_react@17.0.2
       '@chakra-ui/media-query': 2.0.4_da2295f418e3e222c875f90162edd78f
       '@chakra-ui/menu': 1.8.9_8548d53eb8615e8e5949b9b41b874f64
-      '@chakra-ui/modal': 1.10.10_049ca9a0b465f7c393765d3f28a05242
+      '@chakra-ui/modal': 1.10.10_a32612e1cd2c0f3ee18fa861bb5580a4
       '@chakra-ui/number-input': 1.4.5_cf1afb73b983ccab5207fbc7b13f7809
       '@chakra-ui/pin-input': 1.7.8_cf1afb73b983ccab5207fbc7b13f7809
       '@chakra-ui/popover': 1.11.7_8548d53eb8615e8e5949b9b41b874f64
@@ -1513,15 +1513,15 @@ packages:
       '@chakra-ui/transition': 1.4.7_framer-motion@6.2.8+react@17.0.2
       '@chakra-ui/utils': 1.10.4
       '@chakra-ui/visually-hidden': 1.1.6_cf1afb73b983ccab5207fbc7b13f7809
-      '@emotion/react': 11.8.2_e172d252c66b8263a0fc6c22242511b8
-      '@emotion/styled': 11.8.1_a08c0cdde42e73513cd4c3382592b31e
+      '@emotion/react': 11.8.2_03a98942b76c57740a9573edba2d1cc1
+      '@emotion/styled': 11.8.1_ab60dc3cf3b46d6599c9cb98d57741dd
       framer-motion: 6.2.8_react-dom@17.0.2+react@17.0.2
       react: 17.0.2
       react-dom: 17.0.2_react@17.0.2
     transitivePeerDependencies:
       - '@types/react'
 
-  /@chakra-ui/react/1.8.6_ccb3f14266b679a533a7117c04c38db0:
+  /@chakra-ui/react/1.8.6_7c7da64ac3f5a5b7399a238998a8a7a5:
     resolution: {integrity: sha512-FEh/KG0uPeNOMQuIlyPfGjHvGB7LN1AAhkdFefqzNt0zNy8Giv4p1PKY7wdCh5QEFor++A83L1wIWvTGQVJ2vQ==, registry: https://registry.yarnpkg.com/, tarball: https://registry.yarnpkg.com/@chakra-ui/react/-/react-1.8.6.tgz}
     peerDependencies:
       '@emotion/react': ^11.0.0
@@ -1550,7 +1550,7 @@ packages:
       '@chakra-ui/live-region': 1.1.6_react@17.0.2
       '@chakra-ui/media-query': 2.0.4_da2295f418e3e222c875f90162edd78f
       '@chakra-ui/menu': 1.8.9_8548d53eb8615e8e5949b9b41b874f64
-      '@chakra-ui/modal': 1.10.10_049ca9a0b465f7c393765d3f28a05242
+      '@chakra-ui/modal': 1.10.10_a32612e1cd2c0f3ee18fa861bb5580a4
       '@chakra-ui/number-input': 1.4.5_cf1afb73b983ccab5207fbc7b13f7809
       '@chakra-ui/pin-input': 1.7.8_cf1afb73b983ccab5207fbc7b13f7809
       '@chakra-ui/popover': 1.11.7_8548d53eb8615e8e5949b9b41b874f64
@@ -1577,7 +1577,7 @@ packages:
       '@chakra-ui/transition': 1.4.7_framer-motion@6.2.8+react@17.0.2
       '@chakra-ui/utils': 1.10.4
       '@chakra-ui/visually-hidden': 1.1.6_cf1afb73b983ccab5207fbc7b13f7809
-      '@emotion/react': 11.8.2_e172d252c66b8263a0fc6c22242511b8
+      '@emotion/react': 11.8.2_03a98942b76c57740a9573edba2d1cc1
       framer-motion: 6.2.8_react-dom@17.0.2+react@17.0.2
       react: 17.0.2
       react-dom: 17.0.2_react@17.0.2
@@ -1609,8 +1609,8 @@ packages:
       '@chakra-ui/system': 1.11.2_dc240608ee0d50d8faddd7dd724375c2
       '@chakra-ui/theme': 1.14.0_@chakra-ui+system@1.11.2
       '@chakra-ui/utils': 1.10.4
-      '@emotion/react': 11.8.2_e172d252c66b8263a0fc6c22242511b8
-      '@emotion/styled': 11.8.1_a08c0cdde42e73513cd4c3382592b31e
+      '@emotion/react': 11.8.2_03a98942b76c57740a9573edba2d1cc1
+      '@emotion/styled': 11.8.1_ab60dc3cf3b46d6599c9cb98d57741dd
       react: 17.0.2
 
   /@chakra-ui/skeleton/1.2.12_ccc07a3b39328161a88647c1de030189:
@@ -1626,7 +1626,7 @@ packages:
       '@chakra-ui/system': 1.11.2_fa30c4a31333a43d23a4fe708e0dc178
       '@chakra-ui/theme': 1.14.0_@chakra-ui+system@1.11.2
       '@chakra-ui/utils': 1.10.4
-      '@emotion/react': 11.8.2_e172d252c66b8263a0fc6c22242511b8
+      '@emotion/react': 11.8.2_03a98942b76c57740a9573edba2d1cc1
       react: 17.0.2
     dev: true
 
@@ -1695,8 +1695,8 @@ packages:
       '@chakra-ui/react-utils': 1.2.3_react@17.0.2
       '@chakra-ui/styled-system': 1.18.1
       '@chakra-ui/utils': 1.10.4
-      '@emotion/react': 11.8.2_e172d252c66b8263a0fc6c22242511b8
-      '@emotion/styled': 11.8.1_a08c0cdde42e73513cd4c3382592b31e
+      '@emotion/react': 11.8.2_03a98942b76c57740a9573edba2d1cc1
+      '@emotion/styled': 11.8.1_ab60dc3cf3b46d6599c9cb98d57741dd
       react: 17.0.2
       react-fast-compare: 3.2.0
 
@@ -1711,7 +1711,7 @@ packages:
       '@chakra-ui/react-utils': 1.2.3_react@17.0.2
       '@chakra-ui/styled-system': 1.18.1
       '@chakra-ui/utils': 1.10.4
-      '@emotion/react': 11.8.2_e172d252c66b8263a0fc6c22242511b8
+      '@emotion/react': 11.8.2_03a98942b76c57740a9573edba2d1cc1
       react: 17.0.2
       react-fast-compare: 3.2.0
     dev: true
@@ -2087,7 +2087,7 @@ packages:
   /@emotion/memoize/0.7.5:
     resolution: {integrity: sha512-igX9a37DR2ZPGYtV6suZ6whr8pTFtyHL3K/oLUotxpSVO2ASaprmAe2Dkq7tBo7CRY7MMDrAa9nuQP9/YG8FxQ==, registry: https://registry.yarnpkg.com/, tarball: https://registry.yarnpkg.com/@emotion/memoize/-/memoize-0.7.5.tgz}
 
-  /@emotion/react/11.7.1_e172d252c66b8263a0fc6c22242511b8:
+  /@emotion/react/11.7.1_03a98942b76c57740a9573edba2d1cc1:
     resolution: {integrity: sha512-DV2Xe3yhkF1yT4uAUoJcYL1AmrnO5SVsdfvu+fBuS7IbByDeTVx9+wFmvx9Idzv7/78+9Mgx2Hcmr7Fex3tIyw==, registry: https://registry.yarnpkg.com/, tarball: https://registry.yarnpkg.com/@emotion/react/-/react-11.7.1.tgz}
     peerDependencies:
       '@babel/core': ^7.0.0
@@ -2105,11 +2105,11 @@ packages:
       '@emotion/sheet': 1.1.0
       '@emotion/utils': 1.1.0
       '@emotion/weak-memoize': 0.2.5
-      '@types/react': 17.0.42
+      '@types/react': 17.0.43
       hoist-non-react-statics: 3.3.2
       react: 17.0.2
 
-  /@emotion/react/11.8.2_e172d252c66b8263a0fc6c22242511b8:
+  /@emotion/react/11.8.2_03a98942b76c57740a9573edba2d1cc1:
     resolution: {integrity: sha512-+1bcHBaNJv5nkIIgnGKVsie3otS0wF9f1T1hteF3WeVvMNQEtfZ4YyFpnphGoot3ilU/wWMgP2SgIDuHLE/wAA==, registry: https://registry.yarnpkg.com/, tarball: https://registry.yarnpkg.com/@emotion/react/-/react-11.8.2.tgz}
     peerDependencies:
       '@babel/core': ^7.0.0
@@ -2127,7 +2127,7 @@ packages:
       '@emotion/serialize': 1.0.2
       '@emotion/utils': 1.1.0
       '@emotion/weak-memoize': 0.2.5
-      '@types/react': 17.0.42
+      '@types/react': 17.0.43
       hoist-non-react-statics: 3.3.2
       react: 17.0.2
 
@@ -2143,7 +2143,7 @@ packages:
   /@emotion/sheet/1.1.0:
     resolution: {integrity: sha512-u0AX4aSo25sMAygCuQTzS+HsImZFuS8llY8O7b9MDRzbJM0kVJlAz6KNDqcG7pOuQZJmj/8X/rAW+66kMnMW+g==, registry: https://registry.yarnpkg.com/, tarball: https://registry.yarnpkg.com/@emotion/sheet/-/sheet-1.1.0.tgz}
 
-  /@emotion/styled/11.6.0_0b769e21eb4f66b543981622479e696e:
+  /@emotion/styled/11.6.0_ba86673f732ba6d4d2d9b98afa1c0907:
     resolution: {integrity: sha512-mxVtVyIOTmCAkFbwIp+nCjTXJNgcz4VWkOYQro87jE2QBTydnkiYusMrRGFtzuruiGK4dDaNORk4gH049iiQuw==, registry: https://registry.yarnpkg.com/, tarball: https://registry.yarnpkg.com/@emotion/styled/-/styled-11.6.0.tgz}
     peerDependencies:
       '@babel/core': ^7.0.0
@@ -2159,13 +2159,13 @@ packages:
       '@babel/runtime': 7.17.8
       '@emotion/babel-plugin': 11.7.2
       '@emotion/is-prop-valid': 1.1.2
-      '@emotion/react': 11.7.1_e172d252c66b8263a0fc6c22242511b8
+      '@emotion/react': 11.7.1_03a98942b76c57740a9573edba2d1cc1
       '@emotion/serialize': 1.0.2
       '@emotion/utils': 1.1.0
-      '@types/react': 17.0.42
+      '@types/react': 17.0.43
       react: 17.0.2
 
-  /@emotion/styled/11.8.1_a08c0cdde42e73513cd4c3382592b31e:
+  /@emotion/styled/11.8.1_ab60dc3cf3b46d6599c9cb98d57741dd:
     resolution: {integrity: sha512-OghEVAYBZMpEquHZwuelXcRjRJQOVayvbmNR0zr174NHdmMgrNkLC6TljKC5h9lZLkN5WGrdUcrKlOJ4phhoTQ==, registry: https://registry.yarnpkg.com/, tarball: https://registry.yarnpkg.com/@emotion/styled/-/styled-11.8.1.tgz}
     peerDependencies:
       '@babel/core': ^7.0.0
@@ -2181,10 +2181,10 @@ packages:
       '@babel/runtime': 7.17.8
       '@emotion/babel-plugin': 11.7.2
       '@emotion/is-prop-valid': 1.1.2
-      '@emotion/react': 11.8.2_e172d252c66b8263a0fc6c22242511b8
+      '@emotion/react': 11.8.2_03a98942b76c57740a9573edba2d1cc1
       '@emotion/serialize': 1.0.2
       '@emotion/utils': 1.1.0
-      '@types/react': 17.0.42
+      '@types/react': 17.0.43
       react: 17.0.2
 
   /@emotion/unitless/0.7.5:
@@ -2664,14 +2664,14 @@ packages:
       unist-util-visit: 4.1.0
     dev: false
 
-  /@theguild/components/1.10.2_b236a318752056aac88306873bc2bcc1:
+  /@theguild/components/1.10.2_b5d7bf22a7b46dd4876f0e926ab0c987:
     resolution: {integrity: sha512-0LC2A2GKXknEo/Rson6yTB3wxyZz2YeUapPC77gWKrN4bA0HO7CXszeiRY4ncVn/nN9KezAOmvm25lr8t2n/FQ==, registry: https://registry.yarnpkg.com/, tarball: https://registry.yarnpkg.com/@theguild/components/-/components-1.10.2.tgz}
     peerDependencies:
       react: ^17.0.2
       react-dom: ^17.0.2
     dependencies:
-      '@emotion/react': 11.7.1_e172d252c66b8263a0fc6c22242511b8
-      '@emotion/styled': 11.6.0_0b769e21eb4f66b543981622479e696e
+      '@emotion/react': 11.7.1_03a98942b76c57740a9573edba2d1cc1
+      '@emotion/styled': 11.6.0_ba86673f732ba6d4d2d9b98afa1c0907
       algoliasearch: 4.11.0
       focus-trap-react: 8.9.2_react-dom@17.0.2+react@17.0.2
       polished: 4.1.4
@@ -2741,7 +2741,7 @@ packages:
   /@types/hoist-non-react-statics/3.3.1:
     resolution: {integrity: sha512-iMIqiko6ooLrTh1joXodJK5X9xeEALT1kM5G3ZLhD3hszxBdIEd5C75U834D9mLcINgD4OyZf5uQXjkuYydWvA==, registry: https://registry.yarnpkg.com/, tarball: https://registry.yarnpkg.com/@types/hoist-non-react-statics/-/hoist-non-react-statics-3.3.1.tgz}
     dependencies:
-      '@types/react': 17.0.42
+      '@types/react': 17.0.43
       hoist-non-react-statics: 3.3.2
 
   /@types/is-ci/3.0.0:
@@ -2786,7 +2786,7 @@ packages:
   /@types/mdx-js__react/1.5.5:
     resolution: {integrity: sha512-k8pnaP6JXVlQh18HgL5X6sYFNC/qZnzO7R2+HsmwrwUd+JnnsU0d9lyyT0RQrHg1anxDU36S98TI/fsGtmYqqg==, registry: https://registry.yarnpkg.com/, tarball: https://registry.yarnpkg.com/@types/mdx-js__react/-/mdx-js__react-1.5.5.tgz}
     dependencies:
-      '@types/react': 17.0.42
+      '@types/react': 17.0.43
     dev: true
 
   /@types/mdx/2.0.1:
@@ -2839,13 +2839,13 @@ packages:
   /@types/react-dom/17.0.14:
     resolution: {integrity: sha512-H03xwEP1oXmSfl3iobtmQ/2dHF5aBHr8aUMwyGZya6OW45G+xtdzmq6HkncefiBt5JU8DVyaWl/nWZbjZCnzAQ==, registry: https://registry.yarnpkg.com/, tarball: https://registry.yarnpkg.com/@types/react-dom/-/react-dom-17.0.14.tgz}
     dependencies:
-      '@types/react': 17.0.42
+      '@types/react': 17.0.43
     dev: true
 
   /@types/react-instantsearch-core/6.10.7:
     resolution: {integrity: sha512-bG87zLTm5NVzMGVgP6jZtNZxOiHWMp8++MvWeVMg131vXyTpvG5wwuvrOHjWAZ7fq73QQCyCWN7ktKEqj4mqVg==, registry: https://registry.yarnpkg.com/, tarball: https://registry.yarnpkg.com/@types/react-instantsearch-core/-/react-instantsearch-core-6.10.7.tgz}
     dependencies:
-      '@types/react': 17.0.42
+      '@types/react': 17.0.43
       algoliasearch: 4.13.0
       algoliasearch-helper: 3.7.4_algoliasearch@4.13.0
     dev: true
@@ -2853,18 +2853,25 @@ packages:
   /@types/react-instantsearch-dom/6.12.2:
     resolution: {integrity: sha512-MsVn01rRXsthQyKkUfcXAaiNBoCCsiPiD2/gzPx050QO/g2VfTacOTzSZfh29+0luRqAV58abnG34eQ/luq2Wg==, registry: https://registry.yarnpkg.com/, tarball: https://registry.yarnpkg.com/@types/react-instantsearch-dom/-/react-instantsearch-dom-6.12.2.tgz}
     dependencies:
-      '@types/react': 17.0.42
+      '@types/react': 17.0.43
       '@types/react-instantsearch-core': 6.10.7
     dev: true
 
   /@types/react-paginate/7.1.1:
     resolution: {integrity: sha512-94cEJHfBaINba2XGQOWFJF/tYe+AImIhOPqMCfqyeFOgk0qUpDZyDOOW76A1rgdtWndR8UwsMPgV/uuTM8vZ7w==, registry: https://registry.yarnpkg.com/, tarball: https://registry.yarnpkg.com/@types/react-paginate/-/react-paginate-7.1.1.tgz}
     dependencies:
-      '@types/react': 17.0.42
+      '@types/react': 17.0.43
     dev: true
 
   /@types/react/17.0.42:
     resolution: {integrity: sha512-nuab3x3CpJ7VFeNA+3HTUuEkvClYHXqWtWd7Ud6AZYW7Z3NH9WKtgU+tFB0ZLcHq+niB/HnzLcaZPqMJ95+k5Q==, registry: https://registry.yarnpkg.com/, tarball: https://registry.yarnpkg.com/@types/react/-/react-17.0.42.tgz}
+    dependencies:
+      '@types/prop-types': 15.7.4
+      '@types/scheduler': 0.16.2
+      csstype: 3.0.11
+
+  /@types/react/17.0.43:
+    resolution: {integrity: sha512-8Q+LNpdxf057brvPu1lMtC5Vn7J119xrP1aq4qiaefNioQUYANF/CYeK4NsKorSZyUGJ66g0IM+4bbjwx45o2A==}
     dependencies:
       '@types/prop-types': 15.7.4
       '@types/scheduler': 0.16.2
@@ -2888,7 +2895,7 @@ packages:
   /@types/warning/3.0.0:
     resolution: {integrity: sha1-DSUBJorY+ZYrdA04fEZU9fjiPlI=, registry: https://registry.yarnpkg.com/, tarball: https://registry.yarnpkg.com/@types/warning/-/warning-3.0.0.tgz}
 
-  /@typescript-eslint/eslint-plugin/5.16.0_3fed250b11519414a4c7d52468dd6bf5:
+  /@typescript-eslint/eslint-plugin/5.16.0_bc68a9cd5bf604202498b1a9faaf9387:
     resolution: {integrity: sha512-SJoba1edXvQRMmNI505Uo4XmGbxCK9ARQpkvOd00anxzri9RNQk0DDCxD+LIl+jYhkzOJiOMMKYEHnHEODjdCw==, registry: https://registry.yarnpkg.com/, tarball: https://registry.yarnpkg.com/@typescript-eslint/eslint-plugin/-/eslint-plugin-5.16.0.tgz}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     peerDependencies:
@@ -2899,23 +2906,23 @@ packages:
       typescript:
         optional: true
     dependencies:
-      '@typescript-eslint/parser': 5.16.0_eslint@8.11.0+typescript@4.6.2
+      '@typescript-eslint/parser': 5.16.0_eslint@8.11.0+typescript@4.6.3
       '@typescript-eslint/scope-manager': 5.16.0
-      '@typescript-eslint/type-utils': 5.16.0_eslint@8.11.0+typescript@4.6.2
-      '@typescript-eslint/utils': 5.16.0_eslint@8.11.0+typescript@4.6.2
+      '@typescript-eslint/type-utils': 5.16.0_eslint@8.11.0+typescript@4.6.3
+      '@typescript-eslint/utils': 5.16.0_eslint@8.11.0+typescript@4.6.3
       debug: 4.3.4
       eslint: 8.11.0
       functional-red-black-tree: 1.0.1
       ignore: 5.2.0
       regexpp: 3.2.0
       semver: 7.3.5
-      tsutils: 3.21.0_typescript@4.6.2
-      typescript: 4.6.2
+      tsutils: 3.21.0_typescript@4.6.3
+      typescript: 4.6.3
     transitivePeerDependencies:
       - supports-color
     dev: true
 
-  /@typescript-eslint/parser/5.16.0_eslint@8.11.0+typescript@4.6.2:
+  /@typescript-eslint/parser/5.16.0_eslint@8.11.0+typescript@4.6.3:
     resolution: {integrity: sha512-fkDq86F0zl8FicnJtdXakFs4lnuebH6ZADDw6CYQv0UZeIjHvmEw87m9/29nk2Dv5Lmdp0zQ3zDQhiMWQf/GbA==, registry: https://registry.yarnpkg.com/, tarball: https://registry.yarnpkg.com/@typescript-eslint/parser/-/parser-5.16.0.tgz}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     peerDependencies:
@@ -2927,10 +2934,10 @@ packages:
     dependencies:
       '@typescript-eslint/scope-manager': 5.16.0
       '@typescript-eslint/types': 5.16.0
-      '@typescript-eslint/typescript-estree': 5.16.0_typescript@4.6.2
+      '@typescript-eslint/typescript-estree': 5.16.0_typescript@4.6.3
       debug: 4.3.4
       eslint: 8.11.0
-      typescript: 4.6.2
+      typescript: 4.6.3
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -2943,7 +2950,7 @@ packages:
       '@typescript-eslint/visitor-keys': 5.16.0
     dev: true
 
-  /@typescript-eslint/type-utils/5.16.0_eslint@8.11.0+typescript@4.6.2:
+  /@typescript-eslint/type-utils/5.16.0_eslint@8.11.0+typescript@4.6.3:
     resolution: {integrity: sha512-SKygICv54CCRl1Vq5ewwQUJV/8padIWvPgCxlWPGO/OgQLCijY9G7lDu6H+mqfQtbzDNlVjzVWQmeqbLMBLEwQ==, registry: https://registry.yarnpkg.com/, tarball: https://registry.yarnpkg.com/@typescript-eslint/type-utils/-/type-utils-5.16.0.tgz}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     peerDependencies:
@@ -2953,11 +2960,11 @@ packages:
       typescript:
         optional: true
     dependencies:
-      '@typescript-eslint/utils': 5.16.0_eslint@8.11.0+typescript@4.6.2
+      '@typescript-eslint/utils': 5.16.0_eslint@8.11.0+typescript@4.6.3
       debug: 4.3.4
       eslint: 8.11.0
-      tsutils: 3.21.0_typescript@4.6.2
-      typescript: 4.6.2
+      tsutils: 3.21.0_typescript@4.6.3
+      typescript: 4.6.3
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -2967,7 +2974,7 @@ packages:
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     dev: true
 
-  /@typescript-eslint/typescript-estree/5.16.0_typescript@4.6.2:
+  /@typescript-eslint/typescript-estree/5.16.0_typescript@4.6.3:
     resolution: {integrity: sha512-SE4VfbLWUZl9MR+ngLSARptUv2E8brY0luCdgmUevU6arZRY/KxYoLI/3V/yxaURR8tLRN7bmZtJdgmzLHI6pQ==, registry: https://registry.yarnpkg.com/, tarball: https://registry.yarnpkg.com/@typescript-eslint/typescript-estree/-/typescript-estree-5.16.0.tgz}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     peerDependencies:
@@ -2982,13 +2989,13 @@ packages:
       globby: 11.1.0
       is-glob: 4.0.3
       semver: 7.3.5
-      tsutils: 3.21.0_typescript@4.6.2
-      typescript: 4.6.2
+      tsutils: 3.21.0_typescript@4.6.3
+      typescript: 4.6.3
     transitivePeerDependencies:
       - supports-color
     dev: true
 
-  /@typescript-eslint/utils/5.16.0_eslint@8.11.0+typescript@4.6.2:
+  /@typescript-eslint/utils/5.16.0_eslint@8.11.0+typescript@4.6.3:
     resolution: {integrity: sha512-iYej2ER6AwmejLWMWzJIHy3nPJeGDuCqf8Jnb+jAQVoPpmWzwQOfa9hWVB8GIQE5gsCv/rfN4T+AYb/V06WseQ==, registry: https://registry.yarnpkg.com/, tarball: https://registry.yarnpkg.com/@typescript-eslint/utils/-/utils-5.16.0.tgz}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     peerDependencies:
@@ -2997,7 +3004,7 @@ packages:
       '@types/json-schema': 7.0.10
       '@typescript-eslint/scope-manager': 5.16.0
       '@typescript-eslint/types': 5.16.0
-      '@typescript-eslint/typescript-estree': 5.16.0_typescript@4.6.2
+      '@typescript-eslint/typescript-estree': 5.16.0_typescript@4.6.3
       eslint: 8.11.0
       eslint-scope: 5.1.1
       eslint-utils: 3.0.0_eslint@8.11.0
@@ -3418,7 +3425,7 @@ packages:
     peerDependencies:
       bob-esbuild: ^3.2.5
     dependencies:
-      bob-esbuild: 3.2.5_esbuild@0.14.27+typescript@4.6.2
+      bob-esbuild: 3.2.5_esbuild@0.14.27+typescript@4.6.3
       commander: 9.1.0
     dev: true
 
@@ -3433,7 +3440,7 @@ packages:
       rollup: 2.70.1
     dev: true
 
-  /bob-esbuild/3.2.5_esbuild@0.14.27+typescript@4.6.2:
+  /bob-esbuild/3.2.5_esbuild@0.14.27+typescript@4.6.3:
     resolution: {integrity: sha512-gsbeqawI4KH9kjdygmB8vxVjXx38k/h9a+s9n66vcCeVeP/Oh/Jz1B/nm5rBAFt+s3hwbLrvZWRA44vciJa4Hw==, registry: https://registry.yarnpkg.com/, tarball: https://registry.yarnpkg.com/bob-esbuild/-/bob-esbuild-3.2.5.tgz}
     peerDependencies:
       esbuild: '>=0.14.13'
@@ -3443,10 +3450,10 @@ packages:
       bob-esbuild-plugin: 3.1.4_esbuild@0.14.27+rollup@2.70.1
       esbuild: 0.14.27
       rollup: 2.70.1
-      typescript: 4.6.2
+      typescript: 4.6.3
     dev: true
 
-  /bob-tsm/0.4.7_esbuild@0.14.27+typescript@4.6.2:
+  /bob-tsm/0.4.7_esbuild@0.14.27+typescript@4.6.3:
     resolution: {integrity: sha512-xZ6Fn1vq1j1n2Wdn5/mw9agivH3BduCIvu+Zq2IqS4iEzJIbPUjMGbVxp8gZ3cnXwo/M/n8rr1WK9sSO3uIInA==, registry: https://registry.yarnpkg.com/, tarball: https://registry.yarnpkg.com/bob-tsm/-/bob-tsm-0.4.7.tgz}
     engines: {node: ^12.20.0 || >=14.13.0}
     hasBin: true
@@ -3458,7 +3465,7 @@ packages:
         optional: true
     dependencies:
       esbuild: 0.14.27
-      typescript: 4.6.2
+      typescript: 4.6.3
     optionalDependencies:
       fsevents: 2.3.2
     dev: true
@@ -7997,7 +8004,7 @@ packages:
   /react-fast-compare/3.2.0:
     resolution: {integrity: sha512-rtGImPZ0YyLrscKI9xTpV8psd6I8VAtjKCzQDlzyDvqJA8XOW78TXYQwNRNd8g8JZnDu8q9Fu/1v4HPAVwVdHA==, registry: https://registry.yarnpkg.com/, tarball: https://registry.yarnpkg.com/react-fast-compare/-/react-fast-compare-3.2.0.tgz}
 
-  /react-focus-lock/2.5.2_e172d252c66b8263a0fc6c22242511b8:
+  /react-focus-lock/2.5.2_03a98942b76c57740a9573edba2d1cc1:
     resolution: {integrity: sha512-WzpdOnEqjf+/A3EH9opMZWauag7gV0BxFl+EY4ElA4qFqYsUsBLnmo2sELbN5OC30S16GAWMy16B9DLPpdJKAQ==, registry: https://registry.yarnpkg.com/, tarball: https://registry.yarnpkg.com/react-focus-lock/-/react-focus-lock-2.5.2.tgz}
     peerDependencies:
       react: ^16.8.0 || ^17.0.0
@@ -8007,7 +8014,7 @@ packages:
       prop-types: 15.8.1
       react: 17.0.2
       react-clientside-effect: 1.2.5_react@17.0.2
-      use-callback-ref: 1.2.5_e172d252c66b8263a0fc6c22242511b8
+      use-callback-ref: 1.2.5_03a98942b76c57740a9573edba2d1cc1
       use-sidecar: 1.0.5_react@17.0.2
     transitivePeerDependencies:
       - '@types/react'
@@ -8100,7 +8107,7 @@ packages:
       react: 17.0.2
       react-fast-compare: 3.2.0
 
-  /react-remove-scroll-bar/2.2.0_e172d252c66b8263a0fc6c22242511b8:
+  /react-remove-scroll-bar/2.2.0_03a98942b76c57740a9573edba2d1cc1:
     resolution: {integrity: sha512-UU9ZBP1wdMR8qoUs7owiVcpaPwsQxUDC2lypP6mmixaGlARZa7ZIBx1jcuObLdhMOvCsnZcvetOho0wzPa9PYg==, registry: https://registry.yarnpkg.com/, tarball: https://registry.yarnpkg.com/react-remove-scroll-bar/-/react-remove-scroll-bar-2.2.0.tgz}
     engines: {node: '>=8.5.0'}
     peerDependencies:
@@ -8110,12 +8117,12 @@ packages:
       '@types/react':
         optional: true
     dependencies:
-      '@types/react': 17.0.42
+      '@types/react': 17.0.43
       react: 17.0.2
-      react-style-singleton: 2.1.1_e172d252c66b8263a0fc6c22242511b8
+      react-style-singleton: 2.1.1_03a98942b76c57740a9573edba2d1cc1
       tslib: 1.14.1
 
-  /react-remove-scroll/2.4.1_e172d252c66b8263a0fc6c22242511b8:
+  /react-remove-scroll/2.4.1_03a98942b76c57740a9573edba2d1cc1:
     resolution: {integrity: sha512-K7XZySEzOHMTq7dDwcHsZA6Y7/1uX5RsWhRXVYv8rdh+y9Qz2nMwl9RX/Mwnj/j7JstCGmxyfyC0zbVGXYh3mA==, registry: https://registry.yarnpkg.com/, tarball: https://registry.yarnpkg.com/react-remove-scroll/-/react-remove-scroll-2.4.1.tgz}
     engines: {node: '>=8.5.0'}
     peerDependencies:
@@ -8125,12 +8132,12 @@ packages:
       '@types/react':
         optional: true
     dependencies:
-      '@types/react': 17.0.42
+      '@types/react': 17.0.43
       react: 17.0.2
-      react-remove-scroll-bar: 2.2.0_e172d252c66b8263a0fc6c22242511b8
-      react-style-singleton: 2.1.1_e172d252c66b8263a0fc6c22242511b8
+      react-remove-scroll-bar: 2.2.0_03a98942b76c57740a9573edba2d1cc1
+      react-style-singleton: 2.1.1_03a98942b76c57740a9573edba2d1cc1
       tslib: 1.14.1
-      use-callback-ref: 1.2.5_e172d252c66b8263a0fc6c22242511b8
+      use-callback-ref: 1.2.5_03a98942b76c57740a9573edba2d1cc1
       use-sidecar: 1.0.5_react@17.0.2
 
   /react-sticky-box/1.0.1_react@17.0.2:
@@ -8142,7 +8149,7 @@ packages:
       resize-observer-polyfill: 1.5.1
     dev: false
 
-  /react-style-singleton/2.1.1_e172d252c66b8263a0fc6c22242511b8:
+  /react-style-singleton/2.1.1_03a98942b76c57740a9573edba2d1cc1:
     resolution: {integrity: sha512-jNRp07Jza6CBqdRKNgGhT3u9umWvils1xsuMOjZlghBDH2MU0PL2WZor4PGYjXpnRCa9DQSlHMs/xnABWOwYbA==, registry: https://registry.yarnpkg.com/, tarball: https://registry.yarnpkg.com/react-style-singleton/-/react-style-singleton-2.1.1.tgz}
     engines: {node: '>=8.5.0'}
     peerDependencies:
@@ -8152,7 +8159,7 @@ packages:
       '@types/react':
         optional: true
     dependencies:
-      '@types/react': 17.0.42
+      '@types/react': 17.0.43
       get-nonce: 1.0.1
       invariant: 2.2.4
       react: 17.0.2
@@ -9264,14 +9271,14 @@ packages:
   /tslib/2.3.1:
     resolution: {integrity: sha512-77EbyPPpMz+FRFRuAFlWMtmgUWGe9UOG2Z25NqCwiIjRhOf5iKGuzSe5P2w1laq+FkRy4p+PCuVkJSGkzTEKVw==, registry: https://registry.yarnpkg.com/, tarball: https://registry.yarnpkg.com/tslib/-/tslib-2.3.1.tgz}
 
-  /tsutils/3.21.0_typescript@4.6.2:
+  /tsutils/3.21.0_typescript@4.6.3:
     resolution: {integrity: sha512-mHKK3iUXL+3UF6xL5k0PEhKRUBKPBCv/+RkEOpjRWxxx27KKRBmmA60A9pgOUvMi8GKhRMPEmjBRPzs2W7O1OA==, registry: https://registry.yarnpkg.com/, tarball: https://registry.yarnpkg.com/tsutils/-/tsutils-3.21.0.tgz}
     engines: {node: '>= 6'}
     peerDependencies:
       typescript: '>=2.8.0 || >= 3.2.0-dev || >= 3.3.0-dev || >= 3.4.0-dev || >= 3.5.0-dev || >= 3.6.0-dev || >= 3.6.0-beta || >= 3.7.0-dev || >= 3.7.0-beta'
     dependencies:
       tslib: 1.14.1
-      typescript: 4.6.2
+      typescript: 4.6.3
     dev: true
 
   /tty-table/2.8.13:
@@ -9359,8 +9366,8 @@ packages:
       mime-types: 2.1.35
     dev: true
 
-  /typescript/4.6.2:
-    resolution: {integrity: sha512-HM/hFigTBHZhLXshn9sN37H085+hQGeJHJ/X7LpBWLID/fbc2acUMfU+lGD98X81sKP+pFa9f0DZmCwB9GnbAg==, registry: https://registry.yarnpkg.com/, tarball: https://registry.yarnpkg.com/typescript/-/typescript-4.6.2.tgz}
+  /typescript/4.6.3:
+    resolution: {integrity: sha512-yNIatDa5iaofVozS/uQJEl3JRWLKKGJKh6Yaiv0GLGSuhpFJe7P3SbHZ8/yjAHRQwKRoA6YZqlfjXWmVzoVSMw==}
     engines: {node: '>=4.2.0'}
     hasBin: true
     dev: true
@@ -9516,7 +9523,7 @@ packages:
     deprecated: Please see https://github.com/lydell/urix#deprecated
     dev: false
 
-  /use-callback-ref/1.2.5_e172d252c66b8263a0fc6c22242511b8:
+  /use-callback-ref/1.2.5_03a98942b76c57740a9573edba2d1cc1:
     resolution: {integrity: sha512-gN3vgMISAgacF7sqsLPByqoePooY3n2emTH59Ur5d/M8eg4WTWu1xp8i8DHjohftIyEx0S08RiYxbffr4j8Peg==, registry: https://registry.yarnpkg.com/, tarball: https://registry.yarnpkg.com/use-callback-ref/-/use-callback-ref-1.2.5.tgz}
     engines: {node: '>=8.5.0'}
     peerDependencies:
@@ -9526,7 +9533,7 @@ packages:
       '@types/react':
         optional: true
     dependencies:
-      '@types/react': 17.0.42
+      '@types/react': 17.0.43
       react: 17.0.2
 
   /use-debounce/7.0.1_react@17.0.2:
