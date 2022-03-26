@@ -34,6 +34,6 @@
     "lodash": "4.17.21",
     "mkdirp": "1.0.4",
     "npm-api": "1.0.1",
-    "prettier": "2.6.0"
+    "prettier": "2.6.1"
   }
 }
