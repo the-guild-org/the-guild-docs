@@ -29,7 +29,7 @@
     "release:canary": "(node scripts/canary-release.js && pnpm -r publish --access public --no-git-checks --tag alpha) || echo Skipping Canary..."
   },
   "devDependencies": {
-    "@changesets/apply-release-plan": "5.0.5",
+    "@changesets/apply-release-plan": "6.0.0",
     "@changesets/assemble-release-plan": "5.1.2",
     "@changesets/cli": "2.22.0",
     "@changesets/config": "1.7.0",
