@@ -31,7 +31,7 @@ importers:
       eslint-plugin-import: 2.25.4
       eslint-plugin-jsx-a11y: 6.5.1
       eslint-plugin-react: 7.29.4
-      eslint-plugin-react-hooks: 4.3.0
+      eslint-plugin-react-hooks: 4.4.0
       globby: 13.1.1
       husky: 7.0.4
       next: 12.1.2
@@ -67,7 +67,7 @@ importers:
       eslint-plugin-import: 2.25.4_eslint@8.12.0
       eslint-plugin-jsx-a11y: 6.5.1_eslint@8.12.0
       eslint-plugin-react: 7.29.4_eslint@8.12.0
-      eslint-plugin-react-hooks: 4.3.0_eslint@8.12.0
+      eslint-plugin-react-hooks: 4.4.0_eslint@8.12.0
       globby: 13.1.1
       husky: 7.0.4
       next: 12.1.2_react-dom@17.0.2+react@17.0.2
@@ -148,7 +148,7 @@ importers:
 
   packages/cli:
     specifiers:
-      '@types/lodash': 4.14.180
+      '@types/lodash': 4.14.181
       '@types/mkdirp': 1.0.2
       '@types/node': 16.11.26
       '@types/prettier': 2.4.4
@@ -162,7 +162,7 @@ importers:
       npm-api: 1.0.1
       prettier: 2.6.1
     devDependencies:
-      '@types/lodash': 4.14.180
+      '@types/lodash': 4.14.181
       '@types/mkdirp': 1.0.2
       '@types/node': 16.11.26
       '@types/prettier': 2.4.4
@@ -2837,6 +2837,10 @@ packages:
   /@types/lodash/4.14.180:
     resolution: {integrity: sha512-XOKXa1KIxtNXgASAnwj7cnttJxS4fksBRywK/9LzRV5YxrF80BXZIGeQSuoESQ/VkUj30Ae0+YcuHc15wJCB2g==, registry: https://registry.yarnpkg.com/, tarball: https://registry.yarnpkg.com/@types/lodash/-/lodash-4.14.180.tgz}
 
+  /@types/lodash/4.14.181:
+    resolution: {integrity: sha512-n3tyKthHJbkiWhDZs3DkhkCzt2MexYHXlX0td5iMplyfwketaOeKboEVBqzceH7juqvEg3q5oUoBFxSLu7zFag==}
+    dev: true
+
   /@types/mdast/3.0.10:
     resolution: {integrity: sha512-W864tg/Osz1+9f4lrGTZpCSO5/z4608eUp19tbozkq2HJK6i3z1kT0H9tlADXuYIb1YYOBByU4Jsqkk75q48qA==}
     dependencies:
@@ -4897,8 +4901,8 @@ packages:
       minimatch: 3.1.2
     dev: true
 
-  /eslint-plugin-react-hooks/4.3.0_eslint@8.12.0:
-    resolution: {integrity: sha512-XslZy0LnMn+84NEG9jSGR6eGqaZB3133L8xewQo3fQagbQuGt7a63gf+P1NGKZavEYEC3UXaWEAA/AqDkuN6xA==, registry: https://registry.yarnpkg.com/, tarball: https://registry.yarnpkg.com/eslint-plugin-react-hooks/-/eslint-plugin-react-hooks-4.3.0.tgz}
+  /eslint-plugin-react-hooks/4.4.0_eslint@8.12.0:
+    resolution: {integrity: sha512-U3RVIfdzJaeKDQKEJbz5p3NW8/L80PCATJAfuojwbaEL+gBjfGdhUcGde+WGUW46Q5sr/NgxevsIiDtNXrvZaQ==}
     engines: {node: '>=10'}
     peerDependencies:
       eslint: ^3.0.0 || ^4.0.0 || ^5.0.0 || ^6.0.0 || ^7.0.0 || ^8.0.0-0
