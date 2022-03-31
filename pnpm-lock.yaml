@@ -308,7 +308,7 @@ importers:
       remark-emoji: 3.0.2
       shiki: 0.10.1
       tiny-lru: 8.0.2
-      undici: 4.16.0
+      undici: 5.0.0
     dependencies:
       '@guild-docs/mdx-remote': link:../mdx-remote
       '@guild-docs/types': link:../types
@@ -319,7 +319,7 @@ importers:
       rehype-slug: 5.0.1
       remark-emoji: 3.0.2
       tiny-lru: 8.0.2
-      undici: 4.16.0
+      undici: 5.0.0
     devDependencies:
       '@types/github-slugger': 1.3.0
       bob-esbuild-cli: 3.0.2_bob-esbuild@3.2.5
@@ -9413,8 +9413,8 @@ packages:
       which-boxed-primitive: 1.0.2
     dev: true
 
-  /undici/4.16.0:
-    resolution: {integrity: sha512-tkZSECUYi+/T1i4u+4+lwZmQgLXd4BLGlrc7KZPcLIW7Jpq99+Xpc30ONv7nS6F5UNOxp/HBZSSL9MafUrvJbw==, registry: https://registry.yarnpkg.com/, tarball: https://registry.yarnpkg.com/undici/-/undici-4.16.0.tgz}
+  /undici/5.0.0:
+    resolution: {integrity: sha512-VhUpiZ3No1DOPPQVQnsDZyfcbTTcHdcgWej1PdFnSvOeJmOVDgiOHkunJmBLfmjt4CqgPQddPVjSWW0dsTs5Yg==}
     engines: {node: '>=12.18'}
     dev: false
 
