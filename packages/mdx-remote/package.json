@@ -22,7 +22,7 @@
   "dependencies": {
     "@babel/code-frame": "7.16.7",
     "@guild-docs/types": "workspace:^2.0.0",
-    "@mdx-js/mdx": "2.1.0",
+    "@mdx-js/mdx": "2.1.1",
     "@stefanprobst/rehype-shiki": "2.2.0",
     "remark-gfm": "3.0.1",
     "unified": "10.1.2",
@@ -31,13 +31,13 @@
     "vfile-matter": "3.0.1"
   },
   "devDependencies": {
-    "@mdx-js/react": "2.1.0",
+    "@mdx-js/react": "2.1.1",
     "@types/babel__code-frame": "7.0.3",
     "changesets-github-release": "0.1.0",
     "react": "17.0.2"
   },
   "peerDependencies": {
-    "@mdx-js/react": "^2.1.0",
+    "@mdx-js/react": "^2.1.1",
     "react": "*"
   },
   "publishConfig": {
