@@ -87,7 +87,7 @@ importers:
       '@chakra-ui/utils': 1.10.4
       '@emotion/react': 11.8.2
       '@emotion/styled': 11.8.1
-      '@guild-docs/client': workspace:^2.0.0
+      '@guild-docs/client': workspace:^2.0.1
       '@guild-docs/server': workspace:^3.0.1
       '@mdx-js/react': 2.1.1
       '@next/bundle-analyzer': ^12.1.4

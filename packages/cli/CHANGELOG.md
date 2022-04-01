@@ -1,5 +1,11 @@
 # guild-docs
 
+## 2.0.1
+
+### Patch Changes
+
+- bfe8a83: Lazy load an image in NPMBadge component
+
 ## 2.0.0
 
 ### Major Changes
