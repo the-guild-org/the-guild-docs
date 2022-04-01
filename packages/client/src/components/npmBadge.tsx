@@ -35,7 +35,7 @@ export const NPMBadge = ({ name }: { name: string }) => {
         width="115px"
         isLoaded={isLoaded}
       >
-        <chakra.img src={src} alt="npm version" height="18" />
+        <chakra.img src={src} alt="npm version" loading="lazy" height="18" />
       </Skeleton>
     </Link>
   );
