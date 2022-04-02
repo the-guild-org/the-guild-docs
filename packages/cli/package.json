@@ -30,10 +30,10 @@
     "bob-watch": "0.1.1",
     "changesets-github-release": "0.1.0",
     "commander": "9.1.0",
-    "esbuild": "0.14.29",
+    "esbuild": "0.14.30",
     "lodash": "4.17.21",
     "mkdirp": "1.0.4",
     "npm-api": "1.0.1",
-    "prettier": "2.6.1"
+    "prettier": "2.6.2"
   }
 }
