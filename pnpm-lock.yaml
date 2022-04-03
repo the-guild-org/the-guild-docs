@@ -101,7 +101,7 @@ importers:
       esbuild: 0.14.30
       framer-motion: 6.2.8
       next: 12.1.4
-      next-i18next: 10.5.0
+      next-i18next: 11.0.0
       next-remote-watch: ^1.0.0
       next-seo: 5.3.0
       open-cli: ^7.0.1
@@ -125,7 +125,7 @@ importers:
       '@theguild/components': 1.10.3_b5d7bf22a7b46dd4876f0e926ab0c987
       framer-motion: 6.2.8_react-dom@17.0.2+react@17.0.2
       next: 12.1.4_react-dom@17.0.2+react@17.0.2
-      next-i18next: 10.5.0_f3299b186fe279e9e6c95022815bb28f
+      next-i18next: 11.0.0_f3299b186fe279e9e6c95022815bb28f
       next-seo: 5.3.0_f3299b186fe279e9e6c95022815bb28f
       react: 17.0.2
       react-dom: 17.0.2_react@17.0.2
@@ -202,7 +202,7 @@ importers:
       mdx-mermaid: 1.2.2
       mermaid: '>= 8.11.0 < 8.14.1'
       next: 12.1.4
-      next-i18next: 10.5.0
+      next-i18next: 11.0.0
       next-seo: 5.3.0
       nprogress: 0.2.0
       react: 17.0.2
@@ -249,7 +249,7 @@ importers:
       esbuild: 0.14.30
       framer-motion: 6.2.8_react-dom@17.0.2+react@17.0.2
       next: 12.1.4_react-dom@17.0.2+react@17.0.2
-      next-i18next: 10.5.0_f3299b186fe279e9e6c95022815bb28f
+      next-i18next: 11.0.0_f3299b186fe279e9e6c95022815bb28f
       next-seo: 5.3.0_f3299b186fe279e9e6c95022815bb28f
       react: 17.0.2
       react-dom: 17.0.2_react@17.0.2
@@ -301,7 +301,7 @@ importers:
       globby: 13.1.1
       gray-matter: 4.0.3
       next: 12.1.4
-      next-i18next: 10.5.0
+      next-i18next: 11.0.0
       react: 17.0.2
       react-dom: 17.0.2
       rehype-slug: 5.0.1
@@ -326,7 +326,7 @@ importers:
       changesets-github-release: 0.1.0
       esbuild: 0.14.30
       next: 12.1.4_react-dom@17.0.2+react@17.0.2
-      next-i18next: 10.5.0_f3299b186fe279e9e6c95022815bb28f
+      next-i18next: 11.0.0_f3299b186fe279e9e6c95022815bb28f
       react: 17.0.2
       react-dom: 17.0.2_react@17.0.2
       shiki: 0.10.1
@@ -342,7 +342,7 @@ importers:
       bob-esbuild-cli: 3.0.2
       changesets-github-release: 0.1.0
       framer-motion: 6.2.8
-      next-i18next: 10.5.0
+      next-i18next: 11.0.0
       typescript: 4.6.3
       unified: ^10.1.2
     dependencies:
@@ -357,7 +357,7 @@ importers:
       bob-esbuild-cli: 3.0.2_bob-esbuild@3.2.5
       changesets-github-release: 0.1.0
       framer-motion: 6.2.8_react-dom@17.0.2+react@17.0.2
-      next-i18next: 10.5.0_f3299b186fe279e9e6c95022815bb28f
+      next-i18next: 11.0.0_f3299b186fe279e9e6c95022815bb28f
       typescript: 4.6.3
 
 packages:
@@ -2752,7 +2752,7 @@ packages:
     dev: false
 
   /@types/hoist-non-react-statics/3.3.1:
-    resolution: {integrity: sha512-iMIqiko6ooLrTh1joXodJK5X9xeEALT1kM5G3ZLhD3hszxBdIEd5C75U834D9mLcINgD4OyZf5uQXjkuYydWvA==, registry: https://registry.yarnpkg.com/, tarball: https://registry.yarnpkg.com/@types/hoist-non-react-statics/-/hoist-non-react-statics-3.3.1.tgz}
+    resolution: {integrity: sha512-iMIqiko6ooLrTh1joXodJK5X9xeEALT1kM5G3ZLhD3hszxBdIEd5C75U834D9mLcINgD4OyZf5uQXjkuYydWvA==}
     dependencies:
       '@types/react': 17.0.43
       hoist-non-react-statics: 3.3.2
@@ -3918,7 +3918,7 @@ packages:
     dev: true
 
   /core-js/3.21.1:
-    resolution: {integrity: sha512-FRq5b/VMrWlrmCzwRrpDYNxyHP9BcAZC+xHJaqTgIE5091ZV1NTmyh0sGOg5XqpnHvR0svdy0sv1gWA1zmhxig==, registry: https://registry.yarnpkg.com/, tarball: https://registry.yarnpkg.com/core-js/-/core-js-3.21.1.tgz}
+    resolution: {integrity: sha512-FRq5b/VMrWlrmCzwRrpDYNxyHP9BcAZC+xHJaqTgIE5091ZV1NTmyh0sGOg5XqpnHvR0svdy0sv1gWA1zmhxig==}
     requiresBuild: true
 
   /cosmiconfig/6.0.0:
@@ -5684,7 +5684,7 @@ packages:
     resolution: {integrity: sha512-COpmrF2NOg4TBWUJ5UVyaCU2A88wEMkUPK4hNqyCkqHbxT92BbvfjoSozkAIIm6XhicGlJHhFdullInrdhwU8Q==, registry: https://registry.yarnpkg.com/, tarball: https://registry.yarnpkg.com/hey-listen/-/hey-listen-1.0.8.tgz}
 
   /hoist-non-react-statics/3.3.2:
-    resolution: {integrity: sha512-/gGivxi8JPKWNm/W0jSmzcMPpfpPLc3dY/6GxhX2hQ9iGj3aDfklV4ET7NjKpSinLpJ5vafa9iiGIEZg10SfBw==, registry: https://registry.yarnpkg.com/, tarball: https://registry.yarnpkg.com/hoist-non-react-statics/-/hoist-non-react-statics-3.3.2.tgz}
+    resolution: {integrity: sha512-/gGivxi8JPKWNm/W0jSmzcMPpfpPLc3dY/6GxhX2hQ9iGj3aDfklV4ET7NjKpSinLpJ5vafa9iiGIEZg10SfBw==}
     dependencies:
       react-is: 16.13.1
 
@@ -5706,10 +5706,10 @@ packages:
     resolution: {integrity: sha1-wc56MWjIxmFAM6S194d/OyJfnDg=}
 
   /html-escaper/2.0.2:
-    resolution: {integrity: sha512-H2iMtd0I4Mt5eYiapRdIDjp+XzelXQ0tFE4JS7YFwFevXXMmOp9myNrUvCg0D6ws8iqkRPBfKHgbwig1SmlLfg==, registry: https://registry.yarnpkg.com/, tarball: https://registry.yarnpkg.com/html-escaper/-/html-escaper-2.0.2.tgz}
+    resolution: {integrity: sha512-H2iMtd0I4Mt5eYiapRdIDjp+XzelXQ0tFE4JS7YFwFevXXMmOp9myNrUvCg0D6ws8iqkRPBfKHgbwig1SmlLfg==}
 
   /html-parse-stringify/3.0.1:
-    resolution: {integrity: sha512-KknJ50kTInJ7qIScF3jeaFRpMpE8/lfiTdzf/twXyPBLAGrLRTmkz3AdTnKeh40X8k9L2fdYwEp/42WGXIRGcg==, registry: https://registry.yarnpkg.com/, tarball: https://registry.yarnpkg.com/html-parse-stringify/-/html-parse-stringify-3.0.1.tgz}
+    resolution: {integrity: sha512-KknJ50kTInJ7qIScF3jeaFRpMpE8/lfiTdzf/twXyPBLAGrLRTmkz3AdTnKeh40X8k9L2fdYwEp/42WGXIRGcg==}
     dependencies:
       void-elements: 3.1.0
 
@@ -5747,10 +5747,10 @@ packages:
     resolution: {integrity: sha512-ygGZLjmXfPHj+ZWh6LwbC37l43MhfztxetbFCoYTM2VjkIUpeHgSNn7QIyVFj7YQ1Wl9Cbw5sholVJPzWvC2MQ==, registry: https://registry.yarnpkg.com/, tarball: https://registry.yarnpkg.com/hyphenate-style-name/-/hyphenate-style-name-1.0.4.tgz}
 
   /i18next-fs-backend/1.1.4:
-    resolution: {integrity: sha512-/MfAGMP0jHonV966uFf9PkWWuDjPYLIcsipnSO3NxpNtAgRUKLTwvm85fEmsF6hGeu0zbZiCQ3W74jwO6K9uXA==, registry: https://registry.yarnpkg.com/, tarball: https://registry.yarnpkg.com/i18next-fs-backend/-/i18next-fs-backend-1.1.4.tgz}
+    resolution: {integrity: sha512-/MfAGMP0jHonV966uFf9PkWWuDjPYLIcsipnSO3NxpNtAgRUKLTwvm85fEmsF6hGeu0zbZiCQ3W74jwO6K9uXA==}
 
   /i18next/21.6.14:
-    resolution: {integrity: sha512-XL6WyD+xlwQwbieXRlXhKWoLb/rkch50/rA+vl6untHnJ+aYnkQ0YDZciTWE78PPhOpbi2gR0LTJCJpiAhA+uQ==, registry: https://registry.yarnpkg.com/, tarball: https://registry.yarnpkg.com/i18next/-/i18next-21.6.14.tgz}
+    resolution: {integrity: sha512-XL6WyD+xlwQwbieXRlXhKWoLb/rkch50/rA+vl6untHnJ+aYnkQ0YDZciTWE78PPhOpbi2gR0LTJCJpiAhA+uQ==}
     dependencies:
       '@babel/runtime': 7.17.8
 
@@ -7260,8 +7260,8 @@ packages:
     resolution: {integrity: sha512-Yd3UES5mWCSqR+qNT93S3UoYUkqAZ9lLg8a7g9rimsWmYGK8cVToA4/sF3RrshdyV3sAGMXVUmpMYOw+dLpOuw==}
     dev: false
 
-  /next-i18next/10.5.0_f3299b186fe279e9e6c95022815bb28f:
-    resolution: {integrity: sha512-+Xj/v5gqpEUBKKAaFCZ76+Ps6OGAaIgGowJTF67wTcmIQbHrcHMPjHwPTbnpXy7uHrH8os7i4eAfRENAv/6xwg==, registry: https://registry.yarnpkg.com/, tarball: https://registry.yarnpkg.com/next-i18next/-/next-i18next-10.5.0.tgz}
+  /next-i18next/11.0.0_f3299b186fe279e9e6c95022815bb28f:
+    resolution: {integrity: sha512-phxbQiZGSJTTBE2FI4+BnqFZl88AI2V+6MrEQnT9aPFAXq/fATQ/F0pOUM3J7kU4nEeCfn3hjISq+ygGHlEz0g==}
     engines: {node: '>=12'}
     peerDependencies:
       next: '>= 10.0.0'
@@ -7275,7 +7275,7 @@ packages:
       i18next-fs-backend: 1.1.4
       next: 12.1.4_react-dom@17.0.2+react@17.0.2
       react: 17.0.2
-      react-i18next: 11.16.1_f94be6b4dd1edc1d8608af374b838bd6
+      react-i18next: 11.16.2_f94be6b4dd1edc1d8608af374b838bd6
     transitivePeerDependencies:
       - react-dom
       - react-native
@@ -8032,8 +8032,8 @@ packages:
     transitivePeerDependencies:
       - '@types/react'
 
-  /react-i18next/11.16.1_f94be6b4dd1edc1d8608af374b838bd6:
-    resolution: {integrity: sha512-6Wf/YtPqANloFmnN5ol0ANeweFPzDWGykRq/dk4wU3ZkjWBR3d5iH210gMg8e8AgLQ1Dq7suUIL7WGfu08OehQ==, registry: https://registry.yarnpkg.com/, tarball: https://registry.yarnpkg.com/react-i18next/-/react-i18next-11.16.1.tgz}
+  /react-i18next/11.16.2_f94be6b4dd1edc1d8608af374b838bd6:
+    resolution: {integrity: sha512-1iuZduvARUelL5ux663FvIoDZExwFO+9QtRAAt4uvs1/aun4cUZt8XBrVg7iiDgNls9cOSORAhE7Ri5KA9RMvg==}
     peerDependencies:
       i18next: '>= 19.0.0'
       react: '>= 16.8.0'
@@ -8098,7 +8098,7 @@ packages:
     dev: false
 
   /react-is/16.13.1:
-    resolution: {integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==, registry: https://registry.yarnpkg.com/, tarball: https://registry.yarnpkg.com/react-is/-/react-is-16.13.1.tgz}
+    resolution: {integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==}
 
   /react-paginate/7.1.3_react@17.0.2:
     resolution: {integrity: sha512-cHTXXE90Z3DlKSJiIQFzAcWoIFs9mq6r1/+rQF099NPvdJpbR8f6E/ES32tlUw4qe1R6qWLOrPZYhvAy4UgHLA==}
@@ -9642,7 +9642,7 @@ packages:
     dev: false
 
   /void-elements/3.1.0:
-    resolution: {integrity: sha1-YU9/v42AHwu18GYfWy9XhXUOTwk=, registry: https://registry.yarnpkg.com/, tarball: https://registry.yarnpkg.com/void-elements/-/void-elements-3.1.0.tgz}
+    resolution: {integrity: sha1-YU9/v42AHwu18GYfWy9XhXUOTwk=}
     engines: {node: '>=0.10.0'}
 
   /vscode-oniguruma/1.6.2:
