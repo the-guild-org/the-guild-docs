@@ -30,7 +30,7 @@
     "bob-esbuild-cli": "3.0.2",
     "changesets-github-release": "0.1.0",
     "framer-motion": "6.2.8",
-    "next-i18next": "10.5.0",
+    "next-i18next": "11.0.0",
     "typescript": "4.6.3"
   },
   "peerDependencies": {
