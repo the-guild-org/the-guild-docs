@@ -40,7 +40,7 @@
     "@types/github-slugger": "1.3.0",
     "bob-esbuild-cli": "3.0.2",
     "changesets-github-release": "0.1.0",
-    "esbuild": "0.14.30",
+    "esbuild": "0.14.31",
     "next": "12.1.4",
     "next-i18next": "11.0.0",
     "react": "17.0.2",
