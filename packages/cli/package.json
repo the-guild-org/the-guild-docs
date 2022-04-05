@@ -26,7 +26,7 @@
     "@types/mkdirp": "1.0.2",
     "@types/node": "16.11.26",
     "@types/prettier": "2.4.4",
-    "bob-tsm": "0.4.7",
+    "bob-tsm": "0.4.8",
     "bob-watch": "0.1.1",
     "changesets-github-release": "0.1.0",
     "commander": "9.1.0",
