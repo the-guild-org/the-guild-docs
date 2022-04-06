@@ -52,7 +52,7 @@
     "@types/react-dom": "17.0.14",
     "@types/remove-markdown": "0.3.1",
     "bob-esbuild-cli": "3.0.2",
-    "bob-tsm": "0.4.7",
+    "bob-tsm": "0.4.8",
     "changesets-github-release": "0.1.0",
     "esbuild": "0.14.31",
     "framer-motion": "6.2.8",
