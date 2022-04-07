@@ -200,7 +200,7 @@ importers:
       framer-motion: 6.2.9
       immer: 9.0.12
       mdx-mermaid: 1.2.2
-      mermaid: '>= 8.11.0 < 8.14.1'
+      mermaid: '>= 8.11.0 < 8.12.0'
       next: 12.1.4
       next-i18next: 11.0.0
       next-seo: 5.4.0
@@ -2456,7 +2456,7 @@ packages:
       '@oclif/help': 1.0.1
       '@oclif/parser': 3.8.7
       debug: 4.3.4
-      semver: 7.3.5
+      semver: 7.3.6
     transitivePeerDependencies:
       - supports-color
     dev: false
@@ -2579,7 +2579,7 @@ packages:
       inquirer: 8.2.1
       inquirer-glob-prompt: 0.1.0
       jscodeshift: 0.11.0
-      semver: 7.3.5
+      semver: 7.3.6
     transitivePeerDependencies:
       - '@babel/preset-env'
       - supports-color
@@ -6445,11 +6445,11 @@ packages:
     engines: {node: '>=10'}
     dependencies:
       yallist: 4.0.0
+    dev: true
 
   /lru-cache/7.7.3:
     resolution: {integrity: sha512-WY9wjJNQt9+PZilnLbuFKM+SwDull9+6IAguOrarOMoOHTcJ9GnXSO11+Gw6c7xtDkBkthR57OZMtZKYr+1CEw==}
     engines: {node: '>=12'}
-    dev: true
 
   /make-dir/2.1.0:
     resolution: {integrity: sha512-LS9X+dc8KLxXCb8dni79fLIIUA5VyZoyjSMCwTluaXA0o27cCK0bhXkpgw+sTXVpPy/lSO57ilRixqk0vDmtRA==}
@@ -8604,6 +8604,7 @@ packages:
     hasBin: true
     dependencies:
       lru-cache: 6.0.0
+    dev: true
 
   /semver/7.3.6:
     resolution: {integrity: sha512-HZWqcgwLsjaX1HBD31msI/rXktuIhS+lWvdE4kN9z+8IVT4Itc7vqU2WvYsyD6/sjYCt4dEKH/m1M3dwI9CC5w==}
@@ -8611,7 +8612,6 @@ packages:
     hasBin: true
     dependencies:
       lru-cache: 7.7.3
-    dev: true
 
   /send/0.17.2:
     resolution: {integrity: sha512-UJYB6wFSJE3G00nEivR5rgWp8c2xXvJ3OPWPhmuteU0IKj8nKbG3DrjiOmLwpnHGYWAVwA69zmTm++YG0Hmwww==, registry: https://registry.yarnpkg.com/, tarball: https://registry.yarnpkg.com/send/-/send-0.17.2.tgz}
@@ -9834,6 +9834,7 @@ packages:
 
   /yallist/4.0.0:
     resolution: {integrity: sha512-3wdGidZyq5PB084XLES5TpOSRA3wjXAlIWMhum2kRcv/41Sn2emQ0dycQW4uZXLejwKvg6EsvbdlVL+FYEct7A==, registry: https://registry.yarnpkg.com/, tarball: https://registry.yarnpkg.com/yallist/-/yallist-4.0.0.tgz}
+    dev: true
 
   /yaml/1.10.2:
     resolution: {integrity: sha512-r3vXyErRCYJ7wg28yvBY5VSoAF8ZvlcW9/BwUzEtUsjvX/DKs24dIkuwjtuprwJJHsbyUbLApepYTR1BN4uHrg==}
