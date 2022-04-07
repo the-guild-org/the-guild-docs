@@ -3,5 +3,10 @@
   "extends": ["github>the-guild-org/shared-config:renovate"],
   "rangeStrategy": "bump",
   "ignoreDeps": ["pnpm"],
-  "ignorePaths": ["**/node_modules/**"]
+  "ignorePaths": ["**/node_modules/**"],
+  "packageRules": [
+    {
+      "excludePackageNames": ["mermaid", "mdx-mermaid"]
+    }
+  ]
 }
