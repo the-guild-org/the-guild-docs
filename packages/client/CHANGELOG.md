@@ -1,5 +1,11 @@
 # @guild-docs/client
 
+## 2.0.2
+
+### Patch Changes
+
+- 0df56e5: fix(esm): fix `mermaid` version and prevent further renovate auto updates
+
 ## 2.0.1
 
 ### Patch Changes
