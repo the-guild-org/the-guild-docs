@@ -1,5 +1,11 @@
 # guild-docs
 
+## 2.1.0
+
+### Minor Changes
+
+- c999a12: Introduce useGoogleAnalytics hook
+
 ## 2.0.2
 
 ### Patch Changes
