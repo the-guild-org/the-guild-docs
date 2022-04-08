@@ -2,11 +2,6 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": ["github>the-guild-org/shared-config:renovate"],
   "rangeStrategy": "bump",
-  "ignoreDeps": ["pnpm"],
-  "ignorePaths": ["**/node_modules/**"],
-  "packageRules": [
-    {
-      "excludePackageNames": ["mermaid", "mdx-mermaid"]
-    }
-  ]
+  "ignoreDeps": ["pnpm", "mermaid", "mdx-mermaid"],
+  "ignorePaths": ["**/node_modules/**"]
 }
