@@ -1,6 +1,6 @@
 ---
-"guild-docs": minor
-"@guild-docs/client": minor
+'guild-docs': minor
+'@guild-docs/client': minor
 ---
 
-Introduce GoogleAnalytics component
+Introduce useGoogleAnalytics hook

@@ -1,6 +1,5 @@
-import React, { useEffect } from 'react';
-import { useRouter } from 'next/router.js';
-import Script from 'next/script.js';
+import { useEffect } from 'react';
+import type { NextRouter } from 'next/router';
 
 // https://developers.google.com/analytics/devguides/collection/gtagjs/pages
 const pageview = (url: string, trackingId: string) => {
@@ -9,8 +8,10 @@ const pageview = (url: string, trackingId: string) => {
   });
 };
 
-export function GoogleAnalytics({ trackingId }: { trackingId: string }) {
-  const router = useRouter();
+// Why not a component? Next.js + CJS goes crazy when I use `next/router.js` and `next/script.js`.
+// I get: https://reactjs.org/docs/error-decoder.html/?invariant=130&args%5B%5D=object&args%5B%5D=
+// Probably because of two different versions of React or something. Not sure...
+export function useGoogleAnalytics({ trackingId, router }: { trackingId: string; router: NextRouter }) {
   useEffect(() => {
     const handleRouteChange = (url: string) => {
       pageview(url, trackingId);
@@ -21,14 +22,16 @@ export function GoogleAnalytics({ trackingId }: { trackingId: string }) {
     };
   }, [router.events, trackingId]);
 
-  return (
-    <>
-      <Script strategy="afterInteractive" src={`https://www.googletagmanager.com/gtag/js?id=${trackingId}`} />
-      <Script
-        id="gtag-init"
-        strategy="afterInteractive"
-        dangerouslySetInnerHTML={{
-          __html: `
+  return {
+    loadScriptProps: {
+      strategy: 'afterInteractive',
+      src: `https://www.googletagmanager.com/gtag/js?id=${trackingId}`,
+    },
+    configScriptProps: {
+      id: 'gtag-init',
+      strategy: 'afterInteractive',
+      dangerouslySetInnerHTML: {
+        __html: `
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
@@ -36,8 +39,7 @@ export function GoogleAnalytics({ trackingId }: { trackingId: string }) {
               page_path: window.location.pathname,
             });
           `,
-        }}
-      />
-    </>
-  );
+      },
+    },
+  };
 }
