@@ -34,7 +34,7 @@
     "react-intersection-observer": "8.33.1",
     "react-sticky-box": "1.0.2",
     "remove-markdown": "0.3.0",
-    "use-immer": "0.6.0",
+    "use-immer": "0.7.0",
     "zustand": "3.7.2"
   },
   "devDependencies": {
