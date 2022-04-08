@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { useRouter } from 'next/router.js';
 import Script from 'next/script.js';
 
@@ -19,7 +19,7 @@ export function GoogleAnalytics({ trackingId }: { trackingId: string }) {
     return () => {
       router.events.off('routeChangeComplete', handleRouteChange);
     };
-  }, [router.events]);
+  }, [router.events, trackingId]);
 
   return (
     <>
