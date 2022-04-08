@@ -8,9 +8,21 @@ const pageview = (url: string, trackingId: string) => {
   });
 };
 
-// Why not a component? Next.js + CJS goes crazy when I use `next/router.js` and `next/script.js`.
-// I get: https://reactjs.org/docs/error-decoder.html/?invariant=130&args%5B%5D=object&args%5B%5D=
-// Probably because of two different versions of React or something. Not sure...
+/**
+ * @example
+ * function AppWrapper(appProps: AppProps) {
+ *   const { Component, pageProps, router } = appProps;
+ *   const analytics = useGoogleAnalytics({ router, trackingId:"UA-XXXXXX-X" });
+ *
+ *   return (
+ *     <>
+ *      <Script async src="https://the-guild.dev/static/crisp.js" />
+ *      <Script {...analytics.loadScriptProps} />
+ *      <Script {...analytics.configScriptProps} />
+ *     </>
+ *   )
+ * }
+ */
 export function useGoogleAnalytics({ trackingId, router }: { trackingId: string; router: NextRouter }) {
   useEffect(() => {
     const handleRouteChange = (url: string) => {
@@ -22,6 +34,9 @@ export function useGoogleAnalytics({ trackingId, router }: { trackingId: string;
     };
   }, [router.events, trackingId]);
 
+  // Why not a component? Next.js + CJS goes crazy when I use `next/router.js` and `next/script.js`.
+  // I get: https://reactjs.org/docs/error-decoder.html/?invariant=130&args%5B%5D=object&args%5B%5D=
+  // Probably because of two different versions of React or something. Not sure...
   return {
     loadScriptProps: {
       strategy: 'afterInteractive' as const,
