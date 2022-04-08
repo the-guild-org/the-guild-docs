@@ -1,5 +1,11 @@
 # guild-docs
 
+## 2.1.1
+
+### Patch Changes
+
+- 21c6d38: Stick to old mermaid
+
 ## 2.1.0
 
 ### Minor Changes
