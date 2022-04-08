@@ -24,12 +24,12 @@ export function useGoogleAnalytics({ trackingId, router }: { trackingId: string;
 
   return {
     loadScriptProps: {
-      strategy: 'afterInteractive',
+      strategy: 'afterInteractive' as const,
       src: `https://www.googletagmanager.com/gtag/js?id=${trackingId}`,
     },
     configScriptProps: {
       id: 'gtag-init',
-      strategy: 'afterInteractive',
+      strategy: 'afterInteractive' as const,
       dangerouslySetInnerHTML: {
         __html: `
             window.dataLayer = window.dataLayer || [];
