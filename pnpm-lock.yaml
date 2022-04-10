@@ -151,7 +151,7 @@ importers:
       '@types/lodash': 4.14.181
       '@types/mkdirp': 1.0.2
       '@types/node': 16.11.26
-      '@types/prettier': 2.4.4
+      '@types/prettier': 2.6.0
       bob-tsm: 0.4.8
       bob-watch: 0.1.1
       changesets-github-release: 0.1.0
@@ -165,7 +165,7 @@ importers:
       '@types/lodash': 4.14.181
       '@types/mkdirp': 1.0.2
       '@types/node': 16.11.26
-      '@types/prettier': 2.4.4
+      '@types/prettier': 2.6.0
       bob-tsm: 0.4.8_esbuild@0.14.34+typescript@4.6.3
       bob-watch: 0.1.1
       changesets-github-release: 0.1.0
@@ -2855,8 +2855,8 @@ packages:
   /@types/parse-json/4.0.0:
     resolution: {integrity: sha512-//oorEZjL6sbPcKUaCdIGlIUeH26mgzimjBB77G6XRgnDl/L5wOnpyBGRe/Mmf5CVW3PwEBE1NjiMZ/ssFh4wA==}
 
-  /@types/prettier/2.4.4:
-    resolution: {integrity: sha512-ReVR2rLTV1kvtlWFyuot+d1pkpG2Fw/XKE3PDAdj57rbM97ttSp9JZ2UsP+2EHTylra9cUf6JA7tGwW1INzUrA==, registry: https://registry.yarnpkg.com/, tarball: https://registry.yarnpkg.com/@types/prettier/-/prettier-2.4.4.tgz}
+  /@types/prettier/2.6.0:
+    resolution: {integrity: sha512-G/AdOadiZhnJp0jXCaBQU449W2h716OW/EoXeYkCytxKL06X1WCXB4DZpp8TpZ8eyIJVS1cw4lrlkkSYU21cDw==}
     dev: true
 
   /@types/prop-types/15.7.4:
