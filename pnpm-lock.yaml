@@ -206,7 +206,7 @@ importers:
       next-seo: 5.4.0
       nprogress: 0.2.0
       react: 17.0.2
-      react-children-utilities: 2.7.0
+      react-children-utilities: 2.7.1
       react-dom: 17.0.2
       react-icons: 4.3.1
       react-intersection-observer: 8.33.1
@@ -223,7 +223,7 @@ importers:
       mdx-mermaid: 1.2.2_mermaid@8.11.5+react@17.0.2
       mermaid: 8.11.5
       nprogress: 0.2.0
-      react-children-utilities: 2.7.0_react@17.0.2
+      react-children-utilities: 2.7.1_react@17.0.2
       react-intersection-observer: 8.33.1_react@17.0.2
       react-sticky-box: 1.0.2_react@17.0.2
       remove-markdown: 0.3.0
@@ -8009,8 +8009,8 @@ packages:
       unpipe: 1.0.0
     dev: true
 
-  /react-children-utilities/2.7.0_react@17.0.2:
-    resolution: {integrity: sha512-8vvGyL8+MTB/WZnTZKll3ph8rKhYQ3s0TOeojFcSi9yF8hMHwYmCS3y5RZyPxTg4/gGW6ev299ehV9DrNU8dow==, registry: https://registry.yarnpkg.com/, tarball: https://registry.yarnpkg.com/react-children-utilities/-/react-children-utilities-2.7.0.tgz}
+  /react-children-utilities/2.7.1_react@17.0.2:
+    resolution: {integrity: sha512-olV2IcUcARN/VrgYnijbxEtvc2P07BcmAWKdLI0txZgAqs8YODxbYu68GMDv/uretA1sVlPMCQXRgY0Msh4dmA==}
     peerDependencies:
       react: 17.x.x || 16.x.x || 15.x.x
     dependencies:
