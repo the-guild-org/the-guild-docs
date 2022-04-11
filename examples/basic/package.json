@@ -23,7 +23,7 @@
     "@guild-docs/client": "workspace:^2.1.1",
     "@guild-docs/server": "workspace:^3.0.1",
     "@mdx-js/react": "2.1.1",
-    "@theguild/components": "1.10.3",
+    "@theguild/components": "1.11.0",
     "framer-motion": "6.2.9",
     "next": "12.1.4",
     "next-i18next": "11.0.0",
