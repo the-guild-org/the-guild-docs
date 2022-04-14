@@ -24,7 +24,7 @@
     "@guild-docs/server": "workspace:^3.0.1",
     "@mdx-js/react": "2.1.1",
     "@theguild/components": "1.11.0",
-    "framer-motion": "6.2.10",
+    "framer-motion": "6.3.0",
     "next": "12.1.5",
     "next-i18next": "11.0.0",
     "next-seo": "5.4.0",
@@ -36,7 +36,7 @@
   },
   "devDependencies": {
     "@next/bundle-analyzer": "^12.1.5",
-    "@types/node": "16.11.26",
+    "@types/node": "16.11.27",
     "@types/react": "17.0.44",
     "@types/react-dom": "17.0.15",
     "bob-tsm": "0.4.8",
