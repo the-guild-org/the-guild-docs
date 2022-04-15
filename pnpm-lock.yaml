@@ -155,7 +155,7 @@ importers:
       bob-tsm: 0.4.8
       bob-watch: 0.1.1
       changesets-github-release: 0.1.0
-      commander: 9.1.0
+      commander: 9.2.0
       esbuild: 0.14.36
       lodash: 4.17.21
       mkdirp: 1.0.4
@@ -169,7 +169,7 @@ importers:
       bob-tsm: 0.4.8_esbuild@0.14.36+typescript@4.6.3
       bob-watch: 0.1.1
       changesets-github-release: 0.1.0
-      commander: 9.1.0
+      commander: 9.2.0
       esbuild: 0.14.36
       lodash: 4.17.21
       mkdirp: 1.0.4
@@ -3860,6 +3860,11 @@ packages:
 
   /commander/9.1.0:
     resolution: {integrity: sha512-i0/MaqBtdbnJ4XQs4Pmyb+oFQl+q0lsAmokVUH92SlSw4fkeAcG3bVon+Qt7hmtF+u3Het6o4VgrcY3qAoEB6w==, registry: https://registry.yarnpkg.com/, tarball: https://registry.yarnpkg.com/commander/-/commander-9.1.0.tgz}
+    engines: {node: ^12.20.0 || >=14}
+    dev: true
+
+  /commander/9.2.0:
+    resolution: {integrity: sha512-e2i4wANQiSXgnrBlIatyHtP1odfUp0BbV5Y5nEGbxtIrStkEOAAzCUirvLBNXHLr7kwLvJl6V+4V3XV9x7Wd9w==}
     engines: {node: ^12.20.0 || >=14}
     dev: true
 
