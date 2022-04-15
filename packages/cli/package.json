@@ -29,7 +29,7 @@
     "bob-tsm": "0.4.8",
     "bob-watch": "0.1.1",
     "changesets-github-release": "0.1.0",
-    "commander": "9.1.0",
+    "commander": "9.2.0",
     "esbuild": "0.14.36",
     "lodash": "4.17.21",
     "mkdirp": "1.0.4",
