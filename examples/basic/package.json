@@ -36,7 +36,7 @@
   },
   "devDependencies": {
     "@next/bundle-analyzer": "^12.1.5",
-    "@types/node": "16.11.29",
+    "@types/node": "16.11.31",
     "@types/react": "17.0.44",
     "@types/react-dom": "17.0.16",
     "bob-tsm": "0.4.8",
