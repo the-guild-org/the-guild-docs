@@ -3,6 +3,7 @@ import sortBy from 'lodash/sortBy.js';
 import reduce from 'lodash/reduce.js';
 import isString from 'lodash/isString.js';
 import isArray from 'lodash/isArray.js';
+import flatten from 'lodash/flatten.js';
 import each from 'lodash/each.js';
 import { readFileSync, writeFileSync, existsSync } from 'node:fs';
 import GithubSlugger from 'github-slugger';
@@ -181,7 +182,7 @@ export const indexToAlgolia = ({ routes: routesArr, source, dryMode = true, lock
     console.warn('Caution: `process.env.SITE_URL` is missing');
   }
 
-  const objects = routesArr.map(routes => routesToAlgoliaObjects(routes, 'documentation', source));
+  const objects = flatten(routesArr.map(routes => routesToAlgoliaObjects(routes, 'documentation', source)));
 
   const recordsAsString = JSON.stringify(sortBy(objects, 'objectID'), (key, value) => (key === 'content' ? '-' : value), 2);
 
@@ -210,10 +211,14 @@ export const indexToAlgolia = ({ routes: routesArr, source, dryMode = true, lock
           filters: `source: "${source}"`,
         })
         .then(() => {
-          index.saveObjects(objects).then(({ objectIDs }) => {
-            console.log(objectIDs);
-          });
-        });
+          index
+            .saveObjects(objects)
+            .then(({ objectIDs }) => {
+              console.log(objectIDs);
+            })
+            .catch(console.error);
+        })
+        .catch(console.error);
       writeFileSync(lockfilePath, recordsAsString);
     }
   }
