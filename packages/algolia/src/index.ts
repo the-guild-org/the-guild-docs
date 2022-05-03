@@ -4,12 +4,11 @@ import reduce from 'lodash/reduce.js';
 import isString from 'lodash/isString.js';
 import isArray from 'lodash/isArray.js';
 import each from 'lodash/each.js';
-import { readFileSync, writeFileSync } from 'node:fs';
+import { readFileSync, writeFileSync, existsSync } from 'node:fs';
 import GithubSlugger from 'github-slugger';
 import markdownToTxt from 'markdown-to-txt';
 import algoliasearch from 'algoliasearch';
 import type { IRoutes } from '@guild-docs/server';
-import { join } from 'node:path';
 import type { AlgoliaRecord, AlgoliaSearchItemTOC, AlgoliaRecordSource } from './types';
 
 const extractToC = (content: string) => {
@@ -170,12 +169,14 @@ function routesToAlgoliaObjects(
 
 export type { AlgoliaRecord, AlgoliaSearchItemTOC, AlgoliaRecordSource };
 
-export const indexToAlgolia = (
-  routesArr: IRoutes[],
-  source: AlgoliaRecordSource,
-  dryMode = true,
-  lockfilePath = join(__dirname, '..', 'algolia-lockfile.txt')
-) => {
+interface IndexToAlgoliaOptions {
+  routes: IRoutes[];
+  source: AlgoliaRecordSource;
+  lockfilePath: string;
+  dryMode?: boolean;
+}
+
+export const indexToAlgolia = ({ routes: routesArr, source, dryMode = true, lockfilePath }: IndexToAlgoliaOptions) => {
   if (!process.env.SITE_URL) {
     console.warn('Caution: `process.env.SITE_URL` is missing');
   }
@@ -184,17 +185,23 @@ export const indexToAlgolia = (
 
   const recordsAsString = JSON.stringify(sortBy(objects, 'objectID'), (key, value) => (key === 'content' ? '-' : value), 2);
 
-  const lockfileContent = readFileSync(lockfilePath, 'utf-8');
+  const lockFileExists = existsSync(lockfilePath);
+  const lockfileContent = lockfilePath ? readFileSync(lockfilePath, 'utf-8') : null;
 
   if (dryMode) {
+    console.log(`${lockfilePath} updated!`);
     writeFileSync(lockfilePath, recordsAsString);
   } else {
-    if (recordsAsString !== lockfileContent) {
+    if (!lockFileExists || recordsAsString !== lockfileContent) {
       if (!['ALGOLIA_APP_ID', 'ALGOLIA_ADMIN_API_KEY', 'ALGOLIA_INDEX_NAME'].some(envVar => !process.env[envVar])) {
         console.error('Some Algolia environment variables are missing!');
         return;
       }
-      console.log('changed detected, updating Algolia index!');
+      if (lockFileExists) {
+        console.log('changed detected, updating Algolia index!');
+      } else {
+        console.log('no lockfile detected, push all records');
+      }
 
       const client = algoliasearch(process.env.ALGOLIA_APP_ID!, process.env.ALGOLIA_ADMIN_API_KEY!);
       const index = client.initIndex(process.env.ALGOLIA_INDEX_NAME!);
