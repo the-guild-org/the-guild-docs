@@ -7,7 +7,7 @@ import flatten from 'lodash/flatten.js';
 import each from 'lodash/each.js';
 import { readFileSync, writeFileSync, existsSync } from 'node:fs';
 import GithubSlugger from 'github-slugger';
-import markdownToTxt from 'markdown-to-txt';
+import removeMarkdown from 'remove-markdown';
 import algoliasearch from 'algoliasearch';
 import type { IRoutes } from '@guild-docs/server';
 import type { AlgoliaRecord, AlgoliaSearchItemTOC, AlgoliaRecordSource } from './types';
@@ -75,7 +75,7 @@ const extractToC = (content: string) => {
 const contentForRecord = (content: string) => {
   let isCodeBlock = false;
   let isMeta = false;
-  return markdownToTxt(
+  return removeMarkdown(
     content
       .split('\n')
       .map(line => {
@@ -108,7 +108,7 @@ const contentForRecord = (content: string) => {
       })
       .filter(line => line !== null)
       .join(' ')
-  ).replaceAll(/(<([^>]+)>)/gi, '');
+  );
 };
 
 function routesToAlgoliaObjects(

@@ -155,13 +155,13 @@ importers:
       changesets-github-release: 0.1.0
       github-slugger: ^1.4.0
       lodash: ^4.17.21
-      markdown-to-txt: ^2.0.1
+      remove-markdown: 0.5.0
       typescript: 4.6.4
     dependencies:
       algoliasearch: 4.13.0
       github-slugger: 1.4.0
       lodash: 4.17.21
-      markdown-to-txt: 2.0.1
+      remove-markdown: 0.5.0
     devDependencies:
       '@guild-docs/server': link:../server
       '@types/node': 16.11.33
@@ -6594,10 +6594,6 @@ packages:
       p-locate: 5.0.0
     dev: true
 
-  /lodash.escape/4.0.1:
-    resolution: {integrity: sha1-yQRGkMIeBClL6qUXcS/e0fqI3pg=}
-    dev: false
-
   /lodash.flatmap/4.5.0:
     resolution: {integrity: sha1-74y/QI9uSCaGYzRTBcaswLd4cC4=}
 
@@ -6616,10 +6612,6 @@ packages:
 
   /lodash.topath/4.5.2:
     resolution: {integrity: sha1-NhY1Hzu6YZlKCTGYlmC9AyVP0Ak=}
-
-  /lodash.unescape/4.0.1:
-    resolution: {integrity: sha1-vyJJiGzlFM2hEvrpIYzcBlIR/Jw=}
-    dev: false
 
   /lodash/4.17.21:
     resolution: {integrity: sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==}
@@ -6698,20 +6690,6 @@ packages:
 
   /markdown-table/3.0.2:
     resolution: {integrity: sha512-y8j3a5/DkJCmS5x4dMCQL+OR0+2EAq3DOtio1COSHsmW2BGXnNCK3v12hJt1LrUz5iZH5g0LmuYOjDdI+czghA==}
-    dev: false
-
-  /markdown-to-txt/2.0.1:
-    resolution: {integrity: sha512-Hsj7KTN8k1gutlLum3vosHwVZGnv8/cbYKWVkUyo/D1rzOYddbDesILebRfOsaVfjIBJank/AVOySBlHAYqfZw==}
-    dependencies:
-      lodash.escape: 4.0.1
-      lodash.unescape: 4.0.1
-      marked: 4.0.15
-    dev: false
-
-  /marked/4.0.15:
-    resolution: {integrity: sha512-esX5lPdTfG4p8LDkv+obbRCyOKzB+820ZZyMOXJZygZBHrH9b3xXR64X4kT3sPe9Nx8qQXbmcz6kFSMt4Nfk6Q==}
-    engines: {node: '>= 12'}
-    hasBin: true
     dev: false
 
   /mdast-util-definitions/5.1.0:
