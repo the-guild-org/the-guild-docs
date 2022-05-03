@@ -187,7 +187,7 @@ export const indexToAlgolia = ({ routes: routesArr, source, dryMode = true, lock
   const recordsAsString = JSON.stringify(sortBy(objects, 'objectID'), (key, value) => (key === 'content' ? '-' : value), 2);
 
   const lockFileExists = existsSync(lockfilePath);
-  const lockfileContent = lockfilePath ? readFileSync(lockfilePath, 'utf-8') : null;
+  const lockfileContent = lockFileExists ? readFileSync(lockfilePath, 'utf-8') : null;
 
   if (dryMode) {
     console.log(`${lockfilePath} updated!`);
