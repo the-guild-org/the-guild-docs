@@ -199,7 +199,7 @@ export const indexToAlgolia = ({ routes: routesArr, source, dryMode = true, lock
         return;
       }
       if (lockFileExists) {
-        console.log('changed detected, updating Algolia index!');
+        console.log('changes detected, updating Algolia index!');
       } else {
         console.log('no lockfile detected, push all records');
       }
