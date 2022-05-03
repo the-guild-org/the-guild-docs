@@ -1,6 +1,9 @@
-/* eslint-disable no-else-return */
-/* eslint-disable @typescript-eslint/no-non-null-assertion */
-import { isArray, isString, each, reduce, sortBy } from 'lodash';
+/* eslint-disable @typescript-eslint/no-non-null-assertion, no-else-return */
+import sortBy from 'lodash/sortBy.js';
+import reduce from 'lodash/reduce.js';
+import isString from 'lodash/isString.js';
+import isArray from 'lodash/isArray.js';
+import each from 'lodash/each.js';
 import { readFileSync, writeFileSync } from 'node:fs';
 import GithubSlugger from 'github-slugger';
 import markdownToTxt from 'markdown-to-txt';
