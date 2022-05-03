@@ -125,7 +125,7 @@ function routesToAlgoliaObjects(
 
     const toc = extractToC(fileContent);
 
-    const domain = `${process.env.SITE_URL || 'https://graphql-yoga.com'}`;
+    const domain = `${process.env.SITE_URL || 'https://the-guild.dev/'}`;
 
     objects.push({
       objectID: `${objectsPrefix}-${slug}`,
@@ -167,12 +167,20 @@ function routesToAlgoliaObjects(
 
 export type { AlgoliaRecord, AlgoliaSearchItemTOC, AlgoliaRecordSource };
 
-export const indexToAlgolia = (routesArr: IRoutes[], source: AlgoliaRecordSource, dryMode = true) => {
+export const indexToAlgolia = (
+  routesArr: IRoutes[],
+  source: AlgoliaRecordSource,
+  dryMode = true,
+  lockfilePath = join(__dirname, '..', 'algolia-lockfile.txt')
+) => {
+  if (!process.env.SITE_URL) {
+    console.warn('Caution: `process.env.SITE_URL` is missing');
+  }
+
   const objects = routesArr.map(routes => routesToAlgoliaObjects(routes, 'documentation', source));
 
   const recordsAsString = JSON.stringify(sortBy(objects, 'objectID'), (key, value) => (key === 'content' ? '-' : value), 2);
 
-  const lockfilePath = join(__dirname, '..', 'algolia-lockfile.txt');
   const lockfileContent = readFileSync(lockfilePath, 'utf-8');
 
   if (dryMode) {
