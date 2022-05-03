@@ -193,7 +193,7 @@ export const indexToAlgolia = ({ routes: routesArr, source, dryMode = true, lock
     writeFileSync(lockfilePath, recordsAsString);
   } else {
     if (!lockFileExists || recordsAsString !== lockfileContent) {
-      if (!['ALGOLIA_APP_ID', 'ALGOLIA_ADMIN_API_KEY', 'ALGOLIA_INDEX_NAME'].some(envVar => !process.env[envVar])) {
+      if (['ALGOLIA_APP_ID', 'ALGOLIA_ADMIN_API_KEY', 'ALGOLIA_INDEX_NAME'].some(envVar => !process.env[envVar])) {
         console.error('Some Algolia environment variables are missing!');
         return;
       }
