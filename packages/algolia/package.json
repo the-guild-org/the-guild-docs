@@ -22,10 +22,10 @@
     "github-slugger": "^1.4.0",
     "remove-markdown": "0.5.0",
     "algoliasearch": "^4.13.0",
-    "gray-matter": "^4.0.3",
-    "@guild-docs/server": "^3.0.1"
+    "gray-matter": "^4.0.3"
   },
   "devDependencies": {
+    "@guild-docs/server": "^3.0.1",
     "@types/node": "^16.11.33",
     "bob-esbuild-cli": "^3.0.2",
     "changesets-github-release": "0.1.0",

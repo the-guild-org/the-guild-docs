@@ -11,8 +11,6 @@ import GithubSlugger from 'github-slugger';
 import removeMarkdown from 'remove-markdown';
 import algoliasearch from 'algoliasearch';
 import type { IRoutes } from '@guild-docs/server';
-// @ts-ignore broken
-import { getPackagesData, Package } from '@guild-docs/server/npm';
 import matter from 'gray-matter';
 
 import type { AlgoliaRecord, AlgoliaSearchItemTOC, AlgoliaRecordSource } from './types';
@@ -174,16 +172,15 @@ function routesToAlgoliaRecords(
 }
 
 async function pluginsToAlgoliaRecords(
-  plugins: Package<any>[],
+  // TODO: fix later
+  plugins: any[],
   source: AlgoliaRecordSource,
   domain: string,
   objectsPrefix = new GithubSlugger().slug(source)
 ): Promise<AlgoliaRecord[]> {
   const objects: AlgoliaRecord[] = [];
 
-  const pluginsWithStats = await getPackagesData({ packageList: plugins });
-
-  pluginsWithStats.forEach((plugin: any) => {
+  plugins.forEach((plugin: any) => {
     const toc = extractToC(plugin.readme || '');
 
     objects.push({
@@ -207,7 +204,8 @@ export type { AlgoliaRecord, AlgoliaSearchItemTOC, AlgoliaRecordSource };
 
 interface IndexToAlgoliaOptions {
   routes?: IRoutes[];
-  plugins?: Package<any>[];
+  // TODO: fix later
+  plugins?: any[];
   source: AlgoliaRecordSource;
   domain: string;
   lockfilePath: string;
