@@ -173,12 +173,13 @@ async function pluginsToAlgoliaRecords(
   objectsPrefix = new GithubSlugger().slug(source)
 ): Promise<AlgoliaRecord[]> {
   const objects: AlgoliaRecord[] = [];
+  const slugger = new GithubSlugger();
 
   plugins.forEach((plugin: any) => {
     const toc = extractToC(plugin.readme || '');
 
     objects.push({
-      objectID: `${objectsPrefix}-${plugin.title}`,
+      objectID: slugger.slug(`${objectsPrefix}-${plugin.title}`),
       headings: toc.map(t => t.title),
       toc,
       content: contentForRecord(plugin.readme || ''),
