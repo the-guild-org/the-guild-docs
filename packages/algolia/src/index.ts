@@ -132,7 +132,7 @@ function routesToAlgoliaRecords(
       headings: toc.map(t => t.title),
       toc,
       content: contentForRecord(content),
-      url: `${domain}/${topPath ? `${topPath}/` : ''}slug`,
+      url: `${domain}/${topPath ? `${topPath}/` : ''}${slug}`,
       domain,
       hierarchy: parentLevelName ? [source, parentLevelName, title] : [source, title],
       source,
