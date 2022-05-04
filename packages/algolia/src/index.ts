@@ -132,7 +132,7 @@ function routesToAlgoliaRecords(
       headings: toc.map(t => t.title),
       toc,
       content: contentForRecord(content),
-      url: `${domain}/${topPath ? `${topPath}/${slug}` : `${slug}`}`,
+      url: `${domain}/${topPath ? `${topPath}/` : ''}slug`,
       domain,
       hierarchy: parentLevelName ? [source, parentLevelName, title] : [source, title],
       source,
@@ -211,12 +211,14 @@ export const indexToAlgolia = async ({
   plugins = [],
   source,
   domain,
+  // TODO: add `force` flag
   dryMode = true,
   lockfilePath,
 }: IndexToAlgoliaOptions) => {
-  let objects = flatten(routesArr.map(routes => routesToAlgoliaRecords(routes, source, domain)));
-
-  objects = [...(await pluginsToAlgoliaRecords(plugins, source, domain))];
+  const objects = [
+    ...flatten(routesArr.map(routes => routesToAlgoliaRecords(routes, source, domain))),
+    ...(await pluginsToAlgoliaRecords(plugins, source, domain)),
+  ];
 
   const recordsAsString = JSON.stringify(sortBy(objects, 'objectID'), (key, value) => (key === 'content' ? '-' : value), 2);
 
@@ -244,15 +246,12 @@ export const indexToAlgolia = async ({
         .deleteBy({
           filters: `source: "${source}"`,
         })
-        .then(() => {
-          index
-            .saveObjects(objects)
-            .then(({ objectIDs }) => {
-              console.log(objectIDs);
-            })
-            .catch(console.error);
+        .then(() => index.saveObjects(objects))
+        .then(({ objectIDs }) => {
+          console.log(objectIDs);
         })
         .catch(console.error);
+
       writeFileSync(lockfilePath, recordsAsString);
     }
   }
