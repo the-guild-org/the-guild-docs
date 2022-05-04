@@ -10,6 +10,8 @@ import GithubSlugger from 'github-slugger';
 import removeMarkdown from 'remove-markdown';
 import algoliasearch from 'algoliasearch';
 import type { IRoutes } from '@guild-docs/server';
+import matter from 'gray-matter';
+
 import type { AlgoliaRecord, AlgoliaSearchItemTOC, AlgoliaRecordSource } from './types';
 
 const extractToC = (content: string) => {
@@ -113,8 +115,8 @@ const contentForRecord = (content: string) => {
 
 function routesToAlgoliaObjects(
   routes: IRoutes,
-  type: 'documentation' | 'tutorial' = 'documentation',
   source: AlgoliaRecordSource,
+  domain: string,
   objectsPrefix = new GithubSlugger().slug(source)
 ) {
   const objects: AlgoliaRecord[] = [];
@@ -126,21 +128,21 @@ function routesToAlgoliaObjects(
 
     const fileContent = readFileSync(topPath ? `./${topPath}/${slug}.mdx` : `./${slug}.mdx`).toString();
 
-    const toc = extractToC(fileContent);
+    const { data: meta, content } = matter(fileContent);
 
-    const domain = `${process.env.SITE_URL || 'https://the-guild.dev/'}`;
+    const toc = extractToC(content);
 
     objects.push({
       objectID: `${objectsPrefix}-${slug}`,
       headings: toc.map(t => t.title),
       toc,
-      content: contentForRecord(fileContent),
+      content: contentForRecord(content),
       url: `${domain}/${topPath ? `${topPath}/${slug}` : `${slug}`}`,
       domain,
       hierarchy: parentLevelName ? [source, parentLevelName, title] : [source, title],
       source,
       title,
-      type,
+      type: meta.type || 'Documentation',
     });
   }
 
@@ -173,16 +175,13 @@ export type { AlgoliaRecord, AlgoliaSearchItemTOC, AlgoliaRecordSource };
 interface IndexToAlgoliaOptions {
   routes: IRoutes[];
   source: AlgoliaRecordSource;
+  domain: string;
   lockfilePath: string;
   dryMode?: boolean;
 }
 
-export const indexToAlgolia = ({ routes: routesArr, source, dryMode = true, lockfilePath }: IndexToAlgoliaOptions) => {
-  if (!process.env.SITE_URL) {
-    console.warn('Caution: `process.env.SITE_URL` is missing');
-  }
-
-  const objects = flatten(routesArr.map(routes => routesToAlgoliaObjects(routes, 'documentation', source)));
+export const indexToAlgolia = ({ routes: routesArr, source, domain, dryMode = true, lockfilePath }: IndexToAlgoliaOptions) => {
+  const objects = flatten(routesArr.map(routes => routesToAlgoliaObjects(routes, source, domain)));
 
   const recordsAsString = JSON.stringify(sortBy(objects, 'objectID'), (key, value) => (key === 'content' ? '-' : value), 2);
 
