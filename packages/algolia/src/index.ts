@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 /* eslint-disable @typescript-eslint/no-non-null-assertion, no-else-return */
 import sortBy from 'lodash/sortBy.js';
 import reduce from 'lodash/reduce.js';
@@ -10,7 +11,7 @@ import GithubSlugger from 'github-slugger';
 import removeMarkdown from 'remove-markdown';
 import algoliasearch from 'algoliasearch';
 import type { IRoutes } from '@guild-docs/server';
-// @ts-expect-error broken
+// @ts-ignore broken
 import { getPackagesData, Package } from '@guild-docs/server/npm';
 import matter from 'gray-matter';
 
