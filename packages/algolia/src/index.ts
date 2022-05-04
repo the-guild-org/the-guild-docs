@@ -1,7 +1,5 @@
-/* eslint-disable @typescript-eslint/ban-ts-comment */
 /* eslint-disable @typescript-eslint/no-non-null-assertion, no-else-return */
 import sortBy from 'lodash/sortBy.js';
-import reduce from 'lodash/reduce.js';
 import isString from 'lodash/isString.js';
 import isArray from 'lodash/isArray.js';
 import flatten from 'lodash/flatten.js';
@@ -24,54 +22,50 @@ const extractToC = (content: string) => {
   let currentDepth = 0;
   let currentParent: AlgoliaSearchItemTOC | undefined;
 
-  const slugs = reduce<string, AlgoliaSearchItemTOC[]>(
-    lines,
-    (acum, value) => {
-      if (value.match(/^```(.*)/)) {
-        if (isCodeBlock) {
-          isCodeBlock = false;
-        } else {
-          isCodeBlock = true;
-          return acum;
-        }
-      } else if (isCodeBlock) {
-        return acum;
-      }
-
-      const result = value.match(/(##+ )(.+)/);
-
-      if (!result) return acum;
-
-      const depth = result[1]?.length - 3;
-
-      if (depth > 1) {
-        return acum;
-      }
-
-      const heading = result[2]?.trim();
-
-      const record: AlgoliaSearchItemTOC = {
-        children: [],
-        title: heading,
-        anchor: slugger.slug(heading),
-      };
-
-      if (depth > 0) {
-        currentParent?.children.push(record);
-        if (depth > currentDepth) {
-          currentParent = record;
-        }
+  const slugs = lines.reduce<AlgoliaSearchItemTOC[]>((acum, value) => {
+    if (value.match(/^```(.*)/)) {
+      if (isCodeBlock) {
+        isCodeBlock = false;
       } else {
-        currentParent = record;
-        acum.push(record);
+        isCodeBlock = true;
+        return acum;
       }
-
-      currentDepth = depth;
-
+    } else if (isCodeBlock) {
       return acum;
-    },
-    []
-  );
+    }
+
+    const result = value.match(/(##+ )(.+)/);
+
+    if (!result) return acum;
+
+    const depth = result[1]?.length - 3;
+
+    if (depth > 1) {
+      return acum;
+    }
+
+    const heading = result[2]?.trim();
+
+    const record: AlgoliaSearchItemTOC = {
+      children: [],
+      title: heading,
+      anchor: slugger.slug(heading),
+    };
+
+    if (depth > 0) {
+      currentParent?.children.push(record);
+      if (depth > currentDepth) {
+        currentParent = record;
+      }
+    } else {
+      currentParent = record;
+      acum.push(record);
+    }
+
+    currentDepth = depth;
+
+    return acum;
+  }, []);
   return slugs;
 };
 
