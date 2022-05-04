@@ -10,6 +10,7 @@ import GithubSlugger from 'github-slugger';
 import removeMarkdown from 'remove-markdown';
 import algoliasearch from 'algoliasearch';
 import type { IRoutes } from '@guild-docs/server';
+// @ts-expect-error broken
 import { getPackagesData, Package } from '@guild-docs/server/npm';
 import matter from 'gray-matter';
 
@@ -181,7 +182,7 @@ async function pluginsToAlgoliaRecords(
 
   const pluginsWithStats = await getPackagesData({ packageList: plugins });
 
-  pluginsWithStats.forEach(plugin => {
+  pluginsWithStats.forEach((plugin: any) => {
     const toc = extractToC(plugin.readme || '');
 
     objects.push({

@@ -159,13 +159,13 @@ importers:
       remove-markdown: 0.5.0
       typescript: 4.6.4
     dependencies:
+      '@guild-docs/server': link:../server
       algoliasearch: 4.13.0
       github-slugger: 1.4.0
       gray-matter: 4.0.3
       lodash: 4.17.21
       remove-markdown: 0.5.0
     devDependencies:
-      '@guild-docs/server': link:../server
       '@types/node': 16.11.33
       bob-esbuild-cli: 3.0.2_bob-esbuild@3.2.6
       changesets-github-release: 0.1.0
