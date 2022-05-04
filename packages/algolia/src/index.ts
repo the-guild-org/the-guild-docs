@@ -10,6 +10,7 @@ import GithubSlugger from 'github-slugger';
 import removeMarkdown from 'remove-markdown';
 import algoliasearch from 'algoliasearch';
 import type { IRoutes } from '@guild-docs/server';
+import { getPackagesData, Package } from '@guild-docs/server/npm';
 import matter from 'gray-matter';
 
 import type { AlgoliaRecord, AlgoliaSearchItemTOC, AlgoliaRecordSource } from './types';
@@ -113,15 +114,15 @@ const contentForRecord = (content: string) => {
   );
 };
 
-function routesToAlgoliaObjects(
+function routesToAlgoliaRecords(
   routes: IRoutes,
   source: AlgoliaRecordSource,
   domain: string,
   objectsPrefix = new GithubSlugger().slug(source)
-) {
+): AlgoliaRecord[] {
   const objects: AlgoliaRecord[] = [];
 
-  function routeToAlgoliaObjects(topPath?: string, parentLevelName?: string, slug?: string, title?: string) {
+  function routeToAlgoliaRecords(topPath?: string, parentLevelName?: string, slug?: string, title?: string) {
     if (!slug || !title) {
       return;
     }
@@ -158,10 +159,10 @@ function routesToAlgoliaObjects(
       return;
     } else {
       if (topRoute.$name && !topRoute.$routes) {
-        routeToAlgoliaObjects(undefined, undefined, topPath, topRoute.$name);
+        routeToAlgoliaRecords(undefined, undefined, topPath, topRoute.$name);
       } else {
         each(topRoute.$routes, ([slug, title]) => {
-          routeToAlgoliaObjects(topPath, topRoute.$name!, slug, title);
+          routeToAlgoliaRecords(topPath, topRoute.$name!, slug, title);
         });
       }
     }
@@ -170,18 +171,58 @@ function routesToAlgoliaObjects(
   return objects;
 }
 
+async function pluginsToAlgoliaRecords(
+  plugins: Package<any>[],
+  source: AlgoliaRecordSource,
+  domain: string,
+  objectsPrefix = new GithubSlugger().slug(source)
+): Promise<AlgoliaRecord[]> {
+  const objects: AlgoliaRecord[] = [];
+
+  const pluginsWithStats = await getPackagesData({ packageList: plugins });
+
+  pluginsWithStats.forEach(plugin => {
+    const toc = extractToC(plugin.readme || '');
+
+    objects.push({
+      objectID: `${objectsPrefix}-${plugin.title}`,
+      headings: toc.map(t => t.title),
+      toc,
+      content: contentForRecord(plugin.readme || ''),
+      url: `${domain}/plugins/${plugin.identifier}`,
+      domain,
+      hierarchy: [source, 'Plugins'],
+      source,
+      title: plugin.title,
+      type: 'Plugin',
+    });
+  });
+
+  return objects;
+}
+
 export type { AlgoliaRecord, AlgoliaSearchItemTOC, AlgoliaRecordSource };
 
 interface IndexToAlgoliaOptions {
-  routes: IRoutes[];
+  routes?: IRoutes[];
+  plugins?: Package<any>[];
   source: AlgoliaRecordSource;
   domain: string;
   lockfilePath: string;
   dryMode?: boolean;
 }
 
-export const indexToAlgolia = ({ routes: routesArr, source, domain, dryMode = true, lockfilePath }: IndexToAlgoliaOptions) => {
-  const objects = flatten(routesArr.map(routes => routesToAlgoliaObjects(routes, source, domain)));
+export const indexToAlgolia = async ({
+  routes: routesArr = [],
+  plugins = [],
+  source,
+  domain,
+  dryMode = true,
+  lockfilePath,
+}: IndexToAlgoliaOptions) => {
+  let objects = flatten(routesArr.map(routes => routesToAlgoliaRecords(routes, source, domain)));
+
+  objects = [...(await pluginsToAlgoliaRecords(plugins, source, domain))];
 
   const recordsAsString = JSON.stringify(sortBy(objects, 'objectID'), (key, value) => (key === 'content' ? '-' : value), 2);
 
