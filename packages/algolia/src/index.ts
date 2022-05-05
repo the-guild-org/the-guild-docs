@@ -3,8 +3,9 @@ import sortBy from 'lodash/sortBy.js';
 import isString from 'lodash/isString.js';
 import isArray from 'lodash/isArray.js';
 import flatten from 'lodash/flatten.js';
-import each from 'lodash/each.js';
-import { readFileSync, writeFileSync, existsSync } from 'node:fs';
+import map from 'lodash/map.js';
+import { readFile } from 'node:fs/promises';
+import { existsSync, writeFileSync, readFileSync } from 'node:fs';
 import GithubSlugger from 'github-slugger';
 import removeMarkdown from 'remove-markdown';
 import algoliasearch from 'algoliasearch';
@@ -108,20 +109,20 @@ const contentForRecord = (content: string) => {
   );
 };
 
-function routesToAlgoliaRecords(
+async function routesToAlgoliaRecords(
   routes: IRoutes,
   source: AlgoliaRecordSource,
   domain: string,
   objectsPrefix = new GithubSlugger().slug(source)
-): AlgoliaRecord[] {
+) {
   const objects: AlgoliaRecord[] = [];
 
-  function routeToAlgoliaRecords(topPath?: string, parentLevelName?: string, slug?: string, title?: string) {
+  async function routeToAlgoliaRecords(topPath?: string, parentLevelName?: string, slug?: string, title?: string) {
     if (!slug || !title) {
       return;
     }
 
-    const fileContent = readFileSync(topPath ? `./${topPath}/${slug}.mdx` : `./${slug}.mdx`).toString();
+    const fileContent = await readFile(topPath ? `./${topPath}/${slug}.mdx` : `./${slug}.mdx`).toString();
 
     const { data: meta, content } = matter(fileContent);
 
@@ -141,26 +142,28 @@ function routesToAlgoliaRecords(
     });
   }
 
-  each(routes._, (topRoute, topPath) => {
-    if (!topRoute) {
-      return;
-    }
-    if (isString(topRoute)) {
-      console.warn(`ignored ${topRoute}`);
-      return;
-    } else if (isArray(topRoute)) {
-      console.warn(`ignored ${topRoute}`);
-      return;
-    } else {
-      if (topRoute.$name && !topRoute.$routes) {
-        routeToAlgoliaRecords(undefined, undefined, topPath, topRoute.$name);
-      } else {
-        each(topRoute.$routes, ([slug, title]) => {
-          routeToAlgoliaRecords(topPath, topRoute.$name!, slug, title);
-        });
+  await Promise.all(
+    map(routes._, async (topRoute, topPath) => {
+      if (!topRoute) {
+        return Promise.resolve();
       }
-    }
-  });
+      if (isString(topRoute)) {
+        console.warn(`ignored ${topRoute}`);
+        return Promise.resolve();
+      } else if (isArray(topRoute)) {
+        console.warn(`ignored ${topRoute}`);
+        return Promise.resolve();
+      } else {
+        if (topRoute.$name && !topRoute.$routes) {
+          return await routeToAlgoliaRecords(undefined, undefined, topPath, topRoute.$name);
+        } else {
+          return await Promise.all(
+            map(topRoute.$routes, ([slug, title]) => routeToAlgoliaRecords(topPath, topRoute.$name!, slug, title))
+          );
+        }
+      }
+    })
+  );
 
   return objects;
 }
@@ -217,7 +220,7 @@ export const indexToAlgolia = async ({
   lockfilePath,
 }: IndexToAlgoliaOptions) => {
   const objects = [
-    ...flatten(routesArr.map(routes => routesToAlgoliaRecords(routes, source, domain))),
+    ...flatten(await Promise.all(routesArr.map(routes => routesToAlgoliaRecords(routes, source, domain)))),
     ...(await pluginsToAlgoliaRecords(plugins, source, domain)),
   ];
 
