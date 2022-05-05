@@ -118,13 +118,19 @@ async function routesToAlgoliaRecords(
   const objects: AlgoliaRecord[] = [];
 
   async function routeToAlgoliaRecords(topPath?: string, parentLevelName?: string, slug?: string, title?: string) {
-    if (!slug || !title) {
+    if (!slug) {
       return;
     }
 
     const fileContent = await readFile(topPath ? `./${topPath}/${slug}.mdx` : `./${slug}.mdx`);
 
     const { data: meta, content } = matter(fileContent.toString());
+
+    const resolvedTitle = title || meta.title || meta.sidebar_label;
+
+    if (!resolvedTitle) {
+      return;
+    }
 
     const toc = extractToC(content);
 
@@ -135,9 +141,9 @@ async function routesToAlgoliaRecords(
       content: contentForRecord(content),
       url: `${domain}/${topPath ? `${topPath}/` : ''}${slug}`,
       domain,
-      hierarchy: parentLevelName ? [source, parentLevelName, title] : [source, title],
+      hierarchy: parentLevelName ? [source, parentLevelName, resolvedTitle] : [source, resolvedTitle],
       source,
-      title,
+      title: resolvedTitle,
       type: meta.type || 'Documentation',
     });
   }
@@ -158,7 +164,15 @@ async function routesToAlgoliaRecords(
           return await routeToAlgoliaRecords(undefined, undefined, topPath, topRoute.$name);
         } else {
           return await Promise.all(
-            map(topRoute.$routes, ([slug, title]) => routeToAlgoliaRecords(topPath, topRoute.$name!, slug, title))
+            map(topRoute.$routes, route => {
+              if (isArray(route)) {
+                // `route` is `['slug', 'title']`
+                routeToAlgoliaRecords(topPath, topRoute.$name!, route[0], route[1]);
+              } else {
+                // `route` is `'slug'`
+                routeToAlgoliaRecords(topPath, topRoute.$name!, route);
+              }
+            })
           );
         }
       }
