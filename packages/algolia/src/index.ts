@@ -71,6 +71,8 @@ const extractToC = (content: string) => {
   return slugs;
 };
 
+const normalizeDomain = (domain: string) => (domain.endsWith('/') ? domain : `${domain}`);
+
 const contentForRecord = (content: string) => {
   let isCodeBlock = false;
   let isMeta = false;
@@ -141,7 +143,7 @@ async function routesToAlgoliaRecords(
       headings: toc.map(t => t.title),
       toc,
       content: contentForRecord(content),
-      url: compact([domain, parentRoute?.path, topPath, slug]).join('/'),
+      url: `${domain}${compact([parentRoute?.path, topPath, slug]).join('/')}`,
       domain,
       hierarchy: compact([source, parentRoute?.$name, parentLevelName, resolvedTitle]),
       source,
@@ -165,7 +167,7 @@ async function routesToAlgoliaRecords(
         if (topRoute.$name && !topRoute.$routes) {
           return await routeToAlgoliaRecords(undefined, undefined, topPath, topRoute.$name);
         } else {
-          return await Promise.all(
+          return await Promise.all<void>(
             map(topRoute.$routes, route => {
               if (isArray(route)) {
                 // `route` is `['slug', 'title']`
@@ -178,20 +180,25 @@ async function routesToAlgoliaRecords(
                   const subRoutes = refs[refName];
 
                   if (subRoutes) {
-                    return routesToAlgoliaRecords(
-                      {
-                        _: {
-                          [refName]: subRoutes,
+                    return new Promise(resolve => {
+                      routesToAlgoliaRecords(
+                        {
+                          _: {
+                            [refName]: subRoutes,
+                          },
                         },
-                      },
-                      source,
-                      domain,
-                      new GithubSlugger().slug(`${source}-${refName}`),
-                      {
-                        $name: topRoute.$name!,
-                        path: topPath,
-                      }
-                    );
+                        source,
+                        domain,
+                        new GithubSlugger().slug(`${source}-${refName}`),
+                        {
+                          $name: topRoute.$name!,
+                          path: topPath,
+                        }
+                      ).then(objs => {
+                        objects.push(...objs);
+                        resolve();
+                      });
+                    });
                   } else {
                     console.warn(`could not find routes for reference ${route}`);
                   }
@@ -227,7 +234,7 @@ async function pluginsToAlgoliaRecords(
       headings: toc.map(t => t.title),
       toc,
       content: contentForRecord(plugin.readme || ''),
-      url: `${domain}/plugins/${plugin.identifier}`,
+      url: `${domain}plugins/${plugin.identifier}`,
       domain,
       hierarchy: [source, 'Plugins'],
       source,
@@ -261,8 +268,8 @@ export const indexToAlgolia = async ({
   lockfilePath,
 }: IndexToAlgoliaOptions) => {
   const objects = [
-    ...flatten(await Promise.all(routesArr.map(routes => routesToAlgoliaRecords(routes, source, domain)))),
-    ...(await pluginsToAlgoliaRecords(plugins, source, domain)),
+    ...flatten(await Promise.all(routesArr.map(routes => routesToAlgoliaRecords(routes, source, normalizeDomain(domain))))),
+    ...(await pluginsToAlgoliaRecords(plugins, source, normalizeDomain(domain))),
   ];
 
   const recordsAsString = JSON.stringify(sortBy(objects, 'objectID'), (key, value) => (key === 'content' ? '-' : value), 2);
