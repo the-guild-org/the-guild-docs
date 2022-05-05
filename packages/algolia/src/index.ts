@@ -3,6 +3,7 @@ import sortBy from 'lodash/sortBy.js';
 import isString from 'lodash/isString.js';
 import isArray from 'lodash/isArray.js';
 import flatten from 'lodash/flatten.js';
+import compact from 'lodash/compact.js';
 import map from 'lodash/map.js';
 import { readFile } from 'node:fs/promises';
 import { existsSync, writeFileSync, readFileSync } from 'node:fs';
@@ -113,7 +114,8 @@ async function routesToAlgoliaRecords(
   routes: IRoutes,
   source: AlgoliaRecordSource,
   domain: string,
-  objectsPrefix = new GithubSlugger().slug(source)
+  objectsPrefix = new GithubSlugger().slug(source),
+  parentRoute?: { $name: string; path: string }
 ) {
   const objects: AlgoliaRecord[] = [];
 
@@ -139,9 +141,9 @@ async function routesToAlgoliaRecords(
       headings: toc.map(t => t.title),
       toc,
       content: contentForRecord(content),
-      url: `${domain}/${topPath ? `${topPath}/` : ''}${slug}`,
+      url: compact([domain, parentRoute?.path, topPath, slug]).join('/'),
       domain,
-      hierarchy: parentLevelName ? [source, parentLevelName, resolvedTitle] : [source, resolvedTitle],
+      hierarchy: compact([source, parentRoute?.$name, parentLevelName, resolvedTitle]),
       source,
       title: resolvedTitle,
       type: meta.type || 'Documentation',
@@ -167,10 +169,33 @@ async function routesToAlgoliaRecords(
             map(topRoute.$routes, route => {
               if (isArray(route)) {
                 // `route` is `['slug', 'title']`
-                routeToAlgoliaRecords(topPath, topRoute.$name!, route[0], route[1]);
+                return routeToAlgoliaRecords(topPath, topRoute.$name!, route[0], route[1]);
               } else {
                 // `route` is `'slug'`
-                routeToAlgoliaRecords(topPath, topRoute.$name!, route);
+                if (route.startsWith('$')) {
+                  const refName = route.substring(1);
+                  const refs = routes._?._ || ({} as any);
+                  const subRoutes = refs[refName];
+
+                  if (subRoutes) {
+                    return routesToAlgoliaRecords(
+                      {
+                        _: subRoutes,
+                      },
+                      source,
+                      domain,
+                      new GithubSlugger().slug(source),
+                      {
+                        $name: topRoute.$name!,
+                        path: topPath,
+                      }
+                    );
+                  } else {
+                    console.warn(`could not find routes for reference ${route}`);
+                  }
+                } else {
+                  return routeToAlgoliaRecords(topPath, topRoute.$name!, route);
+                }
               }
             })
           );
