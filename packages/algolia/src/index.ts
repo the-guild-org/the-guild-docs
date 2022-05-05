@@ -122,9 +122,9 @@ async function routesToAlgoliaRecords(
       return;
     }
 
-    const fileContent = await readFile(topPath ? `./${topPath}/${slug}.mdx` : `./${slug}.mdx`).toString();
+    const fileContent = await readFile(topPath ? `./${topPath}/${slug}.mdx` : `./${slug}.mdx`);
 
-    const { data: meta, content } = matter(fileContent);
+    const { data: meta, content } = matter(fileContent.toString());
 
     const toc = extractToC(content);
 
