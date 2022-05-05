@@ -124,7 +124,7 @@ async function routesToAlgoliaRecords(
       return;
     }
 
-    const fileContent = await readFile(topPath ? `./${topPath}/${slug}.mdx` : `./${slug}.mdx`);
+    const fileContent = await readFile(`./${compact([parentRoute?.path, topPath, slug]).join('/')}.mdx`);
 
     const { data: meta, content } = matter(fileContent.toString());
 
@@ -180,11 +180,13 @@ async function routesToAlgoliaRecords(
                   if (subRoutes) {
                     return routesToAlgoliaRecords(
                       {
-                        _: subRoutes,
+                        _: {
+                          [refName]: subRoutes,
+                        },
                       },
                       source,
                       domain,
-                      new GithubSlugger().slug(source),
+                      new GithubSlugger().slug(`${source}-${refName}`),
                       {
                         $name: topRoute.$name!,
                         path: topPath,
