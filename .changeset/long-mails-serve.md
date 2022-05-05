@@ -1,3 +1,14 @@
+---
+'@guild-docs/client': minor
+'@guild-docs/server': minor
+'@guild-docs/types': minor
+---
+
+edit on GitHub
+
+It is now possible to add a "edit this page on GitHub" button.
+
+```tsx
 import Head from 'next/head';
 
 import { DocsContent, DocsTOC, MDXPage } from '@guild-docs/client';
@@ -22,12 +33,6 @@ export default MDXPage(
     );
   },
   {
-    giscus: {
-      repo: 'pabloszx/the-guild-docs',
-      repoId: 'R_kgDOGqmArg',
-      category: 'Q&A',
-      categoryId: 'DIC_kwDOGqmArs4CA9N3',
-    },
     editOnGitHub: {
       repo: 'pabloszx/the-guild-docs',
       baseDir: 'examples/basic',
@@ -35,19 +40,4 @@ export default MDXPage(
     },
   }
 );
-
-export const getStaticProps: GetStaticProps = ctx => {
-  return MDXProps(
-    ({ readMarkdownFile, getArrayParam }) => {
-      return readMarkdownFile('docs/', getArrayParam('slug'), { importPartialMarkdown: true });
-    },
-    ctx,
-    {
-      getRoutes,
-    }
-  );
-};
-
-export const getStaticPaths: GetStaticPaths = ctx => {
-  return MDXPaths('docs', { ctx });
-};
+```

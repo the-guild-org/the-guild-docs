@@ -109,10 +109,13 @@ async function readMarkdownFile(basePath: string, slugPath: string[], options?: 
   })();
 
   if (options?.importPartialMarkdown) {
-    return parsePartialMarkdown(content, dirname(path));
+    return {
+      content: await parsePartialMarkdown(content, dirname(path)),
+      path,
+    };
   }
 
-  return content;
+  return { content, path };
 }
 
 async function parsePartialMarkdown(content: string, basePath: string): Promise<string> {
@@ -257,7 +260,7 @@ export async function MDXProps(
     readFile: typeof readFile;
     join: typeof join;
     resolve: typeof resolve;
-    readMarkdownFile: typeof readMarkdownFile;
+    readMarkdownFile: (basePath: string, slugPath: string[], options?: ReadMarkdownFileOptions | undefined) => Promise<string>;
     getStringParam: (name: string) => string;
     getArrayParam: (name: string) => string[];
   }) => Promise<string | Buffer>,
@@ -267,11 +270,15 @@ export async function MDXProps(
   const mdxRoutes: MdxInternalProps['mdxRoutes'] = getRoutes ? (IS_PRODUCTION ? 1 : getRoutes()) : undefined;
 
   const prepareMDXTranslations = prepareMDXRenderWithTranslations(locale);
-
+  let sourceFilePath: string = '';
   const source = await getSource({
     params,
     readFile,
-    readMarkdownFile,
+    readMarkdownFile: async (...args) => {
+      const result = await readMarkdownFile(...args);
+      sourceFilePath = result.path;
+      return result.content;
+    },
     join,
     resolve,
     getStringParam(name) {
@@ -304,6 +311,7 @@ export async function MDXProps(
       frontMatter,
       _nextI18Next,
       toc,
+      sourceFilePath,
     },
   };
 
