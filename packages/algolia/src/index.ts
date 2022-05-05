@@ -174,7 +174,7 @@ async function routesToAlgoliaRecords(
                 // `route` is `'slug'`
                 if (route.startsWith('$')) {
                   const refName = route.substring(1);
-                  const refs = routes._?._ || ({} as any);
+                  const refs = topRoute._ as { [k: string]: Record<string, IRoutes> };
                   const subRoutes = refs[refName];
 
                   if (subRoutes) {
