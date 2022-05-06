@@ -270,7 +270,7 @@ export async function MDXProps(
   const mdxRoutes: MdxInternalProps['mdxRoutes'] = getRoutes ? (IS_PRODUCTION ? 1 : getRoutes()) : undefined;
 
   const prepareMDXTranslations = prepareMDXRenderWithTranslations(locale);
-  let sourceFilePath: string = '';
+  let sourceFilePath = '';
   const source = await getSource({
     params,
     readFile,
