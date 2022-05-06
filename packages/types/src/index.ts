@@ -88,12 +88,12 @@ export interface MdxPageProps {
   TOC: VoidFunctionComponent<Omit<MDXTOCProps, 'toc'>>;
   MetaHead: ReactNode;
   BottomNavigation: VoidFunctionComponent<Omit<BottomNavigationProps, 'routes'>>;
-  EditOnGitHub: VoidFunctionComponent;
+  sourceFilePath: string;
 }
 
 export interface MdxInternalProps {
   children?: ReactNode;
-  source: MDXRemoteSerializeResult<Record<string, unknown>>;
+  source: MDXRemoteSerializeResult;
   frontMatter: Record<string, any>;
   _nextI18Next: SSRConfig['_nextI18Next'];
   mdxRoutes?: IRoutes | 1;

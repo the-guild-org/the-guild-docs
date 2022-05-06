@@ -260,7 +260,7 @@ export async function MDXProps(
     readFile: typeof readFile;
     join: typeof join;
     resolve: typeof resolve;
-    readMarkdownFile: (basePath: string, slugPath: string[], options?: ReadMarkdownFileOptions | undefined) => Promise<string>;
+    readMarkdownFile: (basePath: string, slugPath: string[], options?: ReadMarkdownFileOptions) => Promise<string>;
     getStringParam: (name: string) => string;
     getArrayParam: (name: string) => string[];
   }) => Promise<string | Buffer>,
@@ -274,7 +274,7 @@ export async function MDXProps(
   const source = await getSource({
     params,
     readFile,
-    readMarkdownFile: async (...args) => {
+    async readMarkdownFile(...args) {
       const result = await readMarkdownFile(...args);
       sourceFilePath = result.path;
       return result.content;

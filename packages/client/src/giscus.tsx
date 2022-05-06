@@ -1,10 +1,7 @@
 import { useColorModeValue } from '@chakra-ui/react';
-import { useRouter } from 'next/router.js';
-import ScriptPkg from 'next/script.js';
-import React, { useEffect, useMemo, useState } from 'react';
-import { getDefault, useIsBrowserSSRSafe } from './utils';
-
-const Script = getDefault(ScriptPkg);
+import { useRouter } from 'next/router';
+import Script from 'next/script';
+import React, { FC, useEffect, useMemo, useState } from 'react';
 
 export interface GiscusProps {
   repo: string;
@@ -15,16 +12,14 @@ export interface GiscusProps {
 
 let GiscusKeyInc = 0;
 
-export function Giscus({ category, categoryId, repo, repoId }: GiscusProps) {
+const Giscus: FC<GiscusProps> = ({ category, categoryId, repo, repoId }) => {
   const { asPath } = useRouter();
 
   const dataTheme = useColorModeValue('light', 'dark');
 
-  const key = useMemo(() => {
-    return `${dataTheme}${asPath}${++GiscusKeyInc}`.replace(/\//g, '_');
-  }, [dataTheme, asPath]);
+  const key = useMemo(() => `${dataTheme}${asPath}${++GiscusKeyInc}`.replace(/\//g, '_'), [dataTheme, asPath]);
 
-  const isBrowser = useIsBrowserSSRSafe();
+  const isBrowser = typeof window !== 'undefined';
 
   if (!isBrowser) return null;
 
@@ -43,9 +38,9 @@ export function Giscus({ category, categoryId, repo, repoId }: GiscusProps) {
       <div className="giscus" />
     </>
   );
-}
+};
 
-function GiscusScript({
+const GiscusScript: FC<GiscusProps & { asPath: string; scriptKey: string; dataTheme: string }> = ({
   category,
   categoryId,
   repo,
@@ -53,7 +48,7 @@ function GiscusScript({
   asPath,
   scriptKey,
   dataTheme,
-}: GiscusProps & { asPath: string; scriptKey: string; dataTheme: string }) {
+}) => {
   const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
@@ -84,4 +79,6 @@ function GiscusScript({
       }}
     />
   );
-}
+};
+
+export default Giscus;

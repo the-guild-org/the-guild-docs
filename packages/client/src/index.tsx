@@ -9,3 +9,4 @@ export * from '@guild-docs/types';
 export * from './wrappers';
 export * from './mdx';
 export * from './googleAnalytics';
+export { default as EditOnGitHubButton } from './EditOnGitHubButton';

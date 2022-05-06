@@ -36,7 +36,7 @@ jobs:
           key: ${{ runner.os }}-v2-${{ hashFiles('./pnpm-lock.yaml') }}
           restore-keys: |
             ${{ runner.os }}-v2
-      - name: install pnpm
+      - name: Install pnpm
         run: npm i pnpm@latest -g
 
       - name: Install Dependencies
@@ -64,12 +64,11 @@ jobs:
           bot: 'theguild-bot'
           github-token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Publish a empty message
+      - name: Publish an empty message
         if: steps.canary.outputs.released == 'false'
         uses: 'kamilkisiela/pr-comment@master'
         with:
-          message: |
-            The latest changes of this PR are not available as alpha, since there are no linked `changesets` for this PR.
+          message: The latest changes of this PR are not available as alpha, since there are no linked `changesets` for this PR.
           bot-token: ${{ secrets.BOT_GH_TOKEN }}
           bot: 'theguild-bot'
           github-token: ${{ secrets.GITHUB_TOKEN }}

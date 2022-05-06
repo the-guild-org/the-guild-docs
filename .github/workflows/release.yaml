@@ -33,7 +33,7 @@ jobs:
           key: ${{ runner.os }}-v2-${{ hashFiles('./pnpm-lock.yaml') }}
           restore-keys: |
             ${{ runner.os }}-v2
-      - name: install pnpm
+      - name: Install pnpm
         run: npm i pnpm@latest -g
 
       - name: Install Dependencies
