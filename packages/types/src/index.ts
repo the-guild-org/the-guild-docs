@@ -87,7 +87,6 @@ export interface MdxPageProps {
   useTranslation: typeof useTranslation;
   TOC: VoidFunctionComponent<Omit<MDXTOCProps, 'toc'>>;
   MetaHead: ReactNode;
-  BottomNavigation: VoidFunctionComponent<Omit<BottomNavigationProps, 'routes'>>;
   sourceFilePath: string;
 }
 

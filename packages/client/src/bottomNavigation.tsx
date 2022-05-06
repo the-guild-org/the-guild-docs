@@ -1,54 +1,13 @@
-import NextLinkImport from 'next/link.js';
 import { useRouter } from 'next/router.js';
 import React, { FC, useMemo, useState } from 'react';
 
-import { ArrowBackIcon, ArrowForwardIcon } from '@chakra-ui/icons';
-import { useSafeLayoutEffect, chakra, useColorModeValue } from '@chakra-ui/react';
+import { useSafeLayoutEffect } from '@chakra-ui/react';
 
 import { arePathnamesEqual, concatHrefs, iterateRoutes, withoutTrailingSlash } from './routes';
-import { cleanMarkdown, getDefault } from './utils';
+import { cleanMarkdown } from './utils';
 
 import type { BottomNavigationProps, Paths } from '@guild-docs/types';
-
-const Wrapper = chakra('div', {
-  baseStyle: {
-    display: 'flex',
-    alignItems: 'center',
-    pt: '1rem',
-  },
-});
-
-const Title = chakra('p', {
-  baseStyle: {
-    display: '-webkit-box',
-    WebkitLineClamp: 2,
-    WebkitBoxOrient: 'vertical',
-    overflow: 'hidden',
-
-    flex: '1 1 0%',
-    justifyContent: 'center',
-    alignItems: 'center',
-    px: '0.5rem',
-    fontWeight: 'medium',
-    fontSize: '0.75rem',
-    textAlign: 'center',
-  },
-});
-
-const Link = chakra('a', {
-  baseStyle: {
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    height: '2rem',
-    width: '2rem',
-    borderRadius: '0.5rem',
-    cursor: 'pointer',
-    transition: '0.15s',
-  },
-});
-
-const NextLink = getDefault(NextLinkImport);
+import { Pagination } from './components/pagination';
 export interface ReducedHref {
   href: string;
   name?: string;
@@ -108,19 +67,7 @@ export const ClientSideOnly: FC = ({ children }) => {
   return null;
 };
 
-export function BottomNavigationComponent({ routes, wrapperProps, linkProps, titleProps }: BottomNavigationProps) {
-  const linkThemedStyles = {
-    backgroundColor: useColorModeValue('gray.200', 'gray.800'),
-    _hover: {
-      backgroundColor: useColorModeValue('black', 'white'),
-      color: useColorModeValue('white', 'black'),
-    },
-  };
-
-  const titleThemedStyles = {
-    color: useColorModeValue('gray.500', 'gray.200'),
-  };
-
+export function BottomNavigationComponent({ routes }: BottomNavigationProps) {
   const Router = useRouter() || {};
 
   const asPath = Router.asPath || '_';
@@ -142,14 +89,12 @@ export function BottomNavigationComponent({ routes, wrapperProps, linkProps, tit
   }, [routes]);
 
   const [currentRoute, setCurrentRoute] = useState<CombinedReducedHref | undefined>();
-  const [currentTitle, setCurrentTitle] = useState<string>('');
 
   // This logic is client-side only
   useSafeLayoutEffect(() => {
     const activeRouting = routesData.find(v => arePathnamesEqual(v.current.href, asPath));
 
     setCurrentRoute(activeRouting);
-    setCurrentTitle(activeRouting?.current.name || '');
   }, [asPath, routesData]);
 
   if (!currentRoute) return null;
@@ -158,35 +103,23 @@ export function BottomNavigationComponent({ routes, wrapperProps, linkProps, tit
   if ((!previous && !next) || !current) return null;
 
   return (
-    <Wrapper {...wrapperProps}>
-      {previous && (
-        <NextLink href={previous.href} passHref>
-          <Link
-            onMouseOver={() => setCurrentTitle(previous.name || 'Previous')}
-            onMouseOut={() => setCurrentTitle(current.name || '')}
-            {...linkThemedStyles}
-            {...linkProps}
-          >
-            <ArrowBackIcon pointerEvents="none" />
-          </Link>
-        </NextLink>
-      )}
-
-      <Title {...titleProps} {...titleThemedStyles}>
-        {cleanMarkdown(currentTitle)}
-      </Title>
-      {next && (
-        <NextLink href={next.href} passHref>
-          <Link
-            onMouseOver={() => setCurrentTitle(next.name || 'Next')}
-            onMouseOut={() => setCurrentTitle(current.name || '')}
-            {...linkThemedStyles}
-            {...linkProps}
-          >
-            <ArrowForwardIcon pointerEvents="none" />
-          </Link>
-        </NextLink>
-      )}
-    </Wrapper>
+    <Pagination
+      previous={
+        previous
+          ? {
+              path: previous.href,
+              title: cleanMarkdown(previous.name ?? ''),
+            }
+          : null
+      }
+      next={
+        next
+          ? {
+              path: next.href,
+              title: cleanMarkdown(next.name ?? ''),
+            }
+          : null
+      }
+    />
   );
 }

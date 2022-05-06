@@ -2,6 +2,7 @@ import { MDXRemote } from '@guild-docs/mdx-remote';
 import type { BottomNavigationProps, IRoutes, MdxInternalProps, MdxPageProps } from '@guild-docs/types';
 import { useTranslation } from 'next-i18next';
 import dynamicPkg from 'next/dynamic.js';
+import { Box } from '@chakra-ui/react';
 import React, { FC, useCallback, useMemo } from 'react';
 import { BottomNavigationComponent } from './bottomNavigation';
 import { components } from './components';
@@ -38,15 +39,6 @@ export function MDXPage(Component: FC<MdxPageProps>, { renderTitle, giscus }: MD
       );
     }, [title, description]);
 
-    const content = useMemo(() => {
-      return (
-        <>
-          <MDXRemote {...source} components={components} />
-          {giscus && <GiscusDynamic {...giscus} />}
-        </>
-      );
-    }, [source]);
-
     const TOC = useCallback<MdxPageProps['TOC']>(
       function TOC(props) {
         if (toc.length < 2) return null;
@@ -71,6 +63,21 @@ export function MDXPage(Component: FC<MdxPageProps>, { renderTitle, giscus }: MD
       [mdxRoutes]
     );
 
+    const content = useMemo(() => {
+      return (
+        <>
+          <MDXRemote {...source} components={components} />
+          <BottomNavigation />
+          {giscus ? (
+            <>
+              <Box marginTop={8} />
+              <GiscusDynamic {...giscus} />
+            </>
+          ) : null}
+        </>
+      );
+    }, [source, BottomNavigation]);
+
     return (
       <Component
         content={content}
@@ -78,7 +85,6 @@ export function MDXPage(Component: FC<MdxPageProps>, { renderTitle, giscus }: MD
         useTranslation={useTranslation}
         TOC={TOC}
         MetaHead={MetaHead}
-        BottomNavigation={BottomNavigation}
         children={children}
         sourceFilePath={sourceFilePath}
       />
