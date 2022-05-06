@@ -1,6 +1,6 @@
 import { useColorModeValue } from '@chakra-ui/react';
-import { useRouter } from 'next/router';
-import Script from 'next/script';
+import { useRouter } from 'next/router.js';
+import Script from 'next/script.js';
 import React, { FC, useEffect, useMemo, useState } from 'react';
 
 export interface GiscusProps {
