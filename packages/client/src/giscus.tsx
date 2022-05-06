@@ -19,7 +19,7 @@ const Giscus: FC<GiscusProps> = ({ category, categoryId, repo, repoId }) => {
 
   const key = useMemo(() => `${dataTheme}${asPath}${++GiscusKeyInc}`.replace(/\//g, '_'), [dataTheme, asPath]);
 
-  const isBrowser = typeof window !== 'undefined';
+  const isBrowser = !!globalThis.window;
 
   if (!isBrowser) return null;
 
