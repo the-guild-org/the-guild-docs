@@ -48,8 +48,8 @@ export function MDXPage(
     }, [title, description]);
 
     const EditOnGitHub = React.useMemo(() => {
-      return () =>
-        editOnGitHub ? (
+      return function EditOnGithubButton() {
+        return editOnGitHub ? (
           <Button
             as="a"
             leftIcon={<GitHubIcon />}
@@ -62,6 +62,7 @@ export function MDXPage(
             Edit on GitHub
           </Button>
         ) : null;
+      };
     }, [sourceFilePath]);
 
     const content = useMemo(() => {
