@@ -88,6 +88,7 @@ export interface MdxPageProps {
   TOC: VoidFunctionComponent<Omit<MDXTOCProps, 'toc'>>;
   MetaHead: ReactNode;
   BottomNavigation: VoidFunctionComponent<Omit<BottomNavigationProps, 'routes'>>;
+  EditOnGitHub: VoidFunctionComponent;
 }
 
 export interface MdxInternalProps {
@@ -97,6 +98,7 @@ export interface MdxInternalProps {
   _nextI18Next: SSRConfig['_nextI18Next'];
   mdxRoutes?: IRoutes | 1;
   toc: TOC;
+  sourceFilePath: string;
 }
 
 export type PossiblePromise<T> = T | Promise<T>;
