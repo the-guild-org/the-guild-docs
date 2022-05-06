@@ -62,7 +62,7 @@ export function MDXPage(
             Edit on GitHub
           </Button>
         ) : null;
-    }, [editOnGitHub, sourceFilePath]);
+    }, [sourceFilePath]);
 
     const content = useMemo(() => {
       return (
