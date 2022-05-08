@@ -1,13 +1,11 @@
 import { useRouter } from 'next/router.js';
 import React, { FC, useMemo, useState } from 'react';
-
 import { useSafeLayoutEffect } from '@chakra-ui/react';
-
 import { arePathnamesEqual, concatHrefs, iterateRoutes, withoutTrailingSlash } from './routes';
 import { cleanMarkdown } from './utils';
-
 import type { BottomNavigationProps, Paths } from '@guild-docs/types';
 import { Pagination } from './components/pagination';
+
 export interface ReducedHref {
   href: string;
   name?: string;
@@ -79,13 +77,11 @@ export function BottomNavigationComponent({ routes }: BottomNavigationProps) {
       allHrefs: [],
     });
 
-    return allHrefs.map((current, index): CombinedReducedHref => {
-      return {
-        previous: allHrefs[index - 1],
-        current,
-        next: allHrefs[index + 1],
-      };
-    });
+    return allHrefs.map((current, index): CombinedReducedHref => ({
+      previous: allHrefs[index - 1],
+      current,
+      next: allHrefs[index + 1],
+    }));
   }, [routes]);
 
   const [currentRoute, setCurrentRoute] = useState<CombinedReducedHref | undefined>();
@@ -105,20 +101,16 @@ export function BottomNavigationComponent({ routes }: BottomNavigationProps) {
   return (
     <Pagination
       previous={
-        previous
-          ? {
-              path: previous.href,
-              title: cleanMarkdown(previous.name ?? ''),
-            }
-          : null
+        previous && {
+          path: previous.href,
+          title: cleanMarkdown(previous.name ?? ''),
+        }
       }
       next={
-        next
-          ? {
-              path: next.href,
-              title: cleanMarkdown(next.name ?? ''),
-            }
-          : null
+        next && {
+          path: next.href,
+          title: cleanMarkdown(next.name ?? ''),
+        }
       }
     />
   );

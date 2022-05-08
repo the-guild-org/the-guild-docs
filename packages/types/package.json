@@ -27,7 +27,6 @@
     "@emotion/styled": "11.8.1",
     "@types/node": "16.11.32",
     "@types/react": "17.0.44",
-    "bob-esbuild-cli": "3.0.2",
     "changesets-github-release": "0.1.0",
     "framer-motion": "6.3.3",
     "next-i18next": "11.0.0",

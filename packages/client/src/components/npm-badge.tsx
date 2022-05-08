@@ -1,7 +1,7 @@
 import { chakra, Link, Skeleton, useImage } from '@chakra-ui/react';
 import React, { useEffect, useState } from 'react';
 
-export const NPMBadge = ({ name }: { name: string }) => {
+const NPMBadge = ({ name }: { name: string }) => {
   const encodedPackage = encodeURIComponent(name);
   const src = `https://badge.fury.io/js/${encodedPackage}.svg`;
   const status = useImage({
@@ -40,3 +40,5 @@ export const NPMBadge = ({ name }: { name: string }) => {
     </Link>
   );
 };
+
+export default NPMBadge;

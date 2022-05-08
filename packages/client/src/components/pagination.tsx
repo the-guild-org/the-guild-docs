@@ -1,69 +1,46 @@
-import { ChevronLeftIcon, ChevronRightIcon } from '@chakra-ui/icons';
-import { Link, SimpleGrid, Text } from '@chakra-ui/react';
-import NextLink from 'next/link';
-import React, { ComponentProps } from 'react';
+import NextLink from 'next/link.js';
+import React, { CSSProperties, ReactElement } from 'react';
 
-export const PaginationLink = (
-  props: {
-    label: string;
-    href: string;
-  } & ComponentProps<typeof Link>
-) => {
-  const { label, href, children, ...rest } = props;
+type PaginationProps = {
+  previous?: { path: string; title: string };
+  next?: { path: string; title: string };
+};
 
+const ChevronRightIcon = ({ size = 24, style }: { size?: number; style?: CSSProperties }): ReactElement => {
   return (
-    <NextLink href={href} passHref>
-      <Link
-        flex="1"
-        borderRadius="md"
-        _hover={{
-          textDecor: 'none',
-        }}
-        {...rest}
-      >
-        <Text fontSize="sm" px="2">
-          {label}
-        </Text>
-        <Text mt="1" fontSize="lg" fontWeight="bold">
-          {children}
-        </Text>
-      </Link>
-    </NextLink>
+    <svg viewBox="0 0 24 24" width={size} height={size} fill="currentColor" style={style}>
+      <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" />
+    </svg>
   );
 };
 
-export const Pagination = ({
-  previous,
-  next,
-  ...rest
-}: {
-  previous: {
-    path: string;
-    title: string;
-  } | null;
-  next: {
-    path: string;
-    title: string;
-  } | null;
-}) => {
+export const Pagination = ({ previous, next }: PaginationProps): ReactElement => {
   return (
-    <SimpleGrid as="nav" aria-label="Pagination" spacing="40px" my="64px" columns={2} {...rest}>
-      {previous ? (
-        <PaginationLink textAlign="left" label="Previous" href={previous.path} rel="prev">
-          <ChevronLeftIcon mr="1" fontSize="1.2em" />
-          {previous.title}
-        </PaginationLink>
-      ) : (
-        <div />
+    <nav style={{ display: 'flex', margin: '64px 0' }}>
+      {previous && (
+        <NextLink href={previous.path} passHref>
+          {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
+          <a rel="prev">
+            <span style={{ fontSize: 14, padding: '0 8px 4px' }}>Previous</span>
+            <span style={{ fontSize: 18, display: 'flex', alignItems: 'center', fontWeight: 700 }}>
+              <ChevronRightIcon style={{ transform: 'rotate(-180deg)' }} />
+              {previous.title}
+            </span>
+          </a>
+        </NextLink>
       )}
-      {next ? (
-        <PaginationLink textAlign="right" label="Next" href={next.path} rel="next">
-          {next.title}
-          <ChevronRightIcon ml="1" fontSize="1.2em" />
-        </PaginationLink>
-      ) : (
-        <div />
+      {next && (
+        <NextLink href={next.path} passHref>
+          {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
+          <a rel="next" style={{ textAlign: 'right', marginLeft: 'auto' }}>
+            <span style={{ fontSize: 14, padding: '0 8px 4px' }}>Next</span>
+            <span style={{ fontSize: 18, display: 'flex', alignItems: 'center', fontWeight: 700 }}>
+              {next.title}
+              <ChevronRightIcon />
+            </span>
+          </a>
+        </NextLink>
       )}
-    </SimpleGrid>
+    </nav>
   );
 };
