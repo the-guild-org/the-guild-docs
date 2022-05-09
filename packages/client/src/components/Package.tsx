@@ -16,7 +16,7 @@ import {
   TabListProps,
 } from '@chakra-ui/react';
 
-import { CopyToClipboard } from './CopyToClipboard';
+import CopyToClipboard from './copy-to-clipboard';
 import { getDefault } from '../utils';
 
 enum PackageManagerType {

@@ -38,15 +38,6 @@ export function MDXPage(Component: FC<MdxPageProps>, { renderTitle, giscus }: MD
       );
     }, [title, description]);
 
-    const content = useMemo(() => {
-      return (
-        <>
-          <MDXRemote {...source} components={components} />
-          {giscus && <GiscusDynamic {...giscus} />}
-        </>
-      );
-    }, [source]);
-
     const TOC = useCallback<MdxPageProps['TOC']>(
       function TOC(props) {
         if (toc.length < 2) return null;
@@ -71,6 +62,16 @@ export function MDXPage(Component: FC<MdxPageProps>, { renderTitle, giscus }: MD
       [mdxRoutes]
     );
 
+    const content = useMemo(() => {
+      return (
+        <>
+          <MDXRemote {...source} components={components} />
+          <BottomNavigation />
+          {giscus && <GiscusDynamic {...giscus} />}
+        </>
+      );
+    }, [source, BottomNavigation]);
+
     return (
       <Component
         content={content}
@@ -78,10 +79,10 @@ export function MDXPage(Component: FC<MdxPageProps>, { renderTitle, giscus }: MD
         useTranslation={useTranslation}
         TOC={TOC}
         MetaHead={MetaHead}
-        BottomNavigation={BottomNavigation}
-        children={children}
         sourceFilePath={sourceFilePath}
-      />
+      >
+        {children}
+      </Component>
     );
   };
 }

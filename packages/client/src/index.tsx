@@ -9,4 +9,6 @@ export * from '@guild-docs/types';
 export * from './wrappers';
 export * from './mdx';
 export * from './googleAnalytics';
-export { default as EditOnGitHubButton } from './EditOnGitHubButton';
+export { default as EditOnGitHubButton } from './components/edit-on-github-button';
+export { default as CopyToClipboard } from './components/copy-to-clipboard';
+export { default as NPMBadge } from './components/npm-badge';

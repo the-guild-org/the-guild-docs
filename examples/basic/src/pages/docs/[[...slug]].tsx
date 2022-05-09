@@ -5,14 +5,13 @@ import { MDXPaths, MDXProps } from '@guild-docs/server';
 import { getRoutes } from '../../../routes';
 
 export default MDXPage(
-  function PostPage({ content, TOC, MetaHead, BottomNavigation, sourceFilePath }) {
+  function PostPage({ content, TOC, MetaHead, sourceFilePath }) {
     return (
       <>
         <Head>{MetaHead}</Head>
         <DocsContent>{content}</DocsContent>
         <DocsTOC>
           <TOC />
-          <BottomNavigation />
           <EditOnGitHubButton
             repo="the-guild-org/the-guild-docs"
             baseDir="examples/basic"

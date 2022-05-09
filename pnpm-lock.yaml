@@ -152,7 +152,6 @@ importers:
       '@types/mkdirp': 1.0.2
       '@types/node': 16.11.32
       '@types/prettier': 2.6.0
-      bob-tsm: 0.4.8
       bob-watch: 0.1.1
       changesets-github-release: 0.1.0
       commander: 9.2.0
@@ -166,7 +165,6 @@ importers:
       '@types/mkdirp': 1.0.2
       '@types/node': 16.11.32
       '@types/prettier': 2.6.0
-      bob-tsm: 0.4.8_esbuild@0.14.38
       bob-watch: 0.1.1
       changesets-github-release: 0.1.0
       commander: 9.2.0
@@ -193,8 +191,6 @@ importers:
       '@types/react': 17.0.44
       '@types/react-dom': 17.0.16
       '@types/remove-markdown': 0.3.1
-      bob-esbuild-cli: 3.0.2
-      bob-tsm: 0.4.8
       changesets-github-release: 0.1.0
       esbuild: 0.14.38
       framer-motion: 6.3.3
@@ -243,8 +239,6 @@ importers:
       '@types/react': 17.0.44
       '@types/react-dom': 17.0.16
       '@types/remove-markdown': 0.3.1
-      bob-esbuild-cli: 3.0.2
-      bob-tsm: 0.4.8_y4vqwxx74x6admtcqqsbpw3dwu
       changesets-github-release: 0.1.0
       esbuild: 0.14.38
       framer-motion: 6.3.3_sfoxds7t5ydpegc3knd667wn6m
@@ -294,7 +288,6 @@ importers:
       '@guild-docs/types': workspace:^2.0.0
       '@stefanprobst/remark-shiki': 2.1.0
       '@types/github-slugger': 1.3.0
-      bob-esbuild-cli: 3.0.2
       changesets-github-release: 0.1.0
       esbuild: 0.14.38
       github-slugger: 1.4.0
@@ -322,7 +315,6 @@ importers:
       undici: 5.0.0
     devDependencies:
       '@types/github-slugger': 1.3.0
-      bob-esbuild-cli: 3.0.2
       changesets-github-release: 0.1.0
       esbuild: 0.14.38
       next: 12.1.5_sfoxds7t5ydpegc3knd667wn6m
@@ -339,7 +331,6 @@ importers:
       '@mdx-js/mdx': ^2.1.1
       '@types/node': 16.11.32
       '@types/react': 17.0.44
-      bob-esbuild-cli: 3.0.2
       changesets-github-release: 0.1.0
       framer-motion: 6.3.3
       next-i18next: 11.0.0
@@ -354,7 +345,6 @@ importers:
       '@emotion/styled': 11.8.1_ofrlf6kyxpiqitv2d524jteox4
       '@types/node': 16.11.32
       '@types/react': 17.0.44
-      bob-esbuild-cli: 3.0.2
       changesets-github-release: 0.1.0
       framer-motion: 6.3.3
       next-i18next: 11.0.0
@@ -4385,16 +4375,6 @@ packages:
       readable-stream: 3.6.0
     dev: false
 
-  /bob-esbuild-cli/3.0.2:
-    resolution: {integrity: sha512-/E3g7xQqn4+rFSlIN37gGrJAv4o7cB0dicv/C/OSNUruh9u1cWsDGnLdaYHdUttEK4Df5vMHsYzB6KxIh5Yq5A==, registry: https://registry.yarnpkg.com/, tarball: https://registry.yarnpkg.com/bob-esbuild-cli/-/bob-esbuild-cli-3.0.2.tgz}
-    engines: {node: '>=12.0.0'}
-    hasBin: true
-    peerDependencies:
-      bob-esbuild: ^3.2.5
-    dependencies:
-      commander: 9.1.0
-    dev: true
-
   /bob-esbuild-cli/3.0.2_bob-esbuild@3.2.6:
     resolution: {integrity: sha512-/E3g7xQqn4+rFSlIN37gGrJAv4o7cB0dicv/C/OSNUruh9u1cWsDGnLdaYHdUttEK4Df5vMHsYzB6KxIh5Yq5A==, registry: https://registry.yarnpkg.com/, tarball: https://registry.yarnpkg.com/bob-esbuild-cli/-/bob-esbuild-cli-3.0.2.tgz}
     engines: {node: '>=12.0.0'}
@@ -4428,22 +4408,6 @@ packages:
       esbuild: 0.14.38
       rollup: 2.70.1
       typescript: 4.6.4
-    dev: true
-
-  /bob-tsm/0.4.8_esbuild@0.14.38:
-    resolution: {integrity: sha512-HctV79VMhh8xh5+plIJbkghL9H0pi+euZvLSjvhgqkm3uQ73ebPUh3k7u/bYyXkhiVC/O0gs/I0alw7WOkZ3kw==}
-    engines: {node: ^12.20.0 || >=14.13.0}
-    hasBin: true
-    peerDependencies:
-      esbuild: '>=0.14.13'
-      typescript: '>=4.1.2'
-    peerDependenciesMeta:
-      typescript:
-        optional: true
-    dependencies:
-      esbuild: 0.14.38
-    optionalDependencies:
-      fsevents: 2.3.2
     dev: true
 
   /bob-tsm/0.4.8_y4vqwxx74x6admtcqqsbpw3dwu:
