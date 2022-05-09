@@ -1,6 +1,6 @@
 {
   "name": "@guild-docs/algolia",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/the-guild-org/the-guild-docs.git"
@@ -18,14 +18,14 @@
     "postpublish": "gh-release"
   },
   "dependencies": {
-    "lodash": "^4.17.21",
-    "github-slugger": "^1.4.0",
-    "remove-markdown": "0.5.0",
     "algoliasearch": "^4.13.0",
-    "gray-matter": "^4.0.3"
+    "github-slugger": "^1.4.0",
+    "gray-matter": "^4.0.3",
+    "lodash": "^4.17.21",
+    "remove-markdown": "0.5.0"
   },
   "devDependencies": {
-    "@guild-docs/server": "^3.0.1",
+    "@guild-docs/server": "workspace:^4.0.0",
     "@types/node": "^16.11.33",
     "bob-esbuild-cli": "^3.0.2",
     "changesets-github-release": "0.1.0",

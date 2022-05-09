@@ -1,6 +1,6 @@
 {
   "name": "@guild-docs/client",
-  "version": "2.1.1",
+  "version": "3.0.0",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/the-guild-org/the-guild-docs.git"
@@ -24,8 +24,8 @@
     "postpublish": "gh-release"
   },
   "dependencies": {
-    "@guild-docs/mdx-remote": "workspace:^2.0.1",
-    "@guild-docs/types": "workspace:^2.0.0",
+    "@guild-docs/mdx-remote": "workspace:^2.0.2",
+    "@guild-docs/types": "workspace:^3.0.0",
     "immer": "9.0.12",
     "mdx-mermaid": "1.2.2",
     "mermaid": ">= 8.11.0 < 8.12.0",

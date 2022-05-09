@@ -1,5 +1,13 @@
 # @guild-docs/mdx-remote
 
+## 2.0.2
+
+### Patch Changes
+
+- Updated dependencies [8b6aef2]
+- Updated dependencies [abd721f]
+  - @guild-docs/types@3.0.0
+
 ## 2.0.1
 
 ### Patch Changes
