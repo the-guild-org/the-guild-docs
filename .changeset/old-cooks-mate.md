@@ -1,5 +1,4 @@
 ---
-'basic': major
 '@guild-docs/client': major
 '@guild-docs/server': major
 '@guild-docs/types': major
