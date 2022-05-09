@@ -1,22 +1,23 @@
 import Head from 'next/head';
-
-import { DocsContent, DocsTOC, MDXPage } from '@guild-docs/client';
+import type { GetStaticPaths, GetStaticProps } from 'next';
+import { DocsContent, DocsTOC, MDXPage, EditOnGitHubButton } from '@guild-docs/client';
 import { MDXPaths, MDXProps } from '@guild-docs/server';
-
 import { getRoutes } from '../../../routes';
 
-import type { GetStaticPaths, GetStaticProps } from 'next';
-
 export default MDXPage(
-  function PostPage({ content, TOC, MetaHead, BottomNavigation, EditOnGitHub }) {
+  function PostPage({ content, TOC, MetaHead, sourceFilePath }) {
     return (
       <>
         <Head>{MetaHead}</Head>
         <DocsContent>{content}</DocsContent>
         <DocsTOC>
           <TOC />
-          <BottomNavigation />
-          <EditOnGitHub />
+          <EditOnGitHubButton
+            repo="the-guild-org/the-guild-docs"
+            baseDir="examples/basic"
+            branch="main"
+            sourceFilePath={sourceFilePath}
+          />
         </DocsTOC>
       </>
     );
@@ -28,26 +29,14 @@ export default MDXPage(
       category: 'Q&A',
       categoryId: 'DIC_kwDOGqmArs4CA9N3',
     },
-    editOnGitHub: {
-      repo: 'pabloszx/the-guild-docs',
-      baseDir: 'examples/basic',
-      branch: 'main',
-    },
   }
 );
 
-export const getStaticProps: GetStaticProps = ctx => {
-  return MDXProps(
-    ({ readMarkdownFile, getArrayParam }) => {
-      return readMarkdownFile('docs/', getArrayParam('slug'), { importPartialMarkdown: true });
-    },
+export const getStaticProps: GetStaticProps = ctx =>
+  MDXProps(
+    ({ readMarkdownFile, getArrayParam }) => readMarkdownFile('docs/', getArrayParam('slug'), { importPartialMarkdown: true }),
     ctx,
-    {
-      getRoutes,
-    }
+    { getRoutes }
   );
-};
 
-export const getStaticPaths: GetStaticPaths = ctx => {
-  return MDXPaths('docs', { ctx });
-};
+export const getStaticPaths: GetStaticPaths = ctx => MDXPaths('docs', { ctx });
