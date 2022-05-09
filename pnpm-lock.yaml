@@ -146,6 +146,31 @@ importers:
       typescript: 4.6.4
       wait-on: 6.0.1
 
+  packages/algolia:
+    specifiers:
+      '@guild-docs/server': ^3.0.1
+      '@types/node': ^16.11.33
+      algoliasearch: ^4.13.0
+      bob-esbuild-cli: ^3.0.2
+      changesets-github-release: 0.1.0
+      github-slugger: ^1.4.0
+      gray-matter: ^4.0.3
+      lodash: ^4.17.21
+      remove-markdown: 0.5.0
+      typescript: 4.6.4
+    dependencies:
+      algoliasearch: 4.13.0
+      github-slugger: 1.4.0
+      gray-matter: 4.0.3
+      lodash: 4.17.21
+      remove-markdown: 0.5.0
+    devDependencies:
+      '@guild-docs/server': link:../server
+      '@types/node': 16.11.33
+      bob-esbuild-cli: 3.0.2_bob-esbuild@3.2.6
+      changesets-github-release: 0.1.0
+      typescript: 4.6.4
+
   packages/cli:
     specifiers:
       '@types/lodash': 4.14.182
@@ -371,14 +396,12 @@ packages:
     resolution: {integrity: sha512-nj1vHRZauTqP/bluwkRIgEADEimqojJgoTRCel5f6q8WCa9Y8QeI4bpDQP28FoeKnDRYa3J5CauDlN466jqRhg==}
     dependencies:
       '@algolia/cache-common': 4.13.0
-    dev: true
 
   /@algolia/cache-common/4.11.0:
     resolution: {integrity: sha512-lODcJRuPXqf+6mp0h6bOxPMlbNoyn3VfjBVcQh70EDP0/xExZbkpecgHyyZK4kWg+evu+mmgvTK3GVHnet/xKw==}
 
   /@algolia/cache-common/4.13.0:
     resolution: {integrity: sha512-f9mdZjskCui/dA/fA/5a+6hZ7xnHaaZI5tM/Rw9X8rRB39SUlF/+o3P47onZ33n/AwkpSbi5QOyhs16wHd55kA==}
-    dev: true
 
   /@algolia/cache-in-memory/4.11.0:
     resolution: {integrity: sha512-aBz+stMSTBOBaBEQ43zJXz2DnwS7fL6dR0e2myehAgtfAWlWwLDHruc/98VOy1ZAcBk1blE2LCU02bT5HekGxQ==}
@@ -389,7 +412,6 @@ packages:
     resolution: {integrity: sha512-hHdc+ahPiMM92CQMljmObE75laYzNFYLrNOu0Q3/eyvubZZRtY2SUsEEgyUEyzXruNdzrkcDxFYa7YpWBJYHAg==}
     dependencies:
       '@algolia/cache-common': 4.13.0
-    dev: true
 
   /@algolia/client-account/4.11.0:
     resolution: {integrity: sha512-jwmFBoUSzoMwMqgD3PmzFJV/d19p1RJXB6C1ADz4ju4mU7rkaQLtqyZroQpheLoU5s5Tilmn/T8/0U2XLoJCRQ==}
@@ -404,7 +426,6 @@ packages:
       '@algolia/client-common': 4.13.0
       '@algolia/client-search': 4.13.0
       '@algolia/transporter': 4.13.0
-    dev: true
 
   /@algolia/client-analytics/4.11.0:
     resolution: {integrity: sha512-v5U9585aeEdYml7JqggHAj3E5CQ+jPwGVztPVhakBk8H/cmLyPS2g8wvmIbaEZCHmWn4TqFj3EBHVYxAl36fSA==}
@@ -421,7 +442,6 @@ packages:
       '@algolia/client-search': 4.13.0
       '@algolia/requester-common': 4.13.0
       '@algolia/transporter': 4.13.0
-    dev: true
 
   /@algolia/client-common/4.11.0:
     resolution: {integrity: sha512-Qy+F+TZq12kc7tgfC+FM3RvYH/Ati7sUiUv/LkvlxFwNwNPwWGoZO81AzVSareXT/ksDDrabD4mHbdTbBPTRmQ==}
@@ -434,7 +454,6 @@ packages:
     dependencies:
       '@algolia/requester-common': 4.13.0
       '@algolia/transporter': 4.13.0
-    dev: true
 
   /@algolia/client-personalization/4.11.0:
     resolution: {integrity: sha512-mI+X5IKiijHAzf9fy8VSl/GTT67dzFDnJ0QAM8D9cMPevnfX4U72HRln3Mjd0xEaYUOGve8TK/fMg7d3Z5yG6g==}
@@ -449,7 +468,6 @@ packages:
       '@algolia/client-common': 4.13.0
       '@algolia/requester-common': 4.13.0
       '@algolia/transporter': 4.13.0
-    dev: true
 
   /@algolia/client-search/4.11.0:
     resolution: {integrity: sha512-iovPLc5YgiXBdw2qMhU65sINgo9umWbHFzInxoNErWnYoTQWfXsW6P54/NlKx5uscoLVjSf+5RUWwFu5BX+lpw==}
@@ -464,7 +482,6 @@ packages:
       '@algolia/client-common': 4.13.0
       '@algolia/requester-common': 4.13.0
       '@algolia/transporter': 4.13.0
-    dev: true
 
   /@algolia/events/4.0.1:
     resolution: {integrity: sha512-FQzvOCgoFXAbf5Y6mYozw2aj5KCJoA3m4heImceldzPSMbdyS4atVjJzXKMsfX3wnZTFYwkkt8/z8UesLHlSBQ==}
@@ -474,7 +491,6 @@ packages:
 
   /@algolia/logger-common/4.13.0:
     resolution: {integrity: sha512-8yqXk7rMtmQJ9wZiHOt/6d4/JDEg5VCk83gJ39I+X/pwUPzIsbKy9QiK4uJ3aJELKyoIiDT1hpYVt+5ia+94IA==}
-    dev: true
 
   /@algolia/logger-console/4.11.0:
     resolution: {integrity: sha512-wXztMk0a3VbNmYP8Kpc+F7ekuvaqZmozM2eTLok0XIshpAeZ/NJDHDffXK2Pw+NF0wmHqurptLYwKoikjBYvhQ==}
@@ -485,7 +501,6 @@ packages:
     resolution: {integrity: sha512-YepRg7w2/87L0vSXRfMND6VJ5d6699sFJBRWzZPOlek2p5fLxxK7O0VncYuc/IbVHEgeApvgXx0WgCEa38GVuQ==}
     dependencies:
       '@algolia/logger-common': 4.13.0
-    dev: true
 
   /@algolia/requester-browser-xhr/4.11.0:
     resolution: {integrity: sha512-Fp3SfDihAAFR8bllg8P5ouWi3+qpEVN5e7hrtVIYldKBOuI/qFv80Zv/3/AMKNJQRYglS4zWyPuqrXm58nz6KA==}
@@ -496,14 +511,12 @@ packages:
     resolution: {integrity: sha512-Dj+bnoWR5MotrnjblzGKZ2kCdQi2cK/VzPURPnE616NU/il7Ypy6U6DLGZ/ZYz+tnwPa0yypNf21uqt84fOgrg==}
     dependencies:
       '@algolia/requester-common': 4.13.0
-    dev: true
 
   /@algolia/requester-common/4.11.0:
     resolution: {integrity: sha512-+cZGe/9fuYgGuxjaBC+xTGBkK7OIYdfapxhfvEf03dviLMPmhmVYFJtJlzAjQ2YmGDJpHrGgAYj3i/fbs8yhiA==}
 
   /@algolia/requester-common/4.13.0:
     resolution: {integrity: sha512-BRTDj53ecK+gn7ugukDWOOcBRul59C4NblCHqj4Zm5msd5UnHFjd/sGX+RLOEoFMhetILAnmg6wMrRrQVac9vw==}
-    dev: true
 
   /@algolia/requester-node-http/4.11.0:
     resolution: {integrity: sha512-qJIk9SHRFkKDi6dMT9hba8X1J1z92T5AZIgl+tsApjTGIRQXJLTIm+0q4yOefokfu4CoxYwRZ9QAq+ouGwfeOg==}
@@ -514,7 +527,6 @@ packages:
     resolution: {integrity: sha512-9b+3O4QFU4azLhGMrZAr/uZPydvzOR4aEZfSL8ZrpLZ7fbbqTO0S/5EVko+QIgglRAtVwxvf8UJ1wzTD2jvKxQ==}
     dependencies:
       '@algolia/requester-common': 4.13.0
-    dev: true
 
   /@algolia/transporter/4.11.0:
     resolution: {integrity: sha512-k4dyxiaEfYpw4UqybK9q7lrFzehygo6KV3OCYJMMdX0IMWV0m4DXdU27c1zYRYtthaFYaBzGF4Kjcl8p8vxCKw==}
@@ -529,7 +541,6 @@ packages:
       '@algolia/cache-common': 4.13.0
       '@algolia/logger-common': 4.13.0
       '@algolia/requester-common': 4.13.0
-    dev: true
 
   /@ampproject/remapping/2.1.2:
     resolution: {integrity: sha512-hoyByceqwKirw7w3Z7gnIIZC3Wx3J484Y3L/cMpXFbr7d9ZQj2mODrirNzcJa+SM3UlpWXYvKV4RlRpFXlWgXg==}
@@ -3021,6 +3032,10 @@ packages:
     resolution: {integrity: sha512-+fnfNvG5JQdC1uGZiTx+0QVtoOHcggy6+epx65JYroPGsE1uhp+vo5kioiGKsAkor6ocwHteU2EvO7N8vtOZtA==}
     dev: true
 
+  /@types/node/16.11.33:
+    resolution: {integrity: sha512-0PJ0vg+JyU0MIan58IOIFRtSvsb7Ri+7Wltx2qAg94eMOrpg4+uuP3aUHCpxXc1i0jCXiC+zIamSZh3l9AbcQA==}
+    dev: true
+
   /@types/normalize-package-data/2.4.1:
     resolution: {integrity: sha512-Gj7cI7z+98M282Tqmp2K5EIsoouUEzbBJhQQzDE3jSIRk6r9gsz0oUokqIUR4u1R3dMHo0pDHM7sNOHyhulypw==}
     dev: true
@@ -3356,7 +3371,6 @@ packages:
       '@algolia/requester-common': 4.13.0
       '@algolia/requester-node-http': 4.13.0
       '@algolia/transporter': 4.13.0
-    dev: true
 
   /ansi-colors/4.1.1:
     resolution: {integrity: sha512-JoX0apGbHaUJBNl6yF+p6JAFYZ666/hhCGKN5t9QFjbJQKUU/g8MNbFDbvfrgKXvI1QpZplPOnwIo99lX/AAmA==}
@@ -3397,7 +3411,7 @@ packages:
     resolution: {integrity: sha512-e0hDa9H2Z9AwFkk2qDlwhoMYE4eToKarchkQHovNdLTCYMHZHeRjI71crOh+dio4K6u1IcwubQqo79Ga4CyAQA==}
 
   /argparse/1.0.10:
-    resolution: {integrity: sha512-o5Roy6tNG4SL/FOkCAN6RzjiakZS25RLYFrcMttJqbdd8BWrnA+fGz57iN5Pb06pvBGvl5gQ0B48dJlslXvoTg==, registry: https://registry.yarnpkg.com/, tarball: https://registry.yarnpkg.com/argparse/-/argparse-1.0.10.tgz}
+    resolution: {integrity: sha512-o5Roy6tNG4SL/FOkCAN6RzjiakZS25RLYFrcMttJqbdd8BWrnA+fGz57iN5Pb06pvBGvl5gQ0B48dJlslXvoTg==}
     dependencies:
       sprintf-js: 1.0.3
 
@@ -3850,7 +3864,7 @@ packages:
     dev: true
 
   /changesets-github-release/0.1.0:
-    resolution: {integrity: sha512-ai++eLjlEjW4flLKExS8Li2a5qocO+N3YTR13aZCAwt4bgj6MYXgPfdoukLktaQXs3QUmaHz5dG2ISot/hZD5g==, registry: https://registry.yarnpkg.com/, tarball: https://registry.yarnpkg.com/changesets-github-release/-/changesets-github-release-0.1.0.tgz}
+    resolution: {integrity: sha512-ai++eLjlEjW4flLKExS8Li2a5qocO+N3YTR13aZCAwt4bgj6MYXgPfdoukLktaQXs3QUmaHz5dG2ISot/hZD5g==}
     hasBin: true
     dev: true
 
@@ -5665,7 +5679,7 @@ packages:
     dev: false
 
   /github-slugger/1.4.0:
-    resolution: {integrity: sha512-w0dzqw/nt51xMVmlaV1+JRzN+oCa1KfcgGEWhxUG16wbdA+Xnt/yoFO8Z8x/V82ZcZ0wy6ln9QDup5avbhiDhQ==, registry: https://registry.yarnpkg.com/, tarball: https://registry.yarnpkg.com/github-slugger/-/github-slugger-1.4.0.tgz}
+    resolution: {integrity: sha512-w0dzqw/nt51xMVmlaV1+JRzN+oCa1KfcgGEWhxUG16wbdA+Xnt/yoFO8Z8x/V82ZcZ0wy6ln9QDup5avbhiDhQ==}
     dev: false
 
   /glob-parent/5.1.2:
@@ -5737,7 +5751,7 @@ packages:
     dev: false
 
   /gray-matter/4.0.3:
-    resolution: {integrity: sha512-5v6yZd4JK3eMI3FqqCouswVqwugaA9r4dNZB1wwcmrD02QkV5H0y7XBQW8QwQqEaZY1pM9aqORSORhJRdNK44Q==, registry: https://registry.yarnpkg.com/, tarball: https://registry.yarnpkg.com/gray-matter/-/gray-matter-4.0.3.tgz}
+    resolution: {integrity: sha512-5v6yZd4JK3eMI3FqqCouswVqwugaA9r4dNZB1wwcmrD02QkV5H0y7XBQW8QwQqEaZY1pM9aqORSORhJRdNK44Q==}
     engines: {node: '>=6.0'}
     dependencies:
       js-yaml: 3.14.1
@@ -6373,7 +6387,7 @@ packages:
     resolution: {integrity: sha512-RdJUflcE3cUzKiMqQgsCu06FPu9UdIJO0beYbPhHN4k6apgJtifcoCtT9bcxOpYBtpD2kCM6Sbzg4CausW/PKQ==}
 
   /js-yaml/3.14.1:
-    resolution: {integrity: sha512-okMH7OXXJ7YrN9Ok3/SXrnu4iX9yOk+25nqX4imS2npuvTYDmo/QEZoqwZkYaIDk3jVvBOTOIEgEhaLOynBS9g==, registry: https://registry.yarnpkg.com/, tarball: https://registry.yarnpkg.com/js-yaml/-/js-yaml-3.14.1.tgz}
+    resolution: {integrity: sha512-okMH7OXXJ7YrN9Ok3/SXrnu4iX9yOk+25nqX4imS2npuvTYDmo/QEZoqwZkYaIDk3jVvBOTOIEgEhaLOynBS9g==}
     hasBin: true
     dependencies:
       argparse: 1.0.10
@@ -6602,7 +6616,7 @@ packages:
     resolution: {integrity: sha1-NhY1Hzu6YZlKCTGYlmC9AyVP0Ak=}
 
   /lodash/4.17.21:
-    resolution: {integrity: sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==, registry: https://registry.yarnpkg.com/, tarball: https://registry.yarnpkg.com/lodash/-/lodash-4.17.21.tgz}
+    resolution: {integrity: sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==}
 
   /log-symbols/4.1.0:
     resolution: {integrity: sha512-8XPvpAA8uyhfteu8pIvQxpJZ7SYYdpUivZpGy6sFsBuKRY/7rQGavedeB8aK+Zkyq6upMFVL/9AW6vOYzfRyLg==}
@@ -8773,7 +8787,7 @@ packages:
     engines: {node: '>=0.10.0'}
 
   /section-matter/1.0.0:
-    resolution: {integrity: sha512-vfD3pmTzGpufjScBh50YHKzEu2lxBWhVEHsNGoEXmCmn2hKGfeNLYMzCJpe8cD7gqX7TJluOVpBkAequ6dgMmA==, registry: https://registry.yarnpkg.com/, tarball: https://registry.yarnpkg.com/section-matter/-/section-matter-1.0.0.tgz}
+    resolution: {integrity: sha512-vfD3pmTzGpufjScBh50YHKzEu2lxBWhVEHsNGoEXmCmn2hKGfeNLYMzCJpe8cD7gqX7TJluOVpBkAequ6dgMmA==}
     engines: {node: '>=4'}
     dependencies:
       extend-shallow: 2.0.1
@@ -9075,7 +9089,7 @@ packages:
     dev: false
 
   /sprintf-js/1.0.3:
-    resolution: {integrity: sha1-BOaSb2YolTVPPdAVIDYzuFcpfiw=, registry: https://registry.yarnpkg.com/, tarball: https://registry.yarnpkg.com/sprintf-js/-/sprintf-js-1.0.3.tgz}
+    resolution: {integrity: sha1-BOaSb2YolTVPPdAVIDYzuFcpfiw=}
 
   /stack-generator/2.0.5:
     resolution: {integrity: sha512-/t1ebrbHkrLrDuNMdeAcsvynWgoH/i4o8EGGfX7dEYDoTXOYVAkEpFdtshlvabzc6JlJ8Kf9YdFEoz7JkzGN9Q==, registry: https://registry.yarnpkg.com/, tarball: https://registry.yarnpkg.com/stack-generator/-/stack-generator-2.0.5.tgz}
@@ -9174,7 +9188,7 @@ packages:
       ansi-regex: 5.0.1
 
   /strip-bom-string/1.0.0:
-    resolution: {integrity: sha1-5SEekiQ2n7uB1jOi8ABE3IztrZI=, registry: https://registry.yarnpkg.com/, tarball: https://registry.yarnpkg.com/strip-bom-string/-/strip-bom-string-1.0.0.tgz}
+    resolution: {integrity: sha1-5SEekiQ2n7uB1jOi8ABE3IztrZI=}
     engines: {node: '>=0.10.0'}
     dev: false
 
