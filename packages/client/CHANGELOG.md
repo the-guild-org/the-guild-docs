@@ -1,5 +1,20 @@
 # @guild-docs/client
 
+## 3.0.1
+
+### Patch Changes
+
+- ed86c4f: fix this weird thing that does not cause any runtime errors within the example app in this repo but breaks graphql-yoga.
+
+  **Original error**
+
+  ```
+  Unhandled Runtime Error
+  Error: Element type is invalid: expected a string (for built-in components) or a class/function (for composite components) but got: object.
+
+  Check the render method of `Pagination`.
+  ```
+
 ## 3.0.0
 
 ### Major Changes
