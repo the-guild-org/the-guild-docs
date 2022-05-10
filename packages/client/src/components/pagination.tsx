@@ -1,5 +1,8 @@
-import NextLink from 'next/link.js';
+import NextLinkImport from 'next/link.js';
 import React, { CSSProperties, ReactElement } from 'react';
+import { getDefault } from '../utils';
+
+const NextLink = getDefault(NextLinkImport);
 
 type PaginationProps = {
   previous?: { path: string; title: string };
