@@ -1,7 +1,10 @@
 import { useColorModeValue } from '@chakra-ui/react';
 import { useRouter } from 'next/router.js';
-import Script from 'next/script.js';
+import ScriptImport from 'next/script.js';
 import React, { FC, useEffect, useMemo, useState } from 'react';
+import { getDefault } from './utils';
+
+const Script = getDefault(ScriptImport);
 
 export interface GiscusProps {
   repo: string;
