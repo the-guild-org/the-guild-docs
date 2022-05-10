@@ -276,7 +276,7 @@ export const indexToAlgolia = async ({
 
   const lockFileExists = existsSync(lockfilePath);
   const lockfileContent = JSON.stringify(
-    sortBy(objects, JSON.parse(lockFileExists ? readFileSync(lockfilePath, 'utf-8') : '[]'), 'objectID'),
+    sortBy(JSON.parse(lockFileExists ? readFileSync(lockfilePath, 'utf-8') : '[]'), 'objectID'),
     (key, value) => (key === 'content' ? '-' : value),
     2
   );
