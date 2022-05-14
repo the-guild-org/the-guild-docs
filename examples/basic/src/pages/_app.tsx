@@ -47,8 +47,9 @@ const theme = extendTheme({
     accentColor,
   },
   fonts: {
-    heading: 'TGCFont, sans-serif',
-    body: 'TGCFont, sans-serif',
+    heading: 'Inter, sans-serif',
+    body: 'Inter, sans-serif',
+    code: 'Menlo, monospace',
   },
   config: {
     initialColorMode: 'light',

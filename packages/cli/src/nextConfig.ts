@@ -137,8 +137,8 @@ export async function writeApp() {
         },
       },
       fonts: {
-        heading: 'TGCFont, sans-serif',
-        body: 'TGCFont, sans-serif',
+        heading: 'Inter, sans-serif',
+        body: 'Inter, sans-serif',
       },
       config: {
         initialColorMode: 'light',
@@ -233,7 +233,7 @@ pre[class*='language-'] {
 
 code,
 code * {
-  font-family: 'SF Mono', 'Source Code Pro', Menlo, monospace !important;
+  font-family: Menlo, monospace !important;
 
   margin-top: 0.2em;
   margin-bottom: 0.2em;
@@ -245,7 +245,7 @@ article {
 }
 
 #__next {
-  font-family: TGCFont, sans-serif;
+  font-family: Inter, sans-serif;
 }
 
     `,
@@ -453,7 +453,10 @@ export async function writeDocument() {
             <Head />
             <head>
               <link rel="preconnect" href="https://fonts.gstatic.com" />
-              <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet" />
+              <link
+                href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+                rel="stylesheet"
+              />
             </head>
             <body>
               <ColorModeScript initialColorMode="light" />

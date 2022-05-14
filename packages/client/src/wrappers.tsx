@@ -95,7 +95,7 @@ export const CombinedThemeProvider: FC<CombinedThemeProps> = ({
             },
             includeFonts && {
               '#__next': {
-                fontFamily: 'TGCFont, sans-serif',
+                fontFamily: 'Inter, sans-serif',
               },
             },
           ]}
