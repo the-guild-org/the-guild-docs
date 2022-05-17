@@ -21,7 +21,7 @@ jobs:
       - name: Set up node
         uses: actions/setup-node@v3
         with:
-          node-version: '14.x'
+          node-version: 14.x
 
       - name: Cache pnpm modules
         uses: actions/cache@v3
@@ -34,7 +34,7 @@ jobs:
             ${{ runner.os }}-v2
 
       - name: Install pnpm
-        run: npm i pnpm@^7 -g
+        run: npm i pnpm@^6 -g
 
       - name: Install dependencies
         run: pnpm i

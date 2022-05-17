@@ -37,7 +37,7 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-v2
       - name: Install pnpm
-        run: npm i pnpm@^7 -g
+        run: npm i pnpm@^6 -g
 
       - name: Install Dependencies
         run: pnpm i
