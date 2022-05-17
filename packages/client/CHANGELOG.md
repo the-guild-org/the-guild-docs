@@ -1,5 +1,11 @@
 # @guild-docs/client
 
+## 3.1.0
+
+### Minor Changes
+
+- 7fd6c80: Change default text font to Inter and code to Menlo
+
 ## 3.0.2
 
 ### Patch Changes
