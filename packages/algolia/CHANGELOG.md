@@ -1,5 +1,11 @@
 # @guild-docs/algolia
 
+## 0.0.5
+
+### Patch Changes
+
+- 373c9b9: adding kitql
+
 ## 0.0.4
 
 ### Patch Changes

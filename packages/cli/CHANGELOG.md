@@ -1,5 +1,11 @@
 # guild-docs
 
+## 2.2.0
+
+### Minor Changes
+
+- 7fd6c80: Change default text font to Inter and code to Menlo
+
 ## 2.1.1
 
 ### Patch Changes
