@@ -1,5 +1,4 @@
 ---
-'basic': minor
 'guild-docs': minor
 '@guild-docs/client': minor
 ---
