@@ -17,7 +17,8 @@ export type AlgoliaRecordSource =
   | 'SOFA'
   | 'Stencil'
   | 'Angular'
-  | 'WhatsApp';
+  | 'WhatsApp'
+  | 'KitQL';
 
 export interface AlgoliaRecord {
   objectID: string;
