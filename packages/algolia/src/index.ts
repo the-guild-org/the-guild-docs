@@ -5,6 +5,7 @@ import isArray from 'lodash/isArray.js';
 import flatten from 'lodash/flatten.js';
 import compact from 'lodash/compact.js';
 import map from 'lodash/map.js';
+import identity from 'lodash/identity.js';
 import { readFile } from 'node:fs/promises';
 import { existsSync, writeFileSync, readFileSync } from 'node:fs';
 import GithubSlugger from 'github-slugger';
@@ -116,6 +117,7 @@ async function routesToAlgoliaRecords(
   routes: IRoutes,
   source: AlgoliaRecordSource,
   domain: string,
+  mdx = true,
   objectsPrefix = new GithubSlugger().slug(source),
   parentRoute?: { $name: string; path: string }
 ) {
@@ -126,7 +128,7 @@ async function routesToAlgoliaRecords(
       return;
     }
 
-    const fileContent = await readFile(`./${compact([parentRoute?.path, topPath, slug]).join('/')}.mdx`);
+    const fileContent = await readFile(`./${compact([parentRoute?.path, topPath, slug]).join('/')}.md${mdx ? 'x' : ''}`);
 
     const { data: meta, content } = matter(fileContent.toString());
 
@@ -189,6 +191,7 @@ async function routesToAlgoliaRecords(
                         },
                         source,
                         domain,
+                        mdx,
                         new GithubSlugger().slug(`${source}-${refName}`),
                         {
                           $name: topRoute.$name!,
@@ -250,27 +253,37 @@ export type { AlgoliaRecord, AlgoliaSearchItemTOC, AlgoliaRecordSource };
 
 interface IndexToAlgoliaOptions {
   routes?: IRoutes[];
+  docusaurus?: { sidebars: { docs: Record<string, string[]> } };
   // TODO: fix later
   plugins?: any[];
   source: AlgoliaRecordSource;
   domain: string;
   lockfilePath: string;
   dryMode?: boolean;
+  postProcessor?: (objects: AlgoliaRecord[]) => AlgoliaRecord[];
 }
 
 export const indexToAlgolia = async ({
-  routes: routesArr = [],
+  routes: routesArr,
+  docusaurus,
   plugins = [],
   source,
   domain,
+  postProcessor = identity,
   // TODO: add `force` flag
   dryMode = true,
   lockfilePath,
 }: IndexToAlgoliaOptions) => {
-  const objects = [
-    ...flatten(await Promise.all(routesArr.map(routes => routesToAlgoliaRecords(routes, source, normalizeDomain(domain))))),
+  const normalizedRoutes = docusaurus ? [docusaurusToRoutes(docusaurus)] : routesArr || [];
+
+  const objects = postProcessor([
+    ...flatten(
+      await Promise.all(
+        normalizedRoutes.map(routes => routesToAlgoliaRecords(routes, source, normalizeDomain(domain), !docusaurus))
+      )
+    ),
     ...(await pluginsToAlgoliaRecords(plugins, source, normalizeDomain(domain))),
-  ];
+  ]);
 
   const recordsAsString = JSON.stringify(sortBy(objects, 'objectID'), (key, value) => (key === 'content' ? '-' : value), 2);
 
@@ -311,4 +324,25 @@ export const indexToAlgolia = async ({
       writeFileSync(lockfilePath, recordsAsString);
     }
   }
+};
+
+export const docusaurusToRoutes = ({ sidebars }: { sidebars: { docs: Record<string, string[]> } }): IRoutes => {
+  const routes: IRoutes = { _: {} };
+
+  map(sidebars.docs, (children, title) => {
+    if (children.every(c => c.includes('/'))) {
+      const path = `docs/${children[0].split('/')[0]}`;
+      routes._![path] = {
+        $name: title,
+        $routes: [...children],
+      };
+    } else {
+      if (routes._!.docs) {
+        routes._!.docs.$routes?.push(...children);
+      } else {
+        routes._!.docs = { $routes: [...children] };
+      }
+    }
+  });
+  return routes;
 };
