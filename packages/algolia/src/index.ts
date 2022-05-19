@@ -252,7 +252,7 @@ export type { AlgoliaRecord, AlgoliaSearchItemTOC, AlgoliaRecordSource };
 
 interface IndexToAlgoliaOptions {
   routes?: IRoutes[];
-  docusaurusSidebar?: { docs: Record<string, string[]> };
+  docusaurus?: { routeBasePath?: string; sidebars: { docs: Record<string, string[]> } };
   // TODO: fix later
   plugins?: any[];
   source: AlgoliaRecordSource;
@@ -263,7 +263,7 @@ interface IndexToAlgoliaOptions {
 
 export const indexToAlgolia = async ({
   routes: routesArr,
-  docusaurusSidebar,
+  docusaurus,
   plugins = [],
   source,
   domain,
@@ -271,12 +271,12 @@ export const indexToAlgolia = async ({
   dryMode = true,
   lockfilePath,
 }: IndexToAlgoliaOptions) => {
-  const normalizedRoutes = docusaurusSidebar ? [docusaurusToRoutes(docusaurusSidebar)] : routesArr || [];
+  const normalizedRoutes = docusaurus ? [docusaurusToRoutes(docusaurus)] : routesArr || [];
 
   const objects = [
     ...flatten(
       await Promise.all(
-        normalizedRoutes.map(routes => routesToAlgoliaRecords(routes, source, normalizeDomain(domain), !docusaurusSidebar))
+        normalizedRoutes.map(routes => routesToAlgoliaRecords(routes, source, normalizeDomain(domain), !docusaurus))
       )
     ),
     ...(await pluginsToAlgoliaRecords(plugins, source, normalizeDomain(domain))),
@@ -323,12 +323,18 @@ export const indexToAlgolia = async ({
   }
 };
 
-export const docusaurusToRoutes = (sidebar: { docs: Record<string, string[]> }): IRoutes => {
+export const docusaurusToRoutes = ({
+  sidebars,
+  routeBasePath = 'docs/',
+}: {
+  routeBasePath?: string;
+  sidebars: { docs: Record<string, string[]> };
+}): IRoutes => {
   const routes: IRoutes = { _: {} };
 
-  map(sidebar.docs, (children, title) => {
+  map(sidebars.docs, (children, title) => {
     if (children.every(c => c.includes('/'))) {
-      const path = `docs/${children[0].split('/')[0]}`;
+      const path = `${routeBasePath}${children[0].split('/')[0]}`;
       routes._![path] = {
         $name: title,
         $routes: [...children],
