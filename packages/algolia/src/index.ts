@@ -15,6 +15,8 @@ import matter from 'gray-matter';
 
 import type { AlgoliaRecord, AlgoliaSearchItemTOC, AlgoliaRecordSource } from './types';
 
+const NO_ROOT = Symbol('IRoutes-noroot');
+
 const extractToC = (content: string) => {
   const slugger = new GithubSlugger();
 
@@ -144,7 +146,11 @@ async function routesToAlgoliaRecords(
       headings: toc.map(t => t.title),
       toc,
       content: contentForRecord(content),
-      url: `${domain}${compact([parentRoute?.path, topPath, slug]).join('/')}`,
+      url: `${domain}${compact([
+        parentRoute?.path,
+        (topPath as unknown as string | symbol) === NO_ROOT ? '' : topPath,
+        slug,
+      ]).join('/')}`,
       domain,
       hierarchy: compact([source, parentRoute?.$name, parentLevelName, resolvedTitle]),
       source,
@@ -325,25 +331,32 @@ export const indexToAlgolia = async ({
 
 export const docusaurusToRoutes = ({
   sidebars,
-  routeBasePath = 'docs/',
+  routeBasePath = 'docs',
 }: {
   routeBasePath?: string;
   sidebars: { docs: Record<string, string[]> };
 }): IRoutes => {
   const routes: IRoutes = { _: {} };
 
+  if (!!routeBasePath && routeBasePath.split('/').length > 2) {
+    console.error(`routeBasePath with depth > 1 is not supported`);
+    return routes;
+  }
+
+  const root = routeBasePath || NO_ROOT;
+
   map(sidebars.docs, (children, title) => {
     if (children.every(c => c.includes('/'))) {
-      const path = `${routeBasePath}${children[0].split('/')[0]}`;
+      const path = `${routeBasePath ? `${routeBasePath}/` : ''}${children[0].split('/')[0]}`;
       routes._![path] = {
         $name: title,
         $routes: [...children],
       };
     } else {
-      if (routes._!.docs) {
-        routes._!.docs.$routes?.push(...children);
+      if (routes._![root as unknown as string]) {
+        routes._![root as unknown as string].$routes?.push(...children);
       } else {
-        routes._!.docs = { $routes: [...children] };
+        routes._![root as unknown as string] = { $routes: [...children] };
       }
     }
   });
