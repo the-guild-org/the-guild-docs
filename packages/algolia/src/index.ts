@@ -116,6 +116,7 @@ async function routesToAlgoliaRecords(
   routes: IRoutes,
   source: AlgoliaRecordSource,
   domain: string,
+  mdx = true,
   objectsPrefix = new GithubSlugger().slug(source),
   parentRoute?: { $name: string; path: string }
 ) {
@@ -126,7 +127,7 @@ async function routesToAlgoliaRecords(
       return;
     }
 
-    const fileContent = await readFile(`./${compact([parentRoute?.path, topPath, slug]).join('/')}.mdx`);
+    const fileContent = await readFile(`./${compact([parentRoute?.path, topPath, slug]).join('/')}.md${mdx ? 'x' : ''}`);
 
     const { data: meta, content } = matter(fileContent.toString());
 
@@ -189,6 +190,7 @@ async function routesToAlgoliaRecords(
                         },
                         source,
                         domain,
+                        mdx,
                         new GithubSlugger().slug(`${source}-${refName}`),
                         {
                           $name: topRoute.$name!,
@@ -250,6 +252,7 @@ export type { AlgoliaRecord, AlgoliaSearchItemTOC, AlgoliaRecordSource };
 
 interface IndexToAlgoliaOptions {
   routes?: IRoutes[];
+  docusaurusSidebar?: { docs: Record<string, string[]> };
   // TODO: fix later
   plugins?: any[];
   source: AlgoliaRecordSource;
@@ -259,7 +262,8 @@ interface IndexToAlgoliaOptions {
 }
 
 export const indexToAlgolia = async ({
-  routes: routesArr = [],
+  routes: routesArr,
+  docusaurusSidebar,
   plugins = [],
   source,
   domain,
@@ -267,8 +271,14 @@ export const indexToAlgolia = async ({
   dryMode = true,
   lockfilePath,
 }: IndexToAlgoliaOptions) => {
+  const normalizedRoutes = docusaurusSidebar ? [docusaurusToRoutes(docusaurusSidebar)] : routesArr || [];
+
   const objects = [
-    ...flatten(await Promise.all(routesArr.map(routes => routesToAlgoliaRecords(routes, source, normalizeDomain(domain))))),
+    ...flatten(
+      await Promise.all(
+        normalizedRoutes.map(routes => routesToAlgoliaRecords(routes, source, normalizeDomain(domain), !docusaurusSidebar))
+      )
+    ),
     ...(await pluginsToAlgoliaRecords(plugins, source, normalizeDomain(domain))),
   ];
 
@@ -311,4 +321,25 @@ export const indexToAlgolia = async ({
       writeFileSync(lockfilePath, recordsAsString);
     }
   }
+};
+
+export const docusaurusToRoutes = (sidebar: { docs: Record<string, string[]> }): IRoutes => {
+  const routes: IRoutes = { _: {} };
+
+  map(sidebar.docs, (children, title) => {
+    if (children.every(c => c.includes('/'))) {
+      const path = `docs/${children[0].split('/')[0]}`;
+      routes._![path] = {
+        $name: title,
+        $routes: [...children],
+      };
+    } else {
+      if (routes._!.docs) {
+        routes._!.docs.$routes?.push(...children);
+      } else {
+        routes._!.docs = { $routes: [...children] };
+      }
+    }
+  });
+  return routes;
 };
