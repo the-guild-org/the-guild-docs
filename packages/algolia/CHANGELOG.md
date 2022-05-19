@@ -1,5 +1,11 @@
 # @guild-docs/algolia
 
+## 0.0.6
+
+### Patch Changes
+
+- 6091678: feat(algolia): Docusaurus routes support
+
 ## 0.0.5
 
 ### Patch Changes
