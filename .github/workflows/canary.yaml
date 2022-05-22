@@ -17,37 +17,33 @@ jobs:
           # This makes Actions fetch all Git history so that Changesets can generate changelogs with the correct commits
           fetch-depth: 0
 
-      - name: Setup Node.js 14.x
+      - name: Setup Node.js 16
         uses: actions/setup-node@v3
         with:
-          node-version: 14.x
+          node-version: 16
 
       - name: Setup NPM credentials
         run: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" >> ~/.npmrc
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
-      - name: Cache pnpm modules
+      - name: Cache Yarn
         uses: actions/cache@v3
-        env:
-          cache-name: cache-pnpm-modules
         with:
-          path: ~/.pnpm-store
-          key: ${{ runner.os }}-v2-${{ hashFiles('./pnpm-lock.yaml') }}
+          path: '**/node_modules'
+          key: ${{runner.os}}-16-${{hashFiles('yarn.lock')}}
           restore-keys: |
-            ${{ runner.os }}-v2
-      - name: Install pnpm
-        run: npm i pnpm@^6 -g
+            ${{runner.os}}-16-
 
       - name: Install Dependencies
-        run: pnpm i
+        run: yarn
 
       - name: Release Canary
         id: canary
         uses: 'kamilkisiela/release-canary@master'
         with:
           npm-token: ${{ secrets.NPM_TOKEN }}
-          npm-script: 'pnpm release:canary'
+          npm-script: 'yarn release:canary'
           changesets: true
 
       - name: Publish a message

@@ -56,7 +56,7 @@ ExtendComponents({
 
 And then use them in your files:
 
-```MD
+```md
 # Hello World
 
 <HelloWorld />
@@ -103,14 +103,12 @@ And the `GenerateRoutes` function is used to get all the "docs" folder, using a 
 
 ## Contributing
 
-This project is using [pnpm workspaces](https://pnpm.io/workspaces)
+This project is using [yarn workspaces](https://classic.yarnpkg.com/lang/en/docs/workspaces)
 
-Make sure to install pnpm: [https://pnpm.io/installation](https://pnpm.io/installation)
-
-And simply install the dependencies:
+To install the dependencies run:
 
 ```bash
-pnpm i
+yarn
 ```
 
 - The examples are in [examples/\*](/examples/)

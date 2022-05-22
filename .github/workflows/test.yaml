@@ -1,6 +1,7 @@
 name: Install & prepare
 
 on: [push, pull_request]
+
 jobs:
   InstallPrepare:
     name: Install & prepare
@@ -11,25 +12,21 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Setup Node.js 14.x
+      - name: Setup Node.js 16
         uses: actions/setup-node@v3
         with:
-          node-version: 14.x
+          node-version: 16
 
-      - name: Cache pnpm modules
+      - name: Cache Yarn
         uses: actions/cache@v3
-        env:
-          cache-name: cache-pnpm-modules
         with:
-          path: ~/.pnpm-store
-          key: ${{ runner.os }}-${{ hashFiles('./pnpm-lock.yaml') }}
+          path: '**/node_modules'
+          key: ${{runner.os}}-16-${{hashFiles('yarn.lock')}}
           restore-keys: |
-            ${{ runner.os }}-
-      - name: Install pnpm
-        run: npm i pnpm@^6 -g
+            ${{runner.os}}-16-
 
       - name: Install Dependencies & prepare
-        run: pnpm i
+        run: yarn
 
       - name: Build
         run: pnpm -r build
@@ -38,4 +35,4 @@ jobs:
         run: node scripts/test-esm.mjs
 
       - name: Lint
-        run: pnpm lint
+        run: yarn lint

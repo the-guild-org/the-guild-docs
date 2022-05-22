@@ -1,7 +1,7 @@
 import { useColorModeValue } from '@chakra-ui/react';
 import { useRouter } from 'next/router.js';
 import ScriptImport from 'next/script.js';
-import React, { FC, useEffect, useMemo, useState } from 'react';
+import React, { ReactElement, useEffect, useMemo, useState } from 'react';
 import { getDefault } from './utils';
 
 const Script = getDefault(ScriptImport);
@@ -15,7 +15,7 @@ export interface GiscusProps {
 
 let GiscusKeyInc = 0;
 
-const Giscus: FC<GiscusProps> = ({ category, categoryId, repo, repoId }) => {
+const Giscus = ({ category, categoryId, repo, repoId }: GiscusProps): ReactElement | null => {
   const { asPath } = useRouter();
   const [loaded, setLoaded] = useState(false);
 

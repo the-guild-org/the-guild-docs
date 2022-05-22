@@ -5,6 +5,7 @@
     "outDir": "dist",
     "paths": {
       "@guild-docs/*": ["packages/*/src/index.ts"],
+      "@guild-docs/mdx-remote": ["packages/mdx-remote/src/index.tsx"],
       "@guild-docs/mdx-remote/*": ["packages/mdx-remote/src/*.ts"]
     },
     "declaration": true,
