@@ -1,7 +1,7 @@
 import type { MDXRemoteSerializeResult } from '@guild-docs/types';
 import * as mdx from '@mdx-js/react';
 import React, { ComponentProps, ReactElement, useEffect, useMemo, useState } from 'react';
-import * as runtime from 'react/jsx-runtime.js';
+import * as runtime from 'react/jsx-runtime';
 
 // requestIdleCallback types found here: https://github.com/microsoft/TypeScript/issues/21309
 type RequestIdleCallbackHandle = number;

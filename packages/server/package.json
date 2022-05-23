@@ -42,15 +42,15 @@
     "esbuild": "0.14.38",
     "next": "12.1.6",
     "next-i18next": "11.0.0",
-    "react": "17.0.2",
-    "react-dom": "17.0.2",
+    "react": "18.1.0",
+    "react-dom": "18.1.0",
     "shiki": "0.10.1"
   },
   "peerDependencies": {
     "next": ">=12.1.6",
-    "next-i18next": "^11",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
+    "next-i18next": "^11.0.0",
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0",
     "shiki": "*"
   },
   "publishConfig": {

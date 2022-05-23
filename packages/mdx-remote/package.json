@@ -34,11 +34,11 @@
     "@mdx-js/react": "2.1.1",
     "@types/babel__code-frame": "7.0.3",
     "changesets-github-release": "0.1.0",
-    "react": "17.0.2"
+    "react": "18.1.0"
   },
   "peerDependencies": {
     "@mdx-js/react": "^2.1.1",
-    "react": "^17.0.2"
+    "react": "^18.1.0"
   },
   "publishConfig": {
     "directory": "dist"
