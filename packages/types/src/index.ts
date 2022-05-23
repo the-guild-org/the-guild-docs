@@ -88,6 +88,7 @@ export interface MdxPageProps {
   TOC: VoidFunctionComponent<Omit<MDXTOCProps, 'toc'>>;
   MetaHead: ReactNode;
   sourceFilePath: string;
+  children: ReactNode
 }
 
 export interface MdxInternalProps {

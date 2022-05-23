@@ -1,5 +1,5 @@
 import { useRouter } from 'next/router.js';
-import React, { FC, useMemo, useState } from 'react';
+import React, { useMemo, useState } from 'react';
 import { useSafeLayoutEffect } from '@chakra-ui/react';
 import { arePathnamesEqual, concatHrefs, iterateRoutes, withoutTrailingSlash } from './routes';
 import { cleanMarkdown } from './utils';
@@ -55,15 +55,6 @@ function iterateReduce(
     allHrefs,
   };
 }
-
-export const ClientSideOnly: FC = ({ children }) => {
-  const [show, setShow] = useState(false);
-  useSafeLayoutEffect(() => {
-    setShow(true);
-  }, []);
-  if (show) return <>{children}</>;
-  return null;
-};
 
 export function BottomNavigationComponent({ routes }: BottomNavigationProps) {
   const Router = useRouter() || {};

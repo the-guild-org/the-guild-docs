@@ -1,5 +1,4 @@
-import type { FC } from 'react';
-import React from 'react';
+import React, { ReactNode, ReactElement } from 'react';
 import StickyBox from 'react-sticky-box';
 import { chakra } from '@chakra-ui/react';
 
@@ -64,20 +63,11 @@ export const DocsTitle = chakra('h2', {
   },
 });
 
-const TOC = chakra('aside', {
-  baseStyle: {
-    width: {
-      base: '100%',
-      lg: '15rem',
-    },
-  },
-});
-
-export const DocsTOC: FC = props => {
+export const DocsTOC = ({ children }: { children: ReactNode }): ReactElement => {
   return (
-    <div>
+    <div style={{ width: 240 }}>
       <StickyBox offsetTop={100} offsetBottom={20}>
-        <TOC {...props} />
+        {children}
       </StickyBox>
     </div>
   );

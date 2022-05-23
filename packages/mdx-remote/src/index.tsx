@@ -34,7 +34,7 @@ export type MDXRemoteProps = MDXRemoteSerializeResult & {
    *
    * For example: `{ ComponentName: Component }` will be accessible in the MDX as `<ComponentName/>`.
    */
-  components?: MdxProviderComponent | Record<string, React.ComponentType<any> | React.ReactNode>;
+  components?: MdxProviderComponent | Record<string, React.ComponentType<any>>;
   /**
    * Determines whether or not the content should be hydrated asynchronously, or "lazily"
    */
@@ -87,7 +87,7 @@ export function MDXRemote({ compiledSource, scope, components = {}, lazy, frontm
   // wrapping the content with MDXProvider will allow us to customize the standard
   // markdown components (such as "h1" or "a") with the "components" object
   const content = (
-    <mdx.MDXProvider components={components as MdxProviderComponent}>
+    <mdx.MDXProvider components={components}>
       <Content />
     </mdx.MDXProvider>
   );

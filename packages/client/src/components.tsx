@@ -2,7 +2,7 @@
 import { useTranslation } from 'next-i18next';
 import ImageImport from 'next/image.js';
 import NextLinkImport from 'next/link.js';
-import React, { Children, ComponentType, ReactNode } from 'react';
+import React, { Children, ComponentType, ReactElement, ReactNode } from 'react';
 import { onlyText } from 'react-children-utilities';
 import { Mermaid } from 'mdx-mermaid/Mermaid';
 import {
@@ -43,19 +43,21 @@ export { PackageInstall, PackageRun };
 const Image = getDefault(ImageImport);
 const NextLink = getDefault(NextLinkImport);
 
-export function Translated({ children, name }: { children?: ReactNode; name?: string }): ReactNode {
+export function Translated({ children, name }: { children?: ReactNode; name?: string }): ReactElement {
   const { t } = useTranslation('common');
 
   if (typeof name === 'string') {
     return t(name);
   }
+
   if (typeof children === 'string') {
     return t(children);
   }
-  return children;
+
+  return <>children</>;
 }
 
-export const p = ({ children, ...delegated }: TextProps) => {
+export const p = ({ children, ...delegated }: TextProps): ReactElement => {
   return (
     <Text as="p" mt={4} lineHeight="tall" {...delegated}>
       {children}
@@ -63,7 +65,7 @@ export const p = ({ children, ...delegated }: TextProps) => {
   );
 };
 
-export const ul = ({ children, ...delegated }: ListProps) => {
+export const ul = ({ children, ...delegated }: ListProps): ReactElement => {
   return (
     <UnorderedList as="ul" pt={2} pl={4} ml={2} {...delegated}>
       {children}
@@ -71,7 +73,7 @@ export const ul = ({ children, ...delegated }: ListProps) => {
   );
 };
 
-export const ol = ({ children, ...delegated }: ListProps) => {
+export const ol = ({ children, ...delegated }: ListProps): ReactElement => {
   return (
     <OrderedList as="ol" pt={2} pl={4} ml={2} {...delegated}>
       {children}
@@ -79,7 +81,7 @@ export const ol = ({ children, ...delegated }: ListProps) => {
   );
 };
 
-export const li = ({ children, ...delegated }: ListItemProps) => {
+export const li = ({ children, ...delegated }: ListItemProps): ReactElement => {
   return (
     <ListItem as="li" pb={1} {...delegated}>
       {children}
@@ -87,7 +89,7 @@ export const li = ({ children, ...delegated }: ListItemProps) => {
   );
 };
 
-export const blockquote = (props: BoxProps) => {
+export const blockquote = (props: BoxProps): ReactElement => {
   const bgColor = useColorModeValue('blue.50', 'blue.900');
 
   return (
@@ -110,16 +112,11 @@ export const blockquote = (props: BoxProps) => {
   );
 };
 
-export const hr = () => {
+export const hr = (): ReactElement => {
   const borderColor = useColorModeValue('gray.200', 'gray.600');
 
   return <Divider borderColor={borderColor} my={4} w="full" />;
 };
-
-export interface HeadingMarkdownProps extends HeadingProps {
-  as: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
-  size: NonNullable<HeadingProps['size']>;
-}
 
 export const HeadingMarkdown = ({
   children,
@@ -132,7 +129,7 @@ export const HeadingMarkdown = ({
   as: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
   size: NonNullable<HeadingProps['size']>;
   directLinkProps?: LinkProps;
-}) => {
+}): ReactElement => {
   return (
     <Heading
       as={as}
@@ -177,31 +174,41 @@ export const HeadingMarkdown = ({
   );
 };
 
-export const h1 = (props: HeadingProps) => {
+export const h1 = (props: HeadingProps): ReactElement => {
   return <HeadingMarkdown {...props} as="h1" size="xl" />;
 };
 
-export const h2 = (props: HeadingProps) => {
+export const h2 = (props: HeadingProps): ReactElement => {
   return <HeadingMarkdown {...props} as="h2" size="lg" />;
 };
 
-export const h3 = (props: HeadingProps) => {
+export const h3 = (props: HeadingProps): ReactElement => {
   return <HeadingMarkdown {...props} as="h3" size="md" />;
 };
 
-export const h4 = (props: HeadingProps) => {
+export const h4 = (props: HeadingProps): ReactElement => {
   return <HeadingMarkdown {...props} as="h4" size="md" />;
 };
 
-export const h5 = (props: HeadingProps) => {
+export const h5 = (props: HeadingProps): ReactElement => {
   return <HeadingMarkdown {...props} as="h5" size="md" />;
 };
 
-export const h6 = (props: HeadingProps) => {
+export const h6 = (props: HeadingProps): ReactElement => {
   return <HeadingMarkdown {...props} as="h6" size="md" />;
 };
 
-export const Link = ({ href, as, replace, scroll, shallow, passHref, prefetch, locale, ...props }: LinkProps & NextLinkProps) => {
+export const Link = ({
+  href,
+  as,
+  replace,
+  scroll,
+  shallow,
+  passHref,
+  prefetch,
+  locale,
+  ...props
+}: LinkProps & NextLinkProps): ReactElement => {
   return (
     <NextLink
       href={href}
@@ -228,7 +235,7 @@ export const ButtonLink = ({
   prefetch,
   locale,
   ...props
-}: ButtonProps & NextLinkProps) => {
+}: ButtonProps & NextLinkProps): ReactElement => {
   return (
     <NextLink
       href={href}
@@ -245,22 +252,22 @@ export const ButtonLink = ({
   );
 };
 
-export const table = (props: BoxProps) => <Box as="table" textAlign="left" mt="32px" width="full" {...props} />;
+export const table = (props: BoxProps): ReactElement => <Box as="table" textAlign="left" mt="32px" width="full" {...props} />;
 
-export const th = (props: BoxProps) => {
+export const th = (props: BoxProps): ReactElement => {
   const bg = useColorModeValue('gray.50', 'whiteAlpha.100');
 
   return <Box as="th" bg={bg} fontWeight="semibold" p={2} fontSize="sm" {...props} />;
 };
 
-export const td = (props: BoxProps) => (
+export const td = (props: BoxProps): ReactElement => (
   <Box as="td" p={2} borderTopWidth="1px" borderColor="inherit" fontSize="sm" whiteSpace="normal" {...props} />
 );
 
 export const originalComponents = {
-  a(props: LinkProps) {
-    return <ChakraLink color="accentColor" sx={{ '&:hover': { textDecoration: 'none' } }} {...props} />;
-  },
+  a: (props: LinkProps): ReactElement => (
+    <ChakraLink color="accentColor" sx={{ '&:hover': { textDecoration: 'none' } }} {...props} />
+  ),
   Image,
   h1,
   h2,
@@ -283,22 +290,22 @@ export const originalComponents = {
   Button,
   Translated,
   Stack,
-  Graph: ({ children }: { children: ReactNode }) => {
+  Graph({ children }: { children: ReactNode }): ReactElement {
     const { colorMode } = useColorMode();
     if (Children.toArray(children).length > 1) {
       console.error('BEWARE: the mermaid content should not contain any empty line!');
     }
     return <Mermaid chart={onlyText(children)} config={{ theme: colorMode }} />;
   },
-  inlineCode: (props: CodeProps) => {
+  inlineCode(props: CodeProps): ReactElement {
     const colorScheme = useColorModeValue('blackAlpha', undefined);
 
     return <Code display="inline" margin="1px" colorScheme={colorScheme} fontWeight="semibold" fontSize="0.875em" {...props} />;
   },
-  Tooltip: (props: TooltipProps) => <Tooltip padding="1" textAlign="center" {...props} />,
+  Tooltip: (props: TooltipProps): ReactElement => <Tooltip padding="1" textAlign="center" {...props} />,
   PackageInstall,
   PackageRun,
-  pre: (props: CodeProps) => {
+  pre(props: CodeProps): ReactElement {
     const colorScheme = useColorModeValue('blackAlpha', undefined);
 
     return (

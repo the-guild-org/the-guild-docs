@@ -7,16 +7,16 @@ import matter from 'gray-matter';
 import type { GetStaticPathsContext, GetStaticPropsContext, GetStaticPropsResult } from 'next';
 import { appWithTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations.js';
-import { dirname, join, resolve } from 'path';
-import * as React from 'react';
+import { dirname, resolve } from 'path';
+import React, { Fragment } from 'react';
 import { getHighlighter } from 'shiki';
 import { IS_PRODUCTION } from './constants';
 import { getSlug } from './routes';
 import { SerializeTOC } from './toc';
 
-const Provideri18n = appWithTranslation(({ children }) => <React.Fragment children={children} />);
+const Provideri18n = appWithTranslation(() => <Fragment />);
 
-async function prepareMDXRenderWithTranslations(locale: string | undefined) {
+async function prepareMDXRenderWithTranslations(locale?: string) {
   const translations = await serverSideTranslations(locale || 'en', ['common']);
 
   return {
@@ -257,9 +257,6 @@ export async function buildMultipleMDX(
 export async function MDXProps(
   getSource: (data: {
     params: Record<string, string | string[] | undefined>;
-    readFile: typeof readFile;
-    join: typeof join;
-    resolve: typeof resolve;
     readMarkdownFile: (basePath: string, slugPath: string[], options?: ReadMarkdownFileOptions) => Promise<string>;
     getStringParam: (name: string) => string;
     getArrayParam: (name: string) => string[];
@@ -273,14 +270,11 @@ export async function MDXProps(
   let sourceFilePath = '';
   const source = await getSource({
     params,
-    readFile,
     async readMarkdownFile(...args) {
       const result = await readMarkdownFile(...args);
       sourceFilePath = result.path;
       return result.content;
     },
-    join,
-    resolve,
     getStringParam(name) {
       const param = params[name];
 
@@ -301,15 +295,13 @@ export async function MDXProps(
 
   const { frontMatter, mdx, toc } = await buildMDX(source);
 
-  const {
-    translations: { _nextI18Next },
-  } = await prepareMDXTranslations;
+  const { translations } = await prepareMDXTranslations;
 
   const result: GetStaticPropsResult<MdxInternalProps> = {
     props: {
       source: mdx,
       frontMatter,
-      _nextI18Next,
+      _nextI18Next: translations._nextI18Next,
       toc,
       sourceFilePath,
     },
