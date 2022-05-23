@@ -1,13 +1,15 @@
 import type { MDXRemoteSerializeResult } from '@guild-docs/types';
 import * as mdx from '@mdx-js/react';
-import { ComponentProps, createElement, ElementType, useEffect, useMemo, useState } from 'react';
+import React, { ComponentProps, ReactElement, useEffect, useMemo, useState } from 'react';
 import * as runtime from 'react/jsx-runtime.js';
 
 // requestIdleCallback types found here: https://github.com/microsoft/TypeScript/issues/21309
 type RequestIdleCallbackHandle = number;
+
 type RequestIdleCallbackOptions = {
   timeout?: number;
 };
+
 type RequestIdleCallbackDeadline = {
   readonly didTimeout: boolean;
   timeRemaining: () => number;
@@ -44,7 +46,7 @@ export type { MDXRemoteSerializeResult, SerializeOptions } from '@guild-docs/typ
 /**
  * Renders compiled source from next-mdx-remote/serialize.
  */
-export function MDXRemote({ compiledSource, scope, components = {}, lazy, frontmatter }: MDXRemoteProps) {
+export function MDXRemote({ compiledSource, scope, components = {}, lazy, frontmatter }: MDXRemoteProps): ReactElement {
   const [isReadyToRender, setIsReadyToRender] = useState(!lazy || typeof window === 'undefined');
 
   // if we're on the client side and `lazy` is set to true, we hydrate the
@@ -59,7 +61,7 @@ export function MDXRemote({ compiledSource, scope, components = {}, lazy, frontm
     }
   }, [lazy]);
 
-  const Content: ElementType = useMemo(() => {
+  const Content: () => ReactElement = useMemo(() => {
     // if we're ready to render, we can assemble the component tree and let React do its thing
     // first we set up the scope which has to include the mdx custom
     // create element function as well as any components we're using
@@ -79,25 +81,19 @@ export function MDXRemote({ compiledSource, scope, components = {}, lazy, frontm
 
   if (!isReadyToRender) {
     // If we're not ready to render, return an empty div to preserve SSR'd markup
-    return createElement('div', {
-      dangerouslySetInnerHTML: { __html: '' },
-      suppressHydrationWarning: true,
-    });
+    return <div />;
   }
 
   // wrapping the content with MDXProvider will allow us to customize the standard
   // markdown components (such as "h1" or "a") with the "components" object
-  const content = createElement(mdx.MDXProvider, {
-    components: components as MdxProviderComponent,
-    children: createElement(Content),
-  });
+  const content = (
+    <mdx.MDXProvider components={components as MdxProviderComponent}>
+      <Content />
+    </mdx.MDXProvider>
+  );
 
   // If lazy = true, we need to render a wrapping div to preserve the same markup structure that was SSR'd
-  return lazy
-    ? createElement('div', {
-        children: content,
-      })
-    : content;
+  return lazy ? <div>{content}</div> : content;
 }
 
 if (typeof window !== 'undefined') {

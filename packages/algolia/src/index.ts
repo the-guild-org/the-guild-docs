@@ -316,7 +316,7 @@ export const indexToAlgolia = async ({
           filters: `source: "${source}"`,
         })
         .then(() => index.saveObjects(objects))
-        .then(({ objectIDs }) => {
+        .then(({ objectIDs }: any) => {
           console.log(objectIDs);
         })
         .catch(console.error);

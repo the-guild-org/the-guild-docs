@@ -1,4 +1,4 @@
-name: 'Next.js Bundle Analysis'
+name: Next.js Bundle Analysis
 
 on:
   pull_request:
@@ -18,26 +18,21 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Set up node
+      - name: Setup Node.js 16
         uses: actions/setup-node@v3
         with:
-          node-version: 14.x
+          node-version: 16
 
-      - name: Cache pnpm modules
+      - name: Cache Yarn
         uses: actions/cache@v3
-        env:
-          cache-name: cache-pnpm-modules
         with:
-          path: ~/.pnpm-store
-          key: ${{ runner.os }}-v2-${{ hashFiles('./pnpm-lock.yaml') }}
+          path: '**/node_modules'
+          key: ${{runner.os}}-16-${{hashFiles('yarn.lock')}}
           restore-keys: |
-            ${{ runner.os }}-v2
+            ${{runner.os}}-16-
 
-      - name: Install pnpm
-        run: npm i pnpm@^6 -g
-
-      - name: Install dependencies
-        run: pnpm i
+      - name: Install Dependencies
+        run: yarn
 
       - name: Restore next build
         uses: actions/cache@v3
@@ -49,9 +44,9 @@ jobs:
           # change this if you prefer a more strict cache
           key: ${{ runner.os }}-build-${{ env.cache-name }}
 
-      - name: Build next.js app
+      - name: Build
         # change this if your site requires a custom build command
-        run: pnpm -C examples/basic build
+        run: yarn build
 
       # Here's the first place where next-bundle-analysis' own script is used
       # This step pulls the raw bundle stats for the current bundle

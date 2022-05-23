@@ -2,7 +2,7 @@ import { MDXRemote } from '@guild-docs/mdx-remote';
 import type { BottomNavigationProps, IRoutes, MdxInternalProps, MdxPageProps } from '@guild-docs/types';
 import { useTranslation } from 'next-i18next';
 import dynamicPkg from 'next/dynamic.js';
-import React, { FC, useCallback, useMemo } from 'react';
+import React, { FC, ReactElement, useCallback, useMemo } from 'react';
 import { BottomNavigationComponent } from './bottomNavigation';
 import { components } from './components';
 import type { GiscusProps } from './giscus';
@@ -19,7 +19,7 @@ export interface MDXPageOptions {
 }
 
 export function MDXPage(Component: FC<MdxPageProps>, { renderTitle, giscus }: MDXPageOptions = {}) {
-  return function MDXPage({ children, source, frontMatter, toc, mdxRoutes, sourceFilePath }: MdxInternalProps) {
+  return function MDXPage({ children, source, frontMatter, toc, mdxRoutes, sourceFilePath }: MdxInternalProps): ReactElement {
     const title: string | undefined = frontMatter.title;
     const description: string | undefined = frontMatter.description;
 
@@ -62,15 +62,16 @@ export function MDXPage(Component: FC<MdxPageProps>, { renderTitle, giscus }: MD
       [mdxRoutes]
     );
 
-    const content = useMemo(() => {
-      return (
+    const content = useMemo(
+      () => (
         <>
           <MDXRemote {...source} components={components} />
           <BottomNavigation />
           {giscus && <GiscusDynamic {...giscus} />}
         </>
-      );
-    }, [source, BottomNavigation]);
+      ),
+      [source, BottomNavigation]
+    );
 
     return (
       <Component
