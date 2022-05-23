@@ -18,7 +18,7 @@
     "postpublish": "gh-release"
   },
   "dependencies": {
-    "algoliasearch": "^4.13.0",
+    "algoliasearch": "^4.13.1",
     "github-slugger": "^1.4.0",
     "gray-matter": "^4.0.3",
     "lodash": "^4.17.21",

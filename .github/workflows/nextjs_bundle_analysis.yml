@@ -31,7 +31,7 @@ jobs:
           restore-keys: |
             ${{runner.os}}-16-
 
-      - name: Install dependencies
+      - name: Install Dependencies
         run: yarn
 
       - name: Restore next build
@@ -44,9 +44,9 @@ jobs:
           # change this if you prefer a more strict cache
           key: ${{ runner.os }}-build-${{ env.cache-name }}
 
-      - name: Build next.js app
+      - name: Build
         # change this if your site requires a custom build command
-        run: yarn workspace basic build
+        run: yarn build
 
       # Here's the first place where next-bundle-analysis' own script is used
       # This step pulls the raw bundle stats for the current bundle

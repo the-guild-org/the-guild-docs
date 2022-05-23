@@ -28,6 +28,9 @@ jobs:
       - name: Install Dependencies
         run: yarn
 
+      - name: Build
+        run: yarn build
+
       - name: Test ESM
         run: node scripts/test-esm.mjs
 

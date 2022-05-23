@@ -12,7 +12,7 @@
   "author": "PabloSzx <pablosaez1995@gmail.com>",
   "scripts": {
     "release": "changeset publish",
-    "clean": "rimraf \"{,!(node_modules)/**/}node_modules/\"",
+    "clean": "rimraf \"{,!(node_modules)/*/}node_modules/\"",
     "dev": "concurrently -r yarn:dev:*",
     "dev:cli": "yarn workspace guild-docs dev",
     "dev:client": "yarn workspace @guild-docs/client dev",
@@ -21,10 +21,10 @@
     "dev:server": "yarn workspace @guild-docs/server dev",
     "dev:types": "yarn workspace @guild-docs/types dev",
     "lint": "eslint --ignore-path .gitignore .",
-    "prepare": "rimraf \"{,!(node_modules)/**/}dist/\" && concurrently -r \"bob-esbuild tsc && yarn workspaces run build\"",
+    "build": "rimraf \"{,!(node_modules)/*/}dist/\" && concurrently -r \"bob-esbuild tsc && yarn workspaces run build\"",
     "postinstall": "husky install",
     "prettier": "prettier --write --list-different \"**/*.{ts,tsx,json}\"",
-    "release:canary": "(node scripts/canary-release.js && yarn prepare && changeset publish --tag alpha) || echo Skipping Canary..."
+    "release:canary": "(node scripts/canary-release.js && yarn build && changeset publish --tag alpha) || echo Skipping Canary..."
   },
   "workspaces": {
     "packages": [
