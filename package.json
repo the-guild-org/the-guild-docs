@@ -21,7 +21,7 @@
     "dev:server": "yarn workspace @guild-docs/server dev",
     "dev:types": "yarn workspace @guild-docs/types dev",
     "lint": "eslint --ignore-path .gitignore .",
-    "prepare": "rimraf \"{,!(node_modules)/**/}dist/\" && concurrently -r \"bob-esbuild tsc && yarn workspaces run prepack\"",
+    "prepare": "rimraf \"{,!(node_modules)/**/}dist/\" && concurrently -r \"bob-esbuild tsc && yarn workspaces run build\"",
     "postinstall": "husky install",
     "prettier": "prettier --write --list-different \"**/*.{ts,tsx,json}\"",
     "release:canary": "(node scripts/canary-release.js && yarn prepare && changeset publish --tag alpha) || echo Skipping Canary..."

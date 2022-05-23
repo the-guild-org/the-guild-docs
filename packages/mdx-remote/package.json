@@ -16,7 +16,7 @@
   "types": "dist/index.d.ts",
   "scripts": {
     "dev": "bob-esbuild watch",
-    "prepack": "bob-esbuild build",
+    "build": "bob-esbuild build",
     "postpublish": "gh-release"
   },
   "dependencies": {
