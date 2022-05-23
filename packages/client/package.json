@@ -26,11 +26,11 @@
   "dependencies": {
     "@guild-docs/mdx-remote": "^2.0.2",
     "@guild-docs/types": "^3.0.0",
-    "immer": "9.0.12",
+    "immer": "9.0.14",
     "mdx-mermaid": "1.2.2",
     "mermaid": ">= 8.11.0 < 8.12.0",
     "nprogress": "0.2.0",
-    "react-children-utilities": "2.7.1",
+    "react-children-utilities": "2.8.0",
     "react-intersection-observer": "8.34.0",
     "react-sticky-box": "1.0.2",
     "remove-markdown": "0.5.0",
@@ -45,14 +45,14 @@
     "@chakra-ui/utils": "1.10.4",
     "@emotion/react": "11.9.0",
     "@mdx-js/react": "2.1.1",
-    "@theguild/components": "1.11.2",
+    "@theguild/components": "1.11.8",
     "@types/mdx-js__react": "1.5.5",
     "@types/nprogress": "0.2.0",
     "@types/react": "17.0.45",
     "@types/react-dom": "17.0.17",
     "@types/remove-markdown": "0.3.1",
     "changesets-github-release": "0.1.0",
-    "esbuild": "0.14.38",
+    "esbuild": "0.14.39",
     "framer-motion": "6.3.3",
     "next": "12.1.6",
     "next-i18next": "11.0.0",
@@ -60,7 +60,7 @@
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-icons": "4.3.1",
-    "react-use": "17.3.2"
+    "react-use": "17.4.0"
   },
   "peerDependencies": {
     "@chakra-ui/icons": "*",
@@ -68,7 +68,7 @@
     "@chakra-ui/utils": "*",
     "@emotion/react": "*",
     "@mdx-js/react": "^2.1.1",
-    "@theguild/components": "^1.11.2",
+    "@theguild/components": "^1.11.8",
     "framer-motion": "*",
     "next": ">=12.1.6",
     "next-i18next": "^11",
@@ -76,7 +76,7 @@
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-icons": "^4.3.1",
-    "react-use": "^17.3.2"
+    "react-use": "^17.4.0"
   },
   "peerDependenciesMeta": {
     "react": {
