@@ -2749,10 +2749,10 @@ bob-tsm@0.4.8:
   optionalDependencies:
     fsevents "~2.3.2"
 
-bob-watch@0.1.1:
-  version "0.1.1"
-  resolved "https://registry.yarnpkg.com/bob-watch/-/bob-watch-0.1.1.tgz#96b323b7a39a9d576bf8ce126a0695d22f8afbee"
-  integrity sha512-FnmJjv8pkZwrC+SeLXvhX+RIdU5ekCm59WZDSUKwumSWWP44jNMaiBTTCeekhrb62fwo4URjjKXPkbIc7EBbPA==
+bob-watch@0.1.2:
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/bob-watch/-/bob-watch-0.1.2.tgz#bf7a5fb4743710072c5b0af3de91da71221b522f"
+  integrity sha512-K9+Eh8PHzQCk04ayByk79/xuZ1cYsgQgI9k/gZ7mzaO4q+AItQJMBuxHX4Kmaf7QQ9u5TXdogNUTdIgpz1XAiw==
   optionalDependencies:
     fsevents "~2.3.2"
 
