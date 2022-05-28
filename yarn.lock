@@ -2198,10 +2198,10 @@
   resolved "https://registry.yarnpkg.com/@types/parse-json/-/parse-json-4.0.0.tgz#2f8bb441434d163b35fb8ffdccd7138927ffb8c0"
   integrity sha512-//oorEZjL6sbPcKUaCdIGlIUeH26mgzimjBB77G6XRgnDl/L5wOnpyBGRe/Mmf5CVW3PwEBE1NjiMZ/ssFh4wA==
 
-"@types/prettier@2.6.1":
-  version "2.6.1"
-  resolved "https://registry.yarnpkg.com/@types/prettier/-/prettier-2.6.1.tgz#76e72d8a775eef7ce649c63c8acae1a0824bbaed"
-  integrity sha512-XFjFHmaLVifrAKaZ+EKghFHtHSUonyw8P2Qmy2/+osBnrKbH9UYtlK10zg8/kCt47MFilll/DEDKy3DHfJ0URw==
+"@types/prettier@2.6.3":
+  version "2.6.3"
+  resolved "https://registry.yarnpkg.com/@types/prettier/-/prettier-2.6.3.tgz#68ada76827b0010d0db071f739314fa429943d0a"
+  integrity sha512-ymZk3LEC/fsut+/Q5qejp6R9O1rMxz3XaRHDV6kX8MrGAhOSPqVARbDi+EZvInBpw+BnCX3TD240byVkOfQsHg==
 
 "@types/prop-types@*":
   version "15.7.5"
@@ -3145,10 +3145,10 @@ commander@2:
   resolved "https://registry.yarnpkg.com/commander/-/commander-2.20.3.tgz#fd485e84c03eb4881c20722ba48035e8531aeb33"
   integrity sha512-GpVkmM8vF2vQUkj2LvZmD35JxeJOLCwJ9cUkugyk2nuhbv3+mJvpLYYt+0+USMxE+oj+ey/lJEnhZw75x/OMcQ==
 
-commander@9.2.0, commander@^9.0.0:
-  version "9.2.0"
-  resolved "https://registry.yarnpkg.com/commander/-/commander-9.2.0.tgz#6e21014b2ed90d8b7c9647230d8b7a94a4a419a9"
-  integrity sha512-e2i4wANQiSXgnrBlIatyHtP1odfUp0BbV5Y5nEGbxtIrStkEOAAzCUirvLBNXHLr7kwLvJl6V+4V3XV9x7Wd9w==
+commander@9.3.0, commander@^9.0.0:
+  version "9.3.0"
+  resolved "https://registry.yarnpkg.com/commander/-/commander-9.3.0.tgz#f619114a5a2d2054e0d9ff1b31d5ccf89255e26b"
+  integrity sha512-hv95iU5uXPbK83mjrJKuZyFM/LBAoCV/XhVGkS5Je6tl7sxr6A0ITMw5WoRV46/UaJ46Nllm3Xt7IaJhXTIkzw==
 
 commander@^5.0.0:
   version "5.1.0"
