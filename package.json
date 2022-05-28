@@ -48,7 +48,7 @@
     "bob-tsm": "0.4.8",
     "chalk": "5.0.1",
     "concurrently": "7.2.1",
-    "esbuild": "0.14.40",
+    "esbuild": "0.14.41",
     "eslint": "8.16.0",
     "eslint-config-prettier": "8.5.0",
     "eslint-plugin-import": "2.26.0",
