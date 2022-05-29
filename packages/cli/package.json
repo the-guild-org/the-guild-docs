@@ -28,7 +28,7 @@
     "bob-watch": "0.1.2",
     "changesets-github-release": "0.1.0",
     "commander": "9.3.0",
-    "esbuild": "0.14.41",
+    "esbuild": "0.14.42",
     "lodash": "4.17.21",
     "mkdirp": "1.0.4",
     "npm-api": "1.0.1",
