@@ -23,7 +23,7 @@
   "devDependencies": {
     "@types/lodash": "4.14.182",
     "@types/mkdirp": "1.0.2",
-    "@types/node": "16.11.36",
+    "@types/node": "16.11.38",
     "@types/prettier": "2.6.3",
     "bob-watch": "0.1.2",
     "changesets-github-release": "0.1.0",
