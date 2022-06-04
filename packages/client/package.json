@@ -53,7 +53,7 @@
     "@types/remove-markdown": "0.3.1",
     "changesets-github-release": "0.1.0",
     "esbuild": "0.14.42",
-    "framer-motion": "6.3.6",
+    "framer-motion": "6.3.10",
     "next": "12.1.6",
     "next-i18next": "11.0.0",
     "next-seo": "5.4.0",

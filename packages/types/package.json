@@ -28,7 +28,7 @@
     "@types/node": "16.11.38",
     "@types/react": "17.0.45",
     "changesets-github-release": "0.1.0",
-    "framer-motion": "6.3.6",
+    "framer-motion": "6.3.10",
     "next-i18next": "11.0.0"
   },
   "peerDependencies": {
