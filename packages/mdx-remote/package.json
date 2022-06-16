@@ -27,7 +27,7 @@
     "remark-gfm": "3.0.1",
     "unified": "10.1.2",
     "unist-util-remove": "3.1.0",
-    "vfile": "5.3.2",
+    "vfile": "5.3.4",
     "vfile-matter": "3.0.1"
   },
   "devDependencies": {
