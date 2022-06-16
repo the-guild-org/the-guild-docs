@@ -23,15 +23,15 @@
   "devDependencies": {
     "@types/lodash": "4.14.182",
     "@types/mkdirp": "1.0.2",
-    "@types/node": "16.11.39",
+    "@types/node": "16.11.41",
     "@types/prettier": "2.6.3",
     "bob-watch": "0.1.2",
     "changesets-github-release": "0.1.0",
     "commander": "9.3.0",
-    "esbuild": "0.14.42",
+    "esbuild": "0.14.44",
     "lodash": "4.17.21",
     "mkdirp": "1.0.4",
     "npm-api": "1.0.1",
-    "prettier": "2.6.2"
+    "prettier": "2.7.1"
   }
 }

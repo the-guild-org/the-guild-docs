@@ -26,7 +26,7 @@
   },
   "devDependencies": {
     "@guild-docs/server": "^4.0.0",
-    "@types/node": "16.11.39",
+    "@types/node": "16.11.41",
     "bob-esbuild-cli": "3.0.2",
     "changesets-github-release": "0.1.0"
   }
