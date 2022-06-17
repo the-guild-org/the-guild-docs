@@ -26,14 +26,14 @@
     "@emotion/react": "11.9.3",
     "@emotion/styled": "11.9.3",
     "@types/node": "16.11.41",
-    "@types/react": "17.0.46",
+    "@types/react": "17.0.47",
     "changesets-github-release": "0.1.0",
     "framer-motion": "6.3.11",
     "next-i18next": "11.0.0"
   },
   "peerDependencies": {
     "@chakra-ui/react": "*",
-    "@types/react": "^17.0.46",
+    "@types/react": "^17.0.47",
     "next-i18next": "^11.0.0"
   }
 }
