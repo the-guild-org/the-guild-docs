@@ -1,7 +1,7 @@
 import { HeroGradient, InfoList } from '@theguild/components';
 import { NPMBadge, handlePushRoute } from '@guild-docs/client';
 
-export default function Index() {
+export default function IndexPage() {
   return (
     <>
       <HeroGradient

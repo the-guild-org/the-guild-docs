@@ -1,4 +1,8 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
+import { createRequire } from 'node:module';
+
+const require = createRequire(import.meta.url);
+
 require('bob-tsm');
 
 const { i18n } = require('./next-i18next.config.js');
@@ -11,9 +15,9 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: process.env.ANALYZE === 'true',
 });
 
-module.exports = withBundleAnalyzer(
+export default withBundleAnalyzer(
   withGuildDocs({
     i18n,
     getRoutes,
-  })
+  }),
 );

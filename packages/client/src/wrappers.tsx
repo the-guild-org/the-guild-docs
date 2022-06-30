@@ -20,7 +20,7 @@ import {
 import type { Dict } from '@chakra-ui/utils';
 import { Global } from '@emotion/react';
 import type { IRoutes, MdxInternalProps } from '@guild-docs/types';
-import { GlobalStyles, ThemeProvider as TGCThemeProvider } from '@theguild/components';
+import { ThemeProvider as TGCThemeProvider } from '@theguild/components';
 import { DefaultSeo } from 'next-seo';
 import type { DefaultSeoProps, OpenGraphMedia } from 'next-seo/lib/types';
 import type { AppProps } from 'next/app';
@@ -37,10 +37,6 @@ export interface CombinedThemeProps {
   theme: Dict;
   accentColor: string;
   defaultSeo: AppSeoProps;
-  /**
-   * @default { includeFonts: true, includeBase: true }
-   */
-  globalStyleProps?: ComponentProps<typeof GlobalStyles>;
 }
 
 export interface AppSeoProps extends DefaultSeoProps {
@@ -54,16 +50,15 @@ export const CombinedThemeProvider: FC<CombinedThemeProps> = ({
   theme,
   accentColor,
   defaultSeo,
-  globalStyleProps = {},
 }) => {
   const DefaultSEO = useMemo(() => {
-    if (!defaultSeo) throw Error('No `defaultSeo` specified in CombinedThemeProvider');
-    if (!defaultSeo.title) throw Error(`No defaultSeo.title specified!`);
-    if (!defaultSeo.description) throw Error(`No defaultSeo.description specified!`);
+    if (!defaultSeo) throw new Error('No `defaultSeo` specified in CombinedThemeProvider');
+    if (!defaultSeo.title) throw new Error(`No defaultSeo.title specified!`);
+    if (!defaultSeo.description) throw new Error(`No defaultSeo.description specified!`);
 
     const { logo, ...rest } = defaultSeo;
 
-    if (!logo?.url?.startsWith('https://')) throw Error(`No defaultSeo.logo.url specified with absolute https url!`);
+    if (!logo?.url?.startsWith('https://')) throw new Error(`No defaultSeo.logo.url specified with absolute https url!`);
 
     rest.openGraph ||= {};
     rest.openGraph.type ||= 'website';
@@ -71,8 +66,6 @@ export const CombinedThemeProvider: FC<CombinedThemeProps> = ({
 
     return <DefaultSeo {...rest} />;
   }, [defaultSeo]);
-
-  const includeFonts = globalStyleProps.includeFonts ?? true;
 
   return (
     <>
@@ -93,16 +86,10 @@ export const CombinedThemeProvider: FC<CombinedThemeProps> = ({
                 },
               },
             },
-            includeFonts && {
-              '#__next': {
-                fontFamily: 'Inter, sans-serif',
-              },
-            },
           ]}
         />
         <TGCThemeProviderComponent>
           {children}
-          <GlobalStyles includeBase {...globalStyleProps} includeFonts={includeFonts} />
         </TGCThemeProviderComponent>
         <NextNProgress color={accentColor} />
       </ChakraProvider>

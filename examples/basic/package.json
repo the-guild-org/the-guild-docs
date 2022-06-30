@@ -20,10 +20,10 @@
     "@chakra-ui/utils": "1.10.4",
     "@emotion/react": "11.9.3",
     "@emotion/styled": "11.9.3",
-    "@guild-docs/client": "^3.1.0",
-    "@guild-docs/server": "^4.0.0",
+    "@guild-docs/client": "3.1.0",
+    "@guild-docs/server": "4.0.0",
     "@mdx-js/react": "2.1.1",
-    "@theguild/components": "1.11.8",
+    "@theguild/components": "2.0.0-alpha-2152a23.0",
     "framer-motion": "6.3.11",
     "next": "12.1.6",
     "next-i18next": "11.0.0",
@@ -35,18 +35,17 @@
     "shiki": "0.10.1"
   },
   "devDependencies": {
-    "@next/bundle-analyzer": "^12.1.6",
+    "@next/bundle-analyzer": "12.1.6",
     "@types/node": "16.11.41",
     "@types/react": "17.0.47",
-    "@types/react-dom": "17.0.17",
     "bob-tsm": "0.4.8",
     "concurrently": "7.2.2",
     "cross-env": "7.0.3",
     "esbuild": "0.14.45",
-    "next-remote-watch": "^1.0.0",
-    "open-cli": "^7.0.1",
+    "next-remote-watch": "1.0.0",
+    "open-cli": "7.0.1",
     "typescript": "4.7.3",
-    "wait-on": "^6.0.1"
+    "wait-on": "6.0.1"
   },
   "nextBundleAnalysis": {
     "budget": null,

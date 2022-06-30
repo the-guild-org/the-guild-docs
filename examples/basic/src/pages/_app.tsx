@@ -1,13 +1,16 @@
-import '../../public/style.css';
-
+import { ReactElement } from 'react';
+import { AppProps } from 'next/app';
 import { appWithTranslation } from 'next-i18next';
-
 import { extendTheme, theme as chakraTheme } from '@chakra-ui/react';
 import { mode } from '@chakra-ui/theme-tools';
 import { ExtendComponents, handlePushRoute, CombinedThemeProvider, DocsPage, AppSeoProps } from '@guild-docs/client';
 import { Header, Subheader, Footer } from '@theguild/components';
 
-import type { AppProps } from 'next/app';
+import '@algolia/autocomplete-theme-classic';
+import '@theguild/components/dist/static/css/SearchBarV2.css';
+import '@theguild/components/dist/index.css';
+import '@theguild/components/dist/fonts.css';
+import '../../public/style.css';
 
 ExtendComponents({
   HelloWorld() {
@@ -27,7 +30,7 @@ const styles: typeof chakraTheme['styles'] = {
   },
 };
 
-const accentColor = '#1CC8EE';
+const accentColor = '#1cc8ee';
 
 const theme = extendTheme({
   colors: {
@@ -61,7 +64,7 @@ const theme = extendTheme({
 const serializedMdx = process.env.SERIALIZED_MDX_ROUTES;
 const mdxRoutes = { data: serializedMdx && JSON.parse(serializedMdx) };
 
-function AppContent(appProps: AppProps) {
+function AppContent(appProps: AppProps): ReactElement {
   const { Component, pageProps, router } = appProps;
   const isDocs = router.asPath.startsWith('/docs');
 
@@ -99,7 +102,7 @@ function AppContent(appProps: AppProps) {
           href: '/',
           onClick: e => handlePushRoute('/docs', e),
           target: '_blank',
-          rel: 'noopener noreferrer',
+          rel: 'noreferrer',
         }}
       />
       {isDocs ? (
@@ -135,7 +138,7 @@ const defaultSeo: AppSeoProps = {
   },
 };
 
-export default function App(appProps: AppProps) {
+export default function App(appProps: AppProps): ReactElement {
   return (
     <CombinedThemeProvider theme={theme} accentColor={accentColor} defaultSeo={defaultSeo}>
       <AppContentWrapper {...appProps} />
