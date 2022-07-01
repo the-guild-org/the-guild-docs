@@ -252,11 +252,10 @@ async function pluginsToAlgoliaRecords(
 
 interface IndexToAlgoliaNextraOptions {
   docsBaseDir: string;
-  metaFilePath?: string;
 }
 
 async function nextraToAlgoliaRecords(
-  { docsBaseDir, metaFilePath }: IndexToAlgoliaNextraOptions,
+  { docsBaseDir }: IndexToAlgoliaNextraOptions,
   source: AlgoliaRecordSource,
   domain: string,
   objectsPrefix = new GithubSlugger().slug(source)
@@ -265,26 +264,41 @@ async function nextraToAlgoliaRecords(
     const objects: AlgoliaRecord[] = [];
     const slugger = new GithubSlugger();
 
-    const blogMeta = metaFilePath ? JSON.parse(readFileSync(metaFilePath).toString() || '{}') : {};
+    // TODO: handle nested folders names
+
+    // root `meta.json` file (folders name)
+    const blogMeta = JSON.parse(
+      readFileSync(`${docsBaseDir}${docsBaseDir.endsWith('/') ? '' : '/'}meta.json`).toString() || '{}'
+    );
+    // cache for nested `meta.json` files
+    const filesMeta: { [k: string]: any } = {};
+
+    const getFileTitle = (fileDir: string, filename: string) => {
+      if (!filesMeta[fileDir]) {
+        filesMeta[fileDir] = JSON.parse(
+          readFileSync(`${fileDir}${fileDir.endsWith('/') ? '' : '/'}meta.json`).toString() || '{}'
+        );
+      }
+      return filesMeta[fileDir][filename];
+    };
 
     glob(`${docsBaseDir}${docsBaseDir.endsWith('/') ? '' : '/'}**/*.mdx`, (err, files) => {
       if (err) {
         reject(err);
       } else {
         files.forEach(file => {
-          const hierarchy = compact(
-            file
-              .replace(docsBaseDir, '') // remove base dir
-              .split('/')
-              .slice(0, -1) // remove filename
-              .map(folder => blogMeta[folder])
-          );
-          const filename = file.split('/').pop();
+          const fileDir = file
+            .replace(docsBaseDir, '') // remove base dir
+            .split('/')
+            .slice(0, -1); // remove filename
+          const hierarchy = fileDir.map(folder => blogMeta[folder] || folder);
+          // eslint-disable-next-line @typescript-eslint/no-non-null-asserted-optional-chain
+          const filename = file.split('/').pop()?.split('.')[0]!;
           const fileContent = readFileSync(file);
           const { data: meta, content } = matter(fileContent.toString());
           const toc = extractToC(content);
 
-          const resolvedTitle = meta.title || meta.sidebar_label;
+          const title = getFileTitle(fileDir.join(''), filename);
 
           objects.push({
             objectID: slugger.slug(`${objectsPrefix}-${[...hierarchy, filename].join('-')}`),
@@ -295,14 +309,13 @@ async function nextraToAlgoliaRecords(
             domain,
             hierarchy,
             source,
-            title: resolvedTitle,
+            title,
             type: meta.type || 'Documentation',
           });
         });
+        resolve(objects);
       }
     });
-
-    return objects;
   });
 }
 
