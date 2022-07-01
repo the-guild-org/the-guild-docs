@@ -7,7 +7,7 @@ import compact from 'lodash/compact.js';
 import map from 'lodash/map.js';
 import identity from 'lodash/identity.js';
 import { readFile } from 'node:fs/promises';
-import { existsSync, writeFileSync, readFileSync } from 'node:fs';
+import { existsSync, writeFileSync, readFileSync, statSync } from 'node:fs';
 import GithubSlugger from 'github-slugger';
 import removeMarkdown from 'remove-markdown';
 import algoliasearch from 'algoliasearch';
@@ -264,22 +264,49 @@ async function nextraToAlgoliaRecords(
     const objects: AlgoliaRecord[] = [];
     const slugger = new GithubSlugger();
 
-    // TODO: handle nested folders names
+    // cache for all needed `meta.json` files
+    const metadataCache: { [k: string]: any } = {};
 
-    // root `meta.json` file (folders name)
-    const blogMeta = JSON.parse(
-      readFileSync(`${docsBaseDir}${docsBaseDir.endsWith('/') ? '' : '/'}meta.json`).toString() || '{}'
-    );
-    // cache for nested `meta.json` files
-    const filesMeta: { [k: string]: any } = {};
-
-    const getFileTitle = (fileDir: string, filename: string) => {
-      if (!filesMeta[fileDir]) {
-        filesMeta[fileDir] = JSON.parse(
-          readFileSync(`${fileDir}${fileDir.endsWith('/') ? '' : '/'}meta.json`).toString() || '{}'
-        );
+    const getMetaFromFile = (path: string) => {
+      if (statSync(path)) {
+        return JSON.parse(readFileSync(path).toString() || '{}');
       }
-      return filesMeta[fileDir][filename];
+      return {};
+    };
+
+    const getMetadataForFile = (filePath: string): [title: string, hierarchy: string[]] => {
+      const hierarchy: string[] = [];
+      let storeKey = '';
+      let itemKey = '';
+
+      storeKey = filePath.split('/').slice(0, -1).join('');
+      itemKey = filePath.split('/').pop()!;
+
+      let folders = filePath.replace(docsBaseDir, '').split('/');
+
+      // docs/guides/advanced -> ['Guides', 'Advanced']
+      // by reading meta from:
+      //  - docs/guides/meta.json (for 'advanced' folder)
+      //  - docs/meta.json (for 'guides' folder)
+      while (folders.length) {
+        const folder = folders.pop()!;
+        const path = folders.join('/');
+        if (path.length) {
+          if (!metadataCache[path]) {
+            metadataCache[path] = getMetaFromFile(`${path}${path.endsWith('/') ? '' : '/'}meta.json`);
+          }
+          const folderName = metadataCache[path][folder];
+          if (folderName) {
+            hierarchy.unshift(folderName);
+          }
+        }
+        folders = folders.slice(0, -1);
+      }
+
+      if (!metadataCache[storeKey]) {
+        metadataCache[storeKey] = getMetaFromFile(`${storeKey}${storeKey.endsWith('/') ? '' : '/'}meta.json`);
+      }
+      return [metadataCache[storeKey][itemKey], hierarchy];
     };
 
     glob(`${docsBaseDir}${docsBaseDir.endsWith('/') ? '' : '/'}**/*.mdx`, (err, files) => {
@@ -287,18 +314,13 @@ async function nextraToAlgoliaRecords(
         reject(err);
       } else {
         files.forEach(file => {
-          const fileDir = file
-            .replace(docsBaseDir, '') // remove base dir
-            .split('/')
-            .slice(0, -1); // remove filename
-          const hierarchy = fileDir.map(folder => blogMeta[folder] || folder);
           // eslint-disable-next-line @typescript-eslint/no-non-null-asserted-optional-chain
           const filename = file.split('/').pop()?.split('.')[0]!;
           const fileContent = readFileSync(file);
           const { data: meta, content } = matter(fileContent.toString());
           const toc = extractToC(content);
 
-          const title = getFileTitle(fileDir.join(''), filename);
+          const [title, hierarchy] = getMetadataForFile(file);
 
           objects.push({
             objectID: slugger.slug(`${objectsPrefix}-${[...hierarchy, filename].join('-')}`),
