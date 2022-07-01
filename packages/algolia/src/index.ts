@@ -292,7 +292,7 @@ async function nextraToAlgoliaRecords(
           metadataCache[path] = getMetaFromFile(`${docsBaseDir}${docsBaseDir.endsWith('/') ? '' : '/'}${path}/meta.json`);
         }
         const folderName = metadataCache[path][folder];
-        const resolvedFolderName = typeof folderName === 'string' ? folderName : folderName.title;
+        const resolvedFolderName = typeof folderName === 'string' ? folderName : folderName?.title;
         if (resolvedFolderName) {
           hierarchy.unshift(resolvedFolderName);
         }
@@ -302,7 +302,7 @@ async function nextraToAlgoliaRecords(
         metadataCache[fileDir] = getMetaFromFile(`${fileDir}${fileDir.endsWith('/') ? '' : '/'}meta.json`);
       }
       const title = metadataCache[fileDir][fileName.replace('.mdx', '')];
-      const resolvedTitle = typeof title === 'string' ? title : title.title;
+      const resolvedTitle = typeof title === 'string' ? title : title?.title;
       return [resolvedTitle || fileName.replace('.mdx', ''), hierarchy];
     };
 
