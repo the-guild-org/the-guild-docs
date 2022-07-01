@@ -13,6 +13,7 @@ import removeMarkdown from 'remove-markdown';
 import algoliasearch from 'algoliasearch';
 import type { IRoutes } from '@guild-docs/server';
 import matter from 'gray-matter';
+import glob from 'glob';
 
 import type { AlgoliaRecord, AlgoliaSearchItemTOC, AlgoliaRecordSource } from './types';
 
@@ -249,6 +250,62 @@ async function pluginsToAlgoliaRecords(
   return objects;
 }
 
+interface IndexToAlgoliaNextraOptions {
+  docsBaseDir: string;
+  metaFilePath?: string;
+}
+
+async function nextraToAlgoliaRecords(
+  { docsBaseDir, metaFilePath }: IndexToAlgoliaNextraOptions,
+  source: AlgoliaRecordSource,
+  domain: string,
+  objectsPrefix = new GithubSlugger().slug(source)
+): Promise<AlgoliaRecord[]> {
+  return new Promise((resolve, reject) => {
+    const objects: AlgoliaRecord[] = [];
+    const slugger = new GithubSlugger();
+
+    const blogMeta = metaFilePath ? JSON.parse(readFileSync(metaFilePath).toString() || '{}') : {};
+
+    glob(`${docsBaseDir}${docsBaseDir.endsWith('/') ? '' : '/'}**/*.mdx`, (err, files) => {
+      if (err) {
+        reject(err);
+      } else {
+        files.forEach(file => {
+          const hierarchy = compact(
+            file
+              .replace(docsBaseDir, '') // remove base dir
+              .split('/')
+              .slice(0, -1) // remove filename
+              .map(folder => blogMeta[folder])
+          );
+          const filename = file.split('/').pop();
+          const fileContent = readFileSync(file);
+          const { data: meta, content } = matter(fileContent.toString());
+          const toc = extractToC(content);
+
+          const resolvedTitle = meta.title || meta.sidebar_label;
+
+          objects.push({
+            objectID: slugger.slug(`${objectsPrefix}-${[...hierarchy, filename].join('-')}`),
+            headings: toc.map(t => t.title),
+            toc,
+            content: contentForRecord(content),
+            url: `${domain}plugins/${filename}`,
+            domain,
+            hierarchy,
+            source,
+            title: resolvedTitle,
+            type: meta.type || 'Documentation',
+          });
+        });
+      }
+    });
+
+    return objects;
+  });
+}
+
 export type { AlgoliaRecord, AlgoliaSearchItemTOC, AlgoliaRecordSource };
 
 interface IndexToAlgoliaOptions {
@@ -256,6 +313,7 @@ interface IndexToAlgoliaOptions {
   docusaurus?: { sidebars: { docs: Record<string, string[]> } };
   // TODO: fix later
   plugins?: any[];
+  nextra?: IndexToAlgoliaNextraOptions;
   source: AlgoliaRecordSource;
   domain: string;
   lockfilePath: string;
@@ -269,6 +327,7 @@ export const indexToAlgolia = async ({
   plugins = [],
   source,
   domain,
+  nextra,
   postProcessor = identity,
   // TODO: add `force` flag
   dryMode = true,
@@ -283,6 +342,7 @@ export const indexToAlgolia = async ({
       )
     ),
     ...(await pluginsToAlgoliaRecords(plugins, source, normalizeDomain(domain))),
+    ...(nextra ? await nextraToAlgoliaRecords(nextra, source, normalizeDomain(domain)) : []),
   ]);
 
   const recordsAsString = JSON.stringify(sortBy(objects, 'objectID'), (key, value) => (key === 'content' ? '-' : value), 2);
