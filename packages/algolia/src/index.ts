@@ -292,15 +292,18 @@ async function nextraToAlgoliaRecords(
           metadataCache[path] = getMetaFromFile(`${docsBaseDir}${docsBaseDir.endsWith('/') ? '' : '/'}${path}/meta.json`);
         }
         const folderName = metadataCache[path][folder];
-        if (folderName) {
-          hierarchy.unshift(folderName);
+        const resolvedFolderName = typeof folderName === 'string' ? folderName : folderName.title;
+        if (resolvedFolderName) {
+          hierarchy.unshift(resolvedFolderName);
         }
         folders = folders.slice(0, -1);
       }
       if (!metadataCache[fileDir]) {
         metadataCache[fileDir] = getMetaFromFile(`${fileDir}${fileDir.endsWith('/') ? '' : '/'}meta.json`);
       }
-      return [metadataCache[fileDir][fileName.replace('.mdx', '')], hierarchy];
+      const title = metadataCache[fileDir][fileName.replace('.mdx', '')];
+      const resolvedTitle = typeof title === 'string' ? title : title.title;
+      return [resolvedTitle || fileName.replace('.mdx', ''), hierarchy];
     };
 
     glob(`${docsBaseDir}${docsBaseDir.endsWith('/') ? '' : '/'}**/*.mdx`, (err, files) => {
