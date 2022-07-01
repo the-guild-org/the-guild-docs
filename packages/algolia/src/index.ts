@@ -274,12 +274,12 @@ async function nextraToAlgoliaRecords(
       return {};
     };
 
-    const getMetadataForFile = (filePath: string) => {
+    const getMetadataForFile = (filePath: string): [title: string, hierarchy: string[], urlPath: string] => {
       const hierarchy = [];
 
       const fileDir = filePath.split('/').slice(0, -1).join('/');
       const fileName = filePath.split('/').pop()!;
-      let folders = filePath.replace(docsBaseDir, '').replace(fileName, '').split('/').filter(Boolean);
+      const folders = filePath.replace(docsBaseDir, '').replace(fileName, '').split('/').filter(Boolean);
       // docs/guides/advanced -> ['Guides', 'Advanced']
       // by reading meta from:
       //  - docs/guides/meta.json (for 'advanced' folder)
@@ -292,18 +292,19 @@ async function nextraToAlgoliaRecords(
           metadataCache[path] = getMetaFromFile(`${docsBaseDir}${docsBaseDir.endsWith('/') ? '' : '/'}${path}/meta.json`);
         }
         const folderName = metadataCache[path][folder];
-        const resolvedFolderName = typeof folderName === 'string' ? folderName : folderName?.title;
+        const resolvedFolderName = typeof folderName === 'string' ? folderName : folderName?.title || folder;
         if (resolvedFolderName) {
           hierarchy.unshift(resolvedFolderName);
         }
-        folders = folders.slice(0, -1);
       }
       if (!metadataCache[fileDir]) {
         metadataCache[fileDir] = getMetaFromFile(`${fileDir}${fileDir.endsWith('/') ? '' : '/'}meta.json`);
       }
       const title = metadataCache[fileDir][fileName.replace('.mdx', '')];
       const resolvedTitle = typeof title === 'string' ? title : title?.title;
-      return [resolvedTitle || fileName.replace('.mdx', ''), hierarchy];
+
+      const urlPath = filePath.replace(docsBaseDir, '').replace(fileName, '').split('/').filter(Boolean).join('/');
+      return [resolvedTitle || fileName.replace('.mdx', ''), hierarchy, urlPath];
     };
 
     glob(`${docsBaseDir}${docsBaseDir.endsWith('/') ? '' : '/'}**/*.mdx`, (err, files) => {
@@ -317,14 +318,14 @@ async function nextraToAlgoliaRecords(
           const { data: meta, content } = matter(fileContent.toString());
           const toc = extractToC(content);
 
-          const [title, hierarchy] = getMetadataForFile(file);
+          const [title, hierarchy, urlPath] = getMetadataForFile(file);
 
           objects.push({
             objectID: slugger.slug(`${objectsPrefix}-${[...hierarchy, filename].join('-')}`),
             headings: toc.map(t => t.title),
             toc,
             content: contentForRecord(content),
-            url: `${domain}plugins/${filename}`,
+            url: `${domain}${urlPath}/${filename}`,
             domain,
             hierarchy,
             source,
