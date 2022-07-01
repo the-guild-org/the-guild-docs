@@ -274,16 +274,12 @@ async function nextraToAlgoliaRecords(
       return {};
     };
 
-    const getMetadataForFile = (filePath: string): [title: string, hierarchy: string[]] => {
-      const hierarchy: string[] = [];
-      let storeKey = '';
-      let itemKey = '';
+    const getMetadataForFile = (filePath: string) => {
+      const hierarchy = [];
 
-      storeKey = filePath.split('/').slice(0, -1).join('');
-      itemKey = filePath.split('/').pop()!;
-
-      let folders = filePath.replace(docsBaseDir, '').split('/');
-
+      const fileDir = filePath.split('/').slice(0, -1).join('/');
+      const fileName = filePath.split('/').pop()!;
+      let folders = filePath.replace(docsBaseDir, '').replace(fileName, '').split('/').filter(Boolean);
       // docs/guides/advanced -> ['Guides', 'Advanced']
       // by reading meta from:
       //  - docs/guides/meta.json (for 'advanced' folder)
@@ -291,22 +287,20 @@ async function nextraToAlgoliaRecords(
       while (folders.length) {
         const folder = folders.pop()!;
         const path = folders.join('/');
-        if (path.length) {
-          if (!metadataCache[path]) {
-            metadataCache[path] = getMetaFromFile(`${path}${path.endsWith('/') ? '' : '/'}meta.json`);
-          }
-          const folderName = metadataCache[path][folder];
-          if (folderName) {
-            hierarchy.unshift(folderName);
-          }
+
+        if (!metadataCache[path]) {
+          metadataCache[path] = getMetaFromFile(`${docsBaseDir}${docsBaseDir.endsWith('/') ? '' : '/'}${path}/meta.json`);
+        }
+        const folderName = metadataCache[path][folder];
+        if (folderName) {
+          hierarchy.unshift(folderName);
         }
         folders = folders.slice(0, -1);
       }
-
-      if (!metadataCache[storeKey]) {
-        metadataCache[storeKey] = getMetaFromFile(`${storeKey}${storeKey.endsWith('/') ? '' : '/'}meta.json`);
+      if (!metadataCache[fileDir]) {
+        metadataCache[fileDir] = getMetaFromFile(`${fileDir}${fileDir.endsWith('/') ? '' : '/'}meta.json`);
       }
-      return [metadataCache[storeKey][itemKey], hierarchy];
+      return [metadataCache[fileDir][fileName.replace('.mdx', '')], hierarchy];
     };
 
     glob(`${docsBaseDir}${docsBaseDir.endsWith('/') ? '' : '/'}**/*.mdx`, (err, files) => {
