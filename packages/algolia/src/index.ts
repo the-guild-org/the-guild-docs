@@ -7,12 +7,13 @@ import compact from 'lodash/compact.js';
 import map from 'lodash/map.js';
 import identity from 'lodash/identity.js';
 import { readFile } from 'node:fs/promises';
-import { existsSync, writeFileSync, readFileSync } from 'node:fs';
+import { existsSync, writeFileSync, readFileSync, statSync } from 'node:fs';
 import GithubSlugger from 'github-slugger';
 import removeMarkdown from 'remove-markdown';
 import algoliasearch from 'algoliasearch';
 import type { IRoutes } from '@guild-docs/server';
 import matter from 'gray-matter';
+import glob from 'glob';
 
 import type { AlgoliaRecord, AlgoliaSearchItemTOC, AlgoliaRecordSource } from './types';
 
@@ -249,6 +250,95 @@ async function pluginsToAlgoliaRecords(
   return objects;
 }
 
+interface IndexToAlgoliaNextraOptions {
+  docsBaseDir: string;
+}
+
+async function nextraToAlgoliaRecords(
+  { docsBaseDir }: IndexToAlgoliaNextraOptions,
+  source: AlgoliaRecordSource,
+  domain: string,
+  objectsPrefix = new GithubSlugger().slug(source)
+): Promise<AlgoliaRecord[]> {
+  return new Promise((resolve, reject) => {
+    const objects: AlgoliaRecord[] = [];
+    const slugger = new GithubSlugger();
+
+    // cache for all needed `meta.json` files
+    const metadataCache: { [k: string]: any } = {};
+
+    const getMetaFromFile = (path: string) => {
+      if (statSync(path)) {
+        return JSON.parse(readFileSync(path).toString() || '{}');
+      }
+      return {};
+    };
+
+    const getMetadataForFile = (filePath: string): [title: string, hierarchy: string[], urlPath: string] => {
+      const hierarchy = [];
+
+      const fileDir = filePath.split('/').slice(0, -1).join('/');
+      const fileName = filePath.split('/').pop()!;
+      const folders = filePath.replace(docsBaseDir, '').replace(fileName, '').split('/').filter(Boolean);
+      // docs/guides/advanced -> ['Guides', 'Advanced']
+      // by reading meta from:
+      //  - docs/guides/meta.json (for 'advanced' folder)
+      //  - docs/meta.json (for 'guides' folder)
+      while (folders.length) {
+        const folder = folders.pop()!;
+        const path = folders.join('/');
+
+        if (!metadataCache[path]) {
+          metadataCache[path] = getMetaFromFile(`${docsBaseDir}${docsBaseDir.endsWith('/') ? '' : '/'}${path}/meta.json`);
+        }
+        const folderName = metadataCache[path][folder];
+        const resolvedFolderName = typeof folderName === 'string' ? folderName : folderName?.title || folder;
+        if (resolvedFolderName) {
+          hierarchy.unshift(resolvedFolderName);
+        }
+      }
+      if (!metadataCache[fileDir]) {
+        metadataCache[fileDir] = getMetaFromFile(`${fileDir}${fileDir.endsWith('/') ? '' : '/'}meta.json`);
+      }
+      const title = metadataCache[fileDir][fileName.replace('.mdx', '')];
+      const resolvedTitle = typeof title === 'string' ? title : title?.title;
+
+      const urlPath = filePath.replace(docsBaseDir, '').replace(fileName, '').split('/').filter(Boolean).join('/');
+      return [resolvedTitle || fileName.replace('.mdx', ''), hierarchy, urlPath];
+    };
+
+    glob(`${docsBaseDir}${docsBaseDir.endsWith('/') ? '' : '/'}**/*.mdx`, (err, files) => {
+      if (err) {
+        reject(err);
+      } else {
+        files.forEach(file => {
+          // eslint-disable-next-line @typescript-eslint/no-non-null-asserted-optional-chain
+          const filename = file.split('/').pop()?.split('.')[0]!;
+          const fileContent = readFileSync(file);
+          const { data: meta, content } = matter(fileContent.toString());
+          const toc = extractToC(content);
+
+          const [title, hierarchy, urlPath] = getMetadataForFile(file);
+
+          objects.push({
+            objectID: slugger.slug(`${objectsPrefix}-${[...hierarchy, filename].join('-')}`),
+            headings: toc.map(t => t.title),
+            toc,
+            content: contentForRecord(content),
+            url: `${domain}${urlPath}/${filename}`,
+            domain,
+            hierarchy,
+            source,
+            title,
+            type: meta.type || 'Documentation',
+          });
+        });
+        resolve(objects);
+      }
+    });
+  });
+}
+
 export type { AlgoliaRecord, AlgoliaSearchItemTOC, AlgoliaRecordSource };
 
 interface IndexToAlgoliaOptions {
@@ -256,6 +346,7 @@ interface IndexToAlgoliaOptions {
   docusaurus?: { sidebars: { docs: Record<string, string[]> } };
   // TODO: fix later
   plugins?: any[];
+  nextra?: IndexToAlgoliaNextraOptions;
   source: AlgoliaRecordSource;
   domain: string;
   lockfilePath: string;
@@ -269,6 +360,7 @@ export const indexToAlgolia = async ({
   plugins = [],
   source,
   domain,
+  nextra,
   postProcessor = identity,
   // TODO: add `force` flag
   dryMode = true,
@@ -283,6 +375,7 @@ export const indexToAlgolia = async ({
       )
     ),
     ...(await pluginsToAlgoliaRecords(plugins, source, normalizeDomain(domain))),
+    ...(nextra ? await nextraToAlgoliaRecords(nextra, source, normalizeDomain(domain)) : []),
   ]);
 
   const recordsAsString = JSON.stringify(sortBy(objects, 'objectID'), (key, value) => (key === 'content' ? '-' : value), 2);
