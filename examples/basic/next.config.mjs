@@ -1,4 +1,4 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
+/* eslint-env node */
 import { createRequire } from 'node:module';
 
 const require = createRequire(import.meta.url);
