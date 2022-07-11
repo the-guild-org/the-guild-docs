@@ -12,7 +12,6 @@ import {
   HStack,
   IconButton,
   Text,
-  useColorMode,
   useColorModeValue,
   useDisclosure,
   useLatestRef,
@@ -20,11 +19,10 @@ import {
 import type { Dict } from '@chakra-ui/utils';
 import { Global } from '@emotion/react';
 import type { IRoutes, MdxInternalProps } from '@guild-docs/types';
-import { ThemeProvider as TGCThemeProvider } from '@theguild/components';
 import { DefaultSeo } from 'next-seo';
 import type { DefaultSeoProps, OpenGraphMedia } from 'next-seo/lib/types';
 import type { AppProps } from 'next/app';
-import React, { ComponentProps, Dispatch, ReactNode, SetStateAction, useMemo, FC } from 'react';
+import React, { ComponentProps, ReactNode, useMemo, FC } from 'react';
 import StickyBox from 'react-sticky-box';
 import { DocsContainer, DocsNavigation, DocsNavigationDesktop, DocsNavigationMobile, DocsTitle } from './docs';
 import { MDXNavigation, MDXNavigationProps } from './navigation';
@@ -45,12 +43,7 @@ export interface AppSeoProps extends DefaultSeoProps {
   logo: OpenGraphMedia;
 }
 
-export const CombinedThemeProvider: FC<CombinedThemeProps> = ({
-  children,
-  theme,
-  accentColor,
-  defaultSeo,
-}) => {
+export const CombinedThemeProvider: FC<CombinedThemeProps> = ({ children, theme, accentColor, defaultSeo }) => {
   const DefaultSEO = useMemo(() => {
     if (!defaultSeo) throw new Error('No `defaultSeo` specified in CombinedThemeProvider');
     if (!defaultSeo.title) throw new Error(`No defaultSeo.title specified!`);
@@ -88,35 +81,12 @@ export const CombinedThemeProvider: FC<CombinedThemeProps> = ({
             },
           ]}
         />
-        <TGCThemeProviderComponent>
-          {children}
-        </TGCThemeProviderComponent>
+        {children}
         <NextNProgress color={accentColor} />
       </ChakraProvider>
     </>
   );
 };
-
-function TGCThemeProviderComponent({ children }: { children: ReactNode }) {
-  const { colorMode, setColorMode } = useColorMode();
-  const darkThemeProps = useMemo<{
-    isDarkTheme: boolean;
-    setDarkTheme: Dispatch<SetStateAction<boolean>>;
-  }>(() => {
-    return {
-      isDarkTheme: colorMode === 'dark',
-      setDarkTheme: arg => {
-        if (typeof arg === 'function') {
-          setColorMode(arg(colorMode === 'dark') ? 'dark' : 'light');
-        } else {
-          setColorMode(arg ? 'dark' : 'light');
-        }
-      },
-    };
-  }, [colorMode, setColorMode]);
-
-  return <TGCThemeProvider {...darkThemeProps} children={children} />;
-}
 
 export interface DocsPageProps {
   appProps: AppProps;

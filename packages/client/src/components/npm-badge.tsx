@@ -27,7 +27,7 @@ const NPMBadge = ({ name }: { name: string }) => {
   }, [status]);
 
   return (
-    <Link alignSelf="flex-end" justifySelf="flex-end" href={`https://www.npmjs.com/package/${encodedPackage}`} target="_blank">
+    <Link alignSelf="flex-end" justifySelf="flex-end" href={`https://npmjs.com/package/${encodedPackage}`} target="_blank">
       <Skeleton
         opacity={isLoaded ? undefined : '0.5'}
         colorScheme="gray"

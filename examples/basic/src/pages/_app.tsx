@@ -5,11 +5,11 @@ import { extendTheme, theme as chakraTheme } from '@chakra-ui/react';
 import { mode } from '@chakra-ui/theme-tools';
 import { ExtendComponents, handlePushRoute, CombinedThemeProvider, DocsPage, AppSeoProps } from '@guild-docs/client';
 import { Header, Subheader, Footer } from '@theguild/components';
+import { ThemeProvider } from 'next-themes';
 
 import '@algolia/autocomplete-theme-classic';
 import '@theguild/components/dist/static/css/SearchBarV2.css';
 import '@theguild/components/dist/index.css';
-import '@theguild/components/dist/fonts.css';
 import '../../public/style.css';
 
 ExtendComponents({
@@ -69,7 +69,7 @@ function AppContent(appProps: AppProps): ReactElement {
   const isDocs = router.asPath.startsWith('/docs');
 
   return (
-    <>
+    <ThemeProvider attribute="class">
       <Header accentColor={accentColor} activeLink="/open-source" themeSwitch />
       <Subheader
         activeLink={router.asPath}
@@ -120,7 +120,7 @@ function AppContent(appProps: AppProps): ReactElement {
         <Component {...pageProps} />
       )}
       <Footer />
-    </>
+    </ThemeProvider>
   );
 }
 
