@@ -3,11 +3,11 @@ import { MdContentCopy } from 'react-icons/md/index.js';
 import { TiTickOutline } from 'react-icons/ti/index.js';
 import useCopyToClipboardImport from 'react-use/lib/useCopyToClipboard.js';
 import { IconButton, useToast, IconButtonProps } from '@chakra-ui/react';
-import { getDefault } from '../utils';
+import { getDefault } from './utils';
 
 const useCopyToClipboard = getDefault(useCopyToClipboardImport);
 
-const CopyToClipboard = memo(function CopyToClipboard({
+export const CopyToClipboard = memo(function CopyToClipboard({
   value,
   buttonProps,
 }: {
@@ -45,5 +45,3 @@ const CopyToClipboard = memo(function CopyToClipboard({
     />
   );
 });
-
-export default CopyToClipboard;

@@ -15,7 +15,7 @@ export interface GiscusProps {
 
 let GiscusKeyInc = 0;
 
-const Giscus = ({ category, categoryId, repo, repoId }: GiscusProps): ReactElement | null => {
+export const Giscus = ({ category, categoryId, repo, repoId }: GiscusProps): ReactElement | null => {
   const { asPath } = useRouter();
   const [loaded, setLoaded] = useState(false);
 
@@ -68,5 +68,3 @@ const Giscus = ({ category, categoryId, repo, repoId }: GiscusProps): ReactEleme
     </>
   );
 };
-
-export default Giscus;

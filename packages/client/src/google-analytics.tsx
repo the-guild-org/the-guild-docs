@@ -25,7 +25,7 @@ const pageview = (url: string, trackingId: string) => {
  */
 export function useGoogleAnalytics({ trackingId, router }: { trackingId: string; router: NextRouter }) {
   useEffect(() => {
-    const handleRouteChange = (url: string) => {
+    const handleRouteChange = (url: string): void => {
       pageview(url, trackingId);
     };
     router.events.on('routeChangeComplete', handleRouteChange);
@@ -47,13 +47,12 @@ export function useGoogleAnalytics({ trackingId, router }: { trackingId: string;
       strategy: 'afterInteractive' as const,
       dangerouslySetInnerHTML: {
         __html: `
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', '${trackingId}', {
-              page_path: window.location.pathname,
-            });
-          `,
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', '${trackingId}', {
+            page_path: window.location.pathname,
+          });`,
       },
     },
   };

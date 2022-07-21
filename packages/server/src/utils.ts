@@ -1,8 +1,3 @@
-export function withTrailingSlash(v: string) {
-  if (v.endsWith('/')) return v;
-  return v + '/';
-}
-
 export function withoutTrailingSlash(v: string) {
   if (v === '/') return v;
   if (v.endsWith('/')) return v.slice(0, v.length - 1);

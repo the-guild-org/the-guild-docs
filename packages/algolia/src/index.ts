@@ -1,4 +1,6 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion, no-else-return */
+import { readFile } from 'node:fs/promises';
+import { existsSync, writeFileSync, readFileSync, statSync } from 'node:fs';
 import sortBy from 'lodash/sortBy.js';
 import isString from 'lodash/isString.js';
 import isArray from 'lodash/isArray.js';
@@ -6,16 +8,13 @@ import flatten from 'lodash/flatten.js';
 import compact from 'lodash/compact.js';
 import map from 'lodash/map.js';
 import identity from 'lodash/identity.js';
-import { readFile } from 'node:fs/promises';
-import { existsSync, writeFileSync, readFileSync, statSync } from 'node:fs';
 import GithubSlugger from 'github-slugger';
 import removeMarkdown from 'remove-markdown';
 import algoliasearch from 'algoliasearch';
-import type { IRoutes } from '@guild-docs/server';
 import matter from 'gray-matter';
 import glob from 'glob';
 
-import type { AlgoliaRecord, AlgoliaSearchItemTOC, AlgoliaRecordSource } from './types';
+import type { AlgoliaRecord, AlgoliaSearchItemTOC, AlgoliaRecordSource, IRoutes } from './types';
 
 const extractToC = (content: string) => {
   const slugger = new GithubSlugger();
