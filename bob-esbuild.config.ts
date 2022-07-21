@@ -1,6 +1,6 @@
 export const config: import('bob-esbuild').BobConfig = {
   tsc: {
-    dirs: ['packages/*', '!packages/cli'],
+    dirs: ['packages/*'],
   },
   verbose: true,
   clean: false,
@@ -12,6 +12,7 @@ export const config: import('bob-esbuild').BobConfig = {
     },
     '@guild-docs/server': {
       onlyESM: true,
+      inputFiles: ['src/postcss.config.js', 'src/tailwind.config.js'],
     },
   },
 };
