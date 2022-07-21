@@ -24,7 +24,7 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
         title: 'Guild Docs Client',
         githubReadme: {
           repo: 'the-guild-org/the-guild-docs',
-          path: '/examples/basic/docs/secondary.mdx',
+          path: '/website/docs/secondary.mdx',
         },
         devFilePath: 'docs/secondary.mdx',
       },

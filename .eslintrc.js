@@ -25,6 +25,7 @@ module.exports = {
         '@typescript-eslint/no-explicit-any': 'off',
         // This is an arbitrary and useless rule
         'react/no-children-prop': 'off',
+        'react/react-in-jsx-scope': 'off',
       },
       settings: {
         react: {
@@ -33,7 +34,7 @@ module.exports = {
       },
     },
     {
-      files: ['next.config.js', 'next-i18next.config.js', '.eslintrc.js', 'scripts/*'],
+      files: ['.eslintrc.js', 'scripts/*', 'next.config.mjs', 'postcss.config.{js,cjs}', 'tailwind.config.cjs'],
       env: {
         node: true,
       },

@@ -11,6 +11,7 @@
   "type": "module",
   "exports": {
     ".": "./dist/index.js",
+    "./styles.css": "./dist/styles.css",
     "./*": "./dist/*.js"
   },
   "main": "dist/index.js",
@@ -24,28 +25,24 @@
     "postpublish": "gh-release"
   },
   "dependencies": {
+    "@chakra-ui/react": "1.8.8",
+    "@emotion/react": "11.9.3",
+    "@emotion/styled": "11.9.3",
+    "framer-motion": "6.5.1",
     "mdx-mermaid": "1.2.2",
     "mermaid": ">= 8.11.0 < 8.12.0",
+    "next-seo": "5.4.0",
     "nprogress": "0.2.0",
     "react-children-utilities": "2.8.0",
-    "react-use": "17.4.0",
     "react-icons": "4.4.0",
-    "next-seo": "5.4.0",
-    "@emotion/react": "11.9.3",
-    "@chakra-ui/react": "1.8.8"
+    "react-use": "17.4.0"
   },
   "devDependencies": {
-    "@theguild/components": "2.0.0-alpha-067b6c4.0",
-    "@types/nprogress": "0.2.0",
-    "@types/react": "17.0.47",
-    "@types/react-dom": "17.0.17",
-    "changesets-github-release": "0.1.0",
-    "next": "12.1.6",
-    "react": "17.0.2",
-    "react-dom": "17.0.2"
+    "@theguild/components": "2.0.0-alpha-9d29815.0",
+    "@types/nprogress": "0.2.0"
   },
   "peerDependencies": {
-    "@theguild/components": "2.0.0-alpha-067b6c4.0",
+    "@theguild/components": "2.0.0-alpha-9d29815.0",
     "next": ">=12.1.6",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"

@@ -1,6 +1,4 @@
-/* eslint-env node */
 const path = require('path');
-
 const CWD = process.cwd();
 
 module.exports = {

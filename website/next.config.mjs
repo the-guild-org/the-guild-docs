@@ -1,4 +1,7 @@
-/* eslint-env node */
 import { withGuildDocs } from '@guild-docs/server';
 
-export default withGuildDocs();
+export default withGuildDocs({
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
+});

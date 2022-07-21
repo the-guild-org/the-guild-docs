@@ -1,9 +1,8 @@
 @import 'nextra-theme-docs/style.css';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
 @import '@algolia/autocomplete-theme-classic';
 @import '@theguild/components/dist/static/css/SearchBarV2.css';
-
-@import "tailwindcss/components";
-@import "tailwindcss/utilities";
 
 /* quick fix for menu on mobile */
 .nextra-sidebar-search {

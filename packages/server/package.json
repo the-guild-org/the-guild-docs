@@ -11,6 +11,12 @@
   "type": "module",
   "exports": {
     ".": "./dist/index.js",
+    "./postcss.config": {
+      "require": "./dist/postcss.config.cjs"
+    },
+    "./tailwind.config": {
+      "require": "./dist/tailwind.config.cjs"
+    },
     "./*": "./dist/*.js"
   },
   "main": "dist/index.js",
@@ -31,14 +37,10 @@
     "nextra": "2.0.0-alpha.56",
     "postcss": "^8.4.14",
     "postcss-import": "^14.1.0",
+    "rehype-mdx-title": "^1.0.0",
     "tailwindcss": "^3.1.6",
     "tiny-lru": "^8.0.2",
     "undici": "5.5.1"
-  },
-  "devDependencies": {
-    "changesets-github-release": "0.1.0",
-    "react": "17.0.2",
-    "react-dom": "17.0.2"
   },
   "peerDependencies": {
     "next": ">=12.1.6",

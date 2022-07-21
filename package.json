@@ -14,32 +14,36 @@
     "release": "changeset publish",
     "clean": "rimraf \"{,!(node_modules)/*/}node_modules/\"",
     "dev": "concurrently -r yarn:dev:*",
-    "dev:cli": "yarn workspace guild-docs dev",
     "dev:client": "yarn workspace @guild-docs/client dev",
-    "dev:example": "yarn workspace basic dev",
+    "dev:website": "yarn workspace website dev",
     "dev:server": "yarn workspace @guild-docs/server dev",
+    "build:algolia": "yarn workspace @guild-docs/algolia build",
+    "build:client": "yarn workspace @guild-docs/client build",
+    "build:server": "yarn workspace @guild-docs/server build",
     "lint": "eslint --ignore-path .gitignore .",
-    "build": "rimraf \"{,!(node_modules)/*/}dist/\" && concurrently -r \"bob-esbuild tsc && yarn workspaces run build\"",
-    "postinstall": "husky install",
+    "build": "rimraf \"{,!(node_modules)/*/}dist/\" && concurrently -r \"bob-esbuild tsc\"",
+    "postbuild": "concurrently -r yarn:build:* && node scripts/copy-files.mjs",
+    "postinstall": "patch-package && husky install",
     "prettier": "prettier --write --list-different \"**/*.{ts,tsx,json}\"",
     "release:canary": "(node scripts/canary-release.js && yarn build && changeset publish --tag alpha) || echo Skipping Canary..."
   },
   "workspaces": {
     "packages": [
       "packages/*",
-      "examples/*",
-      "guild-docs"
+      "website"
     ]
   },
   "devDependencies": {
     "@changesets/cli": "2.22.0",
-    "@types/node": "16.11.41",
+    "@types/node": "16.11.45",
+    "@types/react": "17.0.47",
     "@typescript-eslint/eslint-plugin": "5.28.0",
     "@typescript-eslint/parser": "5.28.0",
     "bob-esbuild": "4.0.3",
     "bob-esbuild-cli": "4.0.0",
     "bob-tsm": "0.4.8",
     "chalk": "5.0.1",
+    "changesets-github-release": "0.1.0",
     "concurrently": "7.2.2",
     "esbuild": "0.14.45",
     "eslint": "8.17.0",
@@ -50,12 +54,13 @@
     "eslint-plugin-react-hooks": "4.6.0",
     "globby": "13.1.2",
     "husky": "7.0.4",
-    "next": "12.1.6",
+    "next": "12.2.2",
+    "patch-package": "6.4.7",
     "prettier": "2.7.1",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "rimraf": "3.0.2",
-    "typescript": "4.7.3"
+    "typescript": "4.7.4"
   },
   "engines": {
     "yarn": ">=1.22.17"
