@@ -1,4 +1,4 @@
-import { withGuildDocs } from 'guild-docs';
+import { withGuildDocs } from 'guild-docs/next.config';
 
 export default withGuildDocs({
   eslint: {

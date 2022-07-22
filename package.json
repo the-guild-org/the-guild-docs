@@ -9,7 +9,6 @@
     "url": "git+https://github.com/the-guild-org/the-guild-docs.git"
   },
   "license": "MIT",
-  "author": "PabloSzx <pablosaez1995@gmail.com>",
   "scripts": {
     "release": "changeset publish",
     "clean": "rimraf \"{,!(node_modules)/*/}node_modules/\"",
@@ -20,7 +19,7 @@
     "build:docs": "yarn workspace guild-docs build",
     "lint": "eslint --ignore-path .gitignore .",
     "build": "rimraf \"{,!(node_modules)/*/}dist/\" && concurrently -r \"bob-esbuild tsc\"",
-    "postbuild": "concurrently -r yarn:build:* && node scripts/copy-files.mjs",
+    "postbuild": "concurrently -r yarn:build:* && node scripts/copy-files.mjs && yarn workspace website build",
     "postinstall": "patch-package && husky install",
     "prettier": "prettier --write --list-different \"**/*.{ts,tsx,json}\"",
     "release:canary": "(node scripts/canary-release.js && yarn build && changeset publish --tag alpha) || echo Skipping Canary..."
