@@ -22,7 +22,7 @@ const MERMAID_IMPORT_AST = {
           source: {
             type: 'Literal',
             value: 'guild-docs/mermaid',
-            raw: `"guild-docs/mermaid"`,
+            raw: '"guild-docs/mermaid"',
           },
         },
       ],
@@ -71,25 +71,22 @@ const getMermaidElementAST = (value: string) => ({
   ],
 });
 
-const remarkMermaid: Plugin<[], Root> = () =>
-  function transformer(ast, file, done) {
-    const codeblocks: any[][] = [];
-    visit(
-      ast,
-      { type: 'code', lang: 'mermaid' },
-      (node, index, parent) => {
-        codeblocks.push([node, index, parent]);
-      },
-    );
+export const remarkMermaid: Plugin<[], Root> = () => (ast, file, done) => {
+  const codeblocks: any[][] = [];
+  visit(
+    ast,
+    { type: 'code', lang: 'mermaid' },
+    (node, index, parent) => {
+      codeblocks.push([node, index, parent]);
+    },
+  );
 
-    if (codeblocks.length !== 0) {
-      codeblocks.forEach(([node, index, parent]) => {
-        parent.children.splice(index, 1, getMermaidElementAST(node.value));
-      });
-      ast.children.unshift(MERMAID_IMPORT_AST as any);
-    }
+  if (codeblocks.length !== 0) {
+    codeblocks.forEach(([node, index, parent]) => {
+      parent.children.splice(index, 1, getMermaidElementAST(node.value));
+    });
+    ast.children.unshift(MERMAID_IMPORT_AST as any);
+  }
 
-    done();
-  };
-
-export { remarkMermaid };
+  done();
+};

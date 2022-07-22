@@ -4,7 +4,6 @@ import { Header, Footer, ThemeProvider } from '@theguild/components';
 import 'guild-docs/style.css';
 
 export default function App({ Component, pageProps }: AppProps): ReactElement {
-  // @ts-expect-error -- don't know how to fix
   const component = <Component {...pageProps} />;
   // @ts-expect-error -- getLayout is custom function from nextra
   const page = Component.getLayout ? Component.getLayout(component) : component;
