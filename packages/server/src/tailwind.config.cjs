@@ -1,12 +1,9 @@
-const path = require('path');
-const CWD = process.cwd();
-
 module.exports = {
   content: [
-    path.join(CWD, 'website/src/**/*.{tsx,mdx}'),
-    path.join(CWD, 'website/theme.config.tsx'),
-    '../../../@theguild/components/dist/index.esm.js',
-    '../../../nextra-theme-docs/dist/**/*.js',
+    './src/**/*.{tsx,mdx}',
+    './theme.config.tsx',
+    '../node_modules/@theguild/components/dist/index.esm.js',
+    '../node_modules/nextra-theme-docs/dist/**/*.js',
   ],
   theme: {
     container: {

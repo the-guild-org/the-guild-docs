@@ -1,66 +1,82 @@
-import { PackageCmd } from '@theguild/components'
-import EmbeddedPage from './embedded.mdx'
+import { PackageCmd } from '@theguild/components';
 
-# Getting Started - Guild Docs
+# Installation
 
-# Index Docs Page
+<PackageCmd packages={['guild-docs @theguild/components', '-D @theguild/tailwind-config']} />
 
-<EmbeddedPage />
+## 1. Add dependencies
 
-## Heading 2
-
-<PackageCmd packages={['@guild-docs/client @guild-docs/server']} />
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nascetur ridiculus mus mauris vitae ultricies leo integer. Duis at consectetur lorem donec massa sapien. Ipsum dolor sit amet consectetur adipiscing. Habitasse platea dictumst vestibulum rhoncus est pellentesque. Est pellentesque elit ullamcorper dignissim cras tincidunt. Gravida dictum fusce ut placerat orci nulla. Augue lacus viverra vitae congue eu. Risus quis varius quam quisque id diam vel. Imperdiet massa tincidunt nunc pulvinar. Amet tellus cras adipiscing enim eu turpis. Velit scelerisque in dictum non consectetur. In fermentum posuere urna nec.
-
-### Heading 3
-
-Lobortis mattis aliquam faucibus purus. Aliquam eleifend mi in nulla posuere sollicitudin aliquam ultrices. In tellus integer feugiat scelerisque varius morbi enim. In ante metus dictum at tempor. Nunc faucibus a pellentesque sit amet porttitor eget dolor. Eu turpis egestas pretium aenean pharetra magna ac placerat vestibulum. Porttitor rhoncus dolor purus non enim praesent elementum facilisis leo. Lectus vestibulum mattis ullamcorper velit sed ullamcorper. Enim praesent elementum facilisis leo vel fringilla est ullamcorper eget. Suspendisse potenti nullam ac tortor vitae purus faucibus ornare. In dictum non consectetur a erat. Faucibus interdum posuere lorem ipsum dolor. Morbi tristique senectus et netus et malesuada fames ac.
-
-Odio ut enim blandit volutpat maecenas volutpat blandit. Fermentum et sollicitudin ac orci phasellus egestas. Ut tortor pretium viverra suspendisse potenti nullam ac tortor. Risus nec feugiat in fermentum. Cursus sit amet dictum sit. Dictumst quisque sagittis purus sit amet volutpat consequat mauris nunc. Nisi vitae suscipit tellus mauris a. Aliquam sem fringilla ut morbi tincidunt. Ornare lectus sit amet est placerat in egestas. Sit amet luctus venenatis lectus magna fringilla. A lacus vestibulum sed arcu non odio. Ut enim blandit volutpat maecenas volutpat blandit aliquam. Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi.
-
-```md
-## Hello
-```
-
-```ts filename="app.ts"
-import { envelop, useSchema } from '@envelop/core'
-
-const mySchema = buildSchema(...) // GraphQLSchema
-
-const getEnveloped = envelop({
-  plugins: [useSchema(mySchema)]
-})
-```
-
-```graphql /hello/
-type Query {
-  hello: String!
+```diff filename="package.json"
+{
+  "dependencies": {
++   "@theguild/components": "2.0.0",
++   "guild-docs": "3.0.0",
+    "next": "12.2.2",
+    "react": "17.0.2",
+    "react-dom": "17.0.2"
+  },
+  "devDependencies": {
++   "@theguild/tailwind-config": "0.0.1"
+  }
 }
 ```
 
-```graphql
-query {
-  hello
+## 2. Add PostCSS config
+
+```js filename="postcss.config.js"
+module.exports = require('@theguild/tailwind-config/postcss.config');
+```
+
+## 3. Add Tailwind CSS config
+
+```js filename="tailwind.config.cjs"
+module.exports = require('@theguild/tailwind-config');
+```
+
+## 4. Add theme config
+
+```tsx filename="theme.config.tsx"
+import { DocsThemeConfig } from '@theguild/components';
+const config: DocsThemeConfig = {
+  // Your theme
+};
+
+export default config;
+```
+
+## 5. Use `withGuildDocs` in your Next.js config
+
+```js filename="next.config.mjs" /withGuildDocs/
+import { withGuildDocs } from 'guild-docs';
+
+export default withGuildDocs({
+  // Your next config options, for example:
+  eslint: {
+    ignoreDuringBuilds: true
+  }
+});
+```
+
+## 6. Import styles in `_app.tsx` and use `Component.getLayout`
+
+```tsx filename="src/pages/_app.tsx" {4,10}
+import { ReactElement } from 'react'
+import { AppProps } from 'next/app'
+import { Header, FooterExtended, ThemeProvider } from '@theguild/components'
+import 'guild-docs/styles.css'
+
+export default function App({ Component, pageProps }: AppProps): ReactElement {
+  // @ts-ignore
+  const component = <Component {...pageProps} />;
+  // @ts-expect-error
+  const page = Component.getLayout ? Component.getLayout(component) : component;
+  return (
+    <ThemeProvider>
+      <Header accentColor="#1cc8ee" themeSwitch searchBarProps={{ version: 'v2' }} />
+      {page}
+      <FooterExtended />
+    </ThemeProvider>
+  )
 }
 ```
 
-#### Heading 4
-
-Volutpat ac tincidunt vitae semper quis lectus. Risus viverra adipiscing at in. Et malesuada fames ac turpis egestas integer eget aliquet. Sed nisi lacus sed viverra tellus in hac habitasse platea. In iaculis nunc sed augue. Ornare massa eget egestas purus viverra accumsan in. Eu mi bibendum neque egestas congue quisque egestas diam. Placerat orci nulla pellentesque dignissim enim. Augue interdum velit euismod in pellentesque. Lobortis elementum nibh tellus molestie nunc non blandit massa enim. Pellentesque elit ullamcorper dignissim cras tincidunt lobortis. Non blandit massa enim nec. Placerat in egestas erat imperdiet. Nisl pretium fusce id velit ut. Urna molestie at elementum eu facilisis sed odio. Maecenas volutpat blandit aliquam etiam erat velit scelerisque. Curabitur vitae nunc sed velit dignissim sodales ut. A cras semper auctor neque vitae tempus quam. Diam volutpat commodo sed egestas egestas. Tempus iaculis urna id volutpat.
-
-## Loremipsumdolorsitametconsecteturadipiscingelit.
-
-### Lorem ipsum dolorsitamet consectetura dipiscingelit.
-
-Senectus et netus et malesuada fames. Ultrices mi tempus imperdiet nulla malesuada pellentesque elit eget. Lacus luctus accumsan tortor posuere ac ut consequat. Velit laoreet id donec ultrices. Pellentesque habitant morbi tristique senectus et netus et malesuada fames. Interdum velit euismod in pellentesque. Mauris in aliquam sem fringilla ut morbi tincidunt. Aliquet nec ullamcorper sit amet risus nullam eget felis. Vel elit scelerisque mauris pellentesque pulvinar pellentesque habitant morbi tristique. Dui nunc mattis enim ut tellus. Dictumst vestibulum rhoncus est pellentesque elit ullamcorper. Mauris nunc congue nisi vitae suscipit tellus. Duis convallis convallis tellus id. Ultricies integer quis auctor elit sed. Vitae congue mauris rhoncus aenean vel elit scelerisque mauris pellentesque. Faucibus a pellentesque sit amet porttitor eget dolor morbi. Et malesuada fames ac turpis egestas sed tempus. Ut sem nulla pharetra diam sit. Ultricies integer quis auctor elit sed.
-
-Dolor sit amet consectetur adipiscing elit ut aliquam. Venenatis tellus in metus vulputate eu scelerisque felis imperdiet proin. Iaculis eu non diam phasellus. In dictum non consectetur a erat nam. Est placerat in egestas erat imperdiet sed euismod nisi. Erat imperdiet sed euismod nisi porta lorem mollis. Urna et pharetra pharetra massa massa ultricies mi quis. Pulvinar neque laoreet suspendisse interdum consectetur libero id faucibus nisl. Pellentesque elit ullamcorper dignissim cras. Pellentesque elit eget gravida cum. Dictumst quisque sagittis purus sit amet volutpat consequat. Justo laoreet sit amet cursus sit amet dictum sit. Nibh mauris cursus mattis molestie a iaculis at erat. Malesuada pellentesque elit eget gravida cum sociis. Nunc scelerisque viverra mauris in. Diam quam nulla porttitor massa id neque aliquam vestibulum. At auctor urna nunc id cursus metus aliquam eleifend mi.
-
-##### Code `Heading 5`
-
-Using backticks for headings. Useful for API examples.
-
-##### Link color
-
-- [Game Of Types: A Song Of GraphQL And TypeScript](https://formidable.com/blog/2019/strong-typing) - blog post.

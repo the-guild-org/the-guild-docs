@@ -1,4 +1,6 @@
 {
-  "index": "Getting Started",
-  "mermaid-support": "Mermaid Support"
+  "index": "Installation",
+  "import": "Import",
+  "mermaid": "Mermaid",
+  "remote": "Remote MDX"
 }
