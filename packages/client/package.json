@@ -11,7 +11,7 @@
   "type": "module",
   "exports": {
     ".": "./dist/index.js",
-    "./styles.css": "./dist/styles.css",
+    "./style.css": "./dist/style.css",
     "./*": "./dist/*.js"
   },
   "main": "dist/index.js",
@@ -29,11 +29,8 @@
     "@emotion/react": "11.9.3",
     "@emotion/styled": "11.9.3",
     "framer-motion": "6.5.1",
-    "mdx-mermaid": "1.2.2",
-    "mermaid": ">= 8.11.0 < 8.12.0",
     "next-seo": "5.4.0",
     "nprogress": "0.2.0",
-    "react-children-utilities": "2.8.0",
     "react-icons": "4.4.0",
     "react-use": "17.4.0"
   },

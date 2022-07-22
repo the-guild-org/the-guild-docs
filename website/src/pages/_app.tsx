@@ -1,7 +1,7 @@
 import type { ReactElement } from 'react';
 import type { AppProps } from 'next/app';
 import { Header, Footer, ThemeProvider } from '@theguild/components';
-import '@guild-docs/client/styles.css';
+import '@guild-docs/client/style.css';
 
 export default function App({ Component, pageProps }: AppProps): ReactElement {
   // @ts-ignore

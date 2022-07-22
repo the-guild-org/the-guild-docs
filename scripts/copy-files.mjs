@@ -6,7 +6,7 @@ const CWD = process.cwd();
 const promises = [
   path.join(CWD, 'packages/server/src/postcss.config.cjs'),
   path.join(CWD, 'packages/server/src/tailwind.config.cjs'),
-  path.join(CWD, 'packages/client/src/styles.css'),
+  path.join(CWD, 'packages/client/src/style.css'),
 ].map(async filePath => {
   const content = await fs.readFile(filePath);
   const newFilePath = filePath.replace('/src/', '/dist/');
