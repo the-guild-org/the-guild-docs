@@ -3,7 +3,7 @@ import { visit } from 'unist-util-visit';
 
 const MERMAID_IMPORT_AST = {
   type: 'mdxjsEsm',
-  value: 'import { Mermaid } from "mdx-mermaid/lib/Mermaid"',
+  value: 'import { Mermaid } from "@guild-docs/server/mermaid"',
   data: {
     estree: {
       type: 'Program',
@@ -20,8 +20,8 @@ const MERMAID_IMPORT_AST = {
           ],
           source: {
             type: 'Literal',
-            value: 'mdx-mermaid/lib/Mermaid',
-            raw: `"mdx-mermaid/lib/Mermaid"`,
+            value: '@guild-docs/server/mermaid',
+            raw: `"@guild-docs/server/mermaid"`,
           },
         },
       ],
@@ -34,29 +34,6 @@ const getMermaidElementAST = (value: string) => ({
   name: 'Mermaid',
   children: [],
   attributes: [
-    {
-      type: 'mdxJsxAttribute',
-      name: 'config',
-      value: {
-        type: 'mdxJsxAttributeValueExpression',
-        value: '{}',
-        data: {
-          estree: {
-            type: 'Program',
-            sourceType: 'module',
-            body: [
-              {
-                type: 'ExpressionStatement',
-                expression: {
-                  type: 'ObjectExpression',
-                  properties: [],
-                },
-              },
-            ],
-          },
-        },
-      },
-    },
     {
       type: 'mdxJsxAttribute',
       name: 'chart',
