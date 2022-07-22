@@ -1,4 +1,4 @@
-// @ts-ignore -- can be removed after https://github.com/shuding/nextra/pull/533 be merged
+// @ts-expect-ignore -- can be removed after https://github.com/shuding/nextra/pull/533 be merged
 import { DocsThemeConfig } from 'nextra-theme-docs';
 import { ReactElement } from 'react';
 

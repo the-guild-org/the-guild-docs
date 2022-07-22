@@ -1,5 +1,6 @@
 import { visit } from 'unist-util-visit';
-// import { Literal, Parent, Node, Data } from 'unist'
+import type { Plugin } from 'unified';
+import type { Root } from 'mdast';
 
 const MERMAID_IMPORT_AST = {
   type: 'mdxjsEsm',
@@ -70,26 +71,22 @@ const getMermaidElementAST = (value: string) => ({
   ],
 });
 
-const remarkMermaid = () =>
-  // @ts-ignore
+const remarkMermaid: Plugin<[], Root> = () =>
   function transformer(ast, file, done) {
     const codeblocks: any[][] = [];
     visit(
       ast,
-      {
-        type: 'code',
-        lang: 'mermaid',
-      },
+      { type: 'code', lang: 'mermaid' },
       (node, index, parent) => {
         codeblocks.push([node, index, parent]);
-      }
+      },
     );
 
     if (codeblocks.length !== 0) {
       codeblocks.forEach(([node, index, parent]) => {
         parent.children.splice(index, 1, getMermaidElementAST(node.value));
       });
-      ast.children.unshift(MERMAID_IMPORT_AST);
+      ast.children.unshift(MERMAID_IMPORT_AST as any);
     }
 
     done();
