@@ -11,8 +11,7 @@
     "start": "next start"
   },
   "dependencies": {
-    "@guild-docs/client": "3.1.0",
-    "@guild-docs/server": "4.0.0",
+    "guild-docs": "2.2.0",
     "@theguild/components": "2.0.0-alpha-9d29815.0",
     "markdown-to-jsx": "7.1.7",
     "next": "12.2.2",

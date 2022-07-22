@@ -3,7 +3,7 @@ title: Home
 ---
 
 import { HeroGradient, InfoList, NPMBadge } from '@theguild/components';
-import { handlePushRoute } from '@guild-docs/client';
+import { handlePushRoute } from 'guild-docs';
 
 <HeroGradient
   title="The Guild Docs"
@@ -14,7 +14,7 @@ import { handlePushRoute } from '@guild-docs/client';
     title: 'Get started with The Guild Docs',
     onClick: e => handlePushRoute('/docs', e),
   }}
-  version={<NPMBadge name="@guild-docs/client" />}
+  version={<NPMBadge name="guild-docs" />}
   colors={['#000', '#1cc8ee']}
 />
 

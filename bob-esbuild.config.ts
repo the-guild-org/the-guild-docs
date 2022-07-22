@@ -6,10 +6,10 @@ export const config: import('bob-esbuild').BobConfig = {
   distDir: 'dist',
   keepDynamicImport: true,
   packageConfigs: {
-    '@guild-docs/client': {
+    'guild-docs': {
       onlyESM: true,
     },
-    '@guild-docs/server': {
+    '@guild-docs/algolia': {
       onlyESM: true,
     },
   },

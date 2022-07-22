@@ -23,12 +23,11 @@ const Logo = ({ className }: { className?: string }): ReactElement => {
 
 const config: DocsThemeConfig = {
   titleSuffix: ` – ${SITE_NAME}`,
-  projectLink: 'https://github.com/urigo/graphql-mesh', // GitHub link in the navbar
-  docsRepositoryBase: 'https://github.com/Urigo/graphql-mesh/tree/master/website/src/pages', // base URL for the docs repository
+  projectLink: 'https://github.com/the-guild-org/the-guild-docs', // GitHub link in the navbar
+  docsRepositoryBase: 'https://github.com/the-guild-org/the-guild-docs/tree/main/website/src/pages', // base URL for the docs repository
   nextLinks: true,
   prevLinks: true,
   search: false,
-  unstable_flexsearch: false,
   floatTOC: true,
   darkMode: true,
   footer: false,
@@ -38,7 +37,7 @@ const config: DocsThemeConfig = {
       <Logo className="mr-1.5 h-9 w-9" />
       <div>
         <h1 className="md:text-md text-sm font-medium">{SITE_NAME}</h1>
-        <h2 className="hidden text-xs sm:!block">Query anything, run anywhere</h2>
+        <h2 className="hidden text-xs sm:!block">Just document it</h2>
       </div>
     </>
   ),

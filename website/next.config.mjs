@@ -1,4 +1,4 @@
-import { withGuildDocs } from '@guild-docs/server';
+import { withGuildDocs } from 'guild-docs';
 
 export default withGuildDocs({
   eslint: {

@@ -1,5 +1,5 @@
 ---
-'@guild-docs/client': major
+'guild-docs': major
 ---
 
 bump version of components

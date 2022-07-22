@@ -3,7 +3,7 @@ import { visit } from 'unist-util-visit';
 
 const MERMAID_IMPORT_AST = {
   type: 'mdxjsEsm',
-  value: 'import { Mermaid } from "@guild-docs/server/mermaid"',
+  value: 'import { Mermaid } from "guild-docs/mermaid"',
   data: {
     estree: {
       type: 'Program',
@@ -20,8 +20,8 @@ const MERMAID_IMPORT_AST = {
           ],
           source: {
             type: 'Literal',
-            value: '@guild-docs/server/mermaid',
-            raw: `"@guild-docs/server/mermaid"`,
+            value: 'guild-docs/mermaid',
+            raw: `"guild-docs/mermaid"`,
           },
         },
       ],
