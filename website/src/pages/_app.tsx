@@ -4,13 +4,12 @@ import { Header, Footer, ThemeProvider } from '@theguild/components';
 import 'guild-docs/style.css';
 
 export default function App({ Component, pageProps }: AppProps): ReactElement {
-  const component = <Component {...pageProps} />;
   // @ts-expect-error -- getLayout is custom function from nextra
-  const page = Component.getLayout ? Component.getLayout(component) : component;
+  const { getLayout = (page) => page } = Component;
   return (
     <ThemeProvider>
-      <Header accentColor="#1cc8ee" themeSwitch searchBarProps={{ version: 'v2' }} />
-      {page}
+      <Header accentColor='#1cc8ee' themeSwitch searchBarProps={{ version: 'v2' }} />
+      {getLayout(<Component {...pageProps} />)}
       <Footer />
     </ThemeProvider>
   );

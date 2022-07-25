@@ -28,11 +28,14 @@ export const getStaticProps = async () => {
 export const PackageApiDocs = () => {
   // Get the data from SSG, and render it as a component.
   const packageData = useSSG();
-  return <>
-    <h1>Remote MDX Support</h1>
-    <PackageCmd packages={[packageData.npmPackage]} />
-    <Markdown>{packageData.readme}</Markdown>
-  </>;
+  return (
+    <>
+      <PackageCmd packages={[packageData.npmPackage]} />
+      <Markdown>{packageData.readme}</Markdown>
+    </>
+  );
 };
+
+# Remote MDX Support
 
 <PackageApiDocs />
