@@ -1765,10 +1765,10 @@
   dependencies:
     prettier-plugin-sh "^0.11.0"
 
-"@theguild/tailwind-config@0.0.1":
-  version "0.0.1"
-  resolved "https://registry.yarnpkg.com/@theguild/tailwind-config/-/tailwind-config-0.0.1.tgz#884ee4edeb6ab47418f75ae74e6cf542a9d34719"
-  integrity sha512-cxLJWeDYTL9vAtHfPKXYBIfaewq/NCVSJUlQ3ImVC9iGBP1iydkUAQRvQFmhc+7w/GPzTv5PBCRAzVsfm1cu6g==
+"@theguild/tailwind-config@0.0.2":
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/@theguild/tailwind-config/-/tailwind-config-0.0.2.tgz#a1c3bd055501f047dc6604cd379d570c65999d0a"
+  integrity sha512-ZyTcVX3+KdGd3nvmLsf9aQ2Wq1EhgF9Gy+KH+OYdo4F3CA+7pHxB3ZeRoIFPhblQyTVonNpwwfbw2tjCkkhYpg==
   dependencies:
     autoprefixer "^10.4.7"
     cssnano "^5.1.12"
