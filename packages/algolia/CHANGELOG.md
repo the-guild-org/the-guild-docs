@@ -1,5 +1,15 @@
 # @guild-docs/algolia
 
+## 0.1.0
+
+### Minor Changes
+
+- 792d6e6: t(algolia): support for Nextra docs
+
+### Patch Changes
+
+- 0fb3da6: switch to yarn from pnpm
+
 ## 0.0.6
 
 ### Patch Changes
