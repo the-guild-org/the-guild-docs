@@ -36,7 +36,6 @@
     "nprogress": "0.2.0",
     "react-icons": "4.4.0",
     "react-use": "17.4.0",
-    "rehype-mdx-title": "^1.0.0",
     "tiny-lru": "^8.0.2",
     "undici": "5.8.0"
   },
