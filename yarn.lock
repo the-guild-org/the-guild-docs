@@ -2225,10 +2225,10 @@ bob-esbuild@4.0.3:
     bob-esbuild-plugin "4.0.0"
     rollup "^2.75.6"
 
-bob-tsm@0.4.8:
-  version "0.4.8"
-  resolved "https://registry.yarnpkg.com/bob-tsm/-/bob-tsm-0.4.8.tgz#0d736df94d80436753145742c40e12e25e40fef0"
-  integrity sha512-HctV79VMhh8xh5+plIJbkghL9H0pi+euZvLSjvhgqkm3uQ73ebPUh3k7u/bYyXkhiVC/O0gs/I0alw7WOkZ3kw==
+bob-tsm@1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/bob-tsm/-/bob-tsm-1.1.1.tgz#a7fab1e73ef0e6f52761dc57f3dedbe237c20238"
+  integrity sha512-7bhjUD4PkIKh8xH6HCXFId9eTs8FvMurxgtZqee1Phs+1aLPv7RJK31X7WMLV6vzU5pN3hHbg+LC53d1EUP1vA==
   optionalDependencies:
     fsevents "~2.3.2"
 
