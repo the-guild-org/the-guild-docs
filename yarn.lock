@@ -1411,7 +1411,7 @@
     "@nodelib/fs.scandir" "2.1.5"
     fastq "^1.6.0"
 
-"@pnpm/types@^8.2.0":
+"@pnpm/types@^8.0.0":
   version "8.4.0"
   resolved "https://registry.yarnpkg.com/@pnpm/types/-/types-8.4.0.tgz#7f4df21b6bb696227a03335a2b374dafa6d31887"
   integrity sha512-sq/UdSq/jWCpYglw9SFmvR8qzUEi0p2oZIO0AHjkWWQg4Qrolf6DgD0WWmLiEP2WxHjbYeyD3ZzWzQor1+6cvw==
@@ -1592,7 +1592,7 @@
     tiny-warning "^1.0.3"
     tslib "^2.3.0"
 
-"@rollup/pluginutils@^4.2.1":
+"@rollup/pluginutils@^4.2.0":
   version "4.2.1"
   resolved "https://registry.yarnpkg.com/@rollup/pluginutils/-/pluginutils-4.2.1.tgz#e6c6c3aba0744edce3fb2074922d3776c0af2a6d"
   integrity sha512-iKnFXr7NkdZAIHiIWE+BX5ULi/ucVFYWD6TbAV+rZctiRTY2PL6tsIKhoIOaoskiWAkgu+VsbXgUVDNLHf+InQ==
@@ -2177,28 +2177,28 @@ binary-extensions@^2.0.0:
   resolved "https://registry.yarnpkg.com/binary-extensions/-/binary-extensions-2.2.0.tgz#75f502eeaf9ffde42fc98829645be4ea76bd9e2d"
   integrity sha512-jDctJ/IVQbZoJykoeHbhXpOlNBqGNcwXJKJog42E5HDPUwQTSdjCHdihjj0DlnheQ7blbT6dHOafNAiS8ooQKA==
 
-bob-esbuild-cli@4.0.0:
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/bob-esbuild-cli/-/bob-esbuild-cli-4.0.0.tgz#c489bcb6d93ca680ae5928f2b1f8db7a613133ac"
-  integrity sha512-wJ0td3/TdcfjGmKr94pcxi2qsrXQpXuUzX5xEe0FYoOVNqrtSoeqUD67pUXrfgGmA9jDkQoq1t9b0+7FpQtHxw==
+bob-esbuild-cli@3.0.2:
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/bob-esbuild-cli/-/bob-esbuild-cli-3.0.2.tgz#8d96b950613dee7cfd408c36eac433251fa11272"
+  integrity sha512-/E3g7xQqn4+rFSlIN37gGrJAv4o7cB0dicv/C/OSNUruh9u1cWsDGnLdaYHdUttEK4Df5vMHsYzB6KxIh5Yq5A==
   dependencies:
-    commander "^9.2.0"
+    commander "^9.0.0"
 
-bob-esbuild-plugin@4.0.0:
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/bob-esbuild-plugin/-/bob-esbuild-plugin-4.0.0.tgz#9f0b5b7aa290d8ec6c742a4de0004a416620a84d"
-  integrity sha512-Ymk0kEPc0JhL3eZQVnWpjT4/HMX8Hw7aD5CzqSvNAXeUgaR1+8m5O1RtkP/D42ZwNv+FPgD1wKM4pdoQ4ScmAQ==
+bob-esbuild-plugin@3.1.5:
+  version "3.1.5"
+  resolved "https://registry.yarnpkg.com/bob-esbuild-plugin/-/bob-esbuild-plugin-3.1.5.tgz#c4d03193aa581723ee1e1cc80affc083e23d0310"
+  integrity sha512-UOZqW2BPtzc+VuyAbnLghQtZgYst2bc0KzE2qC9RmXJocNoABTSMsVR0MCBrBtvaw4CWG2Ja9UvMAdpUmw99uQ==
   dependencies:
-    "@rollup/pluginutils" "^4.2.1"
+    "@rollup/pluginutils" "^4.2.0"
 
-bob-esbuild@4.0.3:
-  version "4.0.3"
-  resolved "https://registry.yarnpkg.com/bob-esbuild/-/bob-esbuild-4.0.3.tgz#cddc2b5e5c9648f153b18aa2740f733c3c678409"
-  integrity sha512-9AGuh6V5Whsditj5n2oJjWAvHwgadgD2HD0qZ4rEBwY9tpj8YbfYeiaXQQV9qJxwT9oUYOsQE53wPNYBFDIfJA==
+bob-esbuild@3.2.6:
+  version "3.2.6"
+  resolved "https://registry.yarnpkg.com/bob-esbuild/-/bob-esbuild-3.2.6.tgz#96e3bd06a20995c40261619b6f6aae827beabb2b"
+  integrity sha512-WimNe1b+Ctgl18z5iJBA2gZqCNYk55tO1lCcYcOpYI81WlbesV66DE0KeEm+Uhk0UKzyJltn6F92L10u9BO+xQ==
   dependencies:
-    "@pnpm/types" "^8.2.0"
-    bob-esbuild-plugin "4.0.0"
-    rollup "^2.75.6"
+    "@pnpm/types" "^8.0.0"
+    bob-esbuild-plugin "3.1.5"
+    rollup "^2.70.1"
 
 bob-tsm@1.1.1:
   version "1.1.1"
@@ -2479,7 +2479,7 @@ commander@^6.2.0:
   resolved "https://registry.yarnpkg.com/commander/-/commander-6.2.1.tgz#0792eb682dfbc325999bb2b84fddddba110ac73c"
   integrity sha512-U7VdrJFnJgo4xjrHpTzu0yrHPGImdsmD95ZlgYSEajAn2JKzDhDTPG9kBTefmObL2w/ngeZnilk+OV9CG3d7UA==
 
-commander@^9.2.0:
+commander@^9.0.0:
   version "9.4.0"
   resolved "https://registry.yarnpkg.com/commander/-/commander-9.4.0.tgz#bc4a40918fefe52e22450c111ecd6b7acce6f11c"
   integrity sha512-sRPT+umqkz90UA8M1yqYfnHlZA7fF6nSphDtxeywPZ49ysjxDQybzk13CL+mXekDRG92skbcqCLVovuCusNmFw==
@@ -6768,7 +6768,7 @@ robust-predicates@^3.0.0:
   resolved "https://registry.yarnpkg.com/robust-predicates/-/robust-predicates-3.0.1.tgz#ecde075044f7f30118682bd9fb3f123109577f9a"
   integrity sha512-ndEIpszUHiG4HtDsQLeIuMvRsDnn8c8rYStabochtUeCvfuvNptb5TUbVD68LRAILPX7p9nqQGh4xJgn3EHS/g==
 
-rollup@^2.75.6:
+rollup@^2.70.1:
   version "2.77.0"
   resolved "https://registry.yarnpkg.com/rollup/-/rollup-2.77.0.tgz#749eaa5ac09b6baa52acc076bc46613eddfd53f4"
   integrity sha512-vL8xjY4yOQEw79DvyXLijhnhh+R/O9zpF/LEgkCebZFtb6ELeN9H3/2T0r8+mp+fFTBHZ5qGpOpW2ela2zRt3g==
