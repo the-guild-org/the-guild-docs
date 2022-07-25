@@ -1,5 +1,6 @@
 {
   "private": true,
+  "type": "module",
   "homepage": "https://github.com/the-guild-org/the-guild-docs#readme",
   "bugs": {
     "url": "https://github.com/the-guild-org/the-guild-docs/issues"
@@ -9,64 +10,55 @@
     "url": "git+https://github.com/the-guild-org/the-guild-docs.git"
   },
   "license": "MIT",
-  "author": "PabloSzx <pablosaez1995@gmail.com>",
   "scripts": {
     "release": "changeset publish",
     "clean": "rimraf \"{,!(node_modules)/*/}node_modules/\"",
     "dev": "concurrently -r yarn:dev:*",
-    "dev:cli": "yarn workspace guild-docs dev",
-    "dev:client": "yarn workspace @guild-docs/client dev",
-    "dev:example": "yarn workspace basic dev",
-    "dev:mdx-remote": "yarn workspace @guild-docs/mdx-remote dev",
-    "dev:server": "yarn workspace @guild-docs/server dev",
-    "dev:types": "yarn workspace @guild-docs/types dev",
+    "dev:website": "yarn workspace website dev",
+    "dev:docs": "yarn workspace guild-docs dev",
+    "build:algolia": "yarn workspace @guild-docs/algolia build",
+    "build:docs": "yarn workspace guild-docs build",
     "lint": "eslint --ignore-path .gitignore .",
-    "build": "rimraf \"{,!(node_modules)/*/}dist/\" && concurrently -r \"bob-esbuild tsc && yarn workspaces run build\"",
-    "postinstall": "husky install",
-    "prettier": "prettier --write --list-different \"**/*.{ts,tsx,json}\"",
+    "build": "rimraf \"{,!(node_modules)/*/}dist/\" && concurrently -r \"bob-esbuild tsc\"",
+    "postbuild": "concurrently -r yarn:build:* && node scripts/copy-files.mjs && yarn workspace website build",
+    "postinstall": "patch-package && husky install",
+    "prettier": "prettier --write --list-different .",
     "release:canary": "(node scripts/canary-release.js && yarn build && changeset publish --tag alpha) || echo Skipping Canary..."
   },
   "workspaces": {
     "packages": [
       "packages/*",
-      "examples/*",
-      "guild-docs"
+      "website"
     ]
   },
   "devDependencies": {
-    "@changesets/apply-release-plan": "6.0.0",
-    "@changesets/assemble-release-plan": "5.1.2",
-    "@changesets/cli": "2.22.0",
-    "@changesets/config": "2.0.0",
-    "@changesets/read": "0.5.5",
-    "@manypkg/get-packages": "1.1.3",
-    "@types/node": "16.11.41",
-    "@typescript-eslint/eslint-plugin": "5.28.0",
-    "@typescript-eslint/parser": "5.28.0",
-    "bob-esbuild": "3.2.6",
-    "bob-esbuild-cli": "3.0.2",
+    "@changesets/cli": "2.24.0",
+    "@theguild/prettier-config": "0.0.2",
+    "@types/node": "16.11.45",
+    "@types/react": "18.0.15",
+    "@typescript-eslint/eslint-plugin": "5.30.7",
+    "@typescript-eslint/parser": "5.30.7",
+    "bob-esbuild": "4.0.3",
+    "bob-esbuild-cli": "4.0.0",
     "bob-tsm": "0.4.8",
     "chalk": "5.0.1",
-    "concurrently": "7.2.2",
-    "esbuild": "0.14.45",
-    "eslint": "8.17.0",
+    "changesets-github-release": "0.1.0",
+    "concurrently": "7.3.0",
+    "esbuild": "0.14.49",
+    "eslint": "8.20.0",
     "eslint-config-prettier": "8.5.0",
     "eslint-plugin-import": "2.26.0",
-    "eslint-plugin-jsx-a11y": "6.5.1",
-    "eslint-plugin-react": "7.30.0",
+    "eslint-plugin-jsx-a11y": "6.6.1",
+    "eslint-plugin-react": "7.30.1",
     "eslint-plugin-react-hooks": "4.6.0",
     "globby": "13.1.2",
     "husky": "7.0.4",
-    "next": "12.1.6",
+    "patch-package": "6.4.7",
     "prettier": "2.7.1",
-    "pretty-quick": "3.1.3",
-    "react": "17.0.2",
-    "react-dom": "17.0.2",
     "rimraf": "3.0.2",
-    "semver": "7.3.7",
-    "typescript": "4.7.3"
+    "typescript": "4.7.4"
   },
   "engines": {
-    "yarn": ">=1.22.19"
+    "yarn": ">=1.22.17"
   }
 }

@@ -1,19 +1,15 @@
 export const config: import('bob-esbuild').BobConfig = {
   tsc: {
-    dirs: ['packages/*', '!packages/cli'],
+    dirs: ['packages/*'],
   },
   verbose: true,
-  clean: false,
   distDir: 'dist',
   keepDynamicImport: true,
   packageConfigs: {
-    '@guild-docs/mdx-remote': {
+    'guild-docs': {
       onlyESM: true,
     },
-    '@guild-docs/client': {
-      onlyESM: true,
-    },
-    '@guild-docs/server': {
+    '@guild-docs/algolia': {
       onlyESM: true,
     },
   },

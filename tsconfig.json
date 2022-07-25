@@ -4,9 +4,7 @@
     "baseUrl": ".",
     "outDir": "dist",
     "paths": {
-      "@guild-docs/*": ["packages/*/src/index.ts"],
-      "@guild-docs/mdx-remote": ["packages/mdx-remote/src/index.tsx"],
-      "@guild-docs/mdx-remote/*": ["packages/mdx-remote/src/*.ts"]
+      "@guild-docs/*": ["packages/*/src/index.ts"]
     },
     "declaration": true,
     "target": "es2019" /* Specify ECMAScript target version: 'ES3' (default), 'ES5', 'ES2015', 'ES2016', 'ES2017', 'ES2018', 'ES2019', 'ES2020', or 'ESNEXT'. */,
@@ -26,5 +24,5 @@
     "importsNotUsedAsValues": "error"
   },
   "include": ["**/*.ts", "**/*.tsx"],
-  "exclude": ["node_modules", "examples", "dist"]
+  "exclude": ["node_modules", "website"]
 }

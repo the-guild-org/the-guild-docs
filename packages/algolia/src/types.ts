@@ -32,8 +32,16 @@ export interface AlgoliaRecord {
   url: string;
   domain: string;
 }
+
 export interface AlgoliaSearchItemTOC {
   children: AlgoliaSearchItemTOC[];
   title: string;
   anchor: string;
 }
+
+export type IRoutes = {
+  $routes?: ([href: string, name: string, sidebar?: string] | string)[];
+  $name?: string;
+  $sidebar?: string;
+  _?: Record<string, IRoutes>;
+};

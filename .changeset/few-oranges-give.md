@@ -1,5 +1,5 @@
 ---
-"@guild-docs/algolia": minor
+'@guild-docs/algolia': minor
 ---
 
 t(algolia): support for Nextra docs

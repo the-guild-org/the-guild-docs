@@ -1,4 +1,6 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion, no-else-return */
+import { readFile } from 'node:fs/promises';
+import { existsSync, writeFileSync, readFileSync, statSync } from 'node:fs';
 import sortBy from 'lodash/sortBy.js';
 import isString from 'lodash/isString.js';
 import isArray from 'lodash/isArray.js';
@@ -6,16 +8,13 @@ import flatten from 'lodash/flatten.js';
 import compact from 'lodash/compact.js';
 import map from 'lodash/map.js';
 import identity from 'lodash/identity.js';
-import { readFile } from 'node:fs/promises';
-import { existsSync, writeFileSync, readFileSync, statSync } from 'node:fs';
 import GithubSlugger from 'github-slugger';
 import removeMarkdown from 'remove-markdown';
 import algoliasearch from 'algoliasearch';
-import type { IRoutes } from '@guild-docs/server';
 import matter from 'gray-matter';
 import glob from 'glob';
 
-import type { AlgoliaRecord, AlgoliaSearchItemTOC, AlgoliaRecordSource } from './types';
+import type { AlgoliaRecord, AlgoliaSearchItemTOC, AlgoliaRecordSource, IRoutes } from './types';
 
 const extractToC = (content: string) => {
   const slugger = new GithubSlugger();
@@ -129,7 +128,9 @@ async function routesToAlgoliaRecords(
       return;
     }
 
-    const fileContent = await readFile(`./${compact([parentRoute?.path, topPath, slug]).join('/')}.md${mdx ? 'x' : ''}`);
+    const fileContent = await readFile(
+      `./${compact([parentRoute?.path, topPath, slug]).join('/')}.md${mdx ? 'x' : ''}`
+    );
 
     const { data: meta, content } = matter(fileContent.toString());
 
@@ -179,7 +180,9 @@ async function routesToAlgoliaRecords(
                 // `route` is `'slug'`
                 if (route.startsWith('$')) {
                   const refName = route.substring(1);
-                  const refs = topRoute._ as { [k: string]: Record<string, IRoutes> };
+                  const refs = topRoute._ as {
+                    [k: string]: Record<string, IRoutes>;
+                  };
                   const subRoutes = refs[refName];
 
                   if (subRoutes) {
@@ -289,7 +292,9 @@ async function nextraToAlgoliaRecords(
         const path = folders.join('/');
 
         if (!metadataCache[path]) {
-          metadataCache[path] = getMetaFromFile(`${docsBaseDir}${docsBaseDir.endsWith('/') ? '' : '/'}${path}/meta.json`);
+          metadataCache[path] = getMetaFromFile(
+            `${docsBaseDir}${docsBaseDir.endsWith('/') ? '' : '/'}${path}/meta.json`
+          );
         }
         const folderName = metadataCache[path][folder];
         const resolvedFolderName = typeof folderName === 'string' ? folderName : folderName?.title || folder;
@@ -378,7 +383,11 @@ export const indexToAlgolia = async ({
     ...(nextra ? await nextraToAlgoliaRecords(nextra, source, normalizeDomain(domain)) : []),
   ]);
 
-  const recordsAsString = JSON.stringify(sortBy(objects, 'objectID'), (key, value) => (key === 'content' ? '-' : value), 2);
+  const recordsAsString = JSON.stringify(
+    sortBy(objects, 'objectID'),
+    (key, value) => (key === 'content' ? '-' : value),
+    2
+  );
 
   const lockFileExists = existsSync(lockfilePath);
   const lockfileContent = JSON.stringify(

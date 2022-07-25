@@ -1,0 +1,79 @@
+import { PackageCmd } from '@theguild/components'
+
+# Installation
+
+<PackageCmd packages={['guild-docs @theguild/components', '-D @theguild/tailwind-config']} />
+
+## 1. Add dependencies
+
+```diff filename="package.json"
+{
+  "dependencies": {
++   "@theguild/components": "2.0.0",
++   "guild-docs": "3.0.0",
+    "next": "12.2.2",
+    "react": "17.0.2",
+    "react-dom": "17.0.2"
+  },
+  "devDependencies": {
++   "@theguild/tailwind-config": "0.0.2"
+  }
+}
+```
+
+## 2. Add Tailwind CSS config
+
+```js filename="tailwind.config.cjs"
+module.exports = require('@theguild/tailwind-config')
+```
+
+## 3. Add PostCSS config
+
+```js filename="postcss.config.js"
+module.exports = require('@theguild/tailwind-config/postcss.config')
+```
+
+## 4. Add theme config
+
+```tsx filename="theme.config.tsx"
+import { DocsThemeConfig } from '@theguild/components'
+const config: DocsThemeConfig = {
+  // Your theme
+}
+
+export default config
+```
+
+## 5. Use `withGuildDocs` in your Next.js config
+
+```js filename="next.config.mjs" /withGuildDocs/
+import { withGuildDocs } from 'guild-docs/next.config'
+
+export default withGuildDocs({
+  // Your next config options, for example:
+  eslint: {
+    ignoreDuringBuilds: true
+  }
+})
+```
+
+## 6. Import styles in `_app.tsx` and use `Component.getLayout`
+
+```tsx filename="src/pages/_app.tsx" {4,8,12}
+import { ReactElement } from 'react'
+import { AppProps } from 'next/app'
+import { Header, FooterExtended, ThemeProvider } from '@theguild/components'
+import 'guild-docs/style.css'
+
+export default function App({ Component, pageProps }: AppProps): ReactElement {
+  // @ts-expect-error -- getLayout is custom function from nextra
+  const { getLayout = page => page } = Component
+  return (
+    <ThemeProvider>
+      <Header accentColor="#1cc8ee" themeSwitch searchBarProps={{ version: 'v2' }} />
+      {getLayout(<Component {...pageProps} />)}
+      <FooterExtended />
+    </ThemeProvider>
+  )
+}
+```
