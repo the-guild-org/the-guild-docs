@@ -1,7 +1,7 @@
 import React, { ReactElement, useEffect, useState } from 'react';
 import mermaid from 'mermaid';
 import type mermaidAPI from 'mermaid/mermaidAPI';
-import { useTheme } from '@theguild/components'
+import { useTheme } from '@theguild/components';
 
 /**
  * Assign a unique ID to each mermaid svg as per requirements of `mermaid.render`.
@@ -9,13 +9,13 @@ import { useTheme } from '@theguild/components'
 let id = 0;
 
 export const Mermaid = ({ chart }: { chart: string }): ReactElement => {
-  const { theme } = useTheme()
+  const { theme } = useTheme();
   const [svg, setSVG] = useState('');
 
   useEffect(() => {
     mermaid.initialize({ startOnLoad: true, theme: theme as mermaidAPI.Theme });
     mermaid.render(`mermaid-svg-${id}`, chart, renderedSvg => {
-      setSVG(renderedSvg)
+      setSVG(renderedSvg);
     });
     id++;
   }, [theme, chart]);

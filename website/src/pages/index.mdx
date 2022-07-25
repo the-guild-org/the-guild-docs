@@ -2,8 +2,8 @@
 title: Home
 ---
 
-import { HeroGradient, InfoList, NPMBadge } from '@theguild/components';
-import { handlePushRoute } from 'guild-docs';
+import { HeroGradient, InfoList, NPMBadge } from '@theguild/components'
+import { handlePushRoute } from 'guild-docs'
 
 <HeroGradient
   title="The Guild Docs"
@@ -12,7 +12,7 @@ import { handlePushRoute } from 'guild-docs';
     href: '/docs',
     children: 'Get Started',
     title: 'Get started with The Guild Docs',
-    onClick: e => handlePushRoute('/docs', e),
+    onClick: e => handlePushRoute('/docs', e)
   }}
   version={<NPMBadge name="guild-docs" />}
   colors={['#000', '#1cc8ee']}
@@ -23,15 +23,15 @@ import { handlePushRoute } from 'guild-docs';
   items={[
     {
       title: 'Install',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Egestas euismod amet duis quisque semper.',
+      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Egestas euismod amet duis quisque semper.'
     },
     {
       title: 'Configure',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Egestas euismod amet duis quisque semper.',
+      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Egestas euismod amet duis quisque semper.'
     },
     {
       title: 'Enjoy',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Egestas euismod amet duis quisque semper.',
-    },
+      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Egestas euismod amet duis quisque semper.'
+    }
   ]}
 />

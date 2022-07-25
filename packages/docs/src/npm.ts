@@ -186,8 +186,9 @@ export async function getPackagesData<Tags extends string = string>({
           const path = withoutTrailingSlash(withStartingSlash(stats.repositoryDirectory));
 
           const fetchPath = `${
-            withoutTrailingSlash(stats.repositoryLink.replace('https://github.com', 'https://raw.githubusercontent.com')) +
-            '/HEAD'
+            withoutTrailingSlash(
+              stats.repositoryLink.replace('https://github.com', 'https://raw.githubusercontent.com')
+            ) + '/HEAD'
           }${path}/README.md`;
 
           try {

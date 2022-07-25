@@ -6,7 +6,14 @@ const SITE_NAME = 'Guild docs';
 
 const Logo = ({ className }: { className?: string }): ReactElement => {
   return (
-    <svg width="50" height="54" viewBox="0 0 50 54" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
+    <svg
+      width="50"
+      height="54"
+      viewBox="0 0 50 54"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className={className}
+    >
       <path
         fillRule="evenodd"
         clipRule="evenodd"

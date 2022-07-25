@@ -1758,7 +1758,7 @@
     tinykeys "^1.4.0"
     use-debounce "^8.0.2"
 
-"@theguild/prettier-config@^0.0.2":
+"@theguild/prettier-config@0.0.2":
   version "0.0.2"
   resolved "https://registry.yarnpkg.com/@theguild/prettier-config/-/prettier-config-0.0.2.tgz#1b40cf900f20a9a49b73d65c69643278f275a220"
   integrity sha512-iawNy3+9GtmIPZqgnXqDgwqlhFYYlfEYS2zqIWwdqTA96D69QtcxURhC04pz2cy823VFLGHfP9/JOvjWZVeQhg==

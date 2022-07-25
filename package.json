@@ -1,5 +1,6 @@
 {
   "private": true,
+  "type": "module",
   "homepage": "https://github.com/the-guild-org/the-guild-docs#readme",
   "bugs": {
     "url": "https://github.com/the-guild-org/the-guild-docs/issues"
@@ -21,7 +22,7 @@
     "build": "rimraf \"{,!(node_modules)/*/}dist/\" && concurrently -r \"bob-esbuild tsc\"",
     "postbuild": "concurrently -r yarn:build:* && node scripts/copy-files.mjs && yarn workspace website build",
     "postinstall": "patch-package && husky install",
-    "prettier": "prettier --write --list-different \"**/*.{ts,tsx,json}\"",
+    "prettier": "prettier --write --list-different .",
     "release:canary": "(node scripts/canary-release.js && yarn build && changeset publish --tag alpha) || echo Skipping Canary..."
   },
   "workspaces": {

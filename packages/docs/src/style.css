@@ -2,7 +2,7 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 @import '@algolia/autocomplete-theme-classic';
-@import '@theguild/components/dist/static/css/SearchBarV2.css';
+@import '@theguild/components/dist/search-bar-v2.css';
 
 /* quick fix for menu on mobile */
 .nextra-sidebar-search {

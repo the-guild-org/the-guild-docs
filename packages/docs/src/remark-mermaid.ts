@@ -73,13 +73,9 @@ const getMermaidElementAST = (value: string) => ({
 
 export const remarkMermaid: Plugin<[], Root> = () => (ast, file, done) => {
   const codeblocks: any[][] = [];
-  visit(
-    ast,
-    { type: 'code', lang: 'mermaid' },
-    (node, index, parent) => {
-      codeblocks.push([node, index, parent]);
-    },
-  );
+  visit(ast, { type: 'code', lang: 'mermaid' }, (node, index, parent) => {
+    codeblocks.push([node, index, parent]);
+  });
 
   if (codeblocks.length !== 0) {
     codeblocks.forEach(([node, index, parent]) => {

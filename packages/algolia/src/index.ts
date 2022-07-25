@@ -128,7 +128,9 @@ async function routesToAlgoliaRecords(
       return;
     }
 
-    const fileContent = await readFile(`./${compact([parentRoute?.path, topPath, slug]).join('/')}.md${mdx ? 'x' : ''}`);
+    const fileContent = await readFile(
+      `./${compact([parentRoute?.path, topPath, slug]).join('/')}.md${mdx ? 'x' : ''}`
+    );
 
     const { data: meta, content } = matter(fileContent.toString());
 
@@ -178,7 +180,9 @@ async function routesToAlgoliaRecords(
                 // `route` is `'slug'`
                 if (route.startsWith('$')) {
                   const refName = route.substring(1);
-                  const refs = topRoute._ as { [k: string]: Record<string, IRoutes> };
+                  const refs = topRoute._ as {
+                    [k: string]: Record<string, IRoutes>;
+                  };
                   const subRoutes = refs[refName];
 
                   if (subRoutes) {
@@ -288,7 +292,9 @@ async function nextraToAlgoliaRecords(
         const path = folders.join('/');
 
         if (!metadataCache[path]) {
-          metadataCache[path] = getMetaFromFile(`${docsBaseDir}${docsBaseDir.endsWith('/') ? '' : '/'}${path}/meta.json`);
+          metadataCache[path] = getMetaFromFile(
+            `${docsBaseDir}${docsBaseDir.endsWith('/') ? '' : '/'}${path}/meta.json`
+          );
         }
         const folderName = metadataCache[path][folder];
         const resolvedFolderName = typeof folderName === 'string' ? folderName : folderName?.title || folder;
@@ -377,7 +383,11 @@ export const indexToAlgolia = async ({
     ...(nextra ? await nextraToAlgoliaRecords(nextra, source, normalizeDomain(domain)) : []),
   ]);
 
-  const recordsAsString = JSON.stringify(sortBy(objects, 'objectID'), (key, value) => (key === 'content' ? '-' : value), 2);
+  const recordsAsString = JSON.stringify(
+    sortBy(objects, 'objectID'),
+    (key, value) => (key === 'content' ? '-' : value),
+    2
+  );
 
   const lockFileExists = existsSync(lockfilePath);
   const lockfileContent = JSON.stringify(
