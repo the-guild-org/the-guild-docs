@@ -1,34 +1,35 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
-const semver = require('semver');
-const cp = require('child_process');
-const { basename } = require('path');
+import semver from 'semver';
+import { spawnSync } from 'node:child_process';
+import path from 'node:path';
+import { read as readConfig } from '@changesets/config';
+import _readChangesets from '@changesets/read';
+import _assembleReleasePlan from '@changesets/assemble-release-plan';
+import _applyReleasePlan from '@changesets/apply-release-plan';
+import { getPackages } from '@manypkg/get-packages';
 
-const { read: readConfig } = require('@changesets/config');
-const readChangesets = require('@changesets/read').default;
-const assembleReleasePlan = require('@changesets/assemble-release-plan').default;
-const applyReleasePlan = require('@changesets/apply-release-plan').default;
-const { getPackages } = require('@manypkg/get-packages');
+const readChangesets = _readChangesets.default;
+const assembleReleasePlan = _assembleReleasePlan.default;
+const applyReleasePlan = _applyReleasePlan.default;
 
 function getNewVersion(version, type) {
-  const gitHash = cp.spawnSync('git', ['rev-parse', '--short', 'HEAD']).stdout.toString().trim();
+  const gitHash = spawnSync('git', ['rev-parse', '--short', 'HEAD']).stdout.toString().trim();
 
   return semver.inc(version, `pre${type}`, true, 'alpha-' + gitHash);
 }
 
 function getRelevantChangesets(baseBranch) {
-  const comparePoint = cp
-    .spawnSync('git', ['merge-base', `origin/${baseBranch}`, 'HEAD'])
+  const comparePoint = spawnSync('git', ['merge-base', `origin/${baseBranch}`, 'HEAD'])
     .stdout.toString()
     .trim();
   console.log('compare point', comparePoint);
-  const listModifiedFiles = cp
-    .spawnSync('git', ['diff', '--name-only', comparePoint])
+  const listModifiedFiles = spawnSync('git', ['diff', '--name-only', comparePoint])
     .stdout.toString()
     .trim()
     .split('\n');
   console.log('listModifiedFiles', listModifiedFiles);
 
-  const items = listModifiedFiles.filter(f => f.startsWith('.changeset')).map(f => basename(f, '.md'));
+  const items = listModifiedFiles.filter(f => f.startsWith('.changeset')).map(f => path.basename(f, '.md'));
   console.log('items', items);
 
   return items;
