@@ -13,6 +13,7 @@
     "./style.css": "./dist/style.css",
     "./*": "./dist/*.js"
   },
+  "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
     "dist"
@@ -55,16 +56,5 @@
   "publishConfig": {
     "access": "public",
     "directory": "dist"
-  },
-  "typesVersions": {
-    "*": {
-      "dist/index.d.ts": [
-        "dist/index.d.ts"
-      ],
-      "*": [
-        "dist/*",
-        "dist/*/index.d.ts"
-      ]
-    }
   }
 }
