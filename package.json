@@ -30,7 +30,7 @@
     "website"
   ],
   "devDependencies": {
-    "@changesets/cli": "2.24.0",
+    "@changesets/cli": "2.24.1",
     "@theguild/prettier-config": "0.0.2",
     "@types/node": "16.11.45",
     "@types/react": "18.0.15",
