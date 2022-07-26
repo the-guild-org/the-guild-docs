@@ -23,7 +23,7 @@
     "postbuild": "concurrently -r yarn:build:* && node scripts/copy-files.mjs && yarn workspace website build",
     "postinstall": "husky install",
     "prettier": "prettier --write --list-different .",
-    "release:canary": "(node scripts/canary-release.js && yarn build && changeset publish --tag alpha) || echo Skipping Canary..."
+    "release:canary": "(node scripts/canary-release.mjs && yarn build && changeset publish --tag alpha) || echo Skipping Canary..."
   },
   "workspaces": [
     "packages/*",
