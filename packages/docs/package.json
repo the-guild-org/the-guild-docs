@@ -6,7 +6,6 @@
     "url": "git+https://github.com/the-guild-org/the-guild-docs.git"
   },
   "license": "MIT",
-  "sideEffects": false,
   "type": "module",
   "exports": {
     ".": "./dist/index.js",
@@ -52,20 +51,5 @@
     "next": ">=12.1.6",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
-  },
-  "publishConfig": {
-    "access": "public",
-    "directory": "dist"
-  },
-  "typesVersions": {
-    "*": {
-      "dist/index.d.ts": [
-        "dist/index.d.ts"
-      ],
-      "*": [
-        "dist/*",
-        "dist/*/index.d.ts"
-      ]
-    }
   }
 }
