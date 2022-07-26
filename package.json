@@ -1,6 +1,5 @@
 {
   "private": true,
-  "type": "module",
   "homepage": "https://github.com/the-guild-org/the-guild-docs#readme",
   "bugs": {
     "url": "https://github.com/the-guild-org/the-guild-docs/issues"
@@ -30,7 +29,7 @@
     "website"
   ],
   "devDependencies": {
-    "@changesets/cli": "2.24.1",
+    "@changesets/cli": "2.22.0",
     "@theguild/prettier-config": "0.0.2",
     "@types/node": "16.11.45",
     "@types/react": "18.0.15",
