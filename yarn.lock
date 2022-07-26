@@ -2172,12 +2172,12 @@ binary-extensions@^2.0.0:
   resolved "https://registry.yarnpkg.com/binary-extensions/-/binary-extensions-2.2.0.tgz#75f502eeaf9ffde42fc98829645be4ea76bd9e2d"
   integrity sha512-jDctJ/IVQbZoJykoeHbhXpOlNBqGNcwXJKJog42E5HDPUwQTSdjCHdihjj0DlnheQ7blbT6dHOafNAiS8ooQKA==
 
-bob-esbuild-cli@3.0.2:
-  version "3.0.2"
-  resolved "https://registry.yarnpkg.com/bob-esbuild-cli/-/bob-esbuild-cli-3.0.2.tgz#8d96b950613dee7cfd408c36eac433251fa11272"
-  integrity sha512-/E3g7xQqn4+rFSlIN37gGrJAv4o7cB0dicv/C/OSNUruh9u1cWsDGnLdaYHdUttEK4Df5vMHsYzB6KxIh5Yq5A==
+bob-esbuild-cli@4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/bob-esbuild-cli/-/bob-esbuild-cli-4.0.0.tgz#c489bcb6d93ca680ae5928f2b1f8db7a613133ac"
+  integrity sha512-wJ0td3/TdcfjGmKr94pcxi2qsrXQpXuUzX5xEe0FYoOVNqrtSoeqUD67pUXrfgGmA9jDkQoq1t9b0+7FpQtHxw==
   dependencies:
-    commander "^9.0.0"
+    commander "^9.2.0"
 
 bob-esbuild-plugin@3.1.5:
   version "3.1.5"
@@ -2469,7 +2469,7 @@ commander@^6.2.0:
   resolved "https://registry.yarnpkg.com/commander/-/commander-6.2.1.tgz#0792eb682dfbc325999bb2b84fddddba110ac73c"
   integrity sha512-U7VdrJFnJgo4xjrHpTzu0yrHPGImdsmD95ZlgYSEajAn2JKzDhDTPG9kBTefmObL2w/ngeZnilk+OV9CG3d7UA==
 
-commander@^9.0.0:
+commander@^9.2.0:
   version "9.4.0"
   resolved "https://registry.yarnpkg.com/commander/-/commander-9.4.0.tgz#bc4a40918fefe52e22450c111ecd6b7acce6f11c"
   integrity sha512-sRPT+umqkz90UA8M1yqYfnHlZA7fF6nSphDtxeywPZ49ysjxDQybzk13CL+mXekDRG92skbcqCLVovuCusNmFw==

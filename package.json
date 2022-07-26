@@ -37,7 +37,7 @@
     "@typescript-eslint/eslint-plugin": "5.30.7",
     "@typescript-eslint/parser": "5.30.7",
     "bob-esbuild": "3.2.6",
-    "bob-esbuild-cli": "3.0.2",
+    "bob-esbuild-cli": "4.0.0",
     "bob-tsm": "0.4.8",
     "chalk": "5.0.1",
     "changesets-github-release": "0.1.0",
