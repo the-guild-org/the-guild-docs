@@ -46,6 +46,7 @@
     "definition": "dist/typings/index.d.ts"
   },
   "exports": {
+    "./style.css": "./dist/style.css",
     ".": {
       "require": {
         "types": "./dist/typings/index.d.ts",
