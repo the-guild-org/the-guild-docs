@@ -7,9 +7,6 @@
   },
   "license": "MIT",
   "sideEffects": false,
-  "scripts": {
-    "postpublish": "gh-release"
-  },
   "dependencies": {
     "@chakra-ui/react": "2.2.4",
     "@emotion/react": "11.9.3",

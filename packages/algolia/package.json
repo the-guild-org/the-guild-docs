@@ -6,9 +6,6 @@
     "url": "git+https://github.com/the-guild-org/the-guild-docs.git"
   },
   "license": "MIT",
-  "scripts": {
-    "postpublish": "gh-release"
-  },
   "dependencies": {
     "algoliasearch": "^4.13.1",
     "github-slugger": "^1.4.0",
