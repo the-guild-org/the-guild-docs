@@ -1,5 +1,11 @@
 # guild-docs
 
+## 3.0.3
+
+### Patch Changes
+
+- ec8d368: fix publishing
+
 ## 3.0.2
 
 ### Patch Changes
