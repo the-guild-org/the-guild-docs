@@ -19,10 +19,8 @@
     "dev": "concurrently -r yarn:dev:*",
     "dev:website": "yarn workspace website dev",
     "dev:docs": "yarn workspace guild-docs dev",
-    "build:algolia": "yarn workspace @guild-docs/algolia build",
-    "build:docs": "yarn workspace guild-docs build",
     "lint": "eslint --ignore-path .gitignore .",
-    "postbuild": "concurrently -r yarn:build:* && node scripts/copy-files.mjs && yarn workspace website build",
+    "postbuild": "node scripts/copy-files.mjs && yarn workspace website build",
     "postinstall": "patch-package && husky install",
     "prettier": "prettier --write --list-different .",
     "release:canary": "(node scripts/canary-release.js && yarn build && changeset publish --tag alpha) || echo Skipping Canary..."

@@ -4,7 +4,7 @@ import { css, Global } from '@emotion/react';
 import RouterImport from 'next/router.js';
 import NProgress from 'nprogress';
 import React, { memo, useEffect, useMemo } from 'react';
-import { getDefault } from './utils';
+import { getDefault } from './utils.js';
 import { useLatestRef } from '@chakra-ui/react';
 
 const Router = getDefault(RouterImport);

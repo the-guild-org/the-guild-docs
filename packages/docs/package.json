@@ -8,7 +8,6 @@
   "license": "MIT",
   "sideEffects": false,
   "scripts": {
-    "build": "bob build",
     "postpublish": "gh-release"
   },
   "dependencies": {
