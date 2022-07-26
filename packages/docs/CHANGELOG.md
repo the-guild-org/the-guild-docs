@@ -1,5 +1,11 @@
 # guild-docs
 
+## 3.0.1
+
+### Patch Changes
+
+- c5a140d: fix publishing
+
 ## 3.0.0
 
 ### Major Changes
