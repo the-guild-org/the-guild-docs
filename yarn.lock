@@ -1411,7 +1411,7 @@
     "@nodelib/fs.scandir" "2.1.5"
     fastq "^1.6.0"
 
-"@pnpm/types@^8.0.0":
+"@pnpm/types@^8.2.0":
   version "8.4.0"
   resolved "https://registry.yarnpkg.com/@pnpm/types/-/types-8.4.0.tgz#7f4df21b6bb696227a03335a2b374dafa6d31887"
   integrity sha512-sq/UdSq/jWCpYglw9SFmvR8qzUEi0p2oZIO0AHjkWWQg4Qrolf6DgD0WWmLiEP2WxHjbYeyD3ZzWzQor1+6cvw==
@@ -1592,7 +1592,7 @@
     tiny-warning "^1.0.3"
     tslib "^2.3.0"
 
-"@rollup/pluginutils@^4.2.0":
+"@rollup/pluginutils@^4.2.1":
   version "4.2.1"
   resolved "https://registry.yarnpkg.com/@rollup/pluginutils/-/pluginutils-4.2.1.tgz#e6c6c3aba0744edce3fb2074922d3776c0af2a6d"
   integrity sha512-iKnFXr7NkdZAIHiIWE+BX5ULi/ucVFYWD6TbAV+rZctiRTY2PL6tsIKhoIOaoskiWAkgu+VsbXgUVDNLHf+InQ==
@@ -2179,21 +2179,21 @@ bob-esbuild-cli@4.0.0:
   dependencies:
     commander "^9.2.0"
 
-bob-esbuild-plugin@3.1.5:
-  version "3.1.5"
-  resolved "https://registry.yarnpkg.com/bob-esbuild-plugin/-/bob-esbuild-plugin-3.1.5.tgz#c4d03193aa581723ee1e1cc80affc083e23d0310"
-  integrity sha512-UOZqW2BPtzc+VuyAbnLghQtZgYst2bc0KzE2qC9RmXJocNoABTSMsVR0MCBrBtvaw4CWG2Ja9UvMAdpUmw99uQ==
+bob-esbuild-plugin@4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/bob-esbuild-plugin/-/bob-esbuild-plugin-4.0.0.tgz#9f0b5b7aa290d8ec6c742a4de0004a416620a84d"
+  integrity sha512-Ymk0kEPc0JhL3eZQVnWpjT4/HMX8Hw7aD5CzqSvNAXeUgaR1+8m5O1RtkP/D42ZwNv+FPgD1wKM4pdoQ4ScmAQ==
   dependencies:
-    "@rollup/pluginutils" "^4.2.0"
+    "@rollup/pluginutils" "^4.2.1"
 
-bob-esbuild@3.2.6:
-  version "3.2.6"
-  resolved "https://registry.yarnpkg.com/bob-esbuild/-/bob-esbuild-3.2.6.tgz#96e3bd06a20995c40261619b6f6aae827beabb2b"
-  integrity sha512-WimNe1b+Ctgl18z5iJBA2gZqCNYk55tO1lCcYcOpYI81WlbesV66DE0KeEm+Uhk0UKzyJltn6F92L10u9BO+xQ==
+bob-esbuild@4.0.3:
+  version "4.0.3"
+  resolved "https://registry.yarnpkg.com/bob-esbuild/-/bob-esbuild-4.0.3.tgz#cddc2b5e5c9648f153b18aa2740f733c3c678409"
+  integrity sha512-9AGuh6V5Whsditj5n2oJjWAvHwgadgD2HD0qZ4rEBwY9tpj8YbfYeiaXQQV9qJxwT9oUYOsQE53wPNYBFDIfJA==
   dependencies:
-    "@pnpm/types" "^8.0.0"
-    bob-esbuild-plugin "3.1.5"
-    rollup "^2.70.1"
+    "@pnpm/types" "^8.2.0"
+    bob-esbuild-plugin "4.0.0"
+    rollup "^2.75.6"
 
 bob-tsm@0.4.8:
   version "0.4.8"
@@ -6661,10 +6661,10 @@ robust-predicates@^3.0.0:
   resolved "https://registry.yarnpkg.com/robust-predicates/-/robust-predicates-3.0.1.tgz#ecde075044f7f30118682bd9fb3f123109577f9a"
   integrity sha512-ndEIpszUHiG4HtDsQLeIuMvRsDnn8c8rYStabochtUeCvfuvNptb5TUbVD68LRAILPX7p9nqQGh4xJgn3EHS/g==
 
-rollup@^2.70.1:
-  version "2.77.0"
-  resolved "https://registry.yarnpkg.com/rollup/-/rollup-2.77.0.tgz#749eaa5ac09b6baa52acc076bc46613eddfd53f4"
-  integrity sha512-vL8xjY4yOQEw79DvyXLijhnhh+R/O9zpF/LEgkCebZFtb6ELeN9H3/2T0r8+mp+fFTBHZ5qGpOpW2ela2zRt3g==
+rollup@^2.75.6:
+  version "2.77.1"
+  resolved "https://registry.yarnpkg.com/rollup/-/rollup-2.77.1.tgz#63463ebdbc04232fc42630ec72d137cd4400975d"
+  integrity sha512-GhutNJrvTYD6s1moo+kyq7lD9DeR5HDyXo4bDFlDSkepC9kVKY+KK/NSZFzCmeXeia3kEzVuToQmHRdugyZHxw==
   optionalDependencies:
     fsevents "~2.3.2"
 
