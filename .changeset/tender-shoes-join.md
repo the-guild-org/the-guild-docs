@@ -1,5 +1,5 @@
 ---
-"guild-docs": patch
+'guild-docs': patch
 ---
 
 fix publishing
