@@ -1,5 +1,11 @@
 # @guild-docs/algolia
 
+## 0.1.1
+
+### Patch Changes
+
+- 1f42861: fix releasing
+
 ## 0.1.0
 
 ### Minor Changes
