@@ -7,23 +7,6 @@
   },
   "license": "MIT",
   "sideEffects": false,
-  "type": "module",
-  "exports": {
-    ".": "./dist/index.js",
-    "./style.css": "./dist/style.css",
-    "./*": "./dist/*.js"
-  },
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
-  "files": [
-    "dist"
-  ],
-  "scripts": {
-    "dev": "bob-esbuild watch",
-    "build": "bob-esbuild build",
-    "postpublish": "gh-release",
-    "test:npm": "bob-tsm test-npm.ts"
-  },
   "dependencies": {
     "@chakra-ui/react": "2.2.4",
     "@emotion/react": "11.9.3",
@@ -53,8 +36,48 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
+  "bob": {
+    "commonjs": false,
+    "build": {
+      "copy": [
+        "./src/style.css"
+      ]
+    },
+    "check": false
+  },
+  "main": "dist/esm/index.js",
+  "module": "dist/esm/index.js",
+  "typings": "dist/typings/index.d.ts",
+  "typescript": {
+    "definition": "dist/typings/index.d.ts"
+  },
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/typings/index.d.ts",
+        "default": "./dist/esm/index.js"
+      },
+      "default": {
+        "types": "./dist/typings/index.d.ts",
+        "default": "./dist/esm/index.js"
+      }
+    },
+    "./*": {
+      "import": {
+        "types": "./dist/typings/*.d.ts",
+        "default": "./dist/esm/*.js"
+      },
+      "default": {
+        "types": "./dist/typings/*.d.ts",
+        "default": "./dist/esm/*.js"
+      }
+    },
+    "./package.json": "./package.json",
+    "./style.css": "./dist/style.css"
+  },
   "publishConfig": {
-    "access": "public",
-    "directory": "dist"
-  }
+    "directory": "dist",
+    "access": "public"
+  },
+  "type": "module"
 }

@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "license": "MIT",
+  "bob": false,
   "scripts": {
     "analyze": "cross-env ANALYZE=true next build",
     "build": "next build",

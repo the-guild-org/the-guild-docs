@@ -31,8 +31,8 @@ jobs:
       - name: Build
         run: yarn build
 
-      - name: Test ESM
-        run: node scripts/test-esm.mjs
+      - name: Test ESM & CJS integrity
+        run: yarn bob check
 
       - name: Lint
         run: yarn lint

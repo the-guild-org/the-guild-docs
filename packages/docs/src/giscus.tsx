@@ -2,7 +2,7 @@ import { useColorModeValue } from '@chakra-ui/react';
 import { useRouter } from 'next/router.js';
 import ScriptImport from 'next/script.js';
 import React, { ReactElement, useEffect, useMemo, useState } from 'react';
-import { getDefault } from './utils';
+import { getDefault } from './utils.js';
 
 const Script = getDefault(ScriptImport);
 

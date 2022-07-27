@@ -1,2 +1,2 @@
-export * from './google-analytics';
-export * from './utils';
+export * from './google-analytics.js';
+export * from './utils.js';
