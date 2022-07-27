@@ -37,8 +37,10 @@
     "react-dom": "^18.2.0"
   },
   "bob": {
-    "check": {
-      "skip": ["./style.css"]
+    "build": {
+      "copy": [
+        "./src/style.css"
+      ]
     }
   },
   "main": "dist/cjs/index.js",
