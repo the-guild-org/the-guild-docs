@@ -1,5 +1,13 @@
 # @guild-docs/algolia
 
+## 0.2.0
+
+### Minor Changes
+
+- bf6f52b: Support TypeScript ESM modules (`"module": "node16"` and `"moduleResolution": "node16"`).
+
+  [More information on the TypeScript Release Notes.](https://devblogs.microsoft.com/typescript/announcing-typescript-4-7/#ecmascript-module-support-in-node-js)
+
 ## 0.1.1
 
 ### Patch Changes
