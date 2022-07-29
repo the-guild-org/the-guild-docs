@@ -1,5 +1,11 @@
 # guild-docs
 
+## 3.1.1
+
+### Patch Changes
+
+- b5b1a5a: bumb nextra
+
 ## 3.1.0
 
 ### Minor Changes
