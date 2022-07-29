@@ -21,12 +21,13 @@ export const withGuildDocs = ({
 
   return withBundleAnalyzer(
     withNextra({
+      reactStrictMode: true,
+      ...nextConfig,
       experimental: {
         runtime: 'nodejs',
         serverComponents: true,
         ...nextConfig.experimental,
       },
-      ...nextConfig,
     })
   );
 };
