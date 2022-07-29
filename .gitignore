@@ -1,7 +1,7 @@
-node_modules
+node_modules/
 *.log
-.next
+.next/
 dist
 .env
-/.idea/
+.idea/
 .bob/
