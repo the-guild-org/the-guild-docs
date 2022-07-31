@@ -7,7 +7,7 @@
   },
   "license": "MIT",
   "dependencies": {
-    "algoliasearch": "^4.13.1",
+    "algoliasearch": "^4.14.2",
     "github-slugger": "^1.4.0",
     "glob": "^8.0.3",
     "gray-matter": "^4.0.3",
