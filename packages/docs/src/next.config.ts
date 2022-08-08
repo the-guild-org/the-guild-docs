@@ -12,7 +12,7 @@ export const withGuildDocs = ({
   });
   const withNextra = nextra({
     themeConfig,
-    theme: 'nextra-theme-docs',
+    theme: '@theguild/components',
     unstable_staticImage: true,
     mdxOptions: {
       remarkPlugins: [remarkMermaid],
@@ -26,6 +26,7 @@ export const withGuildDocs = ({
       experimental: {
         runtime: 'nodejs',
         serverComponents: true,
+        newNextLinkBehavior: true,
         ...nextConfig.experimental,
       },
     })

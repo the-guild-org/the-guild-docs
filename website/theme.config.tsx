@@ -1,5 +1,4 @@
-// @ts-expect-ignore -- can be removed after https://github.com/shuding/nextra/pull/533 be merged
-import { DocsThemeConfig } from 'nextra-theme-docs';
+import { DocsThemeConfig } from '@theguild/components';
 import { ReactElement } from 'react';
 
 const SITE_NAME = 'Guild docs';
