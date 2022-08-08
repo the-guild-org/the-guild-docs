@@ -22,6 +22,7 @@ export const withGuildDocs = ({
   return withBundleAnalyzer(
     withNextra({
       reactStrictMode: true,
+      swcMinify: true,
       ...nextConfig,
       experimental: {
         runtime: 'nodejs',
