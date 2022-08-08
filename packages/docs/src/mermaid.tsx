@@ -20,5 +20,5 @@ export const Mermaid = ({ chart }: { chart: string }): ReactElement => {
     id++;
   }, [theme, chart]);
 
-  return <div dangerouslySetInnerHTML={{ __html: svg }} />;
+  return <div className="flex justify-center" dangerouslySetInnerHTML={{ __html: svg }} />;
 };

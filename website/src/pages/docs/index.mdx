@@ -9,9 +9,9 @@ import { PackageCmd } from '@theguild/components'
 ```diff filename="package.json"
 {
   "dependencies": {
-+   "@theguild/components": "2.0.0",
-+   "guild-docs": "3.1.0",
-    "next": "12.2.3",
++   "@theguild/components": "2.0.3",
++   "guild-docs": "3.1.1",
+    "next": "12.2.4",
     "react": "18.2.0",
     "react-dom": "18.2.0"
   },
@@ -57,21 +57,19 @@ export default withGuildDocs({
 })
 ```
 
-## 6. Import styles in `_app.tsx` and use `Component.getLayout`
+## 6. Import styles in `_app.tsx`
 
-```tsx filename="src/pages/_app.tsx" {4,8,12}
+```tsx filename="src/pages/_app.tsx" {4,10}
 import { ReactElement } from 'react'
 import { AppProps } from 'next/app'
 import { Header, FooterExtended, ThemeProvider } from '@theguild/components'
 import 'guild-docs/style.css'
 
 export default function App({ Component, pageProps }: AppProps): ReactElement {
-  // @ts-expect-error -- getLayout is custom function from nextra
-  const { getLayout = page => page } = Component
   return (
     <ThemeProvider>
       <Header accentColor="#1cc8ee" themeSwitch searchBarProps={{ version: 'v2' }} />
-      {getLayout(<Component {...pageProps} />)}
+      <Component {...pageProps} />
       <FooterExtended />
     </ThemeProvider>
   )
