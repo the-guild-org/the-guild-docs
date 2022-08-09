@@ -1,5 +1,0 @@
----
-"guild-docs": patch
----
-
-temp
