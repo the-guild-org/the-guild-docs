@@ -4,67 +4,34 @@ on:
   pull_request:
     branches:
       - main
+    paths:
+      - '.changeset/**/*.md'
 
 jobs:
-  publish-canary:
-    name: Publish Canary
+  canary:
     runs-on: ubuntu-latest
     if: github.event.pull_request.head.repo.full_name == github.repository
     steps:
-      - name: Checkout Repo
+      - name: Checkout
         uses: actions/checkout@v3
         with:
-          # This makes Actions fetch all Git history so that Changesets can generate changelogs with the correct commits
           fetch-depth: 0
 
-      - name: Setup Node.js 16
+      - name: Use Node
         uses: actions/setup-node@v3
         with:
-          node-version: 16
+          node-version: 18
+          cache: 'yarn'
 
-      - name: Setup NPM credentials
-        run: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" >> ~/.npmrc
-        env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-
-      - name: Cache Yarn
-        uses: actions/cache@v3
-        with:
-          path: '**/node_modules'
-          key: ${{runner.os}}-16-${{hashFiles('yarn.lock')}}
-          restore-keys: |
-            ${{runner.os}}-16-
-
-      - name: Install Dependencies
+      - name: Install Dependencies using Yarn
         run: yarn
 
       - name: Release Canary
         id: canary
-        uses: 'kamilkisiela/release-canary@master'
+        uses: 'the-guild-org/changesets-snapshot-action@main'
         with:
-          npm-token: ${{ secrets.NPM_TOKEN }}
-          npm-script: 'yarn release:canary'
-          changesets: true
-
-      - name: Publish a message
-        if: steps.canary.outputs.released
-        uses: 'kamilkisiela/pr-comment@master'
-        with:
-          message: |
-            The latest changes of this PR are available as alpha in npm (based on the declared `changesets`):
-
-            ```
-            ${{ steps.canary.outputs.changesetsPublishedPackages}}
-            ```
-          bot-token: ${{ secrets.BOT_GH_TOKEN }}
-          bot: 'theguild-bot'
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Publish an empty message
-        if: steps.canary.outputs.released == 'false'
-        uses: 'kamilkisiela/pr-comment@master'
-        with:
-          message: The latest changes of this PR are not available as alpha, since there are no linked `changesets` for this PR.
-          bot-token: ${{ secrets.BOT_GH_TOKEN }}
-          bot: 'theguild-bot'
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+          tag: alpha
+          prepareScript: 'yarn build'
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -1,6 +1,6 @@
 {
-  "$schema": "https://unpkg.com/@changesets/config@1.5.0/schema.json",
-  "changelog": "@changesets/cli/changelog",
+  "$schema": "https://unpkg.com/@changesets/config@2.1.0/schema.json",
+  "changelog": ["@changesets/changelog-github", { "repo": "the-guild-org/the-guild-docs" }],
   "commit": false,
   "access": "public",
   "baseBranch": "main",
@@ -8,5 +8,9 @@
   "ignore": ["website"],
   "___experimentalUnsafeOptions_WILL_CHANGE_IN_PATCH": {
     "onlyUpdatePeerDependentsWhenOutOfRange": true
+  },
+  "snapshot": {
+    "useCalculatedVersion": true,
+    "prereleaseTemplate": "{tag}-{datetime}-{commit}"
   }
 }
