@@ -12,7 +12,7 @@
     "start": "next start"
   },
   "dependencies": {
-    "@theguild/components": "2.0.3",
+    "@theguild/components": "2.0.4",
     "guild-docs": "3.1.1",
     "markdown-to-jsx": "7.1.7",
     "next": "12.2.4",

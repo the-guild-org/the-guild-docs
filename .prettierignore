@@ -1,4 +1,4 @@
-.husky/
+.husky/_/
 dist/
 .next/
 .bob/
