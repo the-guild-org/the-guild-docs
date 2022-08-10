@@ -13,6 +13,7 @@ import removeMarkdown from 'remove-markdown';
 import algoliasearch from 'algoliasearch';
 import matter from 'gray-matter';
 import glob from 'glob';
+import crypto from 'node:crypto'
 
 import type { AlgoliaRecord, AlgoliaSearchItemTOC, AlgoliaRecordSource, IRoutes } from './types';
 
@@ -392,14 +393,15 @@ export const indexToAlgolia = async ({
 
   const recordsAsString = JSON.stringify(
     sortBy(objects, 'objectID'),
-    (key, value) => (key === 'content' ? '-' : value),
+    (key, value) => (key === 'content' ? crypto.createHash('md5').update(value).digest('hex') : value),
     2
   );
 
   const lockFileExists = existsSync(lockfilePath);
   const lockfileContent = JSON.stringify(
+    // save space but still keep track of content changes
     sortBy(JSON.parse(lockFileExists ? readFileSync(lockfilePath, 'utf-8') : '[]'), 'objectID'),
-    (key, value) => (key === 'content' ? '-' : value),
+    null,
     2
   );
 
