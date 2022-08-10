@@ -1,5 +1,14 @@
 # guild-docs
 
+## 3.1.2
+
+### Patch Changes
+
+- [#663](https://github.com/the-guild-org/the-guild-docs/pull/663) [`0335bfb`](https://github.com/the-guild-org/the-guild-docs/commit/0335bfb8dbd8eaf87b86a3eec2ab74536fea455d) Thanks [@B2o5T](https://github.com/B2o5T)! - dependencies updates:
+
+  - Updated dependency [`nextra@2.0.0-beta.17` ↗︎](https://www.npmjs.com/package/nextra/v/2.0.0-beta.17) (was `2.0.0-beta.15`, in `dependencies`)
+  - Updated dependency [`@theguild/components@^2.0.4` ↗︎](https://www.npmjs.com/package/@theguild/components/v/^2.0.4) (was `^2.0.3`, in `peerDependencies`)
+
 ## 3.1.1
 
 ### Patch Changes
