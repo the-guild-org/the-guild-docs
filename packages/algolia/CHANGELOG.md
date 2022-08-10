@@ -1,5 +1,11 @@
 # @guild-docs/algolia
 
+## 0.2.1
+
+### Patch Changes
+
+- [#658](https://github.com/the-guild-org/the-guild-docs/pull/658) [`287e657`](https://github.com/the-guild-org/the-guild-docs/commit/287e657881fc2744c457700b002f7a979b2b0b5c) Thanks [@charlypoly](https://github.com/charlypoly)! - fix(algolia): remove `import` and `export` from records content
+
 ## 0.2.0
 
 ### Minor Changes
