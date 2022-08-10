@@ -1,5 +1,11 @@
 # @guild-docs/algolia
 
+## 0.2.2
+
+### Patch Changes
+
+- [#660](https://github.com/the-guild-org/the-guild-docs/pull/660) [`5dbc5c1`](https://github.com/the-guild-org/the-guild-docs/commit/5dbc5c1c4002e52056f6757e42538788d08e10b1) Thanks [@charlypoly](https://github.com/charlypoly)! - feat(algolia): hash content for lockfile to trigger reindexing on content change
+
 ## 0.2.1
 
 ### Patch Changes
