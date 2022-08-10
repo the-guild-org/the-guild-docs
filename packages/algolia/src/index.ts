@@ -18,9 +18,9 @@ import type { AlgoliaRecord, AlgoliaSearchItemTOC, AlgoliaRecordSource, IRoutes 
 
 const extractToC = (content: string) => {
   const slugger = new GithubSlugger();
-
+  
   const lines = content.split('\n');
-
+  
   let isCodeBlock = false;
   let currentDepth = 0;
   let currentParent: AlgoliaSearchItemTOC | undefined;
@@ -81,6 +81,7 @@ const contentForRecord = (content: string) => {
     content
       .split('\n')
       .map(line => {
+        // remove code snippets
         if (line.match(/^```(.*)/)) {
           if (isCodeBlock) {
             isCodeBlock = false;
@@ -92,6 +93,7 @@ const contentForRecord = (content: string) => {
         } else if (isCodeBlock) {
           return null;
         }
+        // remove metadata headers
         if (line.startsWith('---')) {
           if (isMeta) {
             isMeta = false;
@@ -103,7 +105,12 @@ const contentForRecord = (content: string) => {
         } else if (isMeta) {
           return null;
         }
+        // remove titles
         if (line.startsWith('#')) {
+          return null;
+        }
+        // remove `import` and `export`
+        if (!isCodeBlock && (line.match(/^export(.*)/) || line.match(/^import(.*)/))) {
           return null;
         }
         return line;
