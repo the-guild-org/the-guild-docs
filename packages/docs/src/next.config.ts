@@ -28,7 +28,10 @@ export const withGuildDocs = ({
         runtime: 'nodejs',
         serverComponents: true,
         newNextLinkBehavior: true,
-        allowFutureImage: true, // next/future/image
+        images: {
+          allowFutureImage: true, // next/future/image
+          ...nextConfig.experimental?.images
+        },
         ...nextConfig.experimental,
       },
     })
