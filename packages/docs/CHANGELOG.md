@@ -1,5 +1,11 @@
 # guild-docs
 
+## 3.1.3
+
+### Patch Changes
+
+- [#668](https://github.com/the-guild-org/the-guild-docs/pull/668) [`6614f42`](https://github.com/the-guild-org/the-guild-docs/commit/6614f42b42cd555a630cd24b5a534990a4664258) Thanks [@B2o5T](https://github.com/B2o5T)! - update next config
+
 ## 3.1.2
 
 ### Patch Changes
