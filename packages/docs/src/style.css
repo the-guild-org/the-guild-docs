@@ -5,6 +5,6 @@
 @import '@theguild/components/dist/search-bar-v2.css';
 
 /* quick fix for menu on mobile */
-.nextra-sidebar-search {
-  display: none;
+div[class='hidden md:inline-block min-w-[200px]'] {
+  position: absolute;
 }
