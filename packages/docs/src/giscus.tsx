@@ -1,10 +1,7 @@
-import { useColorModeValue } from '@chakra-ui/react';
-import { useRouter } from 'next/router.js';
-import ScriptImport from 'next/script.js';
 import React, { ReactElement, useEffect, useMemo, useState } from 'react';
-import { getDefault } from './utils.js';
-
-const Script = getDefault(ScriptImport);
+import { useRouter } from 'next/router';
+import Script from 'next/script';
+import { useTheme } from '@theguild/components';
 
 export interface GiscusProps {
   repo: string;
@@ -35,13 +32,11 @@ export const Giscus = ({ category, categoryId, repo, repoId }: GiscusProps): Rea
     );
   }, [asPath, loaded]);
 
-  const dataTheme = useColorModeValue('light', 'dark');
+  const { theme } = useTheme();
 
-  const scriptKey = useMemo(() => `${dataTheme}${asPath}${++GiscusKeyInc}`.replace(/\//g, '_'), [dataTheme, asPath]);
+  const scriptKey = useMemo(() => `${theme}${asPath}${++GiscusKeyInc}`.replace(/\//g, '_'), [theme, asPath]);
 
-  const isBrowser = !!globalThis.window;
-
-  if (!isBrowser) return null;
+  if (typeof window === 'undefined') return null;
 
   return (
     <>
@@ -55,7 +50,7 @@ export const Giscus = ({ category, categoryId, repo, repoId }: GiscusProps): Rea
         data-reactions-enabled="1"
         data-emit-metadata="0"
         data-input-position="bottom"
-        data-theme={dataTheme}
+        data-theme={theme}
         data-lang="en"
         crossOrigin="anonymous"
         async
@@ -64,7 +59,7 @@ export const Giscus = ({ category, categoryId, repo, repoId }: GiscusProps): Rea
           setLoaded(true);
         }}
       />
-      <div className="giscus" style={{ marginTop: 8 }} />
+      <div className="giscus" />
     </>
   );
 };

@@ -25,12 +25,10 @@ export const withGuildDocs = ({
       swcMinify: true,
       ...nextConfig,
       experimental: {
-        runtime: 'nodejs',
-        serverComponents: true,
         newNextLinkBehavior: true,
         images: {
           allowFutureImage: true, // next/future/image
-          ...nextConfig.experimental?.images
+          ...nextConfig.experimental?.images,
         },
         ...nextConfig.experimental,
       },

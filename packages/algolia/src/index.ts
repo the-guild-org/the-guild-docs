@@ -13,15 +13,15 @@ import removeMarkdown from 'remove-markdown';
 import algoliasearch from 'algoliasearch';
 import matter from 'gray-matter';
 import glob from 'glob';
-import crypto from 'node:crypto'
+import crypto from 'node:crypto';
 
 import type { AlgoliaRecord, AlgoliaSearchItemTOC, AlgoliaRecordSource, IRoutes } from './types';
 
 const extractToC = (content: string) => {
   const slugger = new GithubSlugger();
-  
+
   const lines = content.split('\n');
-  
+
   let isCodeBlock = false;
   let currentDepth = 0;
   let currentParent: AlgoliaSearchItemTOC | undefined;
