@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import Router from 'next/router';
+import Router from 'next/router.js';
 
 // https://developers.google.com/analytics/devguides/collection/gtagjs/pages
 const pageview = (url: string, trackingId: string) => {
