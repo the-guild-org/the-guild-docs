@@ -1,5 +1,11 @@
 # guild-docs
 
+## 4.0.1
+
+### Patch Changes
+
+- [#672](https://github.com/the-guild-org/the-guild-docs/pull/672) [`deb5cc4`](https://github.com/the-guild-org/the-guild-docs/commit/deb5cc46e1a11bb64aafe3efaaa670970a3c6fd0) Thanks [@B2o5T](https://github.com/B2o5T)! - fix next imports
+
 ## 4.0.0
 
 ### Major Changes
