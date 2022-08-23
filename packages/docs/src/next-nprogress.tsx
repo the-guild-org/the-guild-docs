@@ -3,9 +3,14 @@
 import { css, Global } from '@emotion/react';
 import RouterImport from 'next/router.js';
 import NProgress from 'nprogress';
-import React, { memo, useEffect, useMemo } from 'react';
+import React, { memo, useEffect, useMemo, useRef } from 'react';
 import { getDefault } from './utils.js';
-import { useLatestRef } from '@chakra-ui/react';
+
+function useLatestRef<T>(value: T) {
+  const ref = useRef<T | null>(null)
+  ref.current = value
+  return ref as React.MutableRefObject<T>
+}
 
 const Router = getDefault(RouterImport);
 

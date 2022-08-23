@@ -43,7 +43,7 @@ const config: DocsThemeConfig = {
       <Logo className="mr-1.5 h-9 w-9" />
       <div>
         <h1 className="md:text-md text-sm font-medium">{SITE_NAME}</h1>
-        <h2 className="hidden text-xs sm:!block">Just document it</h2>
+        <h2 className="hidden text-xs sm:block">Just document it</h2>
       </div>
     </>
   ),
