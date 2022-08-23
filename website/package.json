@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "@theguild/components": "3.0.0",
-    "guild-docs": "4.0.0",
+    "guild-docs": "4.0.1",
     "markdown-to-jsx": "7.1.7",
     "next": "12.2.5",
     "react": "18.2.0",
