@@ -1,5 +1,11 @@
 # guild-docs
 
+## 4.1.0
+
+### Minor Changes
+
+- [#677](https://github.com/the-guild-org/the-guild-docs/pull/677) [`3b6b9a9`](https://github.com/the-guild-org/the-guild-docs/commit/3b6b9a926da631c20bff7ec695e537bb3dc900bc) Thanks [@dotansimha](https://github.com/dotansimha)! - Added utility to generate "\_redirects" file
+
 ## 4.0.1
 
 ### Patch Changes
